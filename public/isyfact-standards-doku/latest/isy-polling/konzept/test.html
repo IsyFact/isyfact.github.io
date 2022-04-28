@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Untitled :: IsyFact Dokumentation</title>
+    <link rel="canonical" href="https://github.com/isyfact/isyfact-standards-doku/latest/isy-polling/konzept/test.html">
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../_/css/isyfact.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://github.com/isyfact">IsyFact Dokumentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5-SNAPSHOT">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../einstieg/vorstellung.html">IsyFact Standards</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Einstieg</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../einstieg/vorstellung.html">Vorstellung der IsyFact</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#isyfact-standards.adoc">isyfact-standards.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#isyfact-erweiterungen.adoc">isyfact-erweiterungen.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/rahmenbedingungen.html">Rahmenbedingungen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/erste-schritte.html">Erste Schritte</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/tutorial/master.html">Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/whitepaper/master.html">Whitepaper</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Blaupausen</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../blaupausen/referenzarchitektur/master.html">Referenzarchitektur</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../blaupausen/referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/master.html">Datenzugriff</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-service/master.html">Service</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-web-gui/master.html">Web GUI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-batch/master.html">Batch</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Vorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/vorgaben-architektur/master.html">Architektur</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/vorgaben-it-sicherheit/master.html">IT-Sicherheit</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Bausteine</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Datum &amp; Zeit</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-datetime/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-datetime/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Fehlerbehandlung</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-exception-core/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-exception-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">HttpInvoker</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-serviceapi-core/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Konfiguration</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-konfiguration/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-konfiguration/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Logging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-logging/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-logging/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Polling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sicherheit</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sicherheit/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sicherheit/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sonderzeichen</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sonderzeichen/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sonderzeichen/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Task Scheduling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-task/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-task/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Überwachung</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-ueberwachung/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-ueberwachung/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Util</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-util/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Methodik</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/namenskonventionen/master.html">Namenskonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Werkzeuge</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/einrichtung_entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/handbuch_dokumentation/master.html">Dokumentation der IsyFact</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../changelog/changelog.html">Changelog</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">IsyFact Standards</span>
+    <span class="version">2.5-SNAPSHOT</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../glossary/latest/glossary/master.html">Glossar</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../glossary/latest/glossary/master.html">1.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../einstieg/vorstellung.html">IsyFact Standards</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../einstieg/vorstellung.html">2.5-SNAPSHOT</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../einstieg/vorstellung.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Inhalt" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<div class="paragraph">
+<p>h2. <strong>Anforderungen</strong>
+h3. A1: Es darf keine Redundanzen oder Widersprüche bzgl. den Vorgaben zu REST zwischen den Bausteinen REST und SGW geben.</p>
+</div>
+<div class="paragraph">
+<p>Der Baustein REST beschreibt die Verwendung von REST-Services zur internen (d.h. innerhalb einer AWL) Kommunikation. SGWs wiederum bieten REST-Services zur externen Kommunikation an. Dazu gibt es im Baustein SGW ein Dokument "Konzept_REST-Webservices".</p>
+</div>
+<div class="paragraph">
+<p>Dieses Dokument muss nach Abschluss des Tickets IFS-606 gegen das REST-Konzept gehalten werden. Redudanzen sollen durch Verweise des SGW-Dokuments auf das REST-Konzept aufgelöst werden. Widersprüche müssen in der Ticketbeschreibung gesammelt und entweder in diesem Ticket oder in Folgetickets aufgelöst werden.
+h4. Abnahmekriterien
+* Es gibt keine redundanten Inhalte mehr zwischen den Dokumenten "Konzept_REST-Webservices" des Bausteins SGW und "Konzept REST" des Bausteins REST.
+* Identifizierte Widersprüche sind in untenstehender Tabelle dokumentiert.
+* Für alle nicht aufgelösten Widersprüche gibt es Folgetickets.</p>
+</div>
+<div class="paragraph">
+<p>{quote}(i) Möglicherweise könnte das Konzept_Rest_Webservices aus der RF (BS SGW) komplett zugunsten des neuen REST-Konzepts entfallen. Dazu müsste geklärt werden ob die Differenzierung zwischen Ressourcen und Nachrichten wirklich benötigt wird, ob externe Schnittstellen nicht auch besser oAuth 2.0 verwenden anstelle von Basic Auth (dringend empfohlen) und ob neue SGWs nicht auch mit Spring MVC/Webflux umgesetzt werden können.
+{quote}</p>
+</div>
+<div class="paragraph">
+<p>h2. <strong>Ergebnis: Dokumentenabgleich</strong></p>
+</div>
+<div class="paragraph">
+<p>In der folgenden Tabelle wird das Ergebnis des Dokumentenabgleichs zwischen dem REST-Konzept für die interne Dokumentation und dem REST-Konzept für die externe Kommunikation aufgelistet.  Basis sind die im Ticketanhang hochgeladenen (mit Kommentaren versehenen) Dokumente.</p>
+</div>
+<div class="paragraph">
+<p>Der Abgleich findet anhand der jeweiligen Dokumentenkapitel statt (Spalte 1 + Sparte 2). In der dritten Spalte wird der Inhalt der Kapitel kommentiert, Widersprüche aufgezeigt und Verfahrensvorschläge gemacht.</p>
+</div>
+<div class="paragraph">
+<p>|{color:#0747a6}*Rest Konzept (insbes.* {color}
+{color:#0747a6} <strong>interne Kommunikation)</strong>{color}|{color:#0747a6}*Rest Konzept (insbes.* {color}
+{color:#0747a6} <strong>externe Kommunikation)</strong>{color}|{color:#0747a6}*Kommentare, Widersprüche, Verfahrensvorschläge*{color}|
+| | | |
+|1. Einleitung|1. Einleitung|<strong>Formulierung überarbeiten</strong>
+Bei Zusammenführung anpassen (Kapitelbeschreibung, Zielgruppe)|
+|2. Grundlagen|2. Anforderungen und Vorgaben
+2.1. Grundlagen|<strong>Redundanzen bearbeiten</strong>
+REST wird mit verschiedenen Grafiken, Terminologie und Definitionen beschrieben.
+-&#8594; Vereinheitlichung der Terminologie</p>
+</div>
+<div class="paragraph">
+<p><strong>Unterschiede</strong>
+Im Konzept für externe Kommunikation dürfen Ressourcen auch Nachrichten sein
+-&#8594; Vorschlag: als Spezialisierung übernehmen ins interne Konzept|
+|3. Eigenschaften von REST Schnittstellen| | |
+|3.1 Aufbau der Ressourcen-URIs| |<strong>Empfehlungsformulierung!</strong>
+Empfehlung zur Nutzung von HATEOAS hier fehl am Platz;
+Ferner darüber nachdenken, ob nicht die zuvor ergangene Empfehlung Rest mind. Stufe 2 besser ist.
+(siehe kommentiertes internes REST-Dokument)|
+|3.1 Aufbau der Ressourcen-URIs|2.3. Adressierbarkeit
+2.3.1. Ressource ist fachliche Entität
+2.3.2. Ressource ist Nachricht|<strong>Widersprüche</strong>
+Bei den Vorgaben des (externen) und den Vorgaben des (internen) REST Konzepte gibt es Widersprüche sowohl zwischen den Dokumenten als auch innerhalb der Dokumente (s.a. kommentierte Dokumente, Aufbau der Ressourcen-URIs)
+ <strong>Spezialität</strong>
+<strong>* Die Betrachtung einer Ressource als Nachricht ist eine Spezialität bei der externen Kommunikation.
+*Vorschlag:</strong>
+<strong>Aufnahme im SpezialKapitel für externe Kommunikation</strong>
+Spezielles Kapitel im REST Konzept, das die speziellen konzeptionellen Vorgaben bei externer Kommunikation enthält.
+|3.1.1. Beziehungen zwischen Ressourcen| |<strong>Formulierung (intern REST) überarbeiten</strong>
+(s.a. Dokumentenkommentare)|
+|3.2. Idempotenz|2.4. Zustandslosigkeit|<strong>Redundanz</strong>
+Redundanz auflösen, gemeinsame Terminologie|
+|3.3. Verwendung von HTTP-Methoden|2.6. HTTP-Verben
+2.6.1. Ressourcen sind Entitäten
+2.6.2. Ressourcen sind Nachrichten|<strong>Redundanz</strong> |</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>unterschiedl. Beschreibungen und Beispiele zusammenführen</p>
+</li>
+<li>
+<p><strong>Widersprüche</strong></p>
+</li>
+<li>
+<p>Betrachtung von Ressourcen als Nachricht auslagern</p>
+</li>
+<li>
+<p>Hinweis auf geringeren HTTP-Verben umfang auslagern (PATCH/HEAD/ OPTIONS)</p>
+</li>
+<li>
+<p><strong>Vorschlag</strong>
+Neues Kapitel im REST Konzept, das die speziellen konzeptionellen Vorgaben bei externer Kommunikation enthält.<strong>*|
+|3.4. Verwendung von HTTP-Statuscodes|2.7. HTTP-Statuscodes
+2.7.1. Ressourcen sind Entitäten
+2.7.2. Ressourcen sind Nachrichten|*Vereinheitlichung</strong>
+ |</p>
+</li>
+<li>
+<p>Vereinheitlichung der zulässigen Statuscodes bei "Ressourcen sind Entitäten"</p>
+</li>
+<li>
+<p><strong>Vorschlag:</strong>  Neues Kapitel im REST Konzept, das die speziellen konzeptionellen Vorgaben bei externer Kommunikation enthält. (hier Statuscodes bei Nachrichten)|
+|3.5. Repräsentationen|2.5. Repräsentationen
+2.5.1. Datenformat|<strong>Formulierungen (intern REST) überarbeiten</strong>
+Text- oder binäre Ressourcen,
+Exkurs zu externen REST,
+Empfehlung für einheitlichen Repräsentationstyp (Datenaustauschformat)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Widerspruch</strong>
+Das XML Datenformat als Pflicht ist eine Spezialität bei der externen Kommunikation.
+<strong>Vorschlag: Aufnahme im SpezialKapitel für externe Kommunikation</strong>
+ |
+|3.5.1. Content Negotiation|2.5.2. Content Type|<strong>Widerspruch</strong>
+Bei externer Kommunikation ist der zulässige Content Type  stark eingeschränkt.</p>
+</div>
+<div class="paragraph">
+<p><strong>Vorschlag: Aufnahme im SpezialKapitel für externe Kommunikation</strong>|
+| |3.3.1 Suche und Filterung mittels POST||<strong>Verbleib abklären</strong>
+In der Doku für externe Kommunikation findet sich ein Kapitel bzgl. Suche und Filterung.</p>
+</div>
+<div class="paragraph">
+<p>Der Verbleib ist abzuklären. Denkbar wäre die Vorgabe für Suche und Filterung in dem Nutzungsvorgabendokument des REST-Bausteins aufzunehmen/abzugleichen.
+-&#8594; Folgeticket\|||
+|3.6. Metadaten|2.12. Metadaten|<strong>Prüfung</strong>
+Kapitel im internen REST-Konzept könnte entfallen und bei HEAD im HTTP-Methoden Kapitel aufgenommen werden oder z.B ein interner Link auf das HTTP-Mehoden Kapitel
+<strong>Prüfung</strong>
+Der Inhalt des Metadaten Kapitels ist beim externen REST-Webservice Dokuments vollkommen anders ausgerichtet.
+<strong>Vorschlag: Aufnahme im SpezialKapitel für externe Kommunikation</strong>|
+|3.7. Caching| |<strong>o.k. + Prüfung</strong>
+Prüfung, ob es mittlerweile Vorgaben bzw. einen ADR bzgl Caching bei REST-Webservices gibt|
+|3.8. HATEOS| |<strong>Vorschlag</strong>
+Kapitel wäre ggf. besser unter 3.1. Aufbau der Ressourcen-URIs als Unterkapitel 3.1.4 untergebracht|
+|4. Festlegungen zur Umsetzung| | |
+|4.1. Technologieauswahl| |<strong>(vermeintlichen) Widerspruch auflösen</strong></p>
+</div>
+<div class="paragraph">
+<p>Das interne REST-Konzept nennt Spring MVC/Webflux als Framework
+<strong>Vorschlag : so belassen (entspricht ADR-Entscheidung)</strong></p>
+</div>
+<div class="paragraph">
+<p>Das externe REST-Konzept nennt Apache CXF als Framework</p>
+</div>
+<div class="paragraph">
+<p><strong>Vorschlag: Aufnahme im SpezialKapitel für externe Kommunikation</strong>
+ |
+|4.2. Spring MVC im Vergleich zu Spring Webfux| |<strong>o.k. + Vorschlag</strong>
+ungewöhnlich dass hier eine Begründung für die eine oder andere Technologie zu finden ist.
+Vorschlag wäre: Kapitel 4.2. in Kapitel 4.1.1. „Einsatzszenarien Spring MVC und Spring Webflux“ umzubenennen, damit es mehr in Richtung geht, wann welche Technologie einzusetzen ist|
+|4.3. Schnittstellendokumentation| |<strong>o.k.</strong>
+auf dem aktuellen Beschluß-stand|
+|4.3.1. Code Generierung| |<strong>Überarbeitung (int. REST)</strong>
+auf dem aktuellen Beschluß-stand
+ggf. Link auf Bausteindoku Nutzungsvorgaben (Doku ist in Erstellung) einfügen|
+| |3. Realisierung
+3.1. Service-Provider
+3.1.1  …
+…
+3.1.6. Generierung eines Stubs|<strong>Vorschlag: Aufnahme im SpezialKapitel für externe Kommunikation</strong>
+ <strong>* |
+|4.3.2. Bereitstellen von generierten Clients|3.2. Service-Consumer
+3.2.1 Generierung des Client Codes|*Überarbeitung (int. REST)</strong>
+ggf. Link auf Bausteindoku Nutzungsvorgaben (Doku ist in Erstellung) einfügen</p>
+</div>
+<div class="paragraph">
+<p><strong>Auslagerung (ext. REST)</strong>
+ <strong>*
+*Vorschlag: Aufnahme im SpezialKapitel für externe Kommunikation</strong>
+ |
+|4.4. Verwendung von Transportobjekten| |<strong>Übernahme des Kapitels</strong> aus dem intern. REST-Konzept|
+|5. Querschnittliche Konzepte| | |
+|5.1. Validierung von Anfragen| |<strong>Übernahme des Kapitels</strong> aus dem intern. REST-Konzept|
+|5.2. Fehlerbehandlung
+5.2.1. Entkopplung von Fehlerbehandlung und Service Logik
+5.2.1. Einheitliche Fehlermeldungen|2.8. Fehlerhandling
+2.8.1 Aufrufer-Fehler
+2.8.2. Serverseitiger Fehler
+2.8.3. XSD zur Übergabe strukturierter Fehlerinformationen|<strong>Unterschiede feststellbar</strong> |</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Das Kapitel zur Fehlerbehandlung im internen REST-Konzept befasst sich mehr mit allgem. Vorgaben zur Fehlerbehandlung.</p>
+</li>
+<li>
+<p>Das Kapitel zur Fehlerbehandlung im externen REST-Konzept befasst sich insbes. mit den diesbezüglichen Besonderheiten.
+<strong>Vorschlag:</strong>
+**</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Kapitel im internen REST-Konzept übernehmen</p>
+</li>
+<li>
+<p>Neues Kapitel im REST Konzept, das die speziellen konzeptionellen Vorgaben bei externer Kommunikation enthält. (hier Unterpunkt: Fehlerhandling) |
+|5.3. Sicherheit|2.11. Authentifizierung und Autorisierung||<strong>Widerspruch &#8594; Folgeticket</strong>
+Das externe REST-Konzept beschreibt Basic Auth</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Im internen Konzept wird OAuth2 als Authentifizierungsmethode gesetzt</p>
+</div>
+<div class="paragraph">
+<p><strong>-&#8594; Folgeticket zur einheitl. Vorgabe der Authenfizierung bei internen und externen REST-Webservices</strong></p>
+</div>
+<div class="paragraph">
+<p>Mit RF-435 wird das Authentication Gateway konzipiert. Dieses löst automatisch die Basic Authentication ab. Sobald das Authentication Gateway ausgeliefert wurde, muss das Kapitel angepasst werden. Folgeticket muss angelegt werden.\|||
+|5.4.1. Server / Service-Provider| |o.k.|
+|5.4.2. Client / Service-Consumer| |o.k.|
+|5.4.3. Inhalt des Log-Eintrags für eine Nachricht| |<strong>Prüfung</strong>
+mit dem externen REST-Konzept abgleichen|
+|5.5. Überwachung|Kein entsprechendes Kapitel| |
+|5.6. Versionierung| ||<strong>Widersprüche</strong>
+Bei beiden vorhandenen Konzepten wird nur die Majorrelease eingebaut (z.B. /v1/), aber die Vorgabe für den Aufbau des vorangehenden Pfads unterscheiden sich (z.B. /api/ vs /rest/)\|||
+|Literaturverzeichnis
+Abbildungsverzeichnis
+Listenverzeichnis|Literaturverzeichnis
+Abbildungsverzeichnis
+Listenverzeichnis|<strong>Entfällt</strong>
+(im Vorgriff auf eine Antora-Migration der Dokumente)|
+| | | |
+|Anhang A: Content Types|Keine Anhang im Dokument|<strong>Tabelle ergänzen, bearbeiten</strong>
+Gängige Typen wie PNG oder SVG sind nicht aufgeführt, dafür aber das verlustbehaftete Typ JPG, den wir nicht verwenden sollten|
+|Anhang B: HTTP-Methoden|Keine Anhang im Dokument|<strong>o.k. + Prüfung</strong>
+mit dem externen REST-Konzept abgleichen
+Plus Vorschlag: bei PATCH Beispiel einfügen, warum diese Methode Idempotent sein kann (s.a. Kommentar in der Doku)|
+h2. <strong>Dokumentation</strong></p>
+</div>
+<div class="paragraph">
+<p>Dokumentation ist
+[X] anzupassen
+[ ] nicht anzupassen
+h4. Konkrete Anpassungen
+* Baustein SGW: Konzept_REST-Webservices
+* Bautstein isy-rest: Internes REST-Konzept</p>
+</div>
+<div class="paragraph">
+<p>h2. <strong>Neue Bibliotheken und/oder Abweichungen vom Produktkatalog</strong></p>
+</div>
+<div class="paragraph">
+<p>[ ] Es werden neue Bibliotheken verwendet
+[ ] Es wird vom Produktkatalog abgewichen
+[X] Es werden KEINE neuen Bibliotheken eingesetzt und es wird NICHT vom Produktkatalog abgewichen.</p>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<div class="divFooter"></div>
+
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+<script src="../../../../_/js/isyfact.js"></script>
+  </body>
+</html>

@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Komponente Service :: IsyFact Dokumentation</title>
+    <link rel="canonical" href="https://github.com/isyfact/isyfact-standards-doku/latest/blaupausen/detailkonzept-komponente-service/master.html">
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../_/css/isyfact.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://github.com/isyfact">IsyFact Dokumentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5-SNAPSHOT">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../einstieg/vorstellung.html">IsyFact Standards</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Einstieg</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../einstieg/vorstellung.html">Vorstellung der IsyFact</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#isyfact-standards.adoc">isyfact-standards.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#isyfact-erweiterungen.adoc">isyfact-erweiterungen.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/rahmenbedingungen.html">Rahmenbedingungen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/erste-schritte.html">Erste Schritte</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/tutorial/master.html">Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/whitepaper/master.html">Whitepaper</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Blaupausen</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../referenzarchitektur/master.html">Referenzarchitektur</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/master.html">Datenzugriff</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="master.html">Service</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../detailkonzept-komponente-web-gui/master.html">Web GUI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../detailkonzept-komponente-batch/master.html">Batch</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Vorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vorgaben-architektur/master.html">Architektur</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vorgaben-it-sicherheit/master.html">IT-Sicherheit</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Bausteine</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Datum &amp; Zeit</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-datetime/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-datetime/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Fehlerbehandlung</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-exception-core/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-exception-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">HttpInvoker</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-serviceapi-core/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Konfiguration</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-konfiguration/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-konfiguration/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Logging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-logging/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-logging/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Polling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-polling/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-polling/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sicherheit</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sicherheit/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sicherheit/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sonderzeichen</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sonderzeichen/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sonderzeichen/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Task Scheduling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-task/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-task/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Überwachung</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-ueberwachung/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-ueberwachung/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Util</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-util/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Methodik</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/namenskonventionen/master.html">Namenskonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Werkzeuge</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/einrichtung_entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/handbuch_dokumentation/master.html">Dokumentation der IsyFact</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../changelog/changelog.html">Changelog</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">IsyFact Standards</span>
+    <span class="version">2.5-SNAPSHOT</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../glossary/latest/glossary/master.html">Glossar</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../glossary/latest/glossary/master.html">1.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../einstieg/vorstellung.html">IsyFact Standards</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../einstieg/vorstellung.html">2.5-SNAPSHOT</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../einstieg/vorstellung.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../einstieg/vorstellung.html">IsyFact Standards</a></li>
+    <li>Blaupausen</li>
+    <li><a href="../referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a></li>
+    <li><a href="master.html">Service</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Inhalt" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Komponente Service</h1>
+<div id="preamble">
+<div class="sectionbody">
+<h3 id="_detailkonzept" class="discrete">Detailkonzept</h3>
+<div class="paragraph">
+<p><span class="image left"><img src="../../../../glossary/latest/licence/_images/IFS-Logo.png" alt="IFS-Logo" width="150"></span> Dieses Dokument ist ein Teil der IsyFact-Standards. Alle Inhalte dieses Dokuments, insbesondere Texte und Grafiken, sind urheberrechtlich geschützt. Alle urheberrechtlichen Nutzungs- und Verwertungsrechte liegen beim Bundesverwaltungsamt.</p>
+</div>
+<div class="paragraph">
+<p><span class="image right"><img src="../../../../glossary/latest/licence/_images/CC-BY.png" alt="Creative Commons Namensnennung" width="100"></span>
+Die Nutzung ist unter den Lizenzbedingungen der Creative Commons Namensnennung 4.0 International gestattet.
+Die Lizenzbestimmungen sind unter folgender URL erhältlich:</p>
+</div>
+<div class="paragraph">
+<p><a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-licence" class="xref page">Creative-Commons-Lizenz</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="einleitung"><a class="anchor" href="#einleitung"></a>1. Einleitung</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Entsprechend der Referenzarchitektur (siehe <a href="../referenzarchitektur/master.html" class="xref page">Referenzarchitektur</a>) stellen IT-Systeme Services über die technische Komponente „Service“ zur Verfügung.
+Das vorliegende Dokument beschreibt die Aufgaben und die Architektur dieser technischen Komponente.
+Zu beachten ist, dass die Komponente „Service“ die Services eines IT-Systems lediglich innerhalb der Systemlandschaft verfügbar macht.
+Um diese Services auch externen Anwendungen zur Verfügung zu stellen, müssen die Services durch ein sogenanntes Service-Gateway exportiert werden.</p>
+</div>
+<div class="paragraph">
+<p>Das Dokument gliedert sich wie folgt:
+Im Abschnitt <a href="#ueberblick">Überblick</a> wird kurz beschrieben, wie sich Services als eigene Komponente “Service“ in ein IT-System integrieren.
+Im Abschnitt <a href="#servicelogik">Servicelogik</a> werden dann  Aufgaben und Aufbau der Servicelogik beschrieben.
+Die restlichen Abschnitte widmen sich fortgeschrittenen Aspekten wie <a href="#transaktionssteuerung">Transaktionssteuerung</a>, <a href="#versionierung">Versionierung</a> und <a href="#verfuegbarkeit">Verfügbarkeit</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ueberblick"><a class="anchor" href="#ueberblick"></a>2. Überblick</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Services gliedern sich über eine technische Komponente „Service“ in die T-Architektur von IT-Systemen ein (siehe <a href="#image-IFRefArcITSysServ">Abbildung 1</a>).</p>
+</div>
+<div id="image-IFRefArcITSysServ" class="imageblock text-center">
+<div class="content">
+<img src="../_images/detailkonzept-service/IFRefArcITSysServ.png" alt="IFRefArcITSysServ">
+</div>
+<div class="title">Abbildung 1. Referenzarchitektur eines IT-Systems</div>
+</div>
+<div class="paragraph">
+<p>Diese technische Komponente besteht aus zwei Teilen: dem Service-Framework und der Servicelogik.</p>
+</div>
+<div class="paragraph">
+<p>Das <strong>Service-Framework</strong> bezeichnet die konkrete Technologie, mit der die Services des Anwendungskerns zur Verfügung gestellt werden.</p>
+</div>
+<div class="paragraph">
+<p>Die <strong>Servicelogik</strong> enthält Daten und Funktionalität, die für die Bereitstellung des Services relevant sind.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="servicelogik"><a class="anchor" href="#servicelogik"></a>3. Servicelogik</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die Servicelogik gliedert sich, wie der Anwendungskern, in <strong>Fachkomponenten</strong>.
+Die Fachkomponenten setzen im wesentlichen <strong>Service-Schnittstellen</strong> um.
+Sie decken vier wesentliche Aufgaben ab.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Transformation</dt>
+<dd>
+<p>Bei einem Service-Aufruf müssen die Transportobjekte der Service-Schnittstelle in passende Objekte des Anwendungskerns umgewandelt werden.
+Außerdem muss das Ergebnis des Anwendungskerns wieder in ein Transportobjekt der Service-Schnittstelle umgewandelt werden.
+Transportobjekte sind Klassen, deren einziger Zweck es ist, Daten zu transportieren.
+Sie definieren lediglich eine Datenstruktur.</p>
+</dd>
+<dt class="hdlist1">Fehlerbehandlung</dt>
+<dd>
+<p>Ausnahme, die bei der Verarbeitung eines Service-Aufrufs oder im Anwendungskern  auftreten, werden in eine Ausnahme der Service-Schnittstelle umgewandelt.</p>
+</dd>
+<dt class="hdlist1">Autorisierung</dt>
+<dd>
+<p>Für einen Service-Aufruf muss eine Anwendung überprüfen, ob der Aufrufer autorisiert ist die Service-Operation auszuführen.</p>
+</dd>
+<dt class="hdlist1">Logging</dt>
+<dd>
+<p>Die Komponente muss die Korrelations-ID in den Logging-Kontext einfügen.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+Im Normalfall ist der Funktionsumfang der Fachkomponenten viel geringer als der Funktionsumfang der Entsprechungen im Anwendungskern.
+Dies liegt darin begründet, dass die Servicelogik die Funktionalität des Anwendungskerns nutzt, um den Service bereitzustellen, und selbst keinerlei Geschäftslogik beinhaltet.
+Die Schnittstelle zwischen Fachkomponenten im Service und Anwendungskern ist daher eine interne Schnittstelle.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Die Service-Schnittstellen bestehen aus einer <strong>Service-Fassade</strong> und einer <strong>Exception-Fassade</strong>.</p>
+</div>
+<div class="sect2">
+<h3 id="_service_fassade"><a class="anchor" href="#_service_fassade"></a>3.1. Service-Fassade</h3>
+<div class="paragraph">
+<p>Die Service-Fassade implementiert die Service-Operationen als Methoden.
+Ihre Hauptaufgabe ist die Transformation der Service-Aufrufe in interne Aufrufe des Anwendungskerns sowie die Transformation dessen Antworten in Antworten der Service-Schnittstelle.
+Dabei transformiert sie die Geschäftsobjekte des Anwendungskerns in Transportobjekte der Service-Schnittstelle und umgekehrt.
+Hierzu wird in der Regel ein Bean Mapper verwendet.
+In Einzelfällen können Teile der Transformation auch programmiert werden, sofern der Nutzen daraus den Aufwand nicht übersteigt.</p>
+</div>
+<div class="paragraph">
+<p>Die Service-Fassade übernimmt auch die Autorisierung des Aufrufs.
+Dazu nutzt sie die <a href="../../isy-sicherheit/nutzungsvorgaben/master.html#autorisierung" class="xref page">Möglichkeiten des Bausteins Sicherheit</a>.
+Voraussetzung für die Autorisierung ist die Auswertung des mitgelieferten Aufrufkontextes über die Annotation <code>@StelltAufrufKontextBereit</code> an der Methode oder an der Service-Fassade selbst.
+Anschließend wird über die Annotation <code>@Gesichert</code> die Berechtigung zum Zugriff auf die Methode anhand der Rechte des Aufrufers geprüft.
+Alternativ kann die Annotation <code>@Gesichert</code> auch an der Service-Fassade selbst verwendet werden, wenn alle Methoden die gleichen Rechte erfordern.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exception_fassade"><a class="anchor" href="#_exception_fassade"></a>3.2. Exception-Fassade</h3>
+<div class="paragraph">
+<p>Die Exception-Fassade ist verantwortlich für die Umwandlung der durch den Anwendungskern oder die Service-Fassade geworfenen Exceptions in Exceptions der Service-Schnittstelle.
+Dies kann auf mehreren Wegen geschehen.
+Je nach gewählter Schnittstellentechnologie werden z. B. Annotationen oder eigens dafür geschriebene Klassen oder Methoden verwendet.</p>
+</div>
+<div class="paragraph">
+<p>Bevor die Exception-Fassade aufgerufen wird, muss die Korrelations-ID aus dem Aufrufkontext im Logging-Kontext registriert sein.
+Dies geschieht durch die Annotation <code>@StelltLoggingKontextBereit</code> an der Methode oder an der Service-Fassade selbst.
+Dabei gilt es zu beachten, dass die Annotation standardmäßig so konfiguriert ist, dass sie vor den Annotationen ohne Angabe einer Priorität ausgeführt wird, sodass diese immer Zugriff auf die Korrelations-ID haben.
+Diese Reihenfolge wird durch Einfügen des Orders für den Advisor <code>stelltLoggingKontextBereitAdvisor</code> in der Autokonfiguration <code>IsyServiceApiCoreAutoConfiguration</code> erreicht.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Die weiteren Inhalte zum Aufbau, zur Realisierung und zur Nutzung von Service-Schnittstellen wurden wegen ihrer Abhängigkeit zur konkreten Schnittstellentechnologie HTTP Invoker in den Baustein HTTP Invoker verschoben.
+Die Inhalte finden sich in den Dokumenten  <a href="../../isy-serviceapi-core/konzept/master.html#einleitung" class="xref page">Konzept HTTP-Invoker</a> sowie <a href="../../isy-serviceapi-core/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben HTTP-Invoker</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="transaktionssteuerung"><a class="anchor" href="#transaktionssteuerung"></a>4. Transaktionssteuerung</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In der Regel geschieht die Transaktionssteuerung im Anwendungskern.
+Gibt es allerdings Anforderungen, aus denen heraus die Service-Fassade eine Transaktion über mehrere Aufrufe des Anwendungskerns hinweg bilden muss, so muss diese Transaktion über die Service-Fassade gesteuert werden.
+Die Aufgabe fällt der Service-Fassade zu, weil es wichtig ist, dass die Fehlerbehandlung auf jeden Fall die Transaktion umschließt.
+Nur so ist gewährleistet, dass auch Fehler, die beim Commit entstehen, von der Fehlerbehandlung erfasst werden.</p>
+</div>
+<div class="paragraph">
+<p>Die Transaktionssteuerung wird an der jeweiligen Service-Methode angesetzt.
+Für das obige Beispiel verdeutlicht dies <a href="#listing-service-fassade-tx">Listing 1</a>.</p>
+</div>
+<div id="listing-service-fassade-tx" class="listingblock">
+<div class="title">Listing 1. Transaktionssteuerung in der Service-Fassade</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class BeispielServiceFassade {
+    ...
+    @StelltAufrufKontextBereit
+    @StelltLoggingKontextBereit
+    @Gesichert(Rechte.RECHT_ZUGRIFFBEISPIEL)
+    @Transactional(rollbackFor = Throwable.class, propagation = Propagation.REQUIRED)
+    public BeispielHolenAntwortTo holeBeispiel(
+        AufrufKontextTo kontext, BeispielHolenAnfrageTo anfrage)
+        throws BeispielException {
+        ...
+    }
+    ...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Eine Sonderstellung nehmen Services ein, die im Fehlerfall keinen Fehler zurückgeben, sondern die Fehler in der Antwortnachricht übermitteln.
+Der AOP-Transaktionsmanager wird niemals ein Rollback durchführen, da alle Exceptions abgefangen werden, auf die er reagieren könnte.
+Um auch in diesem Fall ein Rollback der Transaktion zu erzwingen, ist folgender Aufruf durchzuführen:</p>
+</div>
+<div id="listing-service-fassade-tx-rollback-only" class="listingblock">
+<div class="title">Listing 2. Rollback von Transaktionen im Fehlerfall ohne Exceptions</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="versionierung"><a class="anchor" href="#versionierung"></a>5. Versionierung</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die Notwendigkeit, Services in mehreren Versionen anbieten zu können, ist bedingt durch die Vielzahl an Service-Nutzern, die bei Änderung an einem Service nicht alle zeitgleich auf die neue Version eines Service umschalten können.
+Daher ist es notwendig, dass in einem – möglichst klein zu haltenden – Übergangszeitraum mehrere Versionen eines Service parallel betrieben werden können.</p>
+</div>
+<div class="paragraph">
+<p>Die Versionierung wird auf der Ebene von Services, nicht Service-Operationen ausgeführt, da diese Ebene von ihrer Granularität zu den üblichen fachlichen Änderungen passt.</p>
+</div>
+<div class="paragraph">
+<p>Es kann vorkommen, dass in <em>einem</em> Systemrelease neue Versionen von <em>mehreren</em> Services ausgeliefert werden.</p>
+</div>
+<div class="sect2">
+<h3 id="architektur"><a class="anchor" href="#architektur"></a>5.1. Architektur</h3>
+<div class="paragraph">
+<p>IT-Systeme bieten pro Service-Version eine eigene Service-Schnittstelle an.
+Die Services verwenden alle denselben <a href="../../../../glossary/latest/glossary/master.html#glossar-Anwendungskern" class="xref page">Anwendungskerns</a>.
+Die für die Versionierung notwendigen Transformationen sind Teil der jeweiligen Service-Schnittstelle (z.B. das Einfügen eines Standardwerts für neu hinzugefügte Attribute).
+In komplexen Fällen kann es auch notwendig sein, den Anwendungskern zu erweitern und die Versionierung dort zu behandeln.
+Die Entscheidung dafür ist im Systementwurf zu dokumentieren.</p>
+</div>
+<div class="paragraph">
+<p>Externe Services werden durch Service-Gateways bereitgestellt.
+Die Versionierung eines Services muss also auch auf Ebene des Service-Gateways durchgeführt werden.
+Ein Service-Gateway ist ein rein technischer Protokoll-Wandler, der Web-Services in interne Schnittstellen konvertiert.
+Im Service-Gateway erfolgt daher immer nur ein einfaches Mapping auf die entsprechenden Service-Schnittstellen der angebundenen IT-Systeme.
+Der Ausgleich der Versionsunterschiede erfolgt ausschließlich im IT-System und nicht im Service-Gateway.
+Es ist möglich, pro Service-Version ein eigenes Service-Gateway zu erstellen (siehe <a href="#image-archversServ">Abbildung 2</a>).</p>
+</div>
+<div id="image-archversServ" class="imageblock text-center">
+<div class="content">
+<img src="../_images/detailkonzept-service/archversServ.png" alt="archversServ" width="60%">
+</div>
+<div class="title">Abbildung 2. Architektur versionierter Services</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="einfachster-fall-kompatible-erweiterung-eines-services"><a class="anchor" href="#einfachster-fall-kompatible-erweiterung-eines-services"></a>5.2. Einfacher Fall: Kompatible Erweiterung eines Services</h3>
+<div class="paragraph">
+<p>Ein IT-System stellt einen Service bereit, mit dem Personendaten gemeldet werden können.
+Parameter dieser Meldung sind Vor- und Nachname sowie das Geburtsdatum.
+Dazu gibt es einen Meldung-Service in der Version 1.0. Dieser wird in der Service-Schicht des IT-Systems implementiert.
+Ab einem Stichtag soll zusätzlich noch das Geschlecht gemeldet werden.
+Im bisherigen Datenbestand wird dieses neue Attribut auf den Wert „unbekannt“ gesetzt.
+Der bestehende Service wird um dieses Attribut erweitert und erhält die Versionsnummer 1.1. Anwendungskern und Datenzugriffsschicht müssen ebenfalls erweitert werden.
+Aus Gründen der Rückwärtskompatibilität soll aber weiterhin die Version 1.0 des Service angeboten werden.
+Dazu wird ein neuer Service innerhalb der Service-Schicht implementiert, der die Meldung entgegennimmt, das fehlende Attribut mit dem Wert „unbekannt“ ergänzt und dann den Anwendungskern aufruft.</p>
+</div>
+<div class="paragraph">
+<p>Werden die beiden Services durch ein Service-Gateway nach außen verfügbar gemacht, existieren dort zwei parallele Mappings auf die jeweiligen Services des IT-Systems.
+Innerhalb des Service Gateways existiert keine Geschäftslogik, d.h. die Abbildung von Version 1.0 auf 1.1 findet erst im IT-System statt.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="komplexerer-fall-inkompatible-veraenderung-eines-services"><a class="anchor" href="#komplexerer-fall-inkompatible-veraenderung-eines-services"></a>5.3. Komplexerer Fall: Inkompatible Veränderung eines Services</h3>
+<div class="paragraph">
+<p>In einem komplexeren Fall kann es passieren, dass die Service-Schnittstelle einer Anwendung komplett umgestaltet wird, sodass die Aufrufe nicht mehr einfach aufeinander abgebildet werden können.
+Wird in so einem Fall ein neuer Service eingeführt, während der alte Service noch verfügbar bleiben muss, müssen die inkompatiblen Verarbeitungslogiken im Anwendungskern parallel erhalten bleiben.
+Auch hier enthält das Service-Gateway keine Geschäftslogik.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_umsetzung"><a class="anchor" href="#_umsetzung"></a>5.4. Umsetzung</h3>
+<div class="paragraph">
+<p>Die Java-Klassen und -Interfaces eines Services existieren in allen Versionen der Service-Schnittstelle und unterscheiden sich inhaltlich
+durch die in der neuen Version durchgeführten Änderungen.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+Für die Versionierung von Schnittstellen gelten gesonderte Vorgaben, die in  <a href="../../werkzeuge/versionierungskontrolle/master.html" class="xref page">IsyFact Versionierung</a> definiert sind.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Zur Veröffentlichung von API-kompatiblen Änderungen wird im Maven <code>pom.xml</code> eine einstellige Versionsnummer (Minor) gesetzt.
+Kompatible Änderungen sind beispielsweise Bugfixes, neue Operationen in der Schnittstelle oder neue, optionale Attribute im Datenmodell.</p>
+</div>
+<div id="listing-versioning-pom" class="listingblock">
+<div class="title">Listing 3. Realisierung der Versionierungsvorgaben für Schnittstellen bei HTTP Invoker</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependencies&gt;
+    ...
+    &lt;dependency&gt;
+        &lt;groupId&gt;${Organisation.Domäne.Anwendungsname}&lt;/groupId&gt;
+        &lt;artifactId&gt;${Anwendungsname}-${Schnittstellentechnologie}-sst-${Servicename}-v${Major-Version}&lt;/artifactId&gt;
+        &lt;version&gt;${Minor-Version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    ...
+&lt;/dependencies&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Bei inkompatiblen Änderungen der Schnittstelle wird die zweistellige Versionsnummer angepasst (Major und Minor); diese wird sowohl in der Artefakt-ID als auch in den Paketnamen der Schnittstelle verwendet.
+Inkompatible Änderungen der Schnittstelle sind z. B. das Entfernen von Attributen oder Operationen oder das Hinzufügen von Pflichtfeldern.</p>
+</div>
+<div class="paragraph">
+<p>Bei der Implementierung ist zu beachten, dass die Versionsnummer aus dem Package-Namen auch in die Implementierung übernommen wird.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="grenzen"><a class="anchor" href="#grenzen"></a>5.5. Grenzen</h3>
+<div class="paragraph">
+<p>Eine Versionierung ist nur dann sinnvoll, wenn kleine Änderungen an der Schnittstelle zwischen den Versionen auftreten.
+Für den Fall, dass sich die Schnittstelle sowohl syntaktisch als auch semantisch grundlegend ändert, sollte anstatt einer neuen Version besser eine eigenständige, neue Schnittstelle entstehen.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="verfuegbarkeit"><a class="anchor" href="#verfuegbarkeit"></a>6. Verfügbarkeit</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die IsyFact berücksichtigt die folgenden Anforderungen an die Verfügbarkeit von Services in Systemlandschaften.</p>
+</div>
+<div class="paragraph">
+<p><strong>Hohe Verfügbarkeit:</strong> Die IT-Systeme der Systemlandschaft müssen eine hohe Verfügbarkeit aufweisen.
+Die Berechnung der Verfügbarkeit einer Anwendung ist komplex.
+In die Berechnung fließen unter anderem betriebliche Aspekte wie Hardwareverfügbarkeit ein, während Wartungsfenster herausgerechnet werden.
+Weiter könnte man Verfügbarkeit auf der Ebene von angebotenen Services und nicht von IT-Systemen betrachten.
+Von der Seite der Software ist zu beachten, dass sich in einer serviceorientierten Systemlandschaft die Ausfallwahrscheinlichkeiten multiplizieren, wenn Systeme einander aufrufen.</p>
+</div>
+<div class="paragraph">
+<p><strong>Schnelles Antwortzeitverhalten im Fehlerfall:</strong> Die Nichtverfügbarkeit von Services ist ein Ausnahmefall, auf den angemessen reagiert werden muss.
+Sollte ein Service nicht verfügbar sein, ist es wichtig, dass die aufrufende Anwendung zügig eine Fehlermeldung erhält.
+Speziell bei Online-Anwendungen ist der schnelle Erhalt einer Fehlermeldung notwendig.
+Der Nutzer soll auch im Fehlerfall eine gewohnt schnelle Antwort vom System erhalten.
+Die genaue Definition des Zeitrahmens, in dem die Fehlermeldung über die Nichtverfügbarkeit beim Aufrufer eintreffen muss, ist anwendungsspezifisch.
+Die Definition ist dementsprechend durch die jeweiligen Aufrufer vorzunehmen.</p>
+</div>
+<div class="sect2">
+<h3 id="_beispielszenario"><a class="anchor" href="#_beispielszenario"></a>6.1. Beispielszenario</h3>
+<div class="paragraph">
+<p>Für das Szenario gehen wir im Folgenden davon aus, dass ein IT-System eine Gesamtverfügbarkeit von 98 % aufweisen soll.
+Hierbei ist zu beachten, dass IT-Systeme in der Regel andere IT-Systeme und Querschnittsanwendungen aufrufen, um Anfragen zu beantworten.
+Die Gesamtverfügbarkeit sinkt dadurch ab, da zur erfolgreichen Bearbeitung einer Anfrage alle Systeme zeitgleich verfügbar sein müssen.
+Im Szenario wird für alle Systeme ein Richtwert für die Verfügbarkeit von 99,7 % angenommen.
+<a href="#table-GMTMT">Tabelle 1</a> zeigt eine Beispielrechnung (die Gesamtverfügbarkeit ergibt sich aus dem Produkt der Einzelverfügbarkeiten).
+Durch eine Verfügbarkeit von 99,7 % pro System kann im Beispiel also eine Gesamtverfügbarkeit von über 98 % erreicht werden.</p>
+</div>
+<div class="paragraph">
+<p>Eine Berechnung der Gesamtverfügbarkeit nach dem Schema von <a href="#table-GMTMT">Tabelle 1</a> muss für jedes IT-System einzeln durchgeführt werden.
+Dabei müssen die berechneten oder gemessenen Verfügbarkeiten aller IT-Systeme zugrunde gelegt werden, die das IT-System aufruft.</p>
+</div>
+<table id="table-GMTMT" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Beispielrechnung der Verfügbarkeit</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">System</th>
+<th class="tableblock halign-left valign-top">Verfügbarkeit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IT-System</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">99,7 %</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aufgerufenes IT-System 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">99,7 %</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aufgerufenes IT-System 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">99,7 %</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aufgerufene Querschnittsanwendung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">99,7 %</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Service-Gateway (Infrastruktur)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">99,7 %</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Datenbank (Infrastruktur)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">99,7 %</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Gesamtverfügbarkeit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(99,7 %)<sup>6</sup> = <strong>98,21 %</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="ursachen-fuer-nichtverfuegbarkeit"><a class="anchor" href="#ursachen-fuer-nichtverfuegbarkeit"></a>6.2. Ursachen für Nichtverfügbarkeit</h3>
+<div class="paragraph">
+<p>Die möglichen Ursachen für Nichtverfügbarkeit sind unter anderem:</p>
+</div>
+<div id="ausfall-deployment" class="paragraph">
+<p><strong>Deployment einer Anwendung:</strong> Bei einem Re-Deployment einer Anwendung kommt es zu einer geplanten Auszeit.</p>
+</div>
+<div class="paragraph">
+<p><strong>Überlastung während Lastspitzen:</strong> Im Tagesverlauf variiert die Last, die ein System verarbeiten muss.
+Manche Systeme antworten bei Lastspitzen zu langsam.</p>
+</div>
+<div id="ausfall-von-hw-oder-sw" class="paragraph">
+<p><strong>Ausfall von Hard- oder Software:</strong> Auf einem Knoten eines Anwendungsclusters ist eine Störung durch einen Hardware- oder Softwareausfall aufgetreten.
+Der nicht funktionierende Knoten ist dadurch temporär nicht verfügbar, wodurch die verbleibenden Knoten die Last des ausgefallenen Knotens mitverarbeiten müssen.</p>
+</div>
+<div class="paragraph">
+<p><strong>Umschaltzeit bei Hard- oder Softwareausfall:</strong> Bei Ausfall von Hard- oder Software sorgt ein Loadbalancer dafür, dass alle Anfragen nur an die noch funktionierenden Knoten weitergeleitet werden.
+In dem kurzen Zeitraum, bis der Loadbalancer einen Server-Knoten als ausgefallen markiert („Umschaltzeit“), kommt es jedoch zur Nichtverfügbarkeit von Services.
+In diesem Zeitraum werden Anfragen nicht beantwortet die noch an den ausgefallenen Knoten geleitet werden.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Die Regeln, nach denen der Loadbalancer entscheidet, wann ein Server-Knoten nicht mehr verfügbar ist, können üblicherweise konfiguriert werden.
+Beispielsweise kann ein Loadbalancer alle paar Sekunden per Script („Health-Check“) überprüfen, ob ein Server-Knoten noch verfügbar ist.
+Erst nach einer festgelegten Anzahl fehlgeschlagener fachlicher Anfragen und negativem Health-Check leitet dann der Loadbalancer keine Anfragen mehr an diesen Knoten.
+Unabhängig von der Konfiguration kann es trotz Loadbalancer und Anwendungscluster zu wenigen nicht beantworteten Anfragen und somit
+zu einer Nichtverfügbarkeit kommen.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Batchläufe:</strong> Wenn lang laufende Batches in Geschäftsanwendungen durchgeführt werden, dürfen in dieser Zeit keine Meldungen gemacht werden.
+So werden Dateninkonsistenzen vermieden.
+Meldungsaufrufe sind in dieser Zeit nicht verfügbar und werden von der Geschäftsanwendung nicht beantwortet.</p>
+</div>
+<div id="retries-loadbalancer" class="paragraph">
+<p><strong>Retries des Loadbalancers:</strong> Tritt ein Ausfall von Hard- oder Software auf (siehe <em>Ausfall von Hard- oder Software</em> oben), bekommt der Loadbalancer beim Weiterleiten einer Anfrage an einen ausgefallenen Knoten ein Timeout.
+Loadbalancer können so konfiguriert werden, dass sie in diesem Fall die gleiche Anfrage an einen noch funktionierenden Knoten weiterleiten und nicht sofort eine Fehlermeldung an den Aufrufer zurückgeben.
+Für den Aufrufer hat der Service dadurch eine längere Antwortzeit.
+Der Aufrufer hat keine Möglichkeit dieses Timeout/Retry-Verhalten des Loadbalancers zu beeinflussen und auf seine Bedürfnisse anzupassen.
+Die lange Antwortzeit kann aufseiten des Aufrufers leicht zu einem Timeout führen.</p>
+</div>
+<div class="paragraph">
+<p><strong>Verschlimmerung von Nichtverfügbarkeiten:</strong> Die aufrufende Anwendung reagiert nicht angemessen auf eine Nichtverfügbarkeit eines Service.
+Beispiele:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Der Client versucht Retries, obwohl der Service-Aufruf aus fachlicher Sicht entfallen könnte (optionaler Aufruf).</p>
+</li>
+<li>
+<p>Die fachliche Verarbeitung wird nicht rechtzeitig abgebrochen, obwohl ein verpflichtender Service-Aufruf bereits fehlgeschlagen ist.</p>
+</li>
+<li>
+<p>Die Bearbeitung der Anfrage dauert bekanntermaßen beim Service-Anbieter sehr lange.
+Der Aufrufer hat einen sehr knappen Timeout gesetzt und schickt Aufrufwiederholungen.
+Dies verschlimmert die Antwortzeiten der Service-Aufrufe und führt eventuell zu Duplikaten beim Service-Anbieter.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Eine weitere bekannte Ursache für Nichtverfügbarkeit ist die Umgebungskonfiguration, Firewall-Verbindungen nach einer definierten Zeit automatisch zu schließen.
+Zustandsbehaftete Verbindungen wie sie bei Datenbank-Clients eingesetzt werden, sind von dieser Restriktion betroffen.
+Diese Clients müssen vorsehen, dass Sie eine von der Firewall geschlossene Verbindung erkennen und wieder neu aufbauen.
+Dieses Thema wird im entsprechenden Nutzungskonzept <a href="../detailkonzept-komponente-datenzugriff/master.html" class="xref page">Detailkonzept Komponente Datenzugriff</a> behandelt.</p>
+</div>
+<div class="paragraph">
+<p>Die IsyFact setzt als Transportprotokoll für Service-Kommunikation durchgängig HTTP ein.
+HTTP ist ein zustandsloses Protokoll und baut bei jeder Anfrage eine neue Verbindung zwischen Client und Server auf.
+HTTP 1.1 bietet einen Mechanismus an, mehrere Anfragen über eine TCP-Verbindung zu transportieren.
+Wenn eine Schnittstellentechnologie diesen Mechanismus nutzt, müssen die TCP-Verbindungen vor ihrer Verwendung validiert werden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="massnahmen"><a class="anchor" href="#massnahmen"></a>6.3. Maßnahmen</h3>
+<div class="paragraph">
+<p>Folgende Maßnahmen können ergriffen werden, um die Anforderungen an die Verfügbarkeit zu gewährleisten.</p>
+</div>
+<div class="sect3">
+<h4 id="_anwendungscluster_mit_loadbalancer"><a class="anchor" href="#_anwendungscluster_mit_loadbalancer"></a>6.3.1. Anwendungscluster mit Loadbalancer</h4>
+<div class="paragraph">
+<p>Die TI-Architektur der IsyFact setzt die hohen Verfügbarkeitsanforderungen durch Clustering der Applikations- und Datenbankserver um.
+Anwendungen werden redundant auf mehr als einem Server installiert.
+Kommt es zu einem <a href="#ausfall-von-hw-oder-sw">Hard- oder Softwareausfall</a> auf einem Server-Knoten, so werden alle Anfragen von einem vorgeschalteten Loadbalancer auf einen anderen Server-Knoten umgeleitet.
+Durch die Redundanz wird die Verfügbarkeit von Services bei auftretenden Hard- oder Softwareausfällen erhöht.
+Trotzdem kann es auch hier noch zu Nichtverfügbarkeit kommen.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_knotenweises_deployment"><a class="anchor" href="#_knotenweises_deployment"></a>6.3.2. Knotenweises Deployment</h4>
+<div class="paragraph">
+<p>Diese Maßnahme hilft bei Nichtverfügbarkeit aufgrund von <a href="#ausfall-deployment">geplanten Wartungsarbeiten</a>.
+Im Clusterbetrieb besteht die Möglichkeit, diese Knoten für Knoten auszuführen.
+Bevor das Deployment auf einem Knoten ausgeführt wird, wird dem Loadbalancer mitgeteilt, dass der Knoten nicht mehr verfügbar ist.
+Während des Deployments des Knotens verarbeiten die restlichen Knoten alle ankommenden Anfragen.
+Nach Abschluss des Deployments des Knotens wird dem Loadbalancer mitgeteilt, dass der Knoten wieder zur Verfügung steht.
+Dann kann das Deployment des nächsten Knotens nach dem gleichen Schema erfolgen.
+Dadurch können Services im Zeitraum von Wartungsarbeiten voll verfügbar gehalten werden.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_time_to_live"><a class="anchor" href="#_time_to_live"></a>6.3.3. Time-To-Live</h4>
+<div class="paragraph">
+<p>Ein Service-Aufruf ist nur für eine bestimmte Zeit gültig.
+Diese Zeitspanne wird als Time-To-Live (TTL) bezeichnet.
+Der Aufrufer definiert die TTL und legt so fest, wie lange er bei einem Aufruf auf eine Antwort wartet.
+Hierdurch wird eine schnelle Antwortzeit gewährleistet.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_aufrufwiederholung_retry"><a class="anchor" href="#_aufrufwiederholung_retry"></a>6.3.4. Aufrufwiederholung (Retry)</h4>
+<div class="paragraph">
+<p>Von <a href="#retries-loadbalancer">Loadbalancern ausgeführte Retries</a> können zu einer Erhöhung der Antwortzeit führen.
+Loadbalancer innerhalb der Plattform sind deshalb so zu konfigurieren, dass fehlgeschlagene Anfragen nicht an andere Knoten weitergeleitet werden.
+Eine Wiederholung von Aufrufen ist ausschließlich vom Aufrufer auszuführen.
+So kann der Aufrufer je nach Fachlichkeit entscheiden, bei welchen Anfragen Wiederholungen sinnvoll sind.</p>
+</div>
+<div class="paragraph">
+<p>Grundsätzlich sind Retries nur mit größter Vorsicht anzuwenden!
+Hierfür gibt es mehrere Gründe:</p>
+</div>
+<div class="paragraph">
+<p>Ruft ein Client einen Service auf und erhält einen technischen Fehler, so kann der Client anhand des technischen Fehlers in der Regel nicht einwandfrei erkennen, ob seine Anfrage nicht doch auf dem Server erfolgreich verarbeitet wurde.
+Beispielsweise kann durch einen Netzwerkausfall zwar die Netzwerkverbindung zum Server abgebrochen sein, das hindert den Server aber nicht daran, eine bereits in Verarbeitung befindliche Service-Anfrage weiterzuverarbeiten.
+In einem solchen Fall würde ein automatischer Retry dazu führen, dass ein und dieselbe Service-Anfrage zweimal ausgeführt würde.
+Dies kann bei nicht-idempotenten Service-Operationen fatale Auswirkungen haben (z. B. Löschen von falschen Daten).</p>
+</div>
+<div class="paragraph">
+<p>Eine automatische Aufrufwiederholung kann im Falle einer echten Nichtverfügbarkeit zu einer erhöhten Netzwerklast führen und so die Nichtverfügbarkeit auch anderer Anwendungen in der Anwendungslandschaft erhöhen.
+Die Situation wird daher durch die Aufrufwiederholung deutlich verschlechtert.</p>
+</div>
+<div class="paragraph">
+<p>Insbesondere bei einem Timeout eines TTL ist jedoch ein Retry mit großer Vorsicht zu genießen, da nicht klar ist, ob die Service-Anfrage nicht doch durch den Server bearbeitet wird.
+In einem solchen Fall führt eine Aufrufwiederholung zu einer erhöhten Last auf dem Server und kann im schlechtesten Fall zu einer echten Nichtverfügbarkeit des Services bzw. des kompletten Servers führen.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>In Anbetracht der potenziellen Probleme der Aufrufwiederholung und der Tatsache, dass eine Aufrufwiederholung nur für idempotente Service-Operationen überhaupt zulässig ist, sollte von einer automatischen Aufrufwiederholung als Maßnahme zur Erhöhung der Verfügbarkeit in der Regel abgesehen werden.</p>
+</div>
+<div class="paragraph">
+<p>Ausgenommen davon sind Aufrufe, bei denen nur Daten gelesen werden, wie z. B. Suchen im Suchverfahren oder Abfragen von Verzeichnissen wie Schlüsselverzeichnis, Benutzerverzeichnis oder Behördenverzeichnis.</p>
+</div>
+<div class="paragraph">
+<p>Hierfür soll grundsätzlich eine Aufrufwiederholung durchgeführt werden.
+Diese ist sinnvoll über die folgenden Parameter konfigurierbar:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pause zwischen den Retries,</p>
+</li>
+<li>
+<p>Maximale Anzahl von Retries,</p>
+</li>
+<li>
+<p>Timeout für Anfragen.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Die Parameter sind Bestandteil der betrieblichen Konfiguration (s.  <a href="../../isy-konfiguration/konzept/master.html#einleitung" class="xref page">Konzept Konfiguration</a>).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_deaktivierung_von_services"><a class="anchor" href="#_deaktivierung_von_services"></a>6.3.5. Deaktivierung von Services</h4>
+<div class="paragraph">
+<p>Aufgrund von Wartungsaktivitäten oder Batches (z. B. einer Datenmigration) in einer Fachanwendung kann es vorkommen, dass der Meldungsservice einer Fachanwendung vorübergehend deaktiviert wird.
+Andere Services wie z. B. eine Auskunft können während dieser Zeit regulär ausgeführt werden.
+Während der Meldungsservice deaktiviert ist, wird dem Aufrufer eine entsprechende Fehlermeldung zurückgesendet.
+Da die Anforderung besteht, auch andere Services vorübergehend deaktivieren zu können, werden generell alle Services deaktivierbar gemacht.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<div class="divFooter"></div>
+
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+<script src="../../../../_/js/isyfact.js"></script>
+  </body>
+</html>

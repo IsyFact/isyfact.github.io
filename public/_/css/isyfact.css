@@ -1,0 +1,30 @@
+
+@media print {
+    div.divFooter {
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+    }
+}
+
+h1 { font-size: 2.125em; }
+h2 { font-size: 1.6875em; }
+h3 { font-size: 1.375em; }
+h4 { font-size: 1.125em; }
+h5 { font-size: 1.125em; }
+h6 { font-size: 1em; }
+
+@media only screen and (min-width: 768px) {
+    h1 { font-size: 2.75em; }
+    h2 { font-size: 2.3125em; }
+    h3 { font-size: 1.6875em; }
+    h4 { font-size: 1.4375em; }
+}
+
+/* Underline beneath titles */
+h1, h2, h3, h4, h5, h6 { border-bottom: 1px solid #dddddd; }
+
+div.listingblock pre {
+    white-space: pre-wrap;
+    font-size: .75rem;
+}

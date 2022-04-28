@@ -1,0 +1,2759 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>IsyFact Systemhandbuch &lt;System&gt; :: IsyFact Dokumentation</title>
+    <link rel="canonical" href="https://github.com/isyfact/isyfact-standards-doku/latest/methodik/vorlage-systemhandbuch/master.html">
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../_/css/isyfact.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://github.com/isyfact">IsyFact Dokumentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5-SNAPSHOT">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../einstieg/vorstellung.html">IsyFact Standards</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Einstieg</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../einstieg/vorstellung.html">Vorstellung der IsyFact</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#isyfact-standards.adoc">isyfact-standards.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#isyfact-erweiterungen.adoc">isyfact-erweiterungen.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/rahmenbedingungen.html">Rahmenbedingungen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/erste-schritte.html">Erste Schritte</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/tutorial/master.html">Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/whitepaper/master.html">Whitepaper</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Blaupausen</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../blaupausen/referenzarchitektur/master.html">Referenzarchitektur</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../blaupausen/referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/master.html">Datenzugriff</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-service/master.html">Service</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-web-gui/master.html">Web GUI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-batch/master.html">Batch</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Vorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/vorgaben-architektur/master.html">Architektur</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/vorgaben-it-sicherheit/master.html">IT-Sicherheit</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Bausteine</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Datum &amp; Zeit</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-datetime/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-datetime/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Fehlerbehandlung</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-exception-core/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-exception-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">HttpInvoker</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-serviceapi-core/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Konfiguration</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-konfiguration/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-konfiguration/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Logging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-logging/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-logging/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Polling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-polling/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-polling/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sicherheit</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sicherheit/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sicherheit/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sonderzeichen</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sonderzeichen/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sonderzeichen/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Task Scheduling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-task/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-task/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Überwachung</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-ueberwachung/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-ueberwachung/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Util</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-util/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Methodik</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../namenskonventionen/master.html">Namenskonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../versionierung/master.html">Versionierung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../diagrammerstellung/diagramsnet.html">diagrams.net</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../vorlagen.html">Vorlagen</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Werkzeuge</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/einrichtung_entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/handbuch_dokumentation/master.html">Dokumentation der IsyFact</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../changelog/changelog.html">Changelog</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">IsyFact Standards</span>
+    <span class="version">2.5-SNAPSHOT</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../glossary/latest/glossary/master.html">Glossar</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../glossary/latest/glossary/master.html">1.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../einstieg/vorstellung.html">IsyFact Standards</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../einstieg/vorstellung.html">2.5-SNAPSHOT</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../einstieg/vorstellung.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../einstieg/vorstellung.html">IsyFact Standards</a></li>
+    <li><a href="master.html">IsyFact Systemhandbuch &lt;System&gt;</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Inhalt" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">IsyFact Systemhandbuch &lt;System&gt;</h1>
+<div id="preamble">
+<div class="sectionbody">
+<!-- toc disabled -->
+<div class="paragraph">
+<p>colophon::[factory="IsyFact-Standards", open-source="true"]</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><span class="underline">Allgemeine Hinweise zur Dokumentvorlage</span></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Zweck dieses Dokuments</em></strong></p>
+</div>
+<div class="paragraph">
+<p><em>Die Dokumentvorlage enthält die Gliederung für ein Systemhandbuch.
+Das Systemhandbuch ist die Dokumentation eines IT-System aus betrieblicher Sicht.
+Dazu gehören insbesondere Informationen zur Installation, Konfiguration, Batches, Fehleranalyse und Backup.</em></p>
+</div>
+<div class="paragraph">
+<p><em>Das Dokument wird durch die Entwickler der Software erstellt und gepflegt.
+Es enthält nur solche Informationen, welche die eigentliche Software betreffen, Informationen zu Systemumgebungen, Hardware usw. werden vom Betrieb in separaten Dokumenten gepflegt.</em></p>
+</div>
+<div class="paragraph">
+<p><em>In diesem Dokument werden alle Systeme eines Verfahrens gemeinsam beschrieben.
+Die Abgrenzung, welche Systeme zusammen beschrieben werden, ist ggf. im Einzelfall abzuwägen.
+Typischerweise werden eine Geschäftsanwendung und ein zugehöriges Service Gateway gemeinsam beschrieben, aber z.B. nicht zwei Geschäftsanwendungen die zu unterschiedlichen Fachverfahren gehören, auch wenn Sie sich gegenseitig aufrufen.
+Ein wichtiges Kriterium für die Auswahl der Systeme ist deren Entwicklungszyklus.
+Systeme die immer gemeinsam weiterentwickelt werden, können gut in einem gemeinsamen Dokument beschrieben werden.
+Querschnittsanwendungen werden in eigenen Dokumenten beschrieben.</em></p>
+</div>
+<div class="paragraph">
+<p><em>Die Vorlage enthält bewusst auch Kapitel für Themen, die nicht für alle Systeme benötigt werden.
+Dies soll eine möglichst große Vollständigkeit der damit erstellten Dokumentationen begünstigen.</em></p>
+</div>
+<div class="paragraph">
+<p><em>Bei Bedarf können Kapitel entfernt werden.</em></p>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong><em>Verwendung von Systemtypen-Bezeichnungen</em></strong></p>
+</div>
+<div class="paragraph">
+<p><em>In diesem Dokument werden die Systemtypen und Kürzel der Vorlage-Anwendung der IsyFact durchgängig eingesetzt:</em></p>
+</div>
+<div class="paragraph">
+<p><strong>GA</strong> <em>für Geschäftsanwendung</em></p>
+</div>
+<div class="paragraph">
+<p><strong>REG</strong> <em>für Register und</em></p>
+</div>
+<div class="paragraph">
+<p><strong>SGW</strong> <em>für Service-Gateway.</em></p>
+</div>
+<div class="paragraph">
+<p><em>Dies sind lediglich Beispiele und müssen an die Namenskonventionen angepasst werden, die im jeweiligen Kontext gelten, in der die IsyFact eingesetzt wird.</em></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="einleitung"><a class="anchor" href="#einleitung"></a>1. Einleitung</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Dieses Dokument enthält die Systemdokumentation für XXX.
+Es umfasst die folgenden IT-Systeme:</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>XXX-GA</em></p>
+</li>
+<li>
+<p><em>XXX-SGW</em></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em><strong>Kapitel 2</strong> bietet einen groben Überblick über das Verfahren und liefert Verweise für weitergehende Dokumente.
+Es ist für alle Leser des Dokuments relevant.</em></p>
+</div>
+<div class="paragraph">
+<p><em><strong>Kapitel 3</strong> beschreibt den Bau der zum Verfahren gehörenden Systeme.
+Dieses Kapitel ist im Wesentlichen für die Softwareentwicklungsabteilung relevant.</em></p>
+</div>
+<div class="paragraph">
+<p><em><strong>Kapitel 4</strong> beschreibt die Installation und Konfiguration des Systems.
+Dieses Kapitel ist für den Betrieb und die Softwareentwicklung relevant.</em></p>
+</div>
+<div class="paragraph">
+<p><em><strong>Kapitel 5</strong> liefert Informationen für den Betrieb der Anwendung.
+Dieses Kapitel ist für den Betrieb relevant.</em></p>
+</div>
+<div class="paragraph">
+<p><em><strong>Kapitel 6</strong> liefert Informationen zur Fehleranalyse.
+Dieses Kapitel ist für den Betrieb und die Softwareentwicklung relevant.</em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="systemueberblick"><a class="anchor" href="#systemueberblick"></a>2. Systemüberblick</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In diesem Kapitel wird aus fachlicher und technischer Sicht ein Überblick über die Geschäftsprozesse gegeben, die mit Hilfe des bereitgestellten Verfahrens durchgeführt werden.</p>
+</div>
+<div class="sect2">
+<h3 id="fachliche-verfahrensbeschreibung"><a class="anchor" href="#fachliche-verfahrensbeschreibung"></a>2.1. Fachliche Verfahrensbeschreibung</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><em>Inhalt</em></dt>
+<dd>
+<p><em>Sehr kurze zusammenfassende fachliche Darstellung des Verfahrens.
+Darstellung der Einbettung in die Anwendungslandschaft.
+Verweis auf die aktuelle Version der Systemspezifikation.</em></p>
+</dd>
+<dt class="hdlist1"><em>Quelle</em></dt>
+<dd>
+<p><em>Einbettung des Systems in die Anwendungslandschaft (aus Systementwurf).
+             Extrakt aus Einleitung / Überblick aus Systemspezifikation.</em></p>
+</dd>
+<dt class="hdlist1"><em>Dokumentationsform</em></dt>
+<dd>
+<p><em>Bild der Anwendungslandschaft gemäß Ist- bzw. Referenzarchitektur mit hervorgehobenem neuen System, Freitext.</em></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Details können in der Systemspezifikation [<em>SysSpez(Referenzlink anpassen)</em>] nachgelesen werden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="technische-verfahrensbeschreibung"><a class="anchor" href="#technische-verfahrensbeschreibung"></a>2.2. Technische Verfahrensbeschreibung</h3>
+<div class="paragraph">
+<p>In diesem Kapitel werden IT Produkte, Techniken und Architekturen aufgeführt, die zur Unterstützung der Geschäftsprozesse genutzt werden.</p>
+</div>
+<div class="sect3">
+<h4 id="uebersicht-technischen-verfahrensbeschreibung"><a class="anchor" href="#uebersicht-technischen-verfahrensbeschreibung"></a>2.2.1. Übersicht der technischen Verfahrensbeschreibung</h4>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><em>Inhalt</em></dt>
+<dd>
+<p><em>An dieser Stelle befindet sich eine Übersichtsgrafik, die darstellt, aus welchen Teilsystemen das Gesamtsystem besteht, wie diese sich gegenseitig aufrufen und welche Nachbarsysteme und Querschnittsfunktionen aufgerufen werden.
+Zur besseren Orientierung sind der Farbcode und das Layout der Referenzarchitektur zu beachten.</em></p>
+<div class="paragraph">
+<p><em>Für die Schnittstellen und Services soll ein geeigneter Abstraktionsgrad gewählt werden.
+Zweck dieser Übersicht ist es, einen prinzipiellen Überblick zu geben und nicht jedes Detail zu beschreiben.</em></p>
+</div>
+</dd>
+<dt class="hdlist1"><em>Quelle</em></dt>
+<dd>
+<p><em>Extrakt aus Einleitung / Überblick aus Systementwurf.</em></p>
+</dd>
+<dt class="hdlist1"><em>Dokumentationsform</em></dt>
+<dd>
+<p><em>Freitext, Grafiken, UML-Diagramme, …</em></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="architekturkomponenten-technischen-verfahrens"><a class="anchor" href="#architekturkomponenten-technischen-verfahrens"></a>2.2.2. Architekturkomponenten des technischen Verfahrens</h4>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><em>Inhalt</em></dt>
+<dd>
+<p><em>Deployment-Diagramm des Systems mit grober Erklärung, Auflistung der Produkte der Laufzeitumgebung (Kategorie, Name, Version, Bemerkung).</em></p>
+<div class="paragraph">
+<p><em>Folgende Aspekte sind darzustellen:</em><br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Verteilung der Teilsysteme auf Server, also das Clustering der Teilsysteme.
+Clustering von Nachbarsystemen kann vereinfacht dargestellt werden.</em></p>
+</li>
+<li>
+<p><em>Laufzeitumgebungen (Tomcat)</em></p>
+</li>
+<li>
+<p><em>Genutzte andere Systeme und deren Kommunikationsbeziehungen</em></p>
+</li>
+<li>
+<p><em>Genutzte technische System, z.B. Datenbank</em></p>
+</li>
+<li>
+<p><em>Firewalls bzw. Netzwerkzonen</em></p>
+</li>
+<li>
+<p><em>Kommunikationsprotokolle</em></p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1"><em>Quelle</em></dt>
+<dd>
+<p><em>Systementwurf</em></p>
+</dd>
+<dt class="hdlist1"><em>Dokumentationsform</em></dt>
+<dd>
+<p><em>Deployment-Diagramme, Tabellen, Freitext</em></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="bauen-systems"><a class="anchor" href="#bauen-systems"></a>3. Bauen des Systems</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Das Bauen des Systems erfolgt über einen standardisierten Build-Mechanismus.
+Der Build benötigt die in <a href="#table-build-tools">Tabelle 1</a> aufgelisteten Werkzeuge und Technologien.
+Weitere Abhängigkeiten werden durch die erforderlichen Build-Werkzeuge selbstständig nachgeladen.</p>
+</div>
+<table id="table-build-tools" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Erforderliche Build-Werkzeuge und Technologien</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Werkzeug</th>
+<th class="tableblock halign-left valign-top">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maven</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.x</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(RPM)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oracle Java SE Development Kit (JDK)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.8.0_x</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(node.js)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><em>Inhalt</em></dt>
+<dd>
+<p><em>Falls nötig, Tabelle mit weiteren Werkzeugen und Technologien vervollständigen.</em>
+<em>Die obige Tabelle ist mit Vorgaben aus dem Produktkatalog gefüllt.</em></p>
+</dd>
+<dt class="hdlist1"><em>Dokumentationsform</em></dt>
+<dd>
+<p><em>Tabelle</em></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="bau-xxx-ga-batches-legacy"><a class="anchor" href="#bau-xxx-ga-batches-legacy"></a>3.1. Bau der ISY-XXX-GA und Batches</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+<strong>Falls die Anwendung den traditionellen RPM Build (via <code>ant</code> und <code>rpmbuild</code>) nicht verwendet, kann dieser Abschnitt entfallen.</strong>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Zum Erzeugen der RPM-Pakete wird das Werkzeug <code>rpmbuild</code> mithilfe von Ant über Maven benutzt.
+Dies setzt ein Artefakt-Repository zum Auflösen von Paketabhängigkeiten voraus.</p>
+</div>
+<div class="paragraph">
+<p>Der Build wird folgendermaßen ausgeführt:</p>
+</div>
+<div id="listing-maven-build" class="listingblock">
+<div class="title">Listing 1. Maven-Befehl zum Build der ISY-XXX-GA &amp; Batches</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">mvn -Dbuild.number=&lt;Build-Nummer&gt; -Dtest=false -DfailIfNoTests=false clean package</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Die Build-Nummer (Argument <code>-Dbuild.number</code>) wird üblicherweise mit der Lieferungsnummer belegt.
+Das bedeutet z. B.: <code>1.0.0_14</code> wird zu <code>14</code>, oder allgemein: <code>1.0.0_x</code> wird zu <code>x</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Nach erfolgreichem Build befinden sich im Ordner <code>isy-xxx-ga-deployment/target/RPMS/noarch</code> folgende RPM-Pakete:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>isy-xxx-ga-&lt;VERSION&gt;.noarch.rpm</code>: ISY XXX GA,</p>
+</li>
+<li>
+<p><code>isy-xxx-batch-&lt;VERSION&gt;.noarch.rpm</code>: ISY XXX Batches.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Damit werden alle Anwendungen mit einem Aufruf gebaut.
+In den folgenden Kapiteln wird die Installation der einzelnen Pakete näher beschrieben.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><em>Inhalt</em></dt>
+<dd>
+<p><em>Für weitere Build-Schritte ggf. weitere Unterkapitel anlegen.<br>
+Die Anleitung soll hier vollständig sein und darf nicht auf andere Dokumente der IsyFact verweisen.</em></p>
+</dd>
+<dt class="hdlist1"><em>Quelle</em></dt>
+<dd>
+<p><em>Entwicklerhandbuch</em></p>
+</dd>
+<dt class="hdlist1"><em>Dokumentationsform</em></dt>
+<dd>
+<p><em>Freitext</em></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="bau-xxx-ga-batches"><a class="anchor" href="#bau-xxx-ga-batches"></a>3.2. Bau der ISY-XXX-GA und Batches</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+<strong>Falls die Anwendung den neuen RPM Build (via Maven-Plugin) nicht verwendet, kann dieser Abschnitt entfallen.</strong>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Zum Erzeugen der RPM-Pakete wird ein Maven-Plugin benutzt.
+Dies setzt ein Artefakt-Repository zum Auflösen von Paketabhängigkeiten voraus.</p>
+</div>
+<div class="paragraph">
+<p>Der Build wird folgendermaßen ausgeführt:</p>
+</div>
+<div id="listing-maven-build" class="listingblock">
+<div class="title">Listing 2. Maven-Befehl zum Build der ISY-XXX-GA &amp; Batches</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">mvn -Drpm.release=&lt;Build-Nummer&gt; -Dtest=false -DfailIfNoTests=false clean package</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Das Feld <code>release</code> (Argument <code>-Drpm.release</code>) wird üblicherweise mit der Lieferungsnummer belegt.
+Das bedeutet z. B.: <code>1.0.0_14</code> wird zu <code>14</code>, oder allgemein: <code>1.0.0_x</code> wird zu <code>x</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Nach erfolgreichem Build befinden sich im jeweiligen Modul unter <code>target</code> die RPM-Pakete:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>isy-xxx-ga-&lt;VERSION&gt;.noarch.rpm</code>: ISY XXX GA,</p>
+</li>
+<li>
+<p><code>isy-xxx-batch-&lt;VERSION&gt;.noarch.rpm</code>: ISY XXX Batches.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Damit werden alle Anwendungen mit einem Aufruf gebaut.
+In den folgenden Kapiteln wird die Installation der einzelnen Pakete näher beschrieben.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><em>Inhalt</em></dt>
+<dd>
+<p><em>Für weitere Build-Schritte ggf. weitere Unterkapitel anlegen.<br>
+Die Anleitung soll hier vollständig sein und darf nicht auf andere Dokumente der IsyFact verweisen.</em></p>
+</dd>
+<dt class="hdlist1"><em>Quelle</em></dt>
+<dd>
+<p><em>Entwicklerhandbuch</em></p>
+</dd>
+<dt class="hdlist1"><em>Dokumentationsform</em></dt>
+<dd>
+<p><em>Freitext</em></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="bau-xxx-sgw"><a class="anchor" href="#bau-xxx-sgw"></a>3.3. Bau des ISY-XXX-SGW</h3>
+<div class="paragraph">
+<p>…</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><em>Inhalt</em></dt>
+<dd>
+<p><em>Build beschreiben, sofern er sich maßgeblich vom Build der GA unterscheidet.<br>
+Die Anleitung soll auch hier vollständig sein und darf nicht auf andere Dokumente der IsyFact verweisen.</em></p>
+</dd>
+<dt class="hdlist1"><em>Quelle</em></dt>
+<dd>
+<p><em>Entwicklerhandbuch</em></p>
+</dd>
+<dt class="hdlist1"><em>Dokumentationsform</em></dt>
+<dd>
+<p><em>Freitext</em></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installation-konfiguration-systems"><a class="anchor" href="#installation-konfiguration-systems"></a>4. Installation und Konfiguration des Systems</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Der Ablageort der einzelnen Anwendungen wird in den jeweiligen Releaselettern angegeben und im Folgenden entsprechend mit <code>XXX_GA_ROOT</code> und <code>XXX_SGW_ROOT</code> bezeichnet.</p>
+</div>
+<div class="sect2">
+<h3 id="konfiguration-systemumgebung"><a class="anchor" href="#konfiguration-systemumgebung"></a>4.1. Konfiguration der Systemumgebung</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><em>Inhalt</em></dt>
+<dd>
+<p><em>Beschreibung grundsätzlicher Konfigurationen der Systemumgebung.
+Dazu gehören Systembenutzer, sofern sie für mehrere Systeme benötigt werden.</em></p>
+<div class="paragraph">
+<p><em>Ebenso werden in eigenen Kapiteln die Einrichtung bzw. Konfiguration von technischen Systemen (Webserver, Mail-Server, Datenbank usw.) beschrieben.</em></p>
+</div>
+<div class="paragraph">
+<p><em>Sofern Lizenz-Dateien o.Ä. benötigt werden, sollen diese ebenfalls hier aufgeführt werden.<br>
+Falls einzelne technische Systeme von sehr vielen Verfahren benötigt werden, ist es zweckmäßig, diese in eigene Dokumente auszulagern.</em></p>
+</div>
+</dd>
+<dt class="hdlist1"><em>Quelle</em></dt>
+<dd>
+<p><em>Entwicklerhandbuch, Systementwurf.</em></p>
+</dd>
+<dt class="hdlist1"><em>Dokumentationsform</em></dt>
+<dd>
+<p><em>Freitext</em></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>In diesem Kapitel werden allgemeine Konfigurationen für die Systemumgebungen beschrieben.</p>
+</div>
+<div class="sect3">
+<h4 id="anlegen-betriebssystemnutzer-gruppen"><a class="anchor" href="#anlegen-betriebssystemnutzer-gruppen"></a>4.1.1. Anlegen der Betriebssystemnutzer und -gruppen</h4>
+<div class="paragraph">
+<p>Die Anwendungen <code><em>XXX-GA</em></code> und <code><em>XXX-SGW</em></code> benötigen den Betriebssystemnutzer „tomcat“ in der Benutzergruppe „tomcat“.
+Die Batch-Anwendung <code><em>XXX-GA-Batch</em></code> benötigt den Betriebssystemnutzer „batch“ in der Benutzergruppe „batch“.</p>
+</div>
+<div class="paragraph">
+<p>Die Nutzer und Gruppen werden mit den betriebssystemüblichen Programmen angelegt.
+Das Kennwort wird vom Betrieb vergeben.
+Der Tomcat-Nutzer und der Batch-Nutzer haben nicht das Recht sich am System einzuloggen, siehe auch [NutzungTomcat].</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="einrichten-datenbank"><a class="anchor" href="#einrichten-datenbank"></a>4.1.2. Einrichten der Datenbank</h4>
+<div class="paragraph">
+<p>Im Folgenden wird beschrieben, wie die Datenbank für <code>XXX</code> vorbereitet wird.<br></p>
+</div>
+<div class="paragraph">
+<p>Die DB-Skripte liegen im Verzeichnis</p>
+</div>
+<div id="listing-pfad-datenbankskripte" class="listingblock">
+<div class="title">Listing 3. Pfad für die Datenbankskripte</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml"> `XXX_GA_ROOT/xxx-ga/src/main/skripte/sql/`</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Zum Anlegen des Datenbankschemas steht das Skript <code>install-db-schema.sh</code> zur Verfügung.
+Vorher müssen jedoch die Inhalte des Skripts, das die Umgebungsvariablen lädt (<code>01_environment.sql</code>), auf die jeweilige Umgebung angepasst werden.</p>
+</div>
+<div class="paragraph">
+<p>Zur Aktualisierung des Datenbankschemas steht das Skript <code>update-db-schema.sh</code> bereit.
+Auch hier gibt es ein Skript für die Umgebungsvariablen (<code>01_environment.sql</code>), das angepasst werden muss.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong><em>Ausfüllhinweise</em></strong></p>
+</div>
+<div class="paragraph">
+<p><em>Benutzt die Anwendung die Versionierung von Datenbankschemas gemäß Detailkonzept Datenzugriff <strong>nicht</strong>, muss statt der Kurzzusammenfassung der genaue Ablauf zum Anlegen bzw. Aktualisieren des Datenbankschemas beschrieben werden.</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="konfiguration-benutzer-behoerdenverzeichnis"><a class="anchor" href="#konfiguration-benutzer-behoerdenverzeichnis"></a>4.1.3. Konfiguration Benutzer- und Behördenverzeichnis</h4>
+<div class="paragraph">
+<p>Zur Nutzung des Verfahrens werden diverse Nutzer benötigt.
+Im Folgenden wird beschrieben wie die Nutzer mit den benötigten Rollen im BBV angelegt werden.
+Die Anpassungen erfolgen über die Kommandozeile.
+Die benötigten <code>*.xls</code> Dateien befinden sich im Verzeichnis <code>XXX_GA_ROOT/xxx-ga/src/main/skripte/bbv/</code>.
+Es wird angenommen, dass diese Dateien in ein Verzeichnis kopiert wurden, das nachfolgend mit <code>BBV_FILES</code> bezeichnet wird.
+Die Datei <code>xxx-benutzer.xls</code> ist vor dem Einspielen noch anzupassen, da hier noch Testbenutzer enthalten sind.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>XXX spezifische Rollen und Nutzer anlegen</strong></p>
+</li>
+</ol>
+</div>
+<div id="listing-benutzerverzeichnis-rollen" class="listingblock">
+<div class="title">Listing 4. Benutzerverzeichnisrollen anlegen</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">cd /opt/plis-benutzerverzeichnis-batch/bin
+
+./batch-benutzerverzeichnis-import.sh –ExcelDatei BBV_FILES/xxx-rollen.xls -ignoriereRestart
+
+./batch-benutzerverzeichnis-import.sh –ExcelDatei BBV_FILES/xxx-benutzer.xls -ignoriereRestart</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sollten die Passwörter für die Benutzer geändert werden, sind folgende Punkte zu beachten:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Bei Änderung der Passwörter für externe Behörden müssen diese entsprechend in den Anfragen an <code><em>XXX-SGW</em></code> von den Behörden angepasst werden.</p>
+</li>
+<li>
+<p>Das Passwort des Nutzers <code>XXX_Batch_Launcher</code> muss mit dem Konfigurationsparameter ´batch.benutzer.passwort` in der Datei <code>/etc/isy-xxx-ga/xxx.properties</code> übereinstimmen.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="schluesselverzeichnis"><a class="anchor" href="#schluesselverzeichnis"></a>4.1.4. Schlüsselverzeichnis</h4>
+<div class="paragraph">
+<p>Das Schlüsselverzeichnis muss mindestens in der Version <code>x.y.z_nn</code> installiert sein.
+Es wird angenommen, dass die XXX-spezifischen Schlüssel und Mappings in das Schlüsselverzeichnis importiert worden sind.
+Die entsprechende Datei ist mit den Schlüsseln und Mappings im Releaseletter der <code><em>XXX-GA</em></code> angegeben.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="apache-konfiguration"><a class="anchor" href="#apache-konfiguration"></a>4.1.5. Apache Konfiguration</h4>
+<div class="paragraph">
+<p>Nach dem Loadbalancer vor der Informations- &amp; Dienstezone gelangen die HTTP-Requests zu einem Apache Web Server in der Informations- &amp; Dienstezone.</p>
+</div>
+<div class="paragraph">
+<p>Der Apache Server muss konfiguriert werden, um die Requests an den Tomcat der XXX-Geschäftsanwendung in der Logik- und Verarbeitungszone weiterzuleiten.
+Die Weiterleitung geschieht mithilfe des Apache Tomcat Connectors (mod_jk).</p>
+</div>
+<div class="paragraph">
+<p>Im conf-Ordner des Apache Servers (<code>/usr/local/apache2/conf</code>) sind folgende Dateien anzupassen:</p>
+</div>
+<div class="paragraph">
+<p><strong>httpd.conf:</strong></p>
+</div>
+<div id="listing-apache-request-tomcat" class="listingblock">
+<div class="title">Listing 5. Apache Request Weiterleitung an Tomcat</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml"> JkMount /xxx-ga/* isy-xxx-gaWorker</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>workers.properties:</strong></p>
+</div>
+<div id="listing-apache-request-tomcat-worker" class="listingblock">
+<div class="title">Listing 6. Apache Request Weiterleitung an Tomcat (Worker)</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">worker.list=…, isy-xxx-gaWorker
+
+# XXX-GA isy-xxx-gaWorker
+worker.isy-xxx-gaWorker.type=ajp13
+worker.isy-xxx-gaWorker.host=&lt;Host&gt;
+worker.isy-xxx-gaWorker.port=&lt;IP&gt;
+worker.isy-xxx-gaWorker.cachesize=5
+worker.isy-xxx-gaWorker.lbfactor=50
+worker.isy-xxx-gaWorker.local_worker=1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Nach der Änderung sollte der Apache neu gestartet werden.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mail-server-konfiguration"><a class="anchor" href="#mail-server-konfiguration"></a>4.1.6. Mail-Server Konfiguration</h4>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><em>Inhalt</em></dt>
+<dd>
+<p><em>Beschreibung der Einrichtung des Mail-Servers, z.B. benötigte Postfächer etc.</em></p>
+</dd>
+<dt class="hdlist1"><em>Quelle</em></dt>
+<dd>
+<p><em>Entwicklerhandbuch, Systementwurf.</em></p>
+</dd>
+<dt class="hdlist1"><em>Dokumentationsform</em></dt>
+<dd>
+<p><em>Freitext</em></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="installation-von-xxx-ga-xxx-ga-batch"><a class="anchor" href="#installation-von-xxx-ga-xxx-ga-batch"></a>4.2. Installation von ´XXX-GA` und ´XXX-GA-Batch`</h3>
+<div class="paragraph">
+<p>Dieser Abschnitt beschreibt die Installation der Tomcat-Anwendung <em>XXX-GA</em> und der Batch-Anwendung <em>XXX-GA-Batch</em>.</p>
+</div>
+<div class="sect3">
+<h4 id="tomcat-basisinstallation-ga"><a class="anchor" href="#tomcat-basisinstallation-ga"></a>4.2.1. Tomcat Basisinstallation (GA)</h4>
+<div class="paragraph">
+<p>Es muss eine Tomcat-Basisinstallation für die Anwendung <code><em>XXX-GA</em></code></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>/opt/isy-xxx-ga/tomcat</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>vorliegen.
+Die Tomcat-Basisinstallation kann nur von dem root-Benutzer installiert werden.</p>
+</div>
+<div class="paragraph">
+<p>Für die Erstinstallation:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>'rpm -i isy-xxx-ga-tomcat-{version}.x86_64.rpm'</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Für die nachfolgenden Schritte ist erforderlich, dass Java installiert ist.
+Die Umgebungsvariable <code>JAVA&lt;X&gt;_HOME</code> muss auf den Installationspfad von Java verweisen. &lt;X&gt; muss durch die Java-Versionsnummer ersetzt werden, z.B. 8.</p>
+</div>
+<div class="paragraph">
+<p>In der Datei <code>/opt/isy-xxx-ga/tomcat/conf/wrapper.conf</code> sind alle Vorkommen von <code>JAVA_HOME</code> durch <code>JAVA&lt;X&gt;_HOME</code> zu ersetzen (siehe auch [NutzungTomcat]).</p>
+</div>
+<div class="paragraph">
+<p>Außerdem müssen hier noch die Werte für die Heap-Size erhöht werden:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>wrapper.java.initmemory=128
+wrapper.java.maxmemory=512</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Die Anwendung <code><em>XXX-GA</em></code> wird von anderen Anwendungen über den konfigurierten Tomcat-Port aufgerufen.</p>
+</div>
+<div class="paragraph">
+<p>Die Tomcat-Anwendung <code><em>XXX-GA</em>´ wird auf dem Applikationsserver installiert.
+Das rpm-Paket der `<em>XXX-GA</em></code> muss als Nutzer „root“ wie folgt installiert werden:</p>
+</div>
+<div class="paragraph">
+<p>Für die Erstinstallation:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>rpm -i isy-xxx-ga-&lt;version&gt;.noarch.rpm</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Für ein Update:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>rpm -U isy-xxx-ga-&lt;version&gt;.noarch.rpm</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Die Anwendung <code><em>XXX-GA</em></code> wird in das Verzeichnis</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>/opt/isy-xxx-ga</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>installiert und gehört dem Benutzer „tomcat“ in der Gruppe „tomcat“.
+Der Nutzer „tomcat“ muss vor der Installation vorhanden sein.
+Es sind keine Anpassungen am Tomcat notwendig.
+Die Anwendung <code><em>XXX-GA</em></code> wird von anderen Anwendungen über den konfigurierten Tomcat-Port aufgerufen.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="installation-batch-anwendung"><a class="anchor" href="#installation-batch-anwendung"></a>4.2.2. Installation der Batch-Anwendung</h4>
+<div class="paragraph">
+<p>Die Batch-Anwendung <code><em>XXX-GA-Batch</em></code> wird auf dem Workserver installiert.</p>
+</div>
+<div class="paragraph">
+<p>Das rpm-Paket der <code><em>XXX-GA-Batch</em></code> Anwendung muss als Nutzer „root“ wie folgt installiert werden:</p>
+</div>
+<div class="paragraph">
+<p>Für die Erstinstallation:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>rpm -i isy-xxx-ga-batch-&lt;version&gt;.noarch.rpm</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Für ein Update:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>rpm -U isy-xxx-ga-batch-&lt;version&gt;.noarch.rpm</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Die Anwendung <code><em>XXX-GA-Batch</em></code> wird in das Verzeichnis</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>/opt/isy-xxx-ga-batch</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>installiert und gehört dem Benutzer „batch“ in der Gruppe „batch“.
+Der Nutzer „batch“ muss vor der Installation vorhanden sein.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="konfiguration-tomcat-anwendung"><a class="anchor" href="#konfiguration-tomcat-anwendung"></a>4.2.3. Konfiguration der Tomcat-Anwendung</h4>
+<div class="paragraph">
+<p>Nach der Installation liegen die Konfigurationsdateien von <code><em>XXX-GA</em></code> unter</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>/etc/isy-xxx-ga</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Folgende Konfigurationsdateien müssen für die Konfiguration angepasst werden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>logback.xml</code>,</p>
+</li>
+<li>
+<p><code>isy-xxx-ga.properties</code>,</p>
+</li>
+<li>
+<p><code>jpa.properties</code>,</p>
+</li>
+<li>
+<p>(Liste der Konfigurationsdateien der Tomcat-Anwendung).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Änderungen an den Konfigurationsdateien müssen bei heruntergefahrener Anwendung durchgeführt werden.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+Dieses Verhalten gilt nicht für die Konfigurationsdatei <code>logback.xml</code>.
+Änderungen an dieser Konfigurationsdatei können bei laufender Anwendung ausgeführt werden.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect4">
+<h5 id="konfigurationsdatei-logback"><a class="anchor" href="#konfigurationsdatei-logback"></a>4.2.3.1. Konfigurationsdatei <code>logback.xml</code></h5>
+<div class="paragraph">
+<p>Die Konfigurationsdatei <code>logback.xml</code> enthält die Logging-Einstellungen und ist nach den Logging-Vorgaben aufgebaut.
+Nach der Installation muss dort der Name der künftigen Log-Datei angegeben werden.
+Dazu ist in den folgenden Zeilen der <code>HOSTNAME</code> durch den tatsächlichen Hostnamen zu ersetzen.</p>
+</div>
+<div id="listing-logging-konfiguration-dateiname" class="listingblock">
+<div class="title">Listing 7. Konfiguration Logging ISY-XXX-GA: Log-Dateiname</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;property name="LOGFILE_PATH" value="/var/log/isy-xxx-ga/HOSTNAME_isy-xxx-ga" /&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Die Logs werden nach <code>/var/log/isy-xxx-ga</code> geschrieben.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="konfigurationsdatei-ga"><a class="anchor" href="#konfigurationsdatei-ga"></a>4.2.3.2. Konfigurationsdatei <code>isy-xxx-ga.properties</code></h5>
+<div class="paragraph">
+<p>Die Datei <code>xxx.ga.properties</code> enthält alle weiteren Konfigurationseinstellungen von <code><em>XXX-GA</em></code>.</p>
+</div>
+<div class="paragraph">
+<p>Eine ausführliche Erläuterung der einzelnen Parameter ist ebenfalls in der Datei selbst enthalten.</p>
+</div>
+<div class="paragraph">
+<p>Folgende Werte müssen nach der Erstinstallation angepasst werden:</p>
+</div>
+<table id="table-parameter-ga-properties" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 2. Konfigurationsparameter ISY-XXX-GA</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Konfigurationsparameter</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>behoerdenverzeichnis.service.url</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Die Adresse des Behördenverzeichnisses.</p>
+</div>
+<div class="paragraph">
+<p>Beispiel:<br>
+<code>http(s)://isy.local.vm:50001/plis-behoerdenverzeichnis</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>gui.behoerdenverzeichnis.url</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Die Adresse der GUI des Behördenverzeichnisses.</p>
+</div>
+<div class="paragraph">
+<p>Beispiel:<br>
+<code>http(s)://isy.local.vm/plis-behoerdenverzeichnis</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>schluesselverzeichnis.service.url</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Die Adresse des Schlüsselverzeichnisses.</p>
+</div>
+<div class="paragraph">
+<p>Beispiel:<br>
+<code>http(s)://isy.local.vm:50002/plis-schluesselverzeichnis</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>batch.benutzer.kennung</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">System-Benutzer zum Ausführen der Batches.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>batch.benutzer.passwort</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Passwort des System-Benutzers zum Ausführen der Batches.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><em>Inhalt</em></dt>
+<dd>
+<p><em>Weitere Möglichkeiten der Konfiguration werden ab hier beschrieben, thematisch abgegrenzt und jeweils mit einer eigenen Tabelle dokumentiert.</em></p>
+</dd>
+<dt class="hdlist1"><em>Quelle</em></dt>
+<dd>
+<p><em>Systementwurf.</em></p>
+</dd>
+<dt class="hdlist1"><em>Dokumentationsform</em></dt>
+<dd>
+<p><em>Freitext &amp; Tabellen</em></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Die Anbindung an den IAM-Service wird wie folgt konfiguriert:</p>
+</div>
+<table id="table-config-ga-keycloak" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 3. Konfiguration des IAM-Service</caption>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Konfigurationsparameter</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sic.keycloak.auth-server-url.0</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Basis-URL des IAM-Service.<br>
+Schema: <code>http(s)://&lt;keycloak-host&gt;:&lt;keycloak-port&gt;/auth/</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sic.keycloak.realm.0</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Realm der Client zur Anmeldung.<br>
+Schema: <code>&lt;realm-name&gt;</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sic.keycloak.resource.0</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Name des Clients, der die Authentifizierung des Benutzers durchführen wird.<br>
+Schema: <code>&lt;client-name&gt;</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sic.keycloak.bearer-only.0</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Auf <code>false</code> gesetzt, da ein "Bearer"-Client keine Authentifizierung für andere vornehmen darf.<br>
+Default: <code>false</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sic.keycloak.credentials-secret.0</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Per Vorgabe sind Clients vertrauenswürdig ("confidential"), weswegen ein "client secret" angegeben werden muss.<br>
+Schema: <code>&lt;client-secret&gt;</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="konfigurationsdatei-jpaproperties-batch"><a class="anchor" href="#konfigurationsdatei-jpaproperties-batch"></a>4.2.3.3. Konfigurationsdatei jpa.properties</h5>
+<div class="paragraph">
+<p>Die Datei <code>jpa.properties</code> enthält die Konfiguration der Datenbank-Verbindung.</p>
+</div>
+<div class="paragraph">
+<p>Folgende Werte müssen nach der Erstinstallation angepasst werden:</p>
+</div>
+<table id="table-parameter-jpa-properties" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 4. Konfigurationsparameter jpa.properties</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Konfigurationsparameter</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>database.url</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Gibt die Adresse, den Port und die SID der Datenbank an.</p>
+</div>
+<div class="paragraph">
+<p>Beispiel: <code>jdbc:oracle:thin:@&lt;Datenbankserver-Adresse&gt;:&lt;Datenbankport&gt;:&lt;SID&gt;</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>database.username</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Gibt den technischen Benutzernamen für den Zugriff auf die Datenbank an.</p>
+</div>
+<div class="paragraph">
+<p>Beispiel: xxx</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>database.password</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gibt das Passwort des technischen Benutzers für die Datenbank an. Das Passwort ist nicht verschlüsselt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>database.schema.default</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Beschreibt das Schema für xxx.</p>
+</div>
+<div class="paragraph">
+<p>Beispiel: xxx</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="konfigurationsdatei-isalive-batch"><a class="anchor" href="#konfigurationsdatei-isalive-batch"></a>4.2.3.4. Konfigurationsdatei isAlive</h5>
+<div class="paragraph">
+<p>Für Wartungszwecke kann es notwendig sein, dass die Anwendung keine weiteren Anfragen vom Loadbalancer mehr zugewiesen bekommt.</p>
+</div>
+<div class="paragraph">
+<p>Dazu überprüft das Loadbalancer-Servlet regelmäßig ob die (leere) Datei</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>/opt/isy-xxx-ga/etc/isAlive</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>existiert. Nach der Erstinstallation ist diese Datei noch nicht vorhanden. Die Datei muss als Nutzer „tomcat“ wie folgt angelegt werden:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>touch /opt/isy-xxx-ga/etc/isAlive</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Die erzeugte <code>isAlive</code>-Datei muss von dem Loadbalancer-Servlet gelesen werden können. Daher ist es notwendig die Datei mit dem Benutzer „tomcat“ anzulegen.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="konfiguration-batch-anwendung"><a class="anchor" href="#konfiguration-batch-anwendung"></a>4.2.4. Konfiguration der Batch-Anwendung</h4>
+<div class="paragraph">
+<p>Nach der Installation liegen die Konfigurationsdateien der Batch-Anwendung unter</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>/etc/isy-xxx-ga-batch</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Die Konfiguration der Batch-Anwendung erfolgt analog zur Konfiguration der Tomcat-Anwendung im Kapitel <a href="#konfiguration-tomcat-anwendung">Konfiguration der Tomcat-Anwendung</a>:</p>
+</div>
+<div class="paragraph">
+<p>Die Konfigurationsdateien der Batch-Anwendungen sind nach der Erstinstallation mit den Konfigurationsdateien der Tomcat-Anwendung bis auf eine Ausnahme identisch: der Logging-Konfiguration für die Batches.
+Es ist möglich die bereits angepassten Konfigurationsdateien der Tomcat-Anwendung in die Konfigurationsverzeichnisse der Batch-Anwendungen zu kopieren.
+Anschließend müssen dort nur noch die abweichenden Einstellungen angepasst werden.</p>
+</div>
+<div class="sect4">
+<h5 id="konfigurationsdatei-logging-batch"><a class="anchor" href="#konfigurationsdatei-logging-batch"></a>4.2.4.1. Konfigurationsdatei <code>logback-batch.xml</code></h5>
+<div class="paragraph">
+<p>Diese Konfigurationsdatei ist analog zur Datei <code>logback.xml</code> aufgebaut.
+Sie wird für das Logging der Batches verwendet.
+Der Unterschied zur <code>logback.xml</code> der Tomcat-Anwendung liegt darin, dass ein eigener Pfad für das Logging verwendet wird und dass die Batch-Id an den Namen der Log-Datei angehängt wird.
+Außerdem werden die Log-Dateien nicht rolliert.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="konfigurationsdatei-ga-batch"><a class="anchor" href="#konfigurationsdatei-ga-batch"></a>4.2.4.2. Konfigurationsdatei <code>isy-xxx-ga.properties</code></h5>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><em>Inhalt</em></dt>
+<dd>
+<p><em>Beschreibung der Unterschiede bei der Konfiguration der Batch-Anwendung</em></p>
+</dd>
+<dt class="hdlist1"><em>Quelle</em></dt>
+<dd>
+<p><em>Systementwurf</em></p>
+</dd>
+<dt class="hdlist1"><em>Dokumentationsform</em></dt>
+<dd>
+<p><em>Freitext</em></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="starten-tomcat-anwendung-jpa-properties"><a class="anchor" href="#starten-tomcat-anwendung-jpa-properties"></a>4.2.5. Starten der Tomcat Anwendung</h4>
+<div class="paragraph">
+<p>Das Starten und Stoppen einer Tomcat-Instanz wird über ein Start-Skript in /etc/init.d durchgeführt:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Befehl</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Beschreibung</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/etc/init.d/isy-xxx-ga-tomcat start</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Starten des Tomcat.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/etc/init.d/isy-xxx-ga-tomcat stop</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stoppen des Tomcat.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Beide Aufrufe werden in der Produktionsumgebung über die Batchsteuerung in die betrieblichen Abläufe integriert. Das Skript wird dabei nicht in die Runlevel des Betriebssystems integriert. Start und Stop des Tomcat wird ausschließlich über die betriebliche Batchsteuerung gesteuert.</p>
+</div>
+<div class="paragraph">
+<p>In allen anderen Umgebungen wird das Skript von Hand aufgerufen. Ein Eintrag in die Runlevel kann bei Bedarf erfolgen.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="installation-von-xxx-service-gateway"><a class="anchor" href="#installation-von-xxx-service-gateway"></a>4.3. Installation von XXX-Service Gateway</h3>
+<div class="sect3">
+<h4 id="tomcat-basisinstallation-sgw"><a class="anchor" href="#tomcat-basisinstallation-sgw"></a>4.3.1. Tomcat Basisinstallation (SGW)</h4>
+<div class="paragraph">
+<p>Es muss eine Tomcat-Basisinstallation für die Anwendung <em>XXX-SGW</em></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>/opt/isy-xxx-sgw/tomcat</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>vorliegen. Die Tomcat-Basisinstallation kann nur von dem root-Benutzer installiert werden.</p>
+</div>
+<div class="paragraph">
+<p>Für die Erstinstallation:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>'rpm -i isy-xxx-ga-tomcat-{version}.x86_64.rpm'</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Für die nachfolgenden Schritte ist erforderlich, dass Java installiert ist. Die Umgebungsvariable JAVA&lt;X&gt;_HOME muss auf den Installationspfad von Java verweisen. &lt;X&gt; muss durch die Java-Versionsnummer ersetzt werden, z.B. 8.</p>
+</div>
+<div class="paragraph">
+<p>In der Datei <code>/opt/isy-xxx-sgw/tomcat/conf/wrapper.conf</code> sind alle Vorkommen von <code>JAVA_HOME</code> durch <code>JAVA&lt;X&gt;_HOME</code> ersetzen.</p>
+</div>
+<div class="paragraph">
+<p>Die Anwendung <code><em>XXX-SGW</em></code> wird von anderen Anwendungen über den konfigurierten Tomcat-Port aufgerufen.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="installation"><a class="anchor" href="#installation"></a>4.3.2. Installation</h4>
+<div class="paragraph">
+<p>Die Tomcat-Anwendung <code><em>XXX-SGW</em></code> wird auf dem Applikationsserver installiert. Das rpm-Paket des <code><em>XXX-SGW</em></code> muss als Nutzer „root“ wie folgt installiert werden:</p>
+</div>
+<div class="paragraph">
+<p>Erstinstallation <code><em>XXX-SGW</em></code>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>rpm -i xxx-deployment/target/RPMS/noarch/isy-xxx-sgw-&lt;version&gt;.noarch.rpm</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Alternativ Update:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>rpm -U xxx-deployment/target/RPMS/noarch/isy-xxx-sgw-&lt;versionr&gt;.noarch.rpm</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Die Installation von <code><em>XXX-SGW</em></code> erfolgt in dem Verzeichnis</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>/opt/isy-xxx-sgw/tomcat/webapps/xxx-sgw</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>unter dem Benutzer „tomcat“ in der Gruppe „tomcat“. Der Nutzer „tomcat“ muss bei der Installation vorhanden sein.</p>
+</div>
+<div class="paragraph">
+<p>Nach erfolgreicher Installation ist der folgende Ordner anzulegen:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>/opt/isy-xxx-sgw/tomcat/common/endorsed</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In diesen Ordner muss das Archiv <code>webservices-api.jar</code> kopiert werden. Dieses befindet sich im Ordner</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>/XXX_SGW_ROOT/src/main/resources/endorsed</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="konfiguration-service-gateway"><a class="anchor" href="#konfiguration-service-gateway"></a>4.3.3. Konfiguration</h4>
+<div class="paragraph">
+<p>Nach der Installation liegen die Konfigurationsdateien des `<em>XXX-SGW</em> unter</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>/etc/isy-xxx-sgw</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Folgende Konfigurationsdateien müssen für die Konfiguration angepasst werden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>logback.xml</code>,</p>
+</li>
+<li>
+<p><code>servicegateway.properties</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Änderungen an den Konfigurationsdateien müssen bei heruntergefahrener Anwendung durchgeführt werden.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+Dieses Verhalten gilt nicht für die Konfigurationsdatei <code>logback.xml</code>.
+Änderungen an dieser Konfigurationsdatei können bei laufender Anwendung ausgeführt werden.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect4">
+<h5 id="konfigurationsdatei-logback-sgw"><a class="anchor" href="#konfigurationsdatei-logback-sgw"></a>4.3.3.1. Konfigurationsdatei <code>logback.xml</code></h5>
+<div class="paragraph">
+<p>Die Konfigurationsdatei <code>logback.xml</code> enthält die Logging-Einstellungen und ist nach den Logging-Vorgaben aufgebaut.
+Nach der Installation muss dort der Name der künftigen Log-Datei angegeben werden.
+Dazu ist in den folgenden Zeilen der <code>HOSTNAME</code> durch den tatsächlichen Hostnamen zu ersetzen.</p>
+</div>
+<div id="listing-logging-konfiguration-dateiname-sgw" class="listingblock">
+<div class="title">Listing 8. Konfiguration Logging ISY-XXX-SGW: Log-Dateiname</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;property name="LOGFILE_PATH" value="/var/log/isy-xxx-sgw/HOSTNAME_isy-xxx-sgw" /&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Die Logs werden nach <code>/var/log/isy-xxx-sgw</code> geschrieben.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="konfigurationsdatei-servicegatewayproperties"><a class="anchor" href="#konfigurationsdatei-servicegatewayproperties"></a>4.3.3.2. Konfigurationsdatei servicegateway.properties</h5>
+<div class="paragraph">
+<p>Die Datei servicegateway.properties enthält alle weiteren Konfigurationseinstellungen von <em>XXX-SGW</em>.</p>
+</div>
+<div class="paragraph">
+<p>Eine ausführliche Erläuterung der einzelnen Parameter ist ebenfalls in der Datei selbst enthalten.</p>
+</div>
+<div class="paragraph">
+<p>Folgende Werte müssen nach der Erstinstallation angepasst werden:</p>
+</div>
+<table id="table-parameter-servicegateway-properties" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 5. Konfigurationsparameter servicegateway.properties</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Konfigurationsparameter</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xxx.service.url</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Die Adresse der XXX-Geschäftsanwendung.</p>
+</div>
+<div class="paragraph">
+<p>Beispiel:<br>
+<code>http(s)://isy.local.vm:50001/xxx-ga</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">…</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="konfigurationsdatei-isalive-gateway"><a class="anchor" href="#konfigurationsdatei-isalive-gateway"></a>4.3.3.3. Konfigurationsdatei isAlive</h5>
+<div class="paragraph">
+<p>Für Wartungszwecke kann es notwendig sein, dass das Service Gateway keine weiteren Anfragen vom Loadbalancer mehr zugewiesen bekommt.</p>
+</div>
+<div class="paragraph">
+<p>Dafür ist die (leere) Datei</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>/opt/isy-xxx-sgw/etc/isAlive</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>vorgesehen. Die Datei kann z.B. von einem Loadbalancer(-Servlet) benutzt werden, um zu prüfen, ob die Instanz aktiv ist. Nach der Erstinstallation ist diese Datei noch nicht vorhanden. Die Datei muss als Nutzer „tomcat“ wie folgt angelegt werden:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>touch /opt/isy-xxx-sgw/etc/isAlive</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Die erzeugte <code>isAlive</code>-Datei muss von dem Loadbalancer-Servlet gelesen werden können. Daher ist es notwendig die Datei mit dem Benutzer „tomcat“ anzulegen.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="starten-tomcat-anwendung"><a class="anchor" href="#starten-tomcat-anwendung"></a>4.3.4. Starten der Tomcat Anwendung</h4>
+<div class="paragraph">
+<p>Das Starten und Stoppen einer Tomcat-Instanz wird über ein Start-Skript in /etc/init.d durchgeführt:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Befehl</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Beschreibung</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/etc/init.d/isy-xxx-tomcat start</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Starten des Tomcat.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/etc/init.d/isy-xxx-tomcat stop</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stoppen des Tomcat.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Beide Aufrufe werden in der Produktionsumgebung über die Batchsteuerung in die betrieblichen Abläufe integriert. Das Skript wird dabei nicht in die Runlevel des Betriebssystems integriert. Start und Stop des Tomcat werden ausschließlich über die Batchsteuerung gesteuert.</p>
+</div>
+<div class="paragraph">
+<p>In allen anderen Umgebungen wird das Skript von Hand aufgerufen. Ein Eintrag in die Runlevel kann bei Bedarf erfolgen.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="regulaerer-wirkbetrieb"><a class="anchor" href="#regulaerer-wirkbetrieb"></a>5. Regulärer Wirkbetrieb</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="log-konfigurationsdateien"><a class="anchor" href="#log-konfigurationsdateien"></a>5.1. Log- und Konfigurationsdateien</h3>
+<table id="table-log-dateien" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 6. Log-Dateien</caption>
+<colgroup>
+<col style="width: 66.6666%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Log-Datei</th>
+<th class="tableblock halign-left valign-top">Inhalt / Bemerkung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/var/log/isy-xxx-ga/HOSTNAME_isy-xxx-ga.log</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logdatei ISY-XXX-GA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/var/log/isy-xxx-ga/HOSTNAME_isy-xxx-ga_ZEITSTEMPEL.log</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rotierte Logdatei ISY-XXX-GA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/var/log/isy-xxx-sgw/HOSTNAME_isy-xxx-sgw.log</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logdatei ISY-XXX-SGW</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/var/log/isy-xxx-sgw/HOSTNAME_isy-xxx-sgw_ZEITSTEMPEL.log</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rotierte Logdatei ISY-XXX-SGW</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Der Platzhalter <code>HOSTNAME</code> im Dateinamen steht für den Namen des Servers, auf dem das IT-System ausgeführt wird.
+Die <code>ZEITSTEMPEL</code> werden durch die Log-Rotation erzeugt und markieren ältere Log-Dateien.</p>
+</div>
+<table id="table-konfigurationsdateien" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 7. Konfigurationsdateien</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Konfigurationsdatei</th>
+<th class="tableblock halign-left valign-top">Inhalt / Bemerkung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>ISY-XXX-GA</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/etc/isy-xxx-ga/isAlive</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Steuerdatei für Loadbalancer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/etc/isy-xxx-ga/isy-xxx-ga.properties</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Konfiguration der Anwendung</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/etc/isy-xxx-ga/jpa.properties</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Konfiguration der Datenbank-Verbindung</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/etc/isy-xxx-ga/logback.xml</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logging-Konfiguration</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>ISY-XXX-SGW</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/etc/isy-xxx-sgw/isAlive</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Steuerdatei für Loadbalancer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/etc/isy-xxx-sgw/isy-xxx-sgw.properties</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Konfiguration der Anwendung</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/etc/isy-xxx-sgw/jpa.properties</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Konfiguration der Datenbank-Verbindung</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/etc/isy-xxx-sgw/logback.xml</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logging-Konfiguration</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="dokumentation-datenbankschemas"><a class="anchor" href="#dokumentation-datenbankschemas"></a>5.2. Dokumentation des Datenbankschemas</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><em>Sofern eine Anwendung eine eigene Datenhaltung besitzt, wird die tatsächliche Datenhaltung in Form von Tabellen dokumentiert.
+Jede Datenbanktabelle ist als eigenes Unterkapitel in Form einer kurzen Beschreibung und einer Tabelle mit den wichtigsten Informationen zu der Datenbanktabelle beschrieben.</em></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Darstellung</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Für jede Datenbanktabelle wird kurz beschrieben was darin enthalten ist.</em></p>
+</li>
+<li>
+<p><em>Jede Datenbanktabelle wird in einer eigenen Tabelle, bestehend aus den Spalten Feld, Datentyp, Beschreibung, PK (Primary Key), FK (Foreign Key) und Indizes, beschrieben.</em></p>
+</li>
+<li>
+<p><em>Enthält eine Spalte in der Datenbank Aufzählungstypen, so sind alle Ausprägungen des Aufzählungstyps in der Beschreibung der Spalte anzugeben.</em></p>
+</li>
+<li>
+<p><em>Beschreibungen von trivialen Attributen können entfallen (z.B. Vorname, Straße, …).</em></p>
+</li>
+<li>
+<p><em>Besondere Formate, z.B. wenn Datumsangaben in Varchar-Feldern gespeichert werden, sollen dokumentiert werden(Beispiel Geburtsdatum).</em></p>
+</li>
+<li>
+<p><em>Für Fremdschlüssel (FK) soll die Zieltabelle in der Beschreibung genannt werden (Beispiel GRUPPE_ID)</em></p>
+</li>
+<li>
+<p><em>Datenbanktabellen, die für die Verwendung von Bibliotheken (Batchrahmen, Protokollierung, Oracle AQ) notwendig sind, werden aufgelistet.
+Eine detaillierte Beschreibung der einzelnen Attribute kann entfallen. Es genügen eine Kurzbeschreibung und ein Verweis auf die zugehörige Dokumentation.</em></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tabelle-person"><a class="anchor" href="#tabelle-person"></a>5.2.1. Tabelle PERSON</h4>
+<div class="paragraph">
+<p>Tabelle für die Verwaltung von Mitarbeitern. Jeder Mitarbeiter wird eindeutig über seinen Login identifiziert.</p>
+</div>
+<table id="table-mitarbeiterverwaltung" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 8. Datenbankfelder Tabelle Mitarbeiter</caption>
+<colgroup>
+<col style="width: 23.0769%;">
+<col style="width: 23.0769%;">
+<col style="width: 38.4615%;">
+<col style="width: 7.6923%;">
+<col style="width: 7.6924%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feld</th>
+<th class="tableblock halign-left valign-top">Datentyp</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
+<th class="tableblock halign-left valign-top">PK</th>
+<th class="tableblock halign-left valign-top">FK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number(10, 0)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Technische ID der Person</p></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock text-center">
+<div class="content">
+<img src="../_images/vorlage-systemhandbuch/checkmark.png" alt="checkmark" width="40%">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VORNAME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Varchar2 (250 Char)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NACHNAME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Varchar2 (250 Char)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GEBURTSDATUM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Varchar2 (10 Char)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geburtsdatum im Format JJJJ-MM-TT</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GESCHLECHT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number (1,0)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1: Männlich, 2: Weiblich, 3: Unbekannt</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VERSION</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number (10,0)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Für optimistisches Sperren der Zugriffe</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GRUPPE_ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number (10, 0)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Verweis auf die Gruppe, zu der die Person gehört (siehe Tabelle GRUPPE)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock text-center">
+<div class="content">
+<img src="../_images/vorlage-systemhandbuch/checkmark.png" alt="checkmark" width="40%">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="tablle-xyz"><a class="anchor" href="#tablle-xyz"></a>5.2.2. Tablle XYZ</h4>
+<div class="paragraph">
+<p>…</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="indizes"><a class="anchor" href="#indizes"></a>5.2.3. Indizes</h4>
+<table id="table-indizes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 9. Datenbankfelder Indizes</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 35.7142%;">
+<col style="width: 7.143%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Tabelle</th>
+<th class="tableblock halign-left valign-top">Felder</th>
+<th class="tableblock halign-left valign-top">Unique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IDX_NAME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BENUTZER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VORNAME,<br>
+NACHNACHME</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">…</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock text-center">
+<div class="content">
+<img src="../_images/vorlage-systemhandbuch/checkmark.png" alt="checkmark" width="40%">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="start-stopp-statuspruefung-server-prozesse"><a class="anchor" href="#start-stopp-statuspruefung-server-prozesse"></a>5.3. Start, Stopp, Statusprüfung der Server-Prozesse</h3>
+<div class="paragraph">
+<p>Die Anwendung bietet die Standard-Möglichkeiten des Tomcats zu dessen Prüfung.</p>
+</div>
+<div class="paragraph">
+<p>Start:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># /etc/init.d/isy-…-tomcat start</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Stop:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># /etc/init.d/isy-…-tomcat stop</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Statusüberprüfung:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># /etc/init.d/isy-…-tomcat status</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>und</p>
+</div>
+<div id="listing-status-serverprozesse" class="exampleblock">
+<div class="title">Beispiel 1. Standardprüfung der Tomcat Serverprozesse</div>
+<div class="content">
+<div class="paragraph">
+<p># ps -ef</p>
+</div>
+<div class="paragraph">
+<p>tomcat 5409 5345 0 May11 ? 00:06:39 /usr/java/jdk1.7.0_xx/bin/java<br>
+-Djava.endorsed.dirs=../common/endorsed<br>
+-Dcatalina.base=/opt/isy-…/tomcat<br>
+-Dcatalina.home=/opt/isy-…/tomcat<br>
+-Djava.io.tmpdir=/opt/isy-…/tomcat/temp<br>
+-Dcom.sun.management.jmxremote<br>
+-Dcom.sun.management.jmxremote.port=…<br>
+-Dcom.sun.management.jmxremote.ssl=false<br>
+-Dcom.sun.management.jmxremote.authenticate=true<br>
+-Dcom.sun.management.jmxremote.password.file=/opt/isy-…/tomcat/conf/jmxremote.password<br>
+-Djava.util.logging.config.file=/opt/isy-…/tomcat/conf/logging.properties<br>
+-Duser.language=de<br>
+-Duser.region=DE<br>
+-Dfile.encoding=UTF-8<br>
+-Dorg.tanukisoftware.wrapper.WrapperManager.mbean=true<br>
+-Dorg.tanukisoftware.wrapper.WrapperManager.mbean.testing=false<br>
+-D32<br>
+-Xdebug<br>
+-Xrunjdwp:transport=dt_socket,address=50002,server=y,suspend=n<br>
+-Xms64m<br>
+-Xmx128m<br>
+-Djava.library.path=../common/lib:/opt/oracle/product/11.1/db_1/lib<br>
+-classpath ../common/lib/wrapper.jar:/usr/java/jdk1.7.0_xx/lib/tools.jar:../bin/bootstrap.jar<br>
+-Dwrapper.key=…<br>
+-Dwrapper.port=…<br>
+-Dwrapper.jvm.port.min=…<br>
+-Dwrapper.jvm.port.max=…<br>
+-Dwrapper.pid=…<br>
+-Dwrapper.version=3.3.2<br>
+-Dwrapper.native_library=wrapper<br>
+-Dwrapper.service=TRUE<br>
+-Dwrapper.cpu.timeout=30<br>
+-Dwrapper.jvmid=1 org.tanukisoftware.wrapper.WrapperStartStopApp org.apache.catalina.startup.Bootstrap 1 start org.apache.catalina.startup.Bootstrap true 1 stop</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="batch-prozesse"><a class="anchor" href="#batch-prozesse"></a>5.4. Batch-Prozesse</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong><em>Ausfüllhinweise</em></strong></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><em>Inhalt</em></dt>
+<dd>
+<p><em>Beschreibung aller Batches zu den einzelnen IT-Systemen.<br>
+Wichtig ist, Abhängigkeiten zwischen den Batches zu beschreiben.
+Komplexere Abläufe sollen in Form von Batchketten beschrieben werden.</em><br></p>
+<div class="paragraph">
+<p><em>In der Regel wird pro Batch ein Unterkapitel angelegt.</em></p>
+</div>
+</dd>
+<dt class="hdlist1"><em>Quelle</em></dt>
+<dd>
+<p><em>Systementwurf</em></p>
+</dd>
+<dt class="hdlist1"><em>Dokumentationsform</em></dt>
+<dd>
+<p><em>Tabelle, Freitext, Diagramme</em></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ausfuehren-batch-anwendung"><a class="anchor" href="#ausfuehren-batch-anwendung"></a>5.5. Ausführen der Batch-Anwendung</h3>
+<div class="paragraph">
+<p>In diesem Abschnitt wird das Ausführen der Batch-Anwendung beschrieben. Die Batches sind unabhängig voneinander, d.h. sie können in beliebiger Reihenfolge ausgeführt werden.</p>
+</div>
+<div class="sect3">
+<h4 id="setzen-umgebungsvariable-java7home"><a class="anchor" href="#setzen-umgebungsvariable-java7home"></a>5.5.1. Setzen der Umgebungsvariable JAVA&lt;X&gt;_HOME</h4>
+<div class="paragraph">
+<p>Die Ausführung der Batchanwendung setzt eine installierte Java Runtime voraus. Für die Ausführung der Batch-Anwendung muss die Umgebungsvariable JAVA&lt;X&gt;_HOME (&lt;X&gt; ist durch die Java-Versionsnummer zu ersetzen, z.B. 8) korrekt gesetzt sein und auf das Java-Verzeichnis verweisen. Die Variable wird wie folgt auf der Kommandozeile gesetzt. (Bitte Verzeichnis der Java-Runtime überprüfen.)</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>export JAVA&lt;X&gt;_HOME=/usr/lib/java&lt;X&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="aufrufen-batch-anwendung"><a class="anchor" href="#aufrufen-batch-anwendung"></a>5.5.2. Aufrufen der Batch-Anwendung</h4>
+<div class="paragraph">
+<p>Die Batch-Anwendungen werden auf der Kommandozeile über ein Startskript gestartet. Das Startskript batch-ausfuehren.sh liegt in dem Verzeichnis</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>/opt/isy-xxx-ga-batch/bin/</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="batch-xyz"><a class="anchor" href="#batch-xyz"></a>5.5.3. Batch: …</h4>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong><em>Ausfüllhinweise</em></strong></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Inhalt</dt>
+<dd>
+<p><em>Kurze Beschreibung was der Batch macht. Genaue Dokumentation der Start-Parameter, Ausgaben bzw. und Return-Codes des Batches.<br>
+Hinweise für den Betrieb, was ist bei einem Restart zu beachten?</em></p>
+</dd>
+<dt class="hdlist1">Quelle</dt>
+<dd>
+<p><em>Systementwurf</em></p>
+</dd>
+<dt class="hdlist1">Dokumentationsform</dt>
+<dd>
+<p><em>Tabelle, Freitext</em></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><em>Bezug zur Spezifikation: Batch BAT_</em>&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>Dieser Batch prüft …</p>
+</div>
+<div class="paragraph">
+<p>Aufruf:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>batch-ausfuehren.sh STARTART KONFIGURATION [ERGEBNIS]</pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>STARTART</strong></dt>
+<dd>
+<p>-start oder –restart</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Gibt an, ob das Skript neu gestartet wird oder ein abgebrochener Batch-Lauf fortgesetzt werden soll.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1"><strong>KONFIGURATION</strong></dt>
+<dd>
+<p>-cfg /resources/batch/fd-konsultation-fristablauf-pruefen-batch-config.properties</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Gibt den auszuführenden Batch an.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1"><strong>ERGEBNIS</strong></dt>
+<dd>
+<p>-Batchrahmen.Ergebnisdatei &lt;ergebnisdatei.xml&gt;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Gibt die XML-Datei an, in der die Ergebnisse gespeichert werden. Diese Angabe ist optional.</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p><strong>Rückgabewerte:</strong></p>
+</div>
+<div id="listing-rueckgabe-batch" class="listingblock">
+<div class="title">Listing 9. Rückgabewerte von Batch-Aufrufen</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">    0: Verarbeitung ohne Fehler durchgeführt
+    1: Verarbeitung mit Fehlern durchgeführt
+    2: Verarbeitung mit Fehlern abgebrochen
+    3: Batch konnte wegen Fehlern in den Aufrufparametern
+       nicht gestartet werden
+    4: Batch konnte wegen Fehlern in der Batch-Konfiguration
+       nicht gestartet werden
+  143: Batch wurde vom Benutzer abgebrochen.</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="monitoring"><a class="anchor" href="#monitoring"></a>5.6. Monitoring</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong><em>Ausfüllhinweise</em></strong></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Inhalt</dt>
+<dd>
+<p><em>In diesem Kapitel wird beschrieben welche Monitoring-Schnittstellen das System für den Betrieb anbietet.
+Im Wesentlichen sind dies die von der IsyFact bereitgestellten Standardkennzahlen für JMX.
+Nicht beschrieben werden soll die konkrete Einbindung des Systems in die betriebliche Überwachung.</em></p>
+</dd>
+<dt class="hdlist1">Quelle</dt>
+<dd>
+<p><em>Systementwurf</em></p>
+</dd>
+<dt class="hdlist1">Dokumentationsform</dt>
+<dd>
+<p><em>Tabelle, Freitext</em></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Die Überwachung der Anwendung erfolgt per JMX. Die nachfolgenden Tabellen listen die von der Anwendung bzw. der Laufzeitumgebung bereitgestellten Parameter auf.</p>
+</div>
+<div class="sect3">
+<h4 id="monitoring-tomcat-anwendungen"><a class="anchor" href="#monitoring-tomcat-anwendungen"></a>5.6.1. Monitoring der Tomcat-Anwendungen</h4>
+<div class="paragraph">
+<p>In diesem Kapitel werden die per JMX bereitgestellten Monitoring-Parameter für die Tomcat-Anwendungen beschrieben.</p>
+</div>
+<table id="table-standard-ueberwachungsinformationen" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 10. Standard Überwachungsinformationen</caption>
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">MBean-Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Attribut-Name</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Beschreibung</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2" style="background-color: #F6F4F4;"><p class="tableblock">java.lang:type=OperatingSystem</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">FreePhysicalMemorySize</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Liefert den freien physikalischen Arbeitsspeicher in Byte.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">FreeSwapSpaceSize</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Liefert den freien Auslagerungsspeicher in Byte.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">OpenfileDescriptorCount</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Liefert die Anzahl der offenen Datei-Deskriptoren.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2" style="background-color: #F6F4F4;"><p class="tableblock"> java.lang:type=Memory</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">HeapMemoryUsage.used</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Liefert den Java-Heap-Speicherverbrauch in Byte.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">HeapMemoryUsage</dt>
+<dd>
+<p>Für Attributwerte die zusammengesetzte Werte zurückliefern (CompositeData) wird Attributname und Composite-Key-Name durch Punkt getrennt.</p>
+</dd>
+</dl>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="informationen-xxx-ga-xxx-sgw"><a class="anchor" href="#informationen-xxx-ga-xxx-sgw"></a>5.6.2. Informationen der XXX-GA und des XXX-SGW</h4>
+<table id="table-anwendungsspezifische-ueberwachungsinformation-xxx-ga" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 11. Anwendungsspezifische Überwachungsinformation für XXX-GA</caption>
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2" style="background-color: ;">MBean-Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Attribut-Name</p></th>
+<th class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Beschreibung</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2" style="background-color: #F6F4F4;"><p class="tableblock">de.bund.bva.xxx:type=ServiceStatistik,name="XXX"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">AnzahlAufrufeLetzteMinute</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Liefert die Anzahl der Aufrufe aller Methoden des Services.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">AnzahlFehlerLetzteMinute</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Liefert die Anzahl der Aufrufe, die mit einem Fehler beendet wurden.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">DurchschnittlicheDauerLetzteAufrufe</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Liefert die durchschnittliche Dauer der letzten Aufrufe in Millisekunden (ms).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2" style="background-color: #F6F4F4;"><p class="tableblock">de.bund.bva.xxx:type=StatusMonitor,name="Status-Ueberwachung"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">LetztePruefungErfolgreich</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Gibt an ob der letzte Selbsttest des Systems erfolgreich war.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">ZeitpunktLetztePruefung</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Der Zeitpunkt des letzten Selbsttests.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="monitoring-batches"><a class="anchor" href="#monitoring-batches"></a>5.6.3. Monitoring Batches</h4>
+<div class="paragraph">
+<p>Die Batch-Anwendungen werden durch die Skripte zunächst ohne JMX gestartet. Wenn diese mit JMX verwaltet und beobachtet werden, so muss <strong>vor</strong> dem Aufruf des Startskriptes auf der Kommandozeile folgendes aufgerufen werden:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>export JAVA_OPTS= "-Dcom.sun.management.jmxremote.port=28000"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Obiges Beispiel startet einen JMX-Agenten für den Port 28000. Der Port kann vom Betrieb frei gewählt werden.</p>
+</div>
+<div class="paragraph">
+<p>Nach dem Aufruf des Skriptes sollte die Variable <code>JAVA_OPTS</code> auf leer gesetzt werden. Damit wird verhindert, dass andere Java-Programme die ggf. die gleiche Variable verwenden, automatisch ebenfalls über JMX gesteuert werden können.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>export JAVA_OPTS=</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Nach Aktivierung von JMX stellt jeder Batch-Prozess folgende Informationen per JMX bereit:</p>
+</div>
+<table id="table-ueberwachungsinformation-batches" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 12. Überwachungsinformation der Batches</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" style="background-color: ;">Bezeichnung</th>
+<th class="tableblock halign-left valign-top" style="background-color: ;">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2" style="background-color: #F6F4F4;"><p class="tableblock">de.bund.bva.visa.common:type=Batchrahmen,name=“Batchrahmen-Verarbeitung“</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">SaetzeGesamt</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Die Gesamtanzahl der zu bearbeitenden Sätze. Falls diese nicht bekannt ist: -1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">SaetzeVerarbeitet</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Die Anzahl bereits verarbeiteter Sätze.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">SchluesselLetzterSatz</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Schlüssel des letzten verarbeiteten Satzes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">ZeitSeitLetztemSatz</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Zeitraum in Millisekunden, der bereits für den aktuellen Satz benötigt wurde.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">BatchId</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Die ID des aktuellen Batches.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="backup-recovery"><a class="anchor" href="#backup-recovery"></a>5.7. Backup und Recovery</h3>
+<div class="paragraph">
+<p><strong><em>Ausfüllhinweise</em></strong></p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Inhalt</dt>
+<dd>
+<p><em>Auflistung von Dateien, Datenbank-Schemata, die zum Verfahren gehören und die mit in das Backup einbezogen werden müssen.
+Dateien, die durch eine Neuinstallation des Verfahrens wiederhergestellt werden können sind hier nicht aufzuführen.</em></p>
+<div class="paragraph">
+<p><em>Die Informationen in diesem Kapitel dienen als Grundlage für die Erstellung des Datensicherungskonzeptes, in dem dann
+Details zu Sicherungsintervallen, Abhängigkeiten zu anderen Systemen usw. beschrieben werden.</em></p>
+</div>
+</dd>
+<dt class="hdlist1">Quelle</dt>
+<dd>
+<p><em>Systementwurf</em></p>
+</dd>
+<dt class="hdlist1">Dokumentationsform</dt>
+<dd>
+<p><em>Tabelle, Freitext</em></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="hinweise-stoerungsdiagnose-behandlung"><a class="anchor" href="#hinweise-stoerungsdiagnose-behandlung"></a>6. Hinweise für Störungsdiagnose und -behandlung</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="verfuegbare-hilfsmittel"><a class="anchor" href="#verfuegbare-hilfsmittel"></a>6.1. Verfügbare Hilfsmittel</h3>
+<div class="sect3">
+<h4 id="smoke-test"><a class="anchor" href="#smoke-test"></a>6.1.1. Smoke-Test</h4>
+<div class="paragraph">
+<p>Folgender Test kann ausgeführt werden, um zu prüfen ob die Anwendung läuft:</p>
+</div>
+<div class="paragraph">
+<p>Im Info-Log (siehe Kapitel <a href="#log-konfigurationsdateien">Log- und Konfigurationsdateien</a>) kann der Start des Systems nachvollzogen werden. Außerdem werden Fehlermeldungen des Selbsttests der Anwendung dort sowie im Error-Log geloggt.</p>
+</div>
+<table id="table-smoketest" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 13. Fehlercodes Smoke-Tests</caption>
+<colgroup>
+<col style="width: 80%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" style="background-color: ;">Smoketest Checkliste</th>
+<th class="tableblock halign-left valign-top" style="background-color: ;">Erledigt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><div class="content"><div class="paragraph">
+<p><strong>Prüfen der Logdateien der Anwendung:</strong></p>
+</div>
+<div class="paragraph">
+<p>Das Error-Log der Anwendung darf nach dem Starten des Tomcats keine Fehler enthalten. Außerdem sollte die Wrapper-Logdatei als letzte Zeile folgenden Hinweis enthalten:</p>
+</div>
+<div class="paragraph">
+<p>INFO: Server startup in &lt;ZAHL&gt; ms</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><div class="content"><div class="paragraph">
+<p><strong>Verfügbarkeit der Services prüfen:</strong></p>
+</div>
+<div class="paragraph">
+<p>Mit einem JMX-Client (z.B. jconsole) die MBean &lt;Anwendungspfad&gt;.StatusMonitor prüfen. Der Wert LetztePruefungErfolgreich muss true sein; ZeitpunktLetzterPruefung muss aktuell sein.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><div class="content"><div class="paragraph">
+<p><strong>Test der Batches</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>&lt;Anwendungsspezifisch Batches ausführen&gt;</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Das Error-Log darf keine Fehler enthalten.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="debug-logging"><a class="anchor" href="#debug-logging"></a>6.1.2. Debug-Logging</h4>
+<div class="paragraph">
+<p>Die Konfiguration wird mit Log-Level <code>INFO</code> ausgeliefert, d.h. das Loggen von Debug-Ausgaben ist ausgeschaltet. Es kann aber wie folgt eingeschaltet werden:</p>
+</div>
+<div class="paragraph">
+<p>Die Konfigurationsdatei <code>logback.xml</code> (bzw. <code>logback-batch.xml</code>) enthält folgende Zeile:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>&lt;root level="INFO"&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Wird der Eintrag <code>INFO</code> auf <code>DEBUG</code> umgestellt, so werden auch Debug-Meldungen geschrieben.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Achtung"></i>
+</td>
+<td class="content">
+Das Logging sollte auf der Produktiv-Umgebung nie auf <code>DEBUG</code> gestellt werden.
+Aufgrund der umfangreichen Datenausgabe könnte es zu Performance-Problemen kommen.
+Gleichzeitig ist nicht sichergestellt, dass keine sicherheitsrelevanten Daten ausgegeben werden.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fehler-fehlerbehebungsmassnahmen"><a class="anchor" href="#fehler-fehlerbehebungsmassnahmen"></a>6.2. Fehler und Fehlerbehebungsmaßnahmen</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong><em>Ausfüllhinweise</em></strong></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Inhalt</dt>
+<dd>
+<p><em>Auflistung der Fehler (Ebene Fatal und Error), die vom Verfahren in den Log-Dateien ausgegeben werden.
+Hier kann die unten aufgeführte Tabelle verwendet werden.</em><br>
+<em>Weiterhin Beschreibung von bekannten Fehlerszenarien und wie damit umgegangen wird.</em></p>
+</dd>
+<dt class="hdlist1">Quelle</dt>
+<dd>
+<p><em>Systementwurf, Entwicklung</em></p>
+</dd>
+<dt class="hdlist1">Dokumentationsform</dt>
+<dd>
+<p><em>Tabelle</em></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="fehlercodes"><a class="anchor" href="#fehlercodes"></a>6.2.1. Fehlercodes</h4>
+<table id="table-fehlercodes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 14. Fehlercodes Datenbank</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 37.5%;">
+<col style="width: 37.5%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" style="background-color: ;">Fehler</th>
+<th class="tableblock halign-left valign-top" style="background-color: ;">Mögliche Ursachen</th>
+<th class="tableblock halign-left valign-top" style="background-color: ;">Identifikation und Behebung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><strong><em>XXXXX50000</em></strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><em>Die Datenbank ist nicht erreichbar.</em></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><em>Error-Log analysieren.</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="fehlerszenarien"><a class="anchor" href="#fehlerszenarien"></a>6.2.2. Fehlerszenarien</h4>
+<div class="paragraph">
+<p>In der folgenden Tabelle sind die im System möglichen grundsätzlichen Fehlersituationen, der Ort ihrer Entstehung und die Mechanismen für deren Behandlung bzw. Verarbeitung dargestellt.</p>
+</div>
+<table id="table-fehlerszenarien" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 15. Fehlerszenarien</caption>
+<colgroup>
+<col style="width: 7.6923%;">
+<col style="width: 30.7692%;">
+<col style="width: 23.0769%;">
+<col style="width: 38.4616%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" style="background-color: ;">Nr.</th>
+<th class="tableblock halign-left valign-top" style="background-color: ;">Fehlersituation</th>
+<th class="tableblock halign-left valign-top" style="background-color: ;">Ort der<br>
+Entstehung</th>
+<th class="tableblock halign-left valign-top" style="background-color: ;">Behandlung und Reaktion<br>
+des Systems</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: ;"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><div class="content"><div class="paragraph">
+<p><em>Nachbarsystem nicht erreichbar</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Schlüsselverzeichnis</em></p>
+</li>
+<li>
+<p><em>Behördenverzeichnis</em></p>
+</li>
+<li>
+<p><em>…</em></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><em>XXX -GA ,<br>
+XXX -GA Batch</em></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><em>Das System schreibt den Fehler in das Error-Log und gibt den für den Anwender maskierten Fehler als XXXXX99999 über die Außenschnittstelle an den Aufrufer zurück.</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: ;"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><em>Authentifizierung schlägt fehl (fehlende Zugangsberechtigung)</em></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><em>XXX -GA ,<br>
+XXX -GA Batch</em></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><em>Das System schreibt den Fehler in das Error-Log und gibt einen Berechtigungsfehler über die Außenschnittstelle an den Aufrufer zurück.</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: ;"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><em>Autorisierung schlägt fehl (fehlende Nutzungsberechtigung)</em></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><em>XXX -GA ,<br>
+XXX -GA Batch</em></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><em>Das System schreibt den Fehler in das Error-Log und gibt einen Berechtigungsfehler über die Außenschnittstelle an den Aufrufer zurück.</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: ;"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><em>Konfigurationsfehler</em></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><em>XXX -GA ,<br>
+XXX -GA Batch</em></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><em>Abhängig vom Konfigurationsfehler startet die Anwendung nicht oder führt zu einem anderen Fehlertyp (z.B. falsche Angabe der Schlüsselverzeichnis-Url)</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: ;"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><em>Technischer Fehler in der Verarbeitung (z.B. Datenbank nicht verfügbar)</em></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><em>XXX -GA ,<br>
+XXX -GA Batch</em></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><em>Das System schreibt den Fehler in das Error-Log und gibt den für den Anwender maskierten Fehler als XXXXX99999 über die Außenschnittstelle an den Aufrufer zurück.</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<div class="divFooter"></div>
+
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+<script src="../../../../_/js/isyfact.js"></script>
+  </body>
+</html>

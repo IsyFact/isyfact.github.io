@@ -1,0 +1,2611 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Detailkonzept Datenzugriff: Inhalt :: IsyFact Dokumentation</title>
+    <link rel="canonical" href="https://github.com/isyfact/isyfact-standards-doku/latest/blaupausen/detailkonzept-komponente-datenzugriff/inhalt.html">
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../_/css/isyfact.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://github.com/isyfact">IsyFact Dokumentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5-SNAPSHOT">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../einstieg/vorstellung.html">IsyFact Standards</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Einstieg</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../einstieg/vorstellung.html">Vorstellung der IsyFact</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#isyfact-standards.adoc">isyfact-standards.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#isyfact-erweiterungen.adoc">isyfact-erweiterungen.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/rahmenbedingungen.html">Rahmenbedingungen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/erste-schritte.html">Erste Schritte</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/tutorial/master.html">Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/whitepaper/master.html">Whitepaper</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Blaupausen</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../referenzarchitektur/master.html">Referenzarchitektur</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="master.html">Datenzugriff</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../detailkonzept-komponente-service/master.html">Service</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../detailkonzept-komponente-web-gui/master.html">Web GUI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../detailkonzept-komponente-batch/master.html">Batch</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Vorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vorgaben-architektur/master.html">Architektur</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vorgaben-it-sicherheit/master.html">IT-Sicherheit</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Bausteine</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Datum &amp; Zeit</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-datetime/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-datetime/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Fehlerbehandlung</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-exception-core/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-exception-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">HttpInvoker</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-serviceapi-core/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Konfiguration</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-konfiguration/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-konfiguration/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Logging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-logging/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-logging/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Polling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-polling/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-polling/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sicherheit</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sicherheit/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sicherheit/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sonderzeichen</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sonderzeichen/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sonderzeichen/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Task Scheduling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-task/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-task/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Überwachung</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-ueberwachung/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-ueberwachung/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Util</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-util/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Methodik</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/namenskonventionen/master.html">Namenskonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Werkzeuge</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/einrichtung_entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/handbuch_dokumentation/master.html">Dokumentation der IsyFact</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../changelog/changelog.html">Changelog</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">IsyFact Standards</span>
+    <span class="version">2.5-SNAPSHOT</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../glossary/latest/glossary/master.html">Glossar</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../glossary/latest/glossary/master.html">1.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../einstieg/vorstellung.html">IsyFact Standards</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../einstieg/vorstellung.html">2.5-SNAPSHOT</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../einstieg/vorstellung.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../einstieg/vorstellung.html">IsyFact Standards</a></li>
+    <li><a href="inhalt.html">Detailkonzept Datenzugriff: Inhalt</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Inhalt" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Detailkonzept Datenzugriff: Inhalt</h1>
+<div class="sect1">
+<h2 id="anforderungen"><a class="anchor" href="#anforderungen"></a>1. Anforderungen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die in diesem Dokument aufgestellten Vorgaben setzen folgende Anforderungen um:</p>
+</div>
+<div class="paragraph">
+<p><strong>Einfachheit der Verwendung von JPA:</strong> Dies betrifft sowohl die Erstellung von JPA-Konfigurationen und des JPA verwendenden Codes als auch deren Verständlichkeit und Wartbarkeit.
+Konkret kann diese Anforderung in die folgenden Anforderungen aufgeteilt werden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Einfachheit und Verständlichkeit der Konfiguration und der Mapping-Definition von JPA.</p>
+</li>
+<li>
+<p>Einfachheit und Verständlichkeit des JPA verwendenden Codes.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Schmale, definierte JPA-Schnittstelle:</strong> Die Verwendung und Konfiguration von JPA soll isoliert und über eine schmale Schnittstelle erfolgen.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Komponente Datenzugriff soll auf JPA über die schmale Schnittstelle zugreifen.</p>
+</li>
+<li>
+<p>Die Stellen, an welchen JPA verwendet wird, sollen keine Fachlogik enthalten.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Effizienz und Schnelligkeit der JPA Zugriffsschicht und der dahinter liegenden Hibernate-Implementierung:</strong> Die von
+JPA abgesetzten Datenbank-Aufrufe sollen effizient sein.
+Unnötige Zugriffe und doppelte Zugriffe sollen vermieden werden.</p>
+</div>
+<div class="paragraph">
+<p><strong>Einheitlichkeit der Verwendung von JPA:</strong> Die Konfiguration und Programmierung der JPA-Zugriffe soll zum einen
+über die gleichen Mechanismen und zum anderen an den gleichen Stellen vorgenommen werden.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="persistenzlogik"><a class="anchor" href="#persistenzlogik"></a>2. Persistenzlogik</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die Persistenzlogik gliedert sich, wie der Anwendungskern, in <strong>Fachkomponenten</strong>.
+Im Normalfall ist der Funktionsumfang dieser Fachkomponenten viel geringer als der Funktionsumfang der Entsprechungen im Anwendungskern.
+Dies liegt darin begründet, dass sich die Persistenzlogik ausschließlich um die Speicherung von Geschäftsobjekten in einer Datenbank kümmert und selbst keinerlei Geschäftslogik beinhaltet.</p>
+</div>
+<div class="paragraph">
+<p>Die Fachkomponenten bestehen wiederum aus einer Schnittstelle und den persistenten Objekten.
+Die Schnittstelle bildet in der Regel ein Data Access Object ab.
+Persistente Objekte werden Entitäten genannt.</p>
+</div>
+<div class="paragraph">
+<p>Die <a href="#aufbau-fachkomponente-datenzugriff">folgende Abbildung</a> zeigt den Aufbau einer Fachkomponente im Datenzugriff.</p>
+</div>
+<div id="aufbau-fachkomponente-datenzugriff" class="imageblock">
+<div class="content">
+<img src="../_images/detailkonzept-datenzugriff/aufbau_fachkomponente_datenzugriff.dn.svg" alt="aufbau fachkomponente datenzugriff.dn">
+</div>
+<div class="title">Abbildung 1. Aufbau einer Fachkomponente des Datenzugriffs</div>
+</div>
+<div class="paragraph">
+<p>Ein <strong>Data Access Object (DAO)</strong> beschreibt die Schnittstelle der Fachkomponente, d.h. die Operationen, die zum Speichern und Lesen der Entitäten aus der Datenbank nötig sind.
+DAOs werden über <em>Spring Data Repositories</em> abgebildet.
+Der Name eines Repositories leitet sich von derjenigen Entität ab, die über das Repository bearbeitet wird.</p>
+</div>
+<table id="table-repossimpl" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Namenskonvention DAO: Spring Data Repository</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Data Access Object: Spring Data Repository</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;Entität&gt;Repository</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AkteRepository</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+Der folgende, hervorgehobene Absatz wird nur noch aus historischen Gründen erwähnt und ist obsolet.
+</td>
+</tr>
+</table>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Vor der Verwendung von Spring Data wurden DAOs mithilfe von zwei Klassen umgesetzt: einem Interface und einer Implementierung.
+Der Name eines DAO-Interfaces leitet sich von derjenigen Entität ab, die über das DAO bearbeitet wird.</p>
+</div>
+<table id="table-daossimpl" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 2. Namenskonvention DAO: Interface + Implementierung</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Data Access Object: Interface + Implementierung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;Entität&gt;Dao<br>
+&lt;Entität&gt;DaoImpl</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiele</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AkteDao<br>
+AkteDaoImpl</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Entitäten</strong> bilden Geschäftsobjekte ab und werden in der Regel nach ihnen benannt.</p>
+</div>
+<table id="table-entity" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 3. Namenskonvention Entität</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Entität</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;Geschäftsobjekt&gt;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Termin</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Ein <strong>Persistenz-Klassenmodell</strong> ist das Modell der Entitäten, welche dauerhaft abgespeichert werden sollen.
+Die folgenden Abschnitte beschreiben gewünschte Eigenschaften des Persistenz-Klassenmodells sowie Verwendungsregeln.</p>
+</div>
+<div class="sect2">
+<h3 id="persistenz-klassenmodell-und-datenbank-schema-sollen-moeglichst-aehnlich-sein"><a class="anchor" href="#persistenz-klassenmodell-und-datenbank-schema-sollen-moeglichst-aehnlich-sein"></a>2.1. Persistenz-Klassenmodell und Datenbank-Schema sollen möglichst ähnlich sein</h3>
+<div class="paragraph">
+<p>Im Idealfall wird jedes Persistenzobjekt auf eine Tabelle des Datenbankschemas abgebildet.
+Eine solche Abbildung ist intuitiv und erleichtert das Verständnis der Anwendung und des Datenbankschemas, was wiederum in der Wartung ein großer Vorteil ist.</p>
+</div>
+<div class="paragraph">
+<p>Tatsächlich ist es aus Gründen der Datenbankperformance aber oft erforderlich, von diesem Idealfall abzuweichen.
+Hier gilt es, auf möglichst wenige Tabellen zuzugreifen, um an die benötigten Informationen zu gelangen.</p>
+</div>
+<div class="paragraph">
+<p>So ist es zum Beispiel sinnvoll, für 1:1-Beziehungen im Persistenz-Klassenmodell den JPA-Mechanismus der Embeddables zu verwenden.
+Hier wird der Inhalt einer Datenbank Tabelle durch ein entsprechendes JPA-Mapping auf mindestens zwei Persistenzklassen verteilt.
+Solche Persistenzobjekte können dann über das Lesen einer einzigen Tabellenzeile aus der Datenbank gefüllt werden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="verwendung-generischer-datenstrukturen-vermeiden"><a class="anchor" href="#verwendung-generischer-datenstrukturen-vermeiden"></a>2.2. Verwendung generischer Datenstrukturen vermeiden</h3>
+<div class="paragraph">
+<p>JPA ermöglicht die Verwendung generischer Datenstrukturen.
+Dabei können die Spalten einer Tabelle in Abhängigkeit eines Deskriptorwertes in einer speziell definierten Spalte auf unterschiedliche Attribute verschiedener Persistenzklassen abgebildet werden.
+Eine solche Vorgehensweise erschwert das Verständnis der Daten bei einem direkten Zugriff auf die Datenbank mit Datenbankwerkzeugen und damit auch die Fehleranalyse und Wartung.</p>
+</div>
+<div class="paragraph">
+<p>Trotzdem kann es aus Gründen der Datenbankperformance erforderlich sein, generische Datenstrukturen zu verwenden.
+Werden z. B. Persistenzklassen mit einer gemeinsamen Oberklasse als generische Datenstruktur in einer Tabelle abgelegt und sollen die Attribute der Oberklasse gesucht werden, so kann die Suche auf der Datenbank in einer einzigen Tabelle durchgeführt werden.
+Die Persistenzobjekte können ohne zusätzliche Joins aus der Datenbank gelesen werden.</p>
+</div>
+<div class="paragraph">
+<p>Werden generische Datenstrukturen verwendet, dann ist es obligatorisch, dass für jede Persistenzklasse, die in dieser Datenstruktur abgespeichert wird, ein eigener Datenbank-View definiert wird.
+Dieser Datenbank-View enthält alle Attribute der Persistenzklasse mit einem sprechenden Namen.
+Diese Datenbank-Views können dann beim direkten Zugriff mit Datenbankwerkzeugen und bei der Fehleranalyse verwendet werden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="vererbung-im-persistenz-klassenmodell-vermeiden"><a class="anchor" href="#vererbung-im-persistenz-klassenmodell-vermeiden"></a>2.3. Vererbung im Persistenz-Klassenmodell vermeiden</h3>
+<div class="paragraph">
+<p>Klassenhierarchien (der Einsatz von Vererbung) sind bei Persistenz­objekten zu vermeiden.
+Abweichungen sind nur für eine Reduzierung der Komplexität des Persistenz-Klassenmodells erlaubt.</p>
+</div>
+<div class="paragraph">
+<p>Falls Vererbung im Persistenz-Klassenmodell eingesetzt wird, ist sie im Datenbank-Schema auf folgende Weise umzusetzen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Über eine Tabelle, welche die Daten aller Klassen der Hierarchie („Table per class hierarchy“, siehe <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-JPA-Hibernate" class="xref page">„Java Persistence with Hibernate“</a> Kapitel 5.1.3) enthält.
+Diese Art der Abbildung ist vorzuziehen.
+Falls sie aufgrund vieler unterschiedlicher Felder oder Problemen mit Pflichtfeldern in den Klassen nicht verwendbar ist, können auch andere Strategien verwendet werden.
+Die Vor- und Nachteile der einzelnen Strategien sind in <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-JPA-Hibernate" class="xref page">„Java Persistence with Hibernate“</a> beschrieben.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Die Klassenhierarchie ist in jedem Fall möglichst flach zu halten: Soweit möglich sollen nur zwei Stufen verwendet werden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fachlogik-in-persistenzklassen-vermeiden"><a class="anchor" href="#fachlogik-in-persistenzklassen-vermeiden"></a>2.4. Fachlogik in Persistenzklassen vermeiden</h3>
+<div class="paragraph">
+<p>Die Implementierung von fachlicher Logik in den Persistenzklassen ist zu vermeiden.
+Idealerweise sollten die Persistenzklassen lediglich Getter- und Setter-Methoden für die persistierten Daten enthalten.
+Jegliche Logik sollte im Anwendungskern implementiert werden.</p>
+</div>
+<div class="paragraph">
+<p>Zur Fachlogik gehören auch Validierungen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="methoden-equals-und-hashcode-implementieren"><a class="anchor" href="#methoden-equals-und-hashcode-implementieren"></a>2.5. Methoden equals und hashCode implementieren</h3>
+<div class="paragraph">
+<p>Im Normalfall müssen für Entitätsklassen die Methoden <code>equals</code> und <code>hashCode</code> nicht überschrieben werden.</p>
+</div>
+<div class="paragraph">
+<p>Nur für Embeddable-Klassen (siehe <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-JPA-Hibernate" class="xref page">„Java Persistence with Hibernate“</a> Kapitel 4.4.2) müssen die Methoden <code>equals</code> und <code>hashCode</code> implementiert werden.
+Die Methoden müssen dafür sämtliche Attribute mit einbeziehen Zusätzlich muss das Interface <code>Serializable</code> implementiert werden.</p>
+</div>
+<div class="paragraph">
+<p>Für Beispiele zu den <code>equals-</code> und <code>hashCode-`Implementierungen siehe die Klasse `Organisator</code> der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-vorlageanwendung" class="xref page">Vorlage-Anwendung</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="initialisieren-von-string-feldern"><a class="anchor" href="#initialisieren-von-string-feldern"></a>2.6. Initialisieren von String-Feldern</h3>
+<div class="paragraph">
+<p>Für die Verarbeitung im Regelwerk ist es hilfreich, dass String-Felder initialisiert werden, da ansonsten in nahezu allen Regeln zwischen <code>""</code> und <code>null</code> differenziert werden müsste.
+In Objekten, die in das Regelwerk eingegeben werden sollen, wird daher bei der Definition von String-Feldern initial ein Leer-String gesetzt:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class Teilnehmer {
+   private String name = "";
+   // ...
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="die-definition-des-mappings-zwischen-objekten-und-datenbank"><a class="anchor" href="#die-definition-des-mappings-zwischen-objekten-und-datenbank"></a>3. Die Definition des Mappings zwischen Objekten und Datenbank</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Im vorherigen Abschnitt wurden allgemeine Regeln für das Persistenz-Klassenmodell aufgestellt.
+In diesem Kapitel wird die Abbildung dieses Modells auf ein Datenbankschema in JPA beschrieben.</p>
+</div>
+<div class="sect2">
+<h3 id="definition-des-mappings-ueber-annotationen"><a class="anchor" href="#definition-des-mappings-ueber-annotationen"></a>3.1. Definition des Mappings über Annotationen</h3>
+<div class="paragraph">
+<p>Die Definition des Mappings wird über Annotationen in den Persistenzklassen (Entitätsklassen) durchgeführt.
+Pro Klasse wird über die Annotationen definiert, auf welche Tabelle sie abgebildet werden und wie ihre Variablen auf Datenbank-Felder abgebildet werden.
+Für Beispiele zu Annotationen siehe die Klassen <code>Terminfindung</code>, <code>Tag</code> und <code>Zeitraum</code> in der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-vorlageanwendung" class="xref page">Vorlageanwendung</a>.</p>
+</div>
+<div class="paragraph">
+<p>Über Annotationen können einige wenige Mappings nicht definiert werden, welche über eine XML-Konfigurationsdatei definierbar sind.
+Ein Beispiel dafür ist das Mapping einer Klasse auf zwei verschiedene Tabellen.</p>
+</div>
+<div class="paragraph">
+<p>Falls eine XML-Mapping-Konfiguration für eine Klasse notwendig ist, ist die Konfiguration für diese Klasse in einer XML-Konfigurationsdatei abzulegen.
+Diese wird automatisch von JPA verwendet.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="n-assoziationen-in-der-regel-als-set-ohne-reihenfolge-definieren"><a class="anchor" href="#n-assoziationen-in-der-regel-als-set-ohne-reihenfolge-definieren"></a>3.2. 1:n Assoziationen in der Regel als Set (ohne Reihenfolge) definieren</h3>
+<div class="paragraph">
+<p>Beim Abbilden einer 1:n Assoziation („Collection Mapping“, siehe <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-Collection-Mapping" class="xref page">Collections</a>) ist in der Regel als Java-Typ <code>Set</code> zu definieren, da in einem <code>Set</code> keine Reihenfolge definiert ist.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+@JoinColumn(name = "zeitraum_id")
+private Set&lt;TeilnehmerZeitraum&gt; teilnehmerZeitraeume = new HashSet&lt;&gt;();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Wird von der Anwendung eine Sortierung benötigt und sind alle für die Sortierung benötigten Attribute in der Entität enthalten, dann kann auch der Java-Typ <code>List</code> verwendet werden, da die Datenbank effizienter sortieren kann als eine Java-Implementierung.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+@JoinColumn(name = "terminfindung_id")
+@OrderBy("datum ASC")
+private List&lt;Tag&gt; termine = new ArrayList&lt;&gt;();</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="identifizierende-attribute-verwenden"><a class="anchor" href="#identifizierende-attribute-verwenden"></a>3.3. Identifizierende Attribute verwenden</h3>
+<div class="paragraph">
+<p>Falls für eine Entität genau ein identifizierendes Attribut existiert, ist dieses sowohl in der Datenbank als auch im Hibernate Mapping als Primärschlüssel zu verwenden.
+Künstliche ID-Spalten sind nur dann als Schlüssel zu verwenden, wenn kein identifizierendes Attribut für die Entität vorliegt oder nur mehrere Attribute zusammen die Entität eindeutig identifizieren.
+Zusammengesetzte Schlüssel dürfen nicht verwendet werden.</p>
+</div>
+<div class="paragraph">
+<p>Das identifizierende Attribut darf beliebige Typen besitzen: Es dürfen Zeichenketten oder Datumsangaben sein.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="bidirektionale-assoziationen-vermeiden"><a class="anchor" href="#bidirektionale-assoziationen-vermeiden"></a>3.4. Bidirektionale Assoziationen vermeiden</h3>
+<div class="paragraph">
+<p>Bidirektional traversierbare Assoziationen (<code>get</code> -Methoden auf beiden Seiten) sind zu vermeiden.
+Für die Traversierung in Gegenrichtung sollte eine Query verwendet werden.</p>
+</div>
+<div class="paragraph">
+<p>Grund für die Vorgabe ist, dass Änderungen am „inversen Ende“ der Assoziation nicht persistiert werden.
+Falls wirklich eine bidirektionale Assoziation benötigt wird, sind in der Entität am „inversen Ende“ der Assoziation <code>add/remove</code> Methoden zu definieren, welche die Assoziation korrekt manipulieren.</p>
+</div>
+<div class="paragraph">
+<p>Explizit verboten sind bidirektional traversierbare n:m Assoziationen.
+Hierfür sind zwei 1:n (bzw. n:1) Mappings zu definieren.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="behandlung-von-zeitangaben"><a class="anchor" href="#behandlung-von-zeitangaben"></a>3.5. Behandlung von Datums- und Zeitangaben</h3>
+<div class="paragraph">
+<p>Es werden die Datums- und Zeitklassen aus der <em>Java 8 Date Time API</em> verwendet.
+Hinweise zu deren Verwendung finden sich im <a href="../../isy-datetime/konzept/master.html" class="xref page">Konzept Datum Zeit</a>.
+Zur Persistierung von Zeiträumen und ungewissen Datums- und Zeitangaben im Sinne des <a href="../../isy-datetime/konzept/master.html" class="xref page">Konzept Datum Zeit</a> werden die <code>@Entity</code>-Klasse <code>ZeitraumEntitaet</code> und die <code>@Embeddable</code>-Klassen <code>UngewisseZeitEntitaet</code> und <code>UngewissesDatumEntitaet</code> bereitgestellt.</p>
+</div>
+<div class="sect3">
+<h4 id="_altanwendungen"><a class="anchor" href="#_altanwendungen"></a>3.5.1. Altanwendungen</h4>
+<div class="paragraph">
+<p>Für alte Anwendungen, die nicht die <em>Java 8 Date Time API</em> verwenden, sondern noch <code>java.util.Date</code> verwenden, gelten die folgenden Vorgaben.</p>
+</div>
+<div class="paragraph">
+<p>In der Datenbank erfolgt die Speicherung in einem Attribut vom Typ <code>TIMESTAMP</code>.
+In der Entitätsklasse ist das Mapping wie folgt anzugeben:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Temporal(TemporalType.TIMESTAMP)
+private Date updateDate;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Falls die Genauigkeit des Timestamp-Datentyps fachlich nicht gewünscht ist, kann der Technische Chefdesigner entscheiden, dass in der Datenbank der Typ <code>DATE</code> verwendet wird.
+Das Mapping muss dann folgendermaßen festgelegt werden:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Temporal(TemporalType.DATE)
+private Date updateDate;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Hibernate erzeugt beim Laden der Daten aus der Datenbank implizit Objekte der Typen <code>java.sql.Timestamp</code> bzw. <code>java.sql.Date</code> für diese Attribute.
+Beide Typen sind von <code>java.util.Date</code> abgeleitet und dieses Verhalten damit für den Entwickler transparent.</p>
+</div>
+<div class="paragraph">
+<p>Vergleiche von Zeitangaben unterschiedlicher Genauigkeit sind jedoch problematisch:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Grundsätzlich darf der Vergleich <strong>nicht mit der <code>Equals-</code> Methode</strong> durchgeführt werden, es muss immer <code>compareTo</code> verwendet werden.</p>
+</li>
+<li>
+<p>Ein Vergleich mit <strong><code>CompareTo</code> muss immer auf dem Attribut mit höherer Genauigkeit</strong> (also auf dem <code>java.sql.Timestamp</code>) aufgerufen werden:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">.getTimestamp().compareTo(getDate()); // OK
+.getDate().compareTo(getTimestamp()); // Nicht OK
+.getDate().equals(getTimestamp()); // Nicht OK</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Für Berechnungen, z. B. das Hinzuaddieren von Tagen, oder das Setzen von Feldern, ist der Daten-Typ <code>java.util.Calendar</code> zu verwenden.
+In diesem Fall wird im Anwendungskern temporär ein <code>Calendar</code>-Objekt für das entsprechende Datum erzeugt:</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+Insbesondere dürfen die als Deprecated markierten Methoden von Date nicht verwendet werden.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">Calendar cal = Calendar.getInstance();
+cal.add(Calendar.DAY_OF_MONTH, 1); // Einen Tag addieren
+cal.set(Calendar.MONTH, 11); // Monat auf Dezember setzen</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="boolesche-variablen"><a class="anchor" href="#boolesche-variablen"></a>3.6. Boolesche Variablen</h3>
+<div class="paragraph">
+<p>Für die Ablage von booleschen Werten in der Datenbank ist stets ein <code>NUMBER</code> Feld zu verwenden, kein Textfeld.
+Der Wert wird über das default Hibernate-Mapping auf 1 für wahr und 0 für falsch abgebildet.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enum-variablen"><a class="anchor" href="#enum-variablen"></a>3.7. Enum-Variablen</h3>
+<div class="paragraph">
+<p>Für die Ablage von Enum-Feldern persistenter Entitäten in der Datenbank sind in JPA zwei Modi vorgesehen, die jedoch beide mit Nachteilen verbunden sind:</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+Siehe <code>javax.persistence.EnumType</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ORDINAL</code>: Die Enum-Ausprägungen werden durchnummeriert und als Integer abgelegt.
+Diese Ablage ist sehr ungünstig, weil sich beim Hinzufügen oder Entfernen einer Enum-Ausprägung, die nicht die letzte ist, die Nummern verschieben und dadurch eine Datenmigration erforderlich wird.</p>
+</li>
+<li>
+<p><code>STRING</code>: Es wird der Java-Name der Enum-Ausprägung in der Datenbank abgelegt.
+Diese Ablage ist problematisch, weil sie eine enge Kopplung des Java-Codes an die Datenbankinhalte erzeugt.
+Unter Umständen sollen im Java-Code lange, sprechende Namen genutzt werden, während für die Ablage in der Datenbank eine kurze, Speicherplatz sparende Darstellung gewünscht ist.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Aufgrund der genannten Schwächen werden in der Bibliothek <code>isy-persistence</code> zwei Hibernate User-Types zur Verfügung gestellt, um Enum-Werte auf eine VARCHAR-Spalte der Datenbank abzubilden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>EnumUserType</code> erlaubt es, in einem Enum per Annotation die gewünschte Datenbankdarstellung zu jeder Ausprägung anzugeben.</p>
+</li>
+<li>
+<p><code>EnumWithIdUserType</code> erlaubt die Persistierung von Enums, die einen fachlichen Schlüssel als Attribut besitzen.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Beispiel für eine Enum-Klasse mit annotierten Persistenzwerten:</p>
+</div>
+<div id="listing-enum-annotated" class="listingblock">
+<div class="title">Listing 1. Enum-Klasse mit annotierten Persistenzwerten</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public enum Geschlecht {
+  @PersistentValue("M")
+  MAENNLICH,
+  @PersistentValue("W")
+  WEIBLICH
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Beispiel für eine Enum-Klasse mit natürlichem Schlüssel:</p>
+</div>
+<div id="listing-enum-natural-key" class="listingblock">
+<div class="title">Listing 2. Enum-Klasse mit natürlichem Schlüssel</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public enum Geschlecht {
+  MAENNLICH("M"),
+  WEIBLICH("W");
+
+  private final String id;
+
+  private Geschlecht(String id) {
+    this.id = id;
+  }
+
+  @EnumId
+  public String getId() {
+    return id;
+  }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Beispiel für eine persistente Entität, die ein Enum-Feld enthält:</p>
+</div>
+<div id="listing-entity-enum-field" class="listingblock">
+<div class="title">Listing 3. Enum-Feld an einer persistenten Entität</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Entity
+public class Person {
+  ...
+
+  @Column(nullable = *false*, length = 1)
+  @Type(type = "de.bund.bva.isyfact.persistence.usertype.Enum(WithId)UserType", parameters = { @Parameter(
+    name = "enumClass",
+    value = "&lt;Package&gt;.Geschlecht") })
+  public Geschlecht getGeschlecht() {
+    return geschlecht;
+  }
+  ...
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="datenbankschema-anfangs-ueber-hbm2ddl-erzeugen"><a class="anchor" href="#datenbankschema-anfangs-ueber-hbm2ddl-erzeugen"></a>3.8. Datenbankschema anfangs über hbm2ddl erzeugen</h3>
+<div class="paragraph">
+<p>Für die Erstellung des Datenbank-Schemas wird empfohlen, es initial über Hibernate zu erzeugen.
+Dies ist einfach zu konfigurieren: In <code>application.properties</code> wird dazu die folgende Property gesetzt:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">spring.jpa.hibernate.ddl-auto=create</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Grundsätzlich ist es möglich, sämtliche Tabellen-Eigenschaften (etwa auch die Feldlängen und Indizes) über Annotationen zu definieren und das Datenbank-Schema komplett durch hbm2ddl zu erzeugen.
+Hierzu wird keine Vorgabe erstellt: Ob die DDL während der Entwicklung stets generiert wird oder sie nach einer initialen Generierung verändert und parallel gepflegt wird, ist je nach Komplexität des Schemas zu entscheiden.</p>
+</div>
+<div class="paragraph">
+<p>Befindet sich die Anwendung in Produktion, dann muss der Parameter <code>spring.jpa.hibernate.ddl-auto</code> auskommentiert werden, damit weder eine Generierung noch eine Validierung des Schemas stattfindet.
+Alternativ kann auch der Wert <code>none</code> gesetzt werden.
+Eine Validierung durch Setzen des Parameters auf <code>validate</code> findet nicht statt.
+Stattdessen wird eine explizite Versionierung des Schemas verwendet: Bei jedem Start der Anwendung wird überprüft, ob in der Datenbank die Schema-Version vorliegt, die die Anwendung erwartet.
+Die Funktionalität hierzu ist in Abschnitt <a href="#pruefen-der-schema-version">Prüfen der Schema-Version</a> beschrieben.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="vergabe-von-indizes"><a class="anchor" href="#vergabe-von-indizes"></a>3.9. Vergabe von Indizes</h3>
+<div class="paragraph">
+<p>Indizes sind ein wichtiges Element, um eine gute Performance des Datenbankzugriffs sicherzustellen.
+Indizes müssen dabei gezielt vergeben werden.
+Fehlende Indizes führen häufig zu einer schlechten Performance der Anwendung und belasten die Datenbank unter Umständen durch das Auftreten von Full-Table-Scans sehr stark.
+Zu viele Indizes verschlechtern die Performance beim Schreiben von Datensätzen und verbrauchen unnötigen Speicherplatz.</p>
+</div>
+<div class="paragraph">
+<p>Die tatsächlich notwendigen Indizes können letztendlich häufig nur in Produktion festgestellt werden.
+In dem Sinne ist es sinnvoll während der Entwicklung zunächst nur die sicher notwendigen Indizes anzulegen und diese später durch Erkenntnisse aus Lasttests und Produktion zu ergänzen.</p>
+</div>
+<div class="paragraph">
+<p>Initial sind folgende Indizes vorzusehen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ein Index auf jeder Spalte, die als Fremdschlüssel verwendet wird,</p>
+</li>
+<li>
+<p>ein Index auf (fachliche) Schlüsselattribute, die sehr häufig im Rahmen der Verarbeitung genutzt werden (Beispiele: Nummer eines Registereintrags, Kennung einer Nachricht).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="verwendung-von-jpa-in-der-anwendung"><a class="anchor" href="#verwendung-von-jpa-in-der-anwendung"></a>4. Verwendung von JPA in der Anwendung</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nachdem ein Persistenzmodell erstellt und das Mapping auf ein Datenbankschema definiert wurde
+(siehe Kapitel <a href="#persistenzlogik">Persistenzlogik</a> und <a href="#die-definition-des-mappings-zwischen-objekten-und-datenbank">Die Definition des Mappings zwischen Objekten und Datenbank</a>),
+können die Persistenzobjekte in der Anwendung verwendet werden.
+In diesem Kapitel wird der Zugriff auf Persistenzobjekte mit der Hilfe von Spring Data beschrieben.</p>
+</div>
+<div class="sect2">
+<h3 id="zugriff-auf-jpa-nur-ueber-data-access-objects-daos"><a class="anchor" href="#zugriff-auf-jpa-nur-ueber-data-access-objects-daos"></a>4.1. Zugriff auf JPA nur über Data-Access-Objects (DAOs)</h3>
+<div class="paragraph">
+<p>Die Persistenzfunktionen werden in Data-Access-Objects (DAOs) mithilfe des JPA Entity Managers implementiert.</p>
+</div>
+<div class="paragraph">
+<p>Um den Anteil an Boilerplate Code bei der Implementierung von Data Access Objects deutlich zu reduzieren, wird die Abstraktion für Data Access Object von Spring Data eingesetzt.
+Die häufig verwendeten CRUD-Methoden (Create, Read, Update, Delete) werden vom Interface <code>CrudRepository</code> (siehe <a href="#listing-crudrepository">Listing 4</a>) aus Spring Data zur direkten Verwendung angeboten.
+Zur Implementierung werden zwei Typparameter benötigt: der Entitätstyp <code>T</code> und der Typ des Primärschlüssels <code>ID</code>.</p>
+</div>
+<div id="listing-crudrepository" class="listingblock">
+<div class="title">Listing 4. Methoden von CrudRepository</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public interface CrudRepository&lt;T,ID&gt; {
+    long        count();
+    void        delete(T entity)
+    void        deleteAll()
+    void        deleteAll(Iterable&lt;? extends T&gt; entities)
+    void        deleteById(ID id)
+    boolean     existsById(ID id)
+    Iterable&lt;T&gt; findAll()
+    Iterable&lt;T&gt; findAllById(Iterable&lt;ID&gt; ids)
+    Optional&lt;T&gt; findById(ID id)
+    S           save(S entity)
+    Iterable&lt;S&gt; saveAll(Iterable&lt;S&gt; entities)
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Für ein konkretes DAO ist ein eigenes Interface von der Basisschnittstelle <code>CrudRepository</code> abzuleiten.
+Die Benennung erfolgt gemäß der <a href="#namenskonvention-spring-data-repository">Namenskonvention</a>.
+In der Dao-Klasse können weitere DAO-Operationen definiert werden, zum Beispiel zur Durchführung von Queries.
+Ein Beispiel hierfür ist in <a href="#listing-beispielrepository">Listing 5</a> zu sehen.</p>
+</div>
+<div class="paragraph">
+<p>Weiterhin ist das eigene Interface mit der Annotation <code>@Repository</code> zu versehen, damit alle vom Entity Manager erzeugten Exceptions in die besser auszuwertenden Spring-<code>DataAccessExceptions</code> umgewandelt werden.</p>
+</div>
+<div id="listing-beispielrepository" class="listingblock">
+<div class="title">Listing 5. Beispiel für ein eigenes Data Access Object</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Repository
+public interface EintragDao extends CrudRepository&lt;Eintrag, Long&gt; {
+    List&lt;Eintrag&gt; findAllBy...
+
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Damit die DAOs von Spring automatisch als Beans erzeugt werden, muss eine Konfigurationsklasse der Anwendung mit der Annotation <code>@EnableJpaRepositories</code> annotiert werden.</p>
+</div>
+<div id="listing-enablejparepositories" class="listingblock">
+<div class="title">Listing 6. Automatische Erstellung von DAO-Beans durch Spring</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Configuration
+@EnableJpaRepositories("&lt;Package-Name des Persistenz-Packages&gt;")
+class PersistenceConfiguration { }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der Zugriff auf die Datenbank aus dem <a href="../../../../glossary/latest/glossary/master.html#glossar-Anwendungskern" class="xref page">Anwendungskern</a> heraus erfolgt immer über die DAOs.
+Die DAOs werden als Spring-Beans in den Anwendungskern injiziert.
+Zudem wird für jedes DAO ein Interface angelegt.</p>
+</div>
+<div class="paragraph">
+<p>DAOs werden im Persistenzpaket der Komponente abgelegt, welche die Datenhoheit über die Tabelle(n) des DAOs besitzt (zum Thema Datenhoheit siehe <a href="../referenzarchitektur-it-system/master.html#einleitung" class="xref page">IsyFact Referenzarchitektur IT-Systeme</a>).
+Falls die Datenhoheit keiner einzelnen Komponente zugewiesen werden kann, erhält die Komponente Basisdaten die Datenhoheit (siehe auch <a href="../detailkonzept-komponente-anwendungskern/master.html" class="xref page">Detailkonzept Komponente Anwendungskern</a>).
+Die DAOs werden nur von Klassen der Komponente mit Datenhoheit aufgerufen.</p>
+</div>
+<div class="paragraph">
+<p>Während über DAOs Persistenzobjekte aus der Datenbank gelesen und in die Datenbank eingefügt werden, können sie auch außerhalb dieser Klassen verändert bzw. befüllt werden.
+Dies darf jedoch gemäß der <a href="../referenzarchitektur/master.html#einleitung" class="xref page">IsyFact Referenzarchitektur</a> nur von Klassen innerhalb der gleichen Teilanwendung  erfolgen: Komponenten anderer Teilanwendungen dürfen sie nicht verändern oder befüllen.
+Sie erhalten daher lediglich Deep-Copies bzw. nicht änderbare Varianten der Entitäten.</p>
+</div>
+<div class="paragraph">
+<p>Eine Ausnahme hierzu bildet die Komponente Basisdaten: Sie gibt die Entitäten an andere Komponenten weiter, welche diese verändern und befüllen dürfen.</p>
+</div>
+<div class="paragraph">
+<p>Als Beispiel für DAOs siehe die Klassen <code>TerminfindungDao</code> und <code>TeilnehmerDao</code> der Vorlage-Anwendung <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-vorlageanwendung" class="xref page">Vorlageanwendung</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="definition-von-query-methoden"><a class="anchor" href="#definition-von-query-methoden"></a>4.2. Definition von Query Methoden</h3>
+<div class="paragraph">
+<p>Der von Spring Data erzeugte Proxy für das Repository Interface kann die Queries auf zwei Arten ableiten.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ableitung des Queries über den Namen der Methode. <a href="#listing-querymethodenname">Listing 7</a> zeigt ein Beispiel hierfür.</p>
+<div id="listing-querymethodenname" class="listingblock">
+<div class="title">Listing 7. Beispiele für die Ableitung des Queries aus dem Methodennamen.</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">interface PersonRepository extends Repository&lt;Person, Long&gt; {
+
+  List&lt;Person&gt; findByEmailAdresseAndNachname(EmailAdresse emailAdresse, String nachname);
+
+  // Verwendung von DISTINCT
+  List&lt;Person&gt; findDistinctPeopleByNachnameOrVorname(String nachname, String vorname);
+  List&lt;Person&gt; findPeopleDistinctByNachnameOrVorname(String nachname, String vorname);
+
+  // Ignorieren der Groß-/Kleinschreibung für ein bestimmtes Feld
+  List&lt;Person&gt; findByNachnameIgnoreCase(String nachname);
+  // Ignorieren der Groß-/Kleinschreibung für alle betroffenen Felder
+  List&lt;Person&gt; findByNachnameAndVornameAllIgnoreCase(String nachname, String vorname);
+
+  // Statisches Sortieren mit ORDER BY
+  List&lt;Person&gt; findByNachnameOrderByVornameAsc(String nachname);
+  List&lt;Person&gt; findByNachnameOrderByVornameDesc(String nachname);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Bei dieser Ableitung wird das Präfix des Methodennamens abgeschnitten und der Rest geparst.
+Nach dem ersten <code>By</code> beginnen die eigentlichen Abfragekriterien.
+In den Abfragekriterien werden Bedingungen auf Feldern der Entität definiert und diese können mit 'And' und 'Or'
+verknüpft werden.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+Eine Übersicht zur Ableitung von Queries aus Methodennamen befindet sich in der Referenzdokumentation zu Spring Data JPA:
+<a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-Spring-Data-JPA" class="xref page">Spring-Data-JPA</a>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Ableitung über eine manuell definierte Query.
+Die Query wird über die <code>@Query</code>-Annotation in JPQL direkt an die Methode des DAO geschrieben.</p>
+<div id="listing-queryannotation" class="listingblock">
+<div class="title">Listing 8. Beispiele für die Ableitung des Queries aus dem Methodennamen.</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public interface PersonRepository extends Repository&lt;Person, Long&gt; {
+
+  @Query("select p from Person p where p.emailAdresse = ?1")
+  User findByEmailAdresse(String emailAdresse);
+}</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Bevorzugt wird die Ableitung der Queries über den Methodennamen.
+Kann die Query nicht über den Methodennamen ausgedrückt werden, wird Variante 2 verwendet.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="jpql-fuer-datenbank-abfragen-nutzen"><a class="anchor" href="#jpql-fuer-datenbank-abfragen-nutzen"></a>4.3. JPQL für Datenbank-Abfragen nutzen</h3>
+<div class="paragraph">
+<p>Für Datenbank-Abfragen stellt JPA die Java Persistence Query Language JPQL bereit.
+In dieser werden Queries über Objekte und Variablen, nicht über Tabellen und Felder definiert.</p>
+</div>
+<div class="paragraph">
+<p>Wann immer möglich sollten JPQL Abfragen und keine „nativen“ SQL Abfragen verwendet werden.
+Der einzige Grund für die Verwendung von SQL ist die Verwendung von Oracle SQL Features, welche durch JPQL nicht angeboten werden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="verwendung-von-oracle-hints-bei-optimizer-problemen"><a class="anchor" href="#verwendung-von-oracle-hints-bei-optimizer-problemen"></a>4.4. Verwendung von Oracle Hints bei Optimizer-Problemen</h3>
+<div class="paragraph">
+<p>NamedQueries werden als JDBC <code>PreparedStatements</code> umgesetzt.
+Deshalb werden sie vom Oracle Optimizer bereits analysiert und ein Ausführungsplan erstellt, bevor ihre Parameter gebunden werden.</p>
+</div>
+<div class="paragraph">
+<p>Dies führt in Ausnahmefällen dazu, dass ein benötigter Index für die Query-Bearbeitung nicht verwendet wird und „Full Tablescans“ durchgeführt werden.</p>
+</div>
+<div class="paragraph">
+<p>Im Falle von Index-Problemen bei NamedQueries sind Oracle-Hints zu verwenden.
+Die Queries sind als native SQL-Queries in der XML Konfigurationsdatei abzulegen.</p>
+</div>
+<div class="paragraph">
+<p>Ein Beispiel für einen Oracle-Hint in einer SQL-Query:</p>
+</div>
+<div id="listing-query-oracle-hint" class="listingblock">
+<div class="title">Listing 9. Beispiel für einen Oracle-Hint in einer SQL-Query</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">select /*+ INDEX(aendno AENDERUNGS_NOTIFIKATION_STATUS) */ aendno from AENDERUNGS_NOTIFIKATION aendno where aendno.status = ?1 and aendno.zeitpunktNotifikation &gt; :datumVon and aendno.zeitpunktNotifikation &lt; :datumBis</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Eine Kurzanleitung zur Verwendung von Oracle-Traces für die Ermittlung von Ausführungsplänen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In SQL*Plus als sysdba:<br>
+<code>sqlplus sys/sys@ DATA.LOCAL.VM AS SYSDBA</code></p>
+</li>
+<li>
+<p>Trace für ganze DB-Instanz anschalten:<br>
+<code>alter system set sql_trace=true;</code></p>
+</li>
+<li>
+<p>Time-Informationen anschalten<br>
+<code>alter system set timed_statistics=true;</code></p>
+</li>
+<li>
+<p>Ort, an dem das Trace-File liegt, ermitteln:<br>
+<code>select value from v$parameter where name = 'user_dump_dest'</code></p>
+</li>
+<li>
+<p>TKPROF drüberlaufen lassen, als oracle user, damit tkprof schon gesetzt ist<br>
+<code>tkprof ora_19952.trc auswertung.txt</code></p>
+</li>
+<li>
+<p>Am Ende: Trace für ganze DB-Instanz abschalten:<br>
+<code>alter system set sql_trace=false;</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="verwendung-von-hibernate-filtern"><a class="anchor" href="#verwendung-von-hibernate-filtern"></a>4.5. Verwendung von Hibernate Filtern</h3>
+<div class="paragraph">
+<p>Parametrisierte Hibernate Filter bieten die Möglichkeit Daten zur Laufzeit mit Sichtbarkeitsregeln auszuwerten, ohne viele verschiedene Varianten von Abfragen schreiben zu müssen.
+Dabei können sie pro Session aktiviert oder deaktiviert werden, standardmäßig sind sie deaktiviert.
+Die Filter können auf Klassen- oder Collection-Ebene definiert werden und können bestehende „where“-Klauseln erweitern.</p>
+</div>
+<div class="paragraph">
+<p>Wenn das fachliche Datenmodell variable Sichtbarkeitsregeln in größerem Umfang benötigt, sollten diese mit Hibernate Filtern umgesetzt werden.
+Das ersetzt eine Multiplizierung aller Abfragen.</p>
+</div>
+<div class="paragraph">
+<p>Filter müssen als Annotationen mit <code>@FilterDef</code>, <code>@Filters</code> und <code>@Filter</code> umgesetzt werden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="verbot-von-bulk-queries"><a class="anchor" href="#verbot-von-bulk-queries"></a>4.6. Verbot von Bulk-Queries</h3>
+<div class="paragraph">
+<p>JPA bietet über die Methode <code>query.executeUpdate()</code> die Möglichkeit in JPQL formulierte <code>DELETE</code>- und <code>UPDATE</code>-Statements, sog. Bulk-Queries, auszuführen.
+Die Nutzung solcher Bulk-Queries ist verboten.
+Wo aus Performancegründen massenhafte <code>DELETE</code>- oder <code>UPDATE</code>-Statements direkt in der Datenbank benötigt werden, können native SQL-Anweisungen verwendet werden.
+Sofern bei solchen Bulk-Operationen kaskadierende Änderungen benötigt werden (z. B. weil Kind-Tabellen mitgelöscht werden sollen), müssen entsprechende Constraints in der Datenbank angelegt werden.</p>
+</div>
+<div class="paragraph">
+<p>Begründung: Hibernate erzeugt bei der Ausführung von <code>BULK</code>-Queries unter bestimmten Umständen zur Laufzeit implizit Hilfstabellen (temporäre Tabellen mit dem Präfix HT_).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+siehe <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-Multitable-Bulk-Operations" class="xref page">Multitable Bulk Operations</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Dies führt dazu, dass der Datenbank-User der Anwendung entsprechende <code>CREATE TABLE</code>-Rechte benötigt, was i. d. R. nicht zugelassen ist.
+Weiterhin führt die Nutzung der temporären Tabellen in vielen Fällen zu Performance-Problemen.</p>
+</div>
+<div class="paragraph">
+<p>Um die Einhaltung dieser Anforderung sicherzustellen, sollten auch in der Entwicklung bzw. bei frühen Tests die Rechte auf die Testdatenbanken entsprechend beschränkt werden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sicherheitsaspekte-von-anfragen"><a class="anchor" href="#sicherheitsaspekte-von-anfragen"></a>4.7. Sicherheitsaspekte von Anfragen</h3>
+<div class="paragraph">
+<p>Bei der Formulierung von Anfragen sind einige Aspekte zu beachten, da ansonsten negative Auswirkungen auf die Stabilität, die Verfügbarkeit oder Sicherheit der Anwendung die Folge sind.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Der %-Operator ist nach Möglichkeit zu vermeiden, da hiermit leicht lang laufende Abfragen erzeugt werden können, die die Anwendung blockieren und die Datenbank unnötig belasten können.</p>
+</li>
+<li>
+<p>Für rein lesende Zugriffe und feste Auswertungen sind nach Möglichkeit Views zu verwenden und die Berechtigungen entsprechend zu setzen.
+Dadurch kann der Zugriff auf die tatsächlich benötigten Daten gesteuert und eingeschränkt werden.</p>
+</li>
+<li>
+<p>Bei der Formulierung von Anfragen sind die Eigenheiten des Optimizers des eingesetzten DBMS zu beachten.</p>
+</li>
+<li>
+<p>Es ist darauf zu achten, dass Datenbankabfragen in Anwendungen durch Indizes in der Datenbank unterstützt werden.</p>
+</li>
+<li>
+<p>Bei der Definition von Anfragen ist darauf zu achten, dass nicht zu viele Daten selektiert werden.
+Im Zweifel, insbesondere bei freien Anfragen, die aus Benutzereingaben erzeugt werden, sollte die Anzahl der selektierten Datensätze beschränkt werden.</p>
+</li>
+<li>
+<p>Um SQL-Injection Attacken zu verhindern, sollen Named-Queries oder Criteria-Queries verwendeten werden, bei denen der OR-Mapper für ein Escaping der Query-Parameter sorgt.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="packagestruktur"><a class="anchor" href="#packagestruktur"></a>5. Paketstruktur für Persistenzklassen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die DAOs- und Entitätsklassen sollen im Persistence-Package der entsprechenden Komponente implementiert werden.
+.Vorgaben zur Paketstruktur für Persistenzklassen</p>
+</div>
+<table id="table-paketstruktur" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Persistenzklasse</th>
+<th class="tableblock halign-left valign-top">Paketstruktur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DAO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;organisation&gt;.&lt;domäne&gt;.&lt;system&gt;.persistence.&lt;komponente&gt;.dao</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;organisation&gt;.&lt;domäne&gt;.&lt;system&gt;.persistence.&lt;komponente&gt;.entity</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="konfiguration-von-jpa-und-hibernate-in-der-anwendung"><a class="anchor" href="#konfiguration-von-jpa-und-hibernate-in-der-anwendung"></a>6. Konfiguration von JPA und Hibernate in der Anwendung</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In den folgenden Abschnitten werden konkrete Vorgaben gemacht, welche Konfigurationen für die Umsetzung des Datenzugriffs verwendet werden sollen.</p>
+</div>
+<div class="sect2">
+<h3 id="konfiguration-von-jpa-ueber-spring-beans-durchfuehren"><a class="anchor" href="#konfiguration-von-jpa-ueber-spring-beans-durchfuehren"></a>6.1. Konfiguration von JPA über Spring Beans durchführen</h3>
+<div class="paragraph">
+<p>Die für die Verwendung von JPA benötigten Beans werden von Spring Boot beim Start der Anwendung automatisch instanziiert.</p>
+</div>
+<div class="paragraph">
+<p>Teile dieser automatischen Konfiguration können bei Bedarf überschrieben werden.
+Soll z. B. für die Entwicklung eine andere Datenbank verwendet werden, kann die automatisch konfigurierte <code>DataSource</code>-Bean durch eine andere überschrieben werden.
+Das Gleiche gilt für die Anbindung einer zweiten Datenbank, siehe dazu <a href="#nutzung-und-anbindung-einer-zweiten-datenbank">Nutzung und Anbindung einer zweiten Datenbank</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="konfiguration-des-entitymanagers"><a class="anchor" href="#konfiguration-des-entitymanagers"></a>6.2. Konfiguration des EntityManagers</h3>
+<div class="paragraph">
+<p>Der EntityManager wird von Spring Boot automatisch konfiguriert.
+Eine zusätzliche Konfiguration kann über <code>application.properties</code> erfolgen.
+Grundsätzlich können nach dem Schema <code>spring.jpa.properties.&lt;Schlüssel&gt;=&lt;Wert&gt;</code> beliebige native Properties für Hibernate gesetzt werden (<a href="#listing-configentitymanager">Listing 10</a>).</p>
+</div>
+<div id="listing-configentitymanager" class="listingblock">
+<div class="title">Listing 10. Konfiguration des EntityManagers in application.properties</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=false
+
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.Oracle12cDialect
+spring.jpa.properties.hibernate.connection.isolation=4
+spring.jpa.properties.hibernate.connection.useUnicode=true
+spring.jpa.properties.hibernate.connection.characterEncoding=utf-8
+spring.jpa.properties.hibernate.jdbc.batch_size=0
+spring.jpa.properties.hibernate.jdbc.use_streams_for_binary=true
+spring.jpa.properties.hibernate.format_sql=false
+spring.jpa.properties.hibernate.default_schema=&lt;Default Schema&gt;
+spring.jpa.properties.hibernate.ejb.metamodel.generation=enabled
+
+# Folgender Parameter ist optional, da er dem Standard entspricht
+spring.jpa.properties.hibernate.transaction.coordinator_class=jdbc</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="konfiguration-der-datasource"><a class="anchor" href="#konfiguration-der-datasource"></a>6.3. Konfiguration der Datasource</h3>
+<div class="paragraph">
+<p>Als Datasource-Implementierung muss die Implementierung aus <code>de.bund.bva.isyfact.persistence.datasource.IsyDataSource</code> genutzt werden.
+Bei der Verwendung von <code>isy-persistence</code> wird automatisch eine Bean mit dem Namen <code>appDataSource</code> erzeugt.
+Diese prüft die Version des Datenbankschemas (siehe Abschnitt <a href="#pruefen-der-schema-version">Prüfen der Schema-Version</a>) und dient als Wrapper für die wirkliche Datasource des Connections-Pools, dessen Konfiguration im nächsten Abschnitt erläutert wird.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oracle-universal-connection-pool-ucp-verwenden"><a class="anchor" href="#oracle-universal-connection-pool-ucp-verwenden"></a>6.4. Oracle Universal Connection Pool (UCP) verwenden</h3>
+<div class="paragraph">
+<p>Bei der Verwendung von JPA mit Spring <strong>muss</strong> zwingend ein Datenbank-Connection-Pooling verwendet werden: Die aktuelle Spring Implementierung der <code>EntityManagerFactory</code> fragt bei jeder Erzeugung eines Entity Managers (und somit bei jeder Anfrage) eine Datenbank-Verbindung an.</p>
+</div>
+<div class="paragraph">
+<p>Für das Datenbank-Connection-Pooling ist der Oracle Universal Connection Pool (UCP) einzusetzen.
+Dieser kann auf der Oracle Website heruntergeladen werden.</p>
+</div>
+<div class="paragraph">
+<p>Zur Laufzeit bietet der Pool Informationen per JMX an, die zur Überwachung der Poolaktivität nützlich sind.
+Dazu zählt unter anderem die Anzahl aktuell ausgeliehener Verbindungen.</p>
+</div>
+<div class="paragraph">
+<p>Die zu setzenden Parameter können der folgenden Vorlage entnommen werden, wobei die genaue Bedeutung der Parameter der Oracle Dokumentation <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-UCP" class="xref page">Ucp15</a> entnommen werden kann:</p>
+</div>
+<div class="paragraph">
+<p>Die Konfiguration des UCP erfolgt in <code>application.properties</code> über die Properties in <a href="#listing-configpropertiesucp">Listing 11</a>.</p>
+</div>
+<div id="listing-configpropertiesucp" class="listingblock">
+<div class="title">Listing 11. Properties zur Konfiguration des UCP</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby"># Connection-String für die Datenbankverbindung
+isy.persistence.oracle.datasource.database-url=jdbc:oracle:thin:@database.local.vm:1521:isyfact
+# Name des Datenbankbenutzers
+isy.persistence.oracle.datasource.database-username=anwendungxyz
+# Passwort für den Datenbankbenutzer
+isy.persistence.oracle.datasource.database-password=anwendungxyz
+# Name des Verbindungspools
+isy.persistence.oracle.datasource.pool-name=anwendungxyz
+# Anzahl der minimal offenen Verbindungen im Connection Cache
+isy.persistence.oracle.datasource.pool-min-active=5
+# Anzahl der maximal moeglichen Verbindungen im Connection Cache
+isy.persistence.oracle.datasource.pool-max-active=40
+# Anzahl der initialen Connections im Connection Cache
+isy.persistence.oracle.datasource.pool-initial-size=10
+# Aktiviert/deaktiviert die Pruefung von Datenbankverbindungen vor ihrer Benutzung (validateConnectionOnBorrow)
+isy.persistence.oracle.datasource.pool-validate-on-borrow=true
+# Zeit in Sekunden, nach der bei Nichtverfuegbarkeit einer neue Verbindung ein Fehler geworfen wird
+isy.persistence.oracle.datasource.pool-wait-timeout=10
+# Zeit in Sekunden, nach der eine bereitstehende und untätige Verbindung geschlossen und aus dem Pool entfernt wird
+isy.persistence.oracle.datasource.pool-inactive-timeout=120
+# Zeit in Sekunden, nach der eine ausgeliehene Verbindung wieder zwangsweise zurück in den Pool geholt wird.
+# Offene Transaktionen werden zurückgerollt. Standard ist 0 (deaktiviert).
+isy.persistence.oracle.datasource.pool-time-to-live-timeout=0
+# Zeit in Sekunden, nach der eine ungenutzte aber verliehene Verbindung wieder in den Pool geholt wird.
+# Offene Transaktionen werden zurückgerollt. Standard ist 0 (deaktiviert).
+isy.persistence.oracle.datasource.pool-abandoned-timeout=0
+# Zeit in Sekunden, nach der eine physikalische Verbindung im Pool geordnet abgebaut wird. Sie wird erst abgebaut,
+# wenn die Verbindung nicht mehr genutzt wird und zurück im Pool ist. Kann genutzt werden, wenn bspw. Firewalls
+# nach einer zeitlichen Beschränkung Verbindungen schliessen. Standard ist 0, deaktiviert.
+isy.persistence.oracle.datasource.pool-max-reuse-time=0
+# Maximale Anzahl, die eine Verbindung ausgeliehen werden kann, bevor sie endgueltig abgebaut wird. Standard 0 (deaktiviert)
+isy.persistence.oracle.datasource.pool-max-reuse-count=0
+# Anzahl der Statements, die pro Verbindung gecacht werden sollen (Statement Cache). Standard ist 0 (deaktiviert).
+isy.persistence.oracle.datasource.pool-statement-cache=0
+
+# --- Konfiguration des Oracle JDBC Datenbanktreibers ---
+# Der Wert fuer oracle.net.CONNECT_TIMEOUT des Oracle JDBC Treibers. Der Timeout bestimmt die maximale Zeit in ms,
+# welche zum Aufbau einer Netzwerkverbindung zum Datenbankserver gewartet wird.
+isy.persistence.oracle.datasource.jdbc-timeout-connect=10000
+# Der Wert fuer oracle.jdbc.ReadTimeout des Oracle JDBC Treibers. Der Timeout bestimmt die maximale Zeit in ms,
+# welche auf Socketebene zum Lesen von Daten gewartet wird.Dadurch koennen abgebrochene TCP Verbindungen erkannt werden.
+isy.persistence.oracle.datasource.jdbc-timeout-read
+# Verbindungen können im regulären band (inband) oder asynchron (out-of-band) beendet werden. Standardmässig passiert das
+# per OOB. Kann bei Problemen deaktiviert werden.
+isy.persistence.oracle.datasource.jdbc-disable-oob</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Hierbei ist zu beachten, dass die hier angegebenen Werte der Konfigurationsparameter nur beispielhaft sind.
+Sie müssen je nach Anwendung und Lastprofil angepasst werden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="standardmaessig-lazy-loading-verwenden"><a class="anchor" href="#standardmaessig-lazy-loading-verwenden"></a>6.5. Standardmäßig Lazy Loading verwenden</h3>
+<div class="paragraph">
+<p>Standardmäßig verwendet Hibernate für alle 1:n und n:m Assoziationen ein Lazy Loading über dynamische Proxies und für n:1 oder 1:1 Assoziationen wird Eager Loading eingesetzt.
+Standardmäßig soll für alle Assoziationen Lazy Loading verwendet werden, wobei Bytecode-Manipulationen für Lazy Loading nicht verwendet werden sollen.</p>
+</div>
+<div class="paragraph">
+<p>Um Lazy Loading auch für 1:1 Assoziationen einzuschalten, wird das <code>fetch</code>-Attribut auf <code>FetchType.LAZY</code> gesetzt.
+Damit das Lazy Loading über Proxies funktioniert, muss die Assoziation nicht optional sein, d. h., dass Feld darf nicht <code>null</code> sein.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@OneToOne(optional = false, fetch = FetchType.LAZY)
+private SomeEntity someEntity;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ist ein 1:1 assoziiertes Feld optional und kann den Wert <code>null</code> annehmen, kann Lazy Loading nur über Bytecode-Manipulation realisiert werden.
+Für n:1 Assoziationen wird genauso verfahren und das <code>fetch</code>-Attribut auf <code>FetchType.LAZY</code> gesetzt.
+Es ist erlaubt und erwünscht, dieses Verhalten für Assoziationen zu überschreiben, bei denen Eager Loading Sinn ergibt.
+Hierfür ist das Attribute <code>fetch</code> der jeweiligen Mapping-Annotation wie folgt zu setzen:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@OneToMany(fetch = FetchType.EAGER)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Die Verwendung der Annotationen <code>@LazyToOne</code> und <code>@LazyCollection</code> ist zu vermeiden, falls man nicht den <code>@LazyCollection</code> Wert „Extra“ für extra große Collections benötigt.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="standardmaessig-optimistisches-locking-verwenden"><a class="anchor" href="#standardmaessig-optimistisches-locking-verwenden"></a>6.6. Standardmäßig optimistisches Locking verwenden</h3>
+<div class="paragraph">
+<p>Standardmäßig ist für Hibernate ein optimistisches Locking zu verwenden: Objekte werden bei dieser Locking-Strategie nicht per „select for update“ gesperrt.
+Stattdessen wird am Ende der Transaktion geprüft, ob lokal veränderte Objekte parallel in der Datenbank geändert wurden.
+Ist dies der Fall, wird eine Ausnahme geworfen.</p>
+</div>
+<div class="paragraph">
+<p>Dieser Vorgehensweise liegt die Annahme zugrunde, dass konkurrierende schreibende Zugriffe in einer Geschäftsanwendung nicht oder höchstens in Ausnahmefällen vorkommen.
+Sollte dies nicht zutreffen, muss explizites Locking verwendet werden (vgl.
+Abschnitt <a href="#bei-bedarf-explizites-locking-verwenden">Bei Bedarf explizites Locking verwenden</a>). In der Anwendung ist keine explizite Fehlerbehandlung (etwa durch das Mergen der Daten) zu implementieren.
+Die geworfene Ausnahme ist (gewrappt) an den Aufrufer weiterzugeben.</p>
+</div>
+<div class="paragraph">
+<p>Um zu erkennen, ob sich das Objekt in der Datenbank verändert hat, empfiehlt Hibernate die Verwendung eines numerischen Versions-Felds in jeder Datenbank-Tabelle.
+Dazu wird in den Entitäten eine numerische Property mit der Annotation <code>@Version</code> gekennzeichnet.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Version
+public int getVersion() {
+  return version;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dieses Feld wird einzig von Hibernate verwaltet. Es ist weder zu lesen noch zu schreiben.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="bei-bedarf-explizites-locking-verwenden"><a class="anchor" href="#bei-bedarf-explizites-locking-verwenden"></a>6.7. Bei Bedarf explizites Locking verwenden</h3>
+<div class="paragraph">
+<p>Falls für einen Teil der Entitäten konkurrierende Zugriffe möglich sind, ist für genau diese Entitäten ein explizites (pessimistisches) Locking zu verwenden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="aufrufuebergreifendes-caching-vermeiden"><a class="anchor" href="#aufrufuebergreifendes-caching-vermeiden"></a>6.8. Aufrufübergreifendes Caching vermeiden</h3>
+<div class="paragraph">
+<p>Caching-Strategien sind kein Teil der JPA-Spezifikation.
+Für das Definieren eines Cache muss deswegen auf Hibernate-spezifische Mechanismen zugegriffen werden.</p>
+</div>
+<div class="paragraph">
+<p>Jeder Aufruf der Persistenzschicht geschieht innerhalb einer Transaktion.
+In der Regel läuft jeder Aufruf in einer eigenen Transaktion ab, weswegen kein Zustand und keine Daten zwischen zwei Aufrufen gehalten oder geteilt werden können.
+Außer in Ausnahmefällen ist dies jedoch auch nicht notwendig.</p>
+</div>
+<div class="paragraph">
+<p>Ist ein aufrufübergreifendes Caching dennoch notwendig, ist dies nicht in der Persistenzschicht und nicht mittels Hibernate durchzuführen.
+Hibernate bietet für das Caching von Objekten prinzipiell zwei Möglichkeiten:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Cache in der Hibernate-Session:</strong> Die Hibernate-Session ist an einen Thread gebunden.
+Die Nutzungsschicht verwendet für jede Anfrage einen neuen Thread (und damit eine frische Hibernate-Session).
+Deshalb kann dieser Cache höchstens im Rahmen einer Anfrage an das IT-System gelten.
+Diese Nutzung eines Cache ist nicht sinnvoll.</p>
+</li>
+<li>
+<p><strong>VM-weiter „2nd Level Cache“:</strong> Dieser Cache ist vor allem für unveränderliche, häufig verwendete Informationen (z.B. Schlüsseldaten) gedacht.
+In der IsyFact werden solche Daten jedoch bereits durch andere Mechanismen vorgehalten.
+Deshalb ist eine Verwendung dieses Cache ebenfalls unnötig.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Die Verwendung von über einen Aufruf hinausgehenden Cache ist deshalb zu vermeiden.
+Falls aufgrund spezieller Anforderungen trotzdem ein 2nd Level Cache benötigt wird, ist auf folgende Punkte zu achten:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Für den Cache ist eine gesonderte Cache-Region zu verwenden.</p>
+</li>
+<li>
+<p>Nur unveränderliche Daten dürfen in den Cache.</p>
+</li>
+<li>
+<p>Man kann nicht davon ausgehen, dass der Cache bei Änderungen der Objekte aktualisiert wird.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="nutzung-und-anbindung-einer-zweiten-datenbank"><a class="anchor" href="#nutzung-und-anbindung-einer-zweiten-datenbank"></a>6.9. Nutzung und Anbindung einer zweiten Datenbank</h3>
+<div class="paragraph">
+<p>Einige Anwendungsfälle machen es notwendig, eine zweite Datenbank zu nutzen.
+Das ist beispielsweise notwendig, wenn Daten aus einem Altsystem über die Datenbank für andere Systeme bereitgestellt werden und diese Daten in eine IsyFact-Anwendung über einen Batch importiert werden sollen.
+Der Batch muss dann sowohl auf die Datenbank der IsyFact-Anwendung, als auch auf die Datenbank des Altsystems zugreifen.</p>
+</div>
+<div class="paragraph">
+<p>Die Anbindung einer zweiten Datenbank erfolgt analog zur Anbindung der primären Datenbank über Spring und die Nutzung über JPA, die in Kapitel <a href="#konfiguration-von-jpa-ueber-spring-beans-durchfuehren">Konfiguration von JPA über Spring Beans durchführen</a> beschrieben ist.
+Dabei erfolgt der Zugriff auf die zweite Datenbank getrennt über einen weiteren Entity Manager und eine weitere Data Source.</p>
+</div>
+<div class="paragraph">
+<p>Die Beans für die <code>EntityManagerFactory</code> und den <code>TransactionManager</code> müssen manuell konfiguriert werden <a href="#listing-datasource1">Listing 12</a>.
+Als <code>DataSource</code> wird hier die von <code>isy-persistence</code> automatisch konfigurierte <code>appDataSource</code> verwendet.</p>
+</div>
+<div id="listing-datasource1" class="listingblock">
+<div class="title">Listing 12. Konfiguration der ersten DataSource</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Configuration
+@EnableJpaRepositories(basePackages = "de.beispiel.zweidatasources.persistence", entityManagerFactoryRef = "entityManagerFactoryApp", transactionManagerRef = "transactionManagerApp")
+public class PersistenceConfig {
+
+    @Bean
+    public LocalContainerEntityManagerFactoryBean entityManagerFactoryApp(@Qualifier("appDataSource") DataSource dataSource) {
+        LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+        em.setPackagesToScan("de.beispiel.zweidatasource.persistence");
+        em.setDataSource(dataSource);
+        em.setJpaDialect(new HibernateJpaDialect());
+
+        HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+        vendorAdapter.setGenerateDdl(true);
+        vendorAdapter.setDatabase(Database.ORACLE);
+        vendorAdapter.setShowSql(false);
+        em.setJpaVendorAdapter(vendorAdapter);
+
+        return em;
+    }
+
+    @Bean
+    public PlatformTransactionManager transactionManagerApp(@Qualifier("entityManagerFactory") EntityManagerFactory entityManagerFactory) {
+        JpaTransactionManager transactionManager = new JpaTransactionManager();
+        transactionManager.setEntityManagerFactory(entityManagerFactory);
+        return transactionManager;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Für die zweite Datenbankanbindung wird eine weitere Konfiguration angelegt <a href="#listing-datasource2">Listing 13</a>.</p>
+</div>
+<div id="listing-datasource2" class="listingblock">
+<div class="title">Listing 13. Konfiguration der zweiten DataSource</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Configuration
+@EnableJpaRepositories(basePackages = "de.beispiel.zweidatasources.persistencesec", entityManagerFactoryRef = "entityManagerFactorySec", transactionManagerRef = "transactionManagerSec")
+public class Persistence2Config {
+
+    @Autowired
+    private Environment env;
+
+    @Bean
+    public DataSource dataSourceSec() {
+        JdbcDataSource dataSource = new JdbcDataSource();
+        dataSource.setUrl(env.getProperty("datasource.second.url"));
+
+        return dataSource;
+    }
+
+    @Bean
+    public LocalContainerEntityManagerFactoryBean entityManagerFactorySec(@Qualifier("dataSourceSec") DataSource dataSource) {
+        LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+        em.setPackagesToScan("de.beispiel.zweidatasource.persistencesec");
+        em.setDataSource(dataSource);
+        em.setJpaDialect(new HibernateJpaDialect());
+
+        HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+        vendorAdapter.setGenerateDdl(true);
+        vendorAdapter.setDatabase(Database.H2);
+        vendorAdapter.setShowSql(false);
+        em.setJpaVendorAdapter(vendorAdapter);
+
+        return em;
+    }
+
+    @Bean
+    public PlatformTransactionManager transactionManagerSec(@Qualifier("entityManagerFactorySecc") EntityManagerFactory entityManagerFactory) {
+        JpaTransactionManager transactionManager = new JpaTransactionManager();
+        transactionManager.setEntityManagerFactory(entityManagerFactory);
+        return transactionManager;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Die Datei <code>application.properties</code> wird um den neuen Konfigurationsparameter <code>datasource.second.url</code> für die zweite Datenbankverbindung erweitert.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="konfiguration-der-id-und-sequenz"><a class="anchor" href="#konfiguration-der-id-und-sequenz"></a>6.10. Konfiguration der ID und Sequenz</h3>
+<div class="paragraph">
+<p>Primärschlüssel werden in JPA mittels der <code>@Id</code> und <code>@GeneratedValue</code> Annotation markiert.
+Der <code>GenerationType</code> der <code>@GeneratedValue</code> Annotation muss in jedem Fall <code>AUTO</code> sein.
+Als Generator kommt unter Oracle ein <code>@SequenceGenerator</code> zum Einsatz, der eine Datenbanksequenz benutzt.</p>
+</div>
+<div class="paragraph">
+<p>Es muss unbedingt darauf geachtet werden, die Inkrementierung (<code>INCREMENT BY</code>) der zur ID-Generierung genutzt Datenbanksequenz auf denselben Wert einzustellen, der auch beim JPA <code>SequenceGenerator</code> mit <code>allocationSize</code> angegeben ist.</p>
+</div>
+<div class="paragraph">
+<p>Ein Konfigurationsbeispiel kann folgendermaßen aussehen:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Id
+@GeneratedValue(strategy=GenerationType.AUTO, generator="my_seq")
+@SequenceGenerator(name="my_seq",sequenceName="MY_SEQ", allocationSize=50)</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="historisierung"><a class="anchor" href="#historisierung"></a>7. Historisierung</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="grundlagen"><a class="anchor" href="#grundlagen"></a>7.1. Grundlagen</h3>
+<div class="paragraph">
+<p>Unter Historisierung (auch <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-Temporale-Datenhaltung" class="xref page">temporale Datenhaltung</a> genannt) versteht man das Festhalten der zeitlichen Entwicklung von Daten durch Speichern in einer Datenbank.
+Bei den Datensätzen gibt es zwei relevante Aspekte: den Gültigkeitszeitraum eines Datensatzes und den Bearbeitungszeitpunkt eines Datensatzes.</p>
+</div>
+<div class="paragraph">
+<p>Der Gültigkeitszeitraum gibt an, wie lange ein Datensatz gültig ist.
+Während der Beginn des Gültigkeitszeitraumes meistens genau bekannt ist, so kann das Ende der Gültigkeit so lange unbekannt sein, bis der Datensatz ungültig wird.
+Beispiel: Der Preis einer Ware oder Dienstleistung ist so lange gültig, bis er neu festgelegt wird.</p>
+</div>
+<div class="paragraph">
+<p>Der Bearbeitungszeitpunkt definiert den Zeitpunkt wann eine Entscheidung getroffen wurde und ist in vielen Fällen identisch mit dem Beginn des Gültigkeitszeitraumes , kann jedoch auch davon abweichen, wenn z. B. für eine Ware eine Preisänderung zu einem bestimmten Datum im Voraus festgelegt wird.</p>
+</div>
+<div class="paragraph">
+<p>Eine Historisierung von Datensätzen wird durchgeführt, wenn Fragen über den Wert eines Datensatzes zu einem vergangenen Zeitpunkt beantwortet werden müssen (z. B. Was kostete X zum Zeitpunkt Y), oder wenn der Verlauf eines Wertes über die Zeit beobachtet werden muss (z. B. Wann und warum wurde welche Änderung durchgeführt).</p>
+</div>
+<div class="sect3">
+<h4 id="abgrenzung-archivierung"><a class="anchor" href="#abgrenzung-archivierung"></a>7.1.1. Abgrenzung Archivierung</h4>
+<div class="paragraph">
+<p>Bei der Archivierung handelt es sich um die Aufbewahrung eines Datensatzes über eine längere Zeit.
+Dies ist meist aus rechtlichen Gründen notwendig z. B. wegen gesetzlicher Aufbewahrungsfristen.
+Bei der Archivierung sind dementsprechend Randbedingungen wie Integrität, Unveränderlichkeit und Vertraulichkeit einzuhalten <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-IT-Grundschutz-BSI" class="xref page">IT-Grundschutz BSI</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="abgrenzung-datensicherung-backup"><a class="anchor" href="#abgrenzung-datensicherung-backup"></a>7.1.2. Abgrenzung Datensicherung (Backup)</h4>
+<div class="paragraph">
+<p>Bei der Datensicherung handelt es sich um das redundante Aufbewahren von Datensätzen.
+Das Ziel ist es, bei Verlust oder ungewünschter Manipulation von Datensätzen diese Datensätze auf den gespeicherten Stand zurücksetzen zu können.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="abgrenzung-protokollierung"><a class="anchor" href="#abgrenzung-protokollierung"></a>7.1.3. Abgrenzung Protokollierung</h4>
+<div class="paragraph">
+<p>Ziel der Protokollierung ist das Nachvollziehen von Änderungen und Auskünften.
+Dazu werden je nach Bedarf die Suchschlüssel und Nettodaten von Aufrufen gespeichert.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="abgrenzung-logging"><a class="anchor" href="#abgrenzung-logging"></a>7.1.4. Abgrenzung Logging</h4>
+<div class="paragraph">
+<p>Beim Logging werden Notizen zu technischen Aufrufen innerhalb eines Systems oder zwischen Anwendungen in Dateien abgelegt.
+Das Logging hat einen technischen Fokus und dient in der Regel als Hilfsinstrument zur Fehlerbehebung.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="anforderungen-1"><a class="anchor" href="#anforderungen-1"></a>7.2. Anforderungen</h3>
+<div class="paragraph">
+<p>Die beabsichtigte Nutzung der Historisierung lässt sich mit Blick auf die Referenzarchitektur zu Anforderungen  verallgemeinern, die in diesem Abschnitt dargestellt werden.</p>
+</div>
+<div class="paragraph">
+<p>Für die Historisierung von Datensätzen in einer Anwendung gelten folgende Anforderungen und Grundsätze:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Es dürfen nur solche Daten historisiert werden, die auch angezeigt werden.</p>
+</li>
+<li>
+<p>Die Speicherung von historischen Daten wird durch individuelle Löschfristen von Datensätzen begrenzt.</p>
+</li>
+<li>
+<p>Datensätze müssen beim Eintreten bestimmter Ereignisse komplett inklusive aller historisierten Datensätze gelöscht werden.</p>
+</li>
+<li>
+<p>Für die meisten Daten ist eine Historisierung weder notwendig noch erlaubt.
+Dies ist durch Vorgaben des Datenschutzes und der Geheimhaltung begründet.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Diese Anforderungen führen zu folgenden Festlegungen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Eine automatische Historisierung von Daten, bei der jeder Datensatz in mehreren Versionen vorgehalten ist, wird nicht realisiert.</p>
+</li>
+<li>
+<p>Sollte es fachlich gewünscht sein, so wird explizit für die betroffenen Datensätze ein Historienverwalter implementiert, dessen Aufgabe die Historisierung von Datensätzen ist.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Die Referenzarchitektur dieses Historienverwalters ist im folgenden Kapitel beschrieben.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="architektur-fuer-die-umsetzung-von-historisierung"><a class="anchor" href="#architektur-fuer-die-umsetzung-von-historisierung"></a>7.3. Architektur für die Umsetzung von Historisierung</h3>
+<div class="paragraph">
+<p>In diesem Kapitel wird beschrieben, wie die technische Umsetzung der Historisierung erfolgt.
+Dabei werden die beiden in Kapitel <a href="#grundlagen">Grundlagen</a> eingeführten Aspekte der Historisierung „Gültigkeitszeitraum“
+und „Verlauf der Bearbeitung“ getrennt beschrieben, wobei der zweite Aspekt aufwändiger umzusetzen ist und daher den Großteil des Kapitels einnimmt.</p>
+</div>
+<div class="sect3">
+<h4 id="abbildung-eines-gueltigkeitszeitraums"><a class="anchor" href="#abbildung-eines-gueltigkeitszeitraums"></a>7.3.1. Abbildung eines Gültigkeitszeitraums</h4>
+<div class="paragraph">
+<p>Manche Daten haben einen Zeitbezug, d. h. der Inhalt eines Datensatzes bezieht sich nur auf einen bestimmten Zeitraum.
+Man möchte z. B. beschreiben, dass für eine Ware in einem bestimmten Zeitraum ein Rabatt gewährt wird.
+Um einen solchen Gültigkeitszeitraum abzubilden, werden zu dem ursprünglichen Datensatz zwei zusätzliche Datumsattribute ergänzt.
+Falls diese Datumsattribute bereits fachlich etablierte Namen haben, werden diese genutzt.
+Sonst werden die Namen <code>gueltigVon</code> und <code>gueltigBis</code> benutzt.
+Diese Attribute werden durch die Anwendung genauso gepflegt wie alle anderen Attribute des Datensatzes auch.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="abbildung-der-historie-der-bearbeitung"><a class="anchor" href="#abbildung-der-historie-der-bearbeitung"></a>7.3.2. Abbildung der Historie der Bearbeitung</h4>
+<div class="paragraph">
+<p>In diesem Abschnitt wird beschrieben, wie die Historie der Bearbeitung gepflegt werden soll, z. B. wenn die letzten zehn Änderungen zu einem Datensatz abgespeichert werden sollen.
+Dazu wird zunächst beschrieben, wie die prinzipielle Herangehensweise dazu ist.
+Anschließend wird dies durch Angabe eines Entwurfsmusters präzisiert.</p>
+</div>
+<div class="paragraph">
+<p>Die grundlegenden Prinzipien bei der technischen Abbildung sind die, dass Historisierung explizit durchgeführt wird, dass die Nutzungsvorgabe in Form eines Patterns erfolgt und dass die Historisierungslösung konsistent mit den bereits getroffenen Festlegungen zur Persistenz sein soll.</p>
+</div>
+<div class="paragraph">
+<p><strong>Explizite Historisierung:</strong> Die Historisierung der Bearbeitung erfolgt explizit, d. h. die zu historisierenden Daten werden durch die Anwendungslogik gepflegt und persistiert.</p>
+</div>
+<div class="paragraph">
+<p>Theoretisch wäre es auch möglich, eine solche Historisierung auf der Ebene der Datenbankzugriffsschicht durchzuführen.
+Dazu würden dann in der Datenbankzugriffschicht die <code>UPDATE</code>-Statements durch <code>INSERT</code>-Statements ersetzt.
+Die Daten der <code>INSERT</code>-Statements würden dann durch einen Zeitstempel ergänzt.
+Beim <code>SELECT</code> würde immer der aktuellste Datensatz geliefert werden.
+Dieses Vorgehen lohnt sich aber nicht, da nur sehr wenige Datensätze historisiert werden sollen und ebenso widerspricht es der Anforderung, dass keine Daten gespeichert werden sollen, die nicht auch angezeigt werden.
+Sinnvoll wäre ein solches Vorgehen dann, wenn über die Historisierung eine Nachvollziehbarkeit der Änderungen erreicht werden soll.
+Dies ist im Rahmen der Referenzarchitektur aber explizit die Aufgabe der Protokollierung.</p>
+</div>
+<div class="paragraph">
+<p><strong>Historisierung durch Vorgabe eines Patterns:</strong> Die beschriebene Historisierungsfunktionalität lässt sich nur schwer in der Form von Bibliotheken mit abstrakten Oberklassen, Interfaces und ähnlichem abbilden.
+Die dadurch entstehenden Java-Konstrukte wären nur sehr sperrig zu nutzen und würden die Entwicklung eher behindern als beschleunigen.
+Deshalb wird in diesem Dokument ein Entwurfsmuster vorgegeben, nach dem die Historisierung zu erfolgen hat.
+Diese Entwurfsmuster sind für den Entwickler leichter zu handhaben.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="vorgehen-zur-historisierung-der-bearbeitung"><a class="anchor" href="#vorgehen-zur-historisierung-der-bearbeitung"></a>7.4. Vorgehen zur Historisierung der Bearbeitung</h3>
+<div class="sect3">
+<h4 id="schritt-1-ergaenzen-von-datumsattributen"><a class="anchor" href="#schritt-1-ergaenzen-von-datumsattributen"></a>7.4.1. Schritt 1: Ergänzen von Datumsattributen</h4>
+<div class="paragraph">
+<p>Historisierte Versionen und die aktuelle Version eines Datensatzes werden in der gleichen Tabelle gepflegt.
+Dazu wird die Tabelle um zwei neue Datumsattribute erweitert: <code>aktuellVon</code> und <code>aktuellBis</code>.
+Der aktuell gültige Datensatz ist somit der mit dem neuesten <code>aktuellVon</code>-Datum.
+Das <code>aktuellBis</code>-Datum vereinfacht den Zugriff auf die Tabelle per SQL.
+Es wird dadurch einfacher, den Datensatz zu finden, der zu einem bestimmten Datum aktuell war.
+Das Attribut <code>aktuellBis</code> des aktuellen Datensatzes wird per Konvention auf das Datum 31.12.9999 gesetzt.
+Damit kann dieses Attribut zur Ermittlung des aktuellen Datensatzes genutzt werden.
+Der Chefdesigner eines Projekts kann festlegen, dass dieses Attribut Teil des Schlüssels ist.
+Dadurch ist es möglich, die Tabelle der Datenbank zu partitionieren, um die Verarbeitungsgeschwindigkeit zu erhöhen.</p>
+</div>
+<div class="paragraph">
+<p>In Ausnahmefällen darf auch eine eigene Tabelle zur Speicherung der Historie angelegt werden.
+Dies muss der Chefdesigner eines Projekts entscheiden.
+Dabei ist zu beachten, dass dadurch der Datenzugriff verlangsamt wird, da in diesem Fall immer zwei Tabellen statt einer geschrieben werden.</p>
+</div>
+<div class="paragraph">
+<p>Durch das Einführen der Datumsattribute erweitert sich der fachliche Schlüssel des Datensatzes.
+Der somit aus mehreren Attributen zusammengesetzte fachliche Schlüssel wird genauso behandelt, wie jeder andere zusammengesetzte fachliche Schlüssel auch.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="schritt-2-erweiterung-des-daos"><a class="anchor" href="#schritt-2-erweiterung-des-daos"></a>7.4.2. Schritt 2: Erweiterung des DAOs</h4>
+<div class="paragraph">
+<p>Alle Datenzugriffe auf zu persistierende Objekte (Entities) werden über das zugehörige DAO (Data Access Object) vorgenommen.
+Insbesondere muss das DAO auch dafür sorgen, dass die Attribute <code>aktuellVon</code> und <code>aktuellBis</code> mit den korrekten Werten belegt sind.</p>
+</div>
+<div class="paragraph">
+<p>Das auf die Entität bezogene DAO wird wie folgt angepasst und erweitert:</p>
+</div>
+<div class="sect4">
+<h5 id="_erstelle_neue_methode_lesen_der_zu_dem_datum_gültigen_entität"><a class="anchor" href="#_erstelle_neue_methode_lesen_der_zu_dem_datum_gültigen_entität"></a>7.4.2.1. Erstelle neue Methode: Lesen der zu dem Datum gültigen Entität</h5>
+<div class="paragraph">
+<p>Die Funkion liefert die zu dem übergebenen Zeitpunkt (Parameter calendar) gültige Entität.</p>
+</div>
+<table id="table-dao-ext-lese-valid-entity-by-date" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 4. DAO: Erweiterung: Lesen der zu dem Datum gültigen Entität</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">DAO: Erweiterung: Lesen der zu dem Datum gültigen Entität</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;Entity&gt; lese&lt;Entity&gt;(&lt;Schluessel&gt;, Calendar)`</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiele</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AkteDao leseAkte(id, Calendar)</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_ändern_der_methode_xyz_lese_xyzschluessel"><a class="anchor" href="#_ändern_der_methode_xyz_lese_xyzschluessel"></a>7.4.2.2. Ändern der Methode <code>Xyz lese Xyz(Schluessel)</code></h5>
+<div class="paragraph">
+<p>Diese Methode ist im DAO bereits vorhanden.
+Sie wird so angepasst, dass sie das aktuell gültige Objekt zurückgibt.
+Dies ist das Objekt mit den übergebenen Schlüsselattributen, dessen <code>aktuellBis</code>-Eintrag der 31.12.9999 ist.</p>
+</div>
+<table id="table-dao-ext-lese-current-valid-entity" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 5. Data Access Objects: Anpassung: Lesen der aktuell gültigen Entität</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Data Access Objects: Anpassung: Lesen der aktuell gültigen Entität</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;Entity&gt; lese&lt;Entity&gt;(&lt;Schluessel&gt;)`</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiele</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AkteDao  leseAkte(id)</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_erstellen_einer_neuen_methode_listxyz_lesexyzhistorieschluessel"><a class="anchor" href="#_erstellen_einer_neuen_methode_listxyz_lesexyzhistorieschluessel"></a>7.4.2.3. Erstellen einer neuen Methode <code>List&lt;Xyz&gt; leseXyzHistorie(Schluessel)</code></h5>
+<div class="paragraph">
+<p>Diese Methode liefert die gesamte Historie eines Datensatzes.</p>
+</div>
+<table id="table-dao-ext-lese-Historie-von-entitaet" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 6. Data Access Objects: Erweiterung: Lesen der Historie einer Entität</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Data Access Objects: Erweiterung: Lesen der Historie einer Entität</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List&lt;Entität&gt; lese&lt;Enitität&gt;Historie(Schluessel)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiele</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List&lt;AkteDao&gt; leseAkteHistorie(id)</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_erstellen_einer_neuen_methode_xyz_erzeugeneueversionxyz"><a class="anchor" href="#_erstellen_einer_neuen_methode_xyz_erzeugeneueversionxyz"></a>7.4.2.4. Erstellen einer neuen Methode <code>Xyz erzeugeNeueVersion(Xyz)</code></h5>
+<div class="paragraph">
+<p>Bei einer Umsetzung ohne Historisierung konnten Objekte direkt über ihren Konstruktor erzeugt werden
+und mithilfe der Methode <code>speichereXyz(Xyz)</code> persistiert werden.
+Dies ist jetzt nicht mehr möglich, da in diesem Fall die Attribute <code>aktuellVon</code> und <code>aktuellBis</code> nicht korrekt belegt
+werden würden.
+Daher bietet das DAO eine Methode an, um auf Basis eines bestehenden Objekts eine neue Version dieses Objekts zu erstellen.</p>
+</div>
+<div class="paragraph">
+<p>Die Idee dabei ist, dass das bisher aktuelle Objekt einen Nachfolger erhält.</p>
+</div>
+<table id="table-dao-neue-methode" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 7. Data Access Objects: Erweiterung: Erzeugen einer neuen Version einer Entität</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Data Access Objects: Erweiterung: Erzeugen einer neuen Version einer Entität</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Entität erzeugeNeueVersion(Entität)</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiele</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AkteDao leseAkteHistorie(AkteDao)</code></p></td>
+</tr>
+</tbody>
+</table>
+<table id="table-dao-max-anzahl" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 8. Data Access Objects: optionale Erweiterung: Maximale Anzahl der gespeicherten Versionen</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Data Access Objects: optionale Erweiterung: Maximale Anzahl der gespeicherten Versionen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MAX_EINTRAEGE_HISTORIE</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Beim bisher aktuellen Objekt wird vermerkt, dass es nicht mehr aktuell ist und das neu erzeugte Objekt wird als aktuelles Objekt gekennzeichnet.
+Im Detail werden dabei die folgenden Schritte durchgeführt:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ausgangslage: Das bisher aktuelle Objekt wird als Parameter übergeben.</p>
+</li>
+<li>
+<p>Schritt 1: Der Zeitstempel des übergebenen Objekts wird verändert und damit dieses Objekt als nicht mehr aktuell markiert.
+Das übergebene Objekt ist das bisher aktuelle Objekt, der Zeitstempel <code>aktuellBis</code> war bisher auf den 31.12.9999 gesetzt.
+Dieser Zeitstempel wird auf den aktuellen Zeitstempel gesetzt.</p>
+</li>
+<li>
+<p>Schritt 2: Es wird ein neues Objekt <code>Xyz</code> erzeugt.</p>
+</li>
+<li>
+<p>Schritt 3: Der Zeitstempel <code>aktuellVon</code> des neu erzeugten Objekts wird auf den aktuellen Zeitstempel gesetzt.</p>
+</li>
+<li>
+<p>Schritt 4: Die Daten des übergebenen Objekts werden in das aktuelle Objekt kopiert.</p>
+</li>
+<li>
+<p>Schritt 5: Der Zeitstempel <code>aktuellBis</code> wird auf den 31.12.9999 gesetzt. Damit ist es als das aktuelle Objekt gekennzeichnet.</p>
+</li>
+<li>
+<p>Schritt 6: Das neue Objekt wird in der Session des Persistenzmanagers registriert, damit es beim späteren <code>commit</code> persistiert wird.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Als Parameter der Methode darf auch <code>null</code> übergeben werden.
+In diesem Fall wird ein neuer, leerer Datensatz angelegt, dessen Zeitstempel aber korrekt befüllt sind.
+Dies ist nötig, um das erste Objekt einer Historie erzeugen zu können.</p>
+</div>
+<div class="paragraph">
+<p>Nach konkretem Bedarf kann die Methode <code>&lt;Entität&gt; erzeugeNeueVersion(Entität)</code> auch noch durch zusätzliche „convenience“-Methoden ergänzt werden, die andere Parameter erwarten, z. B. durch eine Methode, die als Parameter nur die Schlüsselwerte des Objekts und nicht das Objekt selbst erwartet oder durch eine Methode, die die aktuellste Version eines Datensatzes selber ermittelt.</p>
+</div>
+<div class="paragraph">
+<p><strong>Optionale Erweiterungen:</strong> Falls eine Obergrenze für die Anzahl der zu historisierenden Datensätze vorgegeben ist, wird die Einhaltung dieser Obergrenze ebenfalls durch das DAO sichergestellt.
+In diesem Fall wird bei der Erzeugung einer neuen Version geprüft, ob dadurch die Obergrenze überschritten wird und ggf. die älteste Version gelöscht.
+Der Wert dieser Obergrenze wird in einer Klassenkonstante des DAOs gehalten.
+Diese Klassenkonstante ist <code>public</code>, damit deren Wert bei einer Veränderung der Historie außerhalb des DAOs berücksichtigt werden kann.
+Sie trägt den Namen <code>MAX_EINTRAEGE_HISTORIE</code>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_löschen_der_methode_void_speicherexyzxyz"><a class="anchor" href="#_löschen_der_methode_void_speicherexyzxyz"></a>7.4.2.5. Löschen der Methode <code>void speichereXyz(Xyz)</code></h5>
+<div class="paragraph">
+<p>Es ist nicht mehr möglich, ein neues Objekt zu erzeugen und direkt in der Datenbank zu speichern und damit die Historisierung zu umgehen.</p>
+</div>
+<div class="paragraph">
+<p>Es wurden in der Schnittstelle des DAOs bewusst keine Funktionen vorgesehen, um die Historie verändern zu können.
+Der Regelfall ist der, dass die Zeitstempel automatisch durch den Historienverwalter gesetzt werden und die Historie nicht mehr verändert wird.</p>
+</div>
+<div class="paragraph">
+<p>Eine Veränderung der Historie ist technisch nicht ausgeschlossen, dies kann direkt durch die Bearbeitung der historisierten Datensätze geschehen.
+Dies ist allerdings ein fachlicher Ausnahmefall.
+Im Regelfall darf die Historie nicht verändert werden.
+Änderungen der Historie dürfen nur in Abstimmung mit den fachlichen Chefarchitekten vorgenommen werden.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="beispiel"><a class="anchor" href="#beispiel"></a>7.4.3. Beispiel</h4>
+<div class="paragraph">
+<p>Das fachliche Szenario für dieses Beispiel ist das Folgende: Der Bestand einer CD soll historisiert werden.</p>
+</div>
+<div class="paragraph">
+<p>Schritt 1: Ergänzen von Datumsattributen</p>
+</div>
+<div class="paragraph">
+<p>Der Bestand der CDs ist ohne Historisierung wie in <a href="#image-BestandCDoH">Abbildung 1</a> modelliert.</p>
+</div>
+<div id="image-BestandCDoH" class="imageblock text-center">
+<div class="content">
+<img src="../_images/detailkonzept-datenzugriff/BestandCDoH.png" alt="BestandCDoH" width="70%">
+</div>
+<div class="title">Abbildung 2. Modellierung des Bestands ohne Historisierung</div>
+</div>
+<div class="paragraph">
+<p>Es gibt eine Entität <code>CD</code>, die eine konkrete CD repräsentiert.
+Der Schlüssel dieser <code>CD</code> ist die <code>isbn</code>.
+Der Bestand dieser CD wird in einer separaten Entität Bestand vorgehalten.
+Die Relation zwischen <code>Bestand</code> und <code>CD</code> ist eine 1:1-Relation.
+Eventuell könnte diese Relation in der Datenbank so modelliert werden, dass sowohl <code>Bestand</code> als auch <code>CD</code> in einer Tabelle zusammengefasst sind.
+Um den Bestand historisierbar zu machen, müsste diese Tabelle in zwei Tabellen zerlegt werden.</p>
+</div>
+<div class="paragraph">
+<p>In die Entität Bestand werden die Attribute <code>aktuellVon</code> und <code>aktuellBis</code> eingefügt.
+Dies ist in <a href="#image-BestandCD">Abbildung 2</a> dargestellt.</p>
+</div>
+<div id="image-BestandCD" class="imageblock text-center">
+<div class="content">
+<img src="../_images/detailkonzept-datenzugriff/BestandCD.png" alt="BestandCD" width="70%">
+</div>
+<div class="title">Abbildung 3. Modellierung des Bestands mit Historisierung</div>
+</div>
+<div class="paragraph">
+<p>Schritt 2: Erweiterung des DAOs</p>
+</div>
+<div class="paragraph">
+<p>Das DAO für die Entität Bestand ohne Historisierung ist in <a href="#image-BestandDaooFzH">Abbildung 3</a> dargestellt.</p>
+</div>
+<div id="image-BestandDaooFzH" class="imageblock text-center">
+<div class="content">
+<img src="../_images/detailkonzept-datenzugriff/BestandDaooFzH.png" alt="BestandDaooFzH" width="50%">
+</div>
+<div class="title">Abbildung 4. BestandDao ohne Funktionen zur Historisierung</div>
+</div>
+<div class="paragraph">
+<p>Um ein neues Objekt Bestand zu persistieren, wird eine Instanz von Bestand erzeugt und anschließend <code>speichereBestand(Bestand)</code> aufgerufen.
+Die Methode <code>leseBestand(String)</code> liest den Bestand einer CD, die durch den übergebenen String (die isbn) identifiziert wird.
+Die Methode <code>loescheBestand(Bestand)</code> löscht den Datensatz aus der Datenbank.
+Um den Bestand historisierbar zu machen, werden die folgenden Erweiterungen vorgenommen, die in <a href="#image-BestandDao">Abbildung 4</a> dargestellt sind.</p>
+</div>
+<div id="image-BestandDao" class="imageblock text-center">
+<div class="content">
+<img src="../_images/detailkonzept-datenzugriff/BestandDao.png" alt="BestandDao" width="50%">
+</div>
+<div class="title">Abbildung 5. BestandDao mit Erweiterungen für Historisierung</div>
+</div>
+<div class="paragraph">
+<p>Die Methode <code>erzeugeNeueVersionBestand(Bestand)</code> wurde eingefügt.</p>
+</div>
+<div class="paragraph">
+<p>Die Methode <code>leseBestand(String, Calendar)</code> wurde eingefügt.</p>
+</div>
+<div class="paragraph">
+<p>Die Methode <code>leseBestand(String)</code> wurde geändert, sodass der aktuelle Datensatz geliefert wird.</p>
+</div>
+<div class="paragraph">
+<p>Die Methode <code>leseBestandHistorie(String)</code> wurde eingefügt.</p>
+</div>
+<div class="paragraph">
+<p>Die Methode <code>speichereBestand(Bestand)</code> wurde entfernt.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="erstellung-von-datenbankschemas"><a class="anchor" href="#erstellung-von-datenbankschemas"></a>8. Erstellung von Datenbankschemas</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In diesem Kapitel werden Vorgaben für die Erstellung von Datenbankschemas erläutert.</p>
+</div>
+<div class="sect2">
+<h3 id="namenskonventionen-von-datenbankschemas"><a class="anchor" href="#namenskonventionen-von-datenbankschemas"></a>8.1. Namenskonventionen</h3>
+<div class="paragraph">
+<p>Für die Benennung von Datenbankschemas sind folgende Einschränkungen zu beachten:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Vollständige, beschreibende, aussprechbare Namen (oder bekannte Abkürzungen).</p>
+</li>
+<li>
+<p>Der Name eines Datenbankschemas muss mit einem Buchstaben beginnen.</p>
+</li>
+<li>
+<p>Es dürfen nur Buchstaben, Zahlen und Unterstriche (_) im Namen enthalten sein.</p>
+</li>
+<li>
+<p>Umlaute, Sonderzeichen, Bindestriche und Leerzeichen sind nicht erlaubt.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="versionierung-von-datenbankschemas"><a class="anchor" href="#versionierung-von-datenbankschemas"></a>9. Versionierung von Datenbankschemas</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die Struktur der Daten, die von einer Anwendung dauerhaft gespeichert werden, kann sich im Laufe des Lebenszyklus der Anwendung ändern.
+Das bedeutet, dass sich neben der Anwendung auch das Datenbankschema ändert.
+Die Anwendung und das Datenbankschema müssen zueinander passen.</p>
+</div>
+<div class="paragraph">
+<p>Die Verwaltung von Versionsinformationen für ein Datenbankschema innerhalb der Datenbank soll sicherstellen, dass die Anwendung und Datenmigrationsskripte erkennen können, ob ein Datenbankschema die erwartete Version hat.
+Zusätzlich sollen die Datenbankadministratoren nachvollziehen können, welche Änderungen am Datenbankschema bereits erfolgt sind.</p>
+</div>
+<div class="paragraph">
+<p>Die Versionsnummer eines Datenbankschemas ist gleich der Versionsnummer der Anwendung, mit der das Schema angelegt bzw. zuletzt geändert wurde.
+Damit ist auf einen Blick zu erkennen, welche Versionsnummer eine Anwendung mindestens haben muss, um mit dem Schema zusammenarbeiten zu können.</p>
+</div>
+<div class="paragraph">
+<p>Wird nur eine Anwendung geändert, das Datenbankschema aber nicht, so bleibt die Versionsnummer des Datenbankschemas sowohl in der Anwendung als auch in den Datenbank-Skripten unverändert.
+Nur die Versionsnummer der Anwendung selbst wird erhöht.</p>
+</div>
+<div class="paragraph">
+<p>Zusätzlich wird ein Update-Zähler mitgeführt, der jedes Mal hochgezählt wird, wenn sich das Datenbankschema ändert, aber die Anwendung unverändert bleibt.
+Das ist z.B. dann der Fall, wenn zusätzliche Indexe angelegt werden oder Views, die die Anwendung selbst nicht benötigt.</p>
+</div>
+<div class="paragraph">
+<p>Im Folgenden wird ein Verfahren festgelegt das diese Anforderungen umsetzt.</p>
+</div>
+<div class="sect2">
+<h3 id="struktur-der-versionsmetadaten"><a class="anchor" href="#struktur-der-versionsmetadaten"></a>9.1. Struktur der Versionsmetadaten</h3>
+<div class="paragraph">
+<p>Die Informationen über Versionen und durchgeführte Änderungen an einem Datenbankschema werden innerhalb des Schemas in eigenen Metadatentabellen gespeichert.
+Hierzu muss jedes Datenbankschema die folgenden Tabellen enthalten.</p>
+</div>
+<div class="sect3">
+<h4 id="tabelle-m_schema_version"><a class="anchor" href="#tabelle-m_schema_version"></a>9.1.1. Tabelle M_SCHEMA_VERSION</h4>
+<div class="paragraph">
+<p>Die Tabelle M_SCHEMA_VERSION enthält die Information über die aktuelle Version des Schemas.
+Die Tabelle hat die folgende Struktur:</p>
+</div>
+<table id="table-TabMSHEVERS" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 9. Tabelle M_SCHEMA_VERSION</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Spalte</th>
+<th class="tableblock halign-left valign-top">Typ</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>version_nummer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>varchar2(25 char)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Versionsnummer des Datenbankschemas.
+Diese Versionsnummer entspricht der Versionsnummer der Anwendung, mit der sich das Schema geändert hat.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>update_nummer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>varchar2(5 char)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update-Zähler, der jedes Mal hochgezählt wird, wenn sich das Datenbankschema ändert, aber die Anwendung unverändert bleibt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>status</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>varchar2(25 char)</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Status des Schemas:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>gueltig: Das Schema wurde korrekt installiert bzw. aktualisiert und kann verwendet werden.</p>
+</li>
+<li>
+<p>bereit: Das Schema ist bereit schemaübergreifende Operationen durchzuführen.</p>
+</li>
+<li>
+<p>ungueltig: Das Schema befindet sich im Aufbau bzw. in der Änderung oder die Installation wurde nur teilweise durchgeführt und wurde mit Fehlern abgebrochen.
+Das Schema kann nicht verwendet werden und muss überprüft werden.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="tabelle-m_schema_log"><a class="anchor" href="#tabelle-m_schema_log"></a>9.1.2. Tabelle M_SCHEMA_LOG</h4>
+<div class="paragraph">
+<p>Die Tabelle M_SCHEMA_LOG enthält Information über eingespielte Skripte zur Anpassung des Schemas.
+Die Tabelle hat die folgende Struktur:</p>
+</div>
+<table id="table-TabMSHELOG" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 10. Tabelle M_SCHEMA_LOG</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Spalte</th>
+<th class="tableblock halign-left valign-top">Typ</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>schemaversion</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>varchar2(25 char)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Versionsnummer des Schemas, zu dessen Erstellung bzw. Anpassung das Skript genutzt wurde.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>schemaupdate</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>varchar2(5 char)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update-Zähler, der jedes Mal hochgezählt wird, wenn sich das Datenbankschema ändert, aber die Anwendung unverändert bleibt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>schritt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>varchar2(10 char)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nummer des Schrittes im Installationsablauf.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>beschreibung</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>varchar2(100 char)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kurzbeschreibung des Installationsschrittes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>skript</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>varchar2(100 char)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name des ausgeführten Skripts.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>skript_start</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>timestamp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zeitpunkt, an dem das Skript gestartet wurde.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>skript_ende</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>timestamp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zeitpunkt, an dem das Skript beendet wurde.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>status</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>varchar2(25 char)</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Status der Skriptausführung:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>wird ausgeführt: Skript wurde gestartet und läuft oder wurde abgebrochen</p>
+</li>
+<li>
+<p>erfolgreich: Skript wurde erfolgreich abgearbeitet</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="installationsablauf-bei-der-neuanlage"><a class="anchor" href="#installationsablauf-bei-der-neuanlage"></a>9.2. Installationsablauf bei der Neuanlage</h3>
+<div class="paragraph">
+<p>Die Neuinstallation eines Datenbankschemas erfolgt in mehreren Schritten, die jeweils aufeinander aufbauen.
+Für die automatisierte Installation werden diese Schritte von einem Datenbankskript nacheinander durchgeführt.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Schritt 1: Umgebungsvariablen laden</dt>
+<dd>
+<p>Für Testzwecke ist es erforderlich, Datenbankschemas in unterschiedlichen Umgebungen zu installieren.
+Umgebungsspezifische Konfigurationsparameter, wie z. B. der Schemaname oder die Angaben zur Datenbankverbindung werden in einem eigenen Datenbankskript abgelegt, das Umgebungsvariablen mit den entsprechenden Werten setzt.
+Die übrigen Installationsschritte verwenden dann diese Variablen.</p>
+</dd>
+<dt class="hdlist1">Schritt 2: Tablespace erstellen</dt>
+<dd>
+<p>Erstellen aller Tablespaces, die für die Installation der Datenbank­objekte benötigt werden.</p>
+</dd>
+<dt class="hdlist1">Schritt 3: Benutzer anlegen</dt>
+<dd>
+<p>Anlegen aller Datenbankbenutzer einschließlich ihrer Rollen und Berechtigungen.
+Mit diesen Benutzern werden die anwendungsspezifischen Datenbankobjekte angelegt.
+Es müssen daher alle hierfür benötigten Rechte für die Dauer der Installation gesetzt werden.</p>
+</dd>
+<dt class="hdlist1">Schritt 4: Erzeugen der anwendungsspezifischen Datenbankobjekte</dt>
+<dd>
+<p>Es werden alle Tabellen, Indexe, Views, Prozeduren und Funktionen für die Anwendung angelegt.
+Weiterhin werden benötigte spezielle Datenbankobjekte, z. B. für das Oracle-Advanced-Queuing angelegt.
+Die anwendungsspezifischen Datenbankobjekte werden mit den in Schritt 3 angelegten Benutzern erstellt.</p>
+</dd>
+<dt class="hdlist1">Schritt 5: Abschlussbearbeitung</dt>
+<dd>
+<p>In diesem Schritt können alle Operationen ausgeführt werden, die sich auf die bisher angelegten Datenbankobjekte beziehen.</p>
+</dd>
+<dt class="hdlist1">Schritt 6: Rechte entziehen</dt>
+<dd>
+<p>Falls den Benutzern im Schritt 3 Rechte zugewiesen wurden, die nur für die Installation benötigt wurden, werden sie in diesem Schritt wieder entzogen.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Die nachfolgende Abbildung zeigt noch einmal die einzelnen Schritte der Installation.</p>
+</div>
+<div id="image-instbeineuan" class="imageblock text-center">
+<div class="content">
+<img src="../_images/detailkonzept-datenzugriff/instbeineuan.png" alt="instbeineuan">
+</div>
+<div class="title">Abbildung 6. Installationsablauf bei der Neuanlage</div>
+</div>
+<div class="sect3">
+<h4 id="struktur-der-installationsskripte-fuer-die-neuanlage"><a class="anchor" href="#struktur-der-installationsskripte-fuer-die-neuanlage"></a>9.2.1. Struktur der Installationsskripte für die Neuanlage</h4>
+<div class="paragraph">
+<p>Für die automatisierte Installation wird eine Strukturierung der Installationsskripte festgelegt.
+Es existieren folgende Aufrufbeziehungen:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Shell-Skripte</dt>
+<dd>
+<p>Über die Shell-Skripte <code>install-db-schema.bat</code> (Windows) bzw. <code>install-db-schema.sh</code> (Linux) wird das SQL-Skript <code>00_install-main.sql</code> aufgerufen.
+Als Parameter werden das Skript für das Anlegen der Umgebungsvariablen und die Log-Datei mitgegeben.</p>
+</dd>
+<dt class="hdlist1">00_install-main.sql</dt>
+<dd>
+<p>Das SQL-Skript ruft die eigentlichen Installationsskripte in der richtigen Reihenfolge über das Hilfsskript <code>99_starte-skript-mit-logging.sql</code> nacheinander auf.
+Dabei werden auch die Tabellen zur Versionierung angelegt und korrekt gefüllt.</p>
+</dd>
+<dt class="hdlist1">99_starte-skript-mit-logging.sql</dt>
+<dd>
+<p>Das Hilfsskript führt ein SQL-Skript aus und befüllt die Versionstabelle korrekt.
+Als Parameter werden der Pfad des Skripts, die Schnittnummer inklusiv der Unterschrittnummer und die Beschreibung mit übergeben.</p>
+</dd>
+<dt class="hdlist1">&lt;Installationsskript&gt;.sql</dt>
+<dd>
+<p>Die eigentlichen Installationsskripte haben das feste Namensschema: <code>&lt;Schrittnummer&gt;-&lt;Unterschrittnummer&gt;_&lt;Name&gt;.sql</code>.
+Die Schrittnummer ist 2-stellig und entspricht der Schrittnummer aus Kapitel <a href="#installationsablauf-bei-der-neuanlage">Installationsablauf bei der Neuanlage</a>.
+Falls zu einem Schritt mehrere Skripte gehören, gibt die Unterschrittnummer die Reihenfolge an, in der diese ausgeführt werden.
+Der Name kann frei vergeben werden, sollte aber sprechend sein.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Die nachfolgende Abbildung zeigt noch einmal die Beziehung zwischen den einzelnen Skripten.</p>
+</div>
+<div id="image-BezzwischInst" class="imageblock text-center">
+<div class="content">
+<img src="../_images/detailkonzept-datenzugriff/BezzwischInst.png" alt="BezzwischInst">
+</div>
+<div class="title">Abbildung 7. Beziehungen zwischen den Installationsskripten</div>
+</div>
+<div class="paragraph">
+<p>Templates für die Skripte sind als Ressourcen in der Bibliothek <code>isy-persistence</code> abgelegt.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="installationsablauf-bei-der-schemaaenderung"><a class="anchor" href="#installationsablauf-bei-der-schemaaenderung"></a>9.3. Installationsablauf bei der Schemaänderung</h3>
+<div class="paragraph">
+<p>Die Änderung eines Datenbankschemas erfolgt analog zur Neuanlage ebenfalls in mehreren Schritten, die jeweils aufeinander aufbauen.
+Für die automatisierte Änderung werden diese Schritte von einem Datenbankskript nacheinander durchgeführt.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Schritt 1: Umgebungsvariablen laden</dt>
+<dd>
+<p>Dieser Schritt unterscheidet sich nicht von der Neuanlage.
+Je nach Art der durchzuführenden Änderung kann es aber erforderlich sein, hier weitere Variablen zu setzen.</p>
+</dd>
+<dt class="hdlist1">Schritt 2: Rechte setzen</dt>
+<dd>
+<p>Falls erforderlich, werden für den Benutzer, mit dem die Änderungen durchgeführt werden sollen, alle für die Änderung des Datenbankschemas benötigten Berechtigungen gesetzt.</p>
+</dd>
+<dt class="hdlist1">Schritt 3: Durchführen der Schemaänderungen</dt>
+<dd>
+<p>Es werden alle Änderungen am Datenbankschema vorgenommen.
+Das umfasst sowohl das Anlegen neuer Datenbankobjekte, wie z. B. Tabellen, Views und Indexe, als auch die Änderung bereits vorhandener Datenbankobjekte, wie z. B. das Löschen und Hinzufügen von Spalten in Tabellen.
+Die Änderungen werden mit dem Benutzer durchgeführt, für den in Schritt 2 die Berechtigungen entsprechend gesetzt wurden.</p>
+</dd>
+<dt class="hdlist1">Schritt 4: Abschlussbearbeitung</dt>
+<dd>
+<p>In diesem Schritt können alle Operationen ausgeführt werden, die sich auf die bisher angelegten Datenbankobjekte beziehen.</p>
+</dd>
+<dt class="hdlist1">Schritt 5: Rechte entziehen</dt>
+<dd>
+<p>Falls in Schritt 2 für Benutzer Rechte gesetzt wurden, die nur für die Durchführung der Änderungen benötigt wurden, werden sie in diesem Schritt wieder entzogen.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Die nachfolgende Abbildung zeigt noch einmal die einzelnen Schritte der Installation.</p>
+</div>
+<div id="image-instbeineuan2" class="imageblock text-center">
+<div class="content">
+<img src="../_images/detailkonzept-datenzugriff/instbeineuan.png" alt="instbeineuan">
+</div>
+<div class="title">Abbildung 8. Ablauf bei der Schemaänderung</div>
+</div>
+<div class="sect3">
+<h4 id="struktur-der-aenderungsskripte"><a class="anchor" href="#struktur-der-aenderungsskripte"></a>9.3.1. Struktur der Änderungsskripte</h4>
+<div class="paragraph">
+<p>Für die automatisierte Änderung wird eine Strukturierung der Änderungsskripte festgelegt.
+Diese ist analog zur Struktur der Installationsskripte aus Abschnitt <a href="#struktur-der-installationsskripte-fuer-die-neuanlage">Struktur der Installationsskripte für die Neuanlage</a>.
+Es existieren folgende Aufrufbeziehungen:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Shell-Skripte</dt>
+<dd>
+<p>Über die Shell-Skripte <code>update-db-schema.bat</code> (Windows) bzw. <code>update-db-schema.sh</code> (Linux) wird das SQL-Skript <code>00_update-main.sql</code> aufgerufen.
+Als Parameter werden das Skript für das Anlegen der Umgebungsvariablen und die Log-Datei mitgegeben.</p>
+</dd>
+<dt class="hdlist1">00_update-main.sql</dt>
+<dd>
+<p>Das SQL-Skript ruft die eigentlichen Installationsskripte in der richtigen Reihenfolge über das Hilfsskript <code>99_starte-skript-mit-logging.sql</code> nacheinander auf.
+Dabei werden auch die Tabellen zur Versionierung angelegt und korrekt gefüllt.</p>
+</dd>
+<dt class="hdlist1">99_starte-skript-mit-logging.sql</dt>
+<dd>
+<p>Das Hilfsskript führt ein SQL-Skript aus und befüllt die Versionstabelle korrekt.
+Als Parameter werden der Pfad des Skripts, die Schnittnummer inklusiv der Unterschrittnummer und die Beschreibung mit übergeben.</p>
+</dd>
+<dt class="hdlist1">&lt;Update-Skript&gt;.sql</dt>
+<dd>
+<p>Die eigentlichen Änderungsskripte haben das feste Namensschema <code>&lt;Schrittnummer&gt;-&lt;Unterschrittnummer&gt;_&lt;Name&gt;.sql</code>.
+Die Schrittnummer ist 2-stellig und entspricht der Schrittnummer aus Kapitel <a href="#installationsablauf-bei-der-schemaaenderung">Installationsablauf bei der Schemaänderung</a>.
+Falls zu einem Schritt mehrere Skripte gehören, gibt die Unterschrittnummer die Reihenfolge an, in der diese ausgeführt werden.
+Der Name kann frei vergeben werden, sollte aber sprechend sein.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Die nachfolgende Abbildung zeigt noch einmal die Beziehung zwischen den einzelnen Skripten.</p>
+</div>
+<div id="image-bezzwischenAend" class="imageblock text-center">
+<div class="content">
+<img src="../_images/detailkonzept-datenzugriff/bezzwischenAend.png" alt="bezzwischenAend">
+</div>
+<div class="title">Abbildung 9. Beziehungen zwischen den Änderungsskripten</div>
+</div>
+<div class="paragraph">
+<p>Templates für die Skripte sind als Ressourcen in der Bibliothek <code>isy-persistence</code> abgelegt.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ablage-der-skripte-und-namenskonventionen"><a class="anchor" href="#ablage-der-skripte-und-namenskonventionen"></a>9.4. Ablage der Skripte und Namenskonventionen</h3>
+<div class="paragraph">
+<p>Die Skripte werden im Source-Projekt der Anwendung, zu der sie gehören, im Verzeichnis <code>src/main/skripte/sql/&lt;dbschema-name&gt;</code> abgelegt.
+In diesem Verzeichnis liegen die Unterverzeichnisse <code>db-install-&lt;Versionsnummer&gt;</code> für Installationsskripte und <code>db-update-&lt;Versionsnummer&gt;</code> für Updateskripte.
+<code>&lt;Versionsnummer&gt;</code> gibt dabei die Versionsnummer des Datenbankschemas, einschließlich der Update-Nummer, an (z. B. <code>1.2.3_01</code>).</p>
+</div>
+<div class="paragraph">
+<p>Für die aktuelle Datenbankversion muss es ein vollständiges Installationsskript geben.
+Wurden Änderungen am Schema vorgenommen, gibt es zusätzlich ein entsprechendes Update-Skript von der Vorversion auf die aktuelle Version.
+Das Verzeichnis enthält so immer das Installationsskript für die aktuelle Datenbankversion und Update-Skripte, um jede belieblige Vorversion seit Einführung der Schema-Versionierung auf die aktuelle Datenbankversion anheben zu können.</p>
+</div>
+<div class="paragraph">
+<p>Die einzelnen Skripte werden auf der Grundlage der Templates aus der Bibliothek <code>isy-persistence</code> erstellt und behalten auch deren Namen.</p>
+</div>
+<div class="paragraph">
+<p>Die eigentlichen Installations- und Update-Skripte haben das feste Namensschema: <code>&lt;Schrittnummer&gt;-&lt;Unterschrittnummer&gt;_&lt;Name&gt;.sql</code>.
+Die Schrittnummer ist 2-stellig und entspricht der Schrittnummer aus dem Kapitel <a href="#installationsablauf-bei-der-neuanlage">Installationsablauf bei der Neuanlage</a> bzw. <a href="#installationsablauf-bei-der-schemaaenderung">Installationsablauf bei der Schemaänderung</a>.
+Falls zu einem Schritt mehrere Skripte gehören, gibt die Unterschrittnummer die Reihenfolge an, in der diese ausgeführt werden.
+Der Name kann frei vergeben werden, sollte aber sprechend sein.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="schemauebergreifende-operationen"><a class="anchor" href="#schemauebergreifende-operationen"></a>9.5. Schemaübergreifende Operationen</h3>
+<div class="paragraph">
+<p>Sollte eine Anwendung schemaübergreifende Operationen haben wird das vorgestellte DB-Versionierungskonzept wie folgt erweitert.
+Die Skripte der schemaübergreifenden Operationen werden gemäß Kapitel <a href="#ablage-der-skripte-und-namenskonventionen">Ablage der Skripte und Namenskonventionen</a> in einen eigenen Ordner unter <code>src/main/skripte/sql/uebergreifend</code> abgelegt.
+Die hier abgelegten Skripte werden immer als letztes ausgeführt.
+Zuvor werden alle anderen Schemata installiert.</p>
+</div>
+<div class="paragraph">
+<p>Die Skripte im Ordner <code>uebergreifend</code> werden ebenfalls im gewohnten DB-Versionierungskonzept Format abgelegt.
+Die Schrittnummer ist 2-stellig und entspricht der Schrittnummer aus Kapitel <a href="#installationsablauf-bei-der-neuanlage">Installationsablauf bei der Neuanlage</a>.
+Allerdings beginnt die Schrittnummer mit 91 statt mit 01.
+Die einzelnen Skripte werden in der richtigen Reihenfolge über das Hilfsskript <code>99_starte-skript-mit-logging.sql</code> aufgerufen und in der Tabelle <code>M_SCHEMA_LOG</code> des Hauptschemas der Anwendung protokolliert.</p>
+</div>
+<div class="paragraph">
+<p>Die Skripte im Hauptschema der Anwendung setzen, nach erfolgreicher Ausführung, den Status von <code>M_SCHEMA_VERSION</code> auf „<strong>bereit</strong>“ statt auf „gueltig“.
+Das signalisiert, dass das Schema bereit ist, die schemaübergreifenden Operationen durchzuführen.
+Vor der Ausführung der Skripte im Ordner <code>uebergreifend</code> wird geprüft, dass der Status des Hauptschemas auf „bereit“ steht.
+Erst nach der erfolgreichen Ausführung aller Schritte des Schemas <code>uebergreifend</code> wird der Status auf „gueltig“ gesetzt.</p>
+</div>
+<div class="paragraph">
+<p>Mit den übergreifenden Skripten sollen auch die Zugriffsrechte für die Queue(s) eines Anwendungssystems vergeben werden, sofern diese existieren.
+Die entsprechenden Datenbanknutzer der Systeme, die Zugriff auf die Queue(s) haben sollen, sind dann in der Datei <code>91_environment.sql</code> einzutragen.
+In einem Skript <code>93-X.sql</code> können dann die Rechte je nach Bedarf vergeben werden.
+Auf diese Weise legt das Anwendungssystem selbst fest, welche anderen Systeme Zugriff auf die Queue(s) haben.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="datenbankuebergreifende-operationen"><a class="anchor" href="#datenbankuebergreifende-operationen"></a>9.6. Datenbankübergreifende Operationen</h3>
+<div class="paragraph">
+<p>Im Gegensatz zu schemaübergreifenden Operationen wird von datenbankübergreifenden Operationen dringlichst abgeraten.
+Nur eine Lösung, Oracle Database Links, bietet im Zusammenspiel mit Oracle-Datenbanken eine generische, transaktionssichere Lösung für dieses Problem an.
+Allerdings sind Oracle Database Links laut Maßnahme M 4.71 des IT-Grundschutzes (<a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-IT-Grundschutz-M471" class="xref page">IT-Grundschutz M471</a>) nur unter strengen Auflagen zulässig, die eine Verwendung erheblich erschweren.</p>
+</div>
+<div class="paragraph">
+<p>Mit dem Wegfall dieser Lösung gibt es aus Sicht der IsyFact keine geeignete Lösung, um Daten zwischen mehreren Schemata auf unterschiedlichen Datenbank-Instanzen zu bearbeiten.
+Unabhängig von der Lösung erschweren datenbankübergreifende Operationen die Fehlersuche im Falle einer fehlgeschlagenen Installation oder Aktualisierung wesentlich.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="pruefen-der-schema-version"><a class="anchor" href="#pruefen-der-schema-version"></a>9.7. Prüfen der Schema-Version</h3>
+<div class="paragraph">
+<p>Jede Anwendung prüft beim Start, ob das DB-Schema die erwartete Version hat.
+Diese Prüfung ist in der Bibliothek <code>isy-persistence</code> fest eingebaut.
+In der Anwendungskonfiguration müssen in <code>application.properties</code> die folgenden Properties gesetzt werden:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">isy.persistence.oracle.datasource.schema-invalid-version-action=fail
+isy.persistence.oracle.datasource.schema-version=1.2.3</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In der Property <code>schemaVersion</code> wird die Versionsnummer des Datenbankschemas angegeben, das die Anwendung erwartet.
+Wird die Property <code>schemaVersion</code> oder der Wert für die Version nicht angegeben, so findet keine Überprüfung der Schema-Version statt.</p>
+</div>
+<div class="paragraph">
+<p>In der Property <code>invalidSchemaVersionAction</code> wird festgelegt, wie die Data-Source auf eine falsche Schema-Version reagieren soll.
+Der Wert <code>fail</code> legt fest, dass eine Exception geworfen wird.
+Das hat zur Folge, dass die Anwendung nicht gestartet werden kann.
+Der Wert <code>warn</code> legt fest, dass lediglich eine Warnung in die Log-Datei geschrieben wird.</p>
+</div>
+<div class="paragraph">
+<p>Bei Datenmigrationen muss jedes Skript vor der Ausführung prüfen, ob die Datenbank die erwartete Version hat.
+Das kann mit dem folgenden SQL-Statement durchgeführt werden:</p>
+</div>
+<div id="listing-pruefung-schema-version" class="listingblock">
+<div class="title">Listing 14. SQL-Query zur Prüfung der Schema-Version</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">SELECT version
+  FROM m_schema_version
+ WHERE version_nummer = '&lt;schemaVersion&gt;'
+   AND status = 'gueltig';</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Liefert dieses SQL-Statement einen Wert zurück, dann ist die erwartete Schema-Version vorhanden.
+Liefert es keinen Wert zurück, dann ist die erwartete Schema-Version nicht vorhanden.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="verwendung-von-varchar"><a class="anchor" href="#verwendung-von-varchar"></a>10. Verwendung von VARCHAR</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Bei der Verwendung von VARCHAR ist auf die korrekte Schreibweise zu achten.
+Korrekt ist die Variante VARCHAR2 (x char), keinesfalls darf VARCHAR2(x) oder VARCHAR(x) verwendet werden.
+Hintergrund: VARCHAR2 (10 char) bedeutet, dass bis zu 10 Zeichen gespeichert werden können, unabhängig davon, wie viele Bytes ein Zeichen benötigt.
+Beispielsweise kann bei Verwendung von Unicode ein Zeichen bis zu 4 Bytes beanspruchen.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<div class="divFooter"></div>
+
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+<script src="../../../../_/js/isyfact.js"></script>
+  </body>
+</html>
