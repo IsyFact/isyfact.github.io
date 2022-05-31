@@ -28,3 +28,10 @@ div.listingblock pre {
     white-space: pre-wrap;
     font-size: .75rem;
 }
+
+/* nicer table header */
+table thead, table tfoot { background: #00417a linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0)); font-weight: bold; }
+table thead tr th, table thead tr td, table tfoot tr th, table tfoot tr td { padding: 0.5em 0.625em 0.625em; font-size: inherit; color: white; text-align: left; }
+
+/* more readable table rows */
+table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #edf2f2; }
