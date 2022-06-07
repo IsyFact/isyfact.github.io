@@ -6,6 +6,7 @@ pages:
   stage: deploy
   script:
     - echo 'Deploy isyfact documentation'
+    - mv ./docs ./public
   artifacts:
     paths:
     - public
