@@ -1,0 +1,14 @@
+include:
+  - project: 'IsyFact/isy-gitlabci-templates'
+    file: '/maven/.gitlab-ci-maven.yml'
+
+pages:
+  stage: deploy
+  script:
+    - echo 'Deploy isyfact documentation'
+    - mv ./docs ./public
+  artifacts:
+    paths:
+    - public
+  only:
+  - main

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Konzept Umgang mit Sonderzeichen: Inhalt :: IsyFact Dokumentation</title>
+    <link rel="canonical" href="https://github.com/isyfact/isyfact-standards-doku/latest/isy-sonderzeichen/konzept/inhalt.html">
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../_/css/isyfact.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://github.com/isyfact">IsyFact Dokumentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5-SNAPSHOT">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../einstieg/vorstellung.html">IsyFact Standards</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Einstieg</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../einstieg/vorstellung.html">Vorstellung der IsyFact</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/isyfact-standards.html">IsyFact-Standards</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/isyfact-erweiterungen.html">IsyFact-Erweiterungen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/rahmenbedingungen.html">Rahmenbedingungen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/erste-schritte.html">Erste Schritte</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/tutorial/master.html">Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/whitepaper/master.html">Whitepaper</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Blaupausen</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../blaupausen/referenzarchitektur/master.html">Referenzarchitektur</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../blaupausen/referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/master.html">Datenzugriff</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-service/master.html">Service</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-web-gui/master.html">Web GUI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-batch/master.html">Batch</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Vorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/vorgaben-architektur/master.html">Architektur</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/vorgaben-it-sicherheit/master.html">IT-Sicherheit</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Bausteine</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Datum &amp; Zeit</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-datetime/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-datetime/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Fehlerbehandlung</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-exception-core/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-exception-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">HttpInvoker</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-serviceapi-core/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Konfiguration</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-konfiguration/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-konfiguration/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Logging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-logging/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-logging/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Polling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-polling/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-polling/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-service-rest/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-service-rest/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sicherheit</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sicherheit/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sicherheit/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sonderzeichen</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Task Scheduling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-task/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-task/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Überwachung</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-ueberwachung/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-ueberwachung/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Util</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-util/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Methodik</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/namenskonventionen/master.html">Namenskonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/tailoring/tailoring.html">Tailoring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/spezifikation/datenflussdiagramme.html">Datenflussdiagramme</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Werkzeuge</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/einrichtung_entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/handbuch_dokumentation/master.html">Dokumentation der IsyFact</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../changelog/changelog.html">Changelog</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">IsyFact Standards</span>
+    <span class="version">2.5-SNAPSHOT</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../glossary/latest/glossary/master.html">Glossar</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../glossary/latest/glossary/master.html">1.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../einstieg/vorstellung.html">IsyFact Standards</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../einstieg/vorstellung.html">2.5-SNAPSHOT</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../einstieg/vorstellung.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../einstieg/vorstellung.html">IsyFact Standards</a></li>
+    <li><a href="inhalt.html">Konzept Umgang mit Sonderzeichen: Inhalt</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Inhalt" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Konzept Umgang mit Sonderzeichen: Inhalt</h1>
+<div class="sect1">
+<h2 id="anforderungen-und-randbedingungen"><a class="anchor" href="#anforderungen-und-randbedingungen"></a>1. Anforderungen und Randbedingungen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An die Verarbeitung von Sonderzeichen nach den IsyFact-Standards bestehen die folgenden Anforderungen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Prinzipiell (technisch) muss jedes Sonderzeichen nutzbar sein.</p>
+</li>
+<li>
+<p>Jedes System nach IsyFact-Standards muss die Sonderzeichen in gleicher Weise verarbeiten können.</p>
+</li>
+<li>
+<p>Nach Erlass des BMI ist für das Personenstands-, Melde- und Ausländerwesen die Verarbeitung sämtlicher Zeichen gem. <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-OWASP" class="xref page">OWASP Top 10 Project</a> vorgegeben.
+Weder mehr noch weniger Zeichen darf/muss das System verarbeiten können.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="festlegung-des-zeichensatzes-und-der-codierung"><a class="anchor" href="#festlegung-des-zeichensatzes-und-der-codierung"></a>2. Festlegung des Zeichensatzes und der Codierung</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Laut der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-Architekturrichtlinie" class="xref page">Architekturrichtlinie für die IT des Bundes - Technische Spezifikation zur Architekturrichtlinie (Version 2020)</a> soll der Zeichensatz DIN SPEC 91379 (auch String.Latin 1.2) in der UTF-8-Codierung verwendet werden.
+Das BMI hat als Rahmenbedingung für seinen Verantwortungsbereich festgelegt, für die Zeichencodierung in neuen Systemen ausschließlich UTF-8 zu nutzen.
+Dieser Zeichensatz stellt ausreichend viele der weltweit existierenden Buchstaben, Ziffern und Symbole zur Verfügung, um Daten in internationalen Schreibweisen abbilden zu können.</p>
+</div>
+<div class="paragraph">
+<p>Gemäß den Anforderungen des String.Latin Zeichensatzes des BMI <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-OWASP" class="xref page">OWASP Top 10 Project</a> soll die IsyFact genau diesen Zeichensatz unterstützen.
+Daher wird festgelegt, dass für IsyFact-Standard-basierte Anwendungen der Zeichensatz DIN SPEC 91379 in der UTF-8-Codierung zu verwenden ist.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+Die Webseiten der KoSIT bieten weitere Informationen zu <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-string.latin-1.2" class="xref page">String.Latin 1.2</a> sowie einen <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-string.latin-1.2-download" class="xref page">Download</a> der entsprechenden Spezifikation.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="transformation-von-sonderzeichen"><a class="anchor" href="#transformation-von-sonderzeichen"></a>3. Transformation von Sonderzeichen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In den Fällen, wo kein Unicode-Zeichensatz verwendet werden kann, müssen Sonderzeichen eventuell in andere Darstellungen oder Codierungen umgewandelt werden.
+Hierzu gibt es prinzipiell drei Möglichkeiten: die Transkription, die Umcodierung und das Filtern von Zeichen.
+In diesem Kapitel werden diese drei Möglichkeiten in je einem Unterkapitel beschrieben.</p>
+</div>
+<div class="sect2">
+<h3 id="transkription"><a class="anchor" href="#transkription"></a>3.1. Transkription</h3>
+<div class="paragraph">
+<p>Transkription (Umschreibung) ist eine aussprachebasierte Darstellung eines fremden Alphabetes mit dem eigenen Alphabet, also z.B. die Darstellung russischer Namen in kyrillischer Schreibweise mit dem deutschen Alphabet.
+Transkription wird eingesetzt, um ohne Kenntnisse einer fremden Sprache und des zugehörigen Alphabets eine halbwegs richtige Aussprache von Wörtern zu ermöglichen.
+Eine eindeutige Rückübertragung ist in der Regel nicht möglich.
+Im Folgenden werden die Festlegungen zur Transkription im Rahmen der IsyFact-Standards beschrieben.</p>
+</div>
+<div class="sect3">
+<h4 id="zeichensaetze-und-sprachen"><a class="anchor" href="#zeichensaetze-und-sprachen"></a>3.1.1. Zeichensätze und Sprachen</h4>
+<div class="paragraph">
+<p>Wie in Kapitel <a href="#festlegung-des-zeichensatzes-und-der-codierung">Festlegung des Zeichensatzes und der Codierung</a> festgelegt, wird für die IsyFact der Zeichensatz Unicode v4.x in der UTF-8-Codierung verwendet.
+Die Transkription überführt die internationalen Sonderzeichen aus dem Unicode v4.x Zeichensatz in den ASCII-Zeichensatz.</p>
+</div>
+<div class="paragraph">
+<p>Im Rahmen der IsyFact werden zur Zeit von der Transkription nur kyrillische, griechische und lateinische Zeichen  unterstützt, da hiermit die im europäischen Raum gebräuchlichen Zeichen abgedeckt sind.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="anwendungsbereiche-in-einer-isyfact-systemlandschaft"><a class="anchor" href="#anwendungsbereiche-in-einer-isyfact-systemlandschaft"></a>3.1.2. Anwendungsbereiche in einer IsyFact-Systemlandschaft</h4>
+<div class="paragraph">
+<p>Transkription ist an den folgenden Stellen von Bedeutung:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Datenaustausch mit anderen Systemen</strong></dt>
+<dd>
+<p>Für nach <a href="../../../../glossary/latest/glossary/master.html#glossar-IFS" class="xref page">IsyFact Standards</a> entwickelte Anwendungen ist der zu verwendende Zeichensatz festgelegt.
+Andere Systeme, mit denen diese kommunizieren, können aber einen anderen Zeichensatz verwenden.
+Hier müssen die Daten zunächst in den Zeichensatz des Zielsystems umgewandelt werden.
+Die Umwandlung kann durch Transkription geschehen.
+<br>
+<span class="underline">Beispiel:</span> Ein Nachbarsystem arbeitet ausschließlich mit dem ASCII-Zeichensatz.
+Daten einer Anwendung nach IsyFact-Standards werden zunächst umgeschrieben und dann dem Nachbarsystem übergeben.</p>
+</dd>
+<dt class="hdlist1"><strong>Einheitliche Repräsentation von Daten</strong></dt>
+<dd>
+<p>Für Namen können verschiedene ländertypische Schreibweisen genutzt werden.
+Trotzdem sollen Daten aber vergleichbar sein.
+Hier kann die Transkription zu einer einheitlichen (normierten) Schreibweise führen.
+Werden dann Suchen auf den umgeschriebenen Daten durchgeführt, erhöht sich die Wahrscheinlichkeit, dass der Gesuchte in der Trefferliste ist.
+Dadurch verbessert sich aber nicht unbedingt die Trefferqualität.
+<br>
+<span class="underline">Beispiel:</span> „Müller“ wird im Originalschreibweise gespeichert und für die Suche zu „Mueller“ umgeschrieben.
+Eine Suchanfrage nach „Müller“ wird zunächst zu „Mueller“ umgeschrieben, dann gesucht und auch gefunden.
+Eine Suchanfrage nach „Mueller“ braucht nicht umgeschrieben werden und wird gefunden.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Transkription wird in der Regel nur für Namen verwendet, also für Vornamen, Nachnamen und Ortsbezeichnungen.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="transkriptionsregeln"><a class="anchor" href="#transkriptionsregeln"></a>3.1.3. Transkriptionsregeln</h4>
+<div class="paragraph">
+<p>Die Transkription basiert auf dem ICAO-Standard (ICAO-MRTD). Der ICAO-Standard wurde ursprünglich für das automatische Lesen von Dokumenten in der Luftfahrt entwickelt.
+Er umfasst 142 Abbildungsvorschriften (Regeln) für lateinische und kyrillische Buchstaben.
+Für die Abbildung von griechischen Zeichen wird der Standard ISO-843 verwendet.</p>
+</div>
+<div class="paragraph">
+<p>Während der ISO-Standard (ISO-9) für die Transkription von kyrillischen Zeichen noch diakritische lateinische Zeichen verwendet, ist bei ICAO-MRTD das Ziel, diakritische Zeichen vollständig zu vermeiden, um eine Abbildung auf den ASCII-Zeichensatz zu ermöglichen.
+Eine bereits umgeschriebene Zeichenfolge wird durch eine erneute Transkription nicht mehr verändert.</p>
+</div>
+<div class="paragraph">
+<p>In der <a href="../nutzungsvorgaben/master.html#table-transkription" class="xref page">Tabelle Transkription</a> sind die Transkriptionsregeln für die verschiedenen Zeichen dargestellt.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="umsetzung-im-system"><a class="anchor" href="#umsetzung-im-system"></a>3.1.4. Umsetzung im System</h4>
+<div class="paragraph">
+<p>Daten werden immer im Originalformat gespeichert.
+Umgeschriebene Daten können bei Bedarf zusätzlich abgelegt werden.
+Dabei sind die der Transkription zugrunde liegenden Parameter ebenfalls mit abzulegen.
+Dies führt zu folgendem Datentyp für umgeschriebene Zeichenfolgen:</p>
+</div>
+<div id="sonderzeichen_klasse_transtext" class="imageblock text-center">
+<div class="content">
+<img src="../_images/konzept/sonderzeichen_klasse_transtext.png" alt="sonderzeichen klasse transtext" width="35%">
+</div>
+<div class="title">Abbildung 1. Datentyp für umgeschriebene Texte</div>
+</div>
+<div class="paragraph">
+<p>Die Attribute für den Datentyp „TransText“ haben die folgende Bedeutung:</p>
+</div>
+<table id="table-TransTextAttribute" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Attribute des Datentyps „TransText“</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 16.6666%;">
+<col style="width: 50.0001%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribut</th>
+<th class="tableblock halign-left valign-top">optional</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>original</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nein</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Originaltext im Unicode-Zeichenformat</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sprache</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sprachcode gemäß ISO 639 für die Sprache des Originaltextes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>transkription</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nein</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">umgeschriebener Text</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>methode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nein</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kennzeichen für den bei der Transkription verwendeten Satz von Transkriptionsregeln, also der Methode nach der die Transkription durchgeführt wurde.
+Verschiedene Versionen der gleichen Transkriptionsregeln können durch eigene Kennzeichen abgebildet werden.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Die Transkription soll nicht als zentraler Service, sondern als Komponente umgesetzt werden, die bei Bedarf in die Anwendungen eingebunden wird.
+Dabei sind die Transkriptionsregeln in einer oder mehreren Konfigurationsdateien hinterlegt, die von der Komponente eingelesen werden.
+Darüber wird auch eine einfache Erweiterbarkeit der Transkriptionsregeln gewährleistet.
+Es ist möglich, mehrere Sätze von Transkriptionsregeln zu hinterlegen, um so auch andere Standards für die Transkription verwenden zu können.</p>
+</div>
+<div id="sonderzeichen_transkription.png" class="imageblock text-center">
+<div class="content">
+<img src="../_images/konzept/sonderzeichen_transkription.png" alt="sonderzeichen transkription" width="50%">
+</div>
+<div class="title">Abbildung 2. Komponente Transkription</div>
+</div>
+<div class="paragraph">
+<p>Die Komponente Transkription bietet nach außen nur die Methode</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">TransText umschreiben(String text, String sprache, String methode)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>an.
+Hier ist der Parameter <code>text</code> der umzuschreibende Text, <code>sprache</code> der Sprachcode gemäß ISO 639 und <code>methode</code> das Kennzeichen des zu verwendenden Satzes von Transkriptionsregeln.
+Ergebnis ist die umgeschriebene Darstellung des Textes gemäß dem Datentyp <code>TransText</code>.
+Im Fehlerfall werden entsprechende Exceptions geworfen.
+Die Angabe der Sprache ist optional.
+Ist die Sprache unbekannt, d.h. es wird kein Sprachcode übergeben, dann wird die Sprache bei der Transkription nicht berücksichtigt.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="umcodierung"><a class="anchor" href="#umcodierung"></a>3.2. Umcodierung</h3>
+<div class="paragraph">
+<p>Textdaten, die von der Anwendung aus einer Datei eingelesen werden oder über eine Programm-Schnittstelle übergeben werden, können eventuell nicht in UTF-8 codiert sein.</p>
+</div>
+<div class="paragraph">
+<p>Textdateien werden in der Standard-Zeichencodierung der JVM eingelesen und gespeichert.
+Die Standard-Zeichencodierung kann als Aufrufparameter in der JVM gesetzt werden (siehe auch Kapitel <em>Java</em> im Dokument <a href="../nutzungsvorgaben/master.html#einleitung" class="xref page">Sonderzeichen - Nutzungsvorgaben</a>.
+Sollte eine andere Zeichencodierung verwendet werden, so muss dies explizit im Code umgesetzt werden.</p>
+</div>
+<div class="paragraph">
+<p>Das kann z.B. erfolgen, indem die Dateien mit einem <code>InputStreamReader</code> gelesen werden bzw. mit einem <code>OutputStreamWriter</code> geschrieben werden.
+In beiden Klassen kann im Konstruktor der Zeichensatz angegeben werden.
+Beim Lesen werden die Daten dann automatisch decodiert bzw. beim Schreiben codiert.</p>
+</div>
+<div class="paragraph">
+<p>Dieses Verfahren kann für beliebige Byte-Arrays verwendet werden, sodass auch Daten, die über eine Programm-Schnittstelle übergeben werden, so umcodiert werden können.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filtern-von-zeichen"><a class="anchor" href="#filtern-von-zeichen"></a>3.3. Filtern von Zeichen</h3>
+<div class="paragraph">
+<p>Neben den druckbaren Zeichen enthält der Unicode-Zeichensatz auch nicht druckbare Steuerzeichen (Ugs. „Schmierzeichen“).
+Diese Zeichen können an der Oberfläche bei der Übernahme aus anderen Programmen über die Zwischenablage oder beim Import von Daten in eine IsyFact-konforme Anwendung gelangen.
+Diese Zeichen sind prinzipiell bei der Validierung der Daten auszufiltern.
+Ob der Benutzer von diesem Vorgang informiert wird oder ob Log-Einträge geschrieben werden, hängt von der Fachlichkeit der jeweiligen Anwendung ab.
+Je nach Anwendung kann es auch sinnvoll sein, einige Steuerzeichen, wie z.B. einen Zeilenumbruch, zuzulassen.
+Diese von der Anwendung abhängigen Festlegungen müssen in der Spezifikation bzw. im Systementwurf der jeweiligen Anwendung beschrieben werden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spezifikation-von-fachlichen-datentypen"><a class="anchor" href="#spezifikation-von-fachlichen-datentypen"></a>3.4. Spezifikation von fachlichen Datentypen</h3>
+<div class="paragraph">
+<p>Bereits in der Spezifikation ist darauf zu achten, dass für einen fachlichen Datentyp die zulässigen Zeichen genau angegeben werden.
+Nur so können die entsprechenden Validierungen konzipiert und umgesetzt werden.
+Hier ist der Datentyp String bzw. Alpha in der Regel zu grob.
+Hier müssen abgestufte Typen für Textinhalte definiert werden, z.B. Alpha-Latein-Basis (alle großen und kleinen lateinischen Buchstaben ohne diakritische Zeichen), Alpha-Latein-Diakrit (alle großen und kleinen lateinischen Buchstaben inklusiv diakritische Zeichen), Alpha-Europa (alle großen und kleinen lateinischen, griechischen und kyrillischen Zeichen, inklusiv diakritischer Zeichen).</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<div class="divFooter"></div>
+
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+<script src="../../../../_/js/isyfact.js"></script>
+  </body>
+</html>

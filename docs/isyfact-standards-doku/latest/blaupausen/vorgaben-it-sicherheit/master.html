@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>IsyFact IT-Sicherheitsregeln :: IsyFact Dokumentation</title>
+    <link rel="canonical" href="https://github.com/isyfact/isyfact-standards-doku/latest/blaupausen/vorgaben-it-sicherheit/master.html">
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../_/css/isyfact.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://github.com/isyfact">IsyFact Dokumentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5-SNAPSHOT">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../einstieg/vorstellung.html">IsyFact Standards</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Einstieg</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../einstieg/vorstellung.html">Vorstellung der IsyFact</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/isyfact-standards.html">IsyFact-Standards</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/isyfact-erweiterungen.html">IsyFact-Erweiterungen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/rahmenbedingungen.html">Rahmenbedingungen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/erste-schritte.html">Erste Schritte</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/tutorial/master.html">Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/whitepaper/master.html">Whitepaper</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Blaupausen</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../referenzarchitektur/master.html">Referenzarchitektur</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/master.html">Datenzugriff</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../detailkonzept-komponente-service/master.html">Service</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../detailkonzept-komponente-web-gui/master.html">Web GUI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../detailkonzept-komponente-batch/master.html">Batch</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Vorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vorgaben-architektur/master.html">Architektur</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="master.html">IT-Sicherheit</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Bausteine</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Datum &amp; Zeit</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-datetime/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-datetime/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Fehlerbehandlung</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-exception-core/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-exception-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">HttpInvoker</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-serviceapi-core/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Konfiguration</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-konfiguration/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-konfiguration/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Logging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-logging/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-logging/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Polling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-polling/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-polling/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-service-rest/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-service-rest/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sicherheit</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sicherheit/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sicherheit/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sonderzeichen</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sonderzeichen/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sonderzeichen/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Task Scheduling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-task/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-task/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Überwachung</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-ueberwachung/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-ueberwachung/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Util</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-util/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Methodik</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/namenskonventionen/master.html">Namenskonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/tailoring/tailoring.html">Tailoring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/spezifikation/datenflussdiagramme.html">Datenflussdiagramme</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Werkzeuge</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/einrichtung_entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/handbuch_dokumentation/master.html">Dokumentation der IsyFact</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../changelog/changelog.html">Changelog</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">IsyFact Standards</span>
+    <span class="version">2.5-SNAPSHOT</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../glossary/latest/glossary/master.html">Glossar</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../glossary/latest/glossary/master.html">1.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../einstieg/vorstellung.html">IsyFact Standards</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../einstieg/vorstellung.html">2.5-SNAPSHOT</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../einstieg/vorstellung.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../einstieg/vorstellung.html">IsyFact Standards</a></li>
+    <li>Blaupausen</li>
+    <li>Vorgaben</li>
+    <li><a href="master.html">IT-Sicherheit</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Inhalt" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">IsyFact IT-Sicherheitsregeln</h1>
+<div id="preamble">
+<div class="sectionbody">
+<h3 id="_vorgaben" class="discrete">Vorgaben</h3>
+<div class="paragraph">
+<p><span class="image left"><img src="../../../../glossary/latest/licence/_images/IFS-Logo.png" alt="IFS-Logo" width="150"></span> Dieses Dokument ist ein Teil der IsyFact-Standards. Alle Inhalte dieses Dokuments, insbesondere Texte und Grafiken, sind urheberrechtlich geschützt. Alle urheberrechtlichen Nutzungs- und Verwertungsrechte liegen beim Bundesverwaltungsamt.</p>
+</div>
+<div class="paragraph">
+<p><span class="image right"><img src="../../../../glossary/latest/licence/_images/CC-BY.png" alt="Creative Commons Namensnennung" width="100"></span>
+Die Nutzung ist unter den Lizenzbedingungen der Creative Commons Namensnennung 4.0 International gestattet.
+Die Lizenzbestimmungen sind unter folgender URL erhältlich:</p>
+</div>
+<div class="paragraph">
+<p><a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-licence" class="xref page">Creative-Commons-Lizenz</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="einleitung"><a class="anchor" href="#einleitung"></a>1. Einleitung</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dieses Dokument gibt einen Überblick über alle in der IsyFact verwendeten IT-Sicherheitsregeln und listet diese nach Baustein sortiert auf.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="it-sicherheitsregeln-der-Isyfact"><a class="anchor" href="#it-sicherheitsregeln-der-Isyfact"></a>2. IT-Sicherheitsregeln der IsyFact</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<div class="divFooter"></div>
+
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+<script src="../../../../_/js/isyfact.js"></script>
+  </body>
+</html>
