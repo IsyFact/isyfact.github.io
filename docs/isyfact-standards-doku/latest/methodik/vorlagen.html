@@ -304,10 +304,7 @@
     <a class="nav-link" href="vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="tailoring/tailoring.html">Tailoring</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="spezifikation/datenflussdiagramme.html">Datenflussdiagramme</a>
+    <a class="nav-link" href="vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
   </li>
 </ul>
   </li>
@@ -414,14 +411,50 @@ Die Lizenzbestimmungen sind unter folgender URL erhältlich:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="einleitung"><a class="anchor" href="#einleitung"></a>1. Einleitung</h2>
+<h2 id="bearbeitung-vorlagen-projektspezifisch"><a class="anchor" href="#bearbeitung-vorlagen-projektspezifisch"></a>1. Allgemeines</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>An dieser Stelle werden Vorlagen für den Systementwurf und das Systemhandbuch angeboten.
-Die Vorlagen können sowohl direkt aufgerufen als auch im ZIP- oder PDF-Format heruntergeladen werden.</p>
+<p>Die Vorlagen unterstützen die Erstellung projektspezifischer Dokumentation wesentlich.
+Sie enthalten Word-, Excel- oder AsciiDoc-Dateien, die im Projektverlauf gefüllt werden müssen.</p>
 </div>
-<table id="table-vorlagen" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 1. Vorlagen</caption>
+<div class="paragraph">
+<p>Nach Bedarf können für die dauerhafte Ablage aus Word- und AsciiDoc-Vorlagen PDF-Dokumente erzeugt werden.
+Für Word-Vorlagen wird hierzu die integrierte Funktion von Word genutzt.
+Für AsciiDoc-Vorlagen kann die PDF-Generierung mittels AsciidoctorJ verwendet werden, wie im <a href="../werkzeuge/handbuch_dokumentation/master.html#asccidoc-zu-pdf-html" class="xref page">Handbuch zur Dokumentation der IsyFact</a> erklärt.</p>
+</div>
+<div class="paragraph">
+<p>Word- und Excel-Vorlagen können direkt von dieser Seite als Download bezogen werden.
+AsciiDoc-Vorlagen können sowohl direkt aufgerufen als auch im ZIP- oder PDF-Format heruntergeladen werden.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dokumentation-anwendung"><a class="anchor" href="#dokumentation-anwendung"></a>2. Dokumentation einer Anwendung</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die Vorlagen zur Dokumentation einer Anwendung beschreiben diese aus den drei aus der Referenzarchitektur bekannten Sichten:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Systemspezifikation: fachliche Sicht,</p>
+</li>
+<li>
+<p>Systementwurf: software-technische Sicht,</p>
+</li>
+<li>
+<p>Systemhandbuch: Sicht der technischen Infrastruktur.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Alle Vorlagen enthalten Ausfüllhinweise und Beispiele.</p>
+</div>
+<div class="paragraph">
+<p>Die Vorlage Systemspezifikation enthält die Gliederung für eine V-Modell-konforme Gesamtsystemspezifikation (Pflichtenheft) eines Softwaresystems (Software-Entwicklungsprojekts).</p>
+</div>
+<table id="table-dokumentation-anwendung" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Vorlagen zur Dokumentation einer Anwendung</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -430,11 +463,18 @@ Die Vorlagen können sowohl direkt aufgerufen als auch im ZIP- oder PDF-Format h
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Vorlage</th>
-<th class="tableblock halign-center valign-top" colspan="3">Quelldatei (AsciiDoc) &amp; Downloads (ZIP &amp; PDF)</th>
+<th class="tableblock halign-left valign-middle">Vorlage</th>
+<th class="tableblock halign-left valign-middle">Quelldatei<br>
+(AsciiDoc / Word)</th>
+<th class="tableblock halign-center valign-middle" colspan="2">Downloads (ZIP &amp; PDF)</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Systemspezifikation</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="_attachments/spezifikation/IsyFact-Vorlage_Systemspezifikation.dotx" class="xref attachment">Download <span class="icon"><i class="fa fa-file-word-o"></i></span></a></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Systementwurf</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="vorlage-systementwurf/antora-master.html" class="xref page">Ansehen <span class="icon"><i class="fa fa-file-text-o"></i></span></a></p></td>
@@ -452,23 +492,151 @@ Die Vorlagen können sowohl direkt aufgerufen als auch im ZIP- oder PDF-Format h
 </div>
 </div>
 <div class="sect1">
-<h2 id="bearbeitung-vorlagen-projektspezifisch"><a class="anchor" href="#bearbeitung-vorlagen-projektspezifisch"></a>2. Projektspezifische Bearbeitung der Vorlagen</h2>
+<h2 id="schnittstellendokumentation"><a class="anchor" href="#schnittstellendokumentation"></a>3. Schnittstellendokumentation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Die Vorlagen enthalten Asciidoc-Dateien, die projektspezifisch ergänzt werden müssen.
-Nach Bedarf kann aus den Asciidoc-Dateien für jede Vorlage ein PDF erstellt werden.
-Die PDF-Generierung mittels AsciidoctorJ-Extensions wird in <a href="../werkzeuge/handbuch_dokumentation/inhalt.html#asccidoc-zu-pdf-html" class="xref page">Dokumentation der IsyFact</a> erklärt.</p>
+<p>Die Vorlage enthält die Gliederung für eine V-Modell-konforme Schnittstellendokumentation eines Softwaresystems (Software-Entwicklungsprojekts) mitsamt Ausfüllhinweisen und Beispielen.</p>
 </div>
+<table id="table-schnittstellendokumentation" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 2. Vorlage zur Schnittstellendokumentation</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Vorlage</th>
+<th class="tableblock halign-left valign-middle">Quelldatei (Word)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schnittstellendokumentation</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="_attachments/spezifikation/IsyFact-Vorlage_Schnittstellendokumentation.dotx" class="xref attachment">Download <span class="icon"><i class="fa fa-file-word-o"></i></span></a></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="bearbeitung-vorlagen-selbst"><a class="anchor" href="#bearbeitung-vorlagen-selbst"></a>3. Bearbeitung der Vorlagen selbst</h2>
+<h2 id="datenflussdiagramm"><a class="anchor" href="#datenflussdiagramm"></a>4. Datenflussdiagramm</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Wenn die Vorlagen in <code>isyfact-standards</code> geändert werden, müssen auch die Downloads im ZIP- und PDF-Format erneut generiert werden.
-Dazu wird im Maven Submodul <code>isyfact-standards-doc</code> der Maven-Befehl <code>mvn package</code> ausgeführt.
-Die ZIP-Archive und PDF-Dokumente der Vorlagen befinden sich nun in <code>isyfact-standards-doc</code> im Ordner <code>src/docs/antora/modules/methodik/attachments/vorlage-generated</code>.</p>
+<p>Eine Anwendungslandschaft besteht aus mehreren Anwendungen, die Daten untereinander und mit ihren Anwendern austauschen.
+Die Anleitung zu Datenflussdiagrammen hilft bei der Erstellung von Datenflussdiagrammen und gibt Best Practices zur strukturierten Beschreibung dieses Datenflusses.</p>
 </div>
+<table id="table-datenflussdiagramm" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 3. Vorlage zu Datenflussdiagrammen</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Vorlage</th>
+<th class="tableblock halign-left valign-middle">Quelldatei (Word)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Datenflussdiagramm</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="_attachments/spezifikation/Anleitung_zu_Datenflussdiagrammen.dotx" class="xref attachment">Download <span class="icon"><i class="fa fa-file-word-o"></i></span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="anforderungsliste"><a class="anchor" href="#anforderungsliste"></a>5. Anforderungsliste</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die Anforderungsliste ist ein Instrument, um die Übersicht und die Nachvollziehbarkeit des Umsetzungsstatus aller Anforderungen an ein System im gesamten Projektlebenszyklus zu erhalten.
+Die Anforderungsliste beschreibt mit jeder Anforderung eine Eigenschaft, die eine Anwendung haben soll.
+Dies kann eine bestimmte Funktionalität oder auch eine Anforderung in Hinblick auf die Qualität sein, zum Beispiel die maximale Reaktionszeit bei einer Eingabe.
+Die Anforderungsliste ist bei ihrer Erstellung und bei jeder Versionierung ein Mittel der Kommunikation zwischen Auftraggeber und Auftragnehmer.</p>
+</div>
+<table id="table-anforderungsliste" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 4. Vorlage zur Anforderungsliste</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Vorlage</th>
+<th class="tableblock halign-left valign-middle">Quelldatei (Excel)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Anforderungsliste</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="_attachments/spezifikation/IsyFact-Vorlage-Anforderungsliste.xlsx" class="xref attachment">Download <span class="icon"><i class="fa fa-file-excel-o"></i></span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="produktauswahl"><a class="anchor" href="#produktauswahl"></a>6. Produktauswahl</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Das Template Produktauswahl liefert eine Vorlage zur Beschreibung der Hintergründe zur Auswahl eines Produkts in Projekten.</p>
+</div>
+<table id="table-produktauswahl" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 5. Vorlage zur Produktauswahl</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Vorlage</th>
+<th class="tableblock halign-left valign-middle">Quelldatei (Word)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Produktauswahl</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="_attachments/produktauswahl/Template_Produktauswahl.dotx" class="xref attachment">Download <span class="icon"><i class="fa fa-file-word-o"></i></span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tailoring"><a class="anchor" href="#tailoring"></a>7. Tailoring-Dokument</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Das Tailoring-Dokument beschreibt die Anpassung der IsyFact-Referenzarchitektur auf einen bestimmten Anwendungskontext.</p>
+</div>
+<div class="paragraph">
+<p>Auf der Ebene der fachlichen Architektur ist die IsyFact kontext-neutral, um ein möglichst breites Spektrum von Anwendungskontexten abzudecken.
+Damit die IsyFact in einem bestimmten Anwendungskontext als praktischer Leitfaden und Vorlage für die Entwicklung dienen kann, sind weitere Festlegungen und Anpassungen der IsyFact an die Gegebenheiten des jeweiligen Anwendungskontexts notwendig.
+Dieser Vorgang wird als Tailoring bezeichnet, sein Ergebnis ist ein Tailoring-Dokument zur IsyFact für den Anwendungskontext.</p>
+</div>
+<div class="paragraph">
+<p>Alle im Tailoring-Dokument beschriebenen Sachverhalte beziehen sich auf die <a href="../blaupausen/referenzarchitektur/master.html" class="xref page">IsyFact Referenzarchitektur</a>.
+Sofern im Tailoring-Dokument nichts anderes definiert wird, gelten die Festlegungen der IsyFact-Referenzarchitektur unverändert.</p>
+</div>
+<table id="table-tailoring" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 6. Vorlage zum Tailoring-Dokument</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Vorlage</th>
+<th class="tableblock halign-left valign-middle">Quelldatei (Word)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tailoring</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="_attachments/IsyFact-Tailoring.dotx" class="xref attachment">Download <span class="icon"><i class="fa fa-file-word-o"></i></span></a></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </article>

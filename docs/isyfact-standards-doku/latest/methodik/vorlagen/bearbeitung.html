@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Changelog :: IsyFact Dokumentation</title>
-    <link rel="canonical" href="https://github.com/isyfact/isyfact-standards-doku/latest/methodik/tailoring/changelog.html">
+    <title>Bearbeitung der AsciiDoc-Vorlagen :: IsyFact Dokumentation</title>
+    <link rel="canonical" href="https://github.com/isyfact/isyfact-standards-doku/latest/methodik/vorlagen/bearbeitung.html">
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
@@ -303,11 +303,8 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="tailoring.html">Tailoring</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../spezifikation/datenflussdiagramme.html">Datenflussdiagramme</a>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
   </li>
 </ul>
   </li>
@@ -387,7 +384,9 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../einstieg/vorstellung.html">IsyFact Standards</a></li>
-    <li><a href="changelog.html">Changelog</a></li>
+    <li>Methodik</li>
+    <li><a href="../vorlagen.html">Vorlagen</a></li>
+    <li><a href="bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a></li>
   </ul>
 </nav>
 </div>
@@ -396,16 +395,27 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Changelog</h1>
+<h1 class="page">Bearbeitung der AsciiDoc-Vorlagen</h1>
 <div class="paragraph">
-<p><strong>Änderungen IsyFact 2.5.0</strong></p>
+<p><span class="image left"><img src="../../../../glossary/latest/licence/_images/IFS-Logo.png" alt="IFS-Logo" width="150"></span> Dieses Dokument ist ein Teil der IsyFact-Standards. Alle Inhalte dieses Dokuments, insbesondere Texte und Grafiken, sind urheberrechtlich geschützt. Alle urheberrechtlichen Nutzungs- und Verwertungsrechte liegen beim Bundesverwaltungsamt.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>IFS-1515</code>: Tailoring-Dokument angefügt.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p><span class="image right"><img src="../../../../glossary/latest/licence/_images/CC-BY.png" alt="Creative Commons Namensnennung" width="100"></span>
+Die Nutzung ist unter den Lizenzbedingungen der Creative Commons Namensnennung 4.0 International gestattet.
+Die Lizenzbestimmungen sind unter folgender URL erhältlich:</p>
+</div>
+<div class="paragraph">
+<p><a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-licence" class="xref page">Creative-Commons-Lizenz</a></p>
+</div>
+<div class="paragraph">
+<p>Bei Änderungen an den AsciiDoc-Vorlagen in <code>isyfact-standards</code> müssen auch die Downloads im ZIP- und PDF-Format erneut generiert und committet werden.</p>
+</div>
+<div class="paragraph">
+<p>Dazu wird im Maven-Submodul <code>isyfact-standards-doc</code> der Maven-Befehl <code>mvn package</code> ausgeführt.
+Die ZIP-Archive und PDF-Dokumente der Vorlagen befinden sich nun im Ordner <code>src/docs/antora/modules/methodik/attachments/vorlage-generated</code> des Submoduls.</p>
+</div>
+<div class="paragraph">
+<p>Aktuell ist dieses Vorgehen für Änderungen an den Vorlagen zum Systementwurf und Systemhandbuch nötig.</p>
 </div>
 </article>
   </div>
