@@ -228,7 +228,7 @@
     <span class="nav-text">Sonderzeichen</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-sonderzeichen/konzept/master.html">Konzept</a>
+    <a class="nav-link" href="../../isy-sonderzeichen/konzept/sonderzeichen.html">Konzept</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-sonderzeichen/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
@@ -319,22 +319,31 @@
     <span class="nav-text">Werkzeuge</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../werkzeuge/einrichtung_entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../werkzeuge/handbuch_dokumentation/master.html">Dokumentation der IsyFact</a>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/master-antora.html">Projektseite mit Antora (empfohlen)</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/master-asciidoctorJ.html">Dokumente mit AsciidoctorJ Extensions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
   </li>
 </ul>
   </li>
@@ -401,7 +410,7 @@
 <p>Die IsyFact-Referenzarchitektur beinhaltet auf der technischen Ebene Vorgaben für die Sicherheitsarchitektur und für die Prinzipien, nach denen sie aufgebaut ist.</p>
 </div>
 <div class="paragraph">
-<p>Die konkrete Sicherheitsarchitektur einer <a href="../../../../glossary/latest/glossary/master.html#glossar-Systemlandschaft" class="xref page">Systemlandschaft</a> muss nach folgenden Prinzipien gestaltet sein:</p>
+<p>Die konkrete Sicherheitsarchitektur einer <a href="../../../../glossary/latest/glossary/master.html#glossar-systemlandschaft" class="xref page">Systemlandschaft</a> muss nach folgenden Prinzipien gestaltet sein:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -430,7 +439,7 @@ Da das Berechtigungskonzept individuell für jede Anwendungslandschaft erstellt 
 <div class="sect2">
 <h3 id="authentifizierung"><a class="anchor" href="#authentifizierung"></a>1.1. Authentifizierung</h3>
 <div class="paragraph">
-<p>In der Regel erfolgt die Authentifizierung von <a href="../../../../glossary/latest/glossary/master.html#glossar-Anwender" class="xref page">Anwendern</a> über eine zentrale Komponente der Systemlandschaft, in welche das IT-System eingebettet ist.
+<p>In der Regel erfolgt die Authentifizierung von <a href="../../../../glossary/latest/glossary/master.html#glossar-anwender" class="xref page">Anwendern</a> über eine zentrale Komponente der Systemlandschaft, in welche das IT-System eingebettet ist.
 Die Authentifizierung darf auch lokal, d.h. vom IT-System selbst, durchgeführt werden, falls es beispielsweise nicht in eine Systemlandschaft eingebettet ist.</p>
 </div>
 <div class="paragraph">
@@ -443,7 +452,7 @@ Die Authentifizierung darf auch lokal, d.h. vom IT-System selbst, durchgeführt 
 <i class="fa icon-note" title="Hinweis"></i>
 </td>
 <td class="content">
-IAM steht für <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-Identity_management" class="xref page">Identity and Access Management</a>.
+IAM steht für <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-identity_management" class="xref page">Identity and Access Management</a>.
 </td>
 </tr>
 </table>
@@ -528,7 +537,7 @@ Er kann ohne erneute Rückfrage an das IAM-System bzw. die lokale Authentifizier
 <div class="title">Abbildung 1. Software-Architektur der Berechtigungsprüfung</div>
 </div>
 <div class="paragraph">
-<p>Im Folgenden werden die Aufgaben und grobe Funktionsweise der Komponenten für die Autorisierung von Anfragen in einer <a href="../../../../glossary/latest/glossary/master.html#glossar-Geschaeftsanwendung" class="xref page">Geschäftsanwendung</a>  erläutert.</p>
+<p>Im Folgenden werden die Aufgaben und grobe Funktionsweise der Komponenten für die Autorisierung von Anfragen in einer <a href="../../../../glossary/latest/glossary/master.html#glossar-geschaeftsanwendung" class="xref page">Geschäftsanwendung</a>  erläutert.</p>
 </div>
 <div class="paragraph">
 <p>Die Komponente <code>AufrufKontextVerwalter</code> stellt für eine laufende Anfrage Kontextinformationen zur Anfrage bereit, die in einem <code>AufrufKontext</code> hinterlegt werden.
@@ -611,7 +620,7 @@ Für die Technologie Spring HTTP Invoker stellt die IsyFact passende Transportob
 <h2 id="rollen-und-rechte"><a class="anchor" href="#rollen-und-rechte"></a>3. Rollen &amp; Rechte</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Die Vergabe von Rollen ist <em>das</em> Mittel der Benutzeradministration, um Anwender der <a href="../../../../glossary/latest/glossary/master.html#glossar-Anwendungslandschaft" class="xref page">Anwendungslandschaft</a> mit Berechtigungen auszustatten.
+<p>Die Vergabe von Rollen ist <em>das</em> Mittel der Benutzeradministration, um Anwender der <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungslandschaft" class="xref page">Anwendungslandschaft</a> mit Berechtigungen auszustatten.
 Die Vergabe von Rollen an einen Anwender (menschlicher und technischer) erfolgt im Querschnitt:
 in der Querschnittsanwendung Benutzerverzeichnis.</p>
 </div>
@@ -724,7 +733,7 @@ Daher werden diesen technischen Rollen im Regelfall weitere technische Rollen un
 <div class="sect3">
 <h4 id="technische-zugangsrollen"><a class="anchor" href="#technische-zugangsrollen"></a>3.3.2. Technische Zugangsrollen</h4>
 <div class="paragraph">
-<p>Anwender gelangen in der Regel entweder über das <a href="../../../../glossary/latest/glossary/master.html#glossar-Portal" class="xref page">Portal</a> oder den <a href="../../../../glossary/latest/glossary/master.html#glossar-Service-Gateway" class="xref page">Service Gateway</a> in eine Anwendungslandschaft.
+<p>Anwender gelangen in der Regel entweder über das <a href="../../../../glossary/latest/glossary/master.html#glossar-portal" class="xref page">Portal</a> oder den <a href="../../../../glossary/latest/glossary/master.html#glossar-service-gateway" class="xref page">Service Gateway</a> in eine Anwendungslandschaft.
 Um den Zugriff über diese Schnittstellen zentral und einfach zu verwalten, können dafür entsprechende technische Rollen definiert werden (z.B. <code>Zugang_Portal</code> und <code>Zugang_Service_Gateway</code>).
 Diese Rollen können dann einfach fachlichen Rollen untergeordnet werden, um den jeweiligen Zugriff zu erlauben.</p>
 </div>
@@ -732,7 +741,7 @@ Diese Rollen können dann einfach fachlichen Rollen untergeordnet werden, um den
 <div class="sect3">
 <h4 id="technische-querschnitts-rolle"><a class="anchor" href="#technische-querschnitts-rolle"></a>3.3.3. Technische Querschnitts-Rolle</h4>
 <div class="paragraph">
-<p>Für <a href="../../../../glossary/latest/glossary/master.html#glossar-ServiceFachlich" class="xref page">Services</a> des Querschnitts, die nahezu alle Aufrufe benötigen und die keine sicherheitskritischen Operationen anbieten, kann eine zentrale Rolle (z.B. <code>Querschnitt_Nutzer</code>) angelegt werden.
+<p>Für <a href="../../../../glossary/latest/glossary/master.html#glossar-service-fachlich" class="xref page">Services</a> des Querschnitts, die nahezu alle Aufrufe benötigen und die keine sicherheitskritischen Operationen anbieten, kann eine zentrale Rolle (z.B. <code>Querschnitt_Nutzer</code>) angelegt werden.
 Diese Rolle berechtigt zur Durchführung von unkritischen Operationen im Querschnitt, wie beispielsweise dem Auslesen von Schlüsselwerten.</p>
 </div>
 <div class="paragraph">
@@ -786,7 +795,7 @@ So kann beispielsweise die Rolle <code>Terminfindung_Auskunft</code> unabhängig
 Dies kann durch die Verwendung spezieller technischer Rollen (s. <a href="master.html#technische-zugangsrollen" class="xref page">Technische Zugangsrollen</a>) erreicht werden.</p>
 </div>
 <div class="paragraph">
-<p><a href="../../../../glossary/latest/glossary/master.html#glossar-IT-System" class="xref page">IT-Systeme</a> werden intern in Form von Batches oder Timer-Tasks aktiv.
+<p><a href="../../../../glossary/latest/glossary/master.html#glossar-it-system" class="xref page">IT-Systeme</a> werden intern in Form von Batches oder Timer-Tasks aktiv.
 Auch hier findet ein Zugang zur Anwendungslandschaft statt.
 Das Schema zur Benennung einer fachlichen Rolle für IT-Systeme kann folgendermaßen aussehen:</p>
 </div>

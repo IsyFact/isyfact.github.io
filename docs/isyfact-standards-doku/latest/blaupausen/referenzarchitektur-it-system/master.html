@@ -228,7 +228,7 @@
     <span class="nav-text">Sonderzeichen</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-sonderzeichen/konzept/master.html">Konzept</a>
+    <a class="nav-link" href="../../isy-sonderzeichen/konzept/sonderzeichen.html">Konzept</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-sonderzeichen/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
@@ -319,22 +319,31 @@
     <span class="nav-text">Werkzeuge</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../werkzeuge/einrichtung_entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../werkzeuge/handbuch_dokumentation/master.html">Dokumentation der IsyFact</a>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/master-antora.html">Projektseite mit Antora (empfohlen)</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/master-asciidoctorJ.html">Dokumente mit AsciidoctorJ Extensions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
   </li>
 </ul>
   </li>
@@ -458,7 +467,7 @@ Es hat zur Folge, dass als Application Server ein Servlet-Container ausreichend 
 <h2 id="_technische_architektur"><a class="anchor" href="#_technische_architektur"></a>2. Technische Architektur</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Die technische Architektur (<a href="../../../../glossary/latest/glossary/master.html#glossar-T-Architektur" class="xref page">T-Architektur</a>) beschreibt die Strukturierung der IsyFact-Plattform in IT-Systeme, den Aufbau einzelner IT-Systeme und die verwendeten übergreifenden technischen Konzepte.</p>
+<p>Die technische Architektur (<a href="../../../../glossary/latest/glossary/master.html#glossar-t-architektur" class="xref page">T-Architektur</a>) beschreibt die Strukturierung der IsyFact-Plattform in IT-Systeme, den Aufbau einzelner IT-Systeme und die verwendeten übergreifenden technischen Konzepte.</p>
 </div>
 <div class="sect2">
 <h3 id="die-referenzarchitektur-eines-it-systems"><a class="anchor" href="#die-referenzarchitektur-eines-it-systems"></a>2.1. Die Referenzarchitektur eines IT-Systems</h3>
@@ -619,7 +628,7 @@ Dadurch wird die Trennung zwischen Fachlichkeit und Technik verbessert.
 Beispiel für querschnittliche Funktionalität ist die deklarative Steuerung von Transaktionen.</p>
 </div>
 <div class="paragraph">
-<p><strong>Externe Services:</strong> Wenn der Anwendungskern fachliche Services benötigt, die von anderen IT-Systemen innerhalb der <a href="../../../../glossary/latest/glossary/master.html#glossar-Plattform" class="xref page">Plattform</a> angeboten werden, so werden diese Services als Komponente im Anwendungskern abgebildet.
+<p><strong>Externe Services:</strong> Wenn der Anwendungskern fachliche Services benötigt, die von anderen IT-Systemen innerhalb der <a href="../../../../glossary/latest/glossary/master.html#glossar-plattform" class="xref page">Plattform</a> angeboten werden, so werden diese Services als Komponente im Anwendungskern abgebildet.
 Dadurch ist die Funktionalität sauber gekapselt, was die Wartbarkeit erhöht.
 Wenn der externe Service ausgetauscht werden soll, ist keine Änderung der gesamten Anwendung notwendig – es ist lediglich eine interne Änderung der externen Service-Komponente notwendig.
 Für andere fachliche Komponenten des Anwendungskerns ist nicht zu unterscheiden, ob es sich beim Aufruf einer Komponentenschnittstelle um eine in dieser Komponente implementierte Funktion oder um einen Serviceaufruf handelt.
@@ -643,7 +652,7 @@ Für den Transfer über Komponentengrenzen hinweg müssen eigene, nicht-persiste
 Wenn Objekte von mehreren Komponenten genutzt werden und keiner einzelnen Komponente zugeordnet werden können, sollten sie in einem eigenen querschnittlichen Package abgelegt werden.</p>
 </div>
 <div class="paragraph">
-<p>Vereinfachend können Anwendungskern-Komponenten persistente Daten an die <a href="../../../../glossary/latest/glossary/master.html#glossar-Service" class="xref page">Service</a>-Schicht (s. Kapitel <a href="#servicezugriffe">Servicezugriffe</a>) weitergeben.
+<p>Vereinfachend können Anwendungskern-Komponenten persistente Daten an die <a href="../../../../glossary/latest/glossary/master.html#glossar-service" class="xref page">Service</a>-Schicht (s. Kapitel <a href="#servicezugriffe">Servicezugriffe</a>) weitergeben.
 Dies ist insbesondere dann angebracht, wenn die Komponente ausschließlich durch eine Service-Komponente genutzt wird.<br>
 Da die Service-Schicht keine Logik enthält und daher ohnehin keine Änderung an solchen Entitäten vornehmen darf und eindeutig der Anwendungskern-Komponente zugeordnet ist, bedeutet dies keine Verletzung der Datenhoheit.
 Da die Anwendungskern-Komponente an Ihrer Schnittstelle nun potentiell persistente und nicht persistente Entitäten bereitstellt, müssen Verwechselungen vermieden werden, z.B. in dem solche Methoden in getrennten Interfaces deklariert werden.</p>
@@ -664,7 +673,7 @@ Da die Anwendungskern-Komponente an Ihrer Schnittstelle nun potentiell persisten
 Eine gute Architektur muss für alle relevanten Varianten einen tragfähigen Rahmen schaffen.</p>
 </div>
 <div class="paragraph">
-<p>Im Wesentlichen müssen innerhalb einer <a href="../../../../glossary/latest/glossary/master.html#glossar-GUI" class="xref page">GUI</a> verschiedene Aufgaben erledigt werden:</p>
+<p>Im Wesentlichen müssen innerhalb einer <a href="../../../../glossary/latest/glossary/master.html#glossar-gui" class="xref page">GUI</a> verschiedene Aufgaben erledigt werden:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -790,7 +799,7 @@ Zudem können teilweise Offline-Funktionalitäten umgesetzt werden.</p>
 <div class="sect2">
 <h3 id="batch"><a class="anchor" href="#batch"></a>2.6. Batch</h3>
 <div class="paragraph">
-<p>Ein <a href="../../../../glossary/latest/glossary/master.html#glossar-Batch" class="xref page">Batch</a> realisiert eine eigenständige Verarbeitung ohne direkten Benutzereingriff während des Ablaufes.
+<p>Ein <a href="../../../../glossary/latest/glossary/master.html#glossar-batch" class="xref page">Batch</a> realisiert eine eigenständige Verarbeitung ohne direkten Benutzereingriff während des Ablaufes.
 An einen Batch werden verschiedene Anforderungen gestellt: Ausführungszeitpunkt, Abhängigkeiten, Datenvolumen, ausgeführte Funktionalität, Eingaben, Ausgaben usw.</p>
 </div>
 <div class="paragraph">
@@ -837,7 +846,7 @@ Es gibt einen Batch-Rahmen, der dies unterstützt.</p>
 <h3 id="servicezugriffe"><a class="anchor" href="#servicezugriffe"></a>2.7. Servicezugriffe</h3>
 <div class="paragraph">
 <p>Services des Anwendungskerns, die vom IT-System zur Verfügung gestellt werden sollen, werden durch die Komponenten von „Service“ innerhalb der Schicht „Nutzung“ angereichert und nach außen gegeben.
-Dabei können alle Funktionen des <a href="../../../../glossary/latest/glossary/master.html#glossar-Anwendungskern" class="xref page">Anwendungskerns</a> genutzt werden.
+Dabei können alle Funktionen des <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungskern" class="xref page">Anwendungskerns</a> genutzt werden.
 Die Service-Komponenten werden entsprechend den Anwendungskern-Komponenten geschnitten, d.h. für jede Komponente des Kerns, die einen Service anbieten soll, wird eine eigene Service-Komponente implementiert.
 Service-Komponenten werden nicht mehrere Anwendungskern-Komponenten.
 Dies würde dem Gebot, in den Services keine Logik zu implementieren, widersprechen.</p>

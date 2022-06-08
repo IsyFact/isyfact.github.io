@@ -228,7 +228,7 @@
     <span class="nav-text">Sonderzeichen</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-sonderzeichen/konzept/master.html">Konzept</a>
+    <a class="nav-link" href="../../isy-sonderzeichen/konzept/sonderzeichen.html">Konzept</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-sonderzeichen/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
@@ -319,22 +319,31 @@
     <span class="nav-text">Werkzeuge</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../werkzeuge/einrichtung_entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../werkzeuge/handbuch_dokumentation/master.html">Dokumentation der IsyFact</a>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/master-antora.html">Projektseite mit Antora (empfohlen)</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/master-asciidoctorJ.html">Dokumente mit AsciidoctorJ Extensions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
   </li>
 </ul>
   </li>
@@ -519,7 +528,7 @@ Mehr zu diesem Thema ist in den anderen Detailkonzepten enthalten:</p>
 </td>
 <td class="content">
 Dieses Dokument ist keine allgemeine Anleitung zur Verwendung von JPA.
-Für den Einstieg in JPA mit Hibernate ist das Buch <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-JPA-Hibernate" class="xref page">„Java Persistence with Hibernate“</a> sehr zu empfehlen.
+Für den Einstieg in JPA mit Hibernate ist das Buch <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-jpa-hibernate" class="xref page">„Java Persistence with Hibernate“</a> sehr zu empfehlen.
 </td>
 </tr>
 </table>
@@ -808,10 +817,10 @@ Abweichungen sind nur für eine Reduzierung der Komplexität des Persistenz-Klas
 <div class="ulist">
 <ul>
 <li>
-<p>Über eine Tabelle, welche die Daten aller Klassen der Hierarchie („Table per class hierarchy“, siehe <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-JPA-Hibernate" class="xref page">„Java Persistence with Hibernate“</a> Kapitel 5.1.3) enthält.
+<p>Über eine Tabelle, welche die Daten aller Klassen der Hierarchie („Table per class hierarchy“, siehe <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-jpa-hibernate" class="xref page">„Java Persistence with Hibernate“</a> Kapitel 5.1.3) enthält.
 Diese Art der Abbildung ist vorzuziehen.
 Falls sie aufgrund vieler unterschiedlicher Felder oder Problemen mit Pflichtfeldern in den Klassen nicht verwendbar ist, können auch andere Strategien verwendet werden.
-Die Vor- und Nachteile der einzelnen Strategien sind in <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-JPA-Hibernate" class="xref page">„Java Persistence with Hibernate“</a> beschrieben.</p>
+Die Vor- und Nachteile der einzelnen Strategien sind in <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-jpa-hibernate" class="xref page">„Java Persistence with Hibernate“</a> beschrieben.</p>
 </li>
 </ul>
 </div>
@@ -836,7 +845,7 @@ Jegliche Logik sollte im Anwendungskern implementiert werden.</p>
 <p>Im Normalfall müssen für Entitätsklassen die Methoden <code>equals</code> und <code>hashCode</code> nicht überschrieben werden.</p>
 </div>
 <div class="paragraph">
-<p>Nur für Embeddable-Klassen (siehe <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-JPA-Hibernate" class="xref page">„Java Persistence with Hibernate“</a> Kapitel 4.4.2) müssen die Methoden <code>equals</code> und <code>hashCode</code> implementiert werden.
+<p>Nur für Embeddable-Klassen (siehe <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-jpa-hibernate" class="xref page">„Java Persistence with Hibernate“</a> Kapitel 4.4.2) müssen die Methoden <code>equals</code> und <code>hashCode</code> implementiert werden.
 Die Methoden müssen dafür sämtliche Attribute mit einbeziehen Zusätzlich muss das Interface <code>Serializable</code> implementiert werden.</p>
 </div>
 <div class="paragraph">
@@ -886,7 +895,7 @@ Diese wird automatisch von JPA verwendet.</p>
 <div class="sect2">
 <h3 id="n-assoziationen-in-der-regel-als-set-ohne-reihenfolge-definieren"><a class="anchor" href="#n-assoziationen-in-der-regel-als-set-ohne-reihenfolge-definieren"></a>4.2. 1:n Assoziationen in der Regel als Set (ohne Reihenfolge) definieren</h3>
 <div class="paragraph">
-<p>Beim Abbilden einer 1:n Assoziation („Collection Mapping“, siehe <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-Collection-Mapping" class="xref page">Collections</a>) ist in der Regel als Java-Typ <code>Set</code> zu definieren, da in einem <code>Set</code> keine Reihenfolge definiert ist.</p>
+<p>Beim Abbilden einer 1:n Assoziation („Collection Mapping“, siehe <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-collection-mapping" class="xref page">Collections</a>) ist in der Regel als Java-Typ <code>Set</code> zu definieren, da in einem <code>Set</code> keine Reihenfolge definiert ist.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1241,7 +1250,7 @@ class PersistenceConfiguration { }</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Der Zugriff auf die Datenbank aus dem <a href="../../../../glossary/latest/glossary/master.html#glossar-Anwendungskern" class="xref page">Anwendungskern</a> heraus erfolgt immer über die DAOs.
+<p>Der Zugriff auf die Datenbank aus dem <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungskern" class="xref page">Anwendungskern</a> heraus erfolgt immer über die DAOs.
 Die DAOs werden als Spring-Beans in den Anwendungskern injiziert.
 Zudem wird für jedes DAO ein Interface angelegt.</p>
 </div>
@@ -1307,7 +1316,7 @@ verknüpft werden.</p>
 </td>
 <td class="content">
 Eine Übersicht zur Ableitung von Queries aus Methodennamen befindet sich in der Referenzdokumentation zu Spring Data JPA:
-<a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-Spring-Data-JPA" class="xref page">Spring-Data-JPA</a>
+<a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-spring-data-jpa" class="xref page">Spring-Data-JPA</a>
 </td>
 </tr>
 </table>
@@ -1432,7 +1441,7 @@ Sofern bei solchen Bulk-Operationen kaskadierende Änderungen benötigt werden (
 <i class="fa icon-note" title="Hinweis"></i>
 </td>
 <td class="content">
-siehe <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-Multitable-Bulk-Operations" class="xref page">Multitable Bulk Operations</a>
+siehe <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-multitable-bulk-operations" class="xref page">Multitable Bulk Operations</a>
 </td>
 </tr>
 </table>
@@ -1575,7 +1584,7 @@ Dieser kann auf der Oracle Website heruntergeladen werden.</p>
 Dazu zählt unter anderem die Anzahl aktuell ausgeliehener Verbindungen.</p>
 </div>
 <div class="paragraph">
-<p>Die zu setzenden Parameter können der folgenden Vorlage entnommen werden, wobei die genaue Bedeutung der Parameter der Oracle Dokumentation <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-UCP" class="xref page">Ucp15</a> entnommen werden kann:</p>
+<p>Die zu setzenden Parameter können der folgenden Vorlage entnommen werden, wobei die genaue Bedeutung der Parameter der Oracle Dokumentation <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-ucp" class="xref page">Ucp15</a> entnommen werden kann:</p>
 </div>
 <div class="paragraph">
 <p>Die Konfiguration des UCP erfolgt in <code>application.properties</code> über die Properties in <a href="#listing-configpropertiesucp">Listing 11</a>.</p>
@@ -1875,7 +1884,7 @@ Als Generator kommt unter Oracle ein <code>@SequenceGenerator</code> zum Einsatz
 <div class="sect2">
 <h3 id="grundlagen"><a class="anchor" href="#grundlagen"></a>8.1. Grundlagen</h3>
 <div class="paragraph">
-<p>Unter Historisierung (auch <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-Temporale-Datenhaltung" class="xref page">temporale Datenhaltung</a> genannt) versteht man das Festhalten der zeitlichen Entwicklung von Daten durch Speichern in einer Datenbank.
+<p>Unter Historisierung (auch <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-temporale-datenhaltung" class="xref page">temporale Datenhaltung</a> genannt) versteht man das Festhalten der zeitlichen Entwicklung von Daten durch Speichern in einer Datenbank.
 Bei den Datensätzen gibt es zwei relevante Aspekte: den Gültigkeitszeitraum eines Datensatzes und den Bearbeitungszeitpunkt eines Datensatzes.</p>
 </div>
 <div class="paragraph">
@@ -1894,7 +1903,7 @@ Beispiel: Der Preis einer Ware oder Dienstleistung ist so lange gültig, bis er 
 <div class="paragraph">
 <p>Bei der Archivierung handelt es sich um die Aufbewahrung eines Datensatzes über eine längere Zeit.
 Dies ist meist aus rechtlichen Gründen notwendig z. B. wegen gesetzlicher Aufbewahrungsfristen.
-Bei der Archivierung sind dementsprechend Randbedingungen wie Integrität, Unveränderlichkeit und Vertraulichkeit einzuhalten <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-IT-Grundschutz-BSI" class="xref page">IT-Grundschutz BSI</a>.</p>
+Bei der Archivierung sind dementsprechend Randbedingungen wie Integrität, Unveränderlichkeit und Vertraulichkeit einzuhalten <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-it-grundschutz-bsi" class="xref page">IT-Grundschutz BSI</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2757,7 +2766,7 @@ Auf diese Weise legt das Anwendungssystem selbst fest, welche anderen Systeme Zu
 <div class="paragraph">
 <p>Im Gegensatz zu schemaübergreifenden Operationen wird von datenbankübergreifenden Operationen dringlichst abgeraten.
 Nur eine Lösung, Oracle Database Links, bietet im Zusammenspiel mit Oracle-Datenbanken eine generische, transaktionssichere Lösung für dieses Problem an.
-Allerdings sind Oracle Database Links laut Maßnahme M 4.71 des IT-Grundschutzes (<a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-IT-Grundschutz-M471" class="xref page">IT-Grundschutz M471</a>) nur unter strengen Auflagen zulässig, die eine Verwendung erheblich erschweren.</p>
+Allerdings sind Oracle Database Links laut Maßnahme M 4.71 des IT-Grundschutzes (<a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-it-grundschutz-m471" class="xref page">IT-Grundschutz M471</a>) nur unter strengen Auflagen zulässig, die eine Verwendung erheblich erschweren.</p>
 </div>
 <div class="paragraph">
 <p>Mit dem Wegfall dieser Lösung gibt es aus Sicht der IsyFact keine geeignete Lösung, um Daten zwischen mehreren Schemata auf unterschiedlichen Datenbank-Instanzen zu bearbeiten.

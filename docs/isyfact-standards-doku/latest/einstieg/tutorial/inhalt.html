@@ -228,7 +228,7 @@
     <span class="nav-text">Sonderzeichen</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-sonderzeichen/konzept/master.html">Konzept</a>
+    <a class="nav-link" href="../../isy-sonderzeichen/konzept/sonderzeichen.html">Konzept</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-sonderzeichen/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
@@ -319,22 +319,31 @@
     <span class="nav-text">Werkzeuge</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../werkzeuge/einrichtung_entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../werkzeuge/handbuch_dokumentation/master.html">Dokumentation der IsyFact</a>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/master-antora.html">Projektseite mit Antora (empfohlen)</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/master-asciidoctorJ.html">Dokumente mit AsciidoctorJ Extensions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
   </li>
 </ul>
   </li>
@@ -398,7 +407,7 @@
 <h2 id="bezug-isyfact"><a class="anchor" href="#bezug-isyfact"></a>1. Bezug und Nutzung der IsyFact</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Alle Bibliotheken der IsyFact stehen über <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-Maven-Central" class="xref page">Maven Central</a> zum Download bereit.
+<p>Alle Bibliotheken der IsyFact stehen über <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-maven-central" class="xref page">Maven Central</a> zum Download bereit.
 Zur Nutzung der Bibliotheken in der Anwendungsentwicklung steht ein zentrales BOM (Bill Of Materials) zur Verfügung, das Teil der Maven-Konfiguration (<code>pom.xml</code>) wird:</p>
 </div>
 <div id="listing-if-bom" class="listingblock">
@@ -551,7 +560,7 @@ Wird als Deep-Copy durch Bean-Mapper erzeugt.</p></td>
 Der direkte Zugriff auf die DAOs ist verboten.</p>
 </div>
 <div class="paragraph">
-<p>Entitäten, die von mehreren <a href="../../../../glossary/latest/glossary/master.html#glossar-Anwendungskomponente" class="xref page">Anwendungskomponenten</a> verwendet werden, bietet die Komponente Basisdaten an.
+<p>Entitäten, die von mehreren <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungskomponente" class="xref page">Anwendungskomponenten</a> verwendet werden, bietet die Komponente Basisdaten an.
 Die Komponente Basisdaten ist keine vollständige Komponente, sie bietet keine Schnittstellen an.
 Ausnahmsweise verwenden Komponenten stattdessen direkt die zugehörigen DAOs der Basisdaten.
 Dieser Fall ist auch in <a href="#image-Datenhaltung">Abbildung 1</a> dargestellt.
@@ -583,7 +592,7 @@ Dieses muss anschließend noch bearbeitet werden.</p>
 <td class="content">
 hbm2ddl ist Teil der Hibernate Tools und gehört zum Umfang der Standard-Hibernate Bibliothek.
 Nutzungsdokumentation unter:
-<a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-Hibernate-Toolset-Guide" class="xref page">Hibernate Toolset Guide</a>
+<a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-hibernate-toolset-guide" class="xref page">Hibernate Toolset Guide</a>
 </td>
 </tr>
 </table>

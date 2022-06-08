@@ -228,7 +228,7 @@
     <span class="nav-text">Sonderzeichen</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../isy-sonderzeichen/konzept/master.html">Konzept</a>
+    <a class="nav-link" href="../isy-sonderzeichen/konzept/sonderzeichen.html">Konzept</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../isy-sonderzeichen/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
@@ -319,22 +319,31 @@
     <span class="nav-text">Werkzeuge</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="einrichtung_entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="versionierungskontrolle/master.html">Versionierungskontrolle</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="handbuch_dokumentation/master.html">Dokumentation der IsyFact</a>
+    <a class="nav-link" href="dokumentation/einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="3">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="dokumentation/master-antora.html">Projektseite mit Antora (empfohlen)</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="4">
     <a class="nav-link" href="seitenvorlage.html">Seitenvorlage</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="kopiervorlage.html">Kopiervorlage für neue Seiten</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="dokumentation/master-asciidoctorJ.html">Dokumente mit AsciidoctorJ Extensions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="versionierungskontrolle/master.html">Versionierungskontrolle</a>
   </li>
 </ul>
   </li>
@@ -385,7 +394,8 @@
   <ul>
     <li><a href="../einstieg/vorstellung.html">IsyFact Standards</a></li>
     <li>Werkzeuge</li>
-    <li><a href="handbuch_dokumentation/master.html">Dokumentation der IsyFact</a></li>
+    <li><a href="dokumentation/einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a></li>
+    <li><a href="dokumentation/master-antora.html">Projektseite mit Antora (empfohlen)</a></li>
     <li><a href="seitenvorlage.html">Seitenvorlage</a></li>
   </ul>
 </nav>
@@ -567,7 +577,7 @@ Ein gutes Format für optionale Verweise sind <a href="#formatierung-admonitions
 <p>Der Quelltext einer Seite bricht gemäß der Regel <em>one sentence per line</em> nach jedem Satz um.</p>
 </div>
 <div class="paragraph">
-<p>Mehr zu <a href="handbuch_dokumentation/master.html#ein-satz-pro-zeile" class="xref page">Zeilenumbrüchen im Handbuch der Dokumentation</a>.</p>
+<p>Mehr zu <a href="dokumentation/bearbeitung/bearbeitung-antora.html#ein-satz-pro-zeile" class="xref page">Zeilenumbrüchen im Handbuch der Dokumentation</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="formatierung-verweise"><a class="anchor" href="#formatierung-verweise"></a>3.1. Verweise</h3>
@@ -605,7 +615,7 @@ Verweise enthalten nur die absolut nötigsten Informationen, um das Ziel aufzul�
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Die <a href="../../../glossary/latest/literaturextern/inhalt.html#litextern-AntoraXrefMacroStructure" class="xref page">Beschreibung der Struktur des Xref-Makros</a> zeigt weitere, interessante Anwendungsfälle für diese Art von Verweisen.</p>
+<p>Die <a href="../../../glossary/latest/literaturextern/inhalt.html#litextern-antora-xref-macro-structure" class="xref page">Beschreibung der Struktur des Xref-Makros</a> zeigt weitere, interessante Anwendungsfälle für diese Art von Verweisen.</p>
 </div>
 </td>
 </tr>
@@ -618,7 +628,11 @@ Ein Beispiel dafür gibt es in dem Admonition Block oberhalb dieses Absatzes.</p
 <div class="paragraph">
 <p>Verweise auf das <a href="../../../glossary/latest/glossary/master.html" class="xref page">Glossar</a> dürfen nur bei der ersten Verwendung eines entsprechenden Begriffs geschehen.
 Alle weitere Vorkommen eines Begriffs werden aus Gründen des Leseflusses nicht mit einem Verweis hinterlegt.
-Es folgt ein Beispiel für den Eintrag der <a href="../../../glossary/latest/glossary/master.html#glossar-IsyFact" class="xref page">IsyFact</a> im Glossar.</p>
+Es folgt ein Beispiel für den Eintrag der <a href="../../../glossary/latest/glossary/master.html#glossar-isyfact" class="xref page">IsyFact</a> im Glossar.</p>
+</div>
+<div class="paragraph">
+<p>Mehr zu <a href="dokumentation/bearbeitung/bearbeitung-antora.html#querverweise" class="xref page">Verweisen im Handbuch der Dokumentation</a>.<br>
+<br></p>
 </div>
 </div>
 <div class="sect2">
@@ -630,7 +644,7 @@ Es folgt ein Beispiel für den Eintrag der <a href="../../../glossary/latest/glo
 <div class="title">Abbildung 1. Beispiel einer Abbildung</div>
 </div>
 <div class="paragraph">
-<p>Mehr zu <a href="handbuch_dokumentation/master.html#bilder" class="xref page">Abbildungen im Handbuch der Dokumentation</a>.</p>
+<p>Mehr zu <a href="dokumentation/bearbeitung/bearbeitung-antora.html#bilder" class="xref page">Abbildungen im Handbuch der Dokumentation</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -673,7 +687,7 @@ Es folgt ein Beispiel für den Eintrag der <a href="../../../glossary/latest/glo
 </tbody>
 </table>
 <div class="paragraph">
-<p>Mehr zu <a href="handbuch_dokumentation/master.html#tabellen" class="xref page">Tabellen im Handbuch der Dokumentation</a>.</p>
+<p>Mehr zu <a href="dokumentation/bearbeitung/bearbeitung-antora.html#tabellen" class="xref page">Tabellen im Handbuch der Dokumentation</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -689,7 +703,7 @@ Es folgt ein Beispiel für den Eintrag der <a href="../../../glossary/latest/glo
 </div>
 </div>
 <div class="paragraph">
-<p>Mehr zu <a href="handbuch_dokumentation/master.html#listings" class="xref page">Listings im Handbuch der Dokumentation</a>.</p>
+<p>Mehr zu <a href="dokumentation/bearbeitung/bearbeitung-antora.html#listings" class="xref page">Listings im Handbuch der Dokumentation</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -797,7 +811,7 @@ Es folgt ein Beispiel für den Eintrag der <a href="../../../glossary/latest/glo
 </div>
 </div>
 <div class="paragraph">
-<p>Mehr zu <a href="handbuch_dokumentation/master.html#admonition-blocks" class="xref page">Admonition Blocks im Handbuch der Dokumentation</a>.</p>
+<p>Mehr zu <a href="dokumentation/bearbeitung/bearbeitung-antora.html#admonition-blocks" class="xref page">Admonition Blocks im Handbuch der Dokumentation</a>.</p>
 </div>
 </div>
 </div>

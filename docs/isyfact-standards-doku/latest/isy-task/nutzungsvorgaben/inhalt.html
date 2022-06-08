@@ -228,7 +228,7 @@
     <span class="nav-text">Sonderzeichen</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-sonderzeichen/konzept/master.html">Konzept</a>
+    <a class="nav-link" href="../../isy-sonderzeichen/konzept/sonderzeichen.html">Konzept</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-sonderzeichen/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
@@ -319,22 +319,31 @@
     <span class="nav-text">Werkzeuge</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../werkzeuge/einrichtung_entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../werkzeuge/handbuch_dokumentation/master.html">Dokumentation der IsyFact</a>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/master-antora.html">Projektseite mit Antora (empfohlen)</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/master-asciidoctorJ.html">Dokumente mit AsciidoctorJ Extensions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
   </li>
 </ul>
   </li>
@@ -567,7 +576,7 @@ Hierfür wird die Methode <code>shutdownMitTimeout()</code> aufgerufen, um die T
 <div class="sect2">
 <h3 id="verwendung-bereitgestellter-tasks"><a class="anchor" href="#verwendung-bereitgestellter-tasks"></a>1.4. Verwendung der bereitgestellten Tasks</h3>
 <div class="paragraph">
-<p>Die Bibliothek <code>isy-task</code> enthält nützliche Tasks für die <a href="../../../../glossary/latest/glossary/master.html#glossar-IFS" class="xref page">Bibliothek (IsyFact Standards)</a>.</p>
+<p>Die Bibliothek <code>isy-task</code> enthält nützliche Tasks für die <a href="../../../../glossary/latest/glossary/master.html#glossar-ifs" class="xref page">Bibliothek (IsyFact Standards)</a>.</p>
 </div>
 <div class="sect3">
 <h4 id="_automatische_aktualisierung_der_konfiguration"><a class="anchor" href="#_automatische_aktualisierung_der_konfiguration"></a>1.4.1. Automatische Aktualisierung der Konfiguration</h4>
@@ -844,7 +853,7 @@ public class TaskConfiguration {
 <div class="sectionbody">
 <div class="paragraph">
 <p>Bei der Implementierung eines Tasks muss beachtet werden, dass ihn die Querschnittsbibliothek im Parallelbetrieb betreiben wird.
-Werden hierbei die Besonderheiten der Java Multithreading API nicht berücksichtigt, kann dies zu einem fehlerhaften Verhalten in der <a href="../../../../glossary/latest/glossary/master.html#glossar-Geschaeftsanwendung" class="xref page">Geschäftsanwendung</a> führen.</p>
+Werden hierbei die Besonderheiten der Java Multithreading API nicht berücksichtigt, kann dies zu einem fehlerhaften Verhalten in der <a href="../../../../glossary/latest/glossary/master.html#glossar-geschaeftsanwendung" class="xref page">Geschäftsanwendung</a> führen.</p>
 </div>
 <div class="sect2">
 <h3 id="threadsicherheit"><a class="anchor" href="#threadsicherheit"></a>5.1. Threadsicherheit</h3>

@@ -228,7 +228,7 @@
     <span class="nav-text">Sonderzeichen</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-sonderzeichen/konzept/master.html">Konzept</a>
+    <a class="nav-link" href="../../isy-sonderzeichen/konzept/sonderzeichen.html">Konzept</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-sonderzeichen/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
@@ -319,22 +319,31 @@
     <span class="nav-text">Werkzeuge</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../werkzeuge/einrichtung_entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../werkzeuge/handbuch_dokumentation/master.html">Dokumentation der IsyFact</a>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/master-antora.html">Projektseite mit Antora (empfohlen)</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/master-asciidoctorJ.html">Dokumente mit AsciidoctorJ Extensions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
   </li>
 </ul>
   </li>
@@ -417,7 +426,7 @@ Die Lizenzbestimmungen sind unter folgender URL erhältlich:</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Dieses Dokument beschreibt die konzeptionellen Grundlagen der Steuerung (d.h. Planung und Ausführung) von Aufgaben (Task Scheduling) in der IsyFact.
-Mit „Aufgaben“ sind hier periodisch wiederkehrende Tätigkeiten gemeint, die innerhalb einer <a href="../../../../glossary/latest/glossary/master.html#glossar-Anwendungskomponente" class="xref page">Anwendungskomponenten</a> angesiedelt sind und zur Erfüllung der fachlichen oder technischen Anforderungen der Anwendung beitragen.
+Mit „Aufgaben“ sind hier periodisch wiederkehrende Tätigkeiten gemeint, die innerhalb einer <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungskomponente" class="xref page">Anwendungskomponenten</a> angesiedelt sind und zur Erfüllung der fachlichen oder technischen Anforderungen der Anwendung beitragen.
 Das Dokument beschreibt die Anforderungen und Vorgaben zur Umsetzung der Steuerung von Aufgaben und bildet so die Grundlage einer technisch und fachlich einheitlichen Umsetzung.</p>
 </div>
 <div class="paragraph">
@@ -429,14 +438,14 @@ Das Dokument beschreibt die Anforderungen und Vorgaben zur Umsetzung der Steueru
 <div class="sect2">
 <h3 id="abgrenzung-zu-batches"><a class="anchor" href="#abgrenzung-zu-batches"></a>1.1. Abgrenzung zu Batches</h3>
 <div class="paragraph">
-<p>Das <a href="../../blaupausen/detailkonzept-komponente-batch/master.html#<em>einführung" class="xref page">Detailkonzept Komponente Batch</a> definiert <a href="../../../../glossary/latest/glossary/master.html#glossar-Batch" class="xref page">Batches</a> wie folgt:
+<p>Das <a href="../../blaupausen/detailkonzept-komponente-batch/master.html#<em>einführung" class="xref page">Detailkonzept Komponente Batch</a> definiert <a href="../../../../glossary/latest/glossary/master.html#glossar-batch" class="xref page">Batches</a> wie folgt:
 _„Der Begriff „Batch“ bedeutet im Kern lediglich „nicht interaktive Stapelverarbeitung“.
 Ein Batch teilt sich auf in einen „Batchrahmen“, die Batchlogik der einzelnen Batch-Anwendungen, sowie die von ihnen aufgerufenen Komponenten des Anwendungskerns. […]
 Typischerweise verarbeiten Batches dabei Dateilieferungen oder eine definierte Menge von Datensätzen aus dem Datenbestand.“</em></p>
 </div>
 <div class="paragraph">
 <p>Die in diesem Konzept beschriebenen Aufgaben sind hingegen nicht die Grundlage einer eigenen (Batch-) Anwendung, sondern in die eigentliche Anwendung integriert.
-Die Aufgaben sind Teil einer Komponente des <a href="../../../../glossary/latest/glossary/master.html#glossar-Anwendungskern" class="xref page">Anwendungskerns</a>.
+Die Aufgaben sind Teil einer Komponente des <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungskern" class="xref page">Anwendungskerns</a>.
 Sie besitzen in der Regel einen kleineren Umfang als Batches und werden nicht manuell von außen gesteuert.
 Stattdessen werden sie durch die Anwendung selbst konfiguriert, zeitlich geplant und selbstständig ausgeführt.</p>
 </div>
@@ -456,7 +465,7 @@ Stattdessen werden sie durch die Anwendung selbst konfiguriert, zeitlich geplant
 <p>Zunächst werden die <a href="#anforderungen">Anforderungen</a> an die Steuerung von Aufgaben definiert, welche die Grundlage für das nachfolgende Kapitel bilden.</p>
 </div>
 <div class="paragraph">
-<p>Anschließend werden die <a href="#vorgaben">Vorgaben</a> zur Steuerung von Aufgaben innerhalb der Anwendungen sowie zur Umsetzung in der zu diesem <a href="../../../../glossary/latest/glossary/master.html#glossar-Baustein" class="xref page">Baustein</a> gehörenden <a href="../../../../glossary/latest/glossary/master.html#glossar-Bibliothek" class="xref page">Bibliothek</a> definiert.</p>
+<p>Anschließend werden die <a href="#vorgaben">Vorgaben</a> zur Steuerung von Aufgaben innerhalb der Anwendungen sowie zur Umsetzung in der zu diesem <a href="../../../../glossary/latest/glossary/master.html#glossar-baustein" class="xref page">Baustein</a> gehörenden <a href="../../../../glossary/latest/glossary/master.html#glossar-bibliothek" class="xref page">Bibliothek</a> definiert.</p>
 </div>
 </div>
 </div>

@@ -228,7 +228,7 @@
     <span class="nav-text">Sonderzeichen</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-sonderzeichen/konzept/master.html">Konzept</a>
+    <a class="nav-link" href="../../isy-sonderzeichen/konzept/sonderzeichen.html">Konzept</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-sonderzeichen/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
@@ -319,22 +319,31 @@
     <span class="nav-text">Werkzeuge</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../werkzeuge/einrichtung_entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../werkzeuge/handbuch_dokumentation/master.html">Dokumentation der IsyFact</a>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/master-antora.html">Projektseite mit Antora (empfohlen)</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/master-asciidoctorJ.html">Dokumente mit AsciidoctorJ Extensions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
   </li>
 </ul>
   </li>
@@ -398,9 +407,9 @@
 <h2 id="einleitung"><a class="anchor" href="#einleitung"></a>1. Einleitung</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Die <strong>IsyFact</strong> ist eine freie allgemeine <a href="../../../../glossary/latest/glossary/master.html#glossar-Software-Factory" class="xref page">Software Factory</a> zum Bau von <a href="../../../../glossary/latest/glossary/master.html#glossar-IT-System&gt;" class="xref page">IT-Systeme</a>, die vom Bundesverwaltungsamt bereitgestellt wird.
-Sie wurde entwickelt, um unterschiedliche <a href="../../../../glossary/latest/glossary/master.html#glossar-Geschaeftsanwendung" class="xref page">Geschäftsanwendungen</a> effizient entwerfen, realisieren und betreiben zu können.
-Der Begriff Factory steht für die schnelle Erzeugung neuer <a href="../../../../glossary/latest/glossary/master.html#glossar-Anwendung" class="xref page">Anwendungen</a> durch Anpassung und Ausgestaltung vorgefertigter Elemente, die in eine standardisierte <a href="../../../../glossary/latest/glossary/master.html#glossar-Plattform&gt;" class="xref page">Plattform</a> integriert werden können.</p>
+<p>Die <strong>IsyFact</strong> ist eine freie allgemeine <a href="../../../../glossary/latest/glossary/master.html#glossar-software-factory" class="xref page">Software Factory</a> zum Bau von <a href="../../../../glossary/latest/glossary/master.html#glossar-it-system&gt;" class="xref page">IT-Systeme</a>, die vom Bundesverwaltungsamt bereitgestellt wird.
+Sie wurde entwickelt, um unterschiedliche <a href="../../../../glossary/latest/glossary/master.html#glossar-geschaeftsanwendung" class="xref page">Geschäftsanwendungen</a> effizient entwerfen, realisieren und betreiben zu können.
+Der Begriff Factory steht für die schnelle Erzeugung neuer <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendung" class="xref page">Anwendungen</a> durch Anpassung und Ausgestaltung vorgefertigter Elemente, die in eine standardisierte <a href="../../../../glossary/latest/glossary/master.html#glossar-plattform&gt;" class="xref page">Plattform</a> integriert werden können.</p>
 </div>
 <div class="paragraph">
 <p>Die IsyFact besteht aus den IsyFact-Standards und IsyFact-Erweiterungen:</p>
@@ -426,14 +435,14 @@ Bspw.: Protokollierung, Regelwerk etc.</p>
 Dabei wird die Architektur aus drei verschiedenen Sichten betrachtet, die zunächst eingeführt werden.</p>
 </div>
 <div class="paragraph">
-<p>Die Referenzarchitektur unterscheidet zwischen den folgenden <a href="../../../../glossary/latest/glossary/master.html#glossar-Architektursicht" class="xref page">Architektursichten</a>:</p>
+<p>Die Referenzarchitektur unterscheidet zwischen den folgenden <a href="../../../../glossary/latest/glossary/master.html#glossar-architektursicht" class="xref page">Architektursichten</a>:</p>
 </div>
 <div class="paragraph">
 <p><strong>Fachliche Referenzarchitektur:</strong> Dies umfasst eine fachliche Beschreibung der Anwendungslandschaft.
 Diese wird in fachliche Komponenten zerlegt, die miteinander über fachliche Schnittstellen interagieren.</p>
 </div>
 <div class="paragraph">
-<p><strong>Software-Referenzarchitektur:</strong> Dies ist eine software-technische Beschreibung der <a href="../../../../glossary/latest/glossary/master.html#glossar-Systemlandschaft" class="xref page">Systemlandschaft</a>.
+<p><strong>Software-Referenzarchitektur:</strong> Dies ist eine software-technische Beschreibung der <a href="../../../../glossary/latest/glossary/master.html#glossar-systemlandschaft" class="xref page">Systemlandschaft</a>.
 Die gesamte Systemlandschaft wird in technische Komponenten mit technischen Schnittstellen zerlegt.</p>
 </div>
 <div class="paragraph">
@@ -456,31 +465,31 @@ Dies ist in <a href="#image-GA-AW">Abbildung 1</a> dargestellt.</p>
 <div class="title">Abbildung 1. Fachliche Architektur einer Anwendungslandschaft</div>
 </div>
 <div class="paragraph">
-<p><strong>Anwendungsdomänen:</strong> Eine <a href="../../../../glossary/latest/glossary/master.html#glossar-Anwendungsdomaene" class="xref page">Anwendungsdomäne</a> gruppiert fachlich zusammengehörende Anwendungssysteme zur Unterstützung von Geschäftsprozessen, die als eine Einheit angesehen werden können.</p>
+<p><strong>Anwendungsdomänen:</strong> Eine <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungsdomaene" class="xref page">Anwendungsdomäne</a> gruppiert fachlich zusammengehörende Anwendungssysteme zur Unterstützung von Geschäftsprozessen, die als eine Einheit angesehen werden können.</p>
 </div>
 <div class="paragraph">
-<p><strong>Anwendungssysteme:</strong> Ein <a href="../../../../glossary/latest/glossary/master.html#glossar-Anwendungssystem" class="xref page">Anwendungssystem</a> ist eine zusammengehörende, logische Einheit aus Funktionen, Daten und Schnittstellen.
+<p><strong>Anwendungssysteme:</strong> Ein <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungssystem" class="xref page">Anwendungssystem</a> ist eine zusammengehörende, logische Einheit aus Funktionen, Daten und Schnittstellen.
 Anwendungssysteme unterstützen Geschäftsprozesse.
-Stellt ein Anwendungssystem eine Fachlogik dar, so handelt es sich um eine <a href="../../../../glossary/latest/glossary/master.html#glossar-Geschaeftsanwendung" class="xref page">Geschäftsanwendung</a>.
-Ein Anwendungssystem ist Bestandteil der <a href="../../../../glossary/latest/glossary/master.html#glossar-A-Architektur" class="xref page">A-Architektur</a>.
-Aus Sicht der <a href="../../../../glossary/latest/glossary/master.html#glossar-T-Architektur" class="xref page">T-Architektur</a> bildet ein <a href="../../../../glossary/latest/glossary/master.html#glossar-IT-System&gt;" class="xref page">IT-Systeme</a> die software-technische Umsetzung eines Anwendungssystems ab.</p>
+Stellt ein Anwendungssystem eine Fachlogik dar, so handelt es sich um eine <a href="../../../../glossary/latest/glossary/master.html#glossar-geschaeftsanwendung" class="xref page">Geschäftsanwendung</a>.
+Ein Anwendungssystem ist Bestandteil der <a href="../../../../glossary/latest/glossary/master.html#glossar-a-architektur" class="xref page">A-Architektur</a>.
+Aus Sicht der <a href="../../../../glossary/latest/glossary/master.html#glossar-t-architektur" class="xref page">T-Architektur</a> bildet ein <a href="../../../../glossary/latest/glossary/master.html#glossar-it-system&gt;" class="xref page">IT-Systeme</a> die software-technische Umsetzung eines Anwendungssystems ab.</p>
 </div>
 <div class="paragraph">
 <p>Ein häufig anzutreffendes Beispiel hierfür ist die Trennung in ein Anwendungssystem zur Bestandsverwaltung (Register) und einem Anwendungssystem für die Benutzerinteraktion, die auf die Bestandsverwaltung zugreift.
 Im Zuge einer solchen Aufgabenteilung werden auch weitergehende Regeln definiert, wie Anwendungssysteme aufeinander zugreifen dürfen.
 Derartige Strukturierungsprinzipien und Regeln sind jedoch immer spezifisch für den jeweiligen Kontext der Anwendungslandschaft und können nicht allgemeingültig festgelegt werden.
-Im vorliegenden Dokument verwenden wir daher den neutralen Begriff <strong><a href="../../../../glossary/latest/glossary/master.html#glossar-Geschaeftsanwendung" class="xref page">Geschäftsanwendung</a></strong> für alle Arten von Anwendungssystemen, die eine bestimmte fachliche Funktionalität innerhalb einer Anwendungsdomäne realisieren.</p>
+Im vorliegenden Dokument verwenden wir daher den neutralen Begriff <strong><a href="../../../../glossary/latest/glossary/master.html#glossar-geschaeftsanwendung" class="xref page">Geschäftsanwendung</a></strong> für alle Arten von Anwendungssystemen, die eine bestimmte fachliche Funktionalität innerhalb einer Anwendungsdomäne realisieren.</p>
 </div>
 <div class="paragraph">
 <p><strong>Querschnittsanwendungen</strong> sind Anwendungssysteme, die Services für mehrere Geschäftsanwendungen bereitstellen.
 Diese Services sind oft technisch motiviert.</p>
 </div>
 <div class="paragraph">
-<p><strong>Portal:</strong> Das <a href="../../../../glossary/latest/glossary/master.html#glossar-Portal" class="xref page">Portal</a> stellt den Benutzern eine einheitliche Dialogoberfläche für den Zugriff auf die Services der Anwendungslandschaft zur Verfügung.
+<p><strong>Portal:</strong> Das <a href="../../../../glossary/latest/glossary/master.html#glossar-portal" class="xref page">Portal</a> stellt den Benutzern eine einheitliche Dialogoberfläche für den Zugriff auf die Services der Anwendungslandschaft zur Verfügung.
 Einzelne Geschäftsanwendungen stellen Nutzerschnittstellen zur Verfügung, das Portal integriert diese, bildet einen zentralen Einstiegspunkt für alle Web-Anwendungen und übernimmt die Aufgabe der Authentifizierung und der Autorisierung auf Anwendungsebene.</p>
 </div>
 <div class="paragraph">
-<p><strong>Service-Gateway:</strong> Im <a href="../../../../glossary/latest/glossary/master.html#glossar-Service-Gateway" class="xref page">Service Gateway</a> werden alle Services der Anwendungssysteme bereitgestellt, die externe Nutzer direkt nutzen dürfen.
+<p><strong>Service-Gateway:</strong> Im <a href="../../../../glossary/latest/glossary/master.html#glossar-service-gateway" class="xref page">Service Gateway</a> werden alle Services der Anwendungssysteme bereitgestellt, die externe Nutzer direkt nutzen dürfen.
 Dazu führt das Service-Gateway die Authentifizierung und Autorisierung der Service-Aufrufer auf Anwendungsebene durch.
 Weiterhin transformiert das Service-Gateway das interne Kommunikationsprotokoll einer IsyFact-Systemlandschaft in das vom Service-Aufrufer erwartete Protokoll.
 Dies sind in der Regel Web Service-Aufrufe.</p>
@@ -490,7 +499,7 @@ Dies sind in der Regel Web Service-Aufrufe.</p>
 <h4 id="software-referenzarchitektur"><a class="anchor" href="#software-referenzarchitektur"></a>1.1.2. Software Referenzarchitektur</h4>
 <div class="paragraph">
 <p>Die individuell erstellten Anwendungssysteme der Anwendungslandschaft sind technisch gleichartig aufgebaut.
-Daher wird eine Referenzarchitektur aufgestellt, nach denen Anwendungssysteme (Geschäftsanwendungen und Querschnittsanwendungen) software-technisch in <a href="../../../../glossary/latest/glossary/master.html#glossar-IT-System&gt;" class="xref page">IT-Systeme</a> umgesetzt werden.
+Daher wird eine Referenzarchitektur aufgestellt, nach denen Anwendungssysteme (Geschäftsanwendungen und Querschnittsanwendungen) software-technisch in <a href="../../../../glossary/latest/glossary/master.html#glossar-it-system&gt;" class="xref page">IT-Systeme</a> umgesetzt werden.
 Das Dokument <a href="../referenzarchitektur-it-system/master.html" class="xref page">Referenzarchitektur IT-Systeme</a> beschreibt diese Referenzarchitektur.</p>
 </div>
 <div class="paragraph">
@@ -512,7 +521,7 @@ Die Skalierung des Systems ist in <a href="#image-horSkal">Abbildung 2</a> darge
 </div>
 <div class="paragraph">
 <p>Die Referenzarchitektur ist die Umsetzung einer Serviceorientierten Architektur.
-Im Design des <a href="../../../../glossary/latest/glossary/master.html#glossar-Anwendungskern" class="xref page">Anwendungskerns</a> (siehe <a href="../detailkonzept-komponente-anwendungskern/master.html" class="xref page">Detailkonzept Komponente Anwendungskern</a> ) finden sich explizit Komponenten und Services.
+Im Design des <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungskern" class="xref page">Anwendungskerns</a> (siehe <a href="../detailkonzept-komponente-anwendungskern/master.html" class="xref page">Detailkonzept Komponente Anwendungskern</a> ) finden sich explizit Komponenten und Services.
 Der Anwendungskern unterscheidet dabei noch zwischen Anwendungs-internen Services, die nur innerhalb der Anwendung aufgerufen werden und Anwendungs-externen Services, die über eine Nutzungsschnittstelle als Service anderen Anwendungen zur Verfügung gestellt werden.</p>
 </div>
 <div class="paragraph">
@@ -529,7 +538,7 @@ Es hat zur Folge, dass als Application Server ein Servlet-Container ausreichend 
 <div class="sect3">
 <h4 id="referenzarchitektur-der-technischen-infrastruktur"><a class="anchor" href="#referenzarchitektur-der-technischen-infrastruktur"></a>1.1.3. Referenzarchitektur der technischen Infrastruktur</h4>
 <div class="paragraph">
-<p>Im Bereich der technischen Infrastruktur (<a href="../../../../glossary/latest/glossary/master.html#glossar-TI-Architektur&gt;" class="xref page">IT-Architektur</a>) werden folgende Umgebungen beschrieben:</p>
+<p>Im Bereich der technischen Infrastruktur (<a href="../../../../glossary/latest/glossary/master.html#glossar-ti-architektur&gt;" class="xref page">IT-Architektur</a>) werden folgende Umgebungen beschrieben:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -548,7 +557,7 @@ Es hat zur Folge, dass als Application Server ein Servlet-Container ausreichend 
 </ul>
 </div>
 <div class="paragraph">
-<p>Die Aufteilung in Zonen leitet sich aus dem SAGA 4-Standard ab <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-SAGA_4.0" class="xref page">SAGA 4.0</a>.</p>
+<p>Die Aufteilung in Zonen leitet sich aus dem SAGA 4-Standard ab <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-saga-4-0" class="xref page">SAGA 4.0</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>

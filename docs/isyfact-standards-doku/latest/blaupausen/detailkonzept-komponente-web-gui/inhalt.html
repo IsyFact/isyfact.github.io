@@ -228,7 +228,7 @@
     <span class="nav-text">Sonderzeichen</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-sonderzeichen/konzept/master.html">Konzept</a>
+    <a class="nav-link" href="../../isy-sonderzeichen/konzept/sonderzeichen.html">Konzept</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-sonderzeichen/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
@@ -319,22 +319,31 @@
     <span class="nav-text">Werkzeuge</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../werkzeuge/einrichtung_entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../werkzeuge/handbuch_dokumentation/master.html">Dokumentation der IsyFact</a>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/master-antora.html">Projektseite mit Antora (empfohlen)</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/master-asciidoctorJ.html">Dokumente mit AsciidoctorJ Extensions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
   </li>
 </ul>
   </li>
@@ -398,7 +407,7 @@
 <h2 id="referenzarchitektur-einer-geschaeftsanwendung"><a class="anchor" href="#referenzarchitektur-einer-geschaeftsanwendung"></a>1. Referenzarchitektur der Komponente Web-GUI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="#image-RAGaAnw">Abbildung 1</a> zeigt die Referenzarchitektur einer <a href="../../../../glossary/latest/glossary/master.html#glossar-Geschaeftsanwendung" class="xref page">Geschäftsanwendung</a>.
+<p><a href="#image-RAGaAnw">Abbildung 1</a> zeigt die Referenzarchitektur einer <a href="../../../../glossary/latest/glossary/master.html#glossar-geschaeftsanwendung" class="xref page">Geschäftsanwendung</a>.
 Die Referenzarchitektur ist eine Erweiterung der klassischen Drei-Schichten-Architektur, in der die oberste Schicht in GUI, Batch und Service differenziert wird.
 Die GUI ist hervorgehoben.</p>
 </div>
@@ -610,7 +619,7 @@ cdErwerb.js (übergreifend)</code></p></td>
 <div class="sect2">
 <h3 id="zugriff-awk"><a class="anchor" href="#zugriff-awk"></a>1.3. Zugriff auf den Anwendungskern</h3>
 <div class="paragraph">
-<p>Dialog-Komponenten verwenden grundsätzlich keine Klassen des <a href="../../../../glossary/latest/glossary/master.html#glossar-Anwendungskern" class="xref page">Anwendungskerns</a>.
+<p>Dialog-Komponenten verwenden grundsätzlich keine Klassen des <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungskern" class="xref page">Anwendungskerns</a>.
 Insbesondere verwenden ihre Models eigene Datentypen.
 Sämtliche Kommunikation mit dem Anwendungskern geschieht von den Controllern aus über den Anwendungskern-Wrapper (kurz: AWK-Wrapper).
 Die primäre Aufgabe des AWK-Wrappers ist es, das Datenmodell des Anwendungskerns in das Datenmodell der GUI-Komponente zu mappen und ggf. Transaktionsklammern über mehrere fachliche Operationen zu bilden.
