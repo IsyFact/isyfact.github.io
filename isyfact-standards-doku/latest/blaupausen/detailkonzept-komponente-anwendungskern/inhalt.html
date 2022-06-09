@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Detailkonzept Anwendungskern: Inhalt :: IsyFact Dokumentation</title>
+    <link rel="canonical" href="https://github.com/isyfact/isyfact-standards-doku/latest/blaupausen/detailkonzept-komponente-anwendungskern/inhalt.html">
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../_/css/isyfact.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://github.com/isyfact">IsyFact Dokumentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5-SNAPSHOT">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../einstieg/vorstellung.html">IsyFact Standards</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Einstieg</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../einstieg/vorstellung.html">Vorstellung der IsyFact</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/isyfact-standards.html">IsyFact-Standards</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/isyfact-erweiterungen.html">IsyFact-Erweiterungen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/rahmenbedingungen.html">Rahmenbedingungen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/erste-schritte.html">Erste Schritte</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/tutorial/master.html">Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/whitepaper/master.html">Whitepaper</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Blaupausen</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../referenzarchitektur/master.html">Referenzarchitektur</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="master.html">Anwendungskern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/master.html">Datenzugriff</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../detailkonzept-komponente-service/master.html">Service</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../detailkonzept-komponente-web-gui/master.html">Web GUI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../detailkonzept-komponente-batch/master.html">Batch</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Vorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vorgaben-architektur/master.html">Architektur</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vorgaben-it-sicherheit/master.html">IT-Sicherheit</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Bausteine</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Datum &amp; Zeit</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-datetime/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-datetime/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Fehlerbehandlung</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-exception-core/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-exception-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">HttpInvoker</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-serviceapi-core/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Konfiguration</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-konfiguration/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-konfiguration/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Logging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-logging/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-logging/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Polling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-polling/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-polling/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-service-rest/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-service-rest/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sicherheit</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sicherheit/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sicherheit/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sonderzeichen</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sonderzeichen/konzept/sonderzeichen.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sonderzeichen/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Task Scheduling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-task/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-task/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Überwachung</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-ueberwachung/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-ueberwachung/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Util</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-util/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Methodik</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/namenskonventionen/master.html">Namenskonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Werkzeuge</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/master-antora.html">Projektseite mit Antora (empfohlen)</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/master-asciidoctorJ.html">Dokumente mit AsciidoctorJ Extensions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../changelog/changelog.html">Changelog</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">IsyFact Standards</span>
+    <span class="version">2.5-SNAPSHOT</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../glossary/latest/glossary/master.html">Glossar</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../glossary/latest/glossary/master.html">1.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../einstieg/vorstellung.html">IsyFact Standards</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../einstieg/vorstellung.html">2.5-SNAPSHOT</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../einstieg/vorstellung.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../einstieg/vorstellung.html">IsyFact Standards</a></li>
+    <li><a href="inhalt.html">Detailkonzept Anwendungskern: Inhalt</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Inhalt" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Detailkonzept Anwendungskern: Inhalt</h1>
+<div class="sect1">
+<h2 id="aufbau-des-anwendungskerns"><a class="anchor" href="#aufbau-des-anwendungskerns"></a>1. Aufbau des Anwendungskerns</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Der Anwendungskern ist der zentrale Baustein eines IT-Systems.
+Hier werden die fachlichen Funktionen der Anwendung realisiert.</p>
+</div>
+<div class="paragraph">
+<p>In <a href="#image-IFBestAWK">Abbildung 1</a> sind drei Aspekte des Anwendungskerns dargestellt.
+Er besteht aus zwei wesentlichen Bestandteilen: den Fachkomponenten und dem Anwendungskern-Framework.
+Weiterhin ist dort dargestellt, dass externe Services als Komponente in den Anwendungskern integriert sind.
+Diese drei Aspekte werden im Folgenden im Detail beschrieben.</p>
+</div>
+<div id="image-IFBestAWK" class="imageblock text-center">
+<div class="content">
+<img src="../_images/detailkonzept-anwendungskern/IFBestAWK.png" alt="IFBestAWK" width="90%">
+</div>
+<div class="title">Abbildung 1. Bestandteile des Anwendungskerns</div>
+</div>
+<div class="sect2">
+<h3 id="fachkomponenten"><a class="anchor" href="#fachkomponenten"></a>1.1. Fachkomponenten</h3>
+<div class="paragraph">
+<p><strong>Fachkomponenten</strong> setzen die Anwendungskomponenten aus der fachlichen Architektur um.
+Sie bilden damit den Schnitt der Anwendungskomponenten in die technische Architektur ab.
+Fachkomponenten beinhalten möglichst wenig Technik und trennen so Anwendungslogik von Technologie.</p>
+</div>
+<div class="paragraph">
+<p>Die Vorlageanwendung enthält die Fachkomponenten <em>Erstellung</em>, <em>Teilnahme</em> und <em>Verwaltung</em>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Fachkomponenten sind der Schlüssel für gute Wartbarkeit und einfache Weiterentwickelbarkeit des Anwendungskerns.
+Die Trennung von Anwendungslogik und Technik ist deshalb auch in anderen Schichten der technischen Architektur vorgesehen, z. B. in der Persistenz.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Von außen betrachtet besteht jede Fachkomponente aus einer Schnittstelle (Interface) und den von ihr verwendeten Geschäftsobjekten (Model) sowie Ausnahmen (Exceptions).
+Alle Zugriffe auf die Fachkomponente von außen, auch von anderen Fachkomponenten aus, geschehen über die Schnittstelle.</p>
+</div>
+<div class="paragraph">
+<p>Die <strong>Schnittstelle</strong> stellt eine Fassade (Facade) für mindestens eine Anwendungsfallklasse dar.
+Die Aufgaben der Schnittstelle sind:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Aufrufe von außen entgegenzunehmen,</p>
+</li>
+<li>
+<p>Aufrufe an die entsprechenden Anwendungsfallklassen weiterzuleiten,</p>
+</li>
+<li>
+<p>Antworten der Anwendungsfallklassen an den Aufrufer zurück zu übermitteln,</p>
+</li>
+<li>
+<p>Ausnahmen der Anwendungsfallklassen in Ausnahmen der Schnittstelle zu übersetzen.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Geschäftsobjekte</strong> dienen zur Kommunikation der Fachkomponente nach außen sowie zur Umsetzung der Fachlichkeit (z.B. für interne Berechnungen).
+Sie werden im Anwendungskern definiert, sind nicht persistent und können in der Nutzungsschicht wiederverwendet werden, sofern hierfür keine Anpassungen durch Mappings o.ä. nötig sind.
+Ein Geschäftsobjekt ist genau einer Fachkomponente zugeordnet, welche die Hoheit über es besitzt und seinen Lebenszyklus verwaltet.
+Sie werden primär nach ihrer Funktion benannt.</p>
+</div>
+<table id="namenskonvention-geschaeftsobjekt" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Namenskonvention Geschäftsobjekt</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Geschäftsobjekt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;Entitaetsname&gt;Bo</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AkteBo</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>In der Vorlageanwendung gibt es z.B. die Geschäftsobjekte <code>Terminfindung</code>, <code>Tag</code> und <code>Teilnehmer</code>.</p>
+</div>
+<div class="paragraph">
+<p>In Ausnahmefällen können Geschäftsobjekte fachlich nicht genau einer Komponente zugeordnet werden.
+Hierfür wird die Komponente <em>Basisdaten</em> definiert, die nur die eine Aufgabe hat, solche Geschäftsobjekte an zentraler Stelle zu verwalten.</p>
+</div>
+<div class="paragraph">
+<p>Eine <strong>Anwendungsfallklasse</strong> setzt genau einen Anwendungsfall um.
+Ihr Schnitt ergibt sich aus der fachlichen Architektur.
+Anwendungsfallklassen werden anhand des Namens des Anwendungsfalls aus der Spezifikation benannt und mit dem Präfix <code>Awf</code> gekennzeichnet.</p>
+</div>
+<table id="namenskonvention-anwendungsfallklassen" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 2. Namenskonvention Anwendungsfallklassen</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Anwendungsfallklassen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Awf&lt;Anwendungsfall&gt;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiele</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AwfAntragVerarbeiten<br>
+AwfEntscheidungDurchfuehren</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Eine <strong>Anwendungsfunktion</strong> setzt Teil-Abläufe um, die in mehreren Anwendungsfällen verwendet werden.
+Anwendungsfunktionen werden somit von Anwendungsfallklassen aufgerufen.
+Anwendungsfunktionen werden anhand des Namen der Anwendungsfunktion aus der Spezifikation benannt und mit dem Präfix <code>Afu</code> gekennzeichnet.</p>
+</div>
+<table id="namenskonvention-anwendungsfunktion" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 3. Namenskonvention Anwendungsfunktion</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Anwendungsfunktion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Afu&lt;Anwendungsfunktion&gt;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiele</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AfuBerechnungFristdatum<br>
+AfuErmittlungEntscheidungsrelevanz</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Die <a href="#aufbau-fachkomponente">folgende Abbildung</a> fasst den Aufbau einer Fachkomponente noch einmal grafisch zusammen.</p>
+</div>
+<div id="aufbau-fachkomponente" class="imageblock">
+<div class="content">
+<img src="../_images/detailkonzept-anwendungskern/aufbau_fachkomponente_awk.dn.svg" alt="aufbau fachkomponente awk.dn">
+</div>
+<div class="title">Abbildung 2. Aufbau einer Fachkomponente</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="das-anwendungskern-framework"><a class="anchor" href="#das-anwendungskern-framework"></a>1.2. Anwendungskern-Framework</h3>
+<div class="paragraph">
+<p>Für querschnittliche Funktionalität innerhalb des Anwendungskerns wird das Spring-Framework genutzt.
+Hauptaufgabe des Frameworks ist es, die Komponenten zu konfigurieren und miteinander bekanntzumachen.
+Dadurch wird die Trennung zwischen Fachlichkeit und Technik verbessert.
+Beispiel für querschnittliche Funktionalität ist die deklarative Steuerung von Transaktionen.</p>
+</div>
+<div class="paragraph">
+<p>Die Vorgaben zur Nutzung und Konfiguration des Spring-Frameworks werden in Kapitel <a href="#verwendung-des-spring-frameworks">Verwendung des Spring-Frameworks</a> beschrieben.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="externe-services"><a class="anchor" href="#externe-services"></a>1.3. Externe Services</h3>
+<div class="paragraph">
+<p>Wenn der Anwendungskern fachliche Services benötigt, die von anderen IT-Systemen innerhalb der Plattform angeboten werden, so werden diese Services als Komponente im Anwendungskern abgebildet.
+Dadurch ist die Funktionalität sauber gekapselt, was die Wartbarkeit erhöht: Wenn der externe Service ausgetauscht werden soll, ist keine Änderung der gesamten Anwendung notwendig – es ist lediglich eine interne Änderung der externen Service-Komponente notwendig.
+Für andere fachliche Komponenten des Anwendungskerns ist nicht zu unterscheiden, ob es sich beim Aufruf einer Komponentenschnittstelle um eine in dieser Komponente implementierte Funktion oder um einen Serviceaufruf handelt.
+Komponenten, die externe Services kapseln, sind im Idealfall von außen nicht von fachlichen Komponenten des Anwendungskerns unterscheidbar.
+Neben der technischen Kommunikation erfolgt durch diese Komponenten auch die Abbildung von Schnittstellendaten und Exceptions auf die Daten der Anwendung.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="austausch-von-geschaeftsobjekten"><a class="anchor" href="#austausch-von-geschaeftsobjekten"></a>1.4. Austausch von Geschäftsobjekten</h3>
+<div class="paragraph">
+<p>Der Anwendungskern hat die Hoheit über die Geschäftsobjekte des IT-Systems.
+In <a href="../referenzarchitektur/master.html" class="xref page">Referenzarchitektur</a> wurde bereits beschrieben, dass zur Strukturierung eines IT-Systems zwei Sichten verwendet werden können:</p>
+</div>
+<div class="paragraph">
+<p><strong>Technische Sicht:</strong> Die technische Sicht unterteilt die IT-Anwendung in Schichten für die jeweils eigene Technologien verwendet werden: Nutzung (GUI, Batch und Service), Anwendungskern und Datenzugriff.
+Das Ziel ist es, eine Durchmischung von Technologien zu verhindern, so darf z. B. in der GUI kein SQL formuliert werden.</p>
+</div>
+<div class="paragraph">
+<p><strong>Fachliche Sicht:</strong> Die fachliche Sicht beschreibt eine Teilaufgabe, z. B. Meldung, Auskunft oder Fristenkontrolle.
+Innerhalb dieser Teilaufgabe wird der Anwendungskern über eine GUI, Services oder Batches angesprochen, der wiederum über die Datenzugriffsschicht mit der Datenbank kommunizieren muss.
+Daher zerlegt die fachliche Sicht das IT-System in fachliche Säulen.
+Diese fachlichen Säulen werden im folgenden Teilanwendungen genannt.
+Das Ziel ist die fachliche Trennung und Minimierung inhaltlicher Abhängigkeiten.
+Die Teilanwendungen sollen Fachlichkeit kapseln.</p>
+</div>
+<div class="paragraph">
+<p>Damit kann eine IT-Anwendung sowohl vertikal in Teilanwendungen (fachliche Sicht) und horizontal in Schichten (technische Sicht) strukturiert werden, wie in <a href="#image-SchichtTAnw">Abbildung 2</a> dargestellt.</p>
+</div>
+<div id="image-SchichtTAnw" class="imageblock text-center">
+<div class="content">
+<img src="../_images/detailkonzept-anwendungskern/SchichtTAnw.png" alt="SchichtTAnw">
+</div>
+<div class="title">Abbildung 3. Schichten und Teilanwendungen</div>
+</div>
+<div class="paragraph">
+<p>Eine Teilanwendung erstreckt sich über alle technischen Schichten, kapselt aber die Fachlichkeit, zu der gewisse Geschäftsobjekte gehören.
+Um den Austausch von Objekten innerhalb einer Teilanwendung zwischen den Schichten zu vereinfachen, gleichzeitig aber unterschiedliche Teilanwendungen gegeneinander abzugrenzen, wird für die Verwendung von Objekten in Schnittstellen folgende Regel aufgestellt:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Zwischen zwei Teilanwendungen dürfen nur Objekte ausgetauscht werden, deren Modifikation keine Auswirkungen auf die liefernde Teilanwendung hat.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Das kann erreicht werden, indem nur Deep-Copies von Objekten an andere Teilanwendungen herausgegeben werden.</p>
+</div>
+<div class="paragraph">
+<p>Innerhalb einer Teilanwendung dürfen über die Schichten hinweg durchaus änderbare Objekte ausgetauscht werden.
+Die hierfür bereitgestellte Schnittstelle der Schicht gehört damit aber zur Teilanwendung darf von einer anderen Teilanwendung nicht genutzt werden.</p>
+</div>
+<div class="paragraph">
+<p>In der Vorlageanwendung ist z.B. „Terminfindung“ eine Teilanwendung.
+Zu dieser Teilanwendung gehören in der Schicht Nutzung die Oberfläche <em>Terminfindung</em> und der Batch <code>TerminfindungLoeschBatch</code>, in der Schicht Anwendungslogik die Fachkomponenten <em>Erstellen</em>, <em>Teilnehmen</em>, <em>Verwalten</em> und <em>Datenpflege</em> und der Schicht Datenhaltung die Entitäten <code>Terminfindung</code>, <code>Tag</code>, <code>Teilnehmer</code>, <code>Zeitraum</code> und <code>Teilnehmerzeitraum</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="verwendung-des-spring-frameworks"><a class="anchor" href="#verwendung-des-spring-frameworks"></a>2. Verwendung des Spring-Frameworks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Das Spring-Framework ist ein Java EE Framework, welches im Kern sehr verständlich und leicht zu verwenden ist.
+In ihm werden die Bestandteile eines Systems als „Beans“ definiert.
+Neben seiner Kern-Funktionalität der Verwaltung, Konfiguration und aspektorientierten Erweiterung von Beans bietet Spring viele Funktionalitäten, welche die Entwicklung einer Anwendung erleichtern sollen.</p>
+</div>
+<div class="paragraph">
+<p>Die IsyFact verwendet ausgewählte Funktionalitäten des Spring-Frameworks in der Anwendungsentwicklung.
+Die Verwendung dieser Funktionalitäten ist in den Blaupausen und Bausteinen wie folgt beschrieben:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Konfiguration der Datenzugriffsschicht, beschrieben im <a href="../detailkonzept-komponente-datenzugriff/master.html" class="xref page">Detailkonzept Komponente Datenzugriff</a>.</p>
+</li>
+<li>
+<p>Die Konfiguration des Loggings über Spring, beschrieben in den <a href="../../isy-logging/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben Logging</a>.</p>
+</li>
+<li>
+<p>Die Bereitstellung von Metriken zur Überwachung, beschrieben im <a href="../../isy-ueberwachung/konzept/master.html#einleitung" class="xref page">Konzept Überwachung</a>.</p>
+</li>
+<li>
+<p>Die Verwendung der Schnittstellentechnologie HTTP Invoker, beschrieben im <a href="../../isy-serviceapi-core/konzept/master.html#einleitung" class="xref page">Konzept HTTP-Invoker</a>.</p>
+</li>
+<li>
+<p>Die Implementierung von Dialogen und Masken erfolgt mit JSF und Spring-Webflow, beschrieben im Dokument <a href="../detailkonzept-komponente-web-gui/master.html" class="xref page">Detailkonzept Komponente Web-GUI</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Alle anderen Spring-Funktionalitäten (Validierung über Spring, Emailing, Thread Pooling, Scripting) werden nicht verwendet.</p>
+</div>
+<div class="paragraph">
+<p>Dieses Kapitel teilt sich in vier Teile:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Auflistung der Anforderungen an die Verwendung des Spring-Frameworks.</p>
+</li>
+<li>
+<p>Die Vorgaben für die Konfiguration der Spring-Beans sowie von Spring selbst.</p>
+</li>
+<li>
+<p>Die Vorgaben für den direkten Zugriff auf das Spring-Framework in der Anwendung.</p>
+</li>
+<li>
+<p>Die Vorgaben für aspektorientierte Programmierung mit Spring.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="anforderungen"><a class="anchor" href="#anforderungen"></a>2.1. Anforderungen</h3>
+<div class="paragraph">
+<p>Dies bezieht sich unter anderem auf die Bestandteile von Spring: Spring bietet verschiedene Komponenten, welche getrennt voneinander eingesetzt werden können.
+Es sollen nur die Komponenten eingesetzt werden, welche zu geringerer Komplexität und geringerem Entwicklungsaufwand führen.</p>
+</div>
+<div class="paragraph">
+<p><strong>Einheitlichkeit der Nutzung:</strong> Spring soll in den verschiedenen Anwendungen einheitlich eingesetzt werden.
+Hierfür sind geeignete Vorgaben für die Nutzung zu verwenden.</p>
+</div>
+<div class="paragraph">
+<p><strong>Verständlichkeit der Konfiguration:</strong> Die Konfiguration der Spring-Komponenten erfolgt über Annotationen an den Komponenten.
+Wenn erforderlich, werden Komponenten außerhalb der Anwendung über Java-Konfigurationsklassen konfiguriert.</p>
+</div>
+<div class="paragraph">
+<p><strong>Komponentenorientierung wahren:</strong> Über Spring sollen Komponenten konfiguriert werden: Es soll nicht möglich sein, direkt auf Implementierungsklassen einer Komponente zuzugreifen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="konfiguration-von-spring"><a class="anchor" href="#konfiguration-von-spring"></a>2.2. Konfiguration von Spring</h3>
+<div class="paragraph">
+<p>Das grundlegende Konzept von Spring ist das der Spring-Bean.
+Die Konfiguration von Spring teilt sich deshalb in zwei Teile: in die Konfiguration der Spring-Beans sowie in die Konfiguration von Spring selbst (innerhalb eines Tomcat Servers).
+Um die Konfiguration von Spring und der eingesetzten Bausteine einfach zu halten, werden die Autokonfigurationsmechanismen von Spring Boot eingesetzt.
+Diese Konfigurationsarten werden in den folgenden Kapiteln beschrieben.</p>
+</div>
+<div class="sect3">
+<h4 id="die-konfiguration-von-spring-beans"><a class="anchor" href="#die-konfiguration-von-spring-beans"></a>2.2.1. Die Konfiguration von Spring-Beans</h4>
+<div class="paragraph">
+<p>Spring ist ein Applikations-Container, welcher sogenannte Spring-Beans instanziiert, per <em>Dependency Injection</em> konfiguriert und bereitstellt.
+Spring-Beans sind beliebige Java-Klassen.
+Für diese Klassen kann man benötigte andere Beans oder Konfigurationsparameter konfigurieren, welche der Klasse daraufhin im Konstruktor oder per <code>set</code>-Methode übergeben werden.</p>
+</div>
+<div class="paragraph">
+<p>Konfiguriert werden Beans und ihre Abhängigkeiten durch von Spring bereitgestellte Annotationen.
+Diese werden beim Start des Applikations-Containers gescannt und ausgewertet (<em>Component Scan</em>).</p>
+</div>
+<div class="paragraph">
+<p>Die folgende Abbildung zeigt einen Ausschnitt der für die Vorlageanwendung erstellten Beans.
+Diese werden grün dargestellt und besitzen „referenzierte“ Abhängigkeiten zu benötigten anderen Beans.</p>
+</div>
+<div id="image-SpringBeansVorlag" class="imageblock text-center">
+<div class="content">
+<img src="../_images/detailkonzept-anwendungskern/SpringBeansVorlag.png" alt="SpringBeansVorlag" width="80%">
+</div>
+<div class="title">Abbildung 4. Spring-Beans der Vorlageanwendung</div>
+</div>
+<div class="paragraph">
+<p><a href="#image-SpringBeansVorlag">Abbildung 3</a> zeigt bereits, dass nicht alle Klassen der Anwendung als Beans konfiguriert werden: Für die Komponente
+<code>Verwaltung</code> wird eine Klasse als Bean konfiguriert, welche die Funktionalität der Komponente bereitstellt.
+Generell gilt, dass jede zentrale und wichtige Klasse aber als Spring Bean konfiguriert werden sollte.</p>
+</div>
+<div class="paragraph">
+<p>Für die Modellierung und Konfiguration der Spring-Beans werden im folgenden Vorgaben aufgestellt.</p>
+</div>
+<div class="sect4">
+<h5 id="konfiguration-einer-komponente"><a class="anchor" href="#konfiguration-einer-komponente"></a>2.2.1.1. Konfiguration einer Fachkomponente</h5>
+<div class="paragraph">
+<p>Eine Komponente sollte durchgängig über Spring konfiguriert werden.
+Alle relevanten und zentralen Klassen werden daher als Spring Beans konfiguriert.
+Das umfasst vor allem, aber nicht ausschließlich, die Fassade und zugehörige Anwendungsfallklassen.</p>
+</div>
+<div class="paragraph">
+<p>Ein Beispiel dafür ist die Klasse <code>VerwaltungImpl</code> der Vorlageanwendung.</p>
+</div>
+<div class="paragraph">
+<p>Bei Anwendungsfunktionsklassen oder Hilfsklassen ist je nach Relevanz zu entscheiden, ob diese als eigene Spring Beans definiert werden.
+Im Zweifel sollte die Konfiguration über Spring bevorzugt werden.
+Wenn eine Klasse nur an einer Stelle genutzt wird, kann sie als Kompromiss auch als anonyme Spring Bean definiert werden.
+Sind Klassen nicht von relevanter Bedeutung, so können sie beim Erzeugen der Spring Bean programmatisch erzeugt werden.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="querschnitt-als-beans-konfigurieren"><a class="anchor" href="#querschnitt-als-beans-konfigurieren"></a>2.2.1.2. Querschnittliche Funktionalität als Beans konfigurieren</h5>
+<div class="paragraph">
+<p>Querschnittliche Funktionalität (etwa für JMX, für Nachrichten, für die Versendung von Mails) sind als Beans zu konfigurieren.
+Ebenfalls über Beans durchzuführen ist die Konfiguration diverser Frameworks, z.B. Hibernate.
+Die Konfiguration dieser Frameworks wird in ihren Nutzungsvorgaben beschrieben.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="beans-standardmaessig-als-singletons-definieren"><a class="anchor" href="#beans-standardmaessig-als-singletons-definieren"></a>2.2.1.3. Beans standardmäßig als Singletons definieren</h5>
+<div class="paragraph">
+<p>Beans können entweder als Singletons mit nur einer Instanz, mit einer Instanz pro Aufruf oder mit einer Instanz pro Abhängigkeit (Prototype) erzeugt werden.
+Die Komponenten-Beans einer Anwendung sollen zustandslos sein und werden als Singleton-Beans erzeugt.
+Wo technisch erforderlich können auch andere Scopes verwendet werden.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="vorgaben-zur-spring-konfiguration"><a class="anchor" href="#vorgaben-zur-spring-konfiguration"></a>2.2.1.4. Vorgaben zur Spring-Konfiguration</h5>
+<div class="paragraph">
+<p>Die Spring-Konfiguration der Anwendung ist nach folgenden Vorgaben zu erstellen.</p>
+</div>
+<div class="paragraph">
+<p>Der zentrale Ausgangspunkt für die Spring-Konfiguration ist die Applikationsklasse der Anwendung (<a href="#listing-applikationsklasse">Listing 1</a>).
+Diese wird im Wurzelpackage der Anwendung (<code>&lt;org&gt;.&lt;domäne&gt;.&lt;anwendung&gt;.&lt;anwendung&gt;Application</code>) erstellt.
+Sie ist mit <code>@Configuration</code> und <code>@EnableAutoConfiguration</code> annotiert.
+Damit wird die Autokonfiguration von Spring Boot eingeschaltet.
+Zusätzlich erbt die Klasse von <code>SpringBootServletInitializer</code>, damit die Anwendung im Tomcat deployt werden kann.
+Die Konfigurationsklassen der Schichten werden per <code>@Import</code>-Annotation eingebunden.</p>
+</div>
+<div id="listing-applikationsklasse" class="listingblock">
+<div class="title">Listing 1. Applikationsklasse der Anwendung</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package de.beispiel.if2anwendung;
+
+...
+
+@Configuration
+@EnableAutoConfiguration
+@Import({ CoreConfig.class, PersistenceConfig.class, ServiceConfig.class })
+public class IsyFactApplication extends SpringBootServletInitializer {
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(IsyFactApplication.class);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Für jede Schicht wird im Stammpackage <code>&lt;org&gt;.&lt;domäne&gt;.&lt;anwendung&gt;.&lt;schicht&gt;</code> parallel zu den Interfaces der Komponentenschnittstellen eine mit <code>@Configuration</code> annotierte Konfigurationsklasse erstellt (<a href="#listing-konfigurationsklasse">Listing 2</a>).
+Diese wird zusätzlich mit <code>@ComponentScan</code> annotiert;
+durch die Positionierung im Stammpackage entfällt der Bedarf, ein Attribut zu übergeben.
+Annotationen, die querschnittliche Aspekte konfigurieren (z.B. <code>@EnableTransactionManagement</code>), werden an die Konfigurationsklasse der inhaltlich passenden Schicht geschrieben.</p>
+</div>
+<div id="listing-konfigurationsklasse" class="listingblock">
+<div class="title">Listing 2. Konfigurationsklasse innerhalb einer Schicht</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package de.beispiel.if2anwendung.core;
+
+...
+
+@Configuration
+@EnableTransactionManagement
+@ComponentScan
+public class CoreConfig {
+
+    @Bean
+    public ...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Die Beans der Komponenten werden mit der Annotation <code>@Component</code> bzw. deren Spezialisierungen (<code>@Repository</code>, <code>@Service</code>, <code>@Controller</code> etc.) versehen.
+   Externe Beans, die nicht annotiert werden können, werden in der Konfigurationsklasse der Schicht per <code>@Bean-Methoden</code> konfiguriert.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="konfigurationsparameter-ueber-property-objekte-konfigurieren"><a class="anchor" href="#konfigurationsparameter-ueber-property-objekte-konfigurieren"></a>2.2.2. Konfigurationsparameter über Property-Objekte konfigurieren</h4>
+<div class="paragraph">
+<p>Die Konfiguration der Anwendung wird (wie im <a href="../../isy-konfiguration/konzept/master.html#einleitung" class="xref page">Konzept Konfiguration</a>  beschrieben) über die Datei <code>application.properties</code> durchgeführt.
+Diese Datei enthält sämtliche Konfigurationsparameter der Anwendung.
+Das Setzen einzelner Konfigurationsparameter über <code>set</code>-Methoden ist nur in Ausnahmefällen erlaubt.</p>
+</div>
+<div id="listing-konfigurationsbean" class="listingblock">
+<div class="title">Listing 3. Beispiel für Konfiguration des Anwendungskerns mittels Konfigurations-Bean</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package de.beispiel.if2anwendung.core.config;
+
+...
+
+@Configuration
+@ComponentScan("de.bund.bva.pliscommon.konfiguration.common.impl")
+public class ReloadablePropertyKonfiguration {
+
+    @Bean
+    public ReloadablePropertyKonfiguration config() {
+         return new ReloadablePropertyKonfiguration(String[]{
+            "/resources/nachrichten/gui-linksnavigation.properties",
+            "/config/isy-webgui.properties",
+            "/config/terminfindung.properties",
+            "/config/jpa.properties",
+            "/config/tasks.properties"
+         });
+   }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Abweichungen für technische Beans sind erlaubt.</p>
+</div>
+<div class="sect4">
+<h5 id="abhaengigkeiten-von-komponenten-konfigurieren"><a class="anchor" href="#abhaengigkeiten-von-komponenten-konfigurieren"></a>2.2.2.1. Abhängigkeiten von Komponenten konfigurieren</h5>
+<div class="paragraph">
+<p>Benötigte Beans müssen über Konstruktor-Parameter injiziert werden.
+Falls eine benötigte Bean nicht zum Zeitpunkt der Objekterzeugung vorhanden sein muss, sollte sie über eine <code>set</code>-Methode und nicht über einen Konstruktor-Parameter konfiguriert werden.
+Grund dafür ist, dass bei Konstruktor-Parametern eine zusätzliche Reihenfolge-Abhängigkeit erzeugt wird.</p>
+</div>
+<div class="paragraph">
+<p>Für den Fall, dass eine Bean Code zur Initialisierung ausführen soll, nachdem ihre Abhängigkeiten gesetzt sind, ist eine mit <code>@PostConstruct</code> annotierte Methode zu implementieren.
+Generell sind die standardisierten Lifecycle-Annotationen <code>@PostConstruct</code> und <code>@PreDestroy</code> den spring-spezifischen Interfaces <code>InitializingBean</code> und <code>DisposableBean</code> vorzuziehen.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="webapprootkey-konfigurieren"><a class="anchor" href="#webapprootkey-konfigurieren"></a>2.2.3. webAppRootKey konfigurieren</h4>
+<div class="paragraph">
+<p>Der Kontextparameter <code>webAppRootKey</code> muss in der <code>web.xml</code> auf den eindeutigen Namen der Webanwendung gesetzt werden, wie in <a href="#listing-webAppRootKey">Listing 4</a> gezeigt.</p>
+</div>
+<div id="listing-webAppRootKey" class="listingblock">
+<div class="title">Listing 4. Konfiguration des webAppRootKey</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;context-param&gt;
+  &lt;param-name&gt;webAppRootKey&lt;/param-name&gt;
+  &lt;param-value&gt;terminfindung&lt;/param-value&gt;
+&lt;/context-param&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Hintergrund</strong>: Spring speichert standardmäßig den Pfad zum Wurzelverzeichnis der Webanwendung im Webserver in der Kontextvariable <code>webapp.root</code>.
+Wenn mehrere Anwendungen gleichzeitig in einem Tomcat betrieben werden (bspw.
+in einer Entwicklungsumgebung), wird dieser Parameter durch die verschiedenen Anwendungen überschrieben.
+Dies kann zu ungewünschten Seiteneffekten führen.
+Ist der Kontextparameter <code>webAppRootKey</code> wie im obigen Beispiel gesetzt, wird der Pfad statt im Parameter <code>webapp.root</code>
+im Parameter <code>terminfindung</code> abgelegt.
+Da jede Webanwendung einen eindeutigen Namen besitzt, und damit einen eigenen Kontextparameter verwendet, wird das Überschreiben vermieden.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="die-direkte-verwendung-des-spring-frameworks"><a class="anchor" href="#die-direkte-verwendung-des-spring-frameworks"></a>2.3. Die direkte Verwendung des Spring-Frameworks</h3>
+<div class="paragraph">
+<p>Neben der Konfiguration der Beans enthält eine Anwendung kaum Abhängigkeiten von Spring: Da die benötigten Objekte per Dependency Injection konfiguriert werden, müssen diese nach ihrer Konfiguration lediglich verwendet werden.</p>
+</div>
+<div class="paragraph">
+<p>In einigen Fällen existieren jedoch weitere Abhängigkeiten von Spring:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Für die Bereitstellung von JMX-Beans wird der Spring-MbeanExporter Mechanismus verwendet (siehe <a href="../../isy-konfiguration/konzept/master.html#einleitung" class="xref page">Konzept Konfiguration</a>).</p>
+</li>
+<li>
+<p>Bei HTTP Invoker Schnittstellen-Beans muss explizit eine Bean des eigentlichen Anwendungskontextes aufgerufen werden (siehe <a href="../../isy-serviceapi-core/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben HTTP-Invoker</a>).</p>
+</li>
+<li>
+<p>Beans werden per Namen aus dem Anwendungskontext ausgelesen.</p>
+</li>
+<li>
+<p>Beans werden nicht per Dependency Injection, sondern über statische Methoden bereitgestellt.
+Hierüber entstehen Abhängigkeiten zur Instanziierungsreihenfolge der Beans durch Spring.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Für die noch nicht in anderen Konzepten besprochenen (letzten beiden) Themen werden im folgenden Vorgaben aufgestellt.</p>
+</div>
+<div class="sect3">
+<h4 id="keine-beans-per-namen-auslesen"><a class="anchor" href="#keine-beans-per-namen-auslesen"></a>2.3.1. Keine Beans per Namen auslesen</h4>
+<div class="paragraph">
+<p>Über den Anwendungskontext könnten Beans explizit per Namen ausgelesen werden.
+Dies ist mit einer Ausnahme verboten: Die Namen von Beans sollen nicht im Anwendungscode verwendet werden.
+Die Ausnahme gilt für den Zugriff von einem Anwendungskontext auf einen anderen (in Zusammenhang mit dem DispatcherServlet).
+In diesem Fall ist ein explizites Auslesen nicht zu vermeiden.
+Auszulesen ist in diesem Fall keine AWK-Komponente, sondern eine weitere Schnittstellen-Bean, welche nur für diesen Zweck verwendet wird.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="transaktionssteuerung"><a class="anchor" href="#transaktionssteuerung"></a>2.4. Transaktionssteuerung</h3>
+<div class="paragraph">
+<p>An der Schnittstelle des Anwendungskerns findet die Transaktionssteuerung statt.
+Jeder Aufruf wird in einer eigenen Transaktion abgearbeitet.
+Die Transaktion wird beim Aufruf des Anwendungskerns gestartet und mit der Rückgabe des Ergebnisses abgeschlossen (Commit) und somit beendet.
+Falls bei der Verarbeitung einer Anfrage ein nicht behebbarer Fehler auftritt, wird dieser an den Aufrufer zurück übermittelt.
+In diesem Fall wird die Transaktion nicht fortgeschrieben, sondern zurückgerollt (Rollback).</p>
+</div>
+<div class="paragraph">
+<p>Der Anwendungskern bietet an seiner Schnittstelle fachliche Operationen, in fachliche Komponenten gruppiert, an.
+Die fachlichen Operationen sind in der Regel zustandslos.
+Daher ist eine Transaktion über mehrere Aufrufe des Anwendungskerns oder ein Caching über Transaktionsgrenzen hinaus nicht notwendig und nach Möglichkeit zu vermeiden.
+Ist eine solche Steuerung trotzdem unumgänglich, muss sie über die jeweils zuständige Nutzungsschicht (GUI, Batch oder Service) erfolgen.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Details zur Umsetzung von Transaktionen in der Nutzungsschicht finden sich in den jeweiligen Detailkonzepten:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../detailkonzept-komponente-batch/master.html" class="xref page">Detailkonzept Komponente Batch</a></p>
+</li>
+<li>
+<p><a href="../detailkonzept-komponente-service/master.html" class="xref page">Detailkonzept Komponente Service</a></p>
+</li>
+<li>
+<p><a href="../detailkonzept-komponente-web-gui/master.html" class="xref page">Detailkonzept Komponente Web-GUI</a></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="transaktionssteuerung-mit-jpa"><a class="anchor" href="#transaktionssteuerung-mit-jpa"></a>2.4.1. Transaktionssteuerung mit JPA</h4>
+<div class="paragraph">
+<p>Spring ermöglicht es, die Transaktionssteuerung mit Annotationen zu definieren.
+Hierbei kann auf Ebene einzelner Methoden oder der gesamten Klasse das Verhalten von Transaktionen vorgegeben werden.</p>
+</div>
+<div class="paragraph">
+<p>Im Anwendungskern bieten sich dazu sich die Klassen der Implementierung der Schnittstelle an, die Aufrufer weiter an die Anwendungsfall-Klassen verweisen.
+Üblicherweise werden für eine feingranulare Steuerung die Methoden mit Annotationen versehen.
+Gibt es ein für die Klasse gemeinsames Verhalten, kann stattdessen auch die Klasse mit der Annotation versehen werden.</p>
+</div>
+<div id="listing-transactional" class="listingblock">
+<div class="title">Listing 5. Verwendung der Annotation @Transactional an Klassen und Methoden</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Transactional(rollbackFor = Throwable.class, propagation = Propagation.REQUIRED)
+public class FachkomponenteAImpl implements FachkomponenteA {
+    ...
+    @Transactional(rollbackFor = Throwable.class, propagation = Propagation.REQUIRED)
+    public Ergebnis fachlicheOperation(Aufrufparameter parameter) {
+        ...
+    }
+    ...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Standardmäßig sollte der Propagation-Level auf <code>Propagation.REQUIRED</code> gesetzt sein.
+Damit wird eine neue Transaktion gestartet, falls noch keine Transaktion vorliegt.
+Hat aber die Nutzungsschicht bereits eine Transaktion gestartet, wird diese verwendet.
+Des Weiteren wird festgelegt, dass bei jedem Fehler ein Rollback durchgeführt wird.</p>
+</div>
+<div class="paragraph">
+<p>Damit Spring die Annotation <code>@Transactional</code> auswertet, muss folgende Spring-Konfiguration aktiv sein:</p>
+</div>
+<div id="listing-transaction-spring-config" class="listingblock">
+<div class="title">Listing 6. Spring-Konfiguration zur Verwendung von @Transactional</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@EnableTransactionManagement
+[...]
+public class CoreConfig
+{
+    ...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Durch diese Konfiguration erzeugt Spring passende AOP-Proxies, welche die Transaktionssteuerung übernehmen.
+Außerdem wird standardmäßig der <code>JpaTransactionManager</code> verwendet, passend zur Implementierung des Datenzugriffs.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Die Abhängigkeiten des <code>JpaTransactionManager</code> kommen aus der Datenzugriffsschicht.
+Weitere Details sind im <a href="../detailkonzept-komponente-datenzugriff/master.html" class="xref page">Detailkonzept Komponente Datenzugriff</a> beschrieben.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="aspektorientierte-programmierung-in-spring"><a class="anchor" href="#aspektorientierte-programmierung-in-spring"></a>2.5. Aspektorientierte Programmierung in Spring</h3>
+<div class="paragraph">
+<p>Es ist möglich, für Spring-Beans Funktionalität in Form von Aspekten zu definieren.
+Ihr Einsatz kann über „PointCuts“ konfiguriert werden.
+Pointcuts definieren (etwa über reguläre Ausdrücke) Klassen und Methoden, welche um den Aspekt erweitert werden.</p>
+</div>
+<div class="paragraph">
+<p>Zu intensive Nutzung kann leicht zu einem schwer durchschaubaren Programmfluss führen.
+Deshalb soll AOP nur für folgende Bereichen genutzt werden: die Steuerung von Transaktionen, die Überwachung und die Berechtigungsprüfung.</p>
+</div>
+<div class="paragraph">
+<p>Explizit nicht benutzt werden soll AOP für die Fehlerbehandlung.</p>
+</div>
+<div class="paragraph">
+<p>Die Verwendung von AOP für andere Bereiche ist nur in begründeten Ausnahmefällen erlaubt.</p>
+</div>
+<div class="sect3">
+<h4 id="aop-fuer-transaktionssteuerung-verwenden"><a class="anchor" href="#aop-fuer-transaktionssteuerung-verwenden"></a>2.5.1. AOP für Transaktionssteuerung verwenden</h4>
+<div class="paragraph">
+<p>Für die Transaktionssteuerung ist Spring-AOP mit den dafür vorgesehenen Klassen von Spring einzusetzen.
+Die Verwendung wird im Kapitel <a href="#transaktionssteuerung-mit-jpa">Transaktionssteuerung mit JPA</a> beschrieben.
+Zusammengefasst gilt:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Instrumentiert werden alle Schnittstellenmethoden des Anwendungskerns.</p>
+</li>
+<li>
+<p>Für jeden Aufruf des Anwendungskerns wird eine Transaktion gestartet.</p>
+</li>
+<li>
+<p>Falls kein Fehler auftritt, wird die Transaktion abgeschlossen (Commit), sonst zurückgerollt (Rollback).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="aop-fuer-berechtigungspruefungen-verwenden"><a class="anchor" href="#aop-fuer-berechtigungspruefungen-verwenden"></a>2.5.2. AOP für Berechtigungsprüfungen verwenden</h4>
+<div class="paragraph">
+<p>Die Berechtigungsprüfung wird über Spring AOP mit den vom Baustein „Sicherheit“ angebotenen Annotationen umgesetzt (siehe <a href="../../isy-sicherheit/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben Sicherheit</a>).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="aop-nicht-fuer-das-logging-von-exceptions-verwenden"><a class="anchor" href="#aop-nicht-fuer-das-logging-von-exceptions-verwenden"></a>2.5.3. AOP nicht für das Logging von Exceptions verwenden</h4>
+<div class="paragraph">
+<p>Sämtliche in einem IT-System geworfenen und nicht behandelten Ausnahmen müssen inklusive ihrer Stacktraces geloggt werden.
+Geloggt wird dies in den Methoden der Schnittstellen-Beans.
+Hierfür soll Spring-AOP nicht verwendet werden.</p>
+</div>
+<div class="paragraph">
+<p>Schnittstellen-Beans transformieren die Geschäftsobjekte des Anwendungskerns in Transportobjekte der Schnittstelle.
+Die Stack-Traces der Exceptions werden dabei nicht übertragen, da diese internen Informationen dem Aufrufer keinen Mehrwert bieten.
+Für das Logging des IT-Systems selbst sind sie jedoch wertvoll.
+Statt AOP ist das im <a href="../detailkonzept-komponente-service/master.html" class="xref page">Detailkonzept Komponente Service</a> beschriebene Konstrukt der Exception-Fassade zu verwenden.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="dependency-injection"><a class="anchor" href="#dependency-injection"></a>2.6. Dependency Injection</h3>
+<div class="paragraph">
+<p>Um im Anwendungskern das Single-Responsibility-Prinzip nicht zu verletzten, wird auf das Entwurfsmuster <em>Dependency Injection</em> zurückgegriffen.
+Dabei werden die Verantwortlichkeiten für den Aufbau des Abhängigkeitsnetzes zwischen den Objekten aus den einzelnen Klassen in eine zentrale Komponente überführt.
+Anders als bei der herkömmlichen Vorgehensweise in der objektorientierten Programmierung ist bei der <em>Dependency Injection</em> nicht jedes Objekt selbst dafür zuständig, seine Abhängigkeiten (benötigte Objekte und Ressourcen) zu verwalten.</p>
+</div>
+<div class="paragraph">
+<p>In der folgenden Grafik ist das Entwurfsmuster der <em>Dependency Injection</em> exemplarisch visualisiert.</p>
+</div>
+<div id="image-dependeny-injection" class="imageblock">
+<div class="content">
+<img src="../_images/detailkonzept-anwendungskern/DependencyInjection.svg" alt="DependencyInjection">
+</div>
+<div class="title">Abbildung 5. Dependency Injection</div>
+</div>
+<div class="paragraph">
+<p>Es existieren drei verschiedene Verfahren der <em>Dependency Injection</em>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Constructor Injection</p>
+</li>
+<li>
+<p>Field Injection</p>
+</li>
+<li>
+<p>Method Injection (Setter-Injection)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Da die <em>Constructor Injection</em> diverse Vorteile gegenüber den beiden anderen Techniken liefert, empfiehlt die IsyFact die Verwendung von  <em>Constructor Injection</em>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 4. Vergleich der Verfahren zur Dependency Injection</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">DI-Methode</th>
+<th class="tableblock halign-left valign-top">Einsatzszenario</th>
+<th class="tableblock halign-left valign-top">Bemerkung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Field-Injection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vermeidung von Boilerplate-Code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Darf nicht in Produktiv-Code verwendet werden.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Method-Injection (Setter-Injection)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flexibles Austauschen von Beans zur Laufzeit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nicht immutable. Sollte nur eingesetzt werden, wenn diese Eigenschaft benötigt wird.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Constructor-Injection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Für alle Beans, welche keine dynamische Anpassung zur Laufzeit benötigen.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kann in Produktiv-Code eingesetzt werden und ist der Standard von Spring.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="constructor-injection"><a class="anchor" href="#constructor-injection"></a>2.6.1. Constructor Injection</h4>
+<div class="paragraph">
+<p>Bei der <em>Constructor Injection</em> werden alle Abhängigkeiten einer Klasse über die Konstruktoren von außen injiziert.
+Dadurch werden automatisch auch die benötigten Abhängigkeiten definiert, welche der Erzeuger des Objektes zur Verfügung stellen muss.
+Dieses Vorgehen hat den Vorteil, dass alle benötigten Abhängigkeiten in der Initialisierungsphase des Objektes zur Verfügung stehen.
+Zusätzlich werden durch dieses Verfahren Überprüfungen auf <code>null</code> und die Behandlung von nicht aufgelösten Abhängigkeiten unnötig, da die Abhängigkeiten vorhanden sein müssen.</p>
+</div>
+<div class="paragraph">
+<p><em>Constructor Injector</em> hilft ebenfalls bei dem Identifizieren von zu vielen Abhängigkeiten zu einem Objekt.
+Wenn ein Konstruktor zu viele Argumente aufweist, kann dies ein Zeichen für eine zu große Verantwortlichkeit des Objektes sein.
+Ist dies der Fall, sollte an dieser Stelle über ein Refactoring nachgedacht werden.</p>
+</div>
+<div class="paragraph">
+<p>Ein weiterer Vorteil von <em>Constructor Injection</em> ist, dass die injizierten Abhängigkeiten während der Laufzeit nicht veränderbar sind und so Nebenläufigkeiten und Seiteneffekte vermieden werden (s. <a href="#listing-constructor-injection">Listing 7</a>).</p>
+</div>
+<div id="listing-constructor-injection" class="listingblock">
+<div class="title">Listing 7. Verwendung von Constructor Injection</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Component
+public class SomeBean {
+
+  private final AnotherBean anotherBean;
+
+  public SomeBean(AnotherBean anotherBean) {
+    this.anotherBean = anotherBean;
+  }
+
+  AnotherBean getAnotherBean() {
+    return anotherBean;
+  }
+
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<div class="divFooter"></div>
+
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+<script src="../../../../_/js/isyfact.js"></script>
+  </body>
+</html>

@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Baustein Task Scheduling :: IsyFact Dokumentation</title>
+    <link rel="canonical" href="https://github.com/isyfact/isyfact-standards-doku/latest/isy-task/konzept/master.html">
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../_/css/isyfact.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://github.com/isyfact">IsyFact Dokumentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5-SNAPSHOT">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../einstieg/vorstellung.html">IsyFact Standards</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Einstieg</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../einstieg/vorstellung.html">Vorstellung der IsyFact</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/isyfact-standards.html">IsyFact-Standards</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/isyfact-erweiterungen.html">IsyFact-Erweiterungen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/rahmenbedingungen.html">Rahmenbedingungen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/erste-schritte.html">Erste Schritte</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/tutorial/master.html">Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/whitepaper/master.html">Whitepaper</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Blaupausen</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../blaupausen/referenzarchitektur/master.html">Referenzarchitektur</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../blaupausen/referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/master.html">Datenzugriff</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-service/master.html">Service</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-web-gui/master.html">Web GUI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-batch/master.html">Batch</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Vorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/vorgaben-architektur/master.html">Architektur</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/vorgaben-it-sicherheit/master.html">IT-Sicherheit</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Bausteine</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Datum &amp; Zeit</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-datetime/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-datetime/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Fehlerbehandlung</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-exception-core/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-exception-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">HttpInvoker</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-serviceapi-core/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Konfiguration</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-konfiguration/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-konfiguration/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Logging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-logging/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-logging/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Polling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-polling/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-polling/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-service-rest/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-service-rest/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sicherheit</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sicherheit/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sicherheit/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sonderzeichen</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sonderzeichen/konzept/sonderzeichen.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sonderzeichen/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Task Scheduling</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Überwachung</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-ueberwachung/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-ueberwachung/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Util</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-util/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Methodik</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/namenskonventionen/master.html">Namenskonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Werkzeuge</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/master-antora.html">Projektseite mit Antora (empfohlen)</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/master-asciidoctorJ.html">Dokumente mit AsciidoctorJ Extensions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../changelog/changelog.html">Changelog</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">IsyFact Standards</span>
+    <span class="version">2.5-SNAPSHOT</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../glossary/latest/glossary/master.html">Glossar</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../glossary/latest/glossary/master.html">1.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../einstieg/vorstellung.html">IsyFact Standards</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../einstieg/vorstellung.html">2.5-SNAPSHOT</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../einstieg/vorstellung.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../einstieg/vorstellung.html">IsyFact Standards</a></li>
+    <li>Bausteine</li>
+    <li>Task Scheduling</li>
+    <li><a href="master.html">Konzept</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Inhalt" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Baustein Task Scheduling</h1>
+<div id="preamble">
+<div class="sectionbody">
+<h3 id="_konzept" class="discrete">Konzept</h3>
+<div class="paragraph">
+<p><span class="image left"><img src="../../../../glossary/latest/licence/_images/IFS-Logo.png" alt="IFS-Logo" width="150"></span> Dieses Dokument ist ein Teil der IsyFact-Standards. Alle Inhalte dieses Dokuments, insbesondere Texte und Grafiken, sind urheberrechtlich geschützt. Alle urheberrechtlichen Nutzungs- und Verwertungsrechte liegen beim Bundesverwaltungsamt.</p>
+</div>
+<div class="paragraph">
+<p><span class="image right"><img src="../../../../glossary/latest/licence/_images/CC-BY.png" alt="Creative Commons Namensnennung" width="100"></span>
+Die Nutzung ist unter den Lizenzbedingungen der Creative Commons Namensnennung 4.0 International gestattet.
+Die Lizenzbestimmungen sind unter folgender URL erhältlich:</p>
+</div>
+<div class="paragraph">
+<p><a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-licence" class="xref page">Creative-Commons-Lizenz</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="einleitung"><a class="anchor" href="#einleitung"></a>1. Einleitung</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dieses Dokument beschreibt die konzeptionellen Grundlagen der Steuerung (d.h. Planung und Ausführung) von Aufgaben (Task Scheduling) in der IsyFact.
+Mit „Aufgaben“ sind hier periodisch wiederkehrende Tätigkeiten gemeint, die innerhalb einer <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungskomponente" class="xref page">Anwendungskomponenten</a> angesiedelt sind und zur Erfüllung der fachlichen oder technischen Anforderungen der Anwendung beitragen.
+Das Dokument beschreibt die Anforderungen und Vorgaben zur Umsetzung der Steuerung von Aufgaben und bildet so die Grundlage einer technisch und fachlich einheitlichen Umsetzung.</p>
+</div>
+<div class="paragraph">
+<p>Die aus diesem Dokument abgeleitete Umsetzung der Steuerung von Aufgaben im Rahmen der Anwendungsentwicklung ist in dem Dokument <a href="../nutzungsvorgaben/master.html#einleitung" class="xref page">Task-Scheduling - Nutzungsvorgaben</a> beschrieben.</p>
+</div>
+<div class="paragraph">
+<p>Sowohl dieses Dokument als auch das Umsetzungsdokument bedienen sich Erfahrungen sowie Best Practices aus erfolgreich abgeschlossenen Projekten.Nutzungsvorgaben Scheduling</p>
+</div>
+<div class="sect2">
+<h3 id="abgrenzung-zu-batches"><a class="anchor" href="#abgrenzung-zu-batches"></a>1.1. Abgrenzung zu Batches</h3>
+<div class="paragraph">
+<p>Das <a href="../../blaupausen/detailkonzept-komponente-batch/master.html#<em>einführung" class="xref page">Detailkonzept Komponente Batch</a> definiert <a href="../../../../glossary/latest/glossary/master.html#glossar-batch" class="xref page">Batches</a> wie folgt:
+_„Der Begriff „Batch“ bedeutet im Kern lediglich „nicht interaktive Stapelverarbeitung“.
+Ein Batch teilt sich auf in einen „Batchrahmen“, die Batchlogik der einzelnen Batch-Anwendungen, sowie die von ihnen aufgerufenen Komponenten des Anwendungskerns. […]
+Typischerweise verarbeiten Batches dabei Dateilieferungen oder eine definierte Menge von Datensätzen aus dem Datenbestand.“</em></p>
+</div>
+<div class="paragraph">
+<p>Die in diesem Konzept beschriebenen Aufgaben sind hingegen nicht die Grundlage einer eigenen (Batch-) Anwendung, sondern in die eigentliche Anwendung integriert.
+Die Aufgaben sind Teil einer Komponente des <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungskern" class="xref page">Anwendungskerns</a>.
+Sie besitzen in der Regel einen kleineren Umfang als Batches und werden nicht manuell von außen gesteuert.
+Stattdessen werden sie durch die Anwendung selbst konfiguriert, zeitlich geplant und selbstständig ausgeführt.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="aufbau-und-zweck-des-dokuments"><a class="anchor" href="#aufbau-und-zweck-des-dokuments"></a>2. Aufbau und Zweck des Dokuments</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ziel des Dokuments ist die Definition einheitlicher Vorgaben für die Steuerung von Aufgaben unter Berücksichtigung fachlicher und technischer Anforderungen.</p>
+</div>
+<div class="paragraph">
+<p>Das Dokument ist entsprechend dieser Zielsetzungen folgendermaßen aufgebaut:</p>
+</div>
+<div class="paragraph">
+<p>Zunächst werden die <a href="#anforderungen">Anforderungen</a> an die Steuerung von Aufgaben definiert, welche die Grundlage für das nachfolgende Kapitel bilden.</p>
+</div>
+<div class="paragraph">
+<p>Anschließend werden die <a href="#vorgaben">Vorgaben</a> zur Steuerung von Aufgaben innerhalb der Anwendungen sowie zur Umsetzung in der zu diesem <a href="../../../../glossary/latest/glossary/master.html#glossar-baustein" class="xref page">Baustein</a> gehörenden <a href="../../../../glossary/latest/glossary/master.html#glossar-bibliothek" class="xref page">Bibliothek</a> definiert.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="anforderungen"><a class="anchor" href="#anforderungen"></a>3. Anforderungen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Im Folgenden werden die Anforderungen an die Steuerung von Aufgaben definiert.
+Diese bilden die Grundlage für die Vorgaben im darauffolgenden Kapitel.</p>
+</div>
+<div class="sect2">
+<h3 id="authentifizierung"><a class="anchor" href="#authentifizierung"></a>3.1. Authentifizierung</h3>
+<div class="paragraph">
+<p>Aufgaben muss es möglich sein, sich bei Bedarf zu authentifizieren, um entsprechend gesicherte fachliche Operationen durchzuführen.
+Dazu müssen Aufgaben einen Benutzernamen und ein Passwort bereithalten.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="nachvollziehbarkeit"><a class="anchor" href="#nachvollziehbarkeit"></a>3.2. Nachvollziehbarkeit</h3>
+<div class="paragraph">
+<p>Aufgaben müssen fachliche Operationen nachvollziehbar aufrufen.
+Das bedeutet, dass sich alle aufgerufenen fachlichen Operationen eindeutig einer bestimmten Ausführung einer Aufgabe zuordnen lassen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logging"><a class="anchor" href="#logging"></a>3.3. Logging</h3>
+<div class="paragraph">
+<p>Aufgaben müssen mindestens die folgenden Ereignisse ins Log schreiben:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Start und Ende der Ausführung (Log-Level: INFO)</p>
+</li>
+<li>
+<p>Fachliche Fehlermeldungen (Log-Level: INFO)</p>
+</li>
+<li>
+<p>Technische Fehlermeldungen (Log-Level: ERROR)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Die Bibliothek muss mindestens die folgenden Ereignisse ins Log schreiben:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fehler in der Konfiguration von Aufgaben (Log-Level: ERROR)</p>
+</li>
+<li>
+<p>Aktivierung und Deaktivierung von Aufgaben zur Laufzeit (Log-Level: INFO)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="überwachung"><a class="anchor" href="#überwachung"></a>3.4. Überwachung</h3>
+<div class="paragraph">
+<p>Aufgaben müssen Überwachungsmöglichkeiten bieten.
+Die folgenden Parameter müssen lesend zur Verfügung stehen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Zeitraum (Start, Ende) der letzten Ausführung</p>
+</li>
+<li>
+<p>Ergebnis der letzten Ausführung (Erfolg, fachliche / technische Fehler) inklusive einer Beschreibung des Fehlers</p>
+</li>
+<li>
+<p>alle Konfigurationsparameter</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Aufgaben müssen über die Überwachung manuell gestartet werden können.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="programmatische-steuerung"><a class="anchor" href="#programmatische-steuerung"></a>3.5. Programmatische Steuerung</h3>
+<div class="paragraph">
+<p>Aufgaben müssen, neben der betrieblichen Konfiguration, auch programmatisch gesteuert werden können.
+Dazu gehören die folgenden Operationen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Aufgaben manuell und ohne Zeitverzögerung ausführen</p>
+</li>
+<li>
+<p>Aufgaben aktivieren und deaktivieren</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vorgaben"><a class="anchor" href="#vorgaben"></a>4. Vorgaben</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die folgenden architektonischen und technischen Vorgaben beziehen sich auf die Umsetzung der in Kapitel siehe <a href="#anforderungen">Anforderungen</a>
+genannten Anforderungen in der zu diesem Baustein gehörenden Bibliothek.</p>
+</div>
+<div class="sect2">
+<h3 id="namenskonventionen"><a class="anchor" href="#namenskonventionen"></a>4.1. Namenskonventionen</h3>
+<div class="paragraph">
+<p>Die Bibliothek besitzt die folgenden Maven-Koordinaten:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Group-ID: <code>de.bund.bva.isyfact</code></p>
+</li>
+<li>
+<p>Artifact-ID: <code>isy-task</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Das Stammpackage für alle Klassen der Umsetzung lautet: <code>de.bund.bva.isyfact.task</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="bedeutung-der-standardbibliothek"><a class="anchor" href="#bedeutung-der-standardbibliothek"></a>4.2. Bedeutung der Standardbibliothek</h3>
+<div class="paragraph">
+<p>Die Bibliothek muss zur Umsetzung der Anforderungen so stark wie möglich auf die in der Java-Standardbibliothek vorhandenen Möglichkeiten setzen.
+Insbesondere soll sie die Möglichkeiten des Packages <code>java.util.concurrent</code> nutzen, darunter vor allem die der Klasse <code>ScheduledExecutorService</code>.
+Die Bibliothek muss die Implementierung dieser Klasse, <code>ScheduledThreadPoolExecutor</code>, mit sinnvollen Standardwerten konfigurieren und wichtige Kenngrößen wie die Größe des Thread Pools konfigurierbar gestalten.</p>
+</div>
+<div class="paragraph">
+<p>Die Klassen des Packages <code>org.springframework.core.task</code> können ergänzend benutzt werden, falls sie gegenüber der Standardbibliothek einen signifikanten funktionalen Mehrwert aufweisen.</p>
+</div>
+<div class="paragraph">
+<p>Die folgenden Klassen dürfen von der Bibliothek nicht verwendet werden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>java.util.Timertask</code> sowie <code>java.util.Timer</code> zur Planung und Ausführung von Aufgaben, da diese Klassen wesentlich weniger Funktionalität bieten als die des Packages <code>java.util.concurrent</code>,</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="authentifizierung-1"><a class="anchor" href="#authentifizierung-1"></a>4.3. Authentifizierung</h3>
+<div class="paragraph">
+<p>Die Bibliothek muss Aufgaben bei Bedarf über den Baustein Sicherheit (s.a. <a href="../../isy-sicherheit/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben Sicherheit</a> authentifizieren.
+Dazu ist ein Benutzername und ein Passwort nötig, dass die Bibliothek als betriebliche Konfiguration, wie im Baustein Konfiguration (s.a. <a href="../../isy-konfiguration/konzept/master.html#einleitung" class="xref page">Konzept Konfiguration</a>) vorgegeben, einlesen muss.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="nachvollziehbarkeit-1"><a class="anchor" href="#nachvollziehbarkeit-1"></a>4.4. Nachvollziehbarkeit</h3>
+<div class="paragraph">
+<p>Die Bibliothek muss zur Sicherstellung der Nachvollziehbarkeit Korrelations-IDs verwenden.
+Das Konzept der Korrelations-ID ist im <a href="../../isy-logging/konzept/master.html#einleitung" class="xref page">Konzept Logging</a> des Bausteins Logging beschrieben.</p>
+</div>
+<div class="paragraph">
+<p>Die Bibliothek muss für jede Ausführung einer Aufgabe eine Korrelations-ID erzeugen und sie im MDC von logback als auch, falls sich die Aufgabe authentifizieren muss, im Aufrufkontext setzen.
+Die Dokumente <a href="../../isy-logging/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben Logging</a> sowie <a href="../../isy-sicherheit/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben Sicherheit</a> der Bausteine Logging und Sicherheit beschreiben im Detail, wo und wie die Korrelations-ID gesetzt werden muss.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ueberwachung"><a class="anchor" href="#ueberwachung"></a>4.5. Überwachung</h3>
+<div class="paragraph">
+<p>Die Bibliothek muss zur Überwachung von Aufgaben eine JMX-Bean definieren.
+Diese ist mit Standardattributen, die allen Aufgaben gemein sind, gefüllt.
+Anwendungen können von diesen abstrakten JMX-Beans ableiten, um weitere Attribute überwachbar zu gestalten.</p>
+</div>
+<div class="paragraph">
+<p>Die Bibliothek muss des Weiteren eine Standardkonfiguration bereitstellen, um JMX-Beans automatisch beim Start der Anwendung zu registrieren.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="programmatische-steuerung-1"><a class="anchor" href="#programmatische-steuerung-1"></a>4.6. Programmatische Steuerung</h3>
+<div class="paragraph">
+<p>Die Bibliothek muss die folgenden Operationen auf Aufgaben anbieten:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Aufgaben manuell und ohne Zeitverzögerung ausführen</p>
+</li>
+<li>
+<p>Aufgaben aktivieren und deaktivieren</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Die Deaktivierung von Aufgaben ist temporärer Natur und wird spätestens beim Neustart der Anwendung auf die Werte der betrieblichen Konfiguration zurückgesetzt.
+Für eine dauerhafte Änderung muss die betriebliche Konfiguration angepasst werden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="zuweisung-zwischen-aufgaben-und-maschinen"><a class="anchor" href="#zuweisung-zwischen-aufgaben-und-maschinen"></a>4.7. Zuweisung zwischen Aufgaben und Maschinen</h3>
+<div class="paragraph">
+<p>Die Bibliothek muss vorsehen, dass Aufgaben fest Maschinen zugeordnet werden.
+Dazu wird die Aufgabe mit einem Hostnamen konfiguriert.
+Die Aufgabe wird nur dann dem Scheduler hinzugefügt, wenn der konfigurierte Hostname mit dem der ausführenden Maschine übereinstimmt.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="darstellung"><a class="anchor" href="#darstellung"></a>4.8. Darstellung</h3>
+<div class="paragraph">
+<p>Die Bibliothek unterstützt die Darstellung bzw. programmatische Steuerung von Aufgaben mittels grafischen Oberflächen nicht direkt.
+Sie muss ihre Funktionalität allerdings so bereitstellen, dass sie leicht von GUI-Technologien verwendet werden kann.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="konfiguration"><a class="anchor" href="#konfiguration"></a>4.9. Konfiguration</h3>
+<div class="paragraph">
+<p>Die Konfiguration der Aufgaben geschieht über Konfigurationsparameter.
+Die Parameter entsprechen Java Properties.
+Alle Properties entsprechen folgendem Schema:</p>
+</div>
+<div class="paragraph">
+<p><strong>isyfact.task.&lt;aufgaben-id&gt;.&lt;property&gt;</strong></p>
+</div>
+<div class="paragraph">
+<p>Jede Aufgabe erhält eine eindeutige ID, die standardmäßig dem Klassennamen, beginnend mit einem Kleinbuchstaben, entspricht.
+Die ID ist außerdem Teil der Spring-Konfiguration einer Aufgabe.
+Die Bibliothek stellt über die ID sicher, dass jede Aufgabe automatisch beim Start der Anwendung konfiguriert werden kann.</p>
+</div>
+<div class="paragraph">
+<p>Die Bibliothek definiert für alle allgemeinen Parameter sinnvolle Standardwerte.
+Alle Standardwerte entsprechen folgendem Schema:</p>
+</div>
+<div class="paragraph">
+<p><strong>isyfact.task.standard.&lt;property&gt;</strong></p>
+</div>
+<div class="paragraph">
+<p>Die Definition der Standardwerte ergänzt die Regelungen zu Default-Werten in der betrieblichen Konfiguration (s.a. <a href="../../isy-konfiguration/konzept/master.html#einleitung" class="xref page">Konzept Konfiguration</a>).
+Während diese Default-Werte des Bausteins Konfiguration jeweils nur für eine konkrete Aufgabe gelten, sind die hier beschriebenen Standardwerte für alle in einer Anwendung definierten Aufgaben gültig.</p>
+</div>
+<div class="paragraph">
+<p>Zum Auslesen der Konfiguration einer Aufgabe wird die Klasse <code>TaskKonfiguration</code> definiert.
+Sie wird mit dem Interface Konfiguration des gleichnamigen Bausteins und dem Namen einer Aufgabe initialisiert.
+Zum Lesen der Konfigurationsparameter enthält die Klasse entsprechende Methoden.
+Die Klasse löst die Parameter der Aufgabe bei jedem Aufruf einer dieser Methoden dynamisch auf.
+Die Klasse <code>TaskKonfiguration</code> sollte von Anwendungen erweitert werden, um weitere, spezifische Konfigurationsparameter aufzulösen.</p>
+</div>
+<div class="paragraph">
+<p>Die Klasse <code>TaskKonfiguration</code> benutzt eine weitere Klasse <code>TaskStandardKonfiguration</code>, um die Standardwerte für Aufgaben aufzulösen.
+<code>TaskStandardKonfiguration</code> ist ebenfalls von <code>TaskKonfiguration</code> abgeleitet.</p>
+</div>
+<div class="paragraph">
+<p>Die Bibliothek muss Anwendungen eine Konfigurationsklasse bzw. Spring Bean bereitstellen, die es ermöglicht, alle konfigurierten Aufgaben beim Start der Anwendung einzulesen und dem Scheduler hinzuzufügen.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<div class="divFooter"></div>
+
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+<script src="../../../../_/js/isyfact.js"></script>
+  </body>
+</html>
