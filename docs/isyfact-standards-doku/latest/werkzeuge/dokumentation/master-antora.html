@@ -31,7 +31,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5-SNAPSHOT">
+<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5.0-SNAPSHOT">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -369,7 +369,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">IsyFact Standards</span>
-    <span class="version">2.5-SNAPSHOT</span>
+    <span class="version">2.5 (DEV)</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -384,7 +384,7 @@
       <a class="title" href="../../einstieg/einstieg.html">IsyFact Standards</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../../einstieg/einstieg.html">2.5-SNAPSHOT</a>
+          <a href="../../einstieg/einstieg.html">2.5 (DEV)</a>
         </li>
       </ul>
     </li>
@@ -922,7 +922,7 @@ Das ist ein Beispieltext zum Unterkapitel.</code></pre>
 <div id="listing-querverweis" class="listingblock">
 <div class="title">Listing 10. Querverweis auf eine Überschrift</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Zum &lt;&lt;ueberschriften, Beispiel-Kapitel&gt;&gt; gelangen Sie über einen Mausklick.
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Zum &lt;&lt;ueberschriften,Beispiel-Kapitel&gt;&gt; gelangen Sie über einen Mausklick.
 Im Übrigen handelt es sich bei dem Beispiel-Kapitel um das Kapitel &lt;&lt;ueberschriften&gt;&gt;.</code></pre>
 </div>
 </div>
@@ -1049,7 +1049,7 @@ Der Anchor beginnt immer mit dem Bezeichner <code>litextern-</code>.</p>
 </table>
 <div class="paragraph">
 <p>Eine Referenz auf einen Eintrag des externen Literaturverzeichnisses erfolgt über einen <a href="#listing-xref">Antora xref-Link</a>, wobei der Eintrag nach dem <code>#</code> der Anchor im Literaturverzeichnis in <code>isy-documentation</code> ist.
-Der Text innerhalb der Klammern [] definiert den Linktext.</p>
+Der Text innerhalb der eckigen Klammern definiert den Linktext.</p>
 </div>
 <div class="paragraph">
 <p>Ein Beispiel:<br></p>
@@ -1069,7 +1069,7 @@ Der Text innerhalb der Klammern [] definiert den Linktext.</p>
 <div class="sect2">
 <h3 id="admonition-blocks"><a class="anchor" href="#admonition-blocks"></a>3.4. Admonition-Blocks</h3>
 <div class="paragraph">
-<p>Mit Admonition Blocks können Inhalte in Dokumenten exponiert dargestellt werden, sodass ihnen besondere Aufmerksamkeit zuteil wird.
+<p>Mit Admonition Blocks können Inhalte in Dokumenten exponiert dargestellt werden, sodass ihnen besondere Aufmerksamkeit zuteilwird.
 Standardmäßig werden fünf verschiedene Blöcke angeboten.
 Die IsyFact-Dokumentation erweitert diese Liste um weitere Blöcke für verbindliche Regeln.</p>
 </div>
@@ -1577,7 +1577,7 @@ Abbildungen sollten mit diagrams.net als &lt;Name Abbildung&gt;.dn.svg erstellt 
 <div class="sect2">
 <h3 id="listings"><a class="anchor" href="#listings"></a>3.7. Listings</h3>
 <div class="paragraph">
-<p>Quelltexte können bei AsciiDoc auf folgende Weise mit Syntaxhighlighting angezeigt werden.</p>
+<p>Quelltexte können bei AsciiDoc auf folgende Weise mit Syntax-Highlighting angezeigt werden.</p>
 </div>
 <div id="listing-quelltext1" class="listingblock">
 <div class="title">Listing 20. Quelltext einfügen</div>
@@ -1685,12 +1685,12 @@ Der Anchor beginnt immer mit dem Bezeichner <code>glossar-</code>.</p>
 </table>
 <div class="paragraph">
 <p>Eine Referenz auf einen Begriff des Glossars erfolgt über einen <a href="#listing-xref">Antora Verweis</a>, wobei der Eintrag nach dem <code>#</code> der Anchor im Glossar in <code>isy-documentation</code> ist.
-Der Text innerhalb der Klammern [] definiert den Linktext.</p>
+Der Text innerhalb der eckigen Klammern definiert den Linktext.</p>
 </div>
 <div class="paragraph">
 <p>Ein Beispiel:<br></p>
 </div>
-<div id="listing-glossar-verweis" class="listingblock">
+<div id="listing-glossar-verweis-2" class="listingblock">
 <div class="title">Listing 22. Verweis auf Glossareintrag</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">xref:glossary:glossary:master.adoc#glossar-isyfact[IsyFact]</code></pre>
@@ -1767,11 +1767,10 @@ runtime:
   fetch: true
 asciidoc:
   attributes:
-    version-ifs: 2.5-SNAPSHOT  <i class="conum" data-value="3"></i><b>(3)</b>
     page-toctitle: Inhalt
-    sectnums: true             <i class="conum" data-value="4"></i><b>(4)</b>
-    sectnumlevels: 5           <i class="conum" data-value="5"></i><b>(5)</b>
-    caution-caption: Achtung   <i class="conum" data-value="6"></i><b>(6)</b>
+    sectnums: true             <i class="conum" data-value="3"></i><b>(3)</b>
+    sectnumlevels: 5           <i class="conum" data-value="4"></i><b>(4)</b>
+    caution-caption: Achtung   <i class="conum" data-value="5"></i><b>(5)</b>
     important-caption: Wichtig
     note-caption: Hinweis
     tip-caption: Tip
@@ -1783,9 +1782,9 @@ asciidoc:
     listing-caption: Listing
 ui:
   bundle:
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable              <i class="conum" data-value="7"></i><b>(7)</b>
-    snapshot: false                       <i class="conum" data-value="8"></i><b>(8)</b>
-  supplemental_files: ./supplemental-ui   <i class="conum" data-value="9"></i><b>(9)</b>
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable <i class="conum" data-value="6"></i><b>(6)</b>
+    snapshot: false                       <i class="conum" data-value="7"></i><b>(7)</b>
+  supplemental_files: ./supplemental-ui   <i class="conum" data-value="8"></i><b>(8)</b>
 output:
   dir: ./public</code></pre>
 </div>
@@ -1802,30 +1801,26 @@ output:
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Selbstdefiniertes Attribut.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="4"></i><b>4</b></td>
 <td>Abschnitte sollen nummeriert werden.</td>
 </tr>
 <tr>
-<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
 <td>Die Abschnitte dürfen bis Level 5 geschachtelt sein (möglich, aber nicht empfohlen).</td>
 </tr>
 <tr>
-<td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>Vordefinierte Captions auf deutsch.</td>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Vordefinierte Captions auf Deutsch.</td>
 </tr>
 <tr>
-<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
 <td>Standard-UI von Antora.</td>
 </tr>
 <tr>
-<td><i class="conum" data-value="8"></i><b>8</b></td>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
 <td>Ein stabiles UI ist hilfreich.</td>
 </tr>
 <tr>
-<td><i class="conum" data-value="9"></i><b>9</b></td>
+<td><i class="conum" data-value="8"></i><b>8</b></td>
 <td>Ergänzungen der IsyFact zum Standard-UI.</td>
 </tr>
 </table>

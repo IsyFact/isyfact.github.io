@@ -31,7 +31,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5-SNAPSHOT">
+<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5.0-SNAPSHOT">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -369,7 +369,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">IsyFact Standards</span>
-    <span class="version">2.5-SNAPSHOT</span>
+    <span class="version">2.5 (DEV)</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -384,7 +384,7 @@
       <a class="title" href="../einstieg.html">IsyFact Standards</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../einstieg.html">2.5-SNAPSHOT</a>
+          <a href="../einstieg.html">2.5 (DEV)</a>
         </li>
       </ul>
     </li>
@@ -413,7 +413,6 @@
 <h1 class="page">Tutorial</h1>
 <div id="preamble">
 <div class="sectionbody">
-<h3 id="_grundlagen" class="discrete">Grundlagen</h3>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
@@ -467,7 +466,7 @@ Zur Nutzung der Bibliotheken in der Anwendungsentwicklung steht ein zentrales BO
         &lt;dependency&gt;
             &lt;groupId&gt;de.bund.bva.isyfact&lt;/groupId&gt;
             &lt;artifactId&gt;isyfact-bom&lt;/artifactId&gt;
-            &lt;version&gt;{version-ifs}&lt;/version&gt;
+            &lt;version&gt;2.5.0-SNAPSHOT&lt;/version&gt;
             &lt;type&gt;pom&lt;/type&gt;
             &lt;scope&gt;import&lt;/scope&gt;
         &lt;/dependency&gt;
@@ -506,7 +505,7 @@ Es reicht also folgender Abschnitt, um eine Bibliothek einzubinden:</p>
 <div class="paragraph">
 <p>In diesem Kapitel wird die Implementierung der Datenhaltung einer Anwendung beschrieben.
 Die Datenhaltung besteht im Wesentlichen aus den Entitätsklassen (Entity) und den zugehörigen Data Access Objects (DAOs).
-Alle Konzepte und Vorgaben zum Thema Persistenz und Datenzugriff stehen im Dokument <a href="../../blaupausen/detailkonzept-komponente-datenzugriff/master.html#_detailkonzept_datenzugriff_einleitung" class="xref page">Detailkonzept Komponente Datenzugriff</a>.</p>
+Alle Konzepte und Vorgaben zum Thema Persistenz und Datenzugriff stehen im Dokument <a href="../../blaupausen/detailkonzept-komponente-datenzugriff/master.html" class="xref page">Detailkonzept Komponente Datenzugriff</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="designvorgaben"><a class="anchor" href="#designvorgaben"></a>3.1. Designvorgaben</h3>
@@ -540,7 +539,7 @@ Sonst werden sie per <code>@Query</code>-Annotation an der Methode beschrieben.<
 Innerhalb einer Teilanwendung dürfen persistente Entitäten allerdings über Komponentengrenzen hinweg genutzt werden.</p>
 </li>
 <li>
-<p>DAOs und Entitätsklassen werden in einer bestimmten Paketstruktur abgelegt (siehe <a href="../../blaupausen/detailkonzept-komponente-datenzugriff/master.html#_detailkonzept_datenzugriff_einleitung" class="xref page">Detailkonzept Komponente Datenzugriff</a>).</p>
+<p>DAOs und Entitätsklassen werden in einer bestimmten Paketstruktur abgelegt (siehe <a href="../../blaupausen/detailkonzept-komponente-datenzugriff/master.html" class="xref page">Detailkonzept Komponente Datenzugriff</a>).</p>
 </li>
 <li>
 <p>Die Transaktionssteuerung wird per AOP in der Service-Schicht durchgeführt (siehe Kapitel <a href="#anbieten-von-service-schnittstellen">Anbieten von Service-Schnittstellen</a>).</p>
@@ -625,7 +624,7 @@ Weitere Details können der <a href="../../blaupausen/referenzarchitektur/master
 <h4 id="anlegen-des-datenbankschemas"><a class="anchor" href="#anlegen-des-datenbankschemas"></a>3.3.1. Anlegen des Datenbankschemas</h4>
 <div class="paragraph">
 <p>Das Datenbankschema muss angelegt werden.
-Dazu werden die benötigten DDL-Anweisungen, wie im <a href="../../blaupausen/detailkonzept-komponente-datenzugriff/master.html#_detailkonzept_datenzugriff_einleitung" class="xref page">Detailkonzept Komponente Datenzugriff</a> beschrieben, in einem Verzeichnis abgelegt.
+Dazu werden die benötigten DDL-Anweisungen, wie im <a href="../../blaupausen/detailkonzept-komponente-datenzugriff/master.html" class="xref page">Detailkonzept Komponente Datenzugriff</a> beschrieben, in einem Verzeichnis abgelegt.
 Die <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-vorlageanwendung" class="xref page">Vorlageanwendung</a> enthält diese Anweisungen im Verzeichnis <code>src/main/skripte/sql/terminfindung</code>.</p>
 </div>
 <div class="paragraph">
@@ -670,7 +669,7 @@ Nutzungsdokumentation unter:
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementierung-der-entitätsklassen-und-daos"><a class="anchor" href="#implementierung-der-entitätsklassen-und-daos"></a>3.3.3. Implementierung der Entitätsklassen und DAOs</h4>
+<h4 id="implementierung-der-entitaetsklassen-und-daos"><a class="anchor" href="#implementierung-der-entitaetsklassen-und-daos"></a>3.3.3. Implementierung der Entitätsklassen und DAOs</h4>
 <div class="paragraph">
 <p>Die Entitätsklassen und Schnittstellen-Klassen müssen implementiert werden.
 In den Entitätsklassen müssen die Mapping-Informationen für JPA als Annotationen eingetragen werden.
@@ -964,7 +963,7 @@ Das sind genau die Inhalte, die im eigenen Projekt <code>&lt;system&gt;-httpinvo
 <p>Externes Interface für den Zugriff auf die Auskunft-Komponente per HTTP Invoker.
 Bei Nutzung einer Service-Schnittstelle generiert Spring auf Basis dieses Interfaces einen Proxy für den Remote-Zugriff.<br>
 Die Methoden dieser Komponente verwenden ausschließlich Transportobjekte und -Exceptions.<br>
-Die Überwachung der Service-Aufrufe (siehe Kapitel <a href="#überwachung">Überwachung</a>) wird als Aspekt der RemoteBean konfiguriert.</p>
+Die Überwachung der Service-Aufrufe (siehe Kapitel <a href="#überwachung">[überwachung]</a>) wird als Aspekt der RemoteBean konfiguriert.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1121,9 +1120,9 @@ public class ServiceConfiguration {
 </div>
 </div>
 <div class="sect4">
-<h5 id="einbinden-der-benötigten-bibliotheken"><a class="anchor" href="#einbinden-der-benötigten-bibliotheken"></a>5.1.4.5. Einbinden der benötigten Bibliotheken</h5>
+<h5 id="einbinden-der-benoetigten-bibliotheken"><a class="anchor" href="#einbinden-der-benoetigten-bibliotheken"></a>5.1.4.5. Einbinden der benötigten Bibliotheken</h5>
 <div class="sect5">
-<h6 id="bibliotheken-für-das-service-schnittstellen-projekt"><a class="anchor" href="#bibliotheken-für-das-service-schnittstellen-projekt"></a>5.1.4.5.1. Bibliotheken für das Service-Schnittstellen-Projekt</h6>
+<h6 id="bibliotheken-fuer-das-service-schnittstellen-projekt"><a class="anchor" href="#bibliotheken-fuer-das-service-schnittstellen-projekt"></a>5.1.4.5.1. Bibliotheken für das Service-Schnittstellen-Projekt</h6>
 <div class="paragraph">
 <p>Das Projekt der Service-Schnittstelle benötigt die in <a href="#listing-bib-sst">Listing 6</a> aufgelisteten Bibliotheken:</p>
 </div>
@@ -1146,7 +1145,7 @@ public class ServiceConfiguration {
 </div>
 </div>
 <div class="sect5">
-<h6 id="bibliotheken-für-die-implementierung-der-service-schnittstelle"><a class="anchor" href="#bibliotheken-für-die-implementierung-der-service-schnittstelle"></a>5.1.4.5.2. Bibliotheken für die Implementierung der Service-Schnittstelle</h6>
+<h6 id="bibliotheken-fuer-die-implementierung-der-service-schnittstelle"><a class="anchor" href="#bibliotheken-fuer-die-implementierung-der-service-schnittstelle"></a>5.1.4.5.2. Bibliotheken für die Implementierung der Service-Schnittstelle</h6>
 <div class="paragraph">
 <p>In die Build-Konfiguration des Hauptprojekts des Anwendungssystems müssen folgende Bibliotheken aufgenommen werden:</p>
 </div>
@@ -1285,7 +1284,7 @@ Eine vollständige Liste zeigt <a href="#listing-bib-sst-nutzung">Listing 8</a>.
 </div>
 </div>
 <div class="sect4">
-<h5 id="durchführen-der-konfiguration"><a class="anchor" href="#durchführen-der-konfiguration"></a>5.2.3.2. Durchführen der Konfiguration</h5>
+<h5 id="durchfuehren-der-konfiguration"><a class="anchor" href="#durchfuehren-der-konfiguration"></a>5.2.3.2. Durchführen der Konfiguration</h5>
 <div class="paragraph">
 <p>Spring erzeugt anhand des Service-Interfaces HTTP Invoker Proxies, die den eigentlichen Aufruf durchführen.
 Diese Proxies werden als Spring-Bean konfiguriert:</p>
@@ -1484,7 +1483,7 @@ Details dazu werden im JavaDoc der Methode beschrieben.</p>
 <div class="paragraph">
 <p>Für jeden Batch muss eine Property-Datei in <code>/src/main/resources/resources/batch</code> angelegt werden.
 In dieser statischen Konfiguration werden unter anderem die Batch-ID und die Transaktionssteuerung konfiguriert.
-Eine Beschreibung der Parameter ist in <a href="../../blaupausen/detailkonzept-komponente-batch/master.html#_einführung" class="xref page">Detailkonzept Komponente Batch</a> enthalten.</p>
+Eine Beschreibung der Parameter ist in <a href="../../blaupausen/detailkonzept-komponente-batch/master.html" class="xref page">Detailkonzept Komponente Batch</a> enthalten.</p>
 </div>
 <div class="paragraph">
 <p>Die betriebliche Konfiguration des Batches ist identisch zu derjenigen der zugehörigen Anwendung.
@@ -1797,9 +1796,9 @@ Die explizite Einbindung von <code>isy-exception-sst</code> sollte dann entfernt
 <div class="paragraph">
 <p>Die Core-Bibliothek wird im Wesentlichen im Anwendungskern bzw.
 der Service-Schnittstellen-Implementierung benötigt
-(siehe <a href="#bibliotheken-für-die-implementierung-der-service-schnittstelle">Bibliotheken für die Implementierung der Service-Schnittstelle</a>). Für Service-Schnittstellen
+(siehe <a href="#bibliotheken-fuer-die-implementierung-der-service-schnittstelle">Bibliotheken für die Implementierung der Service-Schnittstelle</a>). Für Service-Schnittstellen
 werden lediglich die Transport-Exceptions aus <code>isy-exception-sst</code> benötigt
-(siehe Kapitel <a href="#bibliotheken-für-das-service-schnittstellen-projekt">Bibliotheken für das Service-Schnittstellen-Projekt</a>).</p>
+(siehe Kapitel <a href="#bibliotheken-fuer-das-service-schnittstellen-projekt">Bibliotheken für das Service-Schnittstellen-Projekt</a>).</p>
 </div>
 <div class="sect4">
 <h5 id="einbinden-der-bibliothek-1"><a class="anchor" href="#einbinden-der-bibliothek-1"></a>6.3.3.1. Einbinden der Bibliothek</h5>
@@ -2043,7 +2042,7 @@ der die Informationen zum Aufrufer kennt.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="prüfen-der-berechtigung"><a class="anchor" href="#prüfen-der-berechtigung"></a>6.5.2.3. Prüfen der Berechtigung</h5>
+<h5 id="pruefen-der-berechtigung"><a class="anchor" href="#pruefen-der-berechtigung"></a>6.5.2.3. Prüfen der Berechtigung</h5>
 <div class="paragraph">
 <p>Die Berechtigungsprüfung erfolgt in der Regel vor der fachlichen Verarbeitung in der Service-Schnittstelle oder im Dialog-Controller einer Anwendung.
 Dies erfolgt über Annotationen oder im Webflow (siehe <a href="../../isy-sicherheit/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben Sicherheit</a>).
@@ -2063,7 +2062,7 @@ die Autorisierung durchführen.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="überwachung"><a class="anchor" href="#überwachung"></a>6.6. Überwachung</h3>
+<h3 id="ueberwachung"><a class="anchor" href="#ueberwachung"></a>6.6. Überwachung</h3>
 <div class="paragraph">
 <p>In diesem Abschnitt wird beschrieben, wie die Überwachung einer Anwendung realisiert wird.</p>
 </div>
@@ -2123,7 +2122,7 @@ zu machen.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="konfiguration-der-überwachungsschnittstelle"><a class="anchor" href="#konfiguration-der-überwachungsschnittstelle"></a>6.6.2.2. Konfiguration der Überwachungsschnittstelle</h5>
+<h5 id="konfiguration-der-ueberwachungsschnittstelle"><a class="anchor" href="#konfiguration-der-ueberwachungsschnittstelle"></a>6.6.2.2. Konfiguration der Überwachungsschnittstelle</h5>
 <div class="paragraph">
 <p>Der HealthCheck, die Server-Metriken und das Loadbalancing Servlet werden automatisch durch die Verwendung der Bibliothek
 in die Anwendung eingebunden und aktiviert. Für den HealthCheck muss explizit eine Konfiguration in den Application Properties

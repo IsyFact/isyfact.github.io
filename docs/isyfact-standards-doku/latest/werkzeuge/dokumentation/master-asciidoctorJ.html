@@ -31,7 +31,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5-SNAPSHOT">
+<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5.0-SNAPSHOT">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -369,7 +369,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">IsyFact Standards</span>
-    <span class="version">2.5-SNAPSHOT</span>
+    <span class="version">2.5 (DEV)</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -384,7 +384,7 @@
       <a class="title" href="../../einstieg/einstieg.html">IsyFact Standards</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../../einstieg/einstieg.html">2.5-SNAPSHOT</a>
+          <a href="../../einstieg/einstieg.html">2.5 (DEV)</a>
         </li>
       </ul>
     </li>
@@ -537,7 +537,7 @@ Hierfür muss auf der Kommandozeile auf eine geeignete Stelle der lokalen Festpl
                 📄 inhalt.adoc    <i class="conum" data-value="4"></i><b>(4)</b>
                 📄 master.adoc    <i class="conum" data-value="5"></i><b>(5)</b>
                 📄 thisdoc.adoc   <i class="conum" data-value="6"></i><b>(6)</b>
-                📂 images <i class="conum" data-value="4"></i><b>(4)</b>
+                📂 images <i class="conum" data-value="7"></i><b>(7)</b>
             📂 Nutzungsvorgaben <i class="conum" data-value="2"></i><b>(2)</b>
                 📄 anhaenge.adoc
                 📄 inhalt.adoc
@@ -787,7 +787,7 @@ In <a href="#listing-master-bib">docinfo.adoc - Angabe des zugehörigen Baustein
 [cols="5,2,3",options="header"]
 |====
 |Name |Art |Version
-|isy-web |Bibliothek |{version-ifs}
+|isy-web |Bibliothek |v{version-ifs}
 |====</code></pre>
 </div>
 </div>
@@ -1180,9 +1180,9 @@ Die Leerzeile zwischen dem Block und dem Ende des Tags ist wichtig, damit die B�
 <div class="title">Listing 11. Abbildung einfügen (IsyFact)</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">:desc-image-beispiel: Beispiel
-[id="image-beispiel",reftext="Abbildung 1"]
+[id="image-beispiel",reftext="{figure-caption} {counter:figures}"]
 .{desc-image-beispiel}
-image::beispiel.png</code></pre>
+image::beispiel.png[]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1227,7 +1227,7 @@ Abbildungen zu einem Dokument werden stets im Unterordner <code>/images</code> a
 <div class="title">Listing 12. Abbildung zentriert einfügen</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">:desc-image-beispiel: Beispiel
-[id="image-beispiel",reftext="Abbildung 2"]
+[id="image-beispiel",reftext="{figure-caption} {counter:figures}"]
 .{desc-image-beispiel}
 image::beispiel.png[align="center"]</code></pre>
 </div>
@@ -1242,7 +1242,7 @@ HTML-Dokumente benötigen die Angabe von <code>scaledwidth</code>, PDF-Dokumente
 <div class="title">Listing 13. Abbildung zentriert und skaliert einfügen</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">:desc-image-beispiel: Beispiel
-[id="image-beispiel",reftext="Abbildung 3"]
+[id="image-beispiel",reftext="{figure-caption} {counter:figures}"]
 .{desc-image-beispiel}
 image::beispiel.png[align="center",pdfwidth=80%,scaledwidth=80%]</code></pre>
 </div>
@@ -1317,7 +1317,7 @@ image::beispiel.png[align="center",pdfwidth=80%,scaledwidth=80%]</code></pre>
 <div class="title">Listing 15. Tabelle einfügen in IsyFact</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">:desc-table-beispiel: Beispiel-Tabelle
-[id="table-beispiel",reftext="Tabelle 1"]
+[id="table-beispiel",reftext="{table-caption} {counter:tables}"]
 .{desc-table-beispiel}
 [options="header"]
 |====
@@ -1414,7 +1414,7 @@ public class HalloWelt {
 <div class="title">Listing 17. Quelltext einfügen in IsyFact</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">:desc-listing-hallowelt: HalloWelt.java
-[id="listing-hallowelt",reftext="Listing 1"]
+[id="listing-hallowelt",reftext="{listing-caption} {counter:listings}"]
 .{desc-listing-hallowelt}
 [source,java]
 ----
@@ -1520,69 +1520,69 @@ Zunächst sind folgende Properties dem Element <code>&lt;properties&gt;&lt;/prop
 <div id="listing-pom-asciidoc" class="listingblock">
 <div class="title">Listing 19. Integration der <code>isy-asciidoctorj-extensions</code> in das Asciidoctor Maven Plugin</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">    &lt;build&gt;
-        &lt;plugins&gt;
-            &lt;plugin&gt;
-                &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
-                &lt;artifactId&gt;asciidoctor-maven-plugin&lt;/artifactId&gt;
-                &lt;version&gt;2.1.0&lt;/version&gt; <i class="conum" data-value="1"></i><b>(1)</b>
-                &lt;dependencies&gt;
-                    &lt;dependency&gt;
-                        &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
-                        &lt;artifactId&gt;asciidoctorj-pdf&lt;/artifactId&gt;
-                        &lt;version&gt;1.5.3&lt;/version&gt;
-                    &lt;/dependency&gt;
-                    &lt;dependency&gt;
-                        &lt;groupId&gt;de.bund.bva.isyfact&lt;/groupId&gt; <i class="conum" data-value="2"></i><b>(2)</b>
-                        &lt;artifactId&gt;isy-asciidoctorj-extensions&lt;/artifactId&gt;
-                        &lt;version&gt;${isy-asciidoctorj-extensions.version}&lt;/version&gt;
-                    &lt;/dependency&gt;
-                &lt;/dependencies&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
+            &lt;artifactId&gt;asciidoctor-maven-plugin&lt;/artifactId&gt;
+            &lt;version&gt;2.1.0&lt;/version&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+            &lt;dependencies&gt;
+                &lt;dependency&gt;
+                    &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
+                    &lt;artifactId&gt;asciidoctorj-pdf&lt;/artifactId&gt;
+                    &lt;version&gt;1.5.3&lt;/version&gt;
+                &lt;/dependency&gt;
+                &lt;dependency&gt;
+                    &lt;groupId&gt;de.bund.bva.isyfact&lt;/groupId&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+                    &lt;artifactId&gt;isy-asciidoctorj-extensions&lt;/artifactId&gt;
+                    &lt;version&gt;${isy-asciidoctorj-extensions.version}&lt;/version&gt;
+                &lt;/dependency&gt;
+            &lt;/dependencies&gt;
 
-                &lt;configuration&gt;
-                    &lt;outputDirectory&gt;${project.build.directory}&lt;/outputDirectory&gt;
-                    &lt;attributes&gt;
-                        &lt;revnumber&gt;IF-${project.version}&lt;/revnumber&gt;
-                        &lt;revdate&gt;${maven.build.timestamp}&lt;/revdate&gt;
-                        &lt;version-ifs&gt;${project.version}&lt;/version-ifs&gt;
-                        &lt;vs-einstufung&gt;offen&lt;/vs-einstufung&gt; <i class="conum" data-value="3"></i><b>(3)</b>
-                    &lt;/attributes&gt;
-                &lt;/configuration&gt;
+            &lt;configuration&gt;
+                &lt;outputDirectory&gt;${project.build.directory}&lt;/outputDirectory&gt;
+                &lt;attributes&gt;
+                    &lt;revnumber&gt;IF-${project.version}&lt;/revnumber&gt;
+                    &lt;revdate&gt;${maven.build.timestamp}&lt;/revdate&gt;
+                    &lt;version-ifs&gt;${project.version}&lt;/version-ifs&gt;
+                    &lt;vs-einstufung&gt;offen&lt;/vs-einstufung&gt; <i class="conum" data-value="3"></i><b>(3)</b>
+                &lt;/attributes&gt;
+            &lt;/configuration&gt;
 
-                &lt;executions&gt;
-                    &lt;execution&gt; <i class="conum" data-value="4"></i><b>(4)</b>
-                        &lt;id&gt;html-build&lt;/id&gt;
-                        &lt;phase&gt;generate-resources&lt;/phase&gt;
-                        &lt;goals&gt;
-                            &lt;goal&gt;process-asciidoc&lt;/goal&gt;
-                        &lt;/goals&gt;
-                        &lt;configuration&gt;
-                            &lt;backend&gt;html&lt;/backend&gt;
-                            &lt;sourceDirectory&gt;src/docs/OrdnerDokument&lt;/sourceDirectory&gt;
-                            &lt;sourceDocumentName&gt;master.adoc&lt;/sourceDocumentName&gt;
-                            &lt;outputFile&gt;${project.build.directory}/doc/Dokument.html&lt;/outputFile&gt;
-                        &lt;/configuration&gt;
-                    &lt;/execution&gt;
-                    &lt;execution&gt;
-                        &lt;id&gt;pdf-build&lt;/id&gt;
-                        &lt;phase&gt;generate-resources&lt;/phase&gt;
-                        &lt;goals&gt;
-                            &lt;goal&gt;process-asciidoc&lt;/goal&gt;
-                        &lt;/goals&gt;
-                        &lt;configuration&gt;
-                            &lt;backend&gt;pdf&lt;/backend&gt;
-                            &lt;sourceDirectory&gt;src/docs/OrdnerDokument&lt;/sourceDirectory&gt;
-                            &lt;sourceDocumentName&gt;master.adoc&lt;/sourceDocumentName&gt;
-                            &lt;outputFile&gt;${project.build.directory}/doc/Dokument.pdf&lt;/outputFile&gt;
-                            &lt;attributes&gt;
-                                &lt;pdf-style&gt;isyfact-closed&lt;/pdf-style&gt;
-                            &lt;/attributes&gt;
-                        &lt;/configuration&gt;
-                    &lt;/execution&gt;
-                &lt;/executions&gt;
-            &lt;/plugin&gt;
-        &lt;/plugins&gt;
-    &lt;/build&gt;</code></pre>
+            &lt;executions&gt;
+                &lt;execution&gt; <i class="conum" data-value="4"></i><b>(4)</b>
+                    &lt;id&gt;html-build&lt;/id&gt;
+                    &lt;phase&gt;generate-resources&lt;/phase&gt;
+                    &lt;goals&gt;
+                        &lt;goal&gt;process-asciidoc&lt;/goal&gt;
+                    &lt;/goals&gt;
+                    &lt;configuration&gt;
+                        &lt;backend&gt;html&lt;/backend&gt;
+                        &lt;sourceDirectory&gt;src/docs/OrdnerDokument&lt;/sourceDirectory&gt;
+                        &lt;sourceDocumentName&gt;master.adoc&lt;/sourceDocumentName&gt;
+                        &lt;outputFile&gt;${project.build.directory}/doc/Dokument.html&lt;/outputFile&gt;
+                    &lt;/configuration&gt;
+                &lt;/execution&gt;
+                &lt;execution&gt;
+                    &lt;id&gt;pdf-build&lt;/id&gt;
+                    &lt;phase&gt;generate-resources&lt;/phase&gt;
+                    &lt;goals&gt;
+                        &lt;goal&gt;process-asciidoc&lt;/goal&gt;
+                    &lt;/goals&gt;
+                    &lt;configuration&gt;
+                        &lt;backend&gt;pdf&lt;/backend&gt;
+                        &lt;sourceDirectory&gt;src/docs/OrdnerDokument&lt;/sourceDirectory&gt;
+                        &lt;sourceDocumentName&gt;master.adoc&lt;/sourceDocumentName&gt;
+                        &lt;outputFile&gt;${project.build.directory}/doc/Dokument.pdf&lt;/outputFile&gt;
+                        &lt;attributes&gt;
+                            &lt;pdf-style&gt;isyfact-closed&lt;/pdf-style&gt;
+                        &lt;/attributes&gt;
+                    &lt;/configuration&gt;
+                &lt;/execution&gt;
+            &lt;/executions&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;</code></pre>
 </div>
 </div>
 <div class="colist arabic">

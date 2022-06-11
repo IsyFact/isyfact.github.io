@@ -31,7 +31,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5-SNAPSHOT">
+<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5.0-SNAPSHOT">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -369,7 +369,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">IsyFact Standards</span>
-    <span class="version">2.5-SNAPSHOT</span>
+    <span class="version">2.5 (DEV)</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -384,7 +384,7 @@
       <a class="title" href="../../einstieg/einstieg.html">IsyFact Standards</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../../einstieg/einstieg.html">2.5-SNAPSHOT</a>
+          <a href="../../einstieg/einstieg.html">2.5 (DEV)</a>
         </li>
       </ul>
     </li>
@@ -414,7 +414,6 @@
 <h1 class="page">Konzept REST</h1>
 <div id="preamble">
 <div class="sectionbody">
-<h1 id="_konzept" class="discrete">Konzept</h1>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
@@ -448,7 +447,7 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">isy-service-rest</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Bibliothek</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.5-SNAPSHOT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.5.0-SNAPSHOT</p></td>
 </tr>
 </tbody>
 </table>
@@ -605,7 +604,7 @@ Diese http-Aufrufe entsprechen zwar nicht dem Reifegradmodell (Level 2), sind ab
 <p>Wird über die Schnittstelle ein Geschäftsvorfall angestoßen, ist der Geschäftsvorfall in der URI zu adressieren:</p>
 </div>
 <div class="paragraph">
-<p>Schema: /&lt;geschaeftsvorfall&gt;/&lt;geschaeftsprozess&gt;</p>
+<p>Schema: <code>/{geschaeftsvorfall}/{geschaeftsprozess}</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -651,7 +650,7 @@ Repräsentiert die Ressource eine Menge von Objekten, wird der Plural verwendet.
 <p>Der hierarchische Aufbau von Ressourcen ist explizit erwünscht:</p>
 </div>
 <div class="paragraph">
-<p>Schema: /&lt;ressource&gt;/&lt;id&gt;/&lt;ressource&gt;/&lt;id&gt;/&lt;&#8230;&#8203;&gt;</p>
+<p>Schema: <code>/{ressource}/{id}/{ressource}/{id}/{...}</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -716,10 +715,10 @@ Folgende URI adressiert beispielsweise den Absender einer bestimmten Nachricht.<
 <div class="ulist">
 <ul>
 <li>
-<p>{id_m}: id der <strong>m</strong>essage</p>
+<p><code>{id_m}</code>: id der <strong>m</strong>essage</p>
 </li>
 <li>
-<p>{id_r}: id des <strong>r</strong>eceivers</p>
+<p><code>{id_r}</code>: id des <strong>r</strong>eceivers</p>
 </li>
 </ul>
 </div>
@@ -966,7 +965,7 @@ Es ist idempotent, da nichts verändert wird.</p>
 <i class="fa icon-note" title="Hinweis"></i>
 </td>
 <td class="content">
-Eine Übersicht über die HTTP-Methoden und ihre Eigenschaften, findet sich in <a href="anhaenge.html#anhang-http-methoden" class="xref page">Anhang: http-Methoden</a>
+Eine Übersicht über die HTTP-Methoden und ihre Eigenschaften findet sich in <a href="anhaenge.html#anhang-http-methoden" class="xref page">Anhang: http-Methoden</a>
 </td>
 </tr>
 </table>
@@ -1330,7 +1329,7 @@ Der Performance Vorteil von Webflux macht sich insbesondere bei vielen gleichzei
 </div>
 <div class="paragraph">
 <p>Trotzdem empfiehlt die IsyFact grundsätzlich, Spring MVC für die Umsetzung von REST-Services einzusetzen.
-Die Vorteile der reaktiven Programmierparadigma erfüllen sich nur, wenn alle Teile der Umsetzung entsprechend gestaltet sind.
+Die Vorteile des reaktiven Programmierparadigmas erfüllen sich nur, wenn alle Teile der Umsetzung entsprechend gestaltet sind.
 Dies ist aktuell nicht der Fall.</p>
 </div>
 <div class="paragraph">
@@ -1353,11 +1352,11 @@ Das OpenAPI Format wird jedoch von diversen Entwicklungsumgebungen (z. B. Intell
 <div class="paragraph">
 <p>Bei der Erstellung von REST-APIs gibt es grundsätzlich 2 Ansätze: <em>Contract/API First</em> oder <em>Code First</em>.
 Bei <em>Contract/API First</em> wird zunächst die Schnittstellenbeschreibung erstellt und daraus der Code (Server und Client) generiert.
-Bei <em>Code First</em> wird zuerst das API implementiert und mit Annotationen für die Schnittstellenbeschreibung versehen.
+Bei <em>Code First</em> wird zuerst die API implementiert und mit Annotationen für die Schnittstellenbeschreibung versehen.
 Aus den Annotationen wird dann die Schnittstellenbeschreibung generiert.</p>
 </div>
 <div class="paragraph">
-<p>Die Isyfact empfiehlt den <em>Contract/API First</em> Ansatz.</p>
+<p>Die IsyFact empfiehlt den <em>Contract/API First</em> Ansatz.</p>
 </div>
 <div class="paragraph">
 <p>Für die Generierung des Codes von Server und Client sind die Standards von OpenApi 3.x zu beachten.</p>
@@ -1500,7 +1499,7 @@ Die Implementierung des RestExceptionsHandler kann daher über die Annotation ei
 <div class="sect3">
 <h4 id="einheitliche-fehlermeldungen"><a class="anchor" href="#einheitliche-fehlermeldungen"></a>5.2.2. Einheitliche Fehlermeldungen</h4>
 <div class="paragraph">
-<p>Eine Fehlernachricht aus einer REST-Schnittstelle (egal ob Client oder Server Error) muss mindestens folgende Informationen beinhalten.</p>
+<p>Eine Fehlernachricht aus einer REST-Schnittstelle (egal, ob Client oder Server Error) muss mindestens folgende Informationen beinhalten.</p>
 </div>
 <table id="table-error-fields" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 2. Standardfelder für Fehlernachrichten</caption>
@@ -1581,7 +1580,7 @@ Hierfür muss der Client mit jeder Nachricht einen Bearer Token mitsenden.
 Dieser wird im Request-Header mit dem Tag "Authorization" versehen.
 Im Sicherheitsbaustein wird das Token an den <code>SecurityContextHolder</code> weitergegeben.
 Dort werden die Daten ausgelesen und der Token wird auf Echtheit überprüft.
-Bei einer reinen Weitergabe, greift die Bearer Propagation.</p>
+Bei einer reinen Weitergabe greift die Bearer Propagation.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1591,8 +1590,7 @@ Bei einer reinen Weitergabe, greift die Bearer Propagation.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Nähere Informationen zu OAuth2 gibt es auf der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-Git-LFS" class="xref page">OAuth Homepage</a>.
-.</p>
+<p>Nähere Informationen zu OAuth2 gibt es auf der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-Git-LFS" class="xref page">OAuth Homepage</a>.</p>
 </div>
 <div class="paragraph">
 <p>Informationen zur Bearer Propagation gibt es in der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-spring-oauth2-bearertoken-resolver" class="xref page">offiziellen Spring Dokumentation</a>.</p>

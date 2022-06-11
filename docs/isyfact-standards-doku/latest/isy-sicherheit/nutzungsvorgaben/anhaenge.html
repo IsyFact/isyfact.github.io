@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Einbindung und Konfiguration :: IsyFact Dokumentation</title>
+    <title>Nutzungsvorgaben Sicherheit: Anhänge :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://github.com/isyfact/isyfact-standards-doku/latest/isy-sicherheit/nutzungsvorgaben/anhaenge.html">
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../../_/css/site.css">
@@ -31,7 +31,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5-SNAPSHOT">
+<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5.0-SNAPSHOT">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -369,7 +369,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">IsyFact Standards</span>
-    <span class="version">2.5-SNAPSHOT</span>
+    <span class="version">2.5 (DEV)</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -384,7 +384,7 @@
       <a class="title" href="../../einstieg/einstieg.html">IsyFact Standards</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../../einstieg/einstieg.html">2.5-SNAPSHOT</a>
+          <a href="../../einstieg/einstieg.html">2.5 (DEV)</a>
         </li>
       </ul>
     </li>
@@ -400,7 +400,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../einstieg/einstieg.html">IsyFact Standards</a></li>
-    <li><a href="anhaenge.html">Einbindung und Konfiguration</a></li>
+    <li><a href="anhaenge.html">Nutzungsvorgaben Sicherheit: Anhänge</a></li>
   </ul>
 </nav>
 </div>
@@ -409,348 +409,310 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Einbindung und Konfiguration</h1>
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>In diesem Abschnitt wird die Einbindung und Konfiguration von <strong>isy-sicherheit-keycloak</strong> beschrieben.</p>
-</div>
-</div>
-</div>
+<h1 class="page">Nutzungsvorgaben Sicherheit: Anhänge</h1>
 <div class="sect1">
-<h2 id="maven-dependency"><a class="anchor" href="#maven-dependency"></a>1. Maven Dependency</h2>
+<h2 id="_anhang"><a class="anchor" href="#_anhang"></a>1. Anhang</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="konfigurationsdateien"><a class="anchor" href="#konfigurationsdateien"></a>1.1. Anhang A: Konfigurationsdateien</h3>
+<div class="sect3">
+<h4 id="standard-cache-konfiguration"><a class="anchor" href="#standard-cache-konfiguration"></a>1.1.1. Standard-Cache-Konfiguration</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ehcache xsi:noNamespaceSchemaLocation="ehcache.xsd" updateCheck="false" monitoring="autodetect" dynamicConfig="true"&gt;
+  &lt;!--
+  Pflicht: Standard-Einstellungen fuer Caches.
+  Diese Einstellungen werden verwendet,
+  sofern Caches programmatisch erzeugt werden mithilfe von
+  CacheManager.add(String cacheName).
+  Der defaultCache hat den impliziten Namen "default",
+  welcher einer reservierter
+  Cache-Name ist.
+  --&gt;
+  &lt;defaultCache
+    maxEntriesLocalHeap="1000"
+    eternal="false"
+    timeToLiveSeconds="300"
+    timeToIdleSeconds="0"
+    overflowToDisk="false"
+    memoryStoreEvictionPolicy="LRU" /&gt;
+  &lt;cache
+    name="authentifizierungen"
+    maxEntriesLocalHeap="1000"
+    eternal="false"
+    timeToLiveSeconds="300"
+    timeToIdleSeconds="0"
+    overflowToDisk="false"
+    memoryStoreEvictionPolicy="LRU" /&gt;
+&lt;/ehcache&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="anhang-rollen-rechte-schema"><a class="anchor" href="#anhang-rollen-rechte-schema"></a>1.2. Anhang B: Rollen-Rechte-Schema</h3>
 <div class="paragraph">
-<p>In der pom.xml der Anwendung muss folgende Abhängigkeit ergänzt werden:</p>
+<p>Im Folgenden ist der Inhalt der Datei <code>RollenRechteSchema.xsd</code> wiedergegeben, die das Format der Konfigurationsdatei für Rollen und Rechte (<code>rollenrechte.xml</code>) festlegt.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
-  &lt;groupId&gt;de.bund.bva.isyfact&lt;/groupId&gt;
-  &lt;artifactId&gt;isy-sicherheit-keycloak&lt;/artifactId&gt;
-&lt;/dependency&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;schema xmlns="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.isyfact.de/RollenRechteSchema"
+    xmlns:tns="http://www.isyfact.de/RollenRechteSchema"
+    elementFormDefault="qualified"&gt;
+  &lt;include schemaLocation=""&gt;&lt;/include&gt;
+  &lt;complexType name="Rolle"&gt;
+    &lt;sequence&gt;
+      &lt;element name="rechtId" type="tns:RechtId" minOccurs="0" maxOccurs="unbounded"/&gt;
+    &lt;/sequence&gt;
+    &lt;attribute name="RolleId" type="string" use="required"/&gt;
+  &lt;/complexType&gt;
+  &lt;complexType name="Recht"&gt;
+    &lt;sequence&gt;
+      &lt;element name="rechtId" type="tns:RechtId" minOccurs="1" maxOccurs="1"/&gt;
+    &lt;/sequence&gt;
+  &lt;/complexType&gt;
+  &lt;element name="Anwendung" type="tns:Anwendung"/&gt;
+  &lt;complexType name="Anwendung"&gt;
+    &lt;sequence&gt;
+      &lt;element name="rollen" type="tns:Rolle" minOccurs="1" maxOccurs="unbounded"/&gt;
+      &lt;element name="rechte" type="tns:Recht" minOccurs="0" maxOccurs="unbounded"/&gt;
+    &lt;/sequence&gt;
+    &lt;attribute name="AnwendungsId" type="string" use="required"/&gt;
+  &lt;/complexType&gt;
+  &lt;complexType name="RechtId"&gt;
+    &lt;attribute name="Id" type="string" use="required"/&gt;
+  &lt;/complexType&gt;
+&lt;/schema&gt;</code></pre>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="spring-konfiguration"><a class="anchor" href="#spring-konfiguration"></a>2. Spring Konfiguration</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="verwaltung-von-rollen-im-benutzerverzeichnis"><a class="anchor" href="#verwaltung-von-rollen-im-benutzerverzeichnis"></a>1.3. Anhang C: Verwaltung von Rollen im Benutzerverzeichnis</h3>
 <div class="paragraph">
-<p>Die Spring-Konfiguration von isy-sicherheit-keycloak baut auf der Konfiguration von isy-sicherheit auf (siehe <a href="#NutzungsvorgabenSicherheit">Nutzungsvorgaben Sicherheit</a>).
-Lediglich alle dort beschriebenen CAMS-spezifischen Konfigurationen müssen entfallen.
-In IsyFact 2 bringt isy-sicherheit-keycloak eine Autokonfiguration für Spring Boot mit.
-Die  <code>AccessManager</code>-Bean für Keycloak wird damit automatisch konfiguriert, wenn keine andere AccessManager-Bean im Kontext vorhanden ist.</p>
-</div>
-<div class="paragraph">
-<p>Zur Absicherung von Rest-Services in Spring sind weitere Konfigurationen erforderlich.
-Insbesondere muss die Spring-Security-Chain korrekt initialisiert werden.
-Dies geschieht am einfachsten per Konfiguration nicht in XML sondern im Java-Code.
-Hierzu muss in der Anwendung eine Konfigurationsklasse definiert werden, welche von <code>IsyKeycloakWebSecurityConfigurerAdapter</code> ableitet:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Configuration
-public class BeispielAnwendungSecurityConfig extends IsyKeycloakWebSecurityConfigurerAdapter {
-
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        super.configure(http);
-
-        http.authorizeRequests().anyRequest().authenticated();
-    }
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Die <code>HttpSecurity</code>-Konfiguration in dem Beispiel oben stellt sicher, dass der Nutzer bei allen Requests authentifiziert ist.
-Regeln zur Autorisierung werden hier nicht definiert, da dies in isy-sicherheit über die <code>Gesichert</code>-Annotation an den abzusichernden Services erfolgt.</p>
+<p>Damit Rollen auch an Benutzer im Benutzerverzeichnis vergeben werden können, müssen die Rollen in das Benutzerverzeichnis eingespielt werden.</p>
 </div>
 <div class="paragraph">
-<p>Die Konfigurationsklasse wird als Import in die Hauptklasse in der Anwendung eingebunden:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Configuration
-@EnableAutoConfiguration
-@Import({ BeispielAnwendungSecurityConfig.class /*, ggf weitere Config*/ })
-
-public class BeispielAnwendungApplication extends SpringBootServletInitializer {
-//...
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="konfigurationsparameter"><a class="anchor" href="#konfigurationsparameter"></a>3. Konfigurationsparameter</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Für die korrekte Anbindung an Keycloak ist die Angabe einiger Konfigurationsparameter notwendig.
-Die in den <a href="#NutzungsvorgabenSicherheit">Nutzungsvorgaben Sicherheit</a> beschriebenen Parameter für CAMS (<code>sic.camsagent.<strong></code> und <code>cams.</strong></code>) sind nicht mehr relevant.</p>
+<p>Dies erfolgt für Testsysteme und das Produktivsystem (im Rahmen von Inbetriebnahmen) per Import-Batch, bei dem ein Excel-Dokument mit zu importierenden Rollen in das Benutzerverzeichnis geladen wird.
+Der Import ist der einzige Weg, um Rollen hinzuzufügen.</p>
 </div>
 <div class="paragraph">
-<p>Der Präfix sämtlicher Konfigurationsparameter <code>isy.sicherheit.keycloak</code> wird zur Vereinfachung in der Liste unten weggelassen.</p>
+<p>Mit dem Batch ist es möglich Rollen hinzuzufügen (<code>Add</code>), zu verändern (<code>Upd</code>) oder zu löschen (<code>Del</code>).</p>
 </div>
 <div class="paragraph">
-<p>Einige Konfigurationsparameter sind mit einem Zähler versehen.
-Diese beinhalten mit <code>instances[0]</code> und können für mehr als eine Sicherheitsdomäne und/oder Keycloak-Installation definiert werden.
-Die Parameter für eine zweite Konfiguration müssen mit <code>instances[1]</code> ergänzt werden.
-Weitere Konfigurationen werden demzufolge mit Parametern konfiguriert, die mit <code>instances[2]</code>, <code>instances[3]</code>, etc. enthalten.
-Dies ist dann sinnvoll, wenn eine Anwendung nicht nur Access-Tokens einer Sicherheitsdomäne in einer Keycloak-Installation akzeptieren soll, sondern verschiedene.
-Ein Beispiel für eine Anwendung mit zwei Realms ist eine Geschäftsanwendung,
-welche einen Realm zur Prüfung der Tokens benötigt mit denen es aus dem Portal heraus über den Proxy aufgerufen wird und
-einen zweiten Realm zur Initiierung der Authentifizierung eines Timer-Tasks oder Batch.</p>
+<p>Das Excel-Dokument zum Einspielen von Rollen benötigt ein Arbeitsblatt „Rollen“ und hat folgendes Format:</p>
 </div>
-<table id="table-parameter" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 1. Konfigurationsparameter</caption>
+<table id="table-EinspielenVonRollen" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Einspielen von Rollen in das Benutzerverzeichnis (Beispiel)</caption>
 <colgroup>
+<col style="width: 10%;">
 <col style="width: 20%;">
-<col style="width: 13.3333%;">
-<col style="width: 13.3333%;">
-<col style="width: 53.3334%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 30%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Wertebereich</th>
-<th class="tableblock halign-left valign-top">Default</th>
-<th class="tableblock halign-left valign-top">Beschreibung</th>
+<th class="tableblock halign-left valign-top"><strong>Aktion</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Rollenlabel</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Rollenname</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Rollentyp</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Unterrollen</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock"><code><strong>Parameter pro Sicherheitsdomäne und/oder Keycloak-Installation</strong></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BNVZ_Rolle1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BNVZ_Rolle1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fachlich</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BHVZ_Schnittstellennutzer</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>instances[0].realm</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><em>keiner</em></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Der Realm bei Keycloak (=Sicherheitsdomäne)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BNVZ_Rolle2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BNVZ_Rolle2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fachlich</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BHVZ_Schnittstellennutzer,<br>
+SVZ_Schnittstellennutzer</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>instances[0].realmKey</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><em>keiner</em></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Der Public-Key zur Überprüfung der Token-Signatur.
-    Der Wert hier kann der Realm-Konfiguration in Keycloak entnommen werden.
-    Wird i.d.R. nicht gesetzt, damit der Key automatisch von Keycloak bezogen wird.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>instances[0].auth-server-url</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><em>keiner</em></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Link auf die betreffende Keycloak-Instanz (Beispiel: <a href="http://keycloak:8080/auth" class="bare">http://keycloak:8080/auth</a>).
-    Der Link dient dazu die Keycloak-Instanzen zu unterscheiden und wird zur Kommunikation dieser Anwendung mit Keycloak benötigt;
-    beispielsweise zur Abfrage des Public-Key zur Überprüfung der Token-Signatur.
-    Der Link muss mit dem Aussteller des Tokens übereinstimmen.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>instances[0].ext-auth-server-url</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><em>keiner</em></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alternativer Link auf die betreffende Keycloak-Instanz (Beispiel: <a href="http://proxy/keycloak/auth" class="bare">http://proxy/keycloak/auth</a>).
-    Der Link wird nur zur Token-Prüfung verwendet, es werden keine Anfragen über die URL gesendet.
-    Tokens bei denen dieser Link als Aussteller im Token steht, werden auch akzeptiert.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>instances[0].default-instance</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>boolean</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Markiert eine Keycloak-Instanz als Default.
-    Falls keine Instanz explizit als Default markiert ist, wird die erste Instanz genommen.
-    Die Default-Instanz ist relevant, wenn die Anwendung eine Authentifizierung bei Keycloak initiieren will.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>instances[0].bearer-only</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>boolean</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer-only Anwendungen können nur Tokens prüfen, aber selbst keine Authentifizierung bei Keycloak initiieren.
-    In der Regel ist dies bei GUI-Anwendungen der Fall, bei denen das Token durch einen vorgeschalteten Apache ermittelt wird.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>instances[0].resource</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bearer-only</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Der Name des Clients, der für die Authentifizierung bei Keycloak verwendet wird.
-    Für bearer-only Anwendungen ist keine Konfiguration notwendig.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>instances[0].credentials-secret</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><em>keiner</em></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Passwort mit dem sich die Anwendung / der Client bei Keycloak authentifiziert.
-    Für bearer-only Anwendungen ist keine Konfiguration notwendig.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>instances[0].enable-basic-auth</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>boolean</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Aktivierung von HTTP Basic-Authentication.
-    Funktioniert nur, wenn der Keycloak Client auch entsprechend konfiguriert ist.
-    Wird bereits auf einen sinnvollen Standardwert gesetzt.
-    Anpassungen sind i.d.R. nicht notwendig.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>instances[0].public-client</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>boolean</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bei Public-Clients wird kein Client-Secret benötigt, um eine Authentifizierung bei Keycloak zu initiieren.
-    Funktioniert nur, wenn der Keycloak Client auch entsprechend konfiguriert ist.
-    Wird bereits auf einen sinnvollen Standardwert gesetzt.
-    Anpassungen sind i.d.R. nicht notwendig.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>instances[0].ssl-required</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>external</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definiert, wann eine SSL Verbindung verpflichtend ist.
-    Wird bereits auf einen sinnvollen Standardwert gesetzt.
-    Anpassungen sind i.d.R. nicht notwendig.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>instances[0].principal-attribute</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sub</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definiert, welches Token-Attribut als User-Name genutzt wird.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock"><code><strong>Allgemeine Parameter</strong>:</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cert-header-name</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>x-client-cert</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Als zusätzliche Sicherheitsmaßnahme ist zur Authentifizierung in Keycloak ein Behördenkennzeichen erforderlich, welches zu dem Behördenkennzeichen passen muss, dass im Nutzerprofil hinterlegt ist.
-Das Behördenkennzeichen wird von Keycloak aus dem Zertifikat ausgelesen.
-Der Name des HTTP-Headers, der das Zertifikat enthält ist konfigurierbar.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cert-dn-header-name</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>x-client-cert-dn</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alternativ kann statt des Zertifikats auch nur der DN aus dem Zertifikat an Keycloak weitergeleitet werden.
-Hierfür wird ein anderer HTTP-Header verwendet.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bhknz-header-name</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>x-client-cert-bhknz</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alternativ kann statt des Zertifikats oder DN auch nur das Behördenkennzeichen an Keycloak weitergeleitet werden.
-Hierfür wird ein anderer HTTP-Header verwendet.
-Dies wird zum Test, aber auch in Produktion beispielsweise bei Batches verwendet.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standard-zertifikat-ou</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AZRVISAPORTAL</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Der Wert wird verwendet, wenn ein Aufruf mit BHKNZ jedoch ohne Zertifikat-OU eingeht.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>korrelations-id-header-name</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>correlationid</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Der Name des Korrelations-ID-Headers in Anfragen an Keycloak.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bhknz-attribute-name</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bhknz</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Der Attributname der Behördenkennzeichen in den Userdaten in den Antworten von Keycloak.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>interne-kennung-attribute-name</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>internekennung</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Der Name des Claims im Token, aus dem die interneKennung für den Aufrufkontext entnommen wird</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Del</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BNVZ_Rolle3</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<h1 id="authentifizierung" class="sect0"><a class="anchor" href="#authentifizierung"></a>Authentifizierung</h1>
 <div class="paragraph">
-<p>Die Authentifizierung erfolgt über Keycloak.
-Keycloak greift hierbei auf die Benutzerdaten im Benutzerverzeichnis zu.
-Nach erfolgreicher Authentifizierung stellt Keycloak ein Access-Token aus, welches die benötigten Informationen zum angemeldeten Nutzer enthält.
-Dies sind beispielsweise die Rollen des Nutzers, das Kennzeichen der Behörde, welcher er zugeordnet ist, sowie der Nutzername.</p>
+<p>Zusätzlich zu den oben abgebildeten Spalten enthält das Excel-Dokument die folgenden weiteren Spalten, deren Inhalt bereits im Dokument <a href="master.html#einleitung" class="xref page">Sicherheit - Konzept</a> beschrieben wurde:</p>
 </div>
-<div class="sect1">
-<h2 id="authentifizierung_in_der_gui"><a class="anchor" href="#authentifizierung_in_der_gui"></a>1. Authentifizierung in der GUI</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Die Authentifizierung in der GUI erfolgt über ein Modul im Apache, welches prüft, ob bereits eine gültige Session vorhanden ist.
-Falls nein, wird der Nutzer auf die Login-Seite von Keycloak umgeleitet und kann dort seine Credentials eingeben.
-Wenn die Authentifizierung bei Keycloak erfolgreich war, liefert Keycloak ein Access-Token zurück.
-Dies wird in der Session gespeichert und bei jedem Request an die nachgelagerten Anwendungen über einen HTTP-Header mitgeschickt.</p>
-</div>
-<div class="paragraph">
-<p>Im der aufgerufenen Anwendung wird durch isy-sicherheit-keycloak geprüft, ob das Token gültig ist.
-Hierzu wird der Public-Key des Realm in Keycloak benötigt.
-Dieser wird automatisch (über einen öffentlichen Rest-Endpunkt) bei Keycloak abgefragt und in einem Cache in der Anwendung vorgehalten.
-Wenn die Token-Prüfung erfolgreich war, werden die Daten aus dem Token in einem <code>AufrufKontext</code> im <code>AufrufKontextVerwalter</code> gespeichert.
-Zusätzlich werden die Daten auch im Spring-Security-Context gespeichert.
-Dies ermöglicht Autorisierungsprüfungen sowohl über die <code>Gesichert</code>-Annotation aus isy-sicherheit,
-als auch über die entsprechenden Mechanismen in Spring-Security, beispielsweise die <code>Secured</code>-Annotation.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="authentifizierung_innerhalb_einer_anwendung"><a class="anchor" href="#authentifizierung_innerhalb_einer_anwendung"></a>2. Authentifizierung innerhalb einer Anwendung</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Zur Authentifizierung innerhalb einer Anwendung muss ein <code>AufrufKontext</code> oder <code>ZertifikatInfoAufrufKontext</code> erzeugt werden, in dem Kennung, Passwort und Behördenkennzeichen oder Zertifikat gefüllt sind.
-Über die Komponente <code>Sicherheit</code> kann dann die Authentifizierung bei Keycloak angestoßen werden.
-Der Aufruf an Keycloak erfolgt dabei über den <code>KeycloakAccessManager</code>.
-Wenn die Authentifizierung bei Keycloak erfolgreich war, liefert Keycloak ein Access-Token zurück.
-Die Daten aus dem Token werden in einem <code>AufrufKontext</code> im <code>AufrufKontextVerwalter</code> gespeichert.
-Zusätzlich werden die Daten auch im Spring-Security-Context gespeichert.</p>
-</div>
-</div>
-</div>
-<h1 id="autorisierung" class="sect0"><a class="anchor" href="#autorisierung"></a>Autorisierung</h1>
-<div class="sect1">
-<h2 id="autorisierung_eines_rest_service"><a class="anchor" href="#autorisierung_eines_rest_service"></a>1. Autorisierung eines REST Service</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Bei REST Services wird erwartet, dass der Aufrufer ein gültiges Access-Token mitschickt.
-Das Token wird als Bearer-Token im Authorization Header des Http-Requests erwartet.
-Hieraus erzeugt isy-sicherheit-keycloak (wie oben beschrieben) einen <code>AufrufKontext</code>.
-Die Autorisierungsprüfung erfolgt dann, entsprechend dem Konzept von isy-sicherheit, über die <code>Gesichert</code>-Annotation an der Service-Implementierung.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="autorisierung_eines_httpinvoker_service"><a class="anchor" href="#autorisierung_eines_httpinvoker_service"></a>2. Autorisierung eines HttpInvoker Service</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Bei HttpInvoker Services wird erwartet, dass der <code>AufrufKontext</code> als erster Parameter mitgesendet wird.
-Dieser wird dann zur Autorisierungsprüfung herangezogen.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Rollenbeschreibung</strong></p>
+</li>
+<li>
+<p><strong>SichtbarkeitAnwender</strong></p>
+</li>
+<li>
+<p><strong>SichtbarkeitSystemeExtern</strong></p>
+</li>
+<li>
+<p><strong>SichtbarkeitSystemeIntern</strong></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Aktuell gibt es noch keine Festlegungen zur Nutzung von Tokens auch bei HttpInvoker.</p>
-</div>
-</div>
-</div>
-<h1 id="testunterstuetzung" class="sect0"><a class="anchor" href="#testunterstuetzung"></a>Testunterstützung</h1>
-<div class="paragraph">
-<p>In diesem Abschnitt wird <strong>isy-sicherheit-keycloak-test</strong> beschrieben.</p>
+<p>Nach der letzten zu importierenden Zeile des Arbeitsblatts sollte eine Zeile mit der Aktion <code>End</code> eingefügt werden.
+Dies verbessert die Performance beim Import.
+Bei allen anderen Werten in der Spalte „Aktion“ wird die Zeile ignoriert.</p>
 </div>
 <div class="paragraph">
-<p>Isy-sicherheit-test enthält Hilfsklassen zum Erstellen von (automatisierten) Tests, in welchen isy-sicherheit-keycloak benötigt wird.
-Das Projekt enthält eine Mock-Implementierung von Keycloak.
-Zur Simulation des REST-Services wird WireMock verwendet.</p>
+<p>Zusätzlich kann das Excel-Dokument ein weiteres Tabellenblatt „Systeme“ enthalten.
+Dieses folgt demselben Schema zum Hinzufügen (<code>Add</code>), Ändern (<code>Upd</code>) und Löschen (<code>Del</code>) von Einträgen.
+Es dient dazu, die Systeme (interne und ggf. auch externe) zu pflegen, wie im Dokument <a href="master.html#einleitung" class="xref page">Sicherheit - Konzept</a> beschrieben.
+Systeme sind im Benutzerverzeichnis spezialisierte Benutzer.
+Sie haben daher alle Attribute der Entitäten <code>ETY_Benutzer</code>, <code>ETY_System</code> und <code>ETY_Rollenträger</code>.</p>
 </div>
 <div class="paragraph">
-<p>Isy-sicherheit-test wird auch in den Unit-Tests des Projekts isy-sicherheit-keycloak verwendet.</p>
+<p>Das Tabellenblatt „Systeme“ enthält die folgenden Spalten, deren Inhalte in den Attributbeschreibungen im Datenmodell des Benutzerverzeichnisses erklärt werden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Aktion</strong>: <code>Add</code>, <code>Upd</code>, <code>Del</code> oder <code>End</code></p>
+</li>
+<li>
+<p><strong>InterneKennung</strong></p>
+</li>
+<li>
+<p><strong>Name</strong></p>
+</li>
+<li>
+<p><strong>Status</strong>: <code>gueltig</code> oder <code>ungueltig</code></p>
+</li>
+<li>
+<p><strong>BHKNZ</strong>: Kennzeichen der Organisation (Behördenkennzeichen) durch die das System genutzt wird.</p>
+</li>
+<li>
+<p><strong>Anbieter</strong></p>
+</li>
+<li>
+<p><strong>Intern</strong>: <code>true</code> oder <code>false</code></p>
+</li>
+<li>
+<p><strong>PasswortPlain</strong>: Passwort im Klartext, wird beim Import verschlüsselt</p>
+</li>
+<li>
+<p><strong>Anlagedatum</strong></p>
+</li>
+<li>
+<p><strong>PasswortLaeuftAb</strong>: <code>true</code> oder <code>false</code> (für Systeme sinnvollerweise <code>false</code>)</p>
+</li>
+<li>
+<p><strong>PasswortLetzteAenderung</strong></p>
+</li>
+<li>
+<p><strong>PasswortMussGeaendertWerden</strong>: <code>true</code> oder <code>false</code></p>
+</li>
+<li>
+<p><strong>Beschreibung</strong></p>
+</li>
+<li>
+<p><strong>LetzteAenderung</strong></p>
+</li>
+<li>
+<p><strong>LetzteAenderungDurch</strong></p>
+</li>
+<li>
+<p><strong>RollenDirekt</strong>: Kommaseparierte Liste der direkt zugeordneten fachlichen Rollen des Systems</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Das folgende Beispiel zeigt die einfache Initialisierung eines Mocks für Keycloak, mit genau einem Nutzer mit genau einer Rolle:</p>
+<p><strong>Motivation für die Updatefunktion</strong></p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">EmbeddedKeycloakMock embeddedKeycloak = new EmbeddedKeycloakMock("localhost", 9095, "testRealm", new RsaKeyGenerator());
-embeddedKeycloak.addUser("testUser", "testPwd", "testBhknz", Collections.singleton("testRolle"));</code></pre>
+<div class="paragraph">
+<p>Die Löschung einer bereits verwendeten Rolle kann große Auswirkungen auf die Rollenzuordnung des Benutzerbestandes haben, da diese allen besitzenden Benutzern weggenommen werden muss.
+Eine nachträgliche hinzugefügte Ersatzrolle müsste dann manuell administrativ den Benutzern wieder zugeordnet werden.
+Das ist nicht praktikabel.
+Daher wird für eine Aktualisierung einer Rolle das Ändern einer Rolle (<code>Upd</code>) angeboten.
+Die Rollendefinition wird dabei verändert, während die Rolle allen Benutzern und Nutzergruppen zugeordnet bleibt.</p>
+</div>
+<div class="paragraph">
+<p><strong>Einschränkungen für den Rollenimport</strong></p>
+</div>
+<div class="paragraph">
+<p>Folgende Einschränkungen bestehen beim Import von Rollen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Erzeugen einer Rolle:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Der Name der Rolle darf noch nicht vergeben sein.</p>
+</li>
+<li>
+<p>Eine fachliche Rolle darf nur technische Unterrollen haben.
+Im Excel-Dokument referenzierte Unterrollen müssen im Datenbestand bereits bekannt sein, bzw.
+im Excel-Dokument weiter oben stehen.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Ändern einer Rolle</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Der Typ der Rolle (fachlich, technisch) kann nicht geändert werden.</p>
+</li>
+<li>
+<p>Der (neue) Name der Rolle darf nicht bereits an eine andere Rolle vergeben sein.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Löschen der Rolle: Handelt es sich um eine technische Rolle, so darf diese Rolle zum Zeitpunkt der Löschung nicht mehr in einer anderen Rolle als Unterrolle verwendet werden.
+Die fachliche Rolle ist zunächst explizit zu löschen.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="verwaltung-des-rollen-masters"><a class="anchor" href="#verwaltung-des-rollen-masters"></a>1.3.1. Verwaltung des Rollen-Masters</h4>
+<div class="paragraph">
+<p>Die Rollendefinition der Anwendungslandschaft (in Form eines Excel-Dokuments) ist ein zentral zu verwaltendes Dokument, welches zur Befüllung von Testumgebungen verwendet wird.
+Es repräsentiert den insgesamt verfügbaren Rollenvorrat über alle Anwendungssysteme.
+Das Dokument trägt den Namen <strong>Rollen-Master</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Änderungen am Rollenmodell im Rahmen von Wartungsarbeiten werden in dieses Dokument übertragen.
+Zum Einspielen einer Rollenänderung in ein produktiv- oder Testsystem wird jedoch ein passendes <strong>Rollen-Delta</strong> (ebenfalls Excel) verwendet, welches nach einer Inbetriebnahme gelöscht wird.</p>
+</div>
+<div class="paragraph">
+<p>Die Koordination der Änderungen am Rollen-Master obliegt dem Release-Verantwortlichen.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="releases-und-rollen-deltas"><a class="anchor" href="#releases-und-rollen-deltas"></a>1.3.2. Releases und Rollen-Deltas</h4>
+<div class="paragraph">
+<p>Für jedes Release, welches Änderungen an dem Rollenbestand der Anwendungslandschaft vornimmt, werden ein oder mehrere Rollen-Deltas aufbauend auf dem Rollen-Master erstellt, die das Rollenmodell vom Ist-Zustand in den Soll-Zustand überführen.
+Die Rollen-Deltas werden in den Quellen des zugehörigen IT-Systems im Verzeichnis <code>/src/main/skripte/sicherheit</code> abgelegt</p>
+</div>
+<div class="paragraph">
+<p>Diese Rollen-Deltas werden auf Testumgebungen im Rahmen der Integrationstests getestet und mit dem Release ausgeliefert.
+Die Reihenfolge, in der sie eingespielt werden müssen, wird im Releaseletter für die Rollen-Deltas definiert.
+Sie hängt von den Abhängigkeiten der Systeme ab, die in den Releaselettern der jeweiligen Systeme beschrieben sind.</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </article>
