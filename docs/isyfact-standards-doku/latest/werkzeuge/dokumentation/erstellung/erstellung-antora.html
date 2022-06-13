@@ -410,7 +410,7 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>Soll eine neue Dokumentation angelegt werden oder die bestehende Dokumentation um eine Seite erweitert werden, so muss zunächst der geeignete Ort zur Ablage bestimmt werden.
-I.d.R. ist dies das Repository, in dem sich der zu dokumentierende Erweiterungs-Baustein befindet, da die Dokumentation nah beim Code abgelegt werden soll, oder der Baustein liegt im <a href="#verzeichnisstruktur-baustein">Repository <code>isyfact-standards</code> im Submodul <code>isyfact-standards-doc</code></a>.</p>
+I.d.R. ist dies das Repository, in dem sich der zu dokumentierende Erweiterungs-Baustein befindet, da die Dokumentation nah beim Code abgelegt werden soll, oder der Baustein liegt im <a href="#verzeichnisstruktur-antora-komponente">Repository <code>isyfact-standards</code> im Submodul <code>isyfact-standards-doc</code></a>.</p>
 </div>
 <div class="sect2">
 <h3 id="repository-klonen"><a class="anchor" href="#repository-klonen"></a>1.1. Klonen Repository</h3>
@@ -468,7 +468,7 @@ In Repositories, die noch keine Dokumentation enthalten, muss ein derartiges Sub
 Unterhalb dieses Pfades liegt die Antora-Dokumentations-Komponente, repräsentiert durch die Konfigurationsdatei <code>antora.yml</code>.
 In Repositories, die noch keine Antora-Komponente enthalten, muss diese Konfigurationsdatei noch angelegt werden.
 Ein Repository sollte jedoch nur eine Antora-Komponente enthalten.
-(Mehrere Antora-Komponenten hätten unterschiedliche Versionierungen, die evtl. nicht mehr synchron zum Versionsstand des Repositories gehalten werden könnten.)</p>
+(Mehrere Antora-Komponenten hätten unterschiedliche Versionen, die eventuell nicht mehr synchron zum Versionsstand des Repositories gehalten werden könnten.)</p>
 </div>
 <div class="paragraph">
 <p>Das folgende Listing <a href="#verzeichnisstruktur-antora-komponente">Verzeichnisstruktur Antora-Komponente</a> zeigt die Verzeichnisstruktur bis zur Antora-Dokumentations-Komponente.</p>
@@ -572,10 +572,10 @@ An diesem Ort werden die Dokumentationsseiten als .adoc abgelegt mit einem Namen
 <div class="paragraph">
 <p>Außer dem Verzeichnis <code>pages</code> kann es bei Bedarf noch weitere Verzeichnisse geben wie <code>images</code> und <code>attachments</code>.
 Siehe dazu ebenfalls <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-antora-verzeichnisstruktur" class="xref page">Antora-Verzeichnisstruktur</a>.
-Unterhalb von <code>images</code> und <code>attachments</code> kann eine weitere Strukturierung erfolgen, die sich an der Struktur unter <code>pages</code> orientiert, siehe auch <a href="#verzeichnisstruktur-baustein">[verzeichnisstruktur-baustein]</a>.</p>
+Unterhalb von <code>images</code> und <code>attachments</code> kann eine weitere Strukturierung erfolgen, die sich an der Struktur unter <code>pages</code> orientiert, siehe auch <a href="#verzeichnisstruktur-pages-images">Verzeichnisstruktur innerhalb eines Antora-Moduls</a>.</p>
 </div>
 <div class="paragraph">
-<p>Wenn unter <code>pages</code> viele Dokumentationsseiten abzulegen sind, können sie noch weiter strukturiert werden, siehe auch <a href="#verzeichnisstruktur-baustein">[verzeichnisstruktur-baustein]</a> und  <a href="../../seitenvorlage.html#dateien-thema" class="xref page">Dateiablage</a>.
+<p>Wenn unter <code>pages</code> viele Dokumentationsseiten abzulegen sind, können sie noch weiter strukturiert werden, siehe auch <a href="#verzeichnisstruktur-pages-images">Verzeichnisstruktur innerhalb eines Antora-Moduls</a> und  <a href="../../seitenvorlage.html#dateien-thema" class="xref page">Dateiablage</a>.
 Für Bausteine wird häufig die Strukturierung <code>konzept</code> und <code>nutzungsvorgaben</code> gewählt.</p>
 </div>
 <div class="paragraph">
@@ -647,7 +647,7 @@ Für Bausteine wird häufig die Strukturierung <code>konzept</code> und <code>nu
 <div class="sect2">
 <h3 id="linksnavigation-antora"><a class="anchor" href="#linksnavigation-antora"></a>1.7. Navigationsdatei <code>nav.adoc</code></h3>
 <div class="paragraph">
-<p>Nach der Erstellung der Dokumentationsseiten in .adoc-Dateien muss dafür gesorgt werden, dass sie aufrufbar sind, üblicherweise über die Linksnavigation von Antora.
+<p>Nach der Erstellung der Dokumentationsseiten in <code>.adoc</code>-Dateien muss dafür gesorgt werden, dass sie aufrufbar sind, üblicherweise über die Linksnavigation von Antora.
 In der Antora-Datei <code>nav.adoc</code> wird die Linksnavigation bzgl. einer <a href="../../../../../glossary/latest/glossary/master.html#glossar-antora-dokumentations-komponente" class="xref page">Antora-Dokumentations-Komponente</a> festgelegt, siehe auch <a href="../../seitenvorlage.html#navigation-thema" class="xref page">Navigationsstruktur</a>.</p>
 </div>
 <div class="paragraph">
@@ -679,12 +679,12 @@ nav:
 <div id="listing-nav-adoc" class="listingblock">
 <div class="title">Listing 6. Beispiel Modul <code>Werkzeuge</code>, Verlinkung in <code>nav.adoc</code></div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">* Werkzeuge
-** xref:werkzeuge:dokumentation/einleitung/einfuehrung.adoc[Dokumentation gemäß IsyFact]
-*** xref:werkzeuge:dokumentation/master-antora.adoc[Projektseite mit Antora (empfohlen)]
-*** xref:werkzeuge:dokumentation/master-asciidoctorJ.adoc[Dokumente mit AsciidoctorJ Extensions]
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">* xref:werkzeuge:werkzeuge.adoc[]
+** xref:werkzeuge:dokumentation/einleitung/einfuehrung.adoc[]
+*** xref:werkzeuge:dokumentation/master-antora.adoc[]
+*** xref:werkzeuge:dokumentation/master-asciidoctorJ.adoc[]
 ** xref:werkzeuge:entwicklungsumgebung/master.adoc[Entwicklungsumgebung]
-** xref:werkzeuge:versionierungskontrolle/master.adoc[Versionierungskontrolle]</code></pre>
+** xref:werkzeuge:versionierungskontrolle/master.adoc[]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -695,9 +695,6 @@ nav:
 <img src="../../_images/handbuch/leftnavigation.png" alt="leftnavigation" width="80%">
 </div>
 <div class="title">Abbildung 1. Linksnavigation</div>
-</div>
-<div class="paragraph">
-<p><br></p>
 </div>
 </div>
 <div class="sect2">

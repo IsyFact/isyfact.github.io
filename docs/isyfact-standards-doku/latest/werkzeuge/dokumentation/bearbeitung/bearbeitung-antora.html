@@ -1002,7 +1002,7 @@ Abbildungen sollten mit diagrams.net als &lt;Name Abbildung&gt;.dn.svg erstellt 
 </table>
 </div>
 <div class="paragraph">
-<p>Diagramme, die mit dem <a href="../../../methodik/diagrammerstellung/enterprise-architect.html" class="xref page">Enterprise Architect</a> erstellt werden, oder Screenshots, dürfen auch weiterhin als .png eingebunden werden.</p>
+<p>Diagramme, die mit dem <a href="../../../methodik/diagrammerstellung/enterprise-architect.html" class="xref page">Enterprise Architect</a> erstellt werden, oder Screenshots, dürfen auch weiterhin im PNG-Format eingebunden werden.</p>
 </div>
 <table id="table-namenskonvention-bilder" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 2. Namensschema für Namen von Abbildungen aus diagrams.net</caption>
@@ -1031,32 +1031,41 @@ Abbildungen sollten mit diagrams.net als &lt;Name Abbildung&gt;.dn.svg erstellt 
 </tbody>
 </table>
 <div class="paragraph">
-<p>Wenn ein Antora-Modul sehr viele Bilder enthält, kann auch eine Unterstruktur unterhalb von /images angelegt werden, z.B. /images/unterordner.</p>
+<p>Wenn ein Antora-Modul sehr viele Bilder enthält, kann auch eine Unterstruktur unterhalb von <code>/images</code> angelegt werden, z.B. <code>/images/unterordner</code>.</p>
 </div>
 <div class="paragraph">
-<p>In einem IsyFact-Dokument muss eine Abbildung:</p>
+<p>Eine Abbildung muss folgende Informationen enthalten:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>eine Beschreibung enthalten,</p>
+<p>eine Beschreibung,</p>
 </li>
 <li>
-<p>eindeutig identifizierbar und referenzierbar sein.</p>
+<p>einen für die Seite eindeutigen Anker,</p>
+</li>
+<li>
+<p>(optional) eine Angabe über die anzuzeigende Breite.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Deswegen werden Abbildungen in IsyFact-Dokumenten wie folgt definiert:</p>
+<p>Die folgenden Beispiele zeigen, wie Abbildungen in Seiten aussehen können.</p>
 </div>
 <div id="image-beispiel" class="listingblock">
-<div class="title">Listing 11. Abbildung einfügen (IsyFact)</div>
+<div class="title">Listing 11. Beispiele für Abbildungen</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[[image-beispiel]]
 .Beispiel
- image::beispiel.dn.svg
+image::beispiel.dn.svg[]
 
- image::unterordner/beispiel2.dn.svg</code></pre>
+[[image-beispiel-unterordner]]
+.Beispiel mit Unterordner
+image::unterordner/beispiel.dn.svg[]
+
+[[image-beispiel-skaliert]]
+.Beispiel mit Skalierung
+image::unterordner/beispiel.dn.svg[width="400"]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1076,8 +1085,7 @@ Abbildungen sollten mit diagrams.net als &lt;Name Abbildung&gt;.dn.svg erstellt 
 </div>
 </div>
 <div class="paragraph">
-<p>Beispiele für Abbildungen finden sich außerdem in <a href="../../seitenvorlage.html#formatierung-abbildungen" class="xref page">Seitenvorlage Abbildungen</a>.<br>
-<br></p>
+<p>Beispiele für Abbildungen finden sich außerdem in <a href="../../seitenvorlage.html#formatierung-abbildungen" class="xref page">Seitenvorlage Abbildungen</a>.</p>
 </div>
 </div>
 <div class="sect2">
