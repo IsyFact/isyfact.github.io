@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Baustein Styleguide (JSF): Nutzungsvorgaben :: IsyFact Dokumentation</title>
+    <link rel="canonical" href="https://github.com/isyfact/isyfact-style-doku/latest/isy-style/nutzungsvorgaben/nutzungsvorgaben.html">
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../_/css/isyfact.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://github.com/isyfact">IsyFact Dokumentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="isyfact-style-doku" data-version="5.4">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../styleguide.html">Styleguide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../styleguide.html">Styleguide (JSF)</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="nutzungsvorgaben.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../changelog.html">Changelog</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Styleguide</span>
+    <span class="version">5.4</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../glossary/latest/glossary/master.html">Glossar</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../glossary/latest/glossary/master.html">1.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../isyfact-standards-doku/latest/einstieg/einstieg.html">IsyFact Standards</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../isyfact-standards-doku/latest/einstieg/einstieg.html">2.5 (DEV)</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../styleguide.html">Styleguide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../styleguide.html">5.4</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../../isyfact-standards-doku/latest/einstieg/einstieg.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../styleguide.html">Styleguide</a></li>
+    <li><a href="../styleguide.html">Styleguide (JSF)</a></li>
+    <li><a href="nutzungsvorgaben.html">Nutzungsvorgaben</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Inhalt" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Baustein Styleguide (JSF): Nutzungsvorgaben</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><span class="image left"><img src="../../../../glossary/latest/licence/_images/IFS-Logo.png" alt="IFS-Logo" width="150"></span> Diese Seite ist ein Teil der IsyFact-Standards.
+Alle Inhalte der Seite, insbesondere Texte und Grafiken, sind urheberrechtlich geschützt.
+Alle urheberrechtlichen Nutzungs- und Verwertungsrechte liegen beim Bundesverwaltungsamt.</p>
+</div>
+<div class="paragraph">
+<p><span class="image right"><img src="../../../../glossary/latest/licence/_images/CC-BY.png" alt="Creative Commons Namensnennung" width="150"></span>
+Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-licence" class="xref page">Lizenzbedingungen</a> der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-short" class="xref page">Creative Commons Namensnennung 4.0 International</a> gestattet.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Java Bibliothek / IT-System</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 20%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Art</th>
+<th class="tableblock halign-left valign-top">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy-style</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bibliothek</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">v5.4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="kapitel-plis-style"><a class="anchor" href="#kapitel-plis-style"></a>1. Bibliothek isy-style</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In der IsyFact-Erweiterung <code>isy-style</code> werden die CSS-, JavaScript- und Bilddateien des Styleguides abgelegt, für die Nutzung komprimiert und kompiliert.
+Dieses Dokument enthält die technische Dokumentation zur Bibliothek <code>isy-style</code>.</p>
+</div>
+<div class="sect2">
+<h3 id="technologien-nutzungsvorgaben"><a class="anchor" href="#technologien-nutzungsvorgaben"></a>1.1. Technologien</h3>
+<div class="sect3">
+<h4 id="twitter-bootstrap"><a class="anchor" href="#twitter-bootstrap"></a>1.1.1. Twitter Bootstrap</h4>
+<div class="paragraph">
+<p>Dieses Projekt baut auf dem Bootstrap CSS Framework in Version 3.4.1 auf.
+Dieses stellt sowohl browserübergreifende, erweiterbare Styles für HTML-Elemente als auch wenige komplexere Steuerelemente mit zusätzlichem Javascript-Code zur Verfügung.</p>
+</div>
+<div class="paragraph">
+<p>Die Bootstrap-Styles wurden entsprechend den Definitionen im Styleguide (Aussehen, Form, Farbe und Effekte) angepasst.
+Hierbei wurden die originalen Quelldateien von Bootstrap im Verzeichnis src/less/bootstrap nicht verändert.
+Stattdessen wurden für die applikationsspezifischen Anpassungen eigene Dateien im Verzeichnis src/less/es/ definiert, welche die vorhandenen Bootstrap Styledefinitionen überschreiben.
+Im Browser werden die originalen Bootstrap-Styles geladen und von den applikationsspezifischen Styles überschrieben.
+Diese Methode generiert zwar ein wenig Redundanz und Overhead, die Bootstrap Dateien bleiben aber für etwaige Versionsupdates von Bootstrap unverändert erhalten.</p>
+</div>
+<div class="paragraph">
+<p>Bei der gesamten Entwicklung wurde darauf geachtet, dass die ursprünglichen Funktionalitäten von Bootstrap erhalten bleiben.
+So können Entwickler bei aufkommenden Fragen die <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-get-bootstrap" class="xref page">Bootstrap Dokumentation</a> zu Rate ziehen.
+Sollte diese Dokumentation für eine neuere Bootstrap Versionen angepasst werden und somit nicht mehr mit der in der Anwendung verwendeten Version kompatibel sein, werden die älteren Bootstrap-Dokumentationen in einem Archiv von einem <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-bootstrap-docs" class="xref page">Drittanbieter</a> zur Verfügung gestellt.</p>
+</div>
+<div class="sect4">
+<h5 id="erweiterung-der-bootstrap-basis"><a class="anchor" href="#erweiterung-der-bootstrap-basis"></a>1.1.1.1. Erweiterung der Bootstrap-Basis</h5>
+<div class="paragraph">
+<p>Die Bootstrap-Quelldateien und die von Bootstrap bereitgestellten JavaScript-Dateien können unabhängig von den angewandten Styles und Templates aktualisiert werden.
+Sollte eine neue Bootstrap Version erscheinen und es notwendig sein, neue Features und/oder Bug-Fixes zu implementieren, sollte folgendermaßen vorgegangen werden:</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="nutzungsvorgaben-less"><a class="anchor" href="#nutzungsvorgaben-less"></a>1.1.1.2. LESS</h5>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Die neuen <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-github-bootstrap-less" class="xref page">LESS-Quelldateien</a> herunterladen</p>
+</li>
+<li>
+<p>Die Dateien in src/less/bootstrap/ mit den neu heruntergeladenen Dateien ersetzen.</p>
+</li>
+<li>
+<p>Anpassungen und Aktualisierungen aus der neuen Less Datei less/bootstrap/variables.less per Kopieren und Einfügen in die less/es/custom-variables.less übertragen.</p>
+</li>
+<li>
+<p>Kompilieren der styles.less nach www/css/styles.css mit Hilfe eines Less-Compilers oder dem zur Verfügung gestellten GruntJS Build-Prozesses.</p>
+</li>
+<li>
+<p>Zum Abschluss müssen die Konformität mit dem Styleguide und die visuell fehlerfreie Darstellung der Applikation überprüft werden.
+Möglicherweise sind noch zusätzliche Styledefinitionen oder Korrekturen nötig, um neue Bootstrap-Styles zu überschreiben.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="nutzungsvorgaben-java-script-1"><a class="anchor" href="#nutzungsvorgaben-java-script-1"></a>1.1.1.3. JavaScript</h5>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Die neue <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-github-bootstrap-mini-js" class="xref page">bootstrap.min.js-Datei</a> herunterladen.</p>
+</li>
+<li>
+<p>Die alte Datei src/assets/lib/bootstrap.min.js durch die neue ersetzen.</p>
+</li>
+<li>
+<p>Funktionalität überprüfen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="nutzungsvorgaben-less-stylesheet"><a class="anchor" href="#nutzungsvorgaben-less-stylesheet"></a>1.1.2. LESS Stylesheets</h4>
+<div class="paragraph">
+<p>Bootstrap basiert auf der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-less-stylesheet" class="xref page">LESS Stylesheet-Sprache</a>. Diese fügt Variablen, Funktionen und Operationen zur ursprünglichen CSS Funktionalität hinzu.
+Dieses Projekt implementiert diese Funktionalitäten und baut darauf auf.</p>
+</div>
+<div class="paragraph">
+<p>LESS Stylesheets müssen in CSS-Dateien kompiliert werden, damit sie für Browser lesbar sind.
+Folgende Freeware-Lösungen können für diesen Schritt genutzt werden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-dot-less" class="xref page">dotless</a> (Windows)</p>
+</li>
+<li>
+<p><a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-less-app" class="xref page">Less.app</a> (Mac OS)</p>
+</li>
+<li>
+<p>GruntJS LESS task (Cross-platform) – siehe unten</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Als Ergebnis der Stylesheet-Entwicklung werden Quelldateien im LESS-Format zur Verfügung gestellt.
+Diese werden in die Datei www/css/styles.css kompiliert und enthält alle relevanten Styles.
+Die Datei styles.less im Verzeichnis less/ ist die wichtigste CSS-Datei und Startpunkt für den CSSKompilierungsprozess.
+Mit Hilfe eines LESS Compilers (dieser sollte möglichst die Importe berücksichtigen – „import aware“) wird die Datei styles.less in in die Datei styles.css kompiliert.
+Es wird empfohlen, in den Einstellungen des Compilers die Funktionen „Minimieren“ und „Kommentare entfernen“ einzuschalten.
+Dadurch kann die Dateigröße verkleinert werden.</p>
+</div>
+<div class="paragraph">
+<p>Bei der Datei styles.css handelt es sich um eine erste Version.
+Sie kann bei Erweiterungen oder Änderungen im Projekt einfach durch Entwickler aktualisiert werden.</p>
+</div>
+<div class="paragraph">
+<p>Hierbei sollte beachtet werden, dass Styling-Änderungen nie in der Datei styles.css selbst angepasst werden, sondern immer die ihr zugrunde liegenden Quelldateien anzupassen sind.
+Ansonsten gehen Änderungen bei einem neuen Kompilierungsprozess verloren, da die Datei styles.css wie oben beschrieben beim Kompilieren überschrieben wird.</p>
+</div>
+<div class="paragraph">
+<p>LESS ermöglicht es, verschachtelte Selektoren zu benutzen, diese sind in den gelieferten Styles sehr häufig zu finden.
+Diese Verschachtelung erlaubt eine einfachere Wartbarkeit des Projektes, da so in den Styles teilweise die DOM-Struktur der Zielelemente widergespielt wird.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="nutzungsvorgaben-grunt-js"><a class="anchor" href="#nutzungsvorgaben-grunt-js"></a>1.1.3. GruntJS Build System</h4>
+<div class="paragraph">
+<p><a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-grunt-js" class="xref page">GruntJS</a> ist ein modulares Kommandozeilen-Build-Programm für Webapplikationen.
+Dieses Programm basiert auf JavaScript und baut auf <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-node-js" class="xref page">NodeJS</a> und auf der Node-eigenen Paketverwaltung NPM (Node Package Modules) auf.</p>
+</div>
+<div class="paragraph">
+<p>GruntJS beinhaltet einen Task zur LESS-Kompilierung und einen Watch-Task.
+Diese sind für die Frontend-Entwicklung sehr komfortabel.
+Die Datei package.json beinhaltet alle notwendigen Bibliotheken-Abhängikeiten um Grunt Tasks zu installieren und das Projekt neu zu erstellen.</p>
+</div>
+<div class="paragraph">
+<p>Um GruntJS zur Kompilierung von Stylesheets und Markup zu nutzen, muss als erstes NodeJS installiert werden.
+Des Weiteren müssen Grunt und die benötigten Tasks (Es werden die folgenden Grunt-Tasks benutzt: grunt-contrib-less, grunt-contrib-watch, grunt-contribconcat, grunt-contrib-copy, grunt-contrib-clean, grunt-contrib-jshin) via npm installiert werden.
+Dies kann über die Funktion „npm install“ direkt in das Hauptverzeichnis erfolgen.
+Mit dem Befehl „grunt“ in einer Konsolenanwendung wird das Projekt neu erstellt.</p>
+</div>
+<div class="paragraph">
+<p>Weitere Informationen finden sich in der GruntJS Dokumentation und in der mitgelieferten Gruntfile.js.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="bennenung-der-komponenten"><a class="anchor" href="#bennenung-der-komponenten"></a>1.1.4. Benennung der Komponenten</h4>
+<div class="paragraph">
+<p>Die Benennung von spezifischen Komponenten und Layout-Elementen im Code wurde der Dash-Case-Schreibweise von Bootstrap angepasst.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="css-raster-system"><a class="anchor" href="#css-raster-system"></a>1.1.5. CSS Raster-System</h4>
+<div class="paragraph">
+<p>Dieses Projekt benutzt das Bootstrap Raster-System, um das Layout und die Bedienelemente der Applikation zu strukturieren und zu positionieren.</p>
+</div>
+<div class="paragraph">
+<p>Da keine Anpassungsfähigkeit (Responsivness) des Designs unterhalb der gängigen Desktop-Auflösung benötigt wird, wurden die „Mobile, „Small“, und „Medium“-Raster (in Bootstrap als „mobile grid“, „small grid“ und „medium grid“ gekennzeichnet) deaktiviert.</p>
+</div>
+<div class="paragraph">
+<p>Entwickler sollten ausschließlich die CSS-Klassen des Large (LG) Rasters benutzen (col-lg-x) um auch in diesem Fall das Spaltenraster nutzen zu können.</p>
+</div>
+<div class="paragraph">
+<p>Weitere Informationen können der Bootstrap Dokumentation über das <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-get-bootstrap-grid" class="xref page">Grid System</a> entnommen werden.</p>
+</div>
+<div class="paragraph">
+<p>Die Einstellungen für das genutzte Raster (z. B. Spaltenbreite) können in der Datei src/less/es/customvariables.less nachgelesen werden.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="zusaetzliche-bibliotheken-plugins-skripte"><a class="anchor" href="#zusaetzliche-bibliotheken-plugins-skripte"></a>1.1.6. Zusätzliche Bibliotheken, Plugins und Skripte</h4>
+<div class="paragraph">
+<p>Um eine umfassendere Funktionalität zu gewährleisten, muss teilweise zusätzliches JavaScript eingesetzt werden.
+Diese Skripte dienen beispielsweise zum Styling applikationsspezifischer Bedienelemente, Optimieren der Browser-Kompatibilität oder Erweitung der Standardinteraktivität.
+Zu diesem Zweck wurden diverse Plugins mit freier (permissive) Software Lizenz integriert.
+Diese können aktualisiert werden, wenn neue Versionen erscheinen.</p>
+</div>
+<div class="paragraph">
+<p><strong>jQuery 3.4.1</strong></p>
+</div>
+<div class="paragraph">
+<p>Bootstrap JS setzt jQuery voraus</p>
+</div>
+<div class="paragraph">
+<p><strong>Bootstrap JS 3.4.1</strong></p>
+</div>
+<div class="paragraph">
+<p>Zusätzliche JavaScript-Komponenten für erweiterte Bootstrap-Bedienelemente (affix, alert, button, carousel, collapse, dropdown, modal, popover, scrollspy,tab,tooltip,transition)</p>
+</div>
+<div class="paragraph">
+<p><strong>Modernizr 2.7.1</strong></p>
+</div>
+<div class="paragraph">
+<p>Ermöglicht es, herauszufinden, welche Features durch den Browser unterstützt werden und setzt dementesprechende CSS-Klassen. (- Bisher ungenutzt -)</p>
+</div>
+<div class="paragraph">
+<p><strong>Bootstrap Datepicker 1.8.0</strong></p>
+</div>
+<div class="paragraph">
+<p>Implementiert einen interaktiven <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-eternicode-boostrap-date-picker" class="xref page">Standard Date Picker</a></p>
+</div>
+<div class="paragraph">
+<p><strong>Bootstrap Select 1.13.9</strong></p>
+</div>
+<div class="paragraph">
+<p>Implementiert eine <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-snapappointments-bootstrap-auswahlbox" class="xref page">Auswahlbox</a></p>
+</div>
+<div class="paragraph">
+<p><strong>Bootstrap Timepicker</strong></p>
+</div>
+<div class="paragraph">
+<p>Implementiert einen interaktiven <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-jdewit-boostrap-time-picker" class="xref page">Standard Time Picker</a></p>
+</div>
+<div class="paragraph">
+<p><strong>ExtendedBootstrapTab 0.1</strong></p>
+</div>
+<div class="paragraph">
+<p>Eine erweiterte Version der Bootstrap Tabs, die das Anzeigen der Inhalte aller Tabs innnerhalb eines Tabs ermöglicht.</p>
+</div>
+<div class="paragraph">
+<p><strong>harmonizePanelHeadlineWidth 0.1</strong></p>
+</div>
+<div class="paragraph">
+<p>Gruppierungs-Container (panel groups) können Toolbars enthalten.
+Diese wiederum können Funktionen in Form von Icon-Buttons enthalten.
+Dieses Skript ermöglicht eine vertikale Ausrichtung dieser Buttons innerhalb von verschachtelten Gruppierungs-Containern unabhängig von der Länge der Gruppierungsüberschrift (Label).</p>
+</div>
+<div class="paragraph">
+<p><strong>infoPanel 0.1</strong></p>
+</div>
+<div class="paragraph">
+<p>Dieses Skript ermöglicht das Ein- und Ausblenden des optionalen Informationsbereiches auf den Applikationsdetailseiten.</p>
+</div>
+<div class="paragraph">
+<p><strong>jquery.maskedinput.js 1.3.1</strong></p>
+</div>
+<div class="paragraph">
+<p>Dieses Plugin unterstützt die Eingabe formatierter Daten (z. B. TT/MM/JJ) in Standard-Eingabefelder.
+Zur besseren Orientierung werden Platzhalter in Form von Unterstrichen in dem entsprechenden Eingabefeld angezeigt.</p>
+</div>
+<div class="paragraph">
+<p><strong>Magnific Popup 0.9.9</strong></p>
+</div>
+<div class="paragraph">
+<p>Dieses Plugin ermöglicht die Verwendung einer Lightbox.</p>
+</div>
+<div class="paragraph">
+<p><strong>Functions</strong></p>
+</div>
+<div class="paragraph">
+<p>Dieses Skript enthält eine Sammlung von allgemeinen Funktionen.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="nutzungsvorgaben-assets"><a class="anchor" href="#nutzungsvorgaben-assets"></a>1.2. Assets</h3>
+<div class="paragraph">
+<p>Alle benötigten Asstes wurden für die Benutzung in Browsern optimiert.
+Hierfür wurden alle Dateigrößen minimiert und die Anzahl der benötigten Dateien auf ein Minimum reduziert.
+Dieser Prozess beinhaltet auch die Entfernung von nicht benötigten Meta-Informationen aus dem Header von Bild-Dateien (smushit, svgmin).</p>
+</div>
+<div class="sect3">
+<h4 id="nutzungsvorgaben-fonts"><a class="anchor" href="#nutzungsvorgaben-fonts"></a>1.2.1. Fonts</h4>
+<div class="paragraph">
+<p>Als Standard-Schriftart wird der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-liberation-font" class="xref page">Liberation Font</a> verwendet. Über <code>font-face</code> wird die Liberation Font Familie eingebunden und zur Verfügung gestellt. Damit eine Web-Anwendung alle Zeichen der DIN SPEC 91379 korrekt darstellen kann, wird empfohlen die Schriftart Liberation zu verwenden.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="nutzungsvorgaben-icons"><a class="anchor" href="#nutzungsvorgaben-icons"></a>1.2.2. Icons</h4>
+<div class="paragraph">
+<p>Für die Verwendung von Icons wird der Icon-Font <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-font-awesome" class="xref page">Font Awesome</a>  genutzt.
+Über CSS-Klassen können die einzelnen Icons referenziert werden.
+Grundlegende Icons sind im <a href="../styleguide.html#icons-ueberscrift" class="xref page">Styleguide</a>  erläutert.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="nutzungsvorgaben-grafiken"><a class="anchor" href="#nutzungsvorgaben-grafiken"></a>1.2.3. Grafiken</h4>
+<div class="paragraph">
+<p>Für einige Bedien- und Layout-Elemente werden zusätzliche Bitmap Grafiken benötigt, zum Beispiel src/assets/img/controls/cb_checked_default.png (Bedienelement) und src/assets/img/bgInfoTile.png (Layout). Diese Grafiken sollten möglichst nicht verändert werden, da sie dann möglicherweise nicht mehr den Richtlinien des Interface Styleguides entsprechen.
+In der Regel ist eine Bearbeitung aber auch nicht notwendig.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="nutzungsvorgaben-konvention"><a class="anchor" href="#nutzungsvorgaben-konvention"></a>1.3. Konventionen</h3>
+<div class="sect3">
+<h4 id="nutzungsvorgaben-html-five-markup"><a class="anchor" href="#nutzungsvorgaben-html-five-markup"></a>1.3.1. HTML5 Markup</h4>
+<div class="paragraph">
+<p>Die Struktur des Markup der Applikationsbereich wurde mit Hilfe des W3C Validierers auf gültige Struktur überprüft („well-formed“).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="nutzungsvorgaben--java-script-2"><a class="anchor" href="#nutzungsvorgaben--java-script-2"></a>1.3.2. JavaScript</h4>
+<div class="paragraph">
+<p>Der Quellcode für die prototypischen Interaktionen in der Datei es.js wurde mit <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-js-lint" class="xref page">JSLint</a> validiert.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="kommentare-im-quellcode"><a class="anchor" href="#kommentare-im-quellcode"></a>1.3.3. Kommentare im Quellcode</h4>
+<div class="paragraph">
+<p>Ein Ausrufezeichen /*! innerhalb eines Kommentars zeigt an, dass dieser Kommentar auch nach der Minimierung erhalten bleibt.
+Solche Kommentare werden in den publizierten Dateien aus lizenzrechtlichen Gründen angezeigt.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="nutzungsvorgaben-stylesheets"><a class="anchor" href="#nutzungsvorgaben-stylesheets"></a>1.3.4. Stylesheets</h4>
+<div class="paragraph">
+<p>LESS Stylesheets sollten im Verzeichnis /less abgelegt werden.
+Um Styles besser lesen und verstehen zu können, sollten ein paar grundlegende Konventionen bei der Definition von neuen Styles und Stylesheets eingehalten werden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Es sollten keine IDs für das Styling benutzt werden, sondern immer Klassen.</p>
+</li>
+<li>
+<p>Klassen-und ID-Namen sollten die semantische Bedeutung des Elements im Markup beschreiben und keine Styling-Informationen enthalten (z. B. eService-area statt center-column).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Unnötige Klassen und Verschachtelungen („wrapper“-Elemente) sollten vermieden werden.
+Es sollten keine Inline-Styles (style=”…”). im HTML-Dokument eingesetzt werden
+Die Styles einzelner Elemente werden logisch auf verschiedene Dateien aufgeteilt, einige davon nutzen die Namen der Bootstrap Original-Dateien.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="nutzungsvorgaben-less-format"><a class="anchor" href="#nutzungsvorgaben-less-format"></a>1.3.5. Das LESS-Format</h4>
+<div class="paragraph">
+<p>Öffnende Klammern stehen in der gleichen Zeile wie die Bezeichnung des Styles.
+Die schließende Klammer steht in einer neuen Zeile.</p>
+</div>
+<div class="paragraph">
+<p>Klassen dürfen nur Kleinbuchstaben enthalten und einzelne Wörter sollten durch einen Bindestrich voneinander getrennt sein (z. B. „my-style“, „my-more-specfic-style“).</p>
+</div>
+<div class="paragraph">
+<p>Bei Styles mit Definitionen von mehr als einer Eigenschaft steht jeder Bezeichner und Wertezuordnung in einer eigenen Zeile.
+Sie sind mit dem Tabulator eingerückt und hinter dem Doppelpunkt folgt ein Leerzeichen.</p>
+</div>
+<div class="paragraph">
+<p>Enthält ein Style nur eine Definition von einer Eigenschaft, kann alles in einer Zeile geschrieben werden.</p>
+</div>
+<div class="paragraph">
+<p>Hexadezimalfarbwerte sollten möglichst kurz geschrieben werden (z. B. #fff).</p>
+</div>
+<div class="paragraph">
+<p>Es werden nur Kleinbuchstaben verwendet</p>
+</div>
+<div id="image-css-kleinbuchstaben" class="imageblock">
+<div class="content">
+<img src="../_images/nutzungsvorgaben/css-kleinbuchstaben.png" alt="image" width="500" height="241">
+</div>
+<div class="title">Abbildung 1. Beispiel für css-Styledeklaration</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="installation-isy-style"><a class="anchor" href="#installation-isy-style"></a>1.4. Installation der Bibliothek</h3>
+<div class="paragraph">
+<p>Die Bibliothek <code>isy-style</code> wird als Maven Dependency und als npm Paket bereitgestellt.
+Damit lässt sich <code>isy-style</code> in klassischen Webanwendungen mit JSF (Maven) oder in modernen Single Page Applications mit Angular (npm) verwenden.</p>
+</div>
+<div class="sect3">
+<h4 id="installation-klassisch"><a class="anchor" href="#installation-klassisch"></a>1.4.1. Installation in klassischen Webanwendungen</h4>
+<div class="paragraph">
+<p>Für klassische Webanwendungen wird <code>isy-style</code> als Maven Bibliothek installiert (siehe <a href="#listing-einbindung_isy_style">Einbindung von Isy-Style in der pom.xml</a>).</p>
+</div>
+<div id="listing-einbindung_isy_style" class="listingblock">
+<div class="title">Listing 1. Einbindung von Isy-Style in der pom.xml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
+    &lt;groupId&gt;de.bund.bva.isyfact&lt;/groupId&gt;
+    &lt;artifactId&gt;isy-style&lt;/artifactId&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Während des Build-Prozesses der Anwendung werden die statische Ressourcen (CSS, JavaScript, Bilder) automatisch aus <code>isy-style</code> geladen und in der Webanwendung bereitgestellt.
+Im Projekt selbst sind diese Ressourcen nicht sichtbar und können somit auch nicht geändert werden.
+Änderungen an Stylesheets aus <code>isy-style</code> sind somit nur durch ein Überschreiben der Ressourcen möglich.
+In der Anwendung definierte Stylesheets sollten immer nach den Ressourcen aus <code>isy-style</code> geladen werden, damit diese überschrieben werden.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="einbindung-isy-style-nodejs"><a class="anchor" href="#einbindung-isy-style-nodejs"></a>1.4.2. Installation in Angular Projekten</h4>
+<div class="paragraph">
+<p>Für die Verwendung von <code>isy-style</code> in Angular Projekten muss zunächst die Bibliothek über installiert werden.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ npm i -S @isyfact/isy-style</pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+Für die Installation der Bibliothek wird eine Verbindung zum internen npm Repository der IsyFact benötigt.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Die statischen Ressourcen müssen anschließend an der passenden Stelle in der Angular Anwendung importiert werden.
+Stylesheets aus <code>isy-style</code> werden typischerweise immer am Anfang des projektspezifischen Templates deklariert und bei Bedarf modifiziert (siehe <a href="#listing-isy-style-less">Einbinden der Stylesheets von isy-style in Angular Projekt</a>)</p>
+</div>
+<div id="listing-isy-style-less" class="listingblock">
+<div class="title">Listing 2. Einbinden der Stylesheets von isy-style in Angular Projekt</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-less hljs" data-lang="less">@import '~@isyfact/isy-style/dist/css/styles.css';
+@import '~@isyfact/isy-style/dist/css/color.css';
+
+@import './variables.less';
+
+/* ggf. Anpassungen oder eigene Klassen */</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Bilder, Schriftarten und andere statische Ressourcen werden über die <code>assets</code> Konfiguration in der <code>angular.json</code> bereitgestellt (siehe <a href="#listing-isy-style-angular">Bereitstellen von statischen Ressourcen aus isy-style in Angular Projekten</a>).</p>
+</div>
+<div id="listing-isy-style-angular" class="listingblock">
+<div class="title">Listing 3. Bereitstellen von statischen Ressourcen aus isy-style in Angular Projekten</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+ "projects": {
+    "my-project": {
+      "architect": {
+        "build": {
+          "assets": [
+              {
+                "glob": "**/*",
+                "input": "node_modules/@isyfact/isy-style/img",
+                "output": "/img"
+              },
+              {
+                "glob": "*.svg",
+                "input": "node_modules/@isyfact/isy-style/webfonts",
+                "output": "/font-data"
+              }
+          ]
+        }
+      }
+    }
+ }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="konfiguration-portalfarbe"><a class="anchor" href="#konfiguration-portalfarbe"></a>1.5. Konfiguration Portalfarbe</h3>
+<div class="paragraph">
+<p>Für eine Anwendung kann eine Basisfarbe / Portalfarbe konfiguriert werden.
+Von dieser <code>portalColor</code> werden viele der weiteren Farbstyles für die Anwendung abgeleitet und in der generierten Datei <code>color.css</code> abgelegt, die in der Zielanwendung einzubinden ist.
+Es kann zudem eine abweichende Fokusfarbe für Bedienelemente <code>focusColor</code> konfiguriert werden.
+Standardmäßig wird die <code>portalColor</code> auch als Fokusfarbe der Bedienelemente gesetzt.</p>
+</div>
+<div class="paragraph">
+<p>Zur Generierung der Datei <code>color.css</code> mit der eigenen Portalfarbe sind folgende Schritte erforderlich:</p>
+</div>
+<div class="paragraph">
+<p><strong>1.  Konfiguration der Portalfarbe</strong>: In der Datei <code>Gruntfile.js</code> ist die Basisfarbe / Portalfarbe zu setzen:</p>
+</div>
+<div id="listing-gruntPortalfarbe" class="listingblock">
+<div class="title">Listing 4. Portalfarbe in Gruntfile.js konfigurieren</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">var helper = require('./helper/helper');
+module.exports = function (grunt) {
+
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-less');
+
+    const portalColor = '#004179';
+    const focusColor = portalColor;
+
+    grunt.initConfig({
+        ...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Hier kann auch eine abweichende Fokusfarbe für Bedienelemente konfiguriert werden.</p>
+</div>
+<div class="paragraph">
+<p><strong>2.   Maven Install</strong>: In der Bibliothek <code>isy-style</code> ist ein "Maven install" durchzuführen.
+Dadurch wird ein "grunt build" ausgelöst und die Farbstyles befinden sich nach der Generierung in <code>target/color.css</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>3.   Einbindung in Zielanwendung</strong>: Die Datei <code>color.css</code> aus dem Target-Verzeichnis von <code>isy-style</code> ist in die Zielanwendung unterhalb des WEB-INF Verzeichnisses zu kopieren.</p>
+</div>
+<div id="image-colorCssPosition" class="imageblock text-center">
+<div class="content">
+<img src="../_images/nutzungsvorgaben/color-css-position.png" alt="color css position">
+</div>
+<div class="title">Abbildung 2. Zielordner für color.css Datei</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<div class="divFooter"></div>
+
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+<script src="../../../../_/js/isyfact.js"></script>
+  </body>
+</html>
