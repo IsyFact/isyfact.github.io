@@ -31,18 +31,18 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5-SNAPSHOT">
+<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5.0-SNAPSHOT">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../../einstieg/vorstellung.html">IsyFact Standards</a></h3>
+    <h3 class="title"><a href="../../einstieg/einstieg.html">IsyFact Standards</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Einstieg</span>
+    <a class="nav-link" href="../../einstieg/einstieg.html">Einstieg</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -66,7 +66,7 @@
     <a class="nav-link" href="../../einstieg/tutorial/master.html">Tutorial</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../einstieg/whitepaper/master.html">Whitepaper</a>
+    <a class="nav-link" href="../../einstieg/whitepaper.html">Whitepaper</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../einstieg/migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
@@ -79,7 +79,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Blaupausen</span>
+    <a class="nav-link" href="../../blaupausen/blaupausen.html">Blaupausen</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../blaupausen/referenzarchitektur/master.html">Referenzarchitektur</a>
@@ -125,7 +125,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Bausteine</span>
+    <a class="nav-link" href="../../bausteine/bausteine.html">Bausteine</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -275,8 +275,15 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../plattform/plattform.html">Plattform</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Methodik</span>
+    <a class="nav-link" href="../../methodik/methodik.html">Methodik</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../methodik/namenskonventionen/master.html">Namenskonventionen</a>
@@ -316,7 +323,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Werkzeuge</span>
+    <a class="nav-link" href="../werkzeuge.html">Werkzeuge</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -362,7 +369,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">IsyFact Standards</span>
-    <span class="version">2.5-SNAPSHOT</span>
+    <span class="version">2.5 (DEV)</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -374,10 +381,18 @@
       </ul>
     </li>
     <li class="component is-current">
-      <a class="title" href="../../einstieg/vorstellung.html">IsyFact Standards</a>
+      <a class="title" href="../../einstieg/einstieg.html">IsyFact Standards</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../../einstieg/vorstellung.html">2.5-SNAPSHOT</a>
+          <a href="../../einstieg/einstieg.html">2.5 (DEV)</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
         </li>
       </ul>
     </li>
@@ -389,11 +404,11 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="../../einstieg/vorstellung.html" class="home-link"></a>
+  <a href="../../einstieg/einstieg.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../../einstieg/vorstellung.html">IsyFact Standards</a></li>
-    <li>Werkzeuge</li>
+    <li><a href="../../einstieg/einstieg.html">IsyFact Standards</a></li>
+    <li><a href="../werkzeuge.html">Werkzeuge</a></li>
     <li><a href="einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a></li>
     <li><a href="master-antora.html">Projektseite mit Antora (empfohlen)</a></li>
   </ul>
@@ -407,16 +422,18 @@
 <h1 class="page">Projektseite mit Antora (empfohlen)</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
 <div class="paragraph">
-<p><span class="image left"><img src="../../../../glossary/latest/licence/_images/IFS-Logo.png" alt="IFS-Logo" width="150"></span> Dieses Dokument ist ein Teil der IsyFact-Standards. Alle Inhalte dieses Dokuments, insbesondere Texte und Grafiken, sind urheberrechtlich geschützt. Alle urheberrechtlichen Nutzungs- und Verwertungsrechte liegen beim Bundesverwaltungsamt.</p>
+<p><span class="image left"><img src="../../../../glossary/latest/licence/_images/IFS-Logo.png" alt="IFS-Logo" width="150"></span> Diese Seite ist ein Teil der IsyFact-Standards.
+Alle Inhalte der Seite, insbesondere Texte und Grafiken, sind urheberrechtlich geschützt.
+Alle urheberrechtlichen Nutzungs- und Verwertungsrechte liegen beim Bundesverwaltungsamt.</p>
 </div>
 <div class="paragraph">
-<p><span class="image right"><img src="../../../../glossary/latest/licence/_images/CC-BY.png" alt="Creative Commons Namensnennung" width="100"></span>
-Die Nutzung ist unter den Lizenzbedingungen der Creative Commons Namensnennung 4.0 International gestattet.
-Die Lizenzbestimmungen sind unter folgender URL erhältlich:</p>
+<p><span class="image right"><img src="../../../../glossary/latest/licence/_images/CC-BY.png" alt="Creative Commons Namensnennung" width="150"></span>
+Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-licence" class="xref page">Lizenzbedingungen</a> der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-short" class="xref page">Creative Commons Namensnennung 4.0 International</a> gestattet.</p>
 </div>
-<div class="paragraph">
-<p><a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-licence" class="xref page">Creative-Commons-Lizenz</a></p>
+</div>
 </div>
 </div>
 </div>
@@ -447,7 +464,7 @@ Die Lizenzbestimmungen sind unter folgender URL erhältlich:</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Soll eine neue Dokumentation angelegt werden oder die bestehende Dokumentation um eine Seite erweitert werden, so muss zunächst der geeignete Ort zur Ablage bestimmt werden.
-I.d.R. ist dies das Repository, in dem sich der zu dokumentierende Erweiterungs-Baustein befindet, da die Dokumentation nah beim Code abgelegt werden soll, oder der Baustein liegt im <a href="#verzeichnisstruktur-baustein">Repository <code>isyfact-standards</code> im Submodul <code>isyfact-standards-doc</code></a>.</p>
+I.d.R. ist dies das Repository, in dem sich der zu dokumentierende Erweiterungs-Baustein befindet, da die Dokumentation nah beim Code abgelegt werden soll, oder der Baustein liegt im <a href="#verzeichnisstruktur-antora-komponente">Repository <code>isyfact-standards</code> im Submodul <code>isyfact-standards-doc</code></a>.</p>
 </div>
 <div class="sect2">
 <h3 id="repository-klonen"><a class="anchor" href="#repository-klonen"></a>2.1. Klonen Repository</h3>
@@ -505,7 +522,7 @@ In Repositories, die noch keine Dokumentation enthalten, muss ein derartiges Sub
 Unterhalb dieses Pfades liegt die Antora-Dokumentations-Komponente, repräsentiert durch die Konfigurationsdatei <code>antora.yml</code>.
 In Repositories, die noch keine Antora-Komponente enthalten, muss diese Konfigurationsdatei noch angelegt werden.
 Ein Repository sollte jedoch nur eine Antora-Komponente enthalten.
-(Mehrere Antora-Komponenten hätten unterschiedliche Versionierungen, die evtl. nicht mehr synchron zum Versionsstand des Repositories gehalten werden könnten.)</p>
+(Mehrere Antora-Komponenten hätten unterschiedliche Versionen, die eventuell nicht mehr synchron zum Versionsstand des Repositories gehalten werden könnten.)</p>
 </div>
 <div class="paragraph">
 <p>Das folgende Listing <a href="#verzeichnisstruktur-antora-komponente">Verzeichnisstruktur Antora-Komponente</a> zeigt die Verzeichnisstruktur bis zur Antora-Dokumentations-Komponente.</p>
@@ -609,10 +626,10 @@ An diesem Ort werden die Dokumentationsseiten als .adoc abgelegt mit einem Namen
 <div class="paragraph">
 <p>Außer dem Verzeichnis <code>pages</code> kann es bei Bedarf noch weitere Verzeichnisse geben wie <code>images</code> und <code>attachments</code>.
 Siehe dazu ebenfalls <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-antora-verzeichnisstruktur" class="xref page">Antora-Verzeichnisstruktur</a>.
-Unterhalb von <code>images</code> und <code>attachments</code> kann eine weitere Strukturierung erfolgen, die sich an der Struktur unter <code>pages</code> orientiert, siehe auch <a href="#verzeichnisstruktur-baustein">[verzeichnisstruktur-baustein]</a>.</p>
+Unterhalb von <code>images</code> und <code>attachments</code> kann eine weitere Strukturierung erfolgen, die sich an der Struktur unter <code>pages</code> orientiert, siehe auch <a href="#verzeichnisstruktur-pages-images">Verzeichnisstruktur innerhalb eines Antora-Moduls</a>.</p>
 </div>
 <div class="paragraph">
-<p>Wenn unter <code>pages</code> viele Dokumentationsseiten abzulegen sind, können sie noch weiter strukturiert werden, siehe auch <a href="#verzeichnisstruktur-baustein">[verzeichnisstruktur-baustein]</a> und  <a href="../seitenvorlage.html#dateien-thema" class="xref page">Dateiablage</a>.
+<p>Wenn unter <code>pages</code> viele Dokumentationsseiten abzulegen sind, können sie noch weiter strukturiert werden, siehe auch <a href="#verzeichnisstruktur-pages-images">Verzeichnisstruktur innerhalb eines Antora-Moduls</a> und  <a href="../seitenvorlage.html#dateien-thema" class="xref page">Dateiablage</a>.
 Für Bausteine wird häufig die Strukturierung <code>konzept</code> und <code>nutzungsvorgaben</code> gewählt.</p>
 </div>
 <div class="paragraph">
@@ -684,7 +701,7 @@ Für Bausteine wird häufig die Strukturierung <code>konzept</code> und <code>nu
 <div class="sect2">
 <h3 id="linksnavigation-antora"><a class="anchor" href="#linksnavigation-antora"></a>2.7. Navigationsdatei <code>nav.adoc</code></h3>
 <div class="paragraph">
-<p>Nach der Erstellung der Dokumentationsseiten in .adoc-Dateien muss dafür gesorgt werden, dass sie aufrufbar sind, üblicherweise über die Linksnavigation von Antora.
+<p>Nach der Erstellung der Dokumentationsseiten in <code>.adoc</code>-Dateien muss dafür gesorgt werden, dass sie aufrufbar sind, üblicherweise über die Linksnavigation von Antora.
 In der Antora-Datei <code>nav.adoc</code> wird die Linksnavigation bzgl. einer <a href="../../../../glossary/latest/glossary/master.html#glossar-antora-dokumentations-komponente" class="xref page">Antora-Dokumentations-Komponente</a> festgelegt, siehe auch <a href="../seitenvorlage.html#navigation-thema" class="xref page">Navigationsstruktur</a>.</p>
 </div>
 <div class="paragraph">
@@ -716,12 +733,12 @@ nav:
 <div id="listing-nav-adoc" class="listingblock">
 <div class="title">Listing 6. Beispiel Modul <code>Werkzeuge</code>, Verlinkung in <code>nav.adoc</code></div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">* Werkzeuge
-** xref:werkzeuge:dokumentation/einleitung/einfuehrung.adoc[Dokumentation gemäß IsyFact]
-*** xref:werkzeuge:dokumentation/master-antora.adoc[Projektseite mit Antora (empfohlen)]
-*** xref:werkzeuge:dokumentation/master-asciidoctorJ.adoc[Dokumente mit AsciidoctorJ Extensions]
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">* xref:werkzeuge:werkzeuge.adoc[]
+** xref:werkzeuge:dokumentation/einleitung/einfuehrung.adoc[]
+*** xref:werkzeuge:dokumentation/master-antora.adoc[]
+*** xref:werkzeuge:dokumentation/master-asciidoctorJ.adoc[]
 ** xref:werkzeuge:entwicklungsumgebung/master.adoc[Entwicklungsumgebung]
-** xref:werkzeuge:versionierungskontrolle/master.adoc[Versionierungskontrolle]</code></pre>
+** xref:werkzeuge:versionierungskontrolle/master.adoc[]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -732,9 +749,6 @@ nav:
 <img src="../_images/handbuch/leftnavigation.png" alt="leftnavigation" width="80%">
 </div>
 <div class="title">Abbildung 1. Linksnavigation</div>
-</div>
-<div class="paragraph">
-<p><br></p>
 </div>
 </div>
 <div class="sect2">
@@ -913,7 +927,7 @@ Das ist ein Beispieltext zum Unterkapitel.</code></pre>
 <div id="listing-querverweis" class="listingblock">
 <div class="title">Listing 10. Querverweis auf eine Überschrift</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Zum &lt;&lt;ueberschriften, Beispiel-Kapitel&gt;&gt; gelangen Sie über einen Mausklick.
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">Zum &lt;&lt;ueberschriften,Beispiel-Kapitel&gt;&gt; gelangen Sie über einen Mausklick.
 Im Übrigen handelt es sich bei dem Beispiel-Kapitel um das Kapitel &lt;&lt;ueberschriften&gt;&gt;.</code></pre>
 </div>
 </div>
@@ -1040,7 +1054,7 @@ Der Anchor beginnt immer mit dem Bezeichner <code>litextern-</code>.</p>
 </table>
 <div class="paragraph">
 <p>Eine Referenz auf einen Eintrag des externen Literaturverzeichnisses erfolgt über einen <a href="#listing-xref">Antora xref-Link</a>, wobei der Eintrag nach dem <code>#</code> der Anchor im Literaturverzeichnis in <code>isy-documentation</code> ist.
-Der Text innerhalb der Klammern [] definiert den Linktext.</p>
+Der Text innerhalb der eckigen Klammern definiert den Linktext.</p>
 </div>
 <div class="paragraph">
 <p>Ein Beispiel:<br></p>
@@ -1060,7 +1074,7 @@ Der Text innerhalb der Klammern [] definiert den Linktext.</p>
 <div class="sect2">
 <h3 id="admonition-blocks"><a class="anchor" href="#admonition-blocks"></a>3.4. Admonition-Blocks</h3>
 <div class="paragraph">
-<p>Mit Admonition Blocks können Inhalte in Dokumenten exponiert dargestellt werden, sodass ihnen besondere Aufmerksamkeit zuteil wird.
+<p>Mit Admonition Blocks können Inhalte in Dokumenten exponiert dargestellt werden, sodass ihnen besondere Aufmerksamkeit zuteilwird.
 Standardmäßig werden fünf verschiedene Blöcke angeboten.
 Die IsyFact-Dokumentation erweitert diese Liste um weitere Blöcke für verbindliche Regeln.</p>
 </div>
@@ -1354,7 +1368,7 @@ Abbildungen sollten mit diagrams.net als &lt;Name Abbildung&gt;.dn.svg erstellt 
 </table>
 </div>
 <div class="paragraph">
-<p>Diagramme, die mit dem <a href="../../methodik/diagrammerstellung/enterprise-architect.html" class="xref page">Enterprise Architect</a> erstellt werden, oder Screenshots, dürfen auch weiterhin als .png eingebunden werden.</p>
+<p>Diagramme, die mit dem <a href="../../methodik/diagrammerstellung/enterprise-architect.html" class="xref page">Enterprise Architect</a> erstellt werden, oder Screenshots, dürfen auch weiterhin im PNG-Format eingebunden werden.</p>
 </div>
 <table id="table-namenskonvention-bilder" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 2. Namensschema für Namen von Abbildungen aus diagrams.net</caption>
@@ -1383,32 +1397,41 @@ Abbildungen sollten mit diagrams.net als &lt;Name Abbildung&gt;.dn.svg erstellt 
 </tbody>
 </table>
 <div class="paragraph">
-<p>Wenn ein Antora-Modul sehr viele Bilder enthält, kann auch eine Unterstruktur unterhalb von /images angelegt werden, z.B. /images/unterordner.</p>
+<p>Wenn ein Antora-Modul sehr viele Bilder enthält, kann auch eine Unterstruktur unterhalb von <code>/images</code> angelegt werden, z.B. <code>/images/unterordner</code>.</p>
 </div>
 <div class="paragraph">
-<p>In einem IsyFact-Dokument muss eine Abbildung:</p>
+<p>Eine Abbildung muss folgende Informationen enthalten:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>eine Beschreibung enthalten,</p>
+<p>eine Beschreibung,</p>
 </li>
 <li>
-<p>eindeutig identifizierbar und referenzierbar sein.</p>
+<p>einen für die Seite eindeutigen Anker,</p>
+</li>
+<li>
+<p>(optional) eine Angabe über die anzuzeigende Breite.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Deswegen werden Abbildungen in IsyFact-Dokumenten wie folgt definiert:</p>
+<p>Die folgenden Beispiele zeigen, wie Abbildungen in Seiten aussehen können.</p>
 </div>
 <div id="image-beispiel" class="listingblock">
-<div class="title">Listing 17. Abbildung einfügen (IsyFact)</div>
+<div class="title">Listing 17. Beispiele für Abbildungen</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[[image-beispiel]]
 .Beispiel
- image::beispiel.dn.svg
+image::beispiel.dn.svg[]
 
- image::unterordner/beispiel2.dn.svg</code></pre>
+[[image-beispiel-unterordner]]
+.Beispiel mit Unterordner
+image::unterordner/beispiel.dn.svg[]
+
+[[image-beispiel-skaliert]]
+.Beispiel mit Skalierung
+image::unterordner/beispiel.dn.svg[width="400"]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1428,8 +1451,7 @@ Abbildungen sollten mit diagrams.net als &lt;Name Abbildung&gt;.dn.svg erstellt 
 </div>
 </div>
 <div class="paragraph">
-<p>Beispiele für Abbildungen finden sich außerdem in <a href="../seitenvorlage.html#formatierung-abbildungen" class="xref page">Seitenvorlage Abbildungen</a>.<br>
-<br></p>
+<p>Beispiele für Abbildungen finden sich außerdem in <a href="../seitenvorlage.html#formatierung-abbildungen" class="xref page">Seitenvorlage Abbildungen</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1568,7 +1590,7 @@ Abbildungen sollten mit diagrams.net als &lt;Name Abbildung&gt;.dn.svg erstellt 
 <div class="sect2">
 <h3 id="listings"><a class="anchor" href="#listings"></a>3.7. Listings</h3>
 <div class="paragraph">
-<p>Quelltexte können bei AsciiDoc auf folgende Weise mit Syntaxhighlighting angezeigt werden.</p>
+<p>Quelltexte können bei AsciiDoc auf folgende Weise mit Syntax-Highlighting angezeigt werden.</p>
 </div>
 <div id="listing-quelltext1" class="listingblock">
 <div class="title">Listing 20. Quelltext einfügen</div>
@@ -1676,12 +1698,12 @@ Der Anchor beginnt immer mit dem Bezeichner <code>glossar-</code>.</p>
 </table>
 <div class="paragraph">
 <p>Eine Referenz auf einen Begriff des Glossars erfolgt über einen <a href="#listing-xref">Antora Verweis</a>, wobei der Eintrag nach dem <code>#</code> der Anchor im Glossar in <code>isy-documentation</code> ist.
-Der Text innerhalb der Klammern [] definiert den Linktext.</p>
+Der Text innerhalb der eckigen Klammern definiert den Linktext.</p>
 </div>
 <div class="paragraph">
 <p>Ein Beispiel:<br></p>
 </div>
-<div id="listing-glossar-verweis" class="listingblock">
+<div id="listing-glossar-verweis-2" class="listingblock">
 <div class="title">Listing 22. Verweis auf Glossareintrag</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">xref:glossary:glossary:master.adoc#glossar-isyfact[IsyFact]</code></pre>
@@ -1758,11 +1780,10 @@ runtime:
   fetch: true
 asciidoc:
   attributes:
-    version-ifs: 2.5-SNAPSHOT  <i class="conum" data-value="3"></i><b>(3)</b>
     page-toctitle: Inhalt
-    sectnums: true             <i class="conum" data-value="4"></i><b>(4)</b>
-    sectnumlevels: 5           <i class="conum" data-value="5"></i><b>(5)</b>
-    caution-caption: Achtung   <i class="conum" data-value="6"></i><b>(6)</b>
+    sectnums: true             <i class="conum" data-value="3"></i><b>(3)</b>
+    sectnumlevels: 5           <i class="conum" data-value="4"></i><b>(4)</b>
+    caution-caption: Achtung   <i class="conum" data-value="5"></i><b>(5)</b>
     important-caption: Wichtig
     note-caption: Hinweis
     tip-caption: Tip
@@ -1774,9 +1795,9 @@ asciidoc:
     listing-caption: Listing
 ui:
   bundle:
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable              <i class="conum" data-value="7"></i><b>(7)</b>
-    snapshot: false                       <i class="conum" data-value="8"></i><b>(8)</b>
-  supplemental_files: ./supplemental-ui   <i class="conum" data-value="9"></i><b>(9)</b>
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable <i class="conum" data-value="6"></i><b>(6)</b>
+    snapshot: false                       <i class="conum" data-value="7"></i><b>(7)</b>
+  supplemental_files: ./supplemental-ui   <i class="conum" data-value="8"></i><b>(8)</b>
 output:
   dir: ./public</code></pre>
 </div>
@@ -1793,30 +1814,26 @@ output:
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Selbstdefiniertes Attribut.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="4"></i><b>4</b></td>
 <td>Abschnitte sollen nummeriert werden.</td>
 </tr>
 <tr>
-<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
 <td>Die Abschnitte dürfen bis Level 5 geschachtelt sein (möglich, aber nicht empfohlen).</td>
 </tr>
 <tr>
-<td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>Vordefinierte Captions auf deutsch.</td>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Vordefinierte Captions auf Deutsch.</td>
 </tr>
 <tr>
-<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
 <td>Standard-UI von Antora.</td>
 </tr>
 <tr>
-<td><i class="conum" data-value="8"></i><b>8</b></td>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
 <td>Ein stabiles UI ist hilfreich.</td>
 </tr>
 <tr>
-<td><i class="conum" data-value="9"></i><b>9</b></td>
+<td><i class="conum" data-value="8"></i><b>8</b></td>
 <td>Ergänzungen der IsyFact zum Standard-UI.</td>
 </tr>
 </table>
@@ -1861,7 +1878,7 @@ Auf diese Weise besitzt jedes Projekt ein zentrales Changelog und (je nach Proje
 <div class="title">Abbildung 2. Zusammenführung der einzelnen Komponentenchangelogs</div>
 </div>
 <div class="paragraph">
-<p>Zum Erstellen und Bearbeiten wird empfohlen, einen Texteditor zu verwenden, der das AsciiDoc Format unterstützt (siehe Kapitel <a href="#vsc-installieren">[vsc-installieren]</a>).</p>
+<p>Zum Erstellen und Bearbeiten wird empfohlen, einen <a href="einleitung/einfuehrung.html#werkzeuge" class="xref page">Texteditor</a> zu verwenden, der das AsciiDoc Format unterstützt.</p>
 </div>
 <div class="paragraph">
 <p>Im Folgenden wird beschrieben, wie die einzelnen Changelog-Dateien erstellt und welche Anforderungen an die Struktur und den Inhalt der Changelogs gestellt werden.</p>
@@ -2153,7 +2170,7 @@ Damit der Changelog diesen Zweck erfüllt, ist es wichtig, dass sowohl die Entsc
 </div>
 <div class="paragraph">
 <p>An die Changelogeintrag gelten die in Kapitel <a href="#inhalt-komponentenchangelog">Komponentenchangelog</a> beschriebenen Anforderungen.
-Komponentenübergreifende Einträge sind dem gekennzeichneten Bereich hinzuzufügen (vgl. <a href="#listing-projektchangelog_einbindung_komponentenchangelog">Listing 5</a>).</p>
+Komponentenübergreifende Einträge sind dem gekennzeichneten Bereich hinzuzufügen (vgl. <a href="#listing-projektchangelog_einbindung_komponentenchangelog">Einbindung der Komponentenchangelogs</a>).</p>
 </div>
 </div>
 </div>

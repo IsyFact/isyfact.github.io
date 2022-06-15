@@ -31,18 +31,18 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5-SNAPSHOT">
+<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5.0-SNAPSHOT">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../../einstieg/vorstellung.html">IsyFact Standards</a></h3>
+    <h3 class="title"><a href="../../einstieg/einstieg.html">IsyFact Standards</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Einstieg</span>
+    <a class="nav-link" href="../../einstieg/einstieg.html">Einstieg</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -66,7 +66,7 @@
     <a class="nav-link" href="../../einstieg/tutorial/master.html">Tutorial</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../einstieg/whitepaper/master.html">Whitepaper</a>
+    <a class="nav-link" href="../../einstieg/whitepaper.html">Whitepaper</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../einstieg/migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
@@ -79,7 +79,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Blaupausen</span>
+    <a class="nav-link" href="../blaupausen.html">Blaupausen</a>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="master.html">Referenzarchitektur</a>
@@ -125,7 +125,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Bausteine</span>
+    <a class="nav-link" href="../../bausteine/bausteine.html">Bausteine</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -275,8 +275,15 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../plattform/plattform.html">Plattform</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Methodik</span>
+    <a class="nav-link" href="../../methodik/methodik.html">Methodik</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../methodik/namenskonventionen/master.html">Namenskonventionen</a>
@@ -316,7 +323,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Werkzeuge</span>
+    <a class="nav-link" href="../../werkzeuge/werkzeuge.html">Werkzeuge</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -362,7 +369,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">IsyFact Standards</span>
-    <span class="version">2.5-SNAPSHOT</span>
+    <span class="version">2.5 (DEV)</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -374,10 +381,18 @@
       </ul>
     </li>
     <li class="component is-current">
-      <a class="title" href="../../einstieg/vorstellung.html">IsyFact Standards</a>
+      <a class="title" href="../../einstieg/einstieg.html">IsyFact Standards</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../../einstieg/vorstellung.html">2.5-SNAPSHOT</a>
+          <a href="../../einstieg/einstieg.html">2.5 (DEV)</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
         </li>
       </ul>
     </li>
@@ -389,11 +404,11 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="../../einstieg/vorstellung.html" class="home-link"></a>
+  <a href="../../einstieg/einstieg.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../../einstieg/vorstellung.html">IsyFact Standards</a></li>
-    <li>Blaupausen</li>
+    <li><a href="../../einstieg/einstieg.html">IsyFact Standards</a></li>
+    <li><a href="../blaupausen.html">Blaupausen</a></li>
     <li><a href="master.html">Referenzarchitektur</a></li>
   </ul>
 </nav>
@@ -406,17 +421,18 @@
 <h1 class="page">Referenzarchitektur</h1>
 <div id="preamble">
 <div class="sectionbody">
-<h3 id="_vorgaben" class="discrete">Vorgaben</h3>
+<div class="exampleblock">
+<div class="content">
 <div class="paragraph">
-<p><span class="image left"><img src="../../../../glossary/latest/licence/_images/IFS-Logo.png" alt="IFS-Logo" width="150"></span> Dieses Dokument ist ein Teil der IsyFact-Standards. Alle Inhalte dieses Dokuments, insbesondere Texte und Grafiken, sind urheberrechtlich geschützt. Alle urheberrechtlichen Nutzungs- und Verwertungsrechte liegen beim Bundesverwaltungsamt.</p>
+<p><span class="image left"><img src="../../../../glossary/latest/licence/_images/IFS-Logo.png" alt="IFS-Logo" width="150"></span> Diese Seite ist ein Teil der IsyFact-Standards.
+Alle Inhalte der Seite, insbesondere Texte und Grafiken, sind urheberrechtlich geschützt.
+Alle urheberrechtlichen Nutzungs- und Verwertungsrechte liegen beim Bundesverwaltungsamt.</p>
 </div>
 <div class="paragraph">
-<p><span class="image right"><img src="../../../../glossary/latest/licence/_images/CC-BY.png" alt="Creative Commons Namensnennung" width="100"></span>
-Die Nutzung ist unter den Lizenzbedingungen der Creative Commons Namensnennung 4.0 International gestattet.
-Die Lizenzbestimmungen sind unter folgender URL erhältlich:</p>
+<p><span class="image right"><img src="../../../../glossary/latest/licence/_images/CC-BY.png" alt="Creative Commons Namensnennung" width="150"></span>
+Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-licence" class="xref page">Lizenzbedingungen</a> der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-short" class="xref page">Creative Commons Namensnennung 4.0 International</a> gestattet.</p>
 </div>
-<div class="paragraph">
-<p><a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-licence" class="xref page">Creative-Commons-Lizenz</a></p>
+</div>
 </div>
 </div>
 </div>
@@ -1009,7 +1025,7 @@ Wenn die Kommunikation auch IT-Systeme einschließt, die außerhalb liegen, verw
 </div>
 <div id="image-servicekommunikation" class="imageblock text-center">
 <div class="content">
-<img src="../_images/referenzarchitektur/servicekommunikation.dn.png" alt="servicekommunikation.dn">
+<img src="../_images/referenzarchitektur/servicekommunikation.dn.svg" alt="servicekommunikation.dn">
 </div>
 <div class="title">Abbildung 7. Interne und externe Servicekommunikation</div>
 </div>
@@ -1076,7 +1092,7 @@ Der Sender wartet auf die Antwort, bevor er seine Verarbeitung fortsetzt.</p>
 </div>
 <div id="image-synchronous-call" class="imageblock text-center">
 <div class="content">
-<img src="../_images/referenzarchitektur/synchroner-service-aufruf.dn.png" alt="synchroner service aufruf.dn">
+<img src="../_images/referenzarchitektur/synchroner-service-aufruf.dn.svg" alt="synchroner service aufruf.dn">
 </div>
 <div class="title">Abbildung 8. Ablauf eines synchronen Service-Aufrufs</div>
 </div>
@@ -1092,7 +1108,7 @@ HTTP-Anfragen bzw. HTTP-Antworten (s. <a href="#image-http-messages">Abbildung 9
 </div>
 <div id="image-http-messages" class="imageblock text-center">
 <div class="content">
-<img src="../_images/referenzarchitektur/http-messages-aufbau.dn.png" alt="http messages aufbau.dn">
+<img src="../_images/referenzarchitektur/http-messages-aufbau.dn.svg" alt="http messages aufbau.dn">
 </div>
 <div class="title">Abbildung 9. Aufbau von HTTP-Anfragen bzw. HTTP-Antworten</div>
 </div>
@@ -1116,7 +1132,7 @@ Stattdessen wird die Verarbeitung erst durch die Antwort des Senders wieder aufg
 </div>
 <div id="image-asynchronous-call" class="imageblock text-center">
 <div class="content">
-<img src="../_images/referenzarchitektur/asynchroner-service-aufruf.dn.png" alt="asynchroner service aufruf.dn">
+<img src="../_images/referenzarchitektur/asynchroner-service-aufruf.dn.svg" alt="asynchroner service aufruf.dn">
 </div>
 <div class="title">Abbildung 10. Ablauf eines asynchronen Service-Aufrufs</div>
 </div>
@@ -1136,7 +1152,7 @@ Der Sender enthält keine direkte Antwort vom Empfänger.</p>
 </div>
 <div id="image-queueing" class="imageblock text-center">
 <div class="content">
-<img src="../_images/referenzarchitektur/queueing.dn.png" alt="queueing.dn">
+<img src="../_images/referenzarchitektur/queueing.dn.svg" alt="queueing.dn">
 </div>
 <div class="title">Abbildung 11. Ablauf der Kommunikation beim Queueing</div>
 </div>
@@ -1150,7 +1166,7 @@ Die Properties unterteilen sich noch einmal in applikationsspezifische Propertie
 </div>
 <div id="image-jms-message" class="imageblock text-center">
 <div class="content">
-<img src="../_images/referenzarchitektur/jms-message-aufbau.dn.png" alt="jms message aufbau.dn">
+<img src="../_images/referenzarchitektur/jms-message-aufbau.dn.svg" alt="jms message aufbau.dn">
 </div>
 <div class="title">Abbildung 12. Aufbau einer JMS-Nachricht</div>
 </div>

@@ -31,18 +31,18 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5-SNAPSHOT">
+<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5.0-SNAPSHOT">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../../../einstieg/vorstellung.html">IsyFact Standards</a></h3>
+    <h3 class="title"><a href="../../../einstieg/einstieg.html">IsyFact Standards</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Einstieg</span>
+    <a class="nav-link" href="../../../einstieg/einstieg.html">Einstieg</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -66,7 +66,7 @@
     <a class="nav-link" href="../../../einstieg/tutorial/master.html">Tutorial</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../../einstieg/whitepaper/master.html">Whitepaper</a>
+    <a class="nav-link" href="../../../einstieg/whitepaper.html">Whitepaper</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../einstieg/migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
@@ -79,7 +79,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Blaupausen</span>
+    <a class="nav-link" href="../../../blaupausen/blaupausen.html">Blaupausen</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../blaupausen/referenzarchitektur/master.html">Referenzarchitektur</a>
@@ -125,7 +125,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Bausteine</span>
+    <a class="nav-link" href="../../../bausteine/bausteine.html">Bausteine</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -275,8 +275,15 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../plattform/plattform.html">Plattform</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Methodik</span>
+    <a class="nav-link" href="../../../methodik/methodik.html">Methodik</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../methodik/namenskonventionen/master.html">Namenskonventionen</a>
@@ -316,7 +323,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Werkzeuge</span>
+    <a class="nav-link" href="../../werkzeuge.html">Werkzeuge</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -362,7 +369,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">IsyFact Standards</span>
-    <span class="version">2.5-SNAPSHOT</span>
+    <span class="version">2.5 (DEV)</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -374,10 +381,18 @@
       </ul>
     </li>
     <li class="component is-current">
-      <a class="title" href="../../../einstieg/vorstellung.html">IsyFact Standards</a>
+      <a class="title" href="../../../einstieg/einstieg.html">IsyFact Standards</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../../../einstieg/vorstellung.html">2.5-SNAPSHOT</a>
+          <a href="../../../einstieg/einstieg.html">2.5 (DEV)</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
         </li>
       </ul>
     </li>
@@ -389,7 +404,7 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="../../../einstieg/vorstellung.html" class="home-link"></a>
+  <a href="../../../einstieg/einstieg.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
 </nav>
 </div>
@@ -416,7 +431,7 @@ Zunächst sind folgende Properties dem Element <code>&lt;properties&gt;&lt;/prop
 <div class="paragraph">
 <p><strong>Properties</strong></p>
 </div>
-<div class="listingblock">
+<div id="listing-pom-properties" class="listingblock">
 <div class="title">Listing 1. Hinzuzufügende Properties</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;properties&gt;
@@ -437,69 +452,69 @@ Zunächst sind folgende Properties dem Element <code>&lt;properties&gt;&lt;/prop
 <div id="listing-pom-asciidoc" class="listingblock">
 <div class="title">Listing 2. Integration der <code>isy-asciidoctorj-extensions</code> in das Asciidoctor Maven Plugin</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">    &lt;build&gt;
-        &lt;plugins&gt;
-            &lt;plugin&gt;
-                &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
-                &lt;artifactId&gt;asciidoctor-maven-plugin&lt;/artifactId&gt;
-                &lt;version&gt;2.1.0&lt;/version&gt; <i class="conum" data-value="1"></i><b>(1)</b>
-                &lt;dependencies&gt;
-                    &lt;dependency&gt;
-                        &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
-                        &lt;artifactId&gt;asciidoctorj-pdf&lt;/artifactId&gt;
-                        &lt;version&gt;1.5.3&lt;/version&gt;
-                    &lt;/dependency&gt;
-                    &lt;dependency&gt;
-                        &lt;groupId&gt;de.bund.bva.isyfact&lt;/groupId&gt; <i class="conum" data-value="2"></i><b>(2)</b>
-                        &lt;artifactId&gt;isy-asciidoctorj-extensions&lt;/artifactId&gt;
-                        &lt;version&gt;${isy-asciidoctorj-extensions.version}&lt;/version&gt;
-                    &lt;/dependency&gt;
-                &lt;/dependencies&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;build&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
+            &lt;artifactId&gt;asciidoctor-maven-plugin&lt;/artifactId&gt;
+            &lt;version&gt;2.1.0&lt;/version&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+            &lt;dependencies&gt;
+                &lt;dependency&gt;
+                    &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
+                    &lt;artifactId&gt;asciidoctorj-pdf&lt;/artifactId&gt;
+                    &lt;version&gt;1.5.3&lt;/version&gt;
+                &lt;/dependency&gt;
+                &lt;dependency&gt;
+                    &lt;groupId&gt;de.bund.bva.isyfact&lt;/groupId&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+                    &lt;artifactId&gt;isy-asciidoctorj-extensions&lt;/artifactId&gt;
+                    &lt;version&gt;${isy-asciidoctorj-extensions.version}&lt;/version&gt;
+                &lt;/dependency&gt;
+            &lt;/dependencies&gt;
 
-                &lt;configuration&gt;
-                    &lt;outputDirectory&gt;${project.build.directory}&lt;/outputDirectory&gt;
-                    &lt;attributes&gt;
-                        &lt;revnumber&gt;IF-${project.version}&lt;/revnumber&gt;
-                        &lt;revdate&gt;${maven.build.timestamp}&lt;/revdate&gt;
-                        &lt;version-ifs&gt;${project.version}&lt;/version-ifs&gt;
-                        &lt;vs-einstufung&gt;offen&lt;/vs-einstufung&gt; <i class="conum" data-value="3"></i><b>(3)</b>
-                    &lt;/attributes&gt;
-                &lt;/configuration&gt;
+            &lt;configuration&gt;
+                &lt;outputDirectory&gt;${project.build.directory}&lt;/outputDirectory&gt;
+                &lt;attributes&gt;
+                    &lt;revnumber&gt;IF-${project.version}&lt;/revnumber&gt;
+                    &lt;revdate&gt;${maven.build.timestamp}&lt;/revdate&gt;
+                    &lt;version-ifs&gt;${project.version}&lt;/version-ifs&gt;
+                    &lt;vs-einstufung&gt;offen&lt;/vs-einstufung&gt; <i class="conum" data-value="3"></i><b>(3)</b>
+                &lt;/attributes&gt;
+            &lt;/configuration&gt;
 
-                &lt;executions&gt;
-                    &lt;execution&gt; <i class="conum" data-value="4"></i><b>(4)</b>
-                        &lt;id&gt;html-build&lt;/id&gt;
-                        &lt;phase&gt;generate-resources&lt;/phase&gt;
-                        &lt;goals&gt;
-                            &lt;goal&gt;process-asciidoc&lt;/goal&gt;
-                        &lt;/goals&gt;
-                        &lt;configuration&gt;
-                            &lt;backend&gt;html&lt;/backend&gt;
-                            &lt;sourceDirectory&gt;src/docs/OrdnerDokument&lt;/sourceDirectory&gt;
-                            &lt;sourceDocumentName&gt;master.adoc&lt;/sourceDocumentName&gt;
-                            &lt;outputFile&gt;${project.build.directory}/doc/Dokument.html&lt;/outputFile&gt;
-                        &lt;/configuration&gt;
-                    &lt;/execution&gt;
-                    &lt;execution&gt;
-                        &lt;id&gt;pdf-build&lt;/id&gt;
-                        &lt;phase&gt;generate-resources&lt;/phase&gt;
-                        &lt;goals&gt;
-                            &lt;goal&gt;process-asciidoc&lt;/goal&gt;
-                        &lt;/goals&gt;
-                        &lt;configuration&gt;
-                            &lt;backend&gt;pdf&lt;/backend&gt;
-                            &lt;sourceDirectory&gt;src/docs/OrdnerDokument&lt;/sourceDirectory&gt;
-                            &lt;sourceDocumentName&gt;master.adoc&lt;/sourceDocumentName&gt;
-                            &lt;outputFile&gt;${project.build.directory}/doc/Dokument.pdf&lt;/outputFile&gt;
-                            &lt;attributes&gt;
-                                &lt;pdf-style&gt;isyfact-closed&lt;/pdf-style&gt;
-                            &lt;/attributes&gt;
-                        &lt;/configuration&gt;
-                    &lt;/execution&gt;
-                &lt;/executions&gt;
-            &lt;/plugin&gt;
-        &lt;/plugins&gt;
-    &lt;/build&gt;</code></pre>
+            &lt;executions&gt;
+                &lt;execution&gt; <i class="conum" data-value="4"></i><b>(4)</b>
+                    &lt;id&gt;html-build&lt;/id&gt;
+                    &lt;phase&gt;generate-resources&lt;/phase&gt;
+                    &lt;goals&gt;
+                        &lt;goal&gt;process-asciidoc&lt;/goal&gt;
+                    &lt;/goals&gt;
+                    &lt;configuration&gt;
+                        &lt;backend&gt;html&lt;/backend&gt;
+                        &lt;sourceDirectory&gt;src/docs/OrdnerDokument&lt;/sourceDirectory&gt;
+                        &lt;sourceDocumentName&gt;master.adoc&lt;/sourceDocumentName&gt;
+                        &lt;outputFile&gt;${project.build.directory}/doc/Dokument.html&lt;/outputFile&gt;
+                    &lt;/configuration&gt;
+                &lt;/execution&gt;
+                &lt;execution&gt;
+                    &lt;id&gt;pdf-build&lt;/id&gt;
+                    &lt;phase&gt;generate-resources&lt;/phase&gt;
+                    &lt;goals&gt;
+                        &lt;goal&gt;process-asciidoc&lt;/goal&gt;
+                    &lt;/goals&gt;
+                    &lt;configuration&gt;
+                        &lt;backend&gt;pdf&lt;/backend&gt;
+                        &lt;sourceDirectory&gt;src/docs/OrdnerDokument&lt;/sourceDirectory&gt;
+                        &lt;sourceDocumentName&gt;master.adoc&lt;/sourceDocumentName&gt;
+                        &lt;outputFile&gt;${project.build.directory}/doc/Dokument.pdf&lt;/outputFile&gt;
+                        &lt;attributes&gt;
+                            &lt;pdf-style&gt;isyfact-closed&lt;/pdf-style&gt;
+                        &lt;/attributes&gt;
+                    &lt;/configuration&gt;
+                &lt;/execution&gt;
+            &lt;/executions&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;</code></pre>
 </div>
 </div>
 <div class="colist arabic">

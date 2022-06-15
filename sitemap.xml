@@ -6,4 +6,7 @@
 <sitemap>
 <loc>https://github.com/isyfact/sitemap-isyfact-standards-doku.xml</loc>
 </sitemap>
+<sitemap>
+<loc>https://github.com/isyfact/sitemap-isyfact-style-doku.xml</loc>
+</sitemap>
 </sitemapindex>
