@@ -483,20 +483,25 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <div class="sect1">
 <h2 id="architekturregeln-der-Isyfact"><a class="anchor" href="#architekturregeln-der-Isyfact"></a>2. Architekturregeln der IsyFact</h2>
 <div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university"></i></span> Architekturregel: Vorgabe</div>
 <div class="paragraph">
 <p>Synchrone Service-Aufrufe finden über das Protokoll <strong>HTTP</strong> statt und werden sowohl zur internen als auch externen Servicekommunikation genutzt.
-HTTP-Anfragen bzw. HTTP-Antworten (s. <a href="#image-http-messages">Abbildung 1</a>) erlauben es an drei Stellen, anwendungsspezifische Daten zu übertragen: in der URL, in den Headern sowie im Body.</p>
+HTTP-Anfragen bzw. HTTP-Antworten (s. <a href="#image-http-messages">Abbildung 1</a>) erlauben es an drei Stellen, anwendungsspezifische Daten zu übertragen: in der URL, in den Headern sowie im Body.
+.Aufbau von HTTP-Anfragen bzw. HTTP-Antworten</p>
 </div>
 <div id="image-http-messages" class="imageblock text-center">
 <div class="content">
 <img src="../_images/referenzarchitektur/http-messages-aufbau.dn.svg" alt="http messages aufbau.dn">
 </div>
-<div class="title">Abbildung 1. Aufbau von HTTP-Anfragen bzw. HTTP-Antworten</div>
 </div>
 <div class="paragraph">
 <p>Header enthalten Metadaten.
 Der Body enthält Nutzdaten.
 Bei Anfragen mittels <code>GET</code> und <code>DELETE</code>, die keinen Body erwarten, enthalten URL-Parameter Nutzdaten.</p>
+</div>
+</div>
 </div>
 </div>
 </div>

@@ -775,6 +775,56 @@ Wenn dies aufgrund der Nutzung spezieller Datentypen (wie z.B. <code>Date</code>
 Die Konvertierung findet in diesem Fall nicht durch einen Konverter statt, sondern erst nach oder während der Validierung.</p>
 </div>
 <div class="paragraph">
+<p>JSF-Konverter werden auch für die Darstellung von readonly Felder verwendet.
+Folgende Komponenten werden entsprechend behandelt:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>actionInput</code></p>
+</li>
+<li>
+<p><code>actionInputWithFourEyes</code></p>
+</li>
+<li>
+<p><code>formActionInput</code></p>
+</li>
+<li>
+<p><code>formActionInputWithFourEyes</code></p>
+</li>
+<li>
+<p><code>formCurrencyInput</code></p>
+</li>
+<li>
+<p><code>formCurrencyInputWithFourEyes</code></p>
+</li>
+<li>
+<p><code>formDate</code></p>
+</li>
+<li>
+<p><code>formDateWithFourEyes</code></p>
+</li>
+<li>
+<p><code>formInput</code></p>
+</li>
+<li>
+<p><code>formInputWithFourEyes</code></p>
+</li>
+<li>
+<p><code>formNumericInput</code></p>
+</li>
+<li>
+<p><code>formNumericInputWithFourEyes</code></p>
+</li>
+<li>
+<p><code>formTextArea</code></p>
+</li>
+<li>
+<p><code>formTextAreaWithFourEyes</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
 <p>Oft ist es notwendig, im Model Schlüssel eines Schlüsselverzeichnisses zu verwenden.
 Dieser sollte in der Regel in der Maske nicht als Schlüssel, sondern in einer verständlichen Form dargestellt werden.
 Hier bietet sich der Einsatz eines eigenen Konverters an, der mittels Schlüssel-Wert-Mapping die Umwandlung je nach Verarbeitungsrichtung leistet.
