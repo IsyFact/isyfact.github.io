@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <sitemap>
-<loc>https://github.com/isyfact/sitemap-glossary.xml</loc>
+<loc>https://isyfact.github.io/sitemap-glossary.xml</loc>
 </sitemap>
 <sitemap>
-<loc>https://github.com/isyfact/sitemap-isyfact-jsf-doku.xml</loc>
+<loc>https://isyfact.github.io/sitemap-isyfact-jsf-doku.xml</loc>
 </sitemap>
 <sitemap>
-<loc>https://github.com/isyfact/sitemap-isyfact-standards-doku.xml</loc>
+<loc>https://isyfact.github.io/sitemap-isyfact-standards-doku.xml</loc>
 </sitemap>
 <sitemap>
-<loc>https://github.com/isyfact/sitemap-isyfact-style-doku.xml</loc>
+<loc>https://isyfact.github.io/sitemap-isyfact-style-doku.xml</loc>
 </sitemap>
 </sitemapindex>
