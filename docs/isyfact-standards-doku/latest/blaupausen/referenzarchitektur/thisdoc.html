@@ -288,10 +288,10 @@
     <span class="nav-text">JSF</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-jsf-doku/latest/isy-web/konzept/konzept.html">Konzept</a>
+    <a class="nav-link" href="#isyfact-jsf-doku:isy-web:konzept/konzept.adoc">Konzept</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-jsf-doku/latest/isy-web/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="#isyfact-jsf-doku:isy-web:nutzungsvorgaben/nutzungsvorgaben.adoc">Nutzungsvorgaben</a>
   </li>
 </ul>
   </li>
@@ -416,14 +416,6 @@
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../../../../isyfact-jsf-doku/latest/isy-web/konzept/konzept.html">JavaServer Faces (JSF)</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../isyfact-jsf-doku/latest/isy-web/konzept/konzept.html">5.3</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
       <a class="title" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
       <ul class="versions">
         <li class="version is-latest">
@@ -439,7 +431,7 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="../../einstieg/vorstellung.html" class="home-link"></a>
+  <a href="../../einstieg/einstieg.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../einstieg/einstieg.html">IsyFact Standards</a></li>
@@ -457,9 +449,9 @@
 <h2 id="einleitung"><a class="anchor" href="#einleitung"></a>1. Einleitung</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Die <strong>IsyFact</strong> ist eine freie allgemeine <a href="../../../../glossary/latest/glossary/master.html#glossar-software-factory" class="xref page">Software Factory</a> zum Bau von <a href="../../../../glossary/latest/glossary/master.html#glossar-it-system&gt;" class="xref page">IT-Systeme</a>, die vom Bundesverwaltungsamt bereitgestellt wird.
+<p>Die <strong>IsyFact</strong> ist eine freie allgemeine <a href="../../../../glossary/latest/glossary/master.html#glossar-software-factory" class="xref page">Software Factory</a> zum Bau von <a href="../../../../glossary/latest/glossary/master.html#glossar-it-system" class="xref page">IT-Systeme</a>, die vom Bundesverwaltungsamt bereitgestellt wird.
 Sie wurde entwickelt, um unterschiedliche <a href="../../../../glossary/latest/glossary/master.html#glossar-geschaeftsanwendung" class="xref page">Geschäftsanwendungen</a> effizient entwerfen, realisieren und betreiben zu können.
-Der Begriff Factory steht für die schnelle Erzeugung neuer <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendung" class="xref page">Anwendungen</a> durch Anpassung und Ausgestaltung vorgefertigter Elemente, die in eine standardisierte <a href="../../../../glossary/latest/glossary/master.html#glossar-plattform&gt;" class="xref page">Plattform</a> integriert werden können.</p>
+Der Begriff Factory steht für die schnelle Erzeugung neuer <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendung" class="xref page">Anwendungen</a> durch Anpassung und Ausgestaltung vorgefertigter Elemente, die in eine standardisierte <a href="../../../../glossary/latest/glossary/master.html#glossar-plattform" class="xref page">Plattform</a> integriert werden können.</p>
 </div>
 <div class="paragraph">
 <p>Die IsyFact besteht aus den IsyFact-Standards und IsyFact-Erweiterungen:</p>
@@ -522,7 +514,7 @@ Dies ist in <a href="#image-GA-AW">Abbildung 1</a> dargestellt.</p>
 Anwendungssysteme unterstützen Geschäftsprozesse.
 Stellt ein Anwendungssystem eine Fachlogik dar, so handelt es sich um eine <a href="../../../../glossary/latest/glossary/master.html#glossar-geschaeftsanwendung" class="xref page">Geschäftsanwendung</a>.
 Ein Anwendungssystem ist Bestandteil der <a href="../../../../glossary/latest/glossary/master.html#glossar-a-architektur" class="xref page">A-Architektur</a>.
-Aus Sicht der <a href="../../../../glossary/latest/glossary/master.html#glossar-t-architektur" class="xref page">T-Architektur</a> bildet ein <a href="../../../../glossary/latest/glossary/master.html#glossar-it-system&gt;" class="xref page">IT-Systeme</a> die software-technische Umsetzung eines Anwendungssystems ab.</p>
+Aus Sicht der <a href="../../../../glossary/latest/glossary/master.html#glossar-t-architektur" class="xref page">T-Architektur</a> bildet ein <a href="../../../../glossary/latest/glossary/master.html#glossar-it-system" class="xref page">IT-Systeme</a> die software-technische Umsetzung eines Anwendungssystems ab.</p>
 </div>
 <div class="paragraph">
 <p>Ein häufig anzutreffendes Beispiel hierfür ist die Trennung in ein Anwendungssystem zur Bestandsverwaltung (Register) und einem Anwendungssystem für die Benutzerinteraktion, die auf die Bestandsverwaltung zugreift.
@@ -549,7 +541,7 @@ Dies sind in der Regel Web Service-Aufrufe.</p>
 <h4 id="software-referenzarchitektur"><a class="anchor" href="#software-referenzarchitektur"></a>1.1.2. Software Referenzarchitektur</h4>
 <div class="paragraph">
 <p>Die individuell erstellten Anwendungssysteme der Anwendungslandschaft sind technisch gleichartig aufgebaut.
-Daher wird eine Referenzarchitektur aufgestellt, nach denen Anwendungssysteme (Geschäftsanwendungen und Querschnittsanwendungen) software-technisch in <a href="../../../../glossary/latest/glossary/master.html#glossar-it-system&gt;" class="xref page">IT-Systeme</a> umgesetzt werden.
+Daher wird eine Referenzarchitektur aufgestellt, nach denen Anwendungssysteme (Geschäftsanwendungen und Querschnittsanwendungen) software-technisch in <a href="../../../../glossary/latest/glossary/master.html#glossar-it-system" class="xref page">IT-Systeme</a> umgesetzt werden.
 Das Dokument <a href="../referenzarchitektur-it-system/master.html" class="xref page">Referenzarchitektur IT-Systeme</a> beschreibt diese Referenzarchitektur.</p>
 </div>
 <div class="paragraph">
@@ -588,7 +580,7 @@ Es hat zur Folge, dass als Application Server ein Servlet-Container ausreichend 
 <div class="sect3">
 <h4 id="referenzarchitektur-der-technischen-infrastruktur"><a class="anchor" href="#referenzarchitektur-der-technischen-infrastruktur"></a>1.1.3. Referenzarchitektur der technischen Infrastruktur</h4>
 <div class="paragraph">
-<p>Im Bereich der technischen Infrastruktur (<a href="../../../../glossary/latest/glossary/master.html#glossar-ti-architektur&gt;" class="xref page">IT-Architektur</a>) werden folgende Umgebungen beschrieben:</p>
+<p>Im Bereich der technischen Infrastruktur (<a href="../../../../glossary/latest/glossary/master.html#glossar-ti-architektur" class="xref page">IT-Architektur</a>) werden folgende Umgebungen beschrieben:</p>
 </div>
 <div class="ulist">
 <ul>
