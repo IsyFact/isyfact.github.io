@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Detailkonzept Datenzugriff: Inhalt :: IsyFact Dokumentation</title>
-    <link rel="canonical" href="https://github.com/isyfact/isyfact-standards-doku/latest/blaupausen/detailkonzept-komponente-datenzugriff/inhalt.html">
+    <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/blaupausen/detailkonzept-komponente-datenzugriff/inhalt.html">
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
@@ -15,7 +15,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://github.com/isyfact">IsyFact Dokumentation</a>
+      <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -105,18 +105,6 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../detailkonzept-komponente-batch/master.html">Batch</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Vorgaben</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../vorgaben-architektur/master.html">Architektur</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../vorgaben-it-sicherheit/master.html">IT-Sicherheit</a>
   </li>
 </ul>
   </li>
@@ -379,6 +367,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/gui-tests/gui-tests-mit-selenium.html">GUI-Tests mit Selenium</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -524,7 +515,7 @@ Persistente Objekte werden Entit채ten genannt.</p>
 DAOs werden 체ber <em>Spring Data Repositories</em> abgebildet.
 Der Name eines Repositories leitet sich von derjenigen Entit채t ab, die 체ber das Repository bearbeitet wird.</p>
 </div>
-<table id="table-repossimpl" class="tableblock frame-all grid-all stretch">
+<table id="namenskonvention-spring-data-repository" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 1. Namenskonvention DAO: Spring Data Repository</caption>
 <colgroup>
 <col style="width: 20%;">
@@ -564,7 +555,7 @@ Der folgende, hervorgehobene Absatz wird nur noch aus historischen Gr체nden erw�
 <p>Vor der Verwendung von Spring Data wurden DAOs mithilfe von zwei Klassen umgesetzt: einem Interface und einer Implementierung.
 Der Name eines DAO-Interfaces leitet sich von derjenigen Entit채t ab, die 체ber das DAO bearbeitet wird.</p>
 </div>
-<table id="table-daossimpl" class="tableblock frame-all grid-all stretch">
+<table id="namenskonvention-dao-interface" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 2. Namenskonvention DAO: Interface + Implementierung</caption>
 <colgroup>
 <col style="width: 20%;">

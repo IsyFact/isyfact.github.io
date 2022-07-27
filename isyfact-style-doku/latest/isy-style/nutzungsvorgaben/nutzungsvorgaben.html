@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Baustein Styleguide (JSF): Nutzungsvorgaben :: IsyFact Dokumentation</title>
-    <link rel="canonical" href="https://github.com/isyfact/isyfact-style-doku/latest/isy-style/nutzungsvorgaben/nutzungsvorgaben.html">
+    <link rel="canonical" href="https://isyfact.github.io/isyfact-style-doku/latest/isy-style/nutzungsvorgaben/nutzungsvorgaben.html">
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
@@ -15,7 +15,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://github.com/isyfact">IsyFact Dokumentation</a>
+      <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -259,8 +259,8 @@ Folgende Freeware-Lösungen können für diesen Schritt genutzt werden:</p>
 <div class="paragraph">
 <p>Als Ergebnis der Stylesheet-Entwicklung werden Quelldateien im LESS-Format zur Verfügung gestellt.
 Diese werden in die Datei www/css/styles.css kompiliert und enthält alle relevanten Styles.
-Die Datei styles.less im Verzeichnis less/ ist die wichtigste CSS-Datei und Startpunkt für den CSSKompilierungsprozess.
-Mit Hilfe eines LESS Compilers (dieser sollte möglichst die Importe berücksichtigen – „import aware“) wird die Datei styles.less in in die Datei styles.css kompiliert.
+Die Datei styles.less im Verzeichnis less/ ist die wichtigste CSS-Datei und Startpunkt für den CSS Kompilierungsprozess.
+Mit Hilfe eines LESS Compilers (dieser sollte möglichst die Importe berücksichtigen – „import aware“) wird die Datei styles.less in die Datei styles.css kompiliert.
 Es wird empfohlen, in den Einstellungen des Compilers die Funktionen „Minimieren“ und „Kommentare entfernen“ einzuschalten.
 Dadurch kann die Dateigröße verkleinert werden.</p>
 </div>
@@ -274,7 +274,7 @@ Ansonsten gehen Änderungen bei einem neuen Kompilierungsprozess verloren, da di
 </div>
 <div class="paragraph">
 <p>LESS ermöglicht es, verschachtelte Selektoren zu benutzen, diese sind in den gelieferten Styles sehr häufig zu finden.
-Diese Verschachtelung erlaubt eine einfachere Wartbarkeit des Projektes, da so in den Styles teilweise die DOM-Struktur der Zielelemente widergespielt wird.</p>
+Diese Verschachtelung erlaubt eine einfachere Wartbarkeit des Projektes, da so in den Styles teilweise die DOM-Struktur der Zielelemente widergespiegelt wird.</p>
 </div>
 </div>
 <div class="sect3">
@@ -286,11 +286,11 @@ Dieses Programm basiert auf JavaScript und baut auf <a href="../../../../glossar
 <div class="paragraph">
 <p>GruntJS beinhaltet einen Task zur LESS-Kompilierung und einen Watch-Task.
 Diese sind für die Frontend-Entwicklung sehr komfortabel.
-Die Datei package.json beinhaltet alle notwendigen Bibliotheken-Abhängikeiten um Grunt Tasks zu installieren und das Projekt neu zu erstellen.</p>
+Die Datei package.json beinhaltet alle notwendigen Bibliotheken-Abhängigkeiten um Grunt Tasks zu installieren und das Projekt neu zu erstellen.</p>
 </div>
 <div class="paragraph">
 <p>Um GruntJS zur Kompilierung von Stylesheets und Markup zu nutzen, muss als erstes NodeJS installiert werden.
-Des Weiteren müssen Grunt und die benötigten Tasks (Es werden die folgenden Grunt-Tasks benutzt: grunt-contrib-less, grunt-contrib-watch, grunt-contribconcat, grunt-contrib-copy, grunt-contrib-clean, grunt-contrib-jshin) via npm installiert werden.
+Des Weiteren müssen Grunt und die benötigten Tasks (es werden die folgenden Grunt-Tasks benutzt: grunt-contrib-less, grunt-contrib-watch, grunt-contribconcat, grunt-contrib-copy, grunt-contrib-clean, grunt-contrib-jshin) via npm installiert werden.
 Dies kann über die Funktion „npm install“ direkt in das Hauptverzeichnis erfolgen.
 Mit dem Befehl „grunt“ in einer Konsolenanwendung wird das Projekt neu erstellt.</p>
 </div>
@@ -310,13 +310,13 @@ Mit dem Befehl „grunt“ in einer Konsolenanwendung wird das Projekt neu erste
 <p>Dieses Projekt benutzt das Bootstrap Raster-System, um das Layout und die Bedienelemente der Applikation zu strukturieren und zu positionieren.</p>
 </div>
 <div class="paragraph">
-<p>Da keine Anpassungsfähigkeit (Responsivness) des Designs unterhalb der gängigen Desktop-Auflösung benötigt wird, wurden die „Mobile, „Small“, und „Medium“-Raster (in Bootstrap als „mobile grid“, „small grid“ und „medium grid“ gekennzeichnet) deaktiviert.</p>
+<p>Da keine Anpassungsfähigkeit (Responsivness) des Designs unterhalb der gängigen Desktop-Auflösung benötigt wird, wurden die „Mobile“, „Small“, und „Medium“-Raster (in Bootstrap als „mobile grid“, „small grid“ und „medium grid“ gekennzeichnet) deaktiviert.</p>
 </div>
 <div class="paragraph">
 <p>Entwickler sollten ausschließlich die CSS-Klassen des Large (LG) Rasters benutzen (col-lg-x) um auch in diesem Fall das Spaltenraster nutzen zu können.</p>
 </div>
 <div class="paragraph">
-<p>Weitere Informationen können der Bootstrap Dokumentation über das <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-get-bootstrap-grid" class="xref page">Grid System</a> entnommen werden.</p>
+<p>Weitere Informationen können der Bootstrap Dokumentation über das <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-bootstrap-grid-doc" class="xref page">Grid System</a> entnommen werden.</p>
 </div>
 <div class="paragraph">
 <p>Die Einstellungen für das genutzte Raster (z. B. Spaltenbreite) können in der Datei src/less/es/customvariables.less nachgelesen werden.</p>
@@ -346,13 +346,13 @@ Diese können aktualisiert werden, wenn neue Versionen erscheinen.</p>
 <p><strong>Modernizr 2.7.1</strong></p>
 </div>
 <div class="paragraph">
-<p>Ermöglicht es, herauszufinden, welche Features durch den Browser unterstützt werden und setzt dementesprechende CSS-Klassen. (- Bisher ungenutzt -)</p>
+<p>Ermöglicht es, herauszufinden, welche Features durch den Browser unterstützt werden und setzt dementsprechende CSS-Klassen. (- Bisher ungenutzt -)</p>
 </div>
 <div class="paragraph">
 <p><strong>Bootstrap Datepicker 1.8.0</strong></p>
 </div>
 <div class="paragraph">
-<p>Implementiert einen interaktiven <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-eternicode-boostrap-date-picker" class="xref page">Standard Date Picker</a></p>
+<p>Implementiert einen interaktiven <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-eternicode-bootstrap-datepicker" class="xref page">Standard Date Picker</a></p>
 </div>
 <div class="paragraph">
 <p><strong>Bootstrap Select 1.13.9</strong></p>
@@ -364,13 +364,13 @@ Diese können aktualisiert werden, wenn neue Versionen erscheinen.</p>
 <p><strong>Bootstrap Timepicker</strong></p>
 </div>
 <div class="paragraph">
-<p>Implementiert einen interaktiven <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-jdewit-boostrap-time-picker" class="xref page">Standard Time Picker</a></p>
+<p>Implementiert einen interaktiven <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-jdewit-bootstrap-time-picker" class="xref page">Standard Time Picker</a></p>
 </div>
 <div class="paragraph">
 <p><strong>ExtendedBootstrapTab 0.1</strong></p>
 </div>
 <div class="paragraph">
-<p>Eine erweiterte Version der Bootstrap Tabs, die das Anzeigen der Inhalte aller Tabs innnerhalb eines Tabs ermöglicht.</p>
+<p>Eine erweiterte Version der Bootstrap Tabs, die das Anzeigen der Inhalte aller Tabs innerhalb eines Tabs ermöglicht.</p>
 </div>
 <div class="paragraph">
 <p><strong>harmonizePanelHeadlineWidth 0.1</strong></p>
@@ -469,13 +469,13 @@ Um Styles besser lesen und verstehen zu können, sollten ein paar grundlegende K
 <p>Es sollten keine IDs für das Styling benutzt werden, sondern immer Klassen.</p>
 </li>
 <li>
-<p>Klassen-und ID-Namen sollten die semantische Bedeutung des Elements im Markup beschreiben und keine Styling-Informationen enthalten (z. B. eService-area statt center-column).</p>
+<p>Klassen- und ID-Namen sollten die semantische Bedeutung des Elements im Markup beschreiben und keine Styling-Informationen enthalten (z. B. eService-area statt center-column).</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>Unnötige Klassen und Verschachtelungen („wrapper“-Elemente) sollten vermieden werden.
-Es sollten keine Inline-Styles (style=”…”). im HTML-Dokument eingesetzt werden
+Es sollten keine Inline-Styles (style=”…”) im HTML-Dokument eingesetzt werden.
 Die Styles einzelner Elemente werden logisch auf verschiedene Dateien aufgeteilt, einige davon nutzen die Namen der Bootstrap Original-Dateien.</p>
 </div>
 </div>
@@ -530,7 +530,7 @@ Damit lässt sich <code>isy-style</code> in klassischen Webanwendungen mit JSF (
 </div>
 </div>
 <div class="paragraph">
-<p>Während des Build-Prozesses der Anwendung werden die statische Ressourcen (CSS, JavaScript, Bilder) automatisch aus <code>isy-style</code> geladen und in der Webanwendung bereitgestellt.
+<p>Während des Build-Prozesses der Anwendung werden die statischen Ressourcen (CSS, JavaScript, Bilder) automatisch aus <code>isy-style</code> geladen und in der Webanwendung bereitgestellt.
 Im Projekt selbst sind diese Ressourcen nicht sichtbar und können somit auch nicht geändert werden.
 Änderungen an Stylesheets aus <code>isy-style</code> sind somit nur durch ein Überschreiben der Ressourcen möglich.
 In der Anwendung definierte Stylesheets sollten immer nach den Ressourcen aus <code>isy-style</code> geladen werden, damit diese überschrieben werden.</p>

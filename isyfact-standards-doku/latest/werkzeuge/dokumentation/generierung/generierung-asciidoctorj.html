@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Untitled :: IsyFact Dokumentation</title>
-    <link rel="canonical" href="https://github.com/isyfact/isyfact-standards-doku/latest/werkzeuge/dokumentation/generierung/generierung-asciidoctorj.html">
+    <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/werkzeuge/dokumentation/generierung/generierung-asciidoctorj.html">
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../../_/css/font-awesome.min.css">
@@ -15,7 +15,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://github.com/isyfact">IsyFact Dokumentation</a>
+      <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -105,18 +105,6 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../blaupausen/detailkonzept-komponente-batch/master.html">Batch</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Vorgaben</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../blaupausen/vorgaben-architektur/master.html">Architektur</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../blaupausen/vorgaben-it-sicherheit/master.html">IT-Sicherheit</a>
   </li>
 </ul>
   </li>
@@ -379,6 +367,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../versionierungskontrolle/master.html">Versionierungskontrolle</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../gui-tests/gui-tests-mit-selenium.html">GUI-Tests mit Selenium</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -564,7 +555,8 @@ Zunächst sind folgende Properties dem Element <code>&lt;properties&gt;&lt;/prop
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Die Angabe der <code>vs-einstufung</code> ist an dieser Stelle optional und gilt für alle Dokumente. Üblicherweise wird die <code>vs-einstufung</code> in master.adoc gesetzt, dort ist sie verpflichtend, wenn sie nicht schon wie hier in der pom.xml gesetzt wurde. Vgl. <a href="#listing-master">[listing-master]</a>.</td>
+<td>Die Angabe der <code>vs-einstufung</code> ist an dieser Stelle optional und gilt für alle Dokumente. Üblicherweise wird die <code>vs-einstufung</code> in master.adoc gesetzt, dort ist sie verpflichtend, wenn sie nicht schon wie hier in der pom.xml gesetzt wurde.
+Vgl. <a href="../erstellung/erstellung-asciidoctorj.html#listing-master" class="xref page">master.adoc</a>.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
@@ -708,7 +700,7 @@ Die IsyFact bietet derzeit folgende AsciidoctorJ Extensions an:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#isy-attributes-preprocessor">IsyAttributesPreprocessor</a></p>
 <p class="tableblock"><code>de.bund.bva.isyfact.attributes</code> <code>.IsyAttributesPreprocessor</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Erzeugt Metainformationen am Anfang eines Dokuments. Erzeugt den Titel und wählt das passende Theme für ein Dokument.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">siehe <a href="#listing-master">[listing-master]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">siehe <a href="../erstellung/erstellung-asciidoctorj.html#listing-master" class="xref page">master.adoc</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">BibliographyPreprocessor</p>
@@ -732,13 +724,13 @@ Die IsyFact bietet derzeit folgende AsciidoctorJ Extensions an:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GlossaryPreprocessor</p>
 <p class="tableblock"><code>de.bund.bva.isyfact.glossary</code> <code>.GlossaryPreprocessor</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Erzeugt ein Glossar für das jeweilige Dokument mit allen bekannten Begriffen, die im Dokument enthalten und als Referenz markiert sind.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">siehe <a href="#glossar">[glossar]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">siehe <a href="../master-asciidoctorJ.html#glossar" class="xref page">Glossar</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ListOfPreprocessor</p>
 <p class="tableblock"><code>de.bund.bva.isyfact.listof</code> <code>.ListOfPreprocessor</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Erzeugt ein Abbildungs- Tabellen- und Listenverzeichnis für das jeweilige Dokument für alle Elemente im Dokument, die entsprechend markiert sind.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">siehe <a href="#bilder">[bilder]</a>, <a href="#tabellen">[tabellen]</a> und <a href="#listings">[listings]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">siehe <a href="../master-asciidoctorJ.html#bilder" class="xref page">Bilder</a>, <a href="../master-asciidoctorJ.html#tabellen" class="xref page">Tabellen</a> und <a href="../master-asciidoctorJ.html#listings" class="xref page">Listings</a></p></td>
 </tr>
 </tbody>
 </table>
