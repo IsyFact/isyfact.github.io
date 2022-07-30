@@ -1076,12 +1076,28 @@ Es besteht die Möglichkeit, die Formatierungsregeln als XML-Datei abzuspeichern
 </div>
 </div>
 <div class="sect3">
-<h4 id="import-von-code-style-formatierungsdateien"><a class="anchor" href="#import-von-code-style-formatierungsdateien"></a>4.1.2. Import von Code Style Formatierungsdateien</h4>
+<h4 id="tastaturkuerzel-import-aufraeumen"><a class="anchor" href="#tastaturkuerzel-import-aufraeumen"></a>4.1.2. Tastaturkürzel zum Aufräumen der Imports</h4>
+<div class="paragraph">
+<p>Sollen lediglich die Imports aufgeräumt werden, kann im Codefenster folgendes Tastenkürzel verwendet werden.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Eclipse:</strong> kbd:[Alt + Shift + O]</p>
+</li>
+<li>
+<p><strong>IntelliJ IDEA:</strong> kbd:[Strg + Alt + O]</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="import-von-code-style-formatierungsdateien"><a class="anchor" href="#import-von-code-style-formatierungsdateien"></a>4.1.3. Import von Code Style Formatierungsdateien</h4>
 <div class="paragraph">
 <p>Dieses Kapitel erläutert den Import der Konfiguration zur Quellcode-Formatierung für die Entwicklungsumgebungen Eclipse und IntelliJ IDEA.</p>
 </div>
 <div class="sect4">
-<h5 id="intellij-idea-1"><a class="anchor" href="#intellij-idea-1"></a>4.1.2.1. IntelliJ IDEA</h5>
+<h5 id="intellij-idea-1"><a class="anchor" href="#intellij-idea-1"></a>4.1.3.1. IntelliJ IDEA</h5>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1100,7 +1116,7 @@ Die in dieser Installationsbeschreibung erstellten Screenshots basieren auf der 
 <div class="ulist">
 <ul>
 <li>
-<p>Menüeintrag menu:File[Settings &gt; Code Style &gt; Java]</p>
+<p>Menüeintrag menu:File[Settings &gt; Editor &gt; Code Style &gt; Java]</p>
 </li>
 </ul>
 </div>
@@ -1141,9 +1157,24 @@ Welcher Scheme-Name angezeigt wird, entscheidet sich durch einen entsprechenden 
 </tr>
 </table>
 </div>
+<div class="sect5">
+<h6 id="intellij-additional-setting"><a class="anchor" href="#intellij-additional-setting"></a>4.1.3.1.1. Zusätzliche Einstellung</h6>
+<div class="paragraph">
+<p>Weiterhin muss folgende Einstellung in menu:File[Settings &gt; Editor &gt; General] vorgenommen werden:</p>
+</div>
+<div class="paragraph">
+<p>Unter "On Save": Ensure every saved file ends with a line break</p>
+</div>
+<div id="image-intellij_additional-setting" class="imageblock text-center">
+<div class="content">
+<img src="../_images/entwicklungsumgebung/Einrichtung_Entwicklungsumgebung_006b.png" alt="Einrichtung Entwicklungsumgebung 006b">
+</div>
+<div class="title">Abbildung 26. IntelliJ IDEA Zusätzliche Einstellung</div>
+</div>
+</div>
 </div>
 <div class="sect4">
-<h5 id="eclipse-code-formatter"><a class="anchor" href="#eclipse-code-formatter"></a>4.1.2.2. Eclipse</h5>
+<h5 id="eclipse-code-formatter"><a class="anchor" href="#eclipse-code-formatter"></a>4.1.3.2. Eclipse</h5>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1183,7 +1214,7 @@ Die in dieser Installationsbeschreibung erstellten Screenshots basieren auf der 
 <div class="content">
 <img src="../_images/entwicklungsumgebung/Einrichtung_Entwicklungsumgebung_007.png" alt="Einrichtung Entwicklungsumgebung 007">
 </div>
-<div class="title">Abbildung 26. Eclipse Code Formatter Import</div>
+<div class="title">Abbildung 27. Eclipse Code Formatter Import</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1200,10 +1231,29 @@ Welcher Profilname angezeigt wird, entscheidet sich durch einen entsprechenden E
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p><strong>Schritt 3:</strong> Einrichtung des Import Organizers</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Menüeintrag menu:Window[Preferences &gt; Java &gt; Code Style &gt; Organize Imports]</p>
+</li>
+<li>
+<p>In diesem Menü kann über "Import" die importorder-Datei importiert werden, welche die Reihenfolge automatisch folgendermaßen festlegt: java, javax, net, org, com, de</p>
+</li>
+</ul>
+</div>
+<div id="image-import-organizer" class="imageblock text-center">
+<div class="content">
+<img src="../_images/entwicklungsumgebung/Einrichtung_Entwicklungsumgebung_007b.png" alt="Einrichtung Entwicklungsumgebung 007b">
+</div>
+<div class="title">Abbildung 28. Eclipse Import Organizer</div>
+</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="formatierungsdifferenzen"><a class="anchor" href="#formatierungsdifferenzen"></a>4.1.3. Formatierungsdifferenzen</h4>
+<h4 id="formatierungsdifferenzen"><a class="anchor" href="#formatierungsdifferenzen"></a>4.1.4. Formatierungsdifferenzen</h4>
 <div class="paragraph">
 <p>Mit Hilfe der Einstellungsmasken für die Formatierung bei den beiden IDEs ist eine fast vollständige Übereinstimmung bei der automatischen Formatierung des Quellcodes möglich.
 Dieses Kapitel führt die noch verbliebenen Differenzen anhand einer Gegenüberstellung auf und diskutiert kurz die Konsequenzen.</p>
@@ -1212,10 +1262,10 @@ Dieses Kapitel führt die noch verbliebenen Differenzen anhand einer Gegenübers
 <div class="content">
 <img src="../_images/entwicklungsumgebung/Einrichtung_Entwicklungsumgebung_008.png" alt="Einrichtung Entwicklungsumgebung 008">
 </div>
-<div class="title">Abbildung 27. Democode zur Veranschaulichung von Formatierungseinstellungen (Eclipse)</div>
+<div class="title">Abbildung 29. Democode zur Veranschaulichung von Formatierungseinstellungen (Eclipse)</div>
 </div>
 <div class="sect4">
-<h5 id="leere-zeilen-vor-dem-ende-des-kommentarblocks"><a class="anchor" href="#leere-zeilen-vor-dem-ende-des-kommentarblocks"></a>4.1.3.1. Leere Zeilen vor dem Ende des Kommentarblocks</h5>
+<h5 id="leere-zeilen-vor-dem-ende-des-kommentarblocks"><a class="anchor" href="#leere-zeilen-vor-dem-ende-des-kommentarblocks"></a>4.1.4.1. Leere Zeilen vor dem Ende des Kommentarblocks</h5>
 <div class="paragraph">
 <p>Im <em>javadoc</em> Bereich löscht IntelliJ IDEA leere Kommentarzeilen, die vor dem Ende des Kommentarblocks stehen:</p>
 </div>
@@ -1223,14 +1273,14 @@ Dieses Kapitel führt die noch verbliebenen Differenzen anhand einer Gegenübers
 <div class="content">
 <img src="../_images/entwicklungsumgebung/Einrichtung_Entwicklungsumgebung_009.png" alt="Einrichtung Entwicklungsumgebung 009">
 </div>
-<div class="title">Abbildung 28. Formatierungsdifferenz Kommentarleerzeile</div>
+<div class="title">Abbildung 30. Formatierungsdifferenz Kommentarleerzeile</div>
 </div>
 <div class="paragraph">
 <p><strong>Bewertung:</strong> Da IntelliJ die Zeilen zwar löscht, aber Eclipse diese nicht wieder hinzufügt, stabilisiert sich dieser Unterschied in der Formatierung nach einem Commit eines Entwicklers, der IntelliJ IDEA verwendet.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="leerzeilen-bei-for-schleifen-semikolon"><a class="anchor" href="#leerzeilen-bei-for-schleifen-semikolon"></a>4.1.3.2. Leerzeichen bei <code>for</code>-Schleifen</h5>
+<h5 id="leerzeilen-bei-for-schleifen-semikolon"><a class="anchor" href="#leerzeilen-bei-for-schleifen-semikolon"></a>4.1.4.2. Leerzeichen bei <code>for</code>-Schleifen</h5>
 <div class="paragraph">
 <p>Beide Formatter erlauben es einzustellen, dass nach dem Semikolon in einer for-Schleife ein Leerzeichen stehen soll.
 Bei IntelliJ IDEA wird diese Regel streng umgesetzt, auch bei <code>for(;;)</code>, währenddessen Eclipse Leerzeichen nur dann einfügt, wenn hinter dem Semikolon noch ein Ausdruck wie beispielsweise <code>„b &gt; i“</code> steht.</p>
@@ -1239,14 +1289,14 @@ Bei IntelliJ IDEA wird diese Regel streng umgesetzt, auch bei <code>for(;;)</cod
 <div class="content">
 <img src="../_images/entwicklungsumgebung/Einrichtung_Entwicklungsumgebung_010.png" alt="Einrichtung Entwicklungsumgebung 010">
 </div>
-<div class="title">Abbildung 29. Formatierungsdifferenz Leerzeile in for-Schleife</div>
+<div class="title">Abbildung 31. Formatierungsdifferenz Leerzeile in for-Schleife</div>
 </div>
 <div class="paragraph">
 <p><strong>Bewertung:</strong> Ein leeres Abbruchkriterium in der <code>for</code>-Schleife mag ein Testfall für eine Formatierungsprüfung sein, darf und sollte in der Praxis jedoch nicht vorkommen.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="behandlung-von-leeren-statements"><a class="anchor" href="#behandlung-von-leeren-statements"></a>4.1.3.3. Behandlung von leeren Statements</h5>
+<h5 id="behandlung-von-leeren-statements"><a class="anchor" href="#behandlung-von-leeren-statements"></a>4.1.4.3. Behandlung von leeren Statements</h5>
 <div class="paragraph">
 <p>Wenn ein leeres Statement im Quellcode vorhanden ist, fügt IntelliJ IDEA zwei Leerzeilen ein und setzt das Semikolon beim Formatieren in eine neue Zeile.</p>
 </div>
@@ -1254,7 +1304,7 @@ Bei IntelliJ IDEA wird diese Regel streng umgesetzt, auch bei <code>for(;;)</cod
 <div class="content">
 <img src="../_images/entwicklungsumgebung/Einrichtung_Entwicklungsumgebung_011.png" alt="Einrichtung Entwicklungsumgebung 011">
 </div>
-<div class="title">Abbildung 30. Formatierungsdifferenz Befehlszeilenfehler</div>
+<div class="title">Abbildung 32. Formatierungsdifferenz Befehlszeilenfehler</div>
 </div>
 <div class="paragraph">
 <p><strong>Bewertung:</strong> Ein überflüssiges, leeres Statement-Semikolon ist auffälliger, wenn es am Zeilenanfang steht.
@@ -1283,7 +1333,7 @@ Um bei der derzeit aktuellen Eclipse Version <em>Neon</em> identische Umsetzunge
 <div class="content">
 <img src="../_images/entwicklungsumgebung/Einrichtung_Entwicklungsumgebung_001.png" alt="Einrichtung Entwicklungsumgebung 001" width="80%">
 </div>
-<div class="title">Abbildung 31. Eclipse Marketplace, Pluginauswahl</div>
+<div class="title">Abbildung 33. Eclipse Marketplace, Pluginauswahl</div>
 </div>
 </div>
 <div class="sect4">
@@ -1298,7 +1348,7 @@ Um bei der derzeit aktuellen Eclipse Version <em>Neon</em> identische Umsetzunge
 <div class="content">
 <img src="../_images/entwicklungsumgebung/Einrichtung_Entwicklungsumgebung_002.png" alt="Einrichtung Entwicklungsumgebung 002">
 </div>
-<div class="title">Abbildung 32. Eclipse Plugin jenerate - Grundeinstellungen</div>
+<div class="title">Abbildung 34. Eclipse Plugin jenerate - Grundeinstellungen</div>
 </div>
 <div class="paragraph">
 <p>Wenn man sich im Klasseneditor über das Plugin <em>jenerate</em> die Methoden <code>equals()</code> und <code>hashCode()</code> generieren lässt, wird auf der Detailmaske zur Eingabe der zu verwendenden Parameter bei der Codegenerierung die in den Settings voreingestellte „<em>Content Strategy</em>“ angezeigt.</p>
@@ -1310,7 +1360,7 @@ Um bei der derzeit aktuellen Eclipse Version <em>Neon</em> identische Umsetzunge
 <div class="content">
 <img src="../_images/entwicklungsumgebung/Einrichtung_Entwicklungsumgebung_004.png" alt="Einrichtung Entwicklungsumgebung 004" width="40%">
 </div>
-<div class="title">Abbildung 33. Einstellung der Content Strategy</div>
+<div class="title">Abbildung 35. Einstellung der Content Strategy</div>
 </div>
 </div>
 <div class="sect4">
@@ -1329,7 +1379,7 @@ Wichtig ist, dass alle für die zu generierenden Methoden relevanten Klassenvari
 <div class="content">
 <img src="../_images/entwicklungsumgebung/Einrichtung_Entwicklungsumgebung_003.png" alt="Einrichtung Entwicklungsumgebung 003">
 </div>
-<div class="title">Abbildung 34. Plugin jenerate - Methodenauswahl</div>
+<div class="title">Abbildung 36. Plugin jenerate - Methodenauswahl</div>
 </div>
 <div class="paragraph">
 <p>Alternativ stehen die folgenden Tastenkombinationen zur Verfügung:</p>
@@ -1375,7 +1425,7 @@ Der Dialog wird mit kbd:[Alt + Einfg] und der Auwahl von <em>equals() and hashCo
 <div class="content">
 <img src="../_images/entwicklungsumgebung/Einrichtung_Entwicklungsumgebung_005.png" alt="Einrichtung Entwicklungsumgebung 005" width="70%">
 </div>
-<div class="title">Abbildung 35. IntelliJ IDEA: Einstellung der Vorgabe zur Codegenerierung</div>
+<div class="title">Abbildung 37. IntelliJ IDEA: Einstellung der Vorgabe zur Codegenerierung</div>
 </div>
 </div>
 </div>
@@ -1394,7 +1444,7 @@ Der Dialog wird mit kbd:[Alt + Einfg] und der Auwahl von <em>equals() and hashCo
 <div class="ulist">
 <ul>
 <li>
-<p>Den Dialog <em>Install</em> öffnen: menu:Window[Help &gt; Install New Software&#8230;&#8203;]</p>
+<p>Den Dialog <em>Install</em> öffnen: menu:Help[Install New Software&#8230;&#8203;]</p>
 </li>
 <li>
 <p>Neben dem Eingabefeld <em>Work With:</em> auf die Schaltfläche btn:[Add&#8230;&#8203;] klicken und folgende Daten eintragen:<br></p>
@@ -1409,7 +1459,7 @@ Der Dialog wird mit kbd:[Alt + Einfg] und der Auwahl von <em>equals() and hashCo
 <div class="content">
 <img src="../_images/entwicklungsumgebung/Einrichtung_Entwicklungsumgebung_012.png" alt="Einrichtung Entwicklungsumgebung 012">
 </div>
-<div class="title">Abbildung 36. Installationsquelle für Checkstyle hinzufügen</div>
+<div class="title">Abbildung 38. Installationsquelle für Checkstyle hinzufügen</div>
 </div>
 <div class="paragraph">
 <p><strong>Schritt 2:</strong> Checkstyle-Plugin installieren</p>
@@ -1425,7 +1475,14 @@ Der Dialog wird mit kbd:[Alt + Einfg] und der Auwahl von <em>equals() and hashCo
 <div class="content">
 <img src="../_images/entwicklungsumgebung/Einrichtung_Entwicklungsumgebung_013.png" alt="Einrichtung Entwicklungsumgebung 013">
 </div>
-<div class="title">Abbildung 37. Checkstyle-Plugins für Eclipse installieren</div>
+<div class="title">Abbildung 39. Checkstyle-Plugins für Eclipse installieren</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Im Anschluss wird ein Neustart der IDE empfohlen.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect4">
@@ -1447,7 +1504,7 @@ Der Dialog wird mit kbd:[Alt + Einfg] und der Auwahl von <em>equals() and hashCo
 <div class="content">
 <img src="../_images/entwicklungsumgebung/Einrichtung_Entwicklungsumgebung_014.png" alt="Einrichtung Entwicklungsumgebung 014">
 </div>
-<div class="title">Abbildung 38. Suche nach Checkstyle-Plugin</div>
+<div class="title">Abbildung 40. Suche nach Checkstyle-Plugin</div>
 </div>
 <div class="paragraph">
 <p><strong>Schritt 2:</strong> Checkstyle-Plugin installieren</p>
@@ -1463,7 +1520,7 @@ Der Dialog wird mit kbd:[Alt + Einfg] und der Auwahl von <em>equals() and hashCo
 <div class="content">
 <img src="../_images/entwicklungsumgebung/Einrichtung_Entwicklungsumgebung_015.png" alt="Einrichtung Entwicklungsumgebung 015">
 </div>
-<div class="title">Abbildung 39. Checkstyle-Plugin für IntelliJ IDEA installieren</div>
+<div class="title">Abbildung 41. Checkstyle-Plugin für IntelliJ IDEA installieren</div>
 </div>
 </div>
 </div>
@@ -1504,7 +1561,7 @@ Der Dialog wird mit kbd:[Alt + Einfg] und der Auwahl von <em>equals() and hashCo
 <div class="content">
 <img src="../_images/entwicklungsumgebung/Einrichtung_Entwicklungsumgebung_016.png" alt="Einrichtung Entwicklungsumgebung 016">
 </div>
-<div class="title">Abbildung 40. Import der Checkstyle-Konfiguration für Eclipse</div>
+<div class="title">Abbildung 42. Import der Checkstyle-Konfiguration für Eclipse</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1552,7 +1609,7 @@ Der Dialog wird mit kbd:[Alt + Einfg] und der Auwahl von <em>equals() and hashCo
 <div class="content">
 <img src="../_images/entwicklungsumgebung/Einrichtung_Entwicklungsumgebung_017.png" alt="Einrichtung Entwicklungsumgebung 017">
 </div>
-<div class="title">Abbildung 41. Import der Checkstyle-Konfiguration für IntelliJ IDEA</div>
+<div class="title">Abbildung 43. Import der Checkstyle-Konfiguration für IntelliJ IDEA</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1601,7 +1658,7 @@ Klicken Sie in der Perspektive Git entweder auf die Clone-Schaltfläche oder auf
 <div class="content">
 <img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_bibliotheken_04.png" alt="leitfaden entwicklungsumgebung bibliotheken 04">
 </div>
-<div class="title">Abbildung 42. Clonen des Git Repositories</div>
+<div class="title">Abbildung 44. Clonen des Git Repositories</div>
 </div>
 <div class="paragraph">
 <p>Klicken Sie im erscheinenden Fenster auf GitHub.</p>
@@ -1610,7 +1667,7 @@ Klicken Sie in der Perspektive Git entweder auf die Clone-Schaltfläche oder auf
 <div class="content">
 <img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_bibliotheken_05.png" alt="leitfaden entwicklungsumgebung bibliotheken 05" width="60%">
 </div>
-<div class="title">Abbildung 43. Github</div>
+<div class="title">Abbildung 45. Github</div>
 </div>
 <div class="paragraph">
 <p>Klicken Sie anschließend auf "Next".
@@ -1623,7 +1680,7 @@ Selektieren Sie dort das GitHub-Repository <code>isyfact-projektgenerator</code>
 <div class="content">
 <img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_bibliotheken_29.png" alt="leitfaden entwicklungsumgebung bibliotheken 29" width="60%">
 </div>
-<div class="title">Abbildung 44. Selektion isyfact-projektgenerator auf GitHub</div>
+<div class="title">Abbildung 46. Selektion isyfact-projektgenerator auf GitHub</div>
 </div>
 <div class="paragraph">
 <p>Im nächsten Fenster wird der Branch ausgewählt, der lokal heruntergeladen werden soll.
@@ -1633,7 +1690,7 @@ Wählen Sie den <code>master</code>-Branch aus und klicken Sie erneut auf "Next"
 <div class="content">
 <img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_bibliotheken_21.png" alt="leitfaden entwicklungsumgebung bibliotheken 21" width="60%">
 </div>
-<div class="title">Abbildung 45. Selektion des master-branch</div>
+<div class="title">Abbildung 47. Selektion des master-branch</div>
 </div>
 <div class="paragraph">
 <p>Geben Sie nun den lokalen Pfad an, unter dem das Repository gespeichert werden soll.</p>
@@ -1642,7 +1699,7 @@ Wählen Sie den <code>master</code>-Branch aus und klicken Sie erneut auf "Next"
 <div class="content">
 <img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_bibliotheken_22.png" alt="leitfaden entwicklungsumgebung bibliotheken 22" width="60%">
 </div>
-<div class="title">Abbildung 46. lokaler Speicherort für isyfact-projektgenerator</div>
+<div class="title">Abbildung 48. lokaler Speicherort für isyfact-projektgenerator</div>
 </div>
 <div class="paragraph">
 <p>Bestätigen Sie mit einem Mausklick auf "Finish".</p>
@@ -1658,7 +1715,7 @@ Hier sollte jetzt im Package-Explorer das Maven-Projekt <code>isyfact-projektgen
 <div class="content">
 <img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_bibliotheken_30.png" alt="leitfaden entwicklungsumgebung bibliotheken 30">
 </div>
-<div class="title">Abbildung 47. Import des Projektes isyfact-projektgenerator</div>
+<div class="title">Abbildung 49. Import des Projektes isyfact-projektgenerator</div>
 </div>
 <div class="paragraph">
 <p>Nachdem das Projekt <code>isyfact-projektgenerator</code> importiert worden ist, wechseln Sie in die Perspective "Spring" und führen Sie die Aktion menu:Run As[Maven Install] aus.</p>
@@ -1687,7 +1744,7 @@ Bei der generierten Hello-World-Anwendung handelt es sich um ein Maven-Projekt, 
 <div class="content">
 <img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_bibliotheken_01.png" alt="leitfaden entwicklungsumgebung bibliotheken 01">
 </div>
-<div class="title">Abbildung 48. Hello-World-Anwendung</div>
+<div class="title">Abbildung 50. Hello-World-Anwendung</div>
 </div>
 <div class="paragraph">
 <p>Hierfür klicken Sie im Hauptmenü auf menu:File[New &gt; Other].
@@ -1697,7 +1754,7 @@ Im Wizard selektieren Sie menu:Maven[Maven Project].</p>
 <div class="content">
 <img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_projektgenerator_01.png" alt="leitfaden entwicklungsumgebung projektgenerator 01" width="60%">
 </div>
-<div class="title">Abbildung 49. Auswahl des Maven-Wizard</div>
+<div class="title">Abbildung 51. Auswahl des Maven-Wizard</div>
 </div>
 <div class="paragraph">
 <p>Klicken Sie auf "Next".
@@ -1707,7 +1764,7 @@ Im nächsten Fenster selektieren Sie die Checkbox "Use default workspace locatio
 <div class="content">
 <img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_projektgenerator_02.png" alt="leitfaden entwicklungsumgebung projektgenerator 02" width="60%">
 </div>
-<div class="title">Abbildung 50. Default-Location wählen</div>
+<div class="title">Abbildung 52. Default-Location wählen</div>
 </div>
 <div class="paragraph">
 <p>Klicken Sie auf "Next".
@@ -1717,7 +1774,7 @@ Selektieren Sie den Maven Archetype des IsyFact-Projektgenerators in der aktuell
 <div class="content">
 <img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_projektgenerator_03.png" alt="leitfaden entwicklungsumgebung projektgenerator 03" width="60%">
 </div>
-<div class="title">Abbildung 51. Wahl des Maven-Archetyps</div>
+<div class="title">Abbildung 53. Wahl des Maven-Archetyps</div>
 </div>
 <div class="paragraph">
 <p>Danach wählen Sie die Group Id und Artifact Id Ihres Maven-Projekts.</p>
@@ -1726,7 +1783,7 @@ Selektieren Sie den Maven Archetype des IsyFact-Projektgenerators in der aktuell
 <div class="content">
 <img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_projektgenerator_04.png" alt="leitfaden entwicklungsumgebung projektgenerator 04" width="60%">
 </div>
-<div class="title">Abbildung 52. Angabe der Parameter</div>
+<div class="title">Abbildung 54. Angabe der Parameter</div>
 </div>
 <div class="paragraph">
 <p>Zuletzt bestätigen Sie die Erstellung des neuen Maven Projekts mit einem Klick auf "Finish".
@@ -1741,7 +1798,7 @@ Selektieren Sie den im Kapitel <a href="#apache-tomcat">Apache Tomcat</a> einger
 <div class="content">
 <img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_projektgenerator_05.png" alt="leitfaden entwicklungsumgebung projektgenerator 05" width="60%">
 </div>
-<div class="title">Abbildung 53. Auf Server starten</div>
+<div class="title">Abbildung 55. Auf Server starten</div>
 </div>
 <div class="paragraph">
 <p>Mit "Finish" wird der Application Server gestartet.
@@ -1753,7 +1810,7 @@ Zum Test geben Sie im ersten Eingabefeld einen Namen und im zweiten eine Nachric
 <div class="content">
 <img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_projektgenerator_06.png" alt="leitfaden entwicklungsumgebung projektgenerator 06">
 </div>
-<div class="title">Abbildung 54. Hello World starten</div>
+<div class="title">Abbildung 56. Hello World starten</div>
 </div>
 </div>
 </div>
