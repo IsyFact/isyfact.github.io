@@ -346,18 +346,45 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../master-antora.html">Projektseite mit Antora (empfohlen)</a>
+    <span class="nav-text">Antora (empfohlen)</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../erstellung/erstellung-antora.html">Seiten anlegen</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../seitenvorlage.html">Seitenvorlage</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../kopiervorlage.html">Kopiervorlage für neue Seiten</a>
   </li>
 </ul>
   </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../bearbeitung/bearbeitung-antora.html">Seiten bearbeiten</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../generierung/generierung-antora.html">Projektseite erzeugen</a>
+  </li>
+</ul>
+  </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../master-asciidoctorJ.html">Dokumente mit AsciidoctorJ Extensions</a>
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AsciidoctorJ</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../erstellung/erstellung-asciidoctorj.html">Neue Dokumente anlegen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../bearbeitung/bearbeitung-asciidoctorj.html">Dokumente bearbeiten</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../generierung/generierung-asciidoctorj.html">PDF- und HTML-Dokumente erzeugen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../changelog/changelog-doku.html">Zentralisiertes und automatisiertes Changelog</a>
   </li>
 </ul>
   </li>
@@ -468,30 +495,30 @@ Die Nutzung ist unter den <a href="../../../../../glossary/latest/literaturexter
 <div class="paragraph">
 <p>Dieses Handbuch dient technischen Autoren von IsyFact-Dokumenten als Wegweiser.</p>
 </div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Achtung"></i>
-</td>
-<td class="content">
 <div class="paragraph">
-<p>Die Art der Dokumentation hat sich seit der IsyFact Version 2.5 stark geändert.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Im Folgenden werden die Unterschiede der Dokumentation vor und ab der IsyFact Version 2.5 aufgeführt.
-Allen Versionen gemeinsam ist die Verwendung von AsciiDoc als Grundlage zur Dokumentation.
-Die Dokumentation ab der IsyFact Version 2.5 verwendet das Open-Source-Tool Antora zur Generierung der HTML-Gesamtdokumentation.
-Die Dokumentation vor der IsyFact Version 2.5 verwendet AsciidoctorJ Extensions zur Generierung der einzelnen HTML- und PDF-Dokumente.</p>
+<p>Es gibt zwei wesentliche Arten der Dokumentation: <a href="#generierung-antora">Projektseiten mit Antora</a> sowie <a href="#generierung-asciidoctorj">PDF- und HTML-Dokumente mit AsciidoctorJ</a>.
+Allen Versionen gemeinsam ist die Verwendung von AsciiDoc als Grundlage zur Dokumentation.</p>
 </div>
 <div class="sect2">
-<h3 id="_generierung_mit_antora"><a class="anchor" href="#_generierung_mit_antora"></a>1.1. Generierung mit Antora</h3>
+<h3 id="generierung-antora"><a class="anchor" href="#generierung-antora"></a>1.1. Generierung mit Antora</h3>
 <div class="paragraph">
-<p>Durch die Verwendung von Antora zur Generierung der HTML-Gesamtdokumentation ergibt sich eine gegenüber der bisherigen Dokumentation deutlich veränderte Verzeichnisstruktur der Ablage der Dokumentationsseiten und teilweise der Inhalte.</p>
+<p>Die Generierung von Projektseiten mit Antora bietet die Möglichkeit, aus Asciidoc-Dateien eine statische HTML-Seite zu erzeugen.</p>
+</div>
+<div class="paragraph">
+<p>Einzelheiten zur Dokumentation mit Antora finden sich auf den Unterseiten:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../erstellung/erstellung-antora.html" class="xref page">Seiten anlegen</a>,</p>
+</li>
+<li>
+<p><a href="../bearbeitung/bearbeitung-antora.html" class="xref page">Seiten bearbeiten</a>,</p>
+</li>
+<li>
+<p><a href="../generierung/generierung-antora.html" class="xref page">Projektseite erzeugen</a>.</p>
+</li>
+</ul>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -500,48 +527,40 @@ Die Dokumentation vor der IsyFact Version 2.5 verwendet AsciidoctorJ Extensions 
 <i class="fa icon-note" title="Hinweis"></i>
 </td>
 <td class="content">
-<div class="paragraph">
-<p>Einzelheiten zur Dokumentation mit Antora, u.a. zur Verzeichnisstruktur, finden sich in der <a href="../master-antora.html" class="xref page">Projektseite mit Antora</a>.</p>
-</div>
+Die <a href="#zentrale-dokumentation">zentrale Dokumentation</a> aus dem Repository <code>isy-documentation</code> wurde im Zuge der Migration <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-url-isyfact-online-docs-source" class="xref page">in ein Submodul des Repositories <code>isyfact-standards</code></a> verschoben.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Die <a href="#zentrale-dokumentation">zentrale Dokumentation</a> aus dem Repository <code>isy-documentation</code> wurde verschoben in das Repository <code>isyfact-standards</code> im Submodul <code>isyfact-standards-doc</code>.</p>
-</div>
-<div class="paragraph">
-<p>Eine weitere Änderung gegenüber früheren Versionen der IsyFact besteht darin, dass keine Verzeichnisse wie z.B. ein Abbildungsverzeichnis am Ende eines Dokuments mehr erstellt werden.
+<p>Eine wichtige Änderung gegenüber der Generierung mit AsciidoctorJ besteht darin, dass keine Verzeichnisse wie z.B. ein Abbildungsverzeichnis am Ende eines Dokuments mehr erstellt werden.
 Stattdessen werden die Inhalte stärker verlinkt, auch auf Inhalte in anderen Repositories.
 Es wird z.B. auf ein zentrales Glossar verlinkt.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_generierung_mit_asciidoctorj_extensions"><a class="anchor" href="#_generierung_mit_asciidoctorj_extensions"></a>1.2. Generierung mit AsciidoctorJ Extensions</h3>
+<h3 id="generierung-asciidoctorj"><a class="anchor" href="#generierung-asciidoctorj"></a>1.2. Generierung mit AsciidoctorJ</h3>
 <div class="paragraph">
-<p>Obwohl zur Generierung der einzelnen HTML- und PDF-Dokumente in der Dokumentation vor der IsyFact Version 2.5 AsciidoctorJ Extensions verwendet werden, wird empfohlen, die Generierung der Dokumentation mit Antora durchzuführen.
-Wenn die Generierung von PDF unverzichtbar ist, sollte die Dokumentation derzeit per AsciidoctorJ Extensions erstellt werden.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Hinweis"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Einzelheiten zur Dokumentation mit AsciidoctorJ Extensions finden sich in der <a href="../master-asciidoctorJ.html" class="xref page">Dokumente mit AsciidoctorJ Extensions</a>.</p>
-</div>
-</td>
-</tr>
-</table>
+<p>Die Generierung von Dokumenten mit AsciidoctorJ ist vor allem dann relevant, wenn als Ergebnis ein PDF-Dokument gefordert ist, oder wenn das Hosten einer Projektseite nicht möglich ist.</p>
 </div>
 <div class="paragraph">
-<p>Die zentrale Dokumentation zusammen mit der Bausteindokumentation befinden sich im Repository <code>isy-documentation</code>.
-Die IsyFact Erweiterungen sind jedoch im Repository dokumentiert, in dem der Code liegt.</p>
+<p>Einzelheiten zur Dokumentation mit AsciidoctorJ finden sich auf den Unterseiten:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../erstellung/erstellung-asciidoctorj.html" class="xref page">Neue Dokumente anlegen</a>,</p>
+</li>
+<li>
+<p><a href="../bearbeitung/bearbeitung-asciidoctorj.html" class="xref page">Dokumente bearbeiten</a>,</p>
+</li>
+<li>
+<p><a href="../generierung/generierung-asciidoctorj.html" class="xref page">PDF- und HTML-Dokumente erzeugen</a>.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Bei der Dokumentation vor IsyFact 2.5 sorgen Skripte dafür, dass die erstellten HTML- und PDF-Dateien automatisch auch über ein Literaturverzeichnis, ein Glossar, ein Abbildungsverzeichnis und ein Tabellenverzeichnis verfügen.</p>
+<p>AsciidoctorJ-Extensions sorgen dafür, dass die erstellten HTML- und PDF-Dateien automatisch auch über ein Literaturverzeichnis, ein Glossar, ein Abbildungsverzeichnis und ein Tabellenverzeichnis verfügen.</p>
 </div>
 </div>
 <div class="sect2">
@@ -595,7 +614,7 @@ Neben den ausgereiften Plugins für die Bearbeitung von AsciiDoc-Dokumenten: <a 
 </ol>
 </div>
 <div class="paragraph">
-<p>Die zentrale Dokumentation befindet sich ab IsyFact 2.5 in <code>isyfact-standards</code>, vor IsyFact 2.5 in <code>isy-documentation</code>.
+<p>Die zentrale Dokumentation befindet sich im Repository <code>isyfact-standards</code>.
 Die Dokumentation der IsyFact Erweiterungen befindet sich im Repository, in dem sich der zu dokumentierende Baustein befindet, da die Dokumentation nah beim Code abgelegt werden soll.</p>
 </div>
 <div class="paragraph">

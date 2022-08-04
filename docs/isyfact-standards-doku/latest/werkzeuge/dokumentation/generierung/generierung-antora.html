@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: IsyFact Dokumentation</title>
+    <title>Projektseite erzeugen :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/werkzeuge/dokumentation/generierung/generierung-antora.html">
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../../../_/css/site.css">
@@ -346,18 +346,45 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../master-antora.html">Projektseite mit Antora (empfohlen)</a>
+    <span class="nav-text">Antora (empfohlen)</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../erstellung/erstellung-antora.html">Seiten anlegen</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../seitenvorlage.html">Seitenvorlage</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../kopiervorlage.html">Kopiervorlage für neue Seiten</a>
   </li>
 </ul>
   </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../bearbeitung/bearbeitung-antora.html">Seiten bearbeiten</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="4">
+    <a class="nav-link" href="generierung-antora.html">Projektseite erzeugen</a>
+  </li>
+</ul>
+  </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../master-asciidoctorJ.html">Dokumente mit AsciidoctorJ Extensions</a>
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AsciidoctorJ</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../erstellung/erstellung-asciidoctorj.html">Neue Dokumente anlegen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../bearbeitung/bearbeitung-asciidoctorj.html">Dokumente bearbeiten</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="generierung-asciidoctorj.html">PDF- und HTML-Dokumente erzeugen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../changelog/changelog-doku.html">Zentralisiertes und automatisiertes Changelog</a>
   </li>
 </ul>
   </li>
@@ -432,6 +459,13 @@
 <button class="nav-toggle"></button>
   <a href="../../../einstieg/vorstellung.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../../einstieg/einstieg.html">IsyFact Standards</a></li>
+    <li><a href="../../werkzeuge.html">Werkzeuge</a></li>
+    <li><a href="../einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a></li>
+    <li>Antora (empfohlen)</li>
+    <li><a href="generierung-antora.html">Projektseite erzeugen</a></li>
+  </ul>
 </nav>
 </div>
   <div class="content">
@@ -439,9 +473,22 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<div class="sect1">
-<h2 id="asccidoc-zu-html"><a class="anchor" href="#asccidoc-zu-html"></a>1. HTML-Seiten erzeugen</h2>
+<h1 class="page">Projektseite erzeugen</h1>
+<div id="preamble">
 <div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><span class="image left"><img src="../../../../../glossary/latest/licence/_images/IFS-Logo.png" alt="IFS-Logo" width="150"></span> Diese Seite ist ein Teil der IsyFact-Standards.
+Alle Inhalte der Seite, insbesondere Texte und Grafiken, sind urheberrechtlich geschützt.
+Alle urheberrechtlichen Nutzungs- und Verwertungsrechte liegen beim Bundesverwaltungsamt.</p>
+</div>
+<div class="paragraph">
+<p><span class="image right"><img src="../../../../../glossary/latest/licence/_images/CC-BY.png" alt="Creative Commons Namensnennung" width="150"></span>
+Die Nutzung ist unter den <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-licence" class="xref page">Lizenzbedingungen</a> der <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-short" class="xref page">Creative Commons Namensnennung 4.0 International</a> gestattet.</p>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>Ist das zu bearbeitende Dokument fertiggestellt, so kann es als HTML-Datei als Teil der Gesamtdokumentation generiert werden.
 Dies geschieht mithilfe von Antora, einem Open-Source-Tool zur Generierung von HTML-Dokumentation aus Asciidoc-Dateien.
@@ -467,8 +514,11 @@ Für interne Nutzer ist deshalb die auf dieser Seite beschriebene Anleitung eine
 <p>Für externe Nutzer werden auf dieser Seite die zur Generierung notwendigen Schritte kurz vorgestellt, allerdings auch auf die externe Literatur verwiesen.
 Ein paar Besonderheiten bei der Generierung der IsyFact-Gesamtdokumentation werden dennoch vorgestellt.</p>
 </div>
-<div class="sect2">
-<h3 id="antora-werkzeuge"><a class="anchor" href="#antora-werkzeuge"></a>1.1. Installation der benötigten Werkzeuge</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="antora-werkzeuge"><a class="anchor" href="#antora-werkzeuge"></a>1. Installation der benötigten Werkzeuge</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Node.js und Antora müssen auf dem lokalen Rechner installiert werden.
 Eine gute Anleitung bietet die <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-antora-installationen" class="xref page">Antora-Dokumentation</a>.</p>
@@ -478,8 +528,10 @@ Eine gute Anleitung bietet die <a href="../../../../../glossary/latest/literatur
 Eine Anleitung findet sich in <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-antora-maven" class="xref page">Antora mit Maven</a>.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_antora_konfigurationsdatei_playbook_yml"><a class="anchor" href="#_antora_konfigurationsdatei_playbook_yml"></a>1.2. Antora Konfigurationsdatei <code>playbook.yml</code></h3>
+</div>
+<div class="sect1">
+<h2 id="_antora_konfigurationsdatei_playbook_yml"><a class="anchor" href="#_antora_konfigurationsdatei_playbook_yml"></a>2. Antora Konfigurationsdatei <code>playbook.yml</code></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Die offizielle Antora-Dokumentation beschreibt die <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-antora-playbook" class="xref page">Konfigurationsdatei <code>playbook.yml</code></a>.
 Deshalb wird hier nur auf die IsyFact-Besonderheiten eingegangen.</p>
@@ -563,8 +615,10 @@ output:
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_supplemental_ui"><a class="anchor" href="#_supplemental_ui"></a>1.3. Supplemental UI</h3>
+</div>
+<div class="sect1">
+<h2 id="_supplemental_ui"><a class="anchor" href="#_supplemental_ui"></a>3. Supplemental UI</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Unter dem im Playbook unter <code>supplemental_files</code> angegebenen Pfad kann das Standard-UI von Antora leicht mit CSS und JavaScript überschrieben werden.
 Dies sollte jedoch nur bei kleineren Änderungen genutzt werden, bei größeren Änderungen empfiehlt es sich, ein eigenes UI zu schreiben, ggf. auf Basis des Standard-UIs.</p>
@@ -579,7 +633,6 @@ Dies sollte jedoch nur bei kleineren Änderungen genutzt werden, bei größeren 
     white-space: pre-wrap;
     font-size: .75rem;
 }</code></pre>
-</div>
 </div>
 </div>
 </div>

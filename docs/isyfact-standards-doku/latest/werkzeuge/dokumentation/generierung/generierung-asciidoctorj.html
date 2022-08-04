@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: IsyFact Dokumentation</title>
+    <title>PDF- und HTML-Dokumente erzeugen :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/werkzeuge/dokumentation/generierung/generierung-asciidoctorj.html">
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../../../_/css/site.css">
@@ -346,18 +346,45 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../master-antora.html">Projektseite mit Antora (empfohlen)</a>
+    <span class="nav-text">Antora (empfohlen)</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../erstellung/erstellung-antora.html">Seiten anlegen</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../seitenvorlage.html">Seitenvorlage</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../kopiervorlage.html">Kopiervorlage für neue Seiten</a>
   </li>
 </ul>
   </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../bearbeitung/bearbeitung-antora.html">Seiten bearbeiten</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="generierung-antora.html">Projektseite erzeugen</a>
+  </li>
+</ul>
+  </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../master-asciidoctorJ.html">Dokumente mit AsciidoctorJ Extensions</a>
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AsciidoctorJ</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../erstellung/erstellung-asciidoctorj.html">Neue Dokumente anlegen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../bearbeitung/bearbeitung-asciidoctorj.html">Dokumente bearbeiten</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="4">
+    <a class="nav-link" href="generierung-asciidoctorj.html">PDF- und HTML-Dokumente erzeugen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../changelog/changelog-doku.html">Zentralisiertes und automatisiertes Changelog</a>
   </li>
 </ul>
   </li>
@@ -432,6 +459,13 @@
 <button class="nav-toggle"></button>
   <a href="../../../einstieg/vorstellung.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../../einstieg/einstieg.html">IsyFact Standards</a></li>
+    <li><a href="../../werkzeuge.html">Werkzeuge</a></li>
+    <li><a href="../einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a></li>
+    <li>AsciidoctorJ</li>
+    <li><a href="generierung-asciidoctorj.html">PDF- und HTML-Dokumente erzeugen</a></li>
+  </ul>
 </nav>
 </div>
   <div class="content">
@@ -439,17 +473,33 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<div class="sect1">
-<h2 id="asccidoc-zu-pdf-html"><a class="anchor" href="#asccidoc-zu-pdf-html"></a>1. PDF- und HTML-Dokumente erzeugen</h2>
+<h1 class="page">PDF- und HTML-Dokumente erzeugen</h1>
+<div id="preamble">
 <div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><span class="image left"><img src="../../../../../glossary/latest/licence/_images/IFS-Logo.png" alt="IFS-Logo" width="150"></span> Diese Seite ist ein Teil der IsyFact-Standards.
+Alle Inhalte der Seite, insbesondere Texte und Grafiken, sind urheberrechtlich geschützt.
+Alle urheberrechtlichen Nutzungs- und Verwertungsrechte liegen beim Bundesverwaltungsamt.</p>
+</div>
+<div class="paragraph">
+<p><span class="image right"><img src="../../../../../glossary/latest/licence/_images/CC-BY.png" alt="Creative Commons Namensnennung" width="150"></span>
+Die Nutzung ist unter den <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-licence" class="xref page">Lizenzbedingungen</a> der <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-short" class="xref page">Creative Commons Namensnennung 4.0 International</a> gestattet.</p>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>Ist das zu bearbeitende Dokument fertiggestellt, so kann daraus eine PDF- und HTML-Datei generiert werden.
 Dies geschieht mithilfe des Asciidoctor Maven Plugins und der <code>isy-asciidoctorj-extensions</code>.
 <code>isy-asciidoctorj-extensions</code> ist eine Sammlung von verschiedenen <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-asciidoctorj-extensions" class="xref page">AsciidoctorJ Extensions</a>, welche die Wartung der IsyFact-Dokumentation erleichtern.
 Eine Liste aller IsyFact Extensions befindet sich im Abschnitt <a href="#isy-asciidoctorj-extensions">IsyFact Extensions</a>.</p>
 </div>
-<div class="sect2">
-<h3 id="asciidoc-in-pom-einbinden"><a class="anchor" href="#asciidoc-in-pom-einbinden"></a>1.1. Maven-Konfiguration</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="asciidoc-in-pom-einbinden"><a class="anchor" href="#asciidoc-in-pom-einbinden"></a>1. Maven-Konfiguration</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Die <code>isy-asciidoctorj-extensions</code> können über das <code>asciidoctor-maven-plugin</code> in der pom.xml eingebunden werden.
 Zunächst sind folgende Properties dem Element <code>&lt;properties&gt;&lt;/properties&gt;</code> hinzuzufügen:</p>
@@ -555,7 +605,7 @@ Zunächst sind folgende Properties dem Element <code>&lt;properties&gt;&lt;/prop
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Die Angabe der <code>vs-einstufung</code> ist an dieser Stelle optional und gilt für alle Dokumente. Üblicherweise wird die <code>vs-einstufung</code> in master.adoc gesetzt, dort ist sie verpflichtend, wenn sie nicht schon wie hier in der pom.xml gesetzt wurde.
+<td>Die Angabe der <code>vs-einstufung</code> ist an dieser Stelle optional und gilt für alle Dokumente. Üblicherweise wird die <code>vs-einstufung</code> in <code>master.adoc</code> gesetzt, dort ist sie verpflichtend, wenn sie nicht schon wie hier in der pom.xml gesetzt wurde.
 Vgl. <a href="../erstellung/erstellung-asciidoctorj.html#listing-master" class="xref page">master.adoc</a>.</td>
 </tr>
 <tr>
@@ -565,8 +615,10 @@ Vgl. <a href="../erstellung/erstellung-asciidoctorj.html#listing-master" class="
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="dokument-pom-aufnehmen"><a class="anchor" href="#dokument-pom-aufnehmen"></a>1.2. Integration in den Build-Prozess</h3>
+</div>
+<div class="sect1">
+<h2 id="dokument-pom-aufnehmen"><a class="anchor" href="#dokument-pom-aufnehmen"></a>2. Integration in den Build-Prozess</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Jedes Dokument, das während des Build-Prozesses generiert werden soll, muss dafür in die <code>pom.xml</code> aufgenommen werden.</p>
 </div>
@@ -604,7 +656,7 @@ Das zweite <code>&lt;execution&gt;</code>-Element definiert die Erzeugung der PD
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&lt;sourceDirectory&gt;&lt;/sourceDirectory&gt;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definiert den Pfad zum Verzeichnis, in dem die master.adoc Datei liegt.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definiert den Pfad zum Verzeichnis, in dem die <code>master.adoc</code> Datei liegt.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>src/docs/OrdnerDokument</code></p></td>
 </tr>
 <tr>
@@ -618,16 +670,18 @@ Das zweite <code>&lt;execution&gt;</code>-Element definiert die Erzeugung der PD
 <p>Anschließend kann der Build-Vorgang ausgeführt und die PDF- und HTML Dokumente erzeugt werden.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="dokument-generieren"><a class="anchor" href="#dokument-generieren"></a>1.3. Dokument erstellen</h3>
+</div>
+<div class="sect1">
+<h2 id="dokument-generieren"><a class="anchor" href="#dokument-generieren"></a>3. Dokument generieren</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Um den Build-Vorgang zu starten, wird in der Konsole in das Verzeichnis gewechselt, in dem auch die bearbeitete <code>pom.xml</code> liegt.
 Anschließend wird mit dem Befehl <code>mvn install</code> der Build-Vorgang gestartet.
 Aufgrund der Vielzahl der zu generierenden Dokumente und auszuführenden Skripte kann der Build-Vorgang einige Zeit in Anspruch nehmen.
 Für Test-Zwecke können in der <code>pom.xml</code> nicht relevante Dokumente übersprungen werden, indem die zugehörigen Ausführungsdefinitionen (<code>&lt;execution&gt;&lt;/execution&gt;</code>) auskommentiert werden.</p>
 </div>
-<div class="sect3">
-<h4 id="_fehlerszenarien_beim_generieren"><a class="anchor" href="#_fehlerszenarien_beim_generieren"></a>1.3.1. Fehlerszenarien beim Generieren</h4>
+<div class="sect2">
+<h3 id="_fehlerszenarien_beim_generieren"><a class="anchor" href="#_fehlerszenarien_beim_generieren"></a>3.1. Fehlerszenarien beim Generieren</h3>
 <table id="table-table-asciidoc-fehler" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 2. Fehlerszenarien, Ursachen und Lösungen bei der Generierung</caption>
 <colgroup>
@@ -660,7 +714,7 @@ Dies führt bei Dokumenten mit vielen Grafiken oder Grafiken mit sehr hoher Aufl
 <li>
 <p><strong>Herabsetzen der Auflösung:</strong> Bei Bildern mit einer Auflösung von 2000 Pixeln und mehr (egal ob Länge oder Breite) wird empfohlen, die Auflösung nach Möglichkeit zu reduzieren.
 Selbst bei der Verwendung vieler kleinerer Bilder kann es zu einer <code>OutOfMemoryException</code> kommen.
-Der Grund hierfür ist, dass der vom System zur Verfügung gestellte Speicher nach und nach volläuft.
+Der Grund hierfür ist, dass der vom System zur Verfügung gestellte Speicher nach und nach vollläuft.
 Tritt der Fehler deswegen auf, sollten Bilder nach Möglichkeit in Vektorgrafiken umgewandelt bzw. neu gezeichnet werden.</p>
 </li>
 </ol>
@@ -674,13 +728,12 @@ Tritt der Fehler deswegen auf, sollten Bilder nach Möglichkeit in Vektorgrafike
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="isy-asciidoctorj-extensions"><a class="anchor" href="#isy-asciidoctorj-extensions"></a>2. IsyFact Extensions</h2>
+<h2 id="isy-asciidoctorj-extensions"><a class="anchor" href="#isy-asciidoctorj-extensions"></a>4. IsyFact Extensions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Die IsyFact Extensions 'isy-asciidoctorj-extensions` sind eine Sammlung von verschiedenen AsciidoctorJ Extensions, welche die Wartung der IsyFact-Dokumentation erleichtern.
-Die IsyFact bietet derzeit folgende AsciidoctorJ Extensions an:</p>
+<p>Die IsyFact Extensions 'isy-asciidoctorj-extensions` sind eine Sammlung von verschiedenen AsciidoctorJ-Extensions, welche die Wartung der IsyFact-Dokumentation erleichtern.
+Die IsyFact bietet derzeit folgende AsciidoctorJ-Extensions an:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -700,13 +753,13 @@ Die IsyFact bietet derzeit folgende AsciidoctorJ Extensions an:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#isy-attributes-preprocessor">IsyAttributesPreprocessor</a></p>
 <p class="tableblock"><code>de.bund.bva.isyfact.attributes</code> <code>.IsyAttributesPreprocessor</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Erzeugt Metainformationen am Anfang eines Dokuments. Erzeugt den Titel und wählt das passende Theme für ein Dokument.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">siehe <a href="../erstellung/erstellung-asciidoctorj.html#listing-master" class="xref page">master.adoc</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">siehe Seite "<a href="../erstellung/erstellung-asciidoctorj.html#listing-master" class="xref page">dokumentation/erstellung/erstellung-asciidoctorj.adoc#listing-master</a>"</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">BibliographyPreprocessor</p>
 <p class="tableblock"><code>de.bund.bva.isyfact.bibliography</code> <code>.BibliographyPreprocessor</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Erzeugt ein Literaturverzeichnis aus allen bekannten Quellen, die im Dokument enthalten und als Referenz markiert sind.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">siehe <a href="#literaturverzeichnis">[literaturverzeichnis]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">siehe Seite "<a href="../bearbeitung/bearbeitung-asciidoctorj.html#literaturverzeichnis" class="xref page">dokumentation/bearbeitung/bearbeitung-asciidoctorj.adoc#literaturverzeichnis</a>"</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#colophon-block">ColophonBlockMacroProcessor</a></p>
@@ -724,36 +777,36 @@ Die IsyFact bietet derzeit folgende AsciidoctorJ Extensions an:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GlossaryPreprocessor</p>
 <p class="tableblock"><code>de.bund.bva.isyfact.glossary</code> <code>.GlossaryPreprocessor</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Erzeugt ein Glossar für das jeweilige Dokument mit allen bekannten Begriffen, die im Dokument enthalten und als Referenz markiert sind.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">siehe <a href="../master-asciidoctorJ.html#glossar" class="xref page">Glossar</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">siehe <a href="../bearbeitung/bearbeitung-asciidoctorj.html#glossar" class="xref page">Glossar</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ListOfPreprocessor</p>
 <p class="tableblock"><code>de.bund.bva.isyfact.listof</code> <code>.ListOfPreprocessor</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Erzeugt ein Abbildungs- Tabellen- und Listenverzeichnis für das jeweilige Dokument für alle Elemente im Dokument, die entsprechend markiert sind.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">siehe <a href="../master-asciidoctorJ.html#bilder" class="xref page">Bilder</a>, <a href="../master-asciidoctorJ.html#tabellen" class="xref page">Tabellen</a> und <a href="../master-asciidoctorJ.html#listings" class="xref page">Listings</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Erzeugt ein Abbildungs-, Tabellen- und Listenverzeichnis für das jeweilige Dokument für alle Elemente im Dokument, die entsprechend markiert sind.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">siehe <a href="../bearbeitung/bearbeitung-asciidoctorj.html#bilder" class="xref page">Bilder</a>, <a href="../bearbeitung/bearbeitung-asciidoctorj.html#tabellen" class="xref page">Tabellen</a> und <a href="../bearbeitung/bearbeitung-asciidoctorj.html#listings" class="xref page">Listings</a></p></td>
 </tr>
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="isy-attributes-preprocessor"><a class="anchor" href="#isy-attributes-preprocessor"></a>2.1. IsyAttributesPreprocessor</h3>
+<h3 id="isy-attributes-preprocessor"><a class="anchor" href="#isy-attributes-preprocessor"></a>4.1. IsyAttributesPreprocessor</h3>
 <div class="paragraph">
-<p>Der <code>IsyAttributesPreprocessor</code> wertet alle IsyFact Attribute am Anfang eines master.adoc aus (Leerzeichen und Kommentare werden ignoriert) und fügt die entsprechenden Metainformationen in jedes Dokument ein.</p>
+<p>Der <code>IsyAttributesPreprocessor</code> wertet alle IsyFact Attribute am Anfang eines <code>master.adoc</code> aus (Leerzeichen und Kommentare werden ignoriert) und fügt die entsprechenden Metainformationen in jedes Dokument ein.</p>
 </div>
 <div class="paragraph">
-<p>Mit Hilfe der Attribute wird der Titel mit optionalem Untertitel generiert, sowie das passende Theme für das Dokument
-ausgewählt. Dabei können folgende Attribute angepasst werden <a href="#table-master-attributes">[table-master-attributes]</a>.</p>
+<p>Mithilfe der Attribute wird der Titel mit optionalem Untertitel generiert, sowie das passende Theme für das Dokument
+ausgewählt. Dabei können <a href="../erstellung/erstellung-asciidoctorj.html#table-master-attributes" class="xref page">folgende Attribute</a> angepasst werden.</p>
 </div>
 <div class="paragraph">
-<p>Standardmäßig sind die Extensions auf den Bau von IsyFact-Standards Bausteinen mit einer Open Source Lizenz konfiguriert.</p>
+<p>Standardmäßig sind die Extensions auf den Bau von IsyFact-Standards Bausteinen mit einer Open-Source-Lizenz konfiguriert.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="colophon-block"><a class="anchor" href="#colophon-block"></a>2.2. ColophonBlockMacroProcessor</h3>
+<h3 id="colophon-block"><a class="anchor" href="#colophon-block"></a>4.2. ColophonBlockMacroProcessor</h3>
 <div class="paragraph">
 <p>Der <code>ColophonBlockMacroProcessor</code> erkennt <code>colophon::[]</code> Blöcke im Asciidoc Code und ersetzt diese durch die allgemeinen
 Dokumentinformationen der IsyFact.
 Dabei können noch die optionalen Attribute <code>factory</code> und <code>open-source</code> angegeben werden.
-<a href="#listing-master">[listing-master]</a> zeigt die beispielhafte Verwendung des <code>colophon::[]</code> blocks in einem Asciidoc Dokument.</p>
+Die Seite <a href="../erstellung/erstellung-asciidoctorj.html#listing-master" class="xref page">"Neue Dokumente anlegen"</a> zeigt die beispielhafte Verwendung des Kolophons in einem Asciidoc Dokument.</p>
 </div>
 </div>
 </div>

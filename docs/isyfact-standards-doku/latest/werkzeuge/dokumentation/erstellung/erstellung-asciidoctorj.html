@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: IsyFact Dokumentation</title>
+    <title>Neue Dokumente anlegen :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/werkzeuge/dokumentation/erstellung/erstellung-asciidoctorj.html">
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../../../_/css/site.css">
@@ -346,18 +346,45 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../master-antora.html">Projektseite mit Antora (empfohlen)</a>
+    <span class="nav-text">Antora (empfohlen)</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="erstellung-antora.html">Seiten anlegen</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../seitenvorlage.html">Seitenvorlage</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../kopiervorlage.html">Kopiervorlage für neue Seiten</a>
   </li>
 </ul>
   </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../bearbeitung/bearbeitung-antora.html">Seiten bearbeiten</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../generierung/generierung-antora.html">Projektseite erzeugen</a>
+  </li>
+</ul>
+  </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../master-asciidoctorJ.html">Dokumente mit AsciidoctorJ Extensions</a>
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AsciidoctorJ</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="4">
+    <a class="nav-link" href="erstellung-asciidoctorj.html">Neue Dokumente anlegen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../bearbeitung/bearbeitung-asciidoctorj.html">Dokumente bearbeiten</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../generierung/generierung-asciidoctorj.html">PDF- und HTML-Dokumente erzeugen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../changelog/changelog-doku.html">Zentralisiertes und automatisiertes Changelog</a>
   </li>
 </ul>
   </li>
@@ -432,6 +459,13 @@
 <button class="nav-toggle"></button>
   <a href="../../../einstieg/vorstellung.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../../einstieg/einstieg.html">IsyFact Standards</a></li>
+    <li><a href="../../werkzeuge.html">Werkzeuge</a></li>
+    <li><a href="../einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a></li>
+    <li>AsciidoctorJ</li>
+    <li><a href="erstellung-asciidoctorj.html">Neue Dokumente anlegen</a></li>
+  </ul>
 </nav>
 </div>
   <div class="content">
@@ -439,14 +473,30 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<div class="sect1">
-<h2 id="ein-neues-dokument-anlegen"><a class="anchor" href="#ein-neues-dokument-anlegen"></a>1. Ein neues Dokument anlegen</h2>
+<h1 class="page">Neue Dokumente anlegen</h1>
+<div id="preamble">
 <div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><span class="image left"><img src="../../../../../glossary/latest/licence/_images/IFS-Logo.png" alt="IFS-Logo" width="150"></span> Diese Seite ist ein Teil der IsyFact-Standards.
+Alle Inhalte der Seite, insbesondere Texte und Grafiken, sind urheberrechtlich geschützt.
+Alle urheberrechtlichen Nutzungs- und Verwertungsrechte liegen beim Bundesverwaltungsamt.</p>
+</div>
+<div class="paragraph">
+<p><span class="image right"><img src="../../../../../glossary/latest/licence/_images/CC-BY.png" alt="Creative Commons Namensnennung" width="150"></span>
+Die Nutzung ist unter den <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-licence" class="xref page">Lizenzbedingungen</a> der <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-short" class="xref page">Creative Commons Namensnennung 4.0 International</a> gestattet.</p>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>In diesem Kapitel wird für die <a href="../einleitung/einfuehrung.html#zentrale-dokumentation" class="xref page">Zentrale Dokumentation</a> gezeigt, wie die erforderliche Verzeichnisstruktur aussieht und wie ein neues Dokument dort einsortiert wird.</p>
 </div>
-<div class="sect2">
-<h3 id="neues-verzeichnis-zentrale-dokumentation-anlegen"><a class="anchor" href="#neues-verzeichnis-zentrale-dokumentation-anlegen"></a>1.1. Zentrale Dokumentation: Ein neues Verzeichnis anlegen</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="neues-verzeichnis-zentrale-dokumentation-anlegen"><a class="anchor" href="#neues-verzeichnis-zentrale-dokumentation-anlegen"></a>1. Zentrale Dokumentation: Ein neues Verzeichnis anlegen</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Die zentrale Dokumentation der IsyFact-Standards gliedert sich nach den Säulen der IsyFact.</p>
 </div>
@@ -462,7 +512,7 @@
 </dd>
 <dt class="hdlist1">Bausteine</dt>
 <dd>
-<p>Dokumente für die jeweilig wiederverwendbaren Softwarelösungen</p>
+<p>Dokumente für die jeweiligen wiederverwendbaren Softwarelösungen</p>
 </dd>
 <dt class="hdlist1">Methodik</dt>
 <dd>
@@ -479,15 +529,15 @@
 Dazu wird unterhalb des Verzeichnisses, das die Säule repräsentiert, ein neues Verzeichnis
 angelegt, dessen Name den Inhalt des Dokuments widerspiegelt.</p>
 </div>
-<div class="sect3">
-<h4 id="neues-verzeichnis-bausteindokumentation-anlegen"><a class="anchor" href="#neues-verzeichnis-bausteindokumentation-anlegen"></a>1.1.1. Dokumentation eines Bausteins: Ein neues Verzeichnis anlegen</h4>
+<div class="sect2">
+<h3 id="neues-verzeichnis-bausteindokumentation-anlegen"><a class="anchor" href="#neues-verzeichnis-bausteindokumentation-anlegen"></a>1.1. Dokumentation eines Bausteins: Ein neues Verzeichnis anlegen</h3>
 <div class="paragraph">
 <p>Soll für einen Baustein eine neue Dokumentation angelegt werden oder die bestehende Dokumentation um ein Dokument erweitert werden, so muss zunächst der geeignete Ort zur Ablage bestimmt werden.
 I.d.R. ist dies das Repository, in dem sich der Baustein befindet, da die Dokumentation nah beim Code abgelegt werden soll.
-Bis zur IsyFact 2.4.x befindet sich jedoch ein großer Teil der Bausteindokumentation im Repository <code>isy-documentation</code>.</p>
+Früher befand sich jedoch ein großer Teil der Bausteindokumentation im Repository <code>isy-documentation</code>.</p>
 </div>
 <div class="paragraph">
-<p>Ab IsyFact 2.5 liegt dieser Teil der Bausteindokumentation im Repository <code>isyfact-standards</code> im Submodul <code>isyfact-standards-doc</code>.
+<p>Aktuell liegt dieser Teil der Bausteindokumentation im Repository <code>isyfact-standards</code> im Submodul <code>isyfact-standards-doc</code>.
 Der Code dieser Bausteine befindet sich ebenfalls im Repository <code>isyfact-standards</code>, wodurch die Architekturregel "Dokumentation nah beim Code" erfüllt ist.</p>
 </div>
 <div class="paragraph">
@@ -569,13 +619,15 @@ Eine vollständige Vorschau des IsyFact-Dokuments wird angezeigt, wenn die Datei
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="dateien-bearbeiten"><a class="anchor" href="#dateien-bearbeiten"></a>1.2. Dateien bearbeiten</h3>
+</div>
+<div class="sect1">
+<h2 id="dateien-bearbeiten"><a class="anchor" href="#dateien-bearbeiten"></a>2. Dateien bearbeiten</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Dieser Abschnitt beschreibt, welche Attribute und Inhalte in den Dateien angepasst werden können.</p>
 </div>
-<div class="sect3">
-<h4 id="master.adoc-bearbeiten"><a class="anchor" href="#master.adoc-bearbeiten"></a>1.2.1. master.adoc bearbeiten</h4>
+<div class="sect2">
+<h3 id="master.adoc-bearbeiten"><a class="anchor" href="#master.adoc-bearbeiten"></a>2.1. <code>master.adoc</code> bearbeiten</h3>
 <div class="paragraph">
 <p>Zunächst werden die Attribute <code>doctitle</code> und <code>document-type</code> gesetzt, aus denen ein einheitlicher Titel erzeugt wird, vgl. <a href="#listing-master">master.adoc</a>.</p>
 </div>
@@ -583,30 +635,26 @@ Eine vollständige Vorschau des IsyFact-Dokuments wird angezeigt, wenn die Datei
 <p>Dann wird die Vertraulichkeits-Einstufung <code>vs-einstufung</code> angegeben.
 Dadurch wird ggf. ein Vertraulichkeitshinweis in das Dokument eingefügt und ggf. das Layout angepasst.
 Die möglichen Werte für <code>vs-einstufung</code> finden sich in <a href="#table-master-attributes">Attribute der master.adoc</a>.
-Die <code>vs-einstufung</code> kann auch in der pom.xml als globales Attribut für alle zu generierenden Dokumente angegeben werden.
-Ein Beispiel findet sich in <a href="#listing-pom-asciidoc">[listing-pom-asciidoc]</a>.</p>
+Die <code>vs-einstufung</code> kann auch <a href="../generierung/generierung-asciidoctorj.html#listing-pom-asciidoc" class="xref page">im Maven-POM</a> als globales Attribut für alle zu generierenden Dokumente angegeben werden.</p>
 </div>
 <div class="paragraph">
-<p>Daraufhin wird die Colophon-Angabe eingebunden.
+<p>Daraufhin wird der Kolophon eingebunden.
 Dadurch wird ein einheitlicher Abschnitt mit Metadaten des Dokuments und Lizenzbestimmungen erzeugt.
 Dabei können noch die optionalen Attribute <code>factory</code> und <code>open-source</code> angegeben werden.
 Sie sind in <a href="#table-master-attributes">Attribute der master.adoc</a> näher beschrieben.</p>
 </div>
-<div class="paragraph">
-<p>Weitere Erläuterungen zum Colophon Block finden sich im Abschnitt <a href="#colophon-block">[colophon-block]</a>.</p>
-</div>
 <div id="listing-master" class="listingblock">
 <div class="title">Listing 2. master.adoc</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc"> :doctitle: Super tolles Feature
- :document-type: Konzept
- :vs-einstufung: offen
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">:doctitle: Super tolles Feature
+:document-type: Konzept
+:vs-einstufung: offen
 
 colophon::[factory="IsyFact-Erweiterungen", open-source="false"]
 
- // Wird normalerweise vom Maven-Plugin gesetzt
- // :revnumber: 1.0.5
- // :revdate: 2020-01-01
+// Wird normalerweise vom Maven-Plugin gesetzt
+// :revnumber: 1.0.5
+// :revdate: 2020-01-01
 
 include::thisdoc.adoc[tags=inhalt]
 
@@ -620,8 +668,10 @@ include::inhalt.adoc[tags=inhalt]</code></pre>
 <i class="fa icon-note" title="Hinweis"></i>
 </td>
 <td class="content">
-Die manuelle Vergabe von Revisionsnummer und -datum betrifft nur Dokumente, die nicht mit Hilfe des Maven-Plugins erzeugt werden.
-Ansonsten werden diese Attribute über das Maven-Plugin bereitgestellt (siehe <a href="#listing-pom-asciidoc">[listing-pom-asciidoc]</a>).
+<div class="paragraph">
+<p>Die manuelle Vergabe von Revisionsnummer und -datum betrifft nur Dokumente, die nicht mithilfe des Maven-Plugins erzeugt werden.
+Ansonsten werden diese Attribute <a href="../generierung/generierung-asciidoctorj.html#listing-pom-asciidoc" class="xref page">über das Maven-Plugin</a> bereitgestellt.</p>
+</div>
 </td>
 </tr>
 </table>
@@ -760,10 +810,10 @@ Inkludiert wird der Inhaltsbereich innerhalb der Dateien, der mit</p>
 <p>getaggt ist.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="docinfo.adoc-bearbeiten"><a class="anchor" href="#docinfo.adoc-bearbeiten"></a>1.2.2. docinfo.adoc bearbeiten</h4>
+<div class="sect2">
+<h3 id="docinfo.adoc-bearbeiten"><a class="anchor" href="#docinfo.adoc-bearbeiten"></a>2.2. <code>docinfo.adoc</code> bearbeiten</h3>
 <div class="paragraph">
-<p>Bezieht sich das zu erstellende Dokument auf einen Baustein (Bibliothek) der IsyFact, so ist dieser Baustein inklusive der Version in einer eigenen Datei docinfo.adoc anzugeben und in master.adoc zu inkludieren.
+<p>Bezieht sich das zu erstellende Dokument auf einen Baustein (Bibliothek) der IsyFact, so ist dieser Baustein inklusive der Version in einer eigenen Datei docinfo.adoc anzugeben und in <code>master.adoc</code> zu inkludieren.
 In <a href="#listing-master-bib">docinfo.adoc - Angabe des zugehörigen Bausteins</a> wird beispielsweise auf den Baustein <code>isy-web</code> verwiesen.</p>
 </div>
 <div id="listing-master-bib" class="listingblock">
@@ -783,22 +833,18 @@ In <a href="#listing-master-bib">docinfo.adoc - Angabe des zugehörigen Baustein
 <p>In der Vorschau sollten die Änderungen unmittelbar erscheinen. Ihre Änderungen speichern Sie über kbd:[Strg + S].</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="thisdoc.adoc-bearbeiten"><a class="anchor" href="#thisdoc.adoc-bearbeiten"></a>1.2.3. thisdoc.adoc bearbeiten</h4>
+<div class="sect2">
+<h3 id="thisdoc.adoc-bearbeiten"><a class="anchor" href="#thisdoc.adoc-bearbeiten"></a>2.3. <code>thisdoc.adoc</code> bearbeiten</h3>
 <div class="paragraph">
 <p>Die Datei <code>thisdoc.adoc</code> ist optional auszufüllen und sollte eine Einleitung in das Dokument bieten und den Aufbau und Zweck des Dokuments erläutern.
 Diese Datei ist in der <code>master.adoc</code> integriert und wird beim Generieren in das vollständige Dokument eingefügt.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="inhalt.adoc-bearbeiten"><a class="anchor" href="#inhalt.adoc-bearbeiten"></a>1.2.4. inhalt.adoc bearbeiten</h4>
+<div class="sect2">
+<h3 id="inhalt.adoc-bearbeiten"><a class="anchor" href="#inhalt.adoc-bearbeiten"></a>2.4. <code>inhalt.adoc</code> bearbeiten</h3>
 <div class="paragraph">
 <p>In <code>inhalt.adoc</code> wird der eigentliche Inhalt des Dokuments verfasst.
 Diese Datei wird in der <code>master.adoc</code> nach der Datei <code>thisdoc.adoc</code> inkludiert.</p>
-</div>
-<div class="paragraph">
-<p>Im Folgenden wird die Inhaltserstellung erläutert.</p>
-</div>
 </div>
 </div>
 </div>

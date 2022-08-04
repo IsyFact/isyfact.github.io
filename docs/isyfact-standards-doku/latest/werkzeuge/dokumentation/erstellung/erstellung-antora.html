@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: IsyFact Dokumentation</title>
+    <title>Seiten anlegen :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/werkzeuge/dokumentation/erstellung/erstellung-antora.html">
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../../../_/css/site.css">
@@ -346,18 +346,45 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../master-antora.html">Projektseite mit Antora (empfohlen)</a>
+    <span class="nav-text">Antora (empfohlen)</span>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item is-current-page" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="erstellung-antora.html">Seiten anlegen</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../seitenvorlage.html">Seitenvorlage</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../kopiervorlage.html">Kopiervorlage für neue Seiten</a>
   </li>
 </ul>
   </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../bearbeitung/bearbeitung-antora.html">Seiten bearbeiten</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../generierung/generierung-antora.html">Projektseite erzeugen</a>
+  </li>
+</ul>
+  </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../master-asciidoctorJ.html">Dokumente mit AsciidoctorJ Extensions</a>
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AsciidoctorJ</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="erstellung-asciidoctorj.html">Neue Dokumente anlegen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../bearbeitung/bearbeitung-asciidoctorj.html">Dokumente bearbeiten</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../generierung/generierung-asciidoctorj.html">PDF- und HTML-Dokumente erzeugen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../changelog/changelog-doku.html">Zentralisiertes und automatisiertes Changelog</a>
   </li>
 </ul>
   </li>
@@ -432,6 +459,13 @@
 <button class="nav-toggle"></button>
   <a href="../../../einstieg/vorstellung.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../../einstieg/einstieg.html">IsyFact Standards</a></li>
+    <li><a href="../../werkzeuge.html">Werkzeuge</a></li>
+    <li><a href="../einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a></li>
+    <li>Antora (empfohlen)</li>
+    <li><a href="erstellung-antora.html">Seiten anlegen</a></li>
+  </ul>
 </nav>
 </div>
   <div class="content">
@@ -439,17 +473,33 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<div class="sect1">
-<h2 id="dokuseite-anlegen"><a class="anchor" href="#dokuseite-anlegen"></a>1. Dokumentationsseite anlegen</h2>
+<h1 class="page">Seiten anlegen</h1>
+<div id="preamble">
 <div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><span class="image left"><img src="../../../../../glossary/latest/licence/_images/IFS-Logo.png" alt="IFS-Logo" width="150"></span> Diese Seite ist ein Teil der IsyFact-Standards.
+Alle Inhalte der Seite, insbesondere Texte und Grafiken, sind urheberrechtlich geschützt.
+Alle urheberrechtlichen Nutzungs- und Verwertungsrechte liegen beim Bundesverwaltungsamt.</p>
+</div>
+<div class="paragraph">
+<p><span class="image right"><img src="../../../../../glossary/latest/licence/_images/CC-BY.png" alt="Creative Commons Namensnennung" width="150"></span>
+Die Nutzung ist unter den <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-licence" class="xref page">Lizenzbedingungen</a> der <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-short" class="xref page">Creative Commons Namensnennung 4.0 International</a> gestattet.</p>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>Soll eine neue Dokumentation angelegt werden oder die bestehende Dokumentation um eine Seite erweitert werden, so muss zunächst der geeignete Ort zur Ablage bestimmt werden.
-I.d.R. ist dies das Repository, in dem sich der zu dokumentierende Erweiterungs-Baustein befindet, da die Dokumentation nah beim Code abgelegt werden soll, oder der Baustein liegt im <a href="#verzeichnisstruktur-antora-komponente">Repository <code>isyfact-standards</code> im Submodul <code>isyfact-standards-doc</code></a>.</p>
+I.d.R. ist dies das Repository, in dem sich der zu dokumentierende Erweiterungsbaustein befindet, da die Dokumentation nah beim Code abgelegt werden soll, oder der Baustein liegt im <a href="#verzeichnisstruktur-antora-komponente">Repository <code>isyfact-standards</code> im Submodul <code>isyfact-standards-doc</code></a>.</p>
 </div>
-<div class="sect2">
-<h3 id="repository-klonen"><a class="anchor" href="#repository-klonen"></a>1.1. Klonen Repository</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="repository-klonen"><a class="anchor" href="#repository-klonen"></a>1. Klonen Repository</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Zunächst muss der zu dokumentierende Erweiterungs-Baustein oder <code>isyfact-standards</code> von Git heruntergeladen werden.
+<p>Zunächst muss der zu dokumentierende Erweiterungsbaustein oder <code>isyfact-standards</code> von Git heruntergeladen werden.
 Hierfür muss auf der Kommandozeile auf eine geeignete Stelle der lokalen Festplatte gewechselt werden und folgendes Kommando eingegeben werden:</p>
 </div>
 <div class="exampleblock">
@@ -463,14 +513,16 @@ Hierfür muss auf der Kommandozeile auf eine geeignete Stelle der lokalen Festpl
 </div>
 </div>
 <div class="paragraph">
-<p>Bei &lt;Repository&gt; kann es sich um einen einzelnen <a href="../architektur/architektur.html#dokumentation-erweiterungen" class="xref page">Erweiterungs-Baustein</a> handeln oder um ein Repository mit <a href="../architektur/architektur.html" class="xref page">zentraler Dokumentation</a>.</p>
+<p>Bei &lt;Repository&gt; kann es sich um einen einzelnen <a href="../einleitung/einfuehrung.html#dokumentation-erweiterungen" class="xref page">Erweiterungsbaustein</a> handeln oder um ein Repository mit <a href="../einleitung/einfuehrung.html#zentrale-dokumentation" class="xref page">zentraler Dokumentation</a>.</p>
 </div>
 <div class="paragraph">
 <p>Danach werden die Schritte durchlaufen, die in den folgenden Kapiteln beschrieben sind.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="maven-submodul"><a class="anchor" href="#maven-submodul"></a>1.2. Maven Submodul</h3>
+</div>
+<div class="sect1">
+<h2 id="maven-submodul"><a class="anchor" href="#maven-submodul"></a>2. Maven Submodul</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Als Beispiel dient das Repository <code>isyfact-standards</code>.
 Es enthält ein Maven Submodul zur Dokumentation: <code>isyfact-standards-doc</code>.
@@ -495,17 +547,19 @@ In Repositories, die noch keine Dokumentation enthalten, muss ein derartiges Sub
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="antora-komponente"><a class="anchor" href="#antora-komponente"></a>1.3. Antora-Dokumentations-Komponente</h3>
+</div>
+<div class="sect1">
+<h2 id="antora-komponente"><a class="anchor" href="#antora-komponente"></a>3. Antora-Dokumentationskomponente</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Innerhalb des Submoduls wird der Pfad <code>src/docs/antora</code> angelegt.
-Unterhalb dieses Pfades liegt die Antora-Dokumentations-Komponente, repräsentiert durch die Konfigurationsdatei <code>antora.yml</code>.
+Unterhalb dieses Pfades liegt die Antora-Dokumentationskomponente, repräsentiert durch die Konfigurationsdatei <code>antora.yml</code>.
 In Repositories, die noch keine Antora-Komponente enthalten, muss diese Konfigurationsdatei noch angelegt werden.
 Ein Repository sollte jedoch nur eine Antora-Komponente enthalten.
 (Mehrere Antora-Komponenten hätten unterschiedliche Versionen, die eventuell nicht mehr synchron zum Versionsstand des Repositories gehalten werden könnten.)</p>
 </div>
 <div class="paragraph">
-<p>Das folgende Listing <a href="#verzeichnisstruktur-antora-komponente">Verzeichnisstruktur Antora-Komponente</a> zeigt die Verzeichnisstruktur bis zur Antora-Dokumentations-Komponente.</p>
+<p>Das folgende Listing <a href="#verzeichnisstruktur-antora-komponente">Verzeichnisstruktur Antora-Komponente</a> zeigt die Verzeichnisstruktur bis zur Antora-Dokumentationskomponente.</p>
 </div>
 <div id="verzeichnisstruktur-antora-komponente" class="listingblock">
 <div class="title">Listing 2. Verzeichnisstruktur Antora-Komponente</div>
@@ -527,12 +581,14 @@ Ein Repository sollte jedoch nur eine Antora-Komponente enthalten.
 </table>
 </div>
 <div class="paragraph">
-<p>In der <code>antora.yml</code>-Datei wird mindestens der Name der Dokumentations-Komponente und ihre Version angegeben.
-Näheres dazu in <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-antora-komponente" class="xref page">Antora-Dokumentations-Komponente</a>.</p>
+<p>In der <code>antora.yml</code>-Datei wird mindestens der Name der Dokumentationskomponente und ihre Version angegeben.
+Näheres dazu in <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-antora-komponente" class="xref page">Antora-Dokumentationskomponente</a>.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="antora-modul"><a class="anchor" href="#antora-modul"></a>1.4. Antora-Modul</h3>
+</div>
+<div class="sect1">
+<h2 id="antora-modul"><a class="anchor" href="#antora-modul"></a>4. Antora-Modul</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Im gleichen Verzeichnis wie <code>antora.yml</code>, <code>src/docs/antora</code>, muss das Verzeichnis <code>modules</code> liegen.
 Näheres dazu siehe <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-antora-verzeichnisstruktur" class="xref page">Antora-Verzeichnisstruktur</a>.</p>
@@ -597,8 +653,10 @@ Unterhalb des Verzeichnisses <code>modules</code> wird ein Modul-Verzeichnis mit
 </dl>
 </div>
 </div>
-<div class="sect2">
-<h3 id="struktur-dokuseite"><a class="anchor" href="#struktur-dokuseite"></a>1.5. Strukturierung innerhalb eines Antora-Moduls</h3>
+</div>
+<div class="sect1">
+<h2 id="struktur-dokuseite"><a class="anchor" href="#struktur-dokuseite"></a>5. Strukturierung innerhalb eines Antora-Moduls</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Unterhalb des Modul-Verzeichnisses, z.B. <code>isy-sonderzeichen</code>, wird ein Verzeichnis mit Namen <code>pages</code> angelegt.
 An diesem Ort werden die Dokumentationsseiten als .adoc abgelegt mit einem Namen, der ihren Inhalt widerspiegelt.</p>
@@ -664,25 +722,25 @@ Für Bausteine wird häufig die Strukturierung <code>konzept</code> und <code>nu
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p><br></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="aufbau-dokuseite"><a class="anchor" href="#aufbau-dokuseite"></a>1.6. Dokumentationsseite Aufbau</h3>
+<div class="sect1">
+<h2 id="aufbau-dokuseite"><a class="anchor" href="#aufbau-dokuseite"></a>6. Dokumentationsseite Aufbau</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Eine Dokumentationsseite enthält ein in sich abgeschlossenes Thema und entspricht damit in etwa einem Kapitel in konventionellen Dokumenten.</p>
 </div>
 <div class="paragraph">
-<p>Der Aufbau einer Dokumentationsseite ist in der <a href="../../seitenvorlage.html" class="xref page">Seitenvorlage</a> beschrieben.
-<br></p>
+<p>Der Aufbau einer Dokumentationsseite ist in der <a href="../../seitenvorlage.html" class="xref page">Seitenvorlage</a> beschrieben.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="linksnavigation-antora"><a class="anchor" href="#linksnavigation-antora"></a>1.7. Navigationsdatei <code>nav.adoc</code></h3>
+</div>
+<div class="sect1">
+<h2 id="linksnavigation-antora"><a class="anchor" href="#linksnavigation-antora"></a>7. Navigationsdatei <code>nav.adoc</code></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Nach der Erstellung der Dokumentationsseiten in <code>.adoc</code>-Dateien muss dafür gesorgt werden, dass sie aufrufbar sind, üblicherweise über die Linksnavigation von Antora.
-In der Antora-Datei <code>nav.adoc</code> wird die Linksnavigation bzgl. einer <a href="../../../../../glossary/latest/glossary/master.html#glossar-antora-dokumentations-komponente" class="xref page">Antora-Dokumentations-Komponente</a> festgelegt, siehe auch <a href="../../seitenvorlage.html#navigation-thema" class="xref page">Navigationsstruktur</a>.</p>
+In der Antora-Datei <code>nav.adoc</code> wird die Linksnavigation bezüglich einer <a href="../../../../../glossary/latest/glossary/master.html#glossar-antora-dokumentations-komponente" class="xref page">Antora-Dokumentationskomponente</a> festgelegt, siehe auch <a href="../../seitenvorlage.html#navigation-thema" class="xref page">Navigationsstruktur</a>.</p>
 </div>
 <div class="paragraph">
 <p>Die Top-Level Linksnavigation der Antora-Komponente <code>IsyFact Standards</code> spiegelt die Säulen der IsyFact wider.
@@ -700,39 +758,45 @@ Die Verweise aus jeder <code>nav.adoc</code> werden in der Reihenfolge der Erwä
 <div id="listing-antora-yml" class="listingblock">
 <div class="title">Listing 5. Beispiel <code>nav.adoc</code> in <code>antora.yml</code></div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">name: isyfact-standards-doku
-title: IsyFact Standards
-nav:
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">nav:
 - modules/einstieg/nav.adoc
 - modules/blaupausen/nav.adoc
 - modules/bausteine/nav.adoc
+- modules/plattform/nav.adoc
 - modules/methodik/nav.adoc
-- modules/werkzeuge/nav.adoc</code></pre>
+- modules/werkzeuge/nav.adoc
+- modules/changelog/nav.adoc</code></pre>
 </div>
 </div>
 <div id="listing-nav-adoc" class="listingblock">
 <div class="title">Listing 6. Beispiel Modul <code>Werkzeuge</code>, Verlinkung in <code>nav.adoc</code></div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">* xref:werkzeuge:werkzeuge.adoc[]
-** xref:werkzeuge:dokumentation/einleitung/einfuehrung.adoc[]
-*** xref:werkzeuge:dokumentation/master-antora.adoc[]
-*** xref:werkzeuge:dokumentation/master-asciidoctorJ.adoc[]
-** xref:werkzeuge:entwicklungsumgebung/master.adoc[Entwicklungsumgebung]
-** xref:werkzeuge:versionierungskontrolle/master.adoc[]</code></pre>
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">* xref:werkzeuge.adoc[]
+** xref:dokumentation/einleitung/einfuehrung.adoc[]
+*** Antora (empfohlen)
+**** xref:dokumentation/erstellung/erstellung-antora.adoc[]
+***** xref:seitenvorlage.adoc[]
+***** xref:kopiervorlage.adoc[]
+**** xref:dokumentation/bearbeitung/bearbeitung-antora.adoc[]
+**** xref:dokumentation/generierung/generierung-antora.adoc[]
+*** AsciidoctorJ
+**** xref:dokumentation/erstellung/erstellung-asciidoctorj.adoc[]
+**** xref:dokumentation/bearbeitung/bearbeitung-asciidoctorj.adoc[]
+**** xref:dokumentation/generierung/generierung-asciidoctorj.adoc[]
+*** xref:dokumentation/changelog/changelog-doku.adoc[]
+** xref:entwicklungsumgebung/master.adoc[Entwicklungsumgebung]
+** xref:versionierungskontrolle/master.adoc[]
+** xref:gui-tests/gui-tests-mit-selenium.adoc[]</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Die durch Antora generierte HTML-Dokumentation hat im Beispiel folgende Linksnavigation:</p>
-</div>
-<div id="image-linksnavigation" class="imageblock">
-<div class="content">
-<img src="../../_images/handbuch/leftnavigation.png" alt="leftnavigation" width="80%">
-</div>
-<div class="title">Abbildung 1. Linksnavigation</div>
+<p>Die durch das Beispiel generierte Navigation ist links dieser Seite aufgeklappt zu sehen.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="konfiguration-antora"><a class="anchor" href="#konfiguration-antora"></a>1.8. Konfigurationsdateien <code>playbook.yml</code> und <code>pom.xml</code></h3>
+</div>
+<div class="sect1">
+<h2 id="konfiguration-antora"><a class="anchor" href="#konfiguration-antora"></a>8. Konfigurationsdateien <code>playbook.yml</code> und <code>pom.xml</code></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Die genannten Konfigurationsdateien befinden sich in einem eigenen Repository.
 <code>playbook.yml</code> steuert die Antora-Dokumentengenerierung, z.B. welche Antora-Komponenten in welchen Repositories und Branches verwendet werden sollen für die Generierung der Gesamtdokumentation.</p>
@@ -747,7 +811,6 @@ Die Konfigurationsdatei <code>playbook.yml</code> muss jedoch geändert werden, 
 <div class="paragraph">
 <p>Zu beachten ist, dass bei Änderungen an <code>playbook.yml</code> und pom.xml zunächst nur die lokale Generierung betroffen ist.
 Ggf. muss die Generierung über die CI/CD-Pipeline ebenfalls geändert werden.</p>
-</div>
 </div>
 </div>
 </div>
