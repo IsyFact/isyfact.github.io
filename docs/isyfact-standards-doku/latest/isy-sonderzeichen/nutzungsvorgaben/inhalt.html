@@ -724,6 +724,20 @@ Darstellung der übergebenen Zeichenkette, die mit dem ASCII-Zeichensatz dargest
 Dieser Transformator ermöglicht keine Vorgabe der maximalen Zeichenlänge.</p>
 </div>
 <div class="paragraph">
+<p><strong>Suchform Transformator</strong></p>
+</div>
+<div class="paragraph">
+<p>Mit dem Suchform Transformator ist es möglich, Zeichenketten, welche aus normativen Buchstaben (Datentyp C) der DIN SPEC 91379 bestehen, auf die Grundbuchstaben A-Z abzubilden.
+Die Transformationsregeln sind der <a href="master.html#table-suchform" class="xref page">Tabelle Suchform</a> zu entnehmen.
+Dieser Transformator ermöglicht keine Vorgabe der maximalen Zeichenlänge.
+Es ist also möglich, dass transformierte Texte nicht mehr vom System verarbeitet werden können, wenn diese nicht mehr die maximale Zeichenlänge einhalten können.</p>
+</div>
+<div class="paragraph">
+<p>Für unterschiedliche Anwendungsfälle kann es erforderlich sein, die in Namen enthaltenden Buchstaben auf die Grundbuchstaben A-Z abzubilden.
+Dies ist bspw. der Fall in der maschinenlesbaren Zone (MRZ) amtlicher Reisedokumente, für die der Standard [ICAO 9303-3] einschlägig ist, da nur diese Grundbuchstaben für die Repräsentation von Namen zur Verfügung stehen.
+Wenn Datensätze und Suchanfragen unter Anwendung der Suchform normalisiert werden, ist es auch möglich, Namen trotz unterschiedlicher Schreibweisen zu identifizieren.</p>
+</div>
+<div class="paragraph">
 <p><strong>Legacy Transformator</strong></p>
 </div>
 <div class="paragraph">
