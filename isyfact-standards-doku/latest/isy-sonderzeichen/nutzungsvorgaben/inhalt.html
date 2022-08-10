@@ -346,18 +346,45 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../werkzeuge/dokumentation/master-antora.html">Projektseite mit Antora (empfohlen)</a>
+    <span class="nav-text">Antora (empfohlen)</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/erstellung/erstellung-antora.html">Seiten anlegen</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
   </li>
 </ul>
   </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/bearbeitung/bearbeitung-antora.html">Seiten bearbeiten</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/generierung/generierung-antora.html">Projektseite erzeugen</a>
+  </li>
+</ul>
+  </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../werkzeuge/dokumentation/master-asciidoctorJ.html">Dokumente mit AsciidoctorJ Extensions</a>
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AsciidoctorJ</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/erstellung/erstellung-asciidoctorj.html">Neue Dokumente anlegen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/bearbeitung/bearbeitung-asciidoctorj.html">Dokumente bearbeiten</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/generierung/generierung-asciidoctorj.html">PDF- und HTML-Dokumente erzeugen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/changelog/changelog-doku.html">Zentralisiertes und automatisiertes Changelog</a>
   </li>
 </ul>
   </li>
@@ -695,6 +722,20 @@ Dieser Transformator ermöglicht keine Vorgabe der maximalen Zeichenlänge.</p>
 <p>Dieser Transformator führt die in <a href="master.html#table-transkription" class="xref page">Tabelle Transkription</a> dargestellte Transkription durch. Die Transkription ist eine aussprachebasierte
 Darstellung der übergebenen Zeichenkette, die mit dem ASCII-Zeichensatz dargestellt werden kann.
 Dieser Transformator ermöglicht keine Vorgabe der maximalen Zeichenlänge.</p>
+</div>
+<div class="paragraph">
+<p><strong>Suchform Transformator</strong></p>
+</div>
+<div class="paragraph">
+<p>Mit dem Suchform Transformator ist es möglich, Zeichenketten, welche aus normativen Buchstaben (Datentyp C) der DIN SPEC 91379 bestehen, auf die Grundbuchstaben A-Z abzubilden.
+Die Transformationsregeln sind der <a href="master.html#table-suchform" class="xref page">Tabelle Suchform</a> zu entnehmen.
+Dieser Transformator ermöglicht keine Vorgabe der maximalen Zeichenlänge.
+Es ist also möglich, dass transformierte Texte nicht mehr vom System verarbeitet werden können, wenn diese nicht mehr die maximale Zeichenlänge einhalten können.</p>
+</div>
+<div class="paragraph">
+<p>Für unterschiedliche Anwendungsfälle kann es erforderlich sein, die in Namen enthaltenden Buchstaben auf die Grundbuchstaben A-Z abzubilden.
+Dies ist bspw. der Fall in der maschinenlesbaren Zone (MRZ) amtlicher Reisedokumente, für die der Standard [ICAO 9303-3] einschlägig ist, da nur diese Grundbuchstaben für die Repräsentation von Namen zur Verfügung stehen.
+Wenn Datensätze und Suchanfragen unter Anwendung der Suchform normalisiert werden, ist es auch möglich, Namen trotz unterschiedlicher Schreibweisen zu identifizieren.</p>
 </div>
 <div class="paragraph">
 <p><strong>Legacy Transformator</strong></p>

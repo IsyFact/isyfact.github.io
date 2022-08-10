@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: IsyFact Dokumentation</title>
+    <title>Dokumente bearbeiten :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/werkzeuge/dokumentation/bearbeitung/bearbeitung-asciidoctorj.html">
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../../../_/css/site.css">
@@ -346,18 +346,45 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../master-antora.html">Projektseite mit Antora (empfohlen)</a>
+    <span class="nav-text">Antora (empfohlen)</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../erstellung/erstellung-antora.html">Seiten anlegen</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../seitenvorlage.html">Seitenvorlage</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../kopiervorlage.html">Kopiervorlage für neue Seiten</a>
   </li>
 </ul>
   </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="bearbeitung-antora.html">Seiten bearbeiten</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../generierung/generierung-antora.html">Projektseite erzeugen</a>
+  </li>
+</ul>
+  </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../master-asciidoctorJ.html">Dokumente mit AsciidoctorJ Extensions</a>
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AsciidoctorJ</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../erstellung/erstellung-asciidoctorj.html">Neue Dokumente anlegen</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="4">
+    <a class="nav-link" href="bearbeitung-asciidoctorj.html">Dokumente bearbeiten</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../generierung/generierung-asciidoctorj.html">PDF- und HTML-Dokumente erzeugen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../changelog/changelog-doku.html">Zentralisiertes und automatisiertes Changelog</a>
   </li>
 </ul>
   </li>
@@ -432,6 +459,13 @@
 <button class="nav-toggle"></button>
   <a href="../../../einstieg/vorstellung.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../../einstieg/einstieg.html">IsyFact Standards</a></li>
+    <li><a href="../../werkzeuge.html">Werkzeuge</a></li>
+    <li><a href="../einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a></li>
+    <li>AsciidoctorJ</li>
+    <li><a href="bearbeitung-asciidoctorj.html">Dokumente bearbeiten</a></li>
+  </ul>
 </nav>
 </div>
   <div class="content">
@@ -439,9 +473,22 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<div class="sect1">
-<h2 id="ein-dokument-bearbeiten"><a class="anchor" href="#ein-dokument-bearbeiten"></a>1. Ein Dokument bearbeiten</h2>
+<h1 class="page">Dokumente bearbeiten</h1>
+<div id="preamble">
 <div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><span class="image left"><img src="../../../../../glossary/latest/licence/_images/IFS-Logo.png" alt="IFS-Logo" width="150"></span> Diese Seite ist ein Teil der IsyFact-Standards.
+Alle Inhalte der Seite, insbesondere Texte und Grafiken, sind urheberrechtlich geschützt.
+Alle urheberrechtlichen Nutzungs- und Verwertungsrechte liegen beim Bundesverwaltungsamt.</p>
+</div>
+<div class="paragraph">
+<p><span class="image right"><img src="../../../../../glossary/latest/licence/_images/CC-BY.png" alt="Creative Commons Namensnennung" width="150"></span>
+Die Nutzung ist unter den <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-licence" class="xref page">Lizenzbedingungen</a> der <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-short" class="xref page">Creative Commons Namensnennung 4.0 International</a> gestattet.</p>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>Dieses Kapitel beschreibt die inhaltliche Bearbeitung und die dabei zu verwendenden Konventionen der IsyFact für die in <a href="#verzeichnisstruktur-baustein">[verzeichnisstruktur-baustein]</a> beschriebenen Dateien.
 Es handelt sich dabei vorrangig um die Datei <code>inhalt.adoc</code>.</p>
@@ -516,8 +563,11 @@ Bei den automatisch erzeugten Verzeichnissen handelt es sich um folgende:</p>
 Die Skripte gehen hierbei von einer bestimmten Syntax aus, die in den folgenden Abschnitten erläutert wird.
 Je nachdem, ob es sich um eine Abbildung, eine Tabelle, einen Begriff oder ein referenziertes Medium handelt, werden jeweils unterschiedliche Bestandteile vorgesehen, die gesetzt werden müssen.</p>
 </div>
-<div class="sect2">
-<h3 id="ein-satz-pro-zeile"><a class="anchor" href="#ein-satz-pro-zeile"></a>1.1. Zeilenumbrüche</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ein-satz-pro-zeile"><a class="anchor" href="#ein-satz-pro-zeile"></a>1. Zeilenumbrüche</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Der Quelltext eines Dokuments bricht nach jedem Satz um.
 Er orientiert sich nicht anhand einer fixen Spaltenbreite.
@@ -552,8 +602,10 @@ Merge-Konflikte passieren häufig auf Ebene eines Satzes.
 Sie sind daher leicht verständlich, lokal begrenzt und daher in den meisten Fällen gut zu lösen.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="ueberschriften"><a class="anchor" href="#ueberschriften"></a>1.2. Überschriften</h3>
+</div>
+<div class="sect1">
+<h2 id="ueberschriften"><a class="anchor" href="#ueberschriften"></a>2. Überschriften</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Überschriften können bei AsciiDoc auf unterschiedlicher Weise gesetzt werden.
 Bei einem IsyFact-Dokument ist hingegen stets die Variante zu wählen, bei der die Anzahl der vorgesetzten Gleichheitszeichen die Ebene der Überschrift anzeigt.
@@ -606,8 +658,10 @@ Der erzeugte Text sieht wie folgt aus:</p>
 <em>Im Übrigen handelt es sich bei dem Beispiel-Kapitel um das Kapitel <a href="#ueberschriften">Überschriften</a>.</em></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="admonition-blocks"><a class="anchor" href="#admonition-blocks"></a>1.3. Admonition-Blocks</h3>
+</div>
+<div class="sect1">
+<h2 id="admonition-blocks"><a class="anchor" href="#admonition-blocks"></a>3. Admonition-Blocks</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Mit Admonition Blocks können Inhalte in Dokumenten exponiert dargestellt werden, sodass ihnen besondere Aufmerksamkeit zuteil wird.
 Standardmäßig werden fünf verschiedene Blöcke angeboten.
@@ -635,8 +689,8 @@ Hier steht der Text.
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">BLOCKTYP: Hier steht der Text.</code></pre>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_vordefinierte_blöcke"><a class="anchor" href="#_vordefinierte_blöcke"></a>1.3.1. Vordefinierte Blöcke</h4>
+<div class="sect2">
+<h3 id="_vordefinierte_blöcke"><a class="anchor" href="#_vordefinierte_blöcke"></a>3.1. Vordefinierte Blöcke</h3>
 <div class="paragraph">
 <p>Den folgenden, vordefinierten Blöcken fallen in der IsyFact-Dokumentation einheitliche Bedeutungen zu.
 Sie helfen dabei, optionale oder ergänzende Inhalte zu markieren, geben Erfahrungswerte weiter und warnen vor typischen Fehlersituationen oder Fallstricken.</p>
@@ -672,8 +726,8 @@ Sie helfen dabei, optionale oder ergänzende Inhalte zu markieren, geben Erfahru
 <div class="title">Abbildung 5. CAUTION Admonition</div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_selbst_definierte_blöcke"><a class="anchor" href="#_selbst_definierte_blöcke"></a>1.3.2. Selbst definierte Blöcke</h4>
+<div class="sect2">
+<h3 id="_selbst_definierte_blöcke"><a class="anchor" href="#_selbst_definierte_blöcke"></a>3.2. Selbst definierte Blöcke</h3>
 <div class="paragraph">
 <p>Die folgenden, selbst definierten Blöcke, bilden Regeln und Vorgaben der IsyFact ab, die verpflichtend einzuhalten sind.
 Sie bilden die Grundlage für eine zur IsyFact konforme Umsetzung von Anforderungen und definieren so maßgeblich, wie Konformität zur IsyFact erzielt wird.</p>
@@ -702,81 +756,168 @@ Sie bilden die Grundlage für eine zur IsyFact konforme Umsetzung von Anforderun
 </div>
 <div class="title">Abbildung 9. STYLEGUIDE Admonition</div>
 </div>
-<div class="paragraph">
-<p><br></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_verwendung_von_tags_zur_kennzeichnung"><a class="anchor" href="#_verwendung_von_tags_zur_kennzeichnung"></a>1.3.3. Verwendung von Tags zur Kennzeichnung</h4>
+</div>
+<div class="sect1">
+<h2 id="tags"><a class="anchor" href="#tags"></a>4. Tags</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Folgende Blöcke sind zusätzlich mit einem Tag zu kennzeichnen:</p>
+<p>Tags (bzw. <em>tagged regions</em>) werden zur Einbindung von Teildokumenten verwendet.
+Die Verwendung von Tags bietet mehrere Vorteile:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>IMPORTANT (Tag-Name: <code>important</code>)</p>
+<p>Dokumente können in mehrere, in sich abgeschlossene Teile zerlegt werden.</p>
 </li>
 <li>
-<p>ANWENDUNGSANFORDERUNG (Tag-Name: <code>anwendungsanforderung</code>)</p>
-</li>
-<li>
-<p>ARCHITEKTURREGEL (Tag-Name: <code>architekturregel</code>)</p>
-</li>
-<li>
-<p>SICHERHEIT (Tag-Name: <code>sicherheit</code>)</p>
-</li>
-<li>
-<p>STYLEGUIDE (Tag-Name: <code>styleguide</code>)</p>
+<p>Mit Tags versehene Teile eines Dokuments können in einem anderen Dokument zusammengezogen oder wiederverwendet werden.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Damit lassen sich die Regeln oder Anforderungen aus der gesamten Dokumentation zusammenziehen und gebündelt bereitstellen, z.B. als Checklisten oder zur Grundlage automatischer Überprüfungen.</p>
+<p>Die Syntax von Tags zeigt das folgende <a href="#listing-tag-syntax">Listing</a>.
+Zu beachten ist, dass der korrekte Tag-Name gesetzt ist und der Inhalt innerhalb des Tags i.d.R. mit Leerzeilen abgesetzt ist.
+Die Leerzeilen stellen sicher, dass sich der Inhalt beim Einbinden von den Inhalten vor und nach dem Include absetzt.</p>
 </div>
-<div class="paragraph">
-<p>Die Tags werden jeweils am Anfang und am Ende des Blocks gesetzt. Setzen des Tags am Beispiel einer Architekturregel:</p>
+<div id="listing-tag-syntax" class="listingblock">
+<div class="title">Listing 6. Syntax von Tags</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">// tag::tag-name[]
+
+Dieser Inhalt ist mit einem Tag versehen und von Leerzeilen umgeben.
+
+// end::tag-name[]</code></pre>
 </div>
-<div class="paragraph">
-<p><code>// tag::architekturregel[]</code><br>
-<code>[ARCHITEKTURREGEL]</code><br>
-<code>====</code><br>
-Hier steht der Text.<br>
-<code>====</code></p>
 </div>
-<div class="paragraph">
-<p><code>// end::architekturregel[]</code></p>
-</div>
-<div class="admonitionblock warning">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-warning" title="Warnung"></i>
+<i class="fa icon-note" title="Hinweis"></i>
 </td>
 <td class="content">
-Die Leerzeile zwischen dem Block und dem Ende des Tags ist wichtig, damit die Bündelung der Inhalte korrekt funktioniert.
+Eine vollständige Übersicht über die Funktionsweise von Tags bietet die <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-AsciiDocTaggedRegions" class="xref page">Dokumentation von AsciiDoc zu <em>tagged regions</em></a>.
 </td>
 </tr>
 </table>
 </div>
+<div class="sect2">
+<h3 id="tag-admonition-blocks"><a class="anchor" href="#tag-admonition-blocks"></a>4.1. Admonition Blocks</h3>
 <div class="paragraph">
-<p>Zur Bündelung von Inhalten wird das entsprechende Dokument eingebettet.
-Über den Parameter <code>tags</code> werden nur die Inhalte eingefügt, die von den entsprechenden Tags umgeben sind.</p>
+<p>Folgende Admonition Blocks sind mit einem Tag zu kennzeichnen:</p>
 </div>
-<div id="listing-include-tags" class="listingblock">
-<div class="title">Listing 6. Bündelung von Inhalten anhand von Tags</div>
+<div class="ulist">
+<ul>
+<li>
+<p>IMPORTANT (Tag-Name: <code>important</code>),</p>
+</li>
+<li>
+<p>ANWENDUNGSANFORDERUNG (Tag-Name: <code>anwendungsanforderung</code>),</p>
+</li>
+<li>
+<p>ARCHITEKTURREGEL (Tag-Name: <code>architekturregel</code>),</p>
+</li>
+<li>
+<p>SICHERHEIT (Tag-Name: <code>sicherheit</code>),</p>
+</li>
+<li>
+<p>STYLEGUIDE (Tag-Name: <code>styleguide</code>).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Die Tags werden jeweils am Anfang und am Ende des Blocks gesetzt.</p>
+</div>
+<div id="listing-tags" class="listingblock">
+<div class="title">Listing 7. Setzen des Tags am Beispiel einer Architekturregel</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">include::pfad_zum_dokument.adoc[tags=beispiel;...]</code></pre>
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">// tag::architekturregel[]
+
+[ARCHITEKTURREGEL]
+====
+Inhalt der Architekturregel.
+====
+
+// end::architekturregel[]</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Damit lassen sich die Regeln oder Anforderungen aus der gesamten Dokumentation zusammenziehen und gebündelt bereitstellen, z.B. als Checklisten oder zur Grundlage automatischer Überprüfungen.</p>
+</div>
+<div id="listing-include-all-architecture-rules" class="listingblock">
+<div class="title">Listing 8. Einbinden aller Architekturregeln aus einem Dokument</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">include::pfad-zum-dokument.adoc[tags=architekturregel]</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="bilder"><a class="anchor" href="#bilder"></a>1.4. Abbildungen</h3>
+<h3 id="tag-further-includes"><a class="anchor" href="#tag-further-includes"></a>4.2. Weitere Einbettungen</h3>
+<div class="paragraph">
+<p>Neben Admonition Blocks kennzeichnet die IsyFact-Dokumentation noch weitere Bestandteile zum Bündeln oder Referenzieren:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Namenskonventionen (Tag-Name: <code>namenskonvention</code>),</p>
+</li>
+<li>
+<p>Definitionen (Tag-Name: <code>(begriff)-definition</code>).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="tag-documents"><a class="anchor" href="#tag-documents"></a>4.3. Dokumente auftrennen</h3>
+<div class="paragraph">
+<p>Damit Dokumente beherrschbar bleiben, können sie in mehrere Teildokumente aufgetrennt werden.
+Die Teildokumente sollten dabei in sich abgeschlossen sein, damit insbesondere alle Links korrekt aufgelöst werden.
+Außerdem können sie so, neben einem eigenen Titel, auch eigene Dokumentattribute setzen, um z.B. Bilder korrekt aufzulösen.</p>
+</div>
+<div class="paragraph">
+<p>Die Teildokumente umschließen ihren gesamten Inhalt mit einem Tag.</p>
+</div>
+<div id="listing-partial-document" class="listingblock">
+<div class="title">Listing 9. Struktur eines Teildokuments</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">= Titel des Teildokuments
+:zusaetzliche-attribute:
+
+// tag::inhalt[]
+
+Inhalt des Teildokuments.
+
+// end::inhalt[]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Das Hauptdokument bindet dann die Inhalte aller Teildokumente ein.</p>
+</div>
+<div id="listing-main-document" class="listingblock">
+<div class="title">Listing 10. Struktur des Hauptdokuments</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">= Titel des Hauptdokuments
+
+include::teildokument-1.adoc[tags=inhalt]
+
+include::teildokument-2.adoc[tags=inhalt]
+
+include::teildokument-3.adoc[tags=inhalt]</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="bilder"><a class="anchor" href="#bilder"></a>5. Abbildungen</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Das Einbinden von Abbildungen gelingt in AsciiDoc über die folgende Syntax:</p>
 </div>
 <div id="listing-bild-einfuegen" class="listingblock">
-<div class="title">Listing 7. Abbildung einfügen (AsciiDoc)</div>
+<div class="title">Listing 11. Abbildung einfügen (AsciiDoc)</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">image::beispiel.png</code></pre>
 </div>
@@ -801,7 +942,7 @@ Die Leerzeile zwischen dem Block und dem Ende des Tags ist wichtig, damit die B�
 <p>Deswegen werden Abbildungen in IsyFact-Dokumenten wie folgt definiert:</p>
 </div>
 <div id="listing-bild-einfuegen2" class="listingblock">
-<div class="title">Listing 8. Abbildung einfügen (IsyFact)</div>
+<div class="title">Listing 12. Abbildung einfügen (IsyFact)</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">:desc-image-beispiel: Beispiel
 [id="image-beispiel",reftext="{figure-caption} {counter:figures}"]
@@ -848,7 +989,7 @@ Abbildungen zu einem Dokument werden stets im Unterordner <code>/images</code> a
 <p>Wenn die Abbildung zentriert werden soll, fügt man das Attribut <code>[align="center"]</code> hinzu.</p>
 </div>
 <div id="listing-bild-einfuegen3" class="listingblock">
-<div class="title">Listing 9. Abbildung zentriert einfügen</div>
+<div class="title">Listing 13. Abbildung zentriert einfügen</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">:desc-image-beispiel: Beispiel
 [id="image-beispiel",reftext="{figure-caption} {counter:figures}"]
@@ -863,7 +1004,7 @@ Die doppelte Angabe der Breite ist leider nötig, damit die Abbildung in allen A
 HTML-Dokumente benötigen die Angabe von <code>scaledwidth</code>, PDF-Dokumente wiederum <code>pdfwidth</code>.</p>
 </div>
 <div id="listing-bild-einfuegen4" class="listingblock">
-<div class="title">Listing 10. Abbildung zentriert und skaliert einfügen</div>
+<div class="title">Listing 14. Abbildung zentriert und skaliert einfügen</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">:desc-image-beispiel: Beispiel
 [id="image-beispiel",reftext="{figure-caption} {counter:figures}"]
@@ -872,13 +1013,15 @@ image::beispiel.png[align="center",pdfwidth=80%,scaledwidth=80%]</code></pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="tabellen"><a class="anchor" href="#tabellen"></a>1.5. Tabellen</h3>
+</div>
+<div class="sect1">
+<h2 id="tabellen"><a class="anchor" href="#tabellen"></a>6. Tabellen</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>In AsciiDoc wird eine Tabelle über folgende Syntax definiert:</p>
 </div>
 <div id="listing-tabelle1" class="listingblock">
-<div class="title">Listing 11. Tabelle einfügen</div>
+<div class="title">Listing 15. Tabelle einfügen</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">|====
 |Zelle 11|Zelle 12|Zelle 13|Zelle 14
@@ -938,7 +1081,7 @@ image::beispiel.png[align="center",pdfwidth=80%,scaledwidth=80%]</code></pre>
 <p>Hierfür soll folgende Syntax verwendet werden:</p>
 </div>
 <div id="listing-tabelle2" class="listingblock">
-<div class="title">Listing 12. Tabelle einfügen in IsyFact</div>
+<div class="title">Listing 16. Tabelle einfügen in IsyFact</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">:desc-table-beispiel: Beispiel-Tabelle
 [id="table-beispiel",reftext="{table-caption} {counter:tables}"]
@@ -1001,13 +1144,15 @@ image::beispiel.png[align="center",pdfwidth=80%,scaledwidth=80%]</code></pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="listings"><a class="anchor" href="#listings"></a>1.6. Listings</h3>
+</div>
+<div class="sect1">
+<h2 id="listings"><a class="anchor" href="#listings"></a>7. Listings</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Quelltexte können bei AsciiDoc auf folgende Weise mit Syntaxhighlighting angezeigt werden.</p>
 </div>
 <div id="listing-quelltext1" class="listingblock">
-<div class="title">Listing 13. Quelltext einfügen</div>
+<div class="title">Listing 17. Quelltext einfügen</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[source,java]
 ----
@@ -1035,7 +1180,7 @@ public class HalloWelt {
 <p>Auch hier wird noch eine Listing-Überschrift und eine ID benötigt:</p>
 </div>
 <div id="listing-quelltext2" class="listingblock">
-<div class="title">Listing 14. Quelltext einfügen in IsyFact</div>
+<div class="title">Listing 18. Quelltext einfügen in IsyFact</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">:desc-listing-hallowelt: HalloWelt.java
 [id="listing-hallowelt",reftext="{listing-caption} {counter:listings}"]
@@ -1055,13 +1200,14 @@ public class HalloWelt {
 </div>
 <div class="literalblock">
 <div class="content">
-<pre> &lt;&lt;listing-hallowelt&gt;&gt;
-{empty} +</pre>
+<pre>&lt;&lt;listing-hallowelt&gt;&gt;</pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="literaturverzeichnis"><a class="anchor" href="#literaturverzeichnis"></a>1.7. Literaturverzeichnis</h3>
+</div>
+<div class="sect1">
+<h2 id="literaturverzeichnis"><a class="anchor" href="#literaturverzeichnis"></a>8. Literaturverzeichnis</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Am Ende eines Dokuments wird automatisch ein Literaturverzeichnis erstellt.
 Voraussetzung für die Aufnahme eines Eintrags in das lokale Literaturverzeichnis ist die Referenzierung des entsprechenden Dokuments und das Vorhandensein der referenzierten Id in der Literaturverzeichnis-Konfigurationsdatei in <a href="#isy-asciidoctorj-extensions">[isy-asciidoctorj-extensions]</a>.</p>
@@ -1079,8 +1225,10 @@ Voraussetzung für die Aufnahme eines Eintrags in das lokale Literaturverzeichni
 <p>Ein Beispiel für referenzierte Literatur: <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-asciidoc-recommended-practices" class="xref page">AsciiDoc Recommended Practices</a></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="glossar"><a class="anchor" href="#glossar"></a>1.8. Glossar</h3>
+</div>
+<div class="sect1">
+<h2 id="glossar"><a class="anchor" href="#glossar"></a>9. Glossar</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Am Ende eines Dokuments wird automatisch ein Glossar erstellt.
 Voraussetzung für die Aufnahme eines Eintrags in das lokale Glossar ist die Referenzierung des entsprechenden Eintrags und das Vorhandensein des Eintrags mit der referenzierten Id im zentralen Glossar in <a href="#isy-asciidoctorj-extensions">[isy-asciidoctorj-extensions]</a>.</p>
@@ -1098,9 +1246,7 @@ Die ID soll mit dem Bezeichner <code>glossar-</code> beginnen.</p>
 <p>Das Ergebnis sieht wie folgt aus:</p>
 </div>
 <div class="paragraph">
-<p><code>Hier wurde ein <a href="#glossar-halloweltbeispiel">Hallo Welt Beispiel</a> verwendet.</code>
-<br></p>
-</div>
+<p><code>Hier wurde ein <a href="#glossar-halloweltbeispiel">Hallo Welt Beispiel</a> verwendet.</code></p>
 </div>
 </div>
 </div>

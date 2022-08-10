@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: IsyFact Dokumentation</title>
+    <title>Zentralisiertes und automatisiertes Changelog :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/werkzeuge/dokumentation/changelog/changelog-doku.html">
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../../../_/css/site.css">
@@ -346,18 +346,45 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../master-antora.html">Projektseite mit Antora (empfohlen)</a>
+    <span class="nav-text">Antora (empfohlen)</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../erstellung/erstellung-antora.html">Seiten anlegen</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../seitenvorlage.html">Seitenvorlage</a>
   </li>
-  <li class="nav-item" data-depth="4">
+  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../kopiervorlage.html">Kopiervorlage für neue Seiten</a>
   </li>
 </ul>
   </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../bearbeitung/bearbeitung-antora.html">Seiten bearbeiten</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../generierung/generierung-antora.html">Projektseite erzeugen</a>
+  </li>
+</ul>
+  </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../master-asciidoctorJ.html">Dokumente mit AsciidoctorJ Extensions</a>
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AsciidoctorJ</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../erstellung/erstellung-asciidoctorj.html">Neue Dokumente anlegen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../bearbeitung/bearbeitung-asciidoctorj.html">Dokumente bearbeiten</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../generierung/generierung-asciidoctorj.html">PDF- und HTML-Dokumente erzeugen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="changelog-doku.html">Zentralisiertes und automatisiertes Changelog</a>
   </li>
 </ul>
   </li>
@@ -432,6 +459,12 @@
 <button class="nav-toggle"></button>
   <a href="../../../einstieg/vorstellung.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../../einstieg/einstieg.html">IsyFact Standards</a></li>
+    <li><a href="../../werkzeuge.html">Werkzeuge</a></li>
+    <li><a href="../einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a></li>
+    <li><a href="changelog-doku.html">Zentralisiertes und automatisiertes Changelog</a></li>
+  </ul>
 </nav>
 </div>
   <div class="content">
@@ -439,8 +472,8 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<div class="sect1">
-<h2 id="vorgaben-changelog"><a class="anchor" href="#vorgaben-changelog"></a>1. Zentralisiertes und automatisiertes Changelog</h2>
+<h1 class="page">Zentralisiertes und automatisiertes Changelog</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>Jede Komponente eines Projekts und jedes Dokument erhalten eine eigene Changelog-Datei im AsciiDoc-Format (<code>.adoc</code>).
@@ -462,14 +495,17 @@ Auf diese Weise besitzt jedes Projekt ein zentrales Changelog und (je nach Proje
 <div class="paragraph">
 <p>Im Folgenden wird beschrieben, wie die einzelnen Changelog-Dateien erstellt und welche Anforderungen an die Struktur und den Inhalt der Changelogs gestellt werden.</p>
 </div>
-<div class="sect2">
-<h3 id="changelog-anlegen"><a class="anchor" href="#changelog-anlegen"></a>1.1. Anlegen der Changelog-Dateien</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="changelog-anlegen"><a class="anchor" href="#changelog-anlegen"></a>1. Anlegen der Changelog-Dateien</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Sowohl der Projektchangelog, als auch der Komponentenchangelog werden mit AsciiDoc erstellt.
 Das Dateiformat ist <code>.adoc</code>.</p>
 </div>
-<div class="sect3">
-<h4 id="komponentenchangelog-anlegen"><a class="anchor" href="#komponentenchangelog-anlegen"></a>1.1.1. Komponentenchangelog</h4>
+<div class="sect2">
+<h3 id="komponentenchangelog-anlegen"><a class="anchor" href="#komponentenchangelog-anlegen"></a>1.1. Komponentenchangelog</h3>
 <div class="paragraph">
 <p>Für jede Komponente und jedes AsciiDoc-Dokument (z.B. Nutzungsvorgaben) wird eine eigene AsciiDoc Datei (<code>changelog.adoc</code>) erstellt.
 Bei Dokumenten wird diese Datei im gleichen Verzeichnis wie das Dokument selbst abgelegt.</p>
@@ -495,13 +531,13 @@ Bei Dokumenten wird diese Datei im gleichen Verzeichnis wie das Dokument selbst 
 <div id="listing-komponentenchangelog_ueberschrift" class="listingblock">
 <div class="title">Listing 1. Komponentenchangelog Inhalt</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">[[changelog]]
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[[changelog]]
 == Changelog</code></pre>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="projektchangelog-anlegen"><a class="anchor" href="#projektchangelog-anlegen"></a>1.1.2. Projektchangelog</h4>
+<div class="sect2">
+<h3 id="projektchangelog-anlegen"><a class="anchor" href="#projektchangelog-anlegen"></a>1.2. Projektchangelog</h3>
 <div class="paragraph">
 <p>Die zentrale Projektchangelog-Datei <code>changelog.adoc</code> wird im root-Verzeichnis des Projekts abgelegt:</p>
 </div>
@@ -512,17 +548,19 @@ Bei Dokumenten wird diese Datei im gleichen Verzeichnis wie das Dokument selbst 
 <div class="title">Abbildung 4. Ablageort des zentralen Projektchangelogs</div>
 </div>
 <div class="paragraph">
-<p>Initial wird die Datei ebenfalls mit der Überschrift "Changelog" befüllt:</p>
+<p>Initial wird die Datei ebenfalls mit der Überschrift "Changelog" befüllt.</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="struktur-changelog"><a class="anchor" href="#struktur-changelog"></a>1.2. Struktur der Changelog-Dateien</h3>
+</div>
+<div class="sect1">
+<h2 id="struktur-changelog"><a class="anchor" href="#struktur-changelog"></a>2. Struktur der Changelog-Dateien</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Der Aufbau des Projektchangelogs und der Komponentenchangelogs unterscheidet sich und wird im Folgenden erläutert.</p>
 </div>
-<div class="sect3">
-<h4 id="struktur-komponentenchanglog"><a class="anchor" href="#struktur-komponentenchanglog"></a>1.2.1. Komponentenchangelog</h4>
+<div class="sect2">
+<h3 id="struktur-komponentenchanglog"><a class="anchor" href="#struktur-komponentenchanglog"></a>2.1. Komponentenchangelog</h3>
 <div class="paragraph">
 <p>Der Komponentenchangelog enthält die Changelog-Einträge nach Release gruppiert.
 Dazu wird für jedes Release ein eigener Release-Tag definiert:</p>
@@ -530,7 +568,7 @@ Dazu wird für jedes Release ein eigener Release-Tag definiert:</p>
 <div id="listing-komponentenchangelog_release" class="listingblock">
 <div class="title">Listing 2. Erstellung Release-Tag im Komponentenchangelog</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">// tag::release-2.1.0[]
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">// tag::release-2.1.0[]
 
 // --&gt; Hier werden die Changelogeinträge für Release 2.1.0 verfasst
 
@@ -553,7 +591,7 @@ Dazu wird für jedes Release ein eigener Release-Tag definiert:</p>
 <div id="listing-komponentenchangelog_gesamt" class="listingblock">
 <div class="title">Listing 3. Gesamtstruktur Komponentenchangelog</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">[[changelog]]
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[[changelog]]
 == Changelog
 
 *Änderungen IsyFact 2.1.0*
@@ -577,8 +615,8 @@ Dazu wird für jedes Release ein eigener Release-Tag definiert:</p>
 <p>Die Struktur des Kompontenchangelogs ist damit erfolgreich erstellt.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="struktur-projektchangelog"><a class="anchor" href="#struktur-projektchangelog"></a>1.2.2. Projektchangelog</h4>
+<div class="sect2">
+<h3 id="struktur-projektchangelog"><a class="anchor" href="#struktur-projektchangelog"></a>2.2. Projektchangelog</h3>
 <div class="paragraph">
 <p>Im Projektchangelog sollten nach Möglichkeit keine Changelog-Einträge verfasst, sondern ausschließlich die Komponentenchangelogs eingebunden werden.
 Dazu wird für jedes Release ein eigener Abschnitt erstellt:</p>
@@ -586,9 +624,9 @@ Dazu wird für jedes Release ein eigener Abschnitt erstellt:</p>
 <div id="listing-projektchangelog_release" class="listingblock">
 <div class="title">Listing 4. Erstellung Release</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">=== Änderungen IsyFact 2.1.0
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">=== Änderungen IsyFact 2.1.0
 
-// Beginn Übergreifende Änderungen
+// Beginn übergreifende Änderungen
 
 // Ende übergreifende Änderungen</code></pre>
 </div>
@@ -597,7 +635,7 @@ Dazu wird für jedes Release ein eigener Abschnitt erstellt:</p>
 <p>Jeder Abschnitt enthält die Versionsnummer des Releases.</p>
 </div>
 <div class="paragraph">
-<p>Unterhalb der Release Definition ist der Platz für die Beschreibung von komponentenübergreifenden Änderungen vorbehalten, die nicht einzelnen Komponenten zugeordnet werden können.
+<p>Unterhalb der Releasedefinition ist der Platz für die Beschreibung von komponentenübergreifenden Änderungen vorbehalten, die nicht einzelnen Komponenten zugeordnet werden können.
 Dieses direkte Einfügen von Einträgen in das Projektchangelog sollte nur in Ausnahmefällen geschehen (siehe Kapitel <a href="#inhalt-projektchangelog">Projektchangelog</a>.</p>
 </div>
 <div class="paragraph">
@@ -607,14 +645,13 @@ Dazu wird für jedes Release nur der mit dem Release getaggte Abschnitt der Komp
 <div id="listing-projektchangelog_einbindung_komponentenchangelog" class="listingblock">
 <div class="title">Listing 5. Einbindung der Komponentenchangelogs</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">=== Änderungen IsyFact 2.1.0
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">=== Änderungen IsyFact 2.1.0
 
-// Beginn Übergreifende Änderungen
+// Beginn übergreifende Änderungen
 
 // Ende übergreifende Änderungen
 
-include::src/docs/10_IsyFact-Standards/00_Allgemein/IsyFact-Einstieg/changelog.adoc[tag=release-2.1.0]
-include::src/docs/10_IsyFact-Standards/00_Allgemein/IsyFact-Glossar/changelog.adoc[tag=release-2.1.0]
+include::isyfact-standards-doku:einstieg:page$changelog.adoc[tag=release-2.1.0]
 ...</code></pre>
 </div>
 </div>
@@ -624,41 +661,41 @@ include::src/docs/10_IsyFact-Standards/00_Allgemein/IsyFact-Glossar/changelog.ad
 <div id="listing-projektchangelog_einbindung_releases" class="listingblock">
 <div class="title">Listing 6. Gesamtstruktur Projektchangelog</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-adoc hljs" data-lang="adoc">[[changelog]]
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[[changelog]]
 == Changelog
 
 === Änderungen IsyFact 2.1.0
 
-// Beginn Übergreifende Änderungen
+// Beginn übergreifende Änderungen
 
 // Ende übergreifende Änderungen
 
-include::src/docs/10_IsyFact-Standards/00_Allgemein/IsyFact-Einstieg/changelog.adoc[tag=release-2.1.0]
-include::src/docs/10_IsyFact-Standards/00_Allgemein/IsyFact-Glossar/changelog.adoc[tag=release-2.1.0]
+include::isyfact-standards-doku:einstieg:page$changelog.adoc[tag=release-2.1.0]
 ...
 
 === Änderungen IsyFact 2.0.0
 
-// Beginn Übergreifende Änderungen
+// Beginn übergreifende Änderungen
 
 // Ende übergreifende Änderungen
 
-include::src/docs/10_IsyFact-Standards/00_Allgemein/IsyFact-Einstieg/changelog.adoc[tag=release-2.0.0]
-include::src/docs/10_IsyFact-Standards/00_Allgemein/IsyFact-Glossar/changelog.adoc[tag=release-2.0.0]
+include::isyfact-standards-doku:einstieg:page$changelog.adoc[tag=release-2.0.0]
 ...</code></pre>
 </div>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="inhalt-changlog"><a class="anchor" href="#inhalt-changlog"></a>1.3. Inhalt der Changelog-Dateien</h3>
+</div>
+<div class="sect1">
+<h2 id="inhalt-changlog"><a class="anchor" href="#inhalt-changlog"></a>3. Inhalt der Changelog-Dateien</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Diese Kapitel beschreibt die Anforderungen an den Inhalt einzelner Changelogeinträge.
 Changelogs sollen den Entwicklern von IsyFact-Anwendungen Mitgrationsanleitungen liefern, um von einer älteren IsyFact Version auf eine neuere einfach und schnell wechseln zu können.
 Damit der Changelog diesen Zweck erfüllt, ist es wichtig, dass sowohl die Entscheidung zur Erstellung eines Changelogeintrags, als auch der Inhalt des Eintrags mit Bedacht gewählt wird.</p>
 </div>
-<div class="sect3">
-<h4 id="inhalt-komponentenchangelog"><a class="anchor" href="#inhalt-komponentenchangelog"></a>1.3.1. Komponentenchangelog</h4>
+<div class="sect2">
+<h3 id="inhalt-komponentenchangelog"><a class="anchor" href="#inhalt-komponentenchangelog"></a>3.1. Komponentenchangelog</h3>
 <div class="paragraph">
 <p>In diesen Fällen sollte <strong>immer ein</strong> Changelogeintrag erstellt werden:</p>
 </div>
@@ -736,8 +773,8 @@ Damit der Changelog diesen Zweck erfüllt, ist es wichtig, dass sowohl die Entsc
 </ol>
 </div>
 </div>
-<div class="sect3">
-<h4 id="inhalt-projektchangelog"><a class="anchor" href="#inhalt-projektchangelog"></a>1.3.2. Projektchangelog</h4>
+<div class="sect2">
+<h3 id="inhalt-projektchangelog"><a class="anchor" href="#inhalt-projektchangelog"></a>3.2. Projektchangelog</h3>
 <div class="paragraph">
 <p>Der Projektchangelog kann komponentenübergreifende Changelogeinträge aufnehmen, wenn folgende Bedingungen erfüllt sind:</p>
 </div>
@@ -761,7 +798,6 @@ Damit der Changelog diesen Zweck erfüllt, ist es wichtig, dass sowohl die Entsc
 <div class="paragraph">
 <p>An die Changelogeintrag gelten die in Kapitel <a href="#inhalt-komponentenchangelog">Komponentenchangelog</a> beschriebenen Anforderungen.
 Komponentenübergreifende Einträge sind dem gekennzeichneten Bereich hinzuzufügen (vgl. <a href="#listing-projektchangelog_einbindung_komponentenchangelog">Einbindung der Komponentenchangelogs</a>).</p>
-</div>
 </div>
 </div>
 </div>
