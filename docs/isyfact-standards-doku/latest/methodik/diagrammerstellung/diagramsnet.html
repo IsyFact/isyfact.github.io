@@ -511,12 +511,64 @@ Ohne Installation kann die Browser-Variante über <a href="../../../../glossary/
 Für zahlreiche Betriebssystem-Plattformen stehen außerdem Installationspakete bereit.
 Darüber hinaus gibt es Unterstützung für weit verbreitete IDEs, beispielsweise für <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-diagrams-net-intellij" class="xref page">IntelliJ IDEA</a>, allerdings ohne Konfigurationsmöglichkeit, oder <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-diagrams-net-vs-code" class="xref page">Visual Studio Code</a>.</p>
 </div>
+<table id="feature-matrix" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Features der Varianten von diagrams.net</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tool</th>
+<th class="tableblock halign-center valign-middle">Bibliothek einbinden</th>
+<th class="tableblock halign-center valign-middle">Konfiguration einbinden</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>diagrams.net (Web)</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>diagrams.net (Standalone)</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Visual Studio Code (Plugin)</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>IntelliJ IDEA (Plugin)</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="icon"><i class="fa fa-times"></i></span></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="icon"><i class="fa fa-times"></i></span></p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect2">
 <h3 id="IsyFact-Standards-Grafik-Bibliothek-einbinden"><a class="anchor" href="#IsyFact-Standards-Grafik-Bibliothek-einbinden"></a>1.1. IsyFact-Bibliothek einbinden</h3>
 <div class="paragraph">
 <p>Die IsyFact stellt eine eigene Bibliothek bereit.
-Diese enthält u.a. Grafik-Objekte in Anlehnung an die Systemspezifikation-, Systementwurf- und Referenzarchitektur-Diagramme des IsyFact.
-Die Bibliothek stellt eine Empfehlung für Nutzer der IsyFact dar.
+Diese enthält u.a. Grafik-Objekte in Anlehnung an die Systemspezifikation-, Systementwurf- und Referenzarchitektur-Diagramme des IsyFact.</p>
+</div>
+<table id="download-bibliothek" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 2. Download-Optionen der Bibliothek</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Bibliothek</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="../_attachments/IsyFact.drawiolib.xml" class="xref attachment">Download <span class="icon"><i class="fa fa-file-code-o"></i></span></a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Die Bibliothek stellt eine Empfehlung für Nutzer der IsyFact dar.
 Sie wird intensiv zur Dokumentation der IsyFact verwendet.</p>
 </div>
 <div id="image-dn-bibliothek-isyfact-uebersicht" class="imageblock">
@@ -525,9 +577,28 @@ Sie wird intensiv zur Dokumentation der IsyFact verwendet.</p>
 </div>
 <div class="title">Abbildung 2. diagrams.net IsyFact Bibliothek</div>
 </div>
+<div class="sect3">
+<h4 id="_einbindung_in_diagrams_net"><a class="anchor" href="#_einbindung_in_diagrams_net"></a>1.1.1. Einbindung in diagrams.net</h4>
 <div class="paragraph">
-<p>Über das Menü <span class="menuseq"><b class="menu">Datei</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Bibliothek öffen&#8230;&#8203;</b></span> kann die <a href="../_attachments/IsyFact.drawiolib.xml" class="xref attachment">Bibliothek (Download)</a> eingebunden werden.
-In der Visual Studio Code Extension muss die Bibliothek <a href="#vs-code-extension-bibliothek-konfiguration">wie folgt</a> manuell konfiguriert werden.</p>
+<p>Über das Menü <span class="menuseq"><b class="menu">Datei</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Bibliothek öffen&#8230;&#8203;</b></span> kann die Bibliothek eingebunden werden.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+In der Web-Version wird die Bibliothek am besten über ihre <a href="../_attachments/IsyFact.drawiolib.xml" class="xref attachment">URL</a> eingebunden.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_einbindung_in_visual_studio_code"><a class="anchor" href="#_einbindung_in_visual_studio_code"></a>1.1.2. Einbindung in Visual Studio Code</h4>
+<div class="paragraph">
+<p>In der Visual Studio Code Extension muss die Bibliothek <a href="#vs-code-extension-bibliothek-konfiguration">wie folgt</a> manuell konfiguriert werden.</p>
 </div>
 <div id="vs-code-extension-bibliothek-konfiguration" class="listingblock">
 <div class="title">Listing 1. Visual Studio Code Extension: Konfiguration der Bibliothek</div>
@@ -544,12 +615,31 @@ In der Visual Studio Code Extension muss die Bibliothek <a href="#vs-code-extens
 </div>
 </div>
 </div>
+</div>
 <div class="sect2">
 <h3 id="IsyFact-Konfiguration-einbinden"><a class="anchor" href="#IsyFact-Konfiguration-einbinden"></a>1.2. IsyFact-Konfiguration einbinden</h3>
 <div class="paragraph">
-<p>Mit einer diagrams.net-Konfigurationsdatei können darüber hinaus u.a. Farbpaletten mit vordefinierten Werten belegt oder Standards für Verbinder gesetzt werden.
-Die IsyFact stellt eine beispielhafte Konfiguration bereit.
-Diese enthält u.a. Farbvorgaben in Anlehnung an die Systemspezifikation-, Systementwurf- und Referenzarchitektur-Diagramme der IsyFact.</p>
+<p>Mit einer diagrams.net-Konfigurationsdatei können darüber hinaus u.a. Farbpaletten mit vordefinierten Werten belegt oder Standards für Verbinder gesetzt werden.</p>
+</div>
+<table id="download-konfiguration" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 3. Download-Optionen der Konfiguration</caption>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Konfiguration (diagrams.net)</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><a href="../_attachments/diagrams_net_standalone_configuration.json" class="xref attachment">Download <span class="icon"><i class="fa fa-file-code-o"></i></span></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>Konfiguration (Visual Studio Code)</strong></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><a href="../_attachments/diagrams_net_vs_studio_code_settings.json" class="xref attachment">Download <span class="icon"><i class="fa fa-file-code-o"></i></span></a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Diese enthält u.a. Farbvorgaben in Anlehnung an die Systemspezifikation-, Systementwurf- und Referenzarchitektur-Diagramme der IsyFact.</p>
 </div>
 <div id="image-dn-custom-farbpalette" class="imageblock">
 <div class="content">
@@ -557,9 +647,18 @@ Diese enthält u.a. Farbvorgaben in Anlehnung an die Systemspezifikation-, Syste
 </div>
 <div class="title">Abbildung 3. diagrams.net IsyFact Farbpalette</div>
 </div>
+<div class="sect3">
+<h4 id="_einbindung_in_diagrams_net_2"><a class="anchor" href="#_einbindung_in_diagrams_net_2"></a>1.2.1. Einbindung in diagrams.net</h4>
 <div class="paragraph">
-<p>Über das Menü <span class="menuseq"><b class="menu">Extras</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Configuration&#8230;&#8203;</b></span> kann die <a href="../_attachments/diagrams_net_standalone_configuration.json" class="xref attachment">Konfiguration (Download)</a> eingebunden werden.
-Im Fall der Visual Studio Code Extension wird eine angepasste <a href="../_attachments/diagrams_net_vs_studio_code_settings.json" class="xref attachment">Extension-Konfiguration (Download)</a> benötigt.</p>
+<p>Über das Menü <span class="menuseq"><b class="menu">Extras</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Konfiguration&#8230;&#8203;</b></span> kann die Konfiguration eingebunden werden.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_einbindung_in_visual_studio_code_2"><a class="anchor" href="#_einbindung_in_visual_studio_code_2"></a>1.2.2. Einbindung in Visual Studio Code</h4>
+<div class="paragraph">
+<p>Im Fall der Visual Studio Code Extension wird eine angepasste Extension-Konfiguration benötigt.
+Diese muss manuell in die Konfiguration von Visual Studio Code integriert werden.</p>
+</div>
 </div>
 </div>
 </div>
