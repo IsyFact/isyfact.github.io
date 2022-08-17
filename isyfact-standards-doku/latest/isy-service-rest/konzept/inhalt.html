@@ -606,18 +606,32 @@ Diese http-Aufrufe entsprechen zwar nicht dem Reifegradmodell (Level 2), sind ab
 <div class="paragraph">
 <p>Wird über die Schnittstelle ein Geschäftsvorfall angestoßen, ist der Geschäftsvorfall in der URI zu adressieren:</p>
 </div>
-<div class="paragraph">
-<p>Schema: <code>/{geschaeftsvorfall}/{geschaeftsprozess}</code></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>Beispiel: /auskunft/personaliensuche
-Beispiel: /auskunft/dokumentensuche
-Beispiel: /auskunft/schluesselsuche
-Beispiel: /meldung/erstmeldung
-Beispiel: /meldung/aenderung</pre>
-</div>
-</div>
+<table id="namenskonvention-prozessorientierte-uris" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Namenskonvention prozessorientierter URIs</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Prozessorientierte URIs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/{geschaeftsvorfall}/{geschaeftsprozess}</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiele</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/auskunft/personaliensuche</code></p>
+<p class="tableblock"><code>/auskunft/dokumentensuche</code></p>
+<p class="tableblock"><code>/auskunft/schluesselsuche</code></p>
+<p class="tableblock"><code>/meldung/erstmeldung</code></p>
+<p class="tableblock"><code>/meldung/aenderung</code></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -652,90 +666,107 @@ Repräsentiert die Ressource eine Menge von Objekten, wird der Plural verwendet.
 <div class="paragraph">
 <p>Der hierarchische Aufbau von Ressourcen ist explizit erwünscht:</p>
 </div>
-<div class="paragraph">
-<p>Schema: <code>/{ressource}/{id}/{ressource}/{id}/{...}</code></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>Beispiel: /kunden/12345/bestellungen/123/artikel</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Die Bezeichnung der Ressource beinhaltet ausschließlich Kleinbuchstaben.
-Zwischen Teilen zusammengesetzter Begriffe steht jeweils ein Bindestrich.
-Beinhaltet die Bezeichnung Sonderzeichen, müssen sie gemäß üblicher Transkriptionsregeln ersetzt werden (z. B. "ae" statt "ä").</p>
-</div>
-<div id="listing-ressourcen-uri-beispiele" class="listingblock">
-<div class="title">Listing 1. Beispiele für Ressourcen-URIs</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">1. /nachrichten
-2. /nachrichten/{id}
-3. /eingehende-nachrichten/
-4. /vertraege/</code></pre>
-</div>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Beispiel für eine Menge von Objekten.
-Die Ressource liefert alle Objekte zurück.</p>
-</li>
-<li>
-<p>Beispiel für ein einzelnes Objekt.
+<table id="namenskonvention-ressourcen-uris" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 2. Namenskonvention Ressourcen-URIs</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Ressourcen-URIs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/{ressource}/{id}/{ressource}/{id}/{...}</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Regeln</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die Bezeichnung der Ressource beinhaltet ausschließlich Kleinbuchstaben.</p>
+<p class="tableblock">Zwischen Teilen zusammengesetzter Begriffe steht jeweils ein Bindestrich.</p>
+<p class="tableblock">Beinhaltet die Bezeichnung Sonderzeichen, müssen sie gemäß üblicher Transkriptionsregeln ersetzt werden (z. B. "ae" statt "ä").</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiele</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/kunden/12345/bestellungen/123/artikel</code></p>
+<p class="tableblock"><code>/nachrichten</code></p>
+<p class="tableblock">Beispiel für eine Menge von Objekten.</p>
+<p class="tableblock">Die Ressource liefert alle Objekte zurück.</p>
+<p class="tableblock"><code>/nachrichten/{id}</code></p>
+<p class="tableblock">Beispiel für ein einzelnes Objekt.
 Die Ressource liefert ein eindeutig identifizierbares Objekt zurück.</p>
-</li>
-<li>
-<p>Beispiel für zusammengesetzte Begriffe.</p>
-</li>
-<li>
-<p>Beispiel für die Ersetzung von Sonderzeichen.</p>
-</li>
-</ol>
-</div>
+<p class="tableblock"><code>/eingehende-nachrichten/</code></p>
+<p class="tableblock">Beispiel für zusammengesetzte Begriffe.</p>
+<p class="tableblock"><code>/vertraege/</code></p>
+<p class="tableblock">Beispiel für die Ersetzung von Sonderzeichen.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect3">
 <h4 id="beziehungen-zwischen-ressourcen"><a class="anchor" href="#beziehungen-zwischen-ressourcen"></a>2.1.1. Beziehungen zwischen Ressourcen</h4>
 <div class="paragraph">
 <p>Beziehungen zwischen Ressourcen können entweder über <a href="#hateoas">HATEOAS</a> (vgl.
-Stufe 3 in <a href="#image-richard-maturity-model">Abbildung 1</a>) oder über die URI selber abgebildet werden.
-Folgende URI adressiert beispielsweise den Absender einer bestimmten Nachricht.</p>
+Stufe 3 in <a href="#image-richard-maturity-model">Abbildung 1</a>) oder über die URI selber abgebildet werden.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre>/nachrichten/{id}/absender</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Enthält eine Ressource wiederum mehrere Ressourcen, wird wieder der Plural verwendet.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>/nachrichten/{id_m}/empfaenger/{id_r}</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>wobei:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>{id_m}</code>: id der <strong>m</strong>essage</p>
-</li>
-<li>
-<p><code>{id_r}</code>: id des <strong>r</strong>eceivers</p>
-</li>
-</ul>
-</div>
+<table id="namenskonvention-beziehungen-zwischen-ressourcen" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 3. Namenskonvention Beziehungen zwischen Ressourcen</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Beziehungen zwischen Ressourcen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/{ressourcen A}/{id von einem Ressource A}/{ressource(n) B}/{...}</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Hinweis</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enthält eine Ressource wiederum mehrere Ressourcen, wird wieder der Plural verwendet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiele</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/nachrichten/{id}/absender</code></p>
+<p class="tableblock">adressiert den Absender einer bestimmten Nachricht.</p>
+<p class="tableblock"><code>/nachrichten/{id_n}/empfaenger/{id_e}</code></p>
+<p class="tableblock">adressiert den bestimmten Empfänger (mit der Id <code>id_e</code>) einer bestimmten Nachricht (mit der Id <code>id_n</code>).</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="adressierung-mehrerer-ressourcen"><a class="anchor" href="#adressierung-mehrerer-ressourcen"></a>2.1.2. Adressierung von mehreren Ressourcen</h4>
 <div class="paragraph">
 <p>Der Zugriff auf mehrere Ressourcen aus einer Menge erfolgt über eine kommaseparierte Liste von IDs.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre>/nachrichten/{id1},{id2}</pre>
-</div>
-</div>
+<table id="namenskonvention-addressierung-mehrerer-ressourcen" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 4. Namenskonvention Adressierung von mehreren Ressourcen</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Adressierung von mehreren Ressourcen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/{ressourcen}/{id1},{id2}</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiele</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/nachrichten/{id1},{id2}</code></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="query-parameter"><a class="anchor" href="#query-parameter"></a>2.1.3. Query Parameter</h4>
@@ -799,7 +830,7 @@ Die übrigen HTTP-Methoden werden nicht verwendet.</p>
 Die Ressource wird dabei nicht verändert, wodurch diese Methode idempotent ist.</p>
 </div>
 <div id="listing-get-anfrage-beispiele" class="listingblock">
-<div class="title">Listing 2. Beispiele für GET-Anfrage</div>
+<div class="title">Listing 1. Beispiele für GET-Anfrage</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-none hljs">GET /kunden/1234 HTTP/1.1
 accept: text/html, application/json, application/xhtml+xml, application/xml;q=0.9, */*;
@@ -809,7 +840,7 @@ ACCEPT-ENCODING: gzip, deflate, br</code></pre>
 </div>
 </div>
 <div id="listing-get-antwort-beispiele" class="listingblock">
-<div class="title">Listing 3. Beispiele für GET-Antwort</div>
+<div class="title">Listing 2. Beispiele für GET-Antwort</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-none hljs">HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
@@ -828,7 +859,7 @@ Dadurch, dass die Datensätze mit neuen IDs angelegt werden, wird bei jedem weit
 Des Weiteren muss POST für komplexe Suchen und Suchen mit datenschutzrelevanten Informationen verwendet werden, siehe <a href="#post-suche-filterung">Suche und Filterung mittels POST</a>.</p>
 </div>
 <div id="listing-post-anfrage-beispiele" class="listingblock">
-<div class="title">Listing 4. Beispiele für POST-Anfrage</div>
+<div class="title">Listing 3. Beispiele für POST-Anfrage</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-none hljs">POST /kunden HTTP/1.1
 HOST: xx.yy.zz
@@ -841,7 +872,7 @@ Content-Type: application/json; charset=utf-8
 </div>
 </div>
 <div id="listing-post-antwort-beispiele" class="listingblock">
-<div class="title">Listing 5. Beispiele für POST-Antwort</div>
+<div class="title">Listing 4. Beispiele für POST-Antwort</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-none hljs">HTTP/1.1 201 Created
 Content-Type: application/json; charset=utf-8
@@ -871,7 +902,7 @@ Deshalb ist PUT PATCH beim Aktualisieren vorzuziehen.
 In Abhängigkeit davon, ob eine Ressource geändert oder neu erstellt wurde, wird der entsprechende Response Code (200 OK bzw. 201 Created) zurückgegeben.</p>
 </div>
 <div id="listing-put-anfrage-beispiele" class="listingblock">
-<div class="title">Listing 6. Beispiele für PUT-Anfrage</div>
+<div class="title">Listing 5. Beispiele für PUT-Anfrage</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-none hljs">PUT /kunden/1234 HTTP/1.1
 HOST: xx.yy.zz
@@ -884,7 +915,7 @@ Content-Type: application/json; charset=utf-8
 </div>
 </div>
 <div id="listing-put-antwort-beispiele" class="listingblock">
-<div class="title">Listing 7. Beispiele für PUT-Antwort</div>
+<div class="title">Listing 6. Beispiele für PUT-Antwort</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-none hljs">HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
@@ -903,7 +934,7 @@ Das kann bei Ressourcen mit beispielsweise einem Auto-Increment Feld dazu führe
 Deswegen kann Patch idempotent sein, muss aber nicht.</p>
 </div>
 <div id="listing-patch-anfrage-beispiele" class="listingblock">
-<div class="title">Listing 8. Beispiele für PATCH-Anfrage</div>
+<div class="title">Listing 7. Beispiele für PATCH-Anfrage</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-none hljs">PATCH /kunden/1234 HTTP/1.1
 HOST: xx.yy.zz
@@ -914,7 +945,7 @@ Content-Type: application/json; charset=utf-8
 </div>
 </div>
 <div id="listing-patch-antwort-beispiele" class="listingblock">
-<div class="title">Listing 9. Beispiele für PATCH-Antwort</div>
+<div class="title">Listing 8. Beispiele für PATCH-Antwort</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-none hljs">HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
@@ -1225,7 +1256,7 @@ Eine Übersicht, welche HTTP-Methoden Caching-Fähig sind, findet sich unter <a 
 <p>Nach dem HATEOAS-Paradigma soll eine zurückgelieferte Ressourcen weiterführende URLs (vergleichbar mit HTML-Links) zu verwandten Ressourcen enthalten, anstelle die verwandten Ressourcen mit der angefragten Ressource zusammengeführt zu übermitteln.</p>
 </div>
 <div id="listing-hateoas-beispiel" class="listingblock">
-<div class="title">Listing 10. Beispiel für eine HATEOAS-konforme Resource mit URIs zu weiterer Resource</div>
+<div class="title">Listing 9. Beispiel für eine HATEOAS-konforme Resource mit URIs zu weiterer Resource</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
     "kunde":"Alex Mustermensch",
@@ -1275,7 +1306,7 @@ Werden diese zusätzlichen Daten nach jedem Aufruf der übergeordneten Ressource
 <p>Die IsyFact legt folgende Technologien für die Umsetzung von REST-Schnittstellen (vgl. <a href="#table-frameworks">Tabelle 1</a>) fest.</p>
 </div>
 <table id="table-frameworks" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 1. Frameworks für die Umsetzung</caption>
+<caption class="title">Tabelle 5. Frameworks für die Umsetzung</caption>
 <colgroup>
 <col style="width: 28.5714%;">
 <col style="width: 28.5714%;">
@@ -1505,7 +1536,7 @@ Die Implementierung des RestExceptionsHandler kann daher über die Annotation ei
 <p>Eine Fehlernachricht aus einer REST-Schnittstelle (egal, ob Client oder Server Error) muss mindestens folgende Informationen beinhalten.</p>
 </div>
 <table id="table-error-fields" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 2. Standardfelder für Fehlernachrichten</caption>
+<caption class="title">Tabelle 6. Standardfelder für Fehlernachrichten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1667,7 +1698,7 @@ Für ein technisches Logging soll zusätzlich ein weiterer Interceptor verwendet
 <p>Zusätzlich zu den Anforderungen an die Inhalte einer Log-Nachricht <a href="../../isy-logging/konzept/master.html#einleitung" class="xref page">Konzept Logging</a> Kapitel 4.1.1), sollen folgende Informationen als Marker in der Log-Nachricht enthalten sein:</p>
 </div>
 <table id="table-logging-data" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 3. Standard für zu erfassende Logging-Informationen</caption>
+<caption class="title">Tabelle 7. Standard für zu erfassende Logging-Informationen</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 60%;">
