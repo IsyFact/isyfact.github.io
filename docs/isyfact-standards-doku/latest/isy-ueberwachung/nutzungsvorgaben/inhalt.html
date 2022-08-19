@@ -643,8 +643,8 @@ Die Konfiguration für eine <code>ServiceStatistik</code>-Bean und den dazugehö
 public class UeberwachungConfig {
 
     @Bean
-    public MethodInterceptor verwaltungMonitor(MeterRegistry meterRegistry) {
-        return new ServiceStatistik(meterRegistry, Tags.of("servicestatistik", "verwaltung"));
+    public MethodInterceptor verwaltungMonitor() {
+        return new ServiceStatistik(Tags.of("servicestatistik", "verwaltung"));
     }
 
     @Bean
@@ -819,14 +819,6 @@ Einbindung von passenden Maven-Plugins können diese Informationen automatisch b
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;plugin&gt;
     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
     &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
-        &lt;executions&gt;
-            &lt;execution&gt;
-                &lt;id&gt;build-info&lt;/id&gt;
-                &lt;goals&gt;
-                    &lt;goal&gt;build-info&lt;/goal&gt;
-                &lt;/goals&gt;
-            &lt;/execution&gt;
-        &lt;/executions&gt;
 &lt;/plugin&gt;
 &lt;plugin&gt;
     &lt;groupId&gt;pl.project13.maven&lt;/groupId&gt;
@@ -835,7 +827,55 @@ Einbindung von passenden Maven-Plugins können diese Informationen automatisch b
 </div>
 </div>
 <div class="paragraph">
-<p>Bei Bedarf können weitere statische Informationen von der Anwendung bereitgestellt werden.</p>
+<p>Durch das Einbinden der Plugins (s. <a href="#listing-info-maven-config">Listing 3</a>) werden 2 Dateien mit folgenden Informationen erzeugt:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>build-info.properties</code> mit den Keys:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>build.artifact</code></p>
+</li>
+<li>
+<p><code>build.group</code></p>
+</li>
+<li>
+<p><code>build.name</code></p>
+</li>
+<li>
+<p><code>build.time</code></p>
+</li>
+<li>
+<p><code>build.version</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>git.properties</code> mit den Keys:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>git.branch</code></p>
+</li>
+<li>
+<p><code>git.commit.id.abbrev</code></p>
+</li>
+<li>
+<p><code>git.commit.time</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Die Werte der Keys werden über den Info-Endpoint bereitgestellt.</p>
+</div>
+<div class="paragraph">
+<p>Bei Bedarf können weitere statische Informationen durch zusätzliche Konfiguration von der Anwendung bereitgestellt werden.</p>
 </div>
 <div class="admonitionblock note">
 <table>
