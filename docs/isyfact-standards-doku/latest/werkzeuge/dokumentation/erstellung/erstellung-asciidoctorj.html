@@ -555,13 +555,13 @@ Hierfür muss auf der Kommandozeile auf eine geeignete Stelle der lokalen Festpl
 </div>
 </div>
 <div class="paragraph">
-<p>Bei &lt;Repository&gt; kann es sich um einen einzelnen Baustein handeln oder um ein Repository mit zentraler Dokumentation wie <code>isy-documentation</code> (bis IsyFact 2.4.x) oder <code>isyfact-standards</code> (ab IsyFact 2.5).</p>
+<p>Bei &lt;Repository&gt; kann es sich um einen einzelnen Baustein handeln oder um ein Repository mit zentraler Dokumentation wie z.B. <code>isyfact-standards</code>.</p>
 </div>
 <div class="paragraph">
 <p>In einem Baustein wird die Dokumentation in einem eigenen Maven-Submodul unter dem Pfad <code>src/docs</code> abgelegt.</p>
 </div>
 <div class="paragraph">
-<p><a href="#verzeichnisstruktur-baustein">Verzeichnisse der Bausteindokumentation</a> zeigt die Verzeichnisstruktur für die Dokumentation des fiktiven Bausteins <code>isy-baustein</code> zusammen mit den Asciidoc-Dateien für ein Dokument.</p>
+<p><a href="#verzeichnisstruktur-baustein">Verzeichnisse der Bausteindokumentation</a> zeigt die Verzeichnisstruktur für die Dokumentation des fiktiven Bausteins <code>isy-baustein</code> zusammen mit den AsciiDoc-Dateien für ein Dokument.</p>
 </div>
 <div id="verzeichnisstruktur-baustein" class="listingblock">
 <div class="title">Listing 1. Verzeichnisse der Bausteindokumentation</div>
@@ -572,12 +572,14 @@ Hierfür muss auf der Kommandozeile auf eine geeignete Stelle der lokalen Festpl
         📂 docs
             📂 Konzept <i class="conum" data-value="2"></i><b>(2)</b>
                 📄 anhaenge.adoc  <i class="conum" data-value="3"></i><b>(3)</b>
+                📄 docinfo.adoc
                 📄 inhalt.adoc    <i class="conum" data-value="4"></i><b>(4)</b>
                 📄 master.adoc    <i class="conum" data-value="5"></i><b>(5)</b>
                 📄 thisdoc.adoc   <i class="conum" data-value="6"></i><b>(6)</b>
                 📂 images <i class="conum" data-value="7"></i><b>(7)</b>
             📂 Nutzungsvorgaben <i class="conum" data-value="2"></i><b>(2)</b>
                 📄 anhaenge.adoc
+                📄 docinfo.adoc
                 📄 inhalt.adoc
                 📄 master.adoc
                 📄 thisdoc.adoc
@@ -596,20 +598,19 @@ Hierfür muss auf der Kommandozeile auf eine geeignete Stelle der lokalen Festpl
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Auflistung der Anhänge des IsyFact-Dokuments.</td>
+<td>Auflistung der Anhänge des Dokuments.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>Inhalte des IsyFact-Dokuments.</td>
+<td>Inhalte des Dokuments.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>Zentrale Datei, die alle anderen Dateien über spezielle Verweise (<code>include</code>) einbindet.
-Eine vollständige Vorschau des IsyFact-Dokuments wird angezeigt, wenn die Datei <code>master.adoc</code> im Editor geöffnet und die Vorschaufunktion verwendet wird.</td>
+<td>Zentrale Datei, die alle anderen Dateien über spezielle Verweise (<code>include</code>) einbindet.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>Einleitendes Kapitel des IsyFact-Dokuments, das den Inhalt zusammenfasst sowie den Aufbau und Zweck des Dokuments erläutert.</td>
+<td>Einleitendes Kapitel des Dokuments, das den Inhalt zusammenfasst sowie den Aufbau und Zweck des Dokuments erläutert.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="7"></i><b>7</b></td>
@@ -617,82 +618,96 @@ Eine vollständige Vorschau des IsyFact-Dokuments wird angezeigt, wenn die Datei
 </tr>
 </table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Eine vollständige Vorschau des Dokuments wird angezeigt, wenn die Datei <code>master.adoc</code> im Editor geöffnet und die Vorschaufunktion verwendet wird.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="dateien-bearbeiten"><a class="anchor" href="#dateien-bearbeiten"></a>2. Dateien bearbeiten</h2>
+<h2 id="dokument-struktur"><a class="anchor" href="#dokument-struktur"></a>2. Struktur eines Dokuments</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Dieser Abschnitt beschreibt, welche Attribute und Inhalte in den Dateien angepasst werden können.</p>
+<p>Wie bereits <a href="#verzeichnisstruktur-baustein">im vorigen Abschnitt</a> beschrieben, besteht ein Dokument aus mehreren Dateien.
+Die folgenden Abschnitte beschreiben diese Dateien, stellen Vorlagen bereit und erklären Einstellungsmöglichkeiten in Form von Attributen.</p>
 </div>
 <div class="sect2">
-<h3 id="master.adoc-bearbeiten"><a class="anchor" href="#master.adoc-bearbeiten"></a>2.1. <code>master.adoc</code> bearbeiten</h3>
+<h3 id="master.adoc"><a class="anchor" href="#master.adoc"></a>2.1. <code>master.adoc</code></h3>
 <div class="paragraph">
-<p>Zunächst werden die Attribute <code>doctitle</code> und <code>document-type</code> gesetzt, aus denen ein einheitlicher Titel erzeugt wird, vgl. <a href="#listing-master">master.adoc</a>.</p>
-</div>
-<div class="paragraph">
-<p>Dann wird die Vertraulichkeits-Einstufung <code>vs-einstufung</code> angegeben.
-Dadurch wird ggf. ein Vertraulichkeitshinweis in das Dokument eingefügt und ggf. das Layout angepasst.
-Die möglichen Werte für <code>vs-einstufung</code> finden sich in <a href="#table-master-attributes">Attribute der master.adoc</a>.
-Die <code>vs-einstufung</code> kann auch <a href="../generierung/generierung-asciidoctorj.html#listing-pom-asciidoc" class="xref page">im Maven-POM</a> als globales Attribut für alle zu generierenden Dokumente angegeben werden.</p>
-</div>
-<div class="paragraph">
-<p>Daraufhin wird der Kolophon eingebunden.
-Dadurch wird ein einheitlicher Abschnitt mit Metadaten des Dokuments und Lizenzbestimmungen erzeugt.
-Dabei können noch die optionalen Attribute <code>factory</code> und <code>open-source</code> angegeben werden.
-Sie sind in <a href="#table-master-attributes">Attribute der master.adoc</a> näher beschrieben.</p>
+<p>Die Datei <code>master.adoc</code> fasst alle anderen Dateien zu einem Dokument zusammen.
+Die <a href="#listing-master">folgende Vorlage</a> zeigt den Aufbau der Datei.</p>
 </div>
 <div id="listing-master" class="listingblock">
-<div class="title">Listing 2. master.adoc</div>
+<div class="title">Listing 2. Vorlage für <code>master.adoc</code></div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">:doctitle: Super tolles Feature
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">:doctitle: Neuer Baustein
 :document-type: Konzept
 :vs-einstufung: offen
 
-colophon::[factory="IsyFact-Erweiterungen", open-source="false"]
-
-// Wird normalerweise vom Maven-Plugin gesetzt
 // :revnumber: 1.0.5
 // :revdate: 2020-01-01
 
+colophon::[factory="IsyFact-Erweiterungen", open-source="false"]
+
+include::docinfo.adoc[]
+
 include::thisdoc.adoc[tags=inhalt]
 
-include::inhalt.adoc[tags=inhalt]</code></pre>
+include::inhalt.adoc[tags=inhalt]
+
+:sectnums!:
+
+include::anhaenge.adoc[tags=inhalt]</code></pre>
 </div>
 </div>
-<div class="admonitionblock note">
+<div class="paragraph">
+<p>Am Anfang der Datei werden die Attribute <code>doctitle</code> und <code>document-type</code> gesetzt, aus denen ein einheitlicher Titel erzeugt wird.</p>
+</div>
+<div class="paragraph">
+<p>Dann wird die Vertraulichkeitseinstufung <code>vs-einstufung</code> angegeben.
+Dadurch wird ggf. ein Vertraulichkeitshinweis in das Dokument eingefügt und ggf. das Layout angepasst.
+Die möglichen Werte für <code>vs-einstufung</code> finden sich in <a href="#table-master-attributes">Übersicht der Attribute</a>.</p>
+</div>
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Hinweis"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="paragraph">
-<p>Die manuelle Vergabe von Revisionsnummer und -datum betrifft nur Dokumente, die nicht mithilfe des Maven-Plugins erzeugt werden.
-Ansonsten werden diese Attribute <a href="../generierung/generierung-asciidoctorj.html#listing-pom-asciidoc" class="xref page">über das Maven-Plugin</a> bereitgestellt.</p>
-</div>
+Die <code>vs-einstufung</code> kann auch <a href="../generierung/generierung-asciidoctorj.html#listing-pom-asciidoc" class="xref page">im Maven-POM</a> als globales Attribut für alle zu generierenden Dokumente angegeben werden.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p><a href="#table-master-attributes">Attribute der master.adoc</a> zeigt alle Attribute, die in der <code>master.adoc</code> Datei angepasst werden können.</p>
+<p>Die manuelle Vergabe von Revisionsnummer und -datum betrifft nur Dokumente, die nicht mithilfe des Maven-Plugins erzeugt werden.
+Ansonsten werden diese Attribute <a href="../generierung/generierung-asciidoctorj.html#listing-pom-asciidoc" class="xref page">über das Maven-Plugin</a> bereitgestellt.</p>
+</div>
+<div class="paragraph">
+<p><a href="#table-master-attributes">Die folgende Tabelle</a> zeigt alle Attribute, die in der <code>master.adoc</code> gesetzt werden können.</p>
 </div>
 <table id="table-master-attributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 1. Attribute der master.adoc</caption>
+<caption class="title">Tabelle 1. Attribute der <code>master.adoc</code></caption>
 <colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 14.2858%;">
+<col style="width: 25%;">
+<col style="width: 8.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Attribut</th>
 <th class="tableblock halign-left valign-top">Optional</th>
-<th class="tableblock halign-left valign-top">Default</th>
 <th class="tableblock halign-left valign-top">Beschreibung</th>
 <th class="tableblock halign-left valign-top">Werte</th>
 </tr>
@@ -701,22 +716,19 @@ Ansonsten werden diese Attribute <a href="../generierung/generierung-asciidoctor
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>doctitle</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nein</p></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Titel des Dokuments</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>document-type</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja</p></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dokumententyp (z.B. Konzept), welcher als Untertitel angezeigt wird</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>vs-einstufung</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nein</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Vertraulichkeits-Einstufung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vertraulichkeitseinstufung</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
@@ -744,14 +756,45 @@ Ansonsten werden diese Attribute <a href="../generierung/generierung-asciidoctor
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>colophon</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>revdate</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nein</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">colophon::[]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Metadaten des Dokuments und Lizenzbestimmungen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Release Datum des Bausteins oder Dokuments</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>factory</code> als Attribut zu <code>colophon</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>revnumber</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nein</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Versionsnummer des Bausteins oder Dokuments</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Nach den Attributen wird der Kolophon eingebunden.
+Dadurch wird ein einheitlicher Abschnitt mit Metadaten des Dokuments und Lizenzbestimmungen erzeugt.
+Dabei können noch die optionalen <a href="#kolophon-attributes">Parameter</a> <code>factory</code> und <code>open-source</code> angegeben werden.</p>
+</div>
+<table id="kolophon-attributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 2. Parameter des Kolophons</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 33.3333%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Optional</th>
+<th class="tableblock halign-left valign-top">Default</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
+<th class="tableblock halign-left valign-top">Werte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>factory</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IsyFact-Standards</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definiert, ob das Dokument zu den IsyFact-Standards oder IsyFact-Erweiterungen gehört. Wählt das passende Logo und Deckblatt für die Factory.</p></td>
@@ -770,81 +813,119 @@ Ansonsten werden diese Attribute <a href="../generierung/generierung-asciidoctor
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>open-source</code> als Attribut zu <code>colophon</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>open-source</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Beschreibt, ob das Dokument unter der Open Source (true) oder Closed Source (false) Lizenz der IsyFact veröffentlicht wird.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>revdate</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nein</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Release Datum des Bausteins oder Dokuments</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>revnumber</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nein</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Versionsnummer des Bausteins oder Dokuments</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Beschreibt, ob das Dokument unter der Open Source (<code>true</code>) oder Closed Source (<code>false</code>) Lizenz der IsyFact veröffentlicht wird.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Zuletzt werden die übrigen Asciidoc Dateien in <code>master.adoc</code> inkludiert.
+<p>Nach dem Kolophon werden die übrigen AsciiDoc-Dateien in <code>master.adoc</code> inkludiert.
 Leere Dateien können ausgelassen werden.
-Inkludiert wird der Inhaltsbereich innerhalb der Dateien, der mit</p>
-</div>
-<div class="paragraph">
-<p><code>// tag::inhalt[]</code></p>
-</div>
-<div class="paragraph">
-<p>Dateiinhalt</p>
-</div>
-<div class="paragraph">
-<p><code>// end::inhalt[]</code></p>
-</div>
-<div class="paragraph">
-<p>getaggt ist.</p>
+Inkludiert wird der Inhaltsbereich innerhalb der Dateien, der mit entsprechenden Tags gekennzeichnet ist.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="docinfo.adoc-bearbeiten"><a class="anchor" href="#docinfo.adoc-bearbeiten"></a>2.2. <code>docinfo.adoc</code> bearbeiten</h3>
+<h3 id="docinfo.adoc"><a class="anchor" href="#docinfo.adoc"></a>2.2. <code>docinfo.adoc</code></h3>
 <div class="paragraph">
-<p>Bezieht sich das zu erstellende Dokument auf einen Baustein (Bibliothek) der IsyFact, so ist dieser Baustein inklusive der Version in einer eigenen Datei docinfo.adoc anzugeben und in <code>master.adoc</code> zu inkludieren.
-In <a href="#listing-master-bib">docinfo.adoc - Angabe des zugehörigen Bausteins</a> wird beispielsweise auf den Baustein <code>isy-web</code> verwiesen.</p>
+<p>Dokumente können sich direkt auf Bibliotheken oder IT-Systeme beziehen.
+Ist dies der Fall, so werden diese Bibliotheken oder IT-Systeme in einer Datei <code>docinfo.adoc</code> angegeben.
+Neben dem technischen Namen muss auch die Version angegeben werden, auf die sich das Dokument bezieht.
+Die <code>docinfo.adoc</code> Datei wird dann in <code>master.adoc</code> direkt nach dem Kolophon eingebunden.</p>
 </div>
-<div id="listing-master-bib" class="listingblock">
-<div class="title">Listing 3. docinfo.adoc - Angabe des zugehörigen Bausteins</div>
+<div class="paragraph">
+<p>Die <a href="#template-docinfo">folgende Vorlage</a> zeigt den Aufbau der Datei.</p>
+</div>
+<div id="template-docinfo" class="listingblock">
+<div class="title">Listing 3. Vorlage für <code>docinfo.adoc</code></div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">// Einbindung Bibliotheken, wenn nicht genutzt, entfernen
-*Java Bibliothek / IT-System*
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">*Java Bibliothek / IT-System*
 
-[cols="5,2,3",options="header"]
+[cols="5m,2,3",options="header"]
 |====
 |Name |Art |Version
-|isy-web |Bibliothek |v{version-ifs}
+|&lt;Technischer Name&gt; |Bibliothek | &lt;Version&gt;
+|&lt;Technischer Name&gt; |IT-System  | &lt;Version&gt;
 |====</code></pre>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="thisdoc.adoc"><a class="anchor" href="#thisdoc.adoc"></a>2.3. <code>thisdoc.adoc</code></h3>
 <div class="paragraph">
-<p>In der Vorschau sollten die Änderungen unmittelbar erscheinen. Ihre Änderungen speichern Sie über kbd:[Strg + S].</p>
+<p>Die Datei <code>thisdoc.adoc</code> bietet eine Einleitung in das Dokument und erläutert den Aufbau und Zweck des Dokuments.
+Die <a href="#template-thisdoc">folgende Vorlage</a> zeigt den Aufbau der Datei.</p>
+</div>
+<div id="template-thisdoc" class="listingblock">
+<div class="title">Listing 4. Vorlage für <code>thisdoc.adoc</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">= Konzept: Neuer Baustein - Einleitung
+:imagesdir: images
+
+// tag::inhalt[]
+
+== Einleitung
+// Einordnung des Dokuments
+
+=== Aufbau und Zweck des Dokuments
+// Informationen zur Zielgruppe des Dokuments
+// Kurze Zusammenfassung des Aufbaus
+// Auflistung der Kapitel und ihrer Kerninhalte
+
+// end::inhalt[]</code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="thisdoc.adoc-bearbeiten"><a class="anchor" href="#thisdoc.adoc-bearbeiten"></a>2.3. <code>thisdoc.adoc</code> bearbeiten</h3>
-<div class="paragraph">
-<p>Die Datei <code>thisdoc.adoc</code> ist optional auszufüllen und sollte eine Einleitung in das Dokument bieten und den Aufbau und Zweck des Dokuments erläutern.
-Diese Datei ist in der <code>master.adoc</code> integriert und wird beim Generieren in das vollständige Dokument eingefügt.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="inhalt.adoc-bearbeiten"><a class="anchor" href="#inhalt.adoc-bearbeiten"></a>2.4. <code>inhalt.adoc</code> bearbeiten</h3>
+<h3 id="inhalt.adoc"><a class="anchor" href="#inhalt.adoc"></a>2.4. <code>inhalt.adoc</code></h3>
 <div class="paragraph">
 <p>In <code>inhalt.adoc</code> wird der eigentliche Inhalt des Dokuments verfasst.
-Diese Datei wird in der <code>master.adoc</code> nach der Datei <code>thisdoc.adoc</code> inkludiert.</p>
+Die <a href="#template-inhalt">folgende Vorlage</a> zeigt den Aufbau der Datei.</p>
+</div>
+<div id="template-inhalt" class="listingblock">
+<div class="title">Listing 5. Vorlage für <code>inhalt.adoc</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">= Konzept: Neuer Baustein - Inhalt
+:imagesdir: images
+
+// tag::inhalt[]
+
+// Eigentlicher Inhalt des Dokuments
+
+== Erstes Thema
+...
+
+== Zweites Thema
+...
+
+// end::inhalt[]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="anhaenge.adoc"><a class="anchor" href="#anhaenge.adoc"></a>2.5. <code>anhaenge.adoc</code></h3>
+<div class="paragraph">
+<p>In <code>anhaenge.adoc</code> sind Anhänge zum Dokument platziert.
+Die <a href="#template-anhaenge">folgende Vorlage</a> zeigt den Aufbau der Datei.</p>
+</div>
+<div id="template-anhaenge" class="listingblock">
+<div class="title">Listing 6. Vorlage für <code>anhaenge.adoc</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">= Konzept: Neuer Baustein - Anhänge
+:imagesdir: images
+
+// tag::inhalt[]
+
+== Anhang A: Titel
+// Inhalt des Anhangs
+
+== Anhang B: Titel
+// Inhalt des Anhangs
+
+// end::inhalt[]</code></pre>
+</div>
 </div>
 </div>
 </div>
