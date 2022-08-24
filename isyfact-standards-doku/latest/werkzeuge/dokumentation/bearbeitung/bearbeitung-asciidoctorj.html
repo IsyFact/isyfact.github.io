@@ -490,7 +490,7 @@ Die Nutzung ist unter den <a href="../../../../../glossary/latest/literaturexter
 </div>
 </div>
 <div class="paragraph">
-<p>Dieses Kapitel beschreibt die inhaltliche Bearbeitung und die dabei zu verwendenden Konventionen der IsyFact für die in <a href="#verzeichnisstruktur-baustein">[verzeichnisstruktur-baustein]</a> beschriebenen Dateien.
+<p>Dieses Kapitel beschreibt die inhaltliche Bearbeitung und die dabei zu verwendenden Konventionen für die in <a href="../erstellung/erstellung-asciidoctorj.html#dokument-struktur" class="xref page">Struktur eines Dokuments</a> beschriebenen Dateien.
 Es handelt sich dabei vorrangig um die Datei <code>inhalt.adoc</code>.</p>
 </div>
 <div class="paragraph">
@@ -1210,19 +1210,24 @@ public class HalloWelt {
 <div class="sectionbody">
 <div class="paragraph">
 <p>Am Ende eines Dokuments wird automatisch ein Literaturverzeichnis erstellt.
-Voraussetzung für die Aufnahme eines Eintrags in das lokale Literaturverzeichnis ist die Referenzierung des entsprechenden Dokuments und das Vorhandensein der referenzierten Id in der Literaturverzeichnis-Konfigurationsdatei in <a href="#isy-asciidoctorj-extensions">[isy-asciidoctorj-extensions]</a>.</p>
+Voraussetzung für die Aufnahme eines Eintrags in das lokale Literaturverzeichnis ist die Referenzierung des entsprechenden Dokuments und das Vorhandensein der referenzierten ID in der Literaturverzeichnis-Konfigurationsdatei der <a href="../generierung/generierung-asciidoctorj.html#isy-asciidoctorj-extensions" class="xref page">AsciidoctorJ-Extensions</a>.</p>
 </div>
 <div class="paragraph">
-<p>Eine Referenz auf einen Literatureintrag erfolgt über doppelte spitze Klammerpaare, wobei der erste Eintrag die Id in der Literaturverzeichnis-Konfigurationsdatei in isy-asciidoctorj-extensions ist.</p>
+<p>Eine Referenz auf einen Literatureintrag erfolgt über doppelte spitze Klammerpaare, wobei der erste Eintrag die ID in der Literaturverzeichnis-Konfigurationsdatei ist.</p>
 </div>
 <div class="paragraph">
-<p>Ein Beispiel für referenzierte Literatur: &lt;&lt;AsciiDocRecommendedPractices, AsciiDoc Recommended Practices&gt;&gt;.</p>
+<p>Ein Beispiel für referenzierte Literatur:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>&lt;&lt;AsciiDocRecommendedPractices, AsciiDoc Recommended Practices&gt;&gt;</pre>
+</div>
 </div>
 <div class="paragraph">
 <p>Das Ergebnis sieht so aus:</p>
 </div>
 <div class="paragraph">
-<p>Ein Beispiel für referenzierte Literatur: <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-asciidoc-recommended-practices" class="xref page">AsciiDoc Recommended Practices</a></p>
+<p><a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-asciidoc-recommended-practices" class="xref page">AsciiDoc Recommended Practices</a></p>
 </div>
 </div>
 </div>
@@ -1231,7 +1236,7 @@ Voraussetzung für die Aufnahme eines Eintrags in das lokale Literaturverzeichni
 <div class="sectionbody">
 <div class="paragraph">
 <p>Am Ende eines Dokuments wird automatisch ein Glossar erstellt.
-Voraussetzung für die Aufnahme eines Eintrags in das lokale Glossar ist die Referenzierung des entsprechenden Eintrags und das Vorhandensein des Eintrags mit der referenzierten Id im zentralen Glossar in <a href="#isy-asciidoctorj-extensions">[isy-asciidoctorj-extensions]</a>.</p>
+Voraussetzung für die Aufnahme eines Eintrags in das lokale Glossar ist die Referenzierung des entsprechenden Eintrags und das Vorhandensein des Eintrags mit der referenzierten Id im zentralen Glossar der <a href="../generierung/generierung-asciidoctorj.html#isy-asciidoctorj-extensions" class="xref page">AsciidoctorJ-Extensions</a>.</p>
 </div>
 <div class="paragraph">
 <p>Eine Referenz auf einen Begriff des Glossars erfolgt über doppelte spitze Klammerpaare, wobei der erste Eintrag die Id im zentralen Glossar in isy-asciidoctorj-extensions ist.
