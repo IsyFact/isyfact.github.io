@@ -678,7 +678,7 @@ Diese Verweise nutzen die Syntax des Xref-Makros von Antora.</p>
 <div id="listing-xref" class="listingblock">
 <div class="title">Listing 5. Verweis Antora</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">xref:version@component:module:file.adoc#sprungziel[verweistext]</code></pre>
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">xref:version@component:module:file.adoc#sprungziel[Text des Verweises]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1365,38 +1365,26 @@ image::unterordner/beispiel.dn.svg[width="400"]</code></pre>
 <h2 id="listings"><a class="anchor" href="#listings"></a>8. Listings</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Quelltexte können bei AsciiDoc auf folgende Weise mit Syntax-Highlighting angezeigt werden.</p>
+<p>Listings müssen folgende Informationen enthalten:</p>
 </div>
-<div id="listing-quelltext1" class="listingblock">
-<div class="title">Listing 16. Quelltext einfügen</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[source,java]
-----
-public class HalloWelt {
-   public static void main(String[] args) {
-       System.out.println("Hallo Welt");
-   }
-}
-----</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Die Ausgabe sieht wie folgt aus:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class HalloWelt {
-    public static void main(String[] args) {
-        System.out.println("Hallo Welt");
-    }
-}</code></pre>
-</div>
+<div class="ulist">
+<ul>
+<li>
+<p>eine Beschreibung,</p>
+</li>
+<li>
+<p>einen für die Seite eindeutigen Anker,</p>
+</li>
+<li>
+<p>(sofern möglich) Angaben zum Syntax Highlighting.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Auch hier wird noch eine Listing-Überschrift und ein Anchor benötigt:</p>
+<p>Das <a href="#listing-quelltext">Beispiel-Listing</a> zeigt ein vollständiges Beispiel.</p>
 </div>
-<div id="listing-quelltext2" class="listingblock">
-<div class="title">Listing 17. Quelltext einfügen in IsyFact Dokumentation</div>
+<div id="listing-quelltext" class="listingblock">
+<div class="title">Listing 16. Beispiel-Listing</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">[[listing-hallowelt]]
 .HalloWelt.java
@@ -1411,15 +1399,47 @@ public class HalloWelt {
 </div>
 </div>
 <div class="paragraph">
-<p>Das Listing kann im AsciiDoc-Text über seinen Anchor referenziert werden:</p>
+<p>Die Ausgabe sieht wie folgt aus:</p>
 </div>
-<div class="literalblock">
+<div id="listing-hallowelt" class="listingblock">
+<div class="title">Listing 17. HalloWelt.java</div>
 <div class="content">
-<pre>&lt;&lt;listing-hallowelt&gt;&gt;</pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class HalloWelt {
+    public static void main(String[] args) {
+        System.out.println("Hallo Welt");
+    }
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Beispiele für Listings finden sich außerdem in <a href="../../seitenvorlage.html#formatierung-listings" class="xref page">Seitenvorlage Listings</a>.</p>
+<p>Listings nutzen Syntax Highlighting, um ihren Inhalt farblich hervorzuheben.
+Als Produkt wird hierzu <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-highlight-js" class="xref page">highlight.js</a> genutzt.
+Ist für den Inhalt des Listings Syntax Highlighting verfügbar, muss es genutzt werden.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+Die <a href="../../../../../glossary/latest/literaturextern/inhalt.html#litextern-highlight-js-uebersicht" class="xref page">Übersicht aller unterstützten Inhalte</a> zeigt, für welche Inhalte Syntax Highlighting verfügbar ist.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Verweise auf Listings nutzen, wie üblich, den Anker.</p>
+</div>
+<div id="listing-referenz" class="listingblock">
+<div class="title">Listing 18. Verweise auf Listings</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">// Verweis innerhalb einer Seite
+&lt;&lt;listing-hallowelt&gt;&gt;
+
+// Verweis zwischen Seiten
+xref:version@component:module:file.adoc#listing-hallowelt[Text des Verweises]</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -1480,7 +1500,7 @@ Der Text innerhalb der eckigen Klammern definiert den Linktext.</p>
 <p>Ein Beispiel:<br></p>
 </div>
 <div id="listing-glossar-verweis-2" class="listingblock">
-<div class="title">Listing 18. Verweis auf Glossareintrag</div>
+<div class="title">Listing 19. Verweis auf Glossareintrag</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">xref:glossary:glossary:master.adoc#glossar-isyfact[IsyFact]</code></pre>
 </div>
