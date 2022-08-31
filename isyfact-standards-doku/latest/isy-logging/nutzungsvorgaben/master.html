@@ -1794,19 +1794,21 @@ Dies geschieht nach folgendem Schema:</p>
 <div class="listingblock">
 <div class="title">Listing 3. logback.xml</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;root&gt;
-  &lt;appender-ref ref="KONSOLE" /&gt;
-&lt;/root&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;configuration&gt;
+    &lt;root&gt;
+      &lt;appender-ref ref="KONSOLE" /&gt;
+    &lt;/root&gt;
 
-&lt;logger name="de.bund.bva.isyfact" additivity="false"&gt;
-  &lt;appender-ref ref="KONSOLE"/&gt;
-&lt;/logger</code></pre>
+    &lt;logger name="de.bund.bva.isyfact" additivity="false"&gt;
+      &lt;appender-ref ref="KONSOLE"/&gt;
+    &lt;/logger&gt;
+&lt;/configuration&gt;</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Listing 4. application.properties</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">logging.level.root=INFO
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">logging.level.root=INFO
 logging.level.de.bund.bva.isyfact=DEBUG</code></pre>
 </div>
 </div>
@@ -1993,7 +1995,7 @@ Dabei gilt:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">isy.logging.boundary.converterIncludes=x.y.z, u.v.w
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.logging.boundary.converterIncludes=x.y.z, u.v.w
 isy.logging.boundary.converterExcludes=a.b.c</code></pre>
 </div>
 </div>
@@ -2005,7 +2007,7 @@ isy.logging.boundary.converterExcludes=a.b.c</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">isy.logging.anwendung.typ=&lt;SYSTEMART&gt;
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.logging.anwendung.typ=&lt;SYSTEMART&gt;
 isy.logging.anwendung.name=&lt;SYSTEMNAME&gt;
 isy.logging.anwendung.version=&lt;SYSTEMVERSION&gt;</code></pre>
 </div>

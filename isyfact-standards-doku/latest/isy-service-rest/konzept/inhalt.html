@@ -832,7 +832,7 @@ Die Ressource wird dabei nicht verändert, wodurch diese Methode idempotent ist.
 <div id="listing-get-anfrage-beispiele" class="listingblock">
 <div class="title">Listing 1. Beispiele für GET-Anfrage</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">GET /kunden/1234 HTTP/1.1
+<pre class="highlightjs highlight"><code class="language-http hljs" data-lang="http">GET /kunden/1234 HTTP/1.1
 accept: text/html, application/json, application/xhtml+xml, application/xml;q=0.9, */*;
 charset=utf-8
 HOST: xx.yy.zz
@@ -842,7 +842,7 @@ ACCEPT-ENCODING: gzip, deflate, br</code></pre>
 <div id="listing-get-antwort-beispiele" class="listingblock">
 <div class="title">Listing 2. Beispiele für GET-Antwort</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 {
     "id":1234,
@@ -861,7 +861,7 @@ Des Weiteren muss POST für komplexe Suchen und Suchen mit datenschutzrelevanten
 <div id="listing-post-anfrage-beispiele" class="listingblock">
 <div class="title">Listing 3. Beispiele für POST-Anfrage</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">POST /kunden HTTP/1.1
+<pre class="highlightjs highlight"><code class="language-http hljs" data-lang="http">POST /kunden HTTP/1.1
 HOST: xx.yy.zz
 Content-Type: application/json; charset=utf-8
 {
@@ -874,7 +874,7 @@ Content-Type: application/json; charset=utf-8
 <div id="listing-post-antwort-beispiele" class="listingblock">
 <div class="title">Listing 4. Beispiele für POST-Antwort</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">HTTP/1.1 201 Created
+<pre class="highlightjs highlight"><code class="language-http hljs" data-lang="http">HTTP/1.1 201 Created
 Content-Type: application/json; charset=utf-8
 {
     "id":1234,
@@ -904,7 +904,7 @@ In Abhängigkeit davon, ob eine Ressource geändert oder neu erstellt wurde, wir
 <div id="listing-put-anfrage-beispiele" class="listingblock">
 <div class="title">Listing 5. Beispiele für PUT-Anfrage</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">PUT /kunden/1234 HTTP/1.1
+<pre class="highlightjs highlight"><code class="language-http hljs" data-lang="http">PUT /kunden/1234 HTTP/1.1
 HOST: xx.yy.zz
 Content-Type: application/json; charset=utf-8
 {
@@ -917,7 +917,7 @@ Content-Type: application/json; charset=utf-8
 <div id="listing-put-antwort-beispiele" class="listingblock">
 <div class="title">Listing 6. Beispiele für PUT-Antwort</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 {
     "id":1234,
@@ -936,7 +936,7 @@ Deswegen kann Patch idempotent sein, muss aber nicht.</p>
 <div id="listing-patch-anfrage-beispiele" class="listingblock">
 <div class="title">Listing 7. Beispiele für PATCH-Anfrage</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">PATCH /kunden/1234 HTTP/1.1
+<pre class="highlightjs highlight"><code class="language-http hljs" data-lang="http">PATCH /kunden/1234 HTTP/1.1
 HOST: xx.yy.zz
 Content-Type: application/json; charset=utf-8
 {
@@ -947,7 +947,7 @@ Content-Type: application/json; charset=utf-8
 <div id="listing-patch-antwort-beispiele" class="listingblock">
 <div class="title">Listing 8. Beispiele für PATCH-Antwort</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 {
     "id":1234,

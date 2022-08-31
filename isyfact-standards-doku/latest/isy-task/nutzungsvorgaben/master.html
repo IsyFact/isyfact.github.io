@@ -736,7 +736,7 @@ public class UpdateKonfigurationTaskConfiguration {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">isy.task.tasks.konfigurationUpdateTask.ausfuehrung=FIXED_DELAY
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.tasks.konfigurationUpdateTask.ausfuehrung=FIXED_DELAY
 isy.task.tasks.konfigurationUpdateTask.initial-delay=5s
 isy.task.tasks.konfigurationUpdateTask.fixed-delay=60s</code></pre>
 </div>
@@ -809,7 +809,7 @@ taskScheduler.start();</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">isy.task.default.amount_of_threads</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.default.amount_of_threads</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -817,7 +817,7 @@ taskScheduler.start();</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">isy.task.default.date_time_pattern</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.default.date_time_pattern</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -825,7 +825,7 @@ taskScheduler.start();</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">isy.task.watchdog.restart_interval</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.watchdog.restart_interval</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -833,7 +833,7 @@ taskScheduler.start();</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">isy.task.default.benutzer</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.default.benutzer</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -841,7 +841,7 @@ taskScheduler.start();</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">isy.task.default.passwort</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.default.passwort</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -849,7 +849,7 @@ taskScheduler.start();</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">isy.task.default.bhkz</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.default.bhkz</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -857,7 +857,7 @@ taskScheduler.start();</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">isy.task.default.host</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.default.host</code></pre>
 </div>
 </div>
 </div>
@@ -868,7 +868,7 @@ taskScheduler.start();</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">isy.task.tasks.&lt;Task&gt;.benutzer</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.tasks.&lt;Task&gt;.benutzer</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -876,7 +876,7 @@ taskScheduler.start();</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">isy.task.tasks.&lt;Task&gt;.passwort</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.tasks.&lt;Task&gt;.passwort</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -884,17 +884,17 @@ taskScheduler.start();</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">isy.task.tasks.&lt;Task&gt;.bhkz</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.tasks.&lt;Task&gt;.bhkz</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Der Name des Hosts auf dem der Task ausgeführt werden soll.
-Der Name kann als Regulärer Ausdruck angegeben werden, es wird dann geprüft, ob der tatsächliche Hostname dem Regulären Ausdruck entspricht.
-Dadurch kann auch eine Liste von Hostnamen angegeben werden, z.B. "host1|host2|host3":</p>
+Der Name kann als regulärer Ausdruck angegeben werden, es wird dann geprüft, ob der tatsächliche Hostname dem regulären Ausdruck entspricht.
+Dadurch kann auch eine Liste von Hostnamen angegeben werden, z.B. <code>host1|host2|host3</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">isy.task.tasks.&lt;Task&gt;.host</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.tasks.&lt;Task&gt;.host</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -902,7 +902,7 @@ Dadurch kann auch eine Liste von Hostnamen angegeben werden, z.B. "host1|host2|h
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">isy.task.tasks.&lt;Task&gt;.ausfuehrung</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.tasks.&lt;Task&gt;.ausfuehrung</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -910,34 +910,34 @@ Dadurch kann auch eine Liste von Hostnamen angegeben werden, z.B. "host1|host2|h
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">isy.task.tasks.&lt;Task&gt;.zeitpunkt</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.tasks.&lt;Task&gt;.zeitpunkt</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Die Dauer, die zwischen dem Start des TaskSchedulers und der einmaligen Ausführung liegt.
-Die Dauer muss die Form eines Zeitraums gemäß dem <a href="../../isy-datetime/konzept/master.html#einleitung" class="xref page">Konzept Datum/Zeit</a> besitzen:</p>
+Die Dauer muss die Form eines Zeitraums gemäß dem <a href="../../isy-datetime/konzept/master.html" class="xref page">Konzept Datum &amp; Zeit</a> besitzen:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">isy.task.tasks.&lt;Task&gt;.initial-delay</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.tasks.&lt;Task&gt;.initial-delay</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Die festgelegte Dauer zwischen zwei Starts einer Ausführung.
-Die Dauer muss die Form eines Zeitraums gemäß dem  <a href="../../isy-datetime/konzept/master.html#einleitung" class="xref page">Konzept Datum/Zeit</a> besitzen:</p>
+Die Dauer muss die Form eines Zeitraums gemäß dem  <a href="../../isy-datetime/konzept/master.html" class="xref page">Konzept Datum &amp; Zeit</a> besitzen:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">isy.task.tasks.&lt;Task&gt;.fixed-rate</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.tasks.&lt;Task&gt;.fixed-rate</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Die festgelegte Dauer zwischen dem Ende einer und dem Start der nächsten Ausführung.
-Die Dauer muss die Form eines Zeitraums gemäß dem  <a href="../../isy-datetime/konzept/master.html#einleitung" class="xref page">Konzept Datum/Zeit</a> besitzen:</p>
+Die Dauer muss die Form eines Zeitraums gemäß dem  <a href="../../isy-datetime/konzept/master.html" class="xref page">Konzept Datum &amp; Zeit</a> besitzen:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">isy.task.tasks.&lt;Task&gt;.fixed-delay</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.tasks.&lt;Task&gt;.fixed-delay</code></pre>
 </div>
 </div>
 </div>
