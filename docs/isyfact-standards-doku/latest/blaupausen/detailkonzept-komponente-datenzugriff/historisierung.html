@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: IsyFact Dokumentation</title>
-    <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/methodik/java-programmierkonventionen/architekturregeln.html">
+    <title>Historisierung :: IsyFact Dokumentation</title>
+    <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/blaupausen/detailkonzept-komponente-datenzugriff/historisierung.html">
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
@@ -82,29 +82,41 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../blaupausen/blaupausen.html">Blaupausen</a>
+    <a class="nav-link" href="../blaupausen.html">Blaupausen</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../blaupausen/referenzarchitektur/master.html">Referenzarchitektur</a>
+    <a class="nav-link" href="../referenzarchitektur/master.html">Referenzarchitektur</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../blaupausen/referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a>
+    <a class="nav-link" href="../referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
+    <a class="nav-link" href="../detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/master.html">Datenzugriff</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="einordnung-ziele.html">Datenzugriff</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="persistenzlogik.html">Konzeption der Persistenzlogik</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="4">
+    <a class="nav-link" href="historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="versionierung.html">Versionierung von Datenbankschemas</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-service/master.html">Service</a>
+    <a class="nav-link" href="../detailkonzept-komponente-service/master.html">Service</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-web-gui/master.html">Web GUI</a>
+    <a class="nav-link" href="../detailkonzept-komponente-web-gui/master.html">Web GUI</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-batch/master.html">Batch</a>
+    <a class="nav-link" href="../detailkonzept-komponente-batch/master.html">Batch</a>
   </li>
 </ul>
   </li>
@@ -151,6 +163,45 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">JPA/Hibernate</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../isy-persistence/konzept.html">Konzept</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/vorgaben-konventionen.html">Vorgaben und Konventionen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung-mit-liquibase.html">Versionierung (Liquibase)</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nutzungsvorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/umsetzung-datenzugriff.html">Umsetzung des Datenzugriffs</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -298,35 +349,35 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../methodik.html">Methodik</a>
+    <a class="nav-link" href="../../methodik/methodik.html">Methodik</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../namenskonventionen/master.html">Namenskonventionen</a>
+    <a class="nav-link" href="../../methodik/namenskonventionen/master.html">Namenskonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../versionierung/master.html">Versionierung</a>
+    <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="master.html">Java-Programmierkonventionen</a>
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../diagrammerstellung/diagramsnet.html">diagrams.net</a>
+    <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
+    <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../vorlagen.html">Vorlagen</a>
+    <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+    <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
   </li>
 </ul>
   </li>
@@ -459,6 +510,13 @@
 <button class="nav-toggle"></button>
   <a href="../../einstieg/vorstellung.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../einstieg/einstieg.html">IsyFact Standards</a></li>
+    <li><a href="../blaupausen.html">Blaupausen</a></li>
+    <li><a href="../referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a></li>
+    <li><a href="einordnung-ziele.html">Datenzugriff</a></li>
+    <li><a href="historisierung.html">Historisierung</a></li>
+  </ul>
 </nav>
 </div>
   <div class="content">
@@ -466,10 +524,123 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<div class="sect1">
-<h2 id="architekturregeln-programmierkonventionen"><a class="anchor" href="#architekturregeln-programmierkonventionen"></a>1. Architekturregeln Java Programmierkonventionen</h2>
+<h1 class="page">Historisierung</h1>
+<div id="preamble">
 <div class="sectionbody">
-
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><span class="image left"><img src="../../../../glossary/latest/licence/_images/IFS-Logo.png" alt="IFS-Logo" width="150"></span> Diese Seite ist ein Teil der IsyFact-Standards.
+Alle Inhalte der Seite, insbesondere Texte und Grafiken, sind urheberrechtlich geschützt.
+Alle urheberrechtlichen Nutzungs- und Verwertungsrechte liegen beim Bundesverwaltungsamt.</p>
+</div>
+<div class="paragraph">
+<p><span class="image right"><img src="../../../../glossary/latest/licence/_images/CC-BY.png" alt="Creative Commons Namensnennung" width="150"></span>
+Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-licence" class="xref page">Lizenzbedingungen</a> der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-short" class="xref page">Creative Commons Namensnennung 4.0 International</a> gestattet.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Unter <strong>Historisierung</strong> (auch <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-temporale-datenhaltung" class="xref page">temporale Datenhaltung</a> genannt) versteht man das Festhalten der zeitlichen Entwicklung von Daten durch Speichern in einer Datenbank.
+Bei den Datensätzen gibt es zwei relevante Aspekte: den Gültigkeitszeitraum eines Datensatzes und den Bearbeitungszeitpunkt eines Datensatzes.</p>
+</div>
+<div class="paragraph">
+<p>Der <strong>Gültigkeitszeitraum</strong> gibt an, wie lange ein Datensatz gültig ist.
+Während der Beginn des Gültigkeitszeitraumes meistens genau bekannt ist, so kann das Ende der Gültigkeit so lange unbekannt sein, bis der Datensatz ungültig wird.</p>
+</div>
+<div class="exampleblock">
+<div class="title">Beispiel 1. Gültigkeitszeitraum</div>
+<div class="content">
+<div class="paragraph">
+<p>Der Preis einer Ware oder Dienstleistung ist so lange gültig, bis er neu festgelegt wird.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Der <strong>Bearbeitungszeitpunkt</strong> definiert den Zeitpunkt, wann eine Entscheidung getroffen wurde und ist in vielen Fällen identisch mit dem Beginn des Gültigkeitszeitraumes.
+Er kann jedoch auch davon abweichen, wenn z. B. für eine Ware eine Preisänderung zu einem bestimmten Datum im Voraus festgelegt wird.</p>
+</div>
+<div class="paragraph">
+<p>Eine Historisierung von Datensätzen wird durchgeführt, wenn Fragen über den Wert eines Datensatzes zu einem vergangenen Zeitpunkt beantwortet werden müssen (z. B. was eine Ware zu einem bestimmten Zeitpunkt in der Vergangenheit kostete), oder wenn der Verlauf eines Wertes über die Zeit beobachtet werden muss (z. B. wann und warum eine Änderung durchgeführt wurde).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_abgrenzungen"><a class="anchor" href="#_abgrenzungen"></a>1. Abgrenzungen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die Historisierung grenzt sich wie folgt von den Themen Archivierung, Datensicherung, Protokollierung und Logging ab.</p>
+</div>
+<div class="sect2">
+<h3 id="abgrenzung-archivierung"><a class="anchor" href="#abgrenzung-archivierung"></a>1.1. Abgrenzung Archivierung</h3>
+<div class="paragraph">
+<p>Bei der Archivierung handelt es sich um die Aufbewahrung eines Datensatzes über eine längere Zeit hinweg.
+Dies ist meist aus rechtlichen Gründen notwendig z. B. wegen gesetzlicher Aufbewahrungsfristen.
+Bei der Archivierung sind dementsprechend Randbedingungen wie Integrität, Unveränderlichkeit und Vertraulichkeit einzuhalten (s. <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-it-grundschutz-bsi" class="xref page">IT-Grundschutz BSI</a>).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="abgrenzung-datensicherung-backup"><a class="anchor" href="#abgrenzung-datensicherung-backup"></a>1.2. Abgrenzung Datensicherung (Backup)</h3>
+<div class="paragraph">
+<p>Bei der Datensicherung handelt es sich um das redundante Aufbewahren von Datensätzen.
+Das Ziel ist es, bei Verlust oder ungewünschter Manipulation von Datensätzen diese Datensätze auf den gespeicherten Stand zurücksetzen zu können.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="abgrenzung-protokollierung"><a class="anchor" href="#abgrenzung-protokollierung"></a>1.3. Abgrenzung Protokollierung</h3>
+<div class="paragraph">
+<p>Ziel der Protokollierung ist das Nachvollziehen von Änderungen und Auskünften.
+Dazu werden je nach Bedarf die Suchschlüssel und Nettodaten von Aufrufen gespeichert.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="abgrenzung-logging"><a class="anchor" href="#abgrenzung-logging"></a>1.4. Abgrenzung Logging</h3>
+<div class="paragraph">
+<p>Beim Logging werden Notizen zu technischen Aufrufen innerhalb eines Systems oder zwischen Anwendungen in Dateien abgelegt.
+Das Logging hat einen technischen Fokus und dient in der Regel als Hilfsinstrument zur Fehlerbehebung.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="anforderungen-festlegungen"><a class="anchor" href="#anforderungen-festlegungen"></a>2. Anforderungen &amp; Festlegungen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die beabsichtigte Nutzung der Historisierung lässt sich mit Blick auf die Referenzarchitektur zu Anforderungen verallgemeinern, die in diesem Abschnitt dargestellt werden.</p>
+</div>
+<div class="paragraph">
+<p>Für die Historisierung von Datensätzen in einer Anwendung gelten folgende Anforderungen und Grundsätze:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Es dürfen nur solche Daten historisiert werden, die auch angezeigt werden.</p>
+</li>
+<li>
+<p>Die Speicherung von historischen Daten wird durch individuelle Löschfristen von Datensätzen begrenzt.</p>
+</li>
+<li>
+<p>Datensätze müssen beim Eintreten bestimmter Ereignisse komplett, d.h. inklusive aller historisierten Datensätze, gelöscht werden.</p>
+</li>
+<li>
+<p>Für die meisten Daten ist eine Historisierung weder notwendig noch erlaubt.
+Dies ist durch Vorgaben des Datenschutzes und der Geheimhaltung begründet.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Diese Anforderungen führen zu folgenden Festlegungen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Eine automatische Historisierung von Daten, bei der jeder Datensatz in mehreren Versionen vorgehalten ist, wird nicht realisiert.</p>
+</li>
+<li>
+<p>Eine Historisierung wird, fachlich begründet, für die betroffenen Datensätze explizit realisiert.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </article>

@@ -95,7 +95,19 @@
     <a class="nav-link" href="master.html">Anwendungskern</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/master.html">Datenzugriff</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/einordnung-ziele.html">Datenzugriff</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/persistenzlogik.html">Konzeption der Persistenzlogik</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/versionierung.html">Versionierung von Datenbankschemas</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../detailkonzept-komponente-service/master.html">Service</a>
@@ -151,6 +163,45 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">JPA/Hibernate</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../isy-persistence/konzept.html">Konzept</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/vorgaben-konventionen.html">Vorgaben und Konventionen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung-mit-liquibase.html">Versionierung (Liquibase)</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nutzungsvorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/umsetzung-datenzugriff.html">Umsetzung des Datenzugriffs</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -803,19 +854,19 @@ Die Verwendung dieser Funktionalitäten ist in den Blaupausen und Bausteinen wie
 <div class="ulist">
 <ul>
 <li>
-<p>Die Konfiguration der Datenzugriffsschicht, beschrieben im <a href="../detailkonzept-komponente-datenzugriff/master.html" class="xref page">Detailkonzept Komponente Datenzugriff</a>.</p>
+<p>Konfiguration der Datenzugriffsschicht: beschrieben im <a href="../../isy-persistence/nutzungsvorgaben/umsetzung-datenzugriff.html" class="xref page">Nutzungskonzept des Bausteins JPA/Hibernate</a>,</p>
 </li>
 <li>
-<p>Die Konfiguration des Loggings über Spring, beschrieben in den <a href="../../isy-logging/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben Logging</a>.</p>
+<p>Konfiguration des Logging über Spring: beschrieben in den <a href="../../isy-logging/nutzungsvorgaben/master.html" class="xref page">Nutzungsvorgaben Logging</a>,</p>
 </li>
 <li>
-<p>Die Bereitstellung von Metriken zur Überwachung, beschrieben im <a href="../../isy-ueberwachung/konzept/master.html#einleitung" class="xref page">Konzept Überwachung</a>.</p>
+<p>Bereitstellung von Metriken zur Überwachung: beschrieben im <a href="../../isy-ueberwachung/konzept/master.html" class="xref page">Konzept Überwachung</a>,</p>
 </li>
 <li>
-<p>Die Verwendung der Schnittstellentechnologie HTTP Invoker, beschrieben im <a href="../../isy-serviceapi-core/konzept/master.html#einleitung" class="xref page">Konzept HTTP-Invoker</a>.</p>
+<p>Verwendung der Schnittstellentechnologie HttpInvoker: beschrieben im <a href="../../isy-serviceapi-core/konzept/master.html" class="xref page">Konzept HttpInvoker</a>,</p>
 </li>
 <li>
-<p>Die Implementierung von Dialogen und Masken erfolgt mit JSF und Spring-Webflow, beschrieben im Dokument <a href="../detailkonzept-komponente-web-gui/master.html" class="xref page">Detailkonzept Komponente Web-GUI</a>.</p>
+<p>Implementierung von Dialogen und Masken mit JSF und Spring-Webflow: beschrieben im <a href="../detailkonzept-komponente-web-gui/master.html" class="xref page">Detailkonzept Web-GUI</a>.</p>
 </li>
 </ul>
 </div>
@@ -1189,23 +1240,7 @@ public class CoreConfig
 </div>
 </div>
 <div class="paragraph">
-<p>Durch diese Konfiguration erzeugt Spring passende AOP-Proxies, welche die Transaktionssteuerung übernehmen.
-Außerdem wird standardmäßig der <code>JpaTransactionManager</code> verwendet, passend zur Implementierung des Datenzugriffs.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Hinweis"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Die Abhängigkeiten des <code>JpaTransactionManager</code> kommen aus der Datenzugriffsschicht.
-Weitere Details sind im <a href="../detailkonzept-komponente-datenzugriff/master.html" class="xref page">Detailkonzept Komponente Datenzugriff</a> beschrieben.</p>
-</div>
-</td>
-</tr>
-</table>
+<p>Durch diese Konfiguration erzeugt Spring passende AOP-Proxies, welche die Transaktionssteuerung übernehmen.</p>
 </div>
 </div>
 </div>

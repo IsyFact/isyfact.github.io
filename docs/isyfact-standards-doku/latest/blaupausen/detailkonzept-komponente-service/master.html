@@ -95,7 +95,19 @@
     <a class="nav-link" href="../detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/master.html">Datenzugriff</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/einordnung-ziele.html">Datenzugriff</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/persistenzlogik.html">Konzeption der Persistenzlogik</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/versionierung.html">Versionierung von Datenbankschemas</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="master.html">Service</a>
@@ -151,6 +163,45 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">JPA/Hibernate</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../isy-persistence/konzept.html">Konzept</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/vorgaben-konventionen.html">Vorgaben und Konventionen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung-mit-liquibase.html">Versionierung (Liquibase)</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nutzungsvorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/umsetzung-datenzugriff.html">Umsetzung des Datenzugriffs</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -606,7 +657,7 @@ Je nach gewählter Schnittstellentechnologie werden z. B. Annotationen oder eig
 <p>Bevor die Exception-Fassade aufgerufen wird, muss die Korrelations-ID aus dem Aufrufkontext im Logging-Kontext registriert sein.
 Dies geschieht durch die Annotation <code>@StelltLoggingKontextBereit</code> an der Methode oder an der Service-Fassade selbst.
 Dabei gilt es zu beachten, dass die Annotation standardmäßig so konfiguriert ist, dass sie vor den Annotationen ohne Angabe einer Priorität ausgeführt wird, sodass diese immer Zugriff auf die Korrelations-ID haben.
-Diese Reihenfolge wird durch Einfügen des Orders für den Advisor <code>stelltLoggingKontextBereitAdvisor</code> in der Autokonfiguration <code>IsyServiceApiCoreAutoConfiguration</code> erreicht.</p>
+Diese Reihenfolge wird durch Einfügen der <code>Order</code> für den Advisor <code>stelltLoggingKontextBereitAdvisor</code> in der Autokonfiguration <code>IsyServiceApiCoreAutoConfiguration</code> erreicht.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -627,7 +678,55 @@ Die Inhalte finden sich in den Dokumenten  <a href="../../isy-serviceapi-core/ko
 </div>
 </div>
 <div class="sect1">
-<h2 id="transaktionssteuerung"><a class="anchor" href="#transaktionssteuerung"></a>4. Transaktionssteuerung</h2>
+<h2 id="uebertragung-von-metadaten"><a class="anchor" href="#uebertragung-von-metadaten"></a>4. Übertragung von Metadaten</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In jeder Art von Servicekommunikation werden Metadaten übertragen.
+In der Regel geschieht dies über Schlüssel-Wert-Paare (<em>key-value pairs</em>), z.B. in HTTP-Headern oder JMS-Properties.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Benennung von Metadaten</div>
+<div class="paragraph">
+<p>Metadaten sind, egal über welches Protokoll sie übertragen werden, <strong>einheitlich benannt</strong>.
+Gibt es eine durch einen Standard vorgegebene Benennung, ist diese zu verwenden.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Die <a href="#standardisierte-metadaten">folgende Tabelle</a> zeigt, welche Metadaten in der IsyFact standardisiert übertragen werden.</p>
+</div>
+<table id="standardisierte-metadaten" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Benennung standardisierter Metadaten</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Metadaten</th>
+<th class="tableblock halign-left valign-top">Benennung</th>
+<th class="tableblock halign-left valign-top">Herleitung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Korrelations-ID<br></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>X-Correlation-ID</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID zur Nachverfolgung von Aufrufen innerhalb einer Anwendungslandschaft.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bearer Token</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vorgabe des Standards OAuth 2.0.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="transaktionssteuerung"><a class="anchor" href="#transaktionssteuerung"></a>5. Transaktionssteuerung</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In der Regel geschieht die Transaktionssteuerung im Anwendungskern.
@@ -671,7 +770,7 @@ Um auch in diesem Fall ein Rollback der Transaktion zu erzwingen, ist folgender 
 </div>
 </div>
 <div class="sect1">
-<h2 id="versionierung"><a class="anchor" href="#versionierung"></a>5. Versionierung</h2>
+<h2 id="versionierung"><a class="anchor" href="#versionierung"></a>6. Versionierung</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Die Notwendigkeit, Services in mehreren Versionen anbieten zu können, ist bedingt durch die Vielzahl an Service-Nutzern, die bei Änderung an einem Service nicht alle zeitgleich auf die neue Version eines Service umschalten können.
@@ -684,10 +783,10 @@ Daher ist es notwendig, dass in einem – möglichst klein zu haltenden – Übe
 <p>Es kann vorkommen, dass in <em>einem</em> Systemrelease neue Versionen von <em>mehreren</em> Services ausgeliefert werden.</p>
 </div>
 <div class="sect2">
-<h3 id="architektur"><a class="anchor" href="#architektur"></a>5.1. Architektur</h3>
+<h3 id="architektur"><a class="anchor" href="#architektur"></a>6.1. Architektur</h3>
 <div class="paragraph">
 <p>IT-Systeme bieten pro Service-Version eine eigene Service-Schnittstelle an.
-Die Services verwenden alle denselben <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungskern" class="xref page">Anwendungskerns</a>.
+Die Services verwenden alle denselben <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungskern" class="xref page">Anwendungskern</a>.
 Die für die Versionierung notwendigen Transformationen sind Teil der jeweiligen Service-Schnittstelle (z.B. das Einfügen eines Standardwerts für neu hinzugefügte Attribute).
 In komplexen Fällen kann es auch notwendig sein, den Anwendungskern zu erweitern und die Versionierung dort zu behandeln.
 Die Entscheidung dafür ist im Systementwurf zu dokumentieren.</p>
@@ -708,7 +807,7 @@ Es ist möglich, pro Service-Version ein eigenes Service-Gateway zu erstellen (s
 </div>
 </div>
 <div class="sect2">
-<h3 id="einfachster-fall-kompatible-erweiterung-eines-services"><a class="anchor" href="#einfachster-fall-kompatible-erweiterung-eines-services"></a>5.2. Einfacher Fall: Kompatible Erweiterung eines Services</h3>
+<h3 id="einfachster-fall-kompatible-erweiterung-eines-services"><a class="anchor" href="#einfachster-fall-kompatible-erweiterung-eines-services"></a>6.2. Einfacher Fall: Kompatible Erweiterung eines Services</h3>
 <div class="paragraph">
 <p>Ein IT-System stellt einen Service bereit, mit dem Personendaten gemeldet werden können.
 Parameter dieser Meldung sind Vor- und Nachname sowie das Geburtsdatum.
@@ -725,7 +824,7 @@ Innerhalb des Service Gateways existiert keine Geschäftslogik, d.h. die Abbildu
 </div>
 </div>
 <div class="sect2">
-<h3 id="komplexerer-fall-inkompatible-veraenderung-eines-services"><a class="anchor" href="#komplexerer-fall-inkompatible-veraenderung-eines-services"></a>5.3. Komplexerer Fall: Inkompatible Veränderung eines Services</h3>
+<h3 id="komplexerer-fall-inkompatible-veraenderung-eines-services"><a class="anchor" href="#komplexerer-fall-inkompatible-veraenderung-eines-services"></a>6.3. Komplexerer Fall: Inkompatible Veränderung eines Services</h3>
 <div class="paragraph">
 <p>In einem komplexeren Fall kann es passieren, dass die Service-Schnittstelle einer Anwendung komplett umgestaltet wird, sodass die Aufrufe nicht mehr einfach aufeinander abgebildet werden können.
 Wird in so einem Fall ein neuer Service eingeführt, während der alte Service noch verfügbar bleiben muss, müssen die inkompatiblen Verarbeitungslogiken im Anwendungskern parallel erhalten bleiben.
@@ -733,7 +832,7 @@ Auch hier enthält das Service-Gateway keine Geschäftslogik.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_umsetzung"><a class="anchor" href="#_umsetzung"></a>5.4. Umsetzung</h3>
+<h3 id="_umsetzung"><a class="anchor" href="#_umsetzung"></a>6.4. Umsetzung</h3>
 <div class="paragraph">
 <p>Die Java-Klassen und -Interfaces eines Services existieren in allen Versionen der Service-Schnittstelle und unterscheiden sich inhaltlich
 durch die in der neuen Version durchgeführten Änderungen.</p>
@@ -777,7 +876,7 @@ Inkompatible Änderungen der Schnittstelle sind z. B. das Entfernen von Attribu
 </div>
 </div>
 <div class="sect2">
-<h3 id="grenzen"><a class="anchor" href="#grenzen"></a>5.5. Grenzen</h3>
+<h3 id="grenzen"><a class="anchor" href="#grenzen"></a>6.5. Grenzen</h3>
 <div class="paragraph">
 <p>Eine Versionierung ist nur dann sinnvoll, wenn kleine Änderungen an der Schnittstelle zwischen den Versionen auftreten.
 Für den Fall, dass sich die Schnittstelle sowohl syntaktisch als auch semantisch grundlegend ändert, sollte anstatt einer neuen Version besser eine eigenständige, neue Schnittstelle entstehen.</p>
@@ -786,7 +885,7 @@ Für den Fall, dass sich die Schnittstelle sowohl syntaktisch als auch semantisc
 </div>
 </div>
 <div class="sect1">
-<h2 id="verfuegbarkeit"><a class="anchor" href="#verfuegbarkeit"></a>6. Verfügbarkeit</h2>
+<h2 id="verfuegbarkeit"><a class="anchor" href="#verfuegbarkeit"></a>7. Verfügbarkeit</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Die IsyFact berücksichtigt die folgenden Anforderungen an die Verfügbarkeit von Services in Systemlandschaften.</p>
@@ -807,7 +906,7 @@ Die genaue Definition des Zeitrahmens, in dem die Fehlermeldung über die Nichtv
 Die Definition ist dementsprechend durch die jeweiligen Aufrufer vorzunehmen.</p>
 </div>
 <div class="sect2">
-<h3 id="_beispielszenario"><a class="anchor" href="#_beispielszenario"></a>6.1. Beispielszenario</h3>
+<h3 id="_beispielszenario"><a class="anchor" href="#_beispielszenario"></a>7.1. Beispielszenario</h3>
 <div class="paragraph">
 <p>Für das Szenario gehen wir im Folgenden davon aus, dass ein IT-System eine Gesamtverfügbarkeit von 98 % aufweisen soll.
 Hierbei ist zu beachten, dass IT-Systeme in der Regel andere IT-Systeme und Querschnittsanwendungen aufrufen, um Anfragen zu beantworten.
@@ -821,7 +920,7 @@ Durch eine Verfügbarkeit von 99,7 % pro System kann im Beispiel also eine Gesam
 Dabei müssen die berechneten oder gemessenen Verfügbarkeiten aller IT-Systeme zugrunde gelegt werden, die das IT-System aufruft.</p>
 </div>
 <table id="table-GMTMT" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 1. Beispielrechnung der Verfügbarkeit</caption>
+<caption class="title">Tabelle 2. Beispielrechnung der Verfügbarkeit</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -865,7 +964,7 @@ Dabei müssen die berechneten oder gemessenen Verfügbarkeiten aller IT-Systeme 
 </table>
 </div>
 <div class="sect2">
-<h3 id="ursachen-fuer-nichtverfuegbarkeit"><a class="anchor" href="#ursachen-fuer-nichtverfuegbarkeit"></a>6.2. Ursachen für Nichtverfügbarkeit</h3>
+<h3 id="ursachen-fuer-nichtverfuegbarkeit"><a class="anchor" href="#ursachen-fuer-nichtverfuegbarkeit"></a>7.2. Ursachen für Nichtverfügbarkeit</h3>
 <div class="paragraph">
 <p>Die möglichen Ursachen für Nichtverfügbarkeit sind unter anderem:</p>
 </div>
@@ -938,7 +1037,7 @@ Dies verschlimmert die Antwortzeiten der Service-Aufrufe und führt eventuell zu
 <p>Eine weitere bekannte Ursache für Nichtverfügbarkeit ist die Umgebungskonfiguration, Firewall-Verbindungen nach einer definierten Zeit automatisch zu schließen.
 Zustandsbehaftete Verbindungen wie sie bei Datenbank-Clients eingesetzt werden, sind von dieser Restriktion betroffen.
 Diese Clients müssen vorsehen, dass Sie eine von der Firewall geschlossene Verbindung erkennen und wieder neu aufbauen.
-Dieses Thema wird im entsprechenden Nutzungskonzept <a href="../detailkonzept-komponente-datenzugriff/master.html" class="xref page">Detailkonzept Komponente Datenzugriff</a> behandelt.</p>
+Dieses Thema wird im <a href="../../isy-persistence/konzept.html" class="xref page">Konzept JPA/Hibernate</a> behandelt.</p>
 </div>
 <div class="paragraph">
 <p>Die IsyFact setzt als Transportprotokoll für Service-Kommunikation durchgängig HTTP ein.
@@ -948,12 +1047,12 @@ Wenn eine Schnittstellentechnologie diesen Mechanismus nutzt, müssen die TCP-Ve
 </div>
 </div>
 <div class="sect2">
-<h3 id="massnahmen"><a class="anchor" href="#massnahmen"></a>6.3. Maßnahmen</h3>
+<h3 id="massnahmen"><a class="anchor" href="#massnahmen"></a>7.3. Maßnahmen</h3>
 <div class="paragraph">
 <p>Folgende Maßnahmen können ergriffen werden, um die Anforderungen an die Verfügbarkeit zu gewährleisten.</p>
 </div>
 <div class="sect3">
-<h4 id="_anwendungscluster_mit_loadbalancer"><a class="anchor" href="#_anwendungscluster_mit_loadbalancer"></a>6.3.1. Anwendungscluster mit Loadbalancer</h4>
+<h4 id="_anwendungscluster_mit_loadbalancer"><a class="anchor" href="#_anwendungscluster_mit_loadbalancer"></a>7.3.1. Anwendungscluster mit Loadbalancer</h4>
 <div class="paragraph">
 <p>Die TI-Architektur der IsyFact setzt die hohen Verfügbarkeitsanforderungen durch Clustering der Applikations- und Datenbankserver um.
 Anwendungen werden redundant auf mehr als einem Server installiert.
@@ -963,7 +1062,7 @@ Trotzdem kann es auch hier noch zu Nichtverfügbarkeit kommen.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_knotenweises_deployment"><a class="anchor" href="#_knotenweises_deployment"></a>6.3.2. Knotenweises Deployment</h4>
+<h4 id="_knotenweises_deployment"><a class="anchor" href="#_knotenweises_deployment"></a>7.3.2. Knotenweises Deployment</h4>
 <div class="paragraph">
 <p>Diese Maßnahme hilft bei Nichtverfügbarkeit aufgrund von <a href="#ausfall-deployment">geplanten Wartungsarbeiten</a>.
 Im Clusterbetrieb besteht die Möglichkeit, diese Knoten für Knoten auszuführen.
@@ -975,7 +1074,7 @@ Dadurch können Services im Zeitraum von Wartungsarbeiten voll verfügbar gehalt
 </div>
 </div>
 <div class="sect3">
-<h4 id="_time_to_live"><a class="anchor" href="#_time_to_live"></a>6.3.3. Time-To-Live</h4>
+<h4 id="_time_to_live"><a class="anchor" href="#_time_to_live"></a>7.3.3. Time-To-Live</h4>
 <div class="paragraph">
 <p>Ein Service-Aufruf ist nur für eine bestimmte Zeit gültig.
 Diese Zeitspanne wird als Time-To-Live (TTL) bezeichnet.
@@ -984,7 +1083,7 @@ Hierdurch wird eine schnelle Antwortzeit gewährleistet.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_aufrufwiederholung_retry"><a class="anchor" href="#_aufrufwiederholung_retry"></a>6.3.4. Aufrufwiederholung (Retry)</h4>
+<h4 id="_aufrufwiederholung_retry"><a class="anchor" href="#_aufrufwiederholung_retry"></a>7.3.4. Aufrufwiederholung (Retry)</h4>
 <div class="paragraph">
 <p>Von <a href="#retries-loadbalancer">Loadbalancern ausgeführte Retries</a> können zu einer Erhöhung der Antwortzeit führen.
 Loadbalancer innerhalb der Plattform sind deshalb so zu konfigurieren, dass fehlgeschlagene Anfragen nicht an andere Knoten weitergeleitet werden.
@@ -1048,7 +1147,7 @@ Diese ist sinnvoll über die folgenden Parameter konfigurierbar:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_deaktivierung_von_services"><a class="anchor" href="#_deaktivierung_von_services"></a>6.3.5. Deaktivierung von Services</h4>
+<h4 id="_deaktivierung_von_services"><a class="anchor" href="#_deaktivierung_von_services"></a>7.3.5. Deaktivierung von Services</h4>
 <div class="paragraph">
 <p>Aufgrund von Wartungsaktivitäten oder Batches (z. B. einer Datenmigration) in einer Fachanwendung kann es vorkommen, dass der Meldungsservice einer Fachanwendung vorübergehend deaktiviert wird.
 Andere Services wie z. B. eine Auskunft können während dieser Zeit regulär ausgeführt werden.

@@ -95,7 +95,19 @@
     <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/master.html">Datenzugriff</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/einordnung-ziele.html">Datenzugriff</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/persistenzlogik.html">Konzeption der Persistenzlogik</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/versionierung.html">Versionierung von Datenbankschemas</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-service/master.html">Service</a>
@@ -151,6 +163,45 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">JPA/Hibernate</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../isy-persistence/konzept.html">Konzept</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/vorgaben-konventionen.html">Vorgaben und Konventionen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung-mit-liquibase.html">Versionierung (Liquibase)</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nutzungsvorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/umsetzung-datenzugriff.html">Umsetzung des Datenzugriffs</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -1405,7 +1456,7 @@ Er setzt sich meistens aus einem Systemkürzel und dem Systemtyp zusammen.</p></
 </div>
 <div class="sect3">
 <h4 id="persistenz"><a class="anchor" href="#persistenz"></a>1.3.4. Persistenz</h4>
-<table id="namenskonvention-spring-data-repository" class="tableblock frame-all grid-all stretch">
+<table id="table-repossimpl" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 32. Namenskonvention DAO: Spring Data Repository</caption>
 <colgroup>
 <col style="width: 20%;">
@@ -1423,11 +1474,11 @@ Er setzt sich meistens aus einem Systemkürzel und dem Systemtyp zusammen.</p></
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiel</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AkteRepository</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MyEntityRepository</code></p></td>
 </tr>
 </tbody>
 </table>
-<table id="namenskonvention-dao-interface" class="tableblock frame-all grid-all stretch">
+<table id="table-daossimpl" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 33. Namenskonvention DAO: Interface + Implementierung</caption>
 <colgroup>
 <col style="width: 20%;">
@@ -1446,168 +1497,148 @@ Er setzt sich meistens aus einem Systemkürzel und dem Systemtyp zusammen.</p></
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiele</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AkteDao<br>
-AkteDaoImpl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MyEntityDao<br>
+MyEntityDaoImpl</code></p></td>
 </tr>
 </tbody>
 </table>
-<table id="table-entity" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 34. Namenskonvention Entität</caption>
+<div class="paragraph">
+<p>Der Name eines Datenbankschemas genügt den folgenden Anforderungen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>er enthält vollständige, beschreibende, aussprechbare Namen (oder bekannte Abkürzungen),</p>
+</li>
+<li>
+<p>er muss mit einem Buchstaben beginnen,</p>
+</li>
+<li>
+<p>nur Buchstaben, Zahlen und Unterstriche (_) sind erlaubt,</p>
+</li>
+<li>
+<p>Umlaute, Sonderzeichen, Bindestriche und Leerzeichen sind nicht erlaubt.</p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="_umsetzung_des_datenzugriffs"><a class="anchor" href="#_umsetzung_des_datenzugriffs"></a>1.3.4.1. Umsetzung des Datenzugriffs</h5>
+<table id="table-paketstruktur" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 34. Vorgaben zur Paketstruktur für Klassen des Datenzugriffs</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" colspan="2">Entität</th>
+<th class="tableblock halign-left valign-top">Klassen</th>
+<th class="tableblock halign-left valign-top">Package</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;Geschäftsobjekt&gt;</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiel</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Termin</code></p></td>
-</tr>
-</tbody>
-</table>
-<table id="table-paketstruktur" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 35. Vorgaben zur Paketstruktur für Persistenzklassen</caption>
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Persistenzklasse</th>
-<th class="tableblock halign-left valign-top">Paketstruktur</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DAO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>DAO</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;organisation&gt;.&lt;domäne&gt;.&lt;system&gt;.persistence.&lt;komponente&gt;.dao</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Entity</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;organisation&gt;.&lt;domäne&gt;.&lt;system&gt;.persistence.&lt;komponente&gt;.entity</code></p></td>
 </tr>
 </tbody>
 </table>
-<table id="table-dao-ext-lese-valid-entity-by-date" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 36. DAO: Erweiterung: Lesen der zu dem Datum gültigen Entität</caption>
+</div>
+<div class="sect4">
+<h5 id="_historisierung"><a class="anchor" href="#_historisierung"></a>1.3.4.2. Historisierung</h5>
+<table id="dao-erweiterung-lesen-zum-datum" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 35. DAO-Erweiterung (Bearbeitungshistorie): Lesen der zum Datum gültigen Entität</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2">DAO: Erweiterung: Lesen der zu dem Datum gültigen Entität</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;Entity&gt; lese&lt;Entity&gt;(&lt;Schluessel&gt;, Calendar)`</code></p></td>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Schema</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;Entity&gt; lese&lt;Entity&gt;(&lt;Schlüssel&gt;, Calendar)`</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiele</strong></p></td>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Beispiel</p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>AkteDao leseAkte(id, Calendar)</code></p></td>
 </tr>
 </tbody>
 </table>
-<table id="table-dao-ext-lese-current-valid-entity" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 37. Data Access Objects: Anpassung: Lesen der aktuell gültigen Entität</caption>
+<table id="dao-erweiterung-lesen-aktuell" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 36. DAO-Erweiterung (Bearbeitungshistorie): Lesen der aktuell gültigen Entität</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2">Data Access Objects: Anpassung: Lesen der aktuell gültigen Entität</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;Entity&gt; lese&lt;Entity&gt;(&lt;Schluessel&gt;)`</code></p></td>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Schema</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;Entity&gt; lese&lt;Entity&gt;(&lt;Schlüssel&gt;)`</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiele</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AkteDao  leseAkte(id)</code></p></td>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Beispiel</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AkteDao leseAkte(id)</code></p></td>
 </tr>
 </tbody>
 </table>
-<table id="table-dao-ext-lese-Historie-von-entitaet" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 38. Data Access Objects: Erweiterung: Lesen der Historie einer Entität</caption>
+<table id="dao-erweiterung-lesen-historie" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 37. DAO-Erweiterung (Bearbeitungshistorie): Lesen der gesamten Historie einer Entität</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2">Data Access Objects: Erweiterung: Lesen der Historie einer Entität</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List&lt;Entität&gt; lese&lt;Enitität&gt;Historie(Schluessel)</code></p></td>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Schema</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List&lt;Entität&gt; lese&lt;Entität&gt;Historie(Schlüssel)</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiele</strong></p></td>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Beispiel</p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>List&lt;AkteDao&gt; leseAkteHistorie(id)</code></p></td>
 </tr>
 </tbody>
 </table>
-<table id="table-dao-neue-methode" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 39. Data Access Objects: Erweiterung: Erzeugen einer neuen Version einer Entität</caption>
+<table id="dao-erweiterung-erzeuge-neue-version" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 38. DAO-Erweiterung (Bearbeitungshistorie): Erzeugen einer neuen Version einer Entität</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2">Data Access Objects: Erweiterung: Erzeugen einer neuen Version einer Entität</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Schema</p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Entität erzeugeNeueVersion(Entität)</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiele</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AkteDao leseAkteHistorie(AkteDao)</code></p></td>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Beispiel</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AkteDao erzeugeNeueVersion(Akte)</code></p></td>
 </tr>
 </tbody>
 </table>
-<table id="table-dao-max-anzahl" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 40. Data Access Objects: optionale Erweiterung: Maximale Anzahl der gespeicherten Versionen</caption>
+<table id="dao-erweiterung-maximale-anzahl-versionen" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 39. DAO-Erweiterung (Bearbeitungshistorie): Setzen einer maximalen Anzahl von Versionen</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2">Data Access Objects: optionale Erweiterung: Maximale Anzahl der gespeicherten Versionen</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Schema</p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>MAX_EINTRAEGE_HISTORIE</code></p></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect4">
+<h5 id="_versionierung"><a class="anchor" href="#_versionierung"></a>1.3.4.3. Versionierung</h5>
 <table id="table-TabMSHEVERS" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 41. Tabelle M_SCHEMA_VERSION</caption>
+<caption class="title">Tabelle 40. Tabelle M_SCHEMA_VERSION</caption>
 <colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 42.8572%;">
+<col style="width: 16.6666%;">
+<col style="width: 33.3333%;">
+<col style="width: 50.0001%;">
 </colgroup>
 <thead>
 <tr>
@@ -1619,31 +1650,31 @@ AkteDaoImpl</code></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>version_nummer</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>varchar2(25 char)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zeichenkette (25 Zeichen)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Versionsnummer des Datenbankschemas.
 Diese Versionsnummer entspricht der Versionsnummer der Anwendung, mit der sich das Schema geändert hat.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>update_nummer</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>varchar2(5 char)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zeichenkette (5 Zeichen)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Update-Zähler, der jedes Mal hochgezählt wird, wenn sich das Datenbankschema ändert, aber die Anwendung unverändert bleibt.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>status</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>varchar2(25 char)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zeichenkette (25 Zeichen)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Status des Schemas:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>gueltig: Das Schema wurde korrekt installiert bzw. aktualisiert und kann verwendet werden.</p>
+<p><code>gueltig</code>: Das Schema wurde korrekt installiert bzw. aktualisiert und kann verwendet werden.</p>
 </li>
 <li>
-<p>bereit: Das Schema ist bereit schemaübergreifende Operationen durchzuführen.</p>
+<p><code>bereit</code>: Das Schema ist bereit Schema-übergreifende Operationen durchzuführen.</p>
 </li>
 <li>
-<p>ungueltig: Das Schema befindet sich im Aufbau bzw. in der Änderung oder die Installation wurde nur teilweise durchgeführt und wurde mit Fehlern abgebrochen.
+<p><code>ungueltig</code>: Das Schema befindet sich im Aufbau bzw. in der Änderung oder die Installation wurde nur teilweise durchgeführt und wurde mit Fehlern abgebrochen.
 Das Schema kann nicht verwendet werden und muss überprüft werden.</p>
 </li>
 </ul>
@@ -1652,11 +1683,11 @@ Das Schema kann nicht verwendet werden und muss überprüft werden.</p>
 </tbody>
 </table>
 <table id="table-TabMSHELOG" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 42. Tabelle M_SCHEMA_LOG</caption>
+<caption class="title">Tabelle 41. Tabelle M_SCHEMA_LOG</caption>
 <colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 42.8572%;">
+<col style="width: 16.6666%;">
+<col style="width: 33.3333%;">
+<col style="width: 50.0001%;">
 </colgroup>
 <thead>
 <tr>
@@ -1668,42 +1699,42 @@ Das Schema kann nicht verwendet werden und muss überprüft werden.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>schemaversion</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>varchar2(25 char)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zeichenkette (25 Zeichen)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Versionsnummer des Schemas, zu dessen Erstellung bzw. Anpassung das Skript genutzt wurde.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>schemaupdate</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>varchar2(5 char)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zeichenkette (5 Zeichen)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Update-Zähler, der jedes Mal hochgezählt wird, wenn sich das Datenbankschema ändert, aber die Anwendung unverändert bleibt.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>schritt</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>varchar2(10 char)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zeichenkette (10 Zeichen)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nummer des Schrittes im Installationsablauf.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>beschreibung</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>varchar2(100 char)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zeichenkette (100 Zeichen)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Kurzbeschreibung des Installationsschrittes.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>skript</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>varchar2(100 char)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zeichenkette (100 Zeichen)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name des ausgeführten Skripts.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>skript_start</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>timestamp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zeitstempel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeitpunkt, an dem das Skript gestartet wurde.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>skript_ende</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>timestamp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zeitstempel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeitpunkt, an dem das Skript beendet wurde.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>status</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>varchar2(25 char)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zeichenkette (25 Zeichen)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Status der Skriptausführung:</p>
 </div>
@@ -1722,10 +1753,11 @@ Das Schema kann nicht verwendet werden und muss überprüft werden.</p>
 </table>
 </div>
 </div>
+</div>
 <div class="sect2">
 <h3 id="_anwendungskern"><a class="anchor" href="#_anwendungskern"></a>1.4. Anwendungskern</h3>
 <table id="namenskonvention-geschaeftsobjekt" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 43. Namenskonvention Geschäftsobjekt</caption>
+<caption class="title">Tabelle 42. Namenskonvention Geschäftsobjekt</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -1747,7 +1779,7 @@ Das Schema kann nicht verwendet werden und muss überprüft werden.</p>
 </tbody>
 </table>
 <table id="namenskonvention-anwendungsfallklassen" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 44. Namenskonvention Anwendungsfallklassen</caption>
+<caption class="title">Tabelle 43. Namenskonvention Anwendungsfallklassen</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -1770,7 +1802,7 @@ AwfEntscheidungDurchfuehren</code></p></td>
 </tbody>
 </table>
 <table id="namenskonvention-anwendungsfunktion" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 45. Namenskonvention Anwendungsfunktion</caption>
+<caption class="title">Tabelle 44. Namenskonvention Anwendungsfunktion</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -1800,7 +1832,7 @@ AfuErmittlungEntscheidungsrelevanz</code></p></td>
 Diese wird folgendermaßen benannt.</p>
 </div>
 <table id="table-nambat" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 46. Name einer Batchanwendung</caption>
+<caption class="title">Tabelle 45. Name einer Batchanwendung</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -1832,7 +1864,7 @@ Er setzt sich meistens aus einem Systemkürzel und dem Systemtyp zusammen.</p></
 </tbody>
 </table>
 <table id="table-batckonfig-konfigurationsparameter-kommandozeile" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 47. Batches: Konfigurationsparameter Kommandozeile</caption>
+<caption class="title">Tabelle 46. Batches: Konfigurationsparameter Kommandozeile</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -1854,7 +1886,7 @@ Er setzt sich meistens aus einem Systemkürzel und dem Systemtyp zusammen.</p></
 </tbody>
 </table>
 <table id="table-batckonfig-konfigurationsparameter-konfigurationsdatei" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 48. Batches: Konfigurationsparameter Konfigurationsdatei</caption>
+<caption class="title">Tabelle 47. Batches: Konfigurationsparameter Konfigurationsdatei</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -1881,7 +1913,7 @@ Loeschfunktion.DatumVon=30.11.2019</code></p></td>
 <p>Analog zu den Anwendungsfällen werden Batchklassen mit dem Präfix <code>Bat</code> gekennzeichnet.</p>
 </div>
 <table id="table-batclass2" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 49. Batches: Klassen</caption>
+<caption class="title">Tabelle 48. Batches: Klassen</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -1904,7 +1936,7 @@ BatSendenAllerInformationen</code></p></td>
 </tbody>
 </table>
 <table id="table-shellskript" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 50. Batches: Shellskript</caption>
+<caption class="title">Tabelle 49. Batches: Shellskript</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -1932,7 +1964,7 @@ import-bhknz-liste.sh</code></p></td>
 <div class="sect3">
 <h4 id="rest-schnittstellen"><a class="anchor" href="#rest-schnittstellen"></a>1.6.1. REST-Schnittstellen</h4>
 <table id="namenskonvention-prozessorientierte-uris" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 51. Namenskonvention prozessorientierter URIs</caption>
+<caption class="title">Tabelle 50. Namenskonvention prozessorientierter URIs</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -1958,7 +1990,7 @@ import-bhknz-liste.sh</code></p></td>
 </tbody>
 </table>
 <table id="namenskonvention-ressourcen-uris" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 52. Namenskonvention Ressourcen-URIs</caption>
+<caption class="title">Tabelle 51. Namenskonvention Ressourcen-URIs</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -1996,7 +2028,7 @@ Die Ressource liefert ein eindeutig identifizierbares Objekt zurück.</p>
 </tbody>
 </table>
 <table id="namenskonvention-beziehungen-zwischen-ressourcen" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 53. Namenskonvention Beziehungen zwischen Ressourcen</caption>
+<caption class="title">Tabelle 52. Namenskonvention Beziehungen zwischen Ressourcen</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2025,7 +2057,7 @@ Die Ressource liefert ein eindeutig identifizierbares Objekt zurück.</p>
 </tbody>
 </table>
 <table id="namenskonvention-addressierung-mehrerer-ressourcen" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 54. Namenskonvention Adressierung von mehreren Ressourcen</caption>
+<caption class="title">Tabelle 53. Namenskonvention Adressierung von mehreren Ressourcen</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2050,7 +2082,7 @@ Die Ressource liefert ein eindeutig identifizierbares Objekt zurück.</p>
 <div class="sect3">
 <h4 id="http-invoker-schnittstellen"><a class="anchor" href="#http-invoker-schnittstellen"></a>1.6.2. Http-Invoker Schnittstellen</h4>
 <table id="artefakt-id-sst-bibliothek" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 55. Namenskonvention Maven Artefakt-ID von Schnittstellen-Bibliotheken</caption>
+<caption class="title">Tabelle 54. Namenskonvention Maven Artefakt-ID von Schnittstellen-Bibliotheken</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2072,7 +2104,7 @@ Die Ressource liefert ein eindeutig identifizierbares Objekt zurück.</p>
 </tbody>
 </table>
 <table id="table-ssurl1" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 56. Schnittstellen: URL</caption>
+<caption class="title">Tabelle 55. Schnittstellen: URL</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2129,7 +2161,7 @@ Hierbei wird sich am Schema Major- und Minor-Level orientiert. Beispiele:</p>
 </tbody>
 </table>
 <table id="table-classnamtransobj" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 57. Klassennamen Transportobjekte</caption>
+<caption class="title">Tabelle 56. Klassennamen Transportobjekte</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2156,7 +2188,7 @@ InformationenXyzTo</code></p></td>
 <div class="sect2">
 <h3 id="web-gui"><a class="anchor" href="#web-gui"></a>1.7. Web-GUI</h3>
 <table id="table-classnammodclass" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 58. Klassennamen Modelklassen</caption>
+<caption class="title">Tabelle 57. Klassennamen Modelklassen</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2178,7 +2210,7 @@ InformationenXyzTo</code></p></td>
 </tbody>
 </table>
 <table id="table-classnamcontrclass" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 59. Klassennamen Controllerklassen</caption>
+<caption class="title">Tabelle 58. Klassennamen Controllerklassen</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2200,7 +2232,7 @@ InformationenXyzTo</code></p></td>
 </tbody>
 </table>
 <table id="table-flows1" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 60. Flows</caption>
+<caption class="title">Tabelle 59. Flows</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2222,7 +2254,7 @@ InformationenXyzTo</code></p></td>
 </tbody>
 </table>
 <table id="table-mvvflow" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 61. Main View von Flows</caption>
+<caption class="title">Tabelle 60. Main View von Flows</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2245,7 +2277,7 @@ cdSucheViewState.xhtml</code></p></td>
 </tbody>
 </table>
 <table id="table-facelets" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 62. Facelets</caption>
+<caption class="title">Tabelle 61. Facelets</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2267,7 +2299,7 @@ cdSucheViewState.xhtml</code></p></td>
 </tbody>
 </table>
 <table id="table-vstatejsdat" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 63. View-State Javascript-Date</caption>
+<caption class="title">Tabelle 62. View-State Javascript-Date</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2312,7 +2344,7 @@ Siehe <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern
 </table>
 </div>
 <table id="table-rpmpak" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 64. RPM-Pakete</caption>
+<caption class="title">Tabelle 63. RPM-Pakete</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2385,7 +2417,7 @@ Sollten Anwendungen Architektur-spezifische Bestandteile enthalten, wird hier di
 <p>Die Installationspfade sind ausführlich im Konzept beschrieben.</p>
 </div>
 <table id="table-instpathanw" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 65. Installationspfade – Anwendung</caption>
+<caption class="title">Tabelle 64. Installationspfade – Anwendung</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2458,7 +2490,7 @@ Bei einigen Namen in der IsyFact-Dokumentation ist die Umstellung der Namen gem�
 </table>
 </div>
 <table id="table-namenskonvention-dokumentation" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 66. Namensschema für Dokumentation (keine Anzeigenamen)</caption>
+<caption class="title">Tabelle 65. Namensschema für Dokumentation (keine Anzeigenamen)</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2486,7 +2518,7 @@ Bei einigen Namen in der IsyFact-Dokumentation ist die Umstellung der Namen gem�
 <div class="sect3">
 <h4 id="dokumentation-glossar"><a class="anchor" href="#dokumentation-glossar"></a>1.9.1. Spezielle Namensschemata Dokumentation</h4>
 <table id="table-litextern-anchor" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 67. Namensschema für Anchor von externen Verweisen (externes Literaturverzeichnis in <code>isy-documentation</code>)</caption>
+<caption class="title">Tabelle 66. Namensschema für Anchor von externen Verweisen (externes Literaturverzeichnis in <code>isy-documentation</code>)</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2508,7 +2540,7 @@ Bei einigen Namen in der IsyFact-Dokumentation ist die Umstellung der Namen gem�
 </tbody>
 </table>
 <table id="table-namenskonvention-bilder" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 68. Namensschema für Namen von Abbildungen aus diagrams.net</caption>
+<caption class="title">Tabelle 67. Namensschema für Namen von Abbildungen aus diagrams.net</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2534,7 +2566,7 @@ Bei einigen Namen in der IsyFact-Dokumentation ist die Umstellung der Namen gem�
 </tbody>
 </table>
 <table id="table-glossar-anchor" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 69. Namensschema für Anchor von Glossareinträgen (Glossar in <code>isy-documentation</code>)</caption>
+<caption class="title">Tabelle 68. Namensschema für Anchor von Glossareinträgen (Glossar in <code>isy-documentation</code>)</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
