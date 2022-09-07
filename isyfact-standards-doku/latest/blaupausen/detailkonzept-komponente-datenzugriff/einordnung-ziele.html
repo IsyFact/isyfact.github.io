@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: IsyFact Dokumentation</title>
-    <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/methodik/java-programmierkonventionen/it-sicherheitsregeln.html">
+    <title>Detailkonzept Komponente Datenzugriff :: IsyFact Dokumentation</title>
+    <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/blaupausen/detailkonzept-komponente-datenzugriff/einordnung-ziele.html">
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
@@ -82,29 +82,41 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../blaupausen/blaupausen.html">Blaupausen</a>
+    <a class="nav-link" href="../blaupausen.html">Blaupausen</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../blaupausen/referenzarchitektur/master.html">Referenzarchitektur</a>
+    <a class="nav-link" href="../referenzarchitektur/master.html">Referenzarchitektur</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../blaupausen/referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a>
+    <a class="nav-link" href="../referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
+    <a class="nav-link" href="../detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="einordnung-ziele.html">Datenzugriff</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="persistenzlogik.html">Konzeption der Persistenzlogik</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="versionierung.html">Versionierung von Datenbankschemas</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/master.html">Datenzugriff</a>
+    <a class="nav-link" href="../detailkonzept-komponente-service/master.html">Service</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-service/master.html">Service</a>
+    <a class="nav-link" href="../detailkonzept-komponente-web-gui/master.html">Web GUI</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-web-gui/master.html">Web GUI</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-batch/master.html">Batch</a>
+    <a class="nav-link" href="../detailkonzept-komponente-batch/master.html">Batch</a>
   </li>
 </ul>
   </li>
@@ -151,6 +163,45 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">JPA/Hibernate</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../isy-persistence/konzept.html">Konzept</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/vorgaben-konventionen.html">Vorgaben und Konventionen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung-mit-liquibase.html">Versionierung (Liquibase)</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nutzungsvorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/umsetzung-datenzugriff.html">Umsetzung des Datenzugriffs</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -298,35 +349,35 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../methodik.html">Methodik</a>
+    <a class="nav-link" href="../../methodik/methodik.html">Methodik</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../namenskonventionen/master.html">Namenskonventionen</a>
+    <a class="nav-link" href="../../methodik/namenskonventionen/master.html">Namenskonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../versionierung/master.html">Versionierung</a>
+    <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="master.html">Java-Programmierkonventionen</a>
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../diagrammerstellung/diagramsnet.html">diagrams.net</a>
+    <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
+    <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../vorlagen.html">Vorlagen</a>
+    <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+    <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
   </li>
 </ul>
   </li>
@@ -459,6 +510,12 @@
 <button class="nav-toggle"></button>
   <a href="../../einstieg/vorstellung.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../einstieg/einstieg.html">IsyFact Standards</a></li>
+    <li><a href="../blaupausen.html">Blaupausen</a></li>
+    <li><a href="../referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a></li>
+    <li><a href="einordnung-ziele.html">Datenzugriff</a></li>
+  </ul>
 </nav>
 </div>
   <div class="content">
@@ -466,11 +523,99 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<div class="sect1">
-<h2 id="it-sicherheitsregeln-programmierkonventionen"><a class="anchor" href="#it-sicherheitsregeln-programmierkonventionen"></a>1. IT-Sicherheitsregeln Java Programmierkonventionen</h2>
-<div class="sectionbody">
-
+<h1 class="page">Detailkonzept Komponente Datenzugriff</h1>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><span class="image left"><img src="../../../../glossary/latest/licence/_images/IFS-Logo.png" alt="IFS-Logo" width="150"></span> Diese Seite ist ein Teil der IsyFact-Standards.
+Alle Inhalte der Seite, insbesondere Texte und Grafiken, sind urheberrechtlich geschützt.
+Alle urheberrechtlichen Nutzungs- und Verwertungsrechte liegen beim Bundesverwaltungsamt.</p>
 </div>
+<div class="paragraph">
+<p><span class="image right"><img src="../../../../glossary/latest/licence/_images/CC-BY.png" alt="Creative Commons Namensnennung" width="150"></span>
+Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-licence" class="xref page">Lizenzbedingungen</a> der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-short" class="xref page">Creative Commons Namensnennung 4.0 International</a> gestattet.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Gemäß den Vorgaben der <a href="../referenzarchitektur-it-system/master.html#die-referenzarchitektur-eines-it-systems" class="xref page">Referenzarchitektur IT-System</a> basiert die Architektur eines IT-Systems auf der bekannten Drei-Schichten-Architektur.
+Eine dieser Schichten ist die Persistenzschicht.
+In dieser Schicht ist alle Funktionalität enthalten, die zum Erzeugen, Suchen, Bearbeiten und Löschen von Datensätzen benötigt wird.
+Der Zugriff auf eine relationale Datenbank ist in dieser Schicht vollständig gekapselt.
+In Richtung Datenbank kommuniziert diese Schicht mittels JDBC und SQL, in Richtung des Anwendungskerns stellt die Schicht persistente Objekte zur Verfügung.</p>
+</div>
+<div class="paragraph">
+<p>In <a href="#referenzarchitekur-it-system-datenzugriff">der folgenden Abbildung</a> ist die Referenzarchitektur eines IT-Systems noch einmal dargestellt, wobei die Persistenzschicht mit der Komponente Datenhaltung hervorgehoben ist.</p>
+</div>
+<div id="referenzarchitekur-it-system-datenzugriff" class="imageblock">
+<div class="content">
+<img src="../_images/detailkonzept-datenzugriff/IFRefArcITSsysPers.png" alt="IFRefArcITSsysPers">
+</div>
+<div class="title">Abbildung 1. Referenzarchitektur eines IT-Systems</div>
+</div>
+<div class="paragraph">
+<p>Das Detailkonzept Komponente Datenzugriff beschreibt die Vorgaben zur Umsetzung einer solchen Persistenzschicht im Detail.
+Die Implementierung der Zugriffsschicht wird durch die Verwendung eines standardisierten Frameworks erleichtert.
+Die Unterseiten des Detailkonzepts legen <a href="persistenzlogik.html" class="xref page">allgemeine Vorgaben für das Persistenz-Klassenmodell fest</a> und behandelt weiterführende Themen wie die <a href="historisierung.html" class="xref page">Historisierung von Daten</a> und die <a href="versionierung.html" class="xref page">Versionierung von Datenbankschemas</a>.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Das Thema Transaktionssteuerung wird nicht im Rahmen des Datenzugriffs behandelt, da Transaktionen in der IsyFact über den Anwendungskern bzw. die Nutzungsschicht gesteuert werden.
+Mehr zu diesem Thema ist in den anderen Detailkonzepten enthalten:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../detailkonzept-komponente-anwendungskern/master.html#transaktionssteuerung" class="xref page">Detailkonzept Komponente Anwendungskern</a></p>
+</li>
+<li>
+<p><a href="../detailkonzept-komponente-batch/master.html#die-transaktionssteuerung" class="xref page">Detailkonzept Komponente Batch</a></p>
+</li>
+<li>
+<p><a href="../detailkonzept-komponente-service/master.html#transaktionssteuerung" class="xref page">Detailkonzept Komponente Service</a></p>
+</li>
+<li>
+<p><a href="../detailkonzept-komponente-web-gui/master.html#zugriff-awk" class="xref page">Detailkonzept Komponente Web-GUI</a></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Die auf dieser Seite und den Unterseiten aufgestellten Vorgaben verfolgen mehrere Ziele.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Einheitlichkeit der Verwendung von JPA</dt>
+<dd>
+<p>Die Konfiguration und Umsetzung des Datenzugriffs geschieht nachvollziehbar über festgelegte Mechanismen und ist, auf ein IT-System bezogen, stets gleich.</p>
+</dd>
+<dt class="hdlist1">Einfachheit der Verwendung von JPA</dt>
+<dd>
+<p>Die Komponente Datenzugriff muss leicht verständlich und wartbar sein.
+Dies umfasst die Definition des Persistenz-Klassenmodells sowie den Einsatz von JPA zur Umsetzung des Datenzugriffs.</p>
+</dd>
+<dt class="hdlist1">Schmale, definierte JPA-Schnittstelle</dt>
+<dd>
+<p>Die Verwendung und Konfiguration von JPA soll isoliert und über eine schmale Schnittstelle erfolgen.
+Die Komponente Datenzugriff soll auf JPA über die schmale Schnittstelle zugreifen.
+Die Stellen, an welchen JPA verwendet wird, sollen keine Fachlogik enthalten.</p>
+</dd>
+<dt class="hdlist1">Effizienz und Schnelligkeit der Komponente Datenzugriff</dt>
+<dd>
+<p>JPA und die gewählte JPA-Implementierung müssen effizient und schnell arbeiten.
+Datenbank-Aufrufe sollen möglichst effizient sein.
+Unnötige und mehrfache Zugriffe sollen vermieden werden.</p>
+</dd>
+</dl>
 </div>
 </article>
   </div>

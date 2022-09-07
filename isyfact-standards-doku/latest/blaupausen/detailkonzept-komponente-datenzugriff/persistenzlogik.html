@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: IsyFact Dokumentation</title>
-    <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/blaupausen/detailkonzept-komponente-datenzugriff/architekturregeln.html">
+    <title>Konzeption der Persistenzlogik :: IsyFact Dokumentation</title>
+    <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/blaupausen/detailkonzept-komponente-datenzugriff/persistenzlogik.html">
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
@@ -95,7 +95,19 @@
     <a class="nav-link" href="../detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="master.html">Datenzugriff</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="einordnung-ziele.html">Datenzugriff</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="4">
+    <a class="nav-link" href="persistenzlogik.html">Konzeption der Persistenzlogik</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="versionierung.html">Versionierung von Datenbankschemas</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../detailkonzept-komponente-service/master.html">Service</a>
@@ -151,6 +163,45 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">JPA/Hibernate</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../isy-persistence/konzept.html">Konzept</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/vorgaben-konventionen.html">Vorgaben und Konventionen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung-mit-liquibase.html">Versionierung (Liquibase)</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nutzungsvorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/umsetzung-datenzugriff.html">Umsetzung des Datenzugriffs</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -459,6 +510,13 @@
 <button class="nav-toggle"></button>
   <a href="../../einstieg/vorstellung.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../einstieg/einstieg.html">IsyFact Standards</a></li>
+    <li><a href="../blaupausen.html">Blaupausen</a></li>
+    <li><a href="../referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a></li>
+    <li><a href="einordnung-ziele.html">Datenzugriff</a></li>
+    <li><a href="persistenzlogik.html">Konzeption der Persistenzlogik</a></li>
+  </ul>
 </nav>
 </div>
   <div class="content">
@@ -466,10 +524,147 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<div class="sect1">
-<h2 id="architekturregeln-datenzugriff"><a class="anchor" href="#architekturregeln-datenzugriff"></a>1. Architekturregeln Komponente Datenzugriff</h2>
+<h1 class="page">Konzeption der Persistenzlogik</h1>
+<div id="preamble">
 <div class="sectionbody">
-
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><span class="image left"><img src="../../../../glossary/latest/licence/_images/IFS-Logo.png" alt="IFS-Logo" width="150"></span> Diese Seite ist ein Teil der IsyFact-Standards.
+Alle Inhalte der Seite, insbesondere Texte und Grafiken, sind urheberrechtlich geschützt.
+Alle urheberrechtlichen Nutzungs- und Verwertungsrechte liegen beim Bundesverwaltungsamt.</p>
+</div>
+<div class="paragraph">
+<p><span class="image right"><img src="../../../../glossary/latest/licence/_images/CC-BY.png" alt="Creative Commons Namensnennung" width="150"></span>
+Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-licence" class="xref page">Lizenzbedingungen</a> der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-short" class="xref page">Creative Commons Namensnennung 4.0 International</a> gestattet.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Die Persistenzlogik beinhaltet das Datenmodell (d.h. Modellkomponenten, Entitäten und Attribute) der fachlichen Architektur und bildet dieses auf die technische Ebene ab.
+Sie gliedert sich, wie der Anwendungskern, in Fachkomponenten.
+Im Normalfall ist der Funktionsumfang dieser Fachkomponenten viel geringer als der Funktionsumfang der Entsprechungen im Anwendungskern.
+Dies liegt darin begründet, dass sich die Persistenzlogik ausschließlich um die Speicherung von Geschäftsobjekten in einer Datenbank kümmert und selbst keinerlei Geschäftslogik beinhaltet.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="grundlagen"><a class="anchor" href="#grundlagen"></a>1. Grundlagen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Fachkomponenten</strong> bestehen aus einer Schnittstelle und den persistenten Objekten.
+Die Schnittstelle bildet in der Regel ein Data Access Object ab.
+Persistente Objekte werden Entitäten genannt.</p>
+</div>
+<div class="paragraph">
+<p>Die <a href="#aufbau-fachkomponente-datenzugriff">folgende Abbildung</a> zeigt den Aufbau einer Fachkomponente im Datenzugriff.</p>
+</div>
+<div id="aufbau-fachkomponente-datenzugriff" class="imageblock">
+<div class="content">
+<img src="../_images/detailkonzept-datenzugriff/aufbau_fachkomponente_datenzugriff.dn.svg" alt="aufbau fachkomponente datenzugriff.dn">
+</div>
+<div class="title">Abbildung 1. Aufbau einer Fachkomponente des Datenzugriffs</div>
+</div>
+<div class="paragraph">
+<p>Ein <strong>Data Access Object (DAO)</strong> beschreibt die Schnittstelle der Fachkomponente, d.h. die Operationen, die zum Speichern und Lesen der Entitäten aus der Datenbank nötig sind.</p>
+</div>
+<div class="paragraph">
+<p><strong>Entitäten</strong> bilden Geschäftsobjekte ab und werden in der Regel nach ihnen benannt.</p>
+</div>
+<table id="table-entity" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Namenskonvention Entität</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Entität</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;Geschäftsobjekt&gt;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Akte</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Ein <strong>Persistenz-Klassenmodell</strong> ist das Modell der Entitäten, welche dauerhaft abgespeichert werden sollen.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="persistenz-klassenmodell-vorgaben"><a class="anchor" href="#persistenz-klassenmodell-vorgaben"></a>2. Vorgaben für das Persistenz-Klassenmodell</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die folgenden Abschnitte beschreiben gewünschte Eigenschaften des Persistenz-Klassenmodells sowie Verwendungsregeln.</p>
+</div>
+<div class="sect2">
+<h3 id="persistenz-klassenmodell-und-datenbank-schema-sollen-moeglichst-aehnlich-sein"><a class="anchor" href="#persistenz-klassenmodell-und-datenbank-schema-sollen-moeglichst-aehnlich-sein"></a>2.1. Persistenz-Klassenmodell und Datenbank-Schema sollen möglichst ähnlich sein</h3>
+<div class="paragraph">
+<p>Im Idealfall wird jede Entität auf eine Tabelle des Datenbankschemas abgebildet.
+Eine solche Abbildung ist intuitiv und erleichtert das Verständnis der Anwendung und des Datenbankschemas, was wiederum in der Wartung ein großer Vorteil ist.</p>
+</div>
+<div class="paragraph">
+<p>Tatsächlich ist es aus Gründen der Datenbankperformance aber oft erforderlich, von diesem Idealfall abzuweichen.
+Hier gilt es, auf möglichst wenige Tabellen zuzugreifen, um an die benötigten Informationen zu gelangen.</p>
+</div>
+<div class="paragraph">
+<p>So ist es zum Beispiel sinnvoll, für 1:1-Beziehungen im Persistenz-Klassenmodell den Entitäten mit der Annotation <code>@Embeddable</code> zu versehen.
+Somit wird der Inhalt einer Datenbanktabelle auf mehr als eine Entität verteilt.
+Solche Entitäten können dann über das Lesen einer einzigen Tabellenzeile aus der Datenbank gefüllt werden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="verwendung-generischer-datenstrukturen-vermeiden"><a class="anchor" href="#verwendung-generischer-datenstrukturen-vermeiden"></a>2.2. Verwendung generischer Datenstrukturen vermeiden</h3>
+<div class="paragraph">
+<p>JPA ermöglicht die Verwendung generischer Datenstrukturen.
+Dabei können die Spalten einer Tabelle in Abhängigkeit eines Deskriptorwertes in einer speziell definierten Spalte auf unterschiedliche Attribute verschiedener Entitäten abgebildet werden.
+Eine solche Vorgehensweise erschwert das Verständnis der Daten bei einem direkten Zugriff auf die Datenbank mit Datenbankwerkzeugen und damit auch die Fehleranalyse und Wartung.</p>
+</div>
+<div class="paragraph">
+<p>Trotzdem kann es aus Gründen der Datenbankperformance erforderlich sein, generische Datenstrukturen zu verwenden.
+Werden z. B. Entitäten mit einer gemeinsamen Oberklasse als generische Datenstruktur in einer Tabelle abgelegt und sollen die Attribute der Oberklasse gesucht werden, so kann die Suche auf der Datenbank in einer einzigen Tabelle durchgeführt werden.
+Die Entitäten können ohne zusätzliche Joins aus der Datenbank gelesen werden.</p>
+</div>
+<div class="paragraph">
+<p>Werden generische Datenstrukturen verwendet, dann ist es obligatorisch, dass für jede Entitäten, die in dieser Datenstruktur abgespeichert wird, ein eigener Datenbank-View definiert wird.
+Dieser Datenbank-View enthält alle Attribute der Entitäten mit einem sprechenden Namen.
+Diese Datenbank-Views können dann beim direkten Zugriff mit Datenbankwerkzeugen und bei der Fehleranalyse verwendet werden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="vererbung-im-persistenz-klassenmodell-vermeiden"><a class="anchor" href="#vererbung-im-persistenz-klassenmodell-vermeiden"></a>2.3. Vererbung im Persistenz-Klassenmodell vermeiden</h3>
+<div class="paragraph">
+<p>Klassenhierarchien (der Einsatz von Vererbung) sind bei Entitäten zu vermeiden.
+Abweichungen sind nur für eine Reduzierung der Komplexität des Persistenz-Klassenmodells erlaubt.
+Die Klassenhierarchie ist in diesem Fall möglichst flach zu halten.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fachlogik-in-persistenzklassen-vermeiden"><a class="anchor" href="#fachlogik-in-persistenzklassen-vermeiden"></a>2.4. Fachlogik in Persistenzlogik vermeiden</h3>
+<div class="paragraph">
+<p>Die Implementierung von fachlicher Logik in der gesamten Persistenzlogik, d.h. in den DAOs und Entitäten, ist zu vermeiden.
+Idealerweise sollten die Entitäten lediglich Getter- und Setter-Methoden für die persistierten Daten enthalten.
+Jegliche Fachlogik muss im Anwendungskern implementiert werden.</p>
+</div>
+<div class="paragraph">
+<p>Zur Fachlogik gehören auch Validierungen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="embeddables-vorgaben"><a class="anchor" href="#embeddables-vorgaben"></a>2.5. Vorgaben für <code>@Embeddable</code>-Entitäten</h3>
+<div class="paragraph">
+<p>Für JPA-Entitäten mit der Annotation <code>@Embeddable</code> müssen die Methoden <code>equals</code> und <code>hashCode</code> implementiert werden.
+Die Methoden müssen dafür sämtliche Attribute mit einbeziehen.
+Zusätzlich muss das Interface <code>Serializable</code> implementiert werden.</p>
+</div>
+</div>
 </div>
 </div>
 </article>

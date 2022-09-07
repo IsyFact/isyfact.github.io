@@ -95,7 +95,19 @@
     <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/master.html">Datenzugriff</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/einordnung-ziele.html">Datenzugriff</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/persistenzlogik.html">Konzeption der Persistenzlogik</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/versionierung.html">Versionierung von Datenbankschemas</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-service/master.html">Service</a>
@@ -151,6 +163,45 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">JPA/Hibernate</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../isy-persistence/konzept.html">Konzept</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/vorgaben-konventionen.html">Vorgaben und Konventionen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung-mit-liquibase.html">Versionierung (Liquibase)</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nutzungsvorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/umsetzung-datenzugriff.html">Umsetzung des Datenzugriffs</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -565,8 +616,8 @@ Es reicht also folgender Abschnitt, um eine Bibliothek einzubinden:</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In diesem Kapitel wird die Implementierung der Datenhaltung einer Anwendung beschrieben.
-Die Datenhaltung besteht im Wesentlichen aus den Entitätsklassen (Entity) und den zugehörigen Data Access Objects (DAOs).
-Alle Konzepte und Vorgaben zum Thema Persistenz und Datenzugriff stehen im Dokument <a href="../../blaupausen/detailkonzept-komponente-datenzugriff/master.html" class="xref page">Detailkonzept Komponente Datenzugriff</a>.</p>
+Die Datenhaltung besteht im Wesentlichen aus den Entitäten (Entity) und den zugehörigen Data Access Objects (DAOs).
+Alle Konzepte und Vorgaben zum Thema Persistenz und Datenzugriff stehen im <a href="../../blaupausen/detailkonzept-komponente-datenzugriff/einordnung-ziele.html" class="xref page">Detailkonzept Komponente Datenzugriff</a> sowie im <a href="../../isy-persistence/konzept.html" class="xref page">Konzept JPA/Hibernate</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="designvorgaben"><a class="anchor" href="#designvorgaben"></a>3.1. Designvorgaben</h3>
@@ -577,13 +628,13 @@ Alle Konzepte und Vorgaben zum Thema Persistenz und Datenzugriff stehen im Dokum
 Als Implementierung für die JPA wird Hibernate verwendet.</p>
 </li>
 <li>
-<p>Das Datenbank-Mapping wird über Annotation in den Entitätsklassen festgelegt.</p>
+<p>Das Datenbank-Mapping wird über Annotation in den Klassen der Entitäten festgelegt.</p>
 </li>
 <li>
 <p>Der Zugriff auf Entitäten erfolgt immer über DAOs oder durch die Traversierung des persistenten Datenmodells.</p>
 </li>
 <li>
-<p>DAOs stellen Zugriffsmethoden (Suchen, Schreiben, Löschen&#8230;&#8203;) für genau einen Entitätstyp bereit.</p>
+<p>DAOs stellen Zugriffsmethoden (Suchen, Schreiben, Löschen&#8230;&#8203;) für genau eine Entität bereit.</p>
 </li>
 <li>
 <p>Datenbank-Queries werden im Normalfall aus den Methodennamen generiert.
@@ -600,7 +651,7 @@ Sonst werden sie per <code>@Query</code>-Annotation an der Methode beschrieben.<
 Innerhalb einer Teilanwendung dürfen persistente Entitäten allerdings über Komponentengrenzen hinweg genutzt werden.</p>
 </li>
 <li>
-<p>DAOs und Entitätsklassen werden in einer bestimmten Paketstruktur abgelegt (siehe <a href="../../blaupausen/detailkonzept-komponente-datenzugriff/master.html" class="xref page">Detailkonzept Komponente Datenzugriff</a>).</p>
+<p>DAOs und Entitäten werden in einer <a href="../../isy-persistence/nutzungsvorgaben/umsetzung-datenzugriff.html" class="xref page">festgelegten Paketstruktur</a> abgelegt.</p>
 </li>
 <li>
 <p>Die Transaktionssteuerung wird per AOP in der Service-Schicht durchgeführt (siehe Kapitel <a href="#anbieten-von-service-schnittstellen">Anbieten von Service-Schnittstellen</a>).</p>
@@ -685,7 +736,7 @@ Weitere Details können der <a href="../../blaupausen/referenzarchitektur/master
 <h4 id="anlegen-des-datenbankschemas"><a class="anchor" href="#anlegen-des-datenbankschemas"></a>3.3.1. Anlegen des Datenbankschemas</h4>
 <div class="paragraph">
 <p>Das Datenbankschema muss angelegt werden.
-Dazu werden die benötigten DDL-Anweisungen, wie im <a href="../../blaupausen/detailkonzept-komponente-datenzugriff/master.html" class="xref page">Detailkonzept Komponente Datenzugriff</a> beschrieben, in einem Verzeichnis abgelegt.
+Dazu werden die benötigten DDL-Anweisungen, wie in <a href="../../blaupausen/detailkonzept-komponente-datenzugriff/versionierung.html" class="xref page">Versionierung von Datenbankschemas</a> beschrieben, in einem Verzeichnis abgelegt.
 Die <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-vorlageanwendung" class="xref page">Vorlageanwendung</a> enthält diese Anweisungen im Verzeichnis <code>src/main/skripte/sql/terminfindung</code>.</p>
 </div>
 <div class="paragraph">
@@ -699,7 +750,7 @@ Dieses muss anschließend noch bearbeitet werden.</p>
 <i class="fa icon-note" title="Hinweis"></i>
 </td>
 <td class="content">
-hbm2ddl ist Teil der Hibernate Tools und gehört zum Umfang der Standard-Hibernate Bibliothek.
+<code>hbm2ddl</code> ist Teil der von Hibernate bereitgestellten Werkzeuge.
 Nutzungsdokumentation unter:
 <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-hibernate-toolset-guide" class="xref page">Hibernate Toolset Guide</a>
 </td>

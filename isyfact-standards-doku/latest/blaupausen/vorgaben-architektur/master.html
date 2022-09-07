@@ -95,7 +95,19 @@
     <a class="nav-link" href="../detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/master.html">Datenzugriff</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/einordnung-ziele.html">Datenzugriff</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/persistenzlogik.html">Konzeption der Persistenzlogik</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/versionierung.html">Versionierung von Datenbankschemas</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../detailkonzept-komponente-service/master.html">Service</a>
@@ -151,6 +163,45 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">JPA/Hibernate</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../isy-persistence/konzept.html">Konzept</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/vorgaben-konventionen.html">Vorgaben und Konventionen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung-mit-liquibase.html">Versionierung (Liquibase)</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nutzungsvorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/umsetzung-datenzugriff.html">Umsetzung des Datenzugriffs</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -501,21 +552,30 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <div class="sectionbody">
 <div class="sidebarblock">
 <div class="content">
-<div class="title"><span class="icon"><i class="fa fa-university"></i></span> Architekturregel: Vorgabe</div>
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Verwendung von HTTP für Service-Aufrufe</div>
 <div class="paragraph">
 <p>Synchrone Service-Aufrufe finden über das Protokoll <strong>HTTP</strong> statt und werden sowohl zur internen als auch externen Servicekommunikation genutzt.
-HTTP-Anfragen bzw. HTTP-Antworten (s. <a href="#image-http-messages">Abbildung 1</a>) erlauben es an drei Stellen, anwendungsspezifische Daten zu übertragen: in der URL, in den Headern sowie im Body.
-.Aufbau von HTTP-Anfragen bzw. HTTP-Antworten</p>
+HTTP-Anfragen bzw. HTTP-Antworten (s. <a href="#image-http-messages">Abbildung 1</a>) erlauben es an drei Stellen, anwendungsspezifische Daten zu übertragen: in der URL, in den Headern sowie im Body.</p>
 </div>
 <div id="image-http-messages" class="imageblock text-center">
 <div class="content">
 <img src="../_images/referenzarchitektur/http-messages-aufbau.dn.svg" alt="http messages aufbau.dn">
 </div>
+<div class="title">Abbildung 1. Aufbau von HTTP-Anfragen bzw. HTTP-Antworten</div>
 </div>
 <div class="paragraph">
 <p>Header enthalten Metadaten.
 Der Body enthält Nutzdaten.
 Bei Anfragen mittels <code>GET</code> und <code>DELETE</code>, die keinen Body erwarten, enthalten URL-Parameter Nutzdaten.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Benennung von Metadaten</div>
+<div class="paragraph">
+<p>Metadaten sind, egal über welches Protokoll sie übertragen werden, <strong>einheitlich benannt</strong>.
+Gibt es eine durch einen Standard vorgegebene Benennung, ist diese zu verwenden.</p>
 </div>
 </div>
 </div>

@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Detailkonzept Datenzugriff: Einleitung :: IsyFact Dokumentation</title>
-    <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/blaupausen/detailkonzept-komponente-datenzugriff/thisdoc.html">
+    <title>Versionierung mit Liquibase :: IsyFact Dokumentation</title>
+    <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/isy-persistence/konzept/versionierung-mit-liquibase.html">
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
@@ -82,29 +82,41 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../blaupausen.html">Blaupausen</a>
+    <a class="nav-link" href="../../blaupausen/blaupausen.html">Blaupausen</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../referenzarchitektur/master.html">Referenzarchitektur</a>
+    <a class="nav-link" href="../../blaupausen/referenzarchitektur/master.html">Referenzarchitektur</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a>
+    <a class="nav-link" href="../../blaupausen/referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="master.html">Datenzugriff</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/einordnung-ziele.html">Datenzugriff</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/persistenzlogik.html">Konzeption der Persistenzlogik</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/versionierung.html">Versionierung von Datenbankschemas</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../detailkonzept-komponente-service/master.html">Service</a>
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-service/master.html">Service</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../detailkonzept-komponente-web-gui/master.html">Web GUI</a>
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-web-gui/master.html">Web GUI</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../detailkonzept-komponente-batch/master.html">Batch</a>
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-batch/master.html">Batch</a>
   </li>
 </ul>
   </li>
@@ -151,6 +163,45 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">JPA/Hibernate</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../konzept.html">Konzept</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="vorgaben-konventionen.html">Vorgaben und Konventionen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="4">
+    <a class="nav-link" href="versionierung-mit-liquibase.html">Versionierung (Liquibase)</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nutzungsvorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../nutzungsvorgaben/umsetzung-datenzugriff.html">Umsetzung des Datenzugriffs</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../nutzungsvorgaben/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../nutzungsvorgaben/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -461,7 +512,10 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../einstieg/einstieg.html">IsyFact Standards</a></li>
-    <li><a href="thisdoc.html">Detailkonzept Datenzugriff: Einleitung</a></li>
+    <li><a href="../../bausteine/bausteine.html">Bausteine</a></li>
+    <li>JPA/Hibernate</li>
+    <li><a href="../konzept.html">Konzept</a></li>
+    <li><a href="versionierung-mit-liquibase.html">Versionierung (Liquibase)</a></li>
   </ul>
 </nav>
 </div>
@@ -470,164 +524,103 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Detailkonzept Datenzugriff: Einleitung</h1>
+<h1 class="page">Versionierung mit Liquibase</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><span class="image left"><img src="../../../../glossary/latest/licence/_images/IFS-Logo.png" alt="IFS-Logo" width="150"></span> Diese Seite ist ein Teil der IsyFact-Standards.
+Alle Inhalte der Seite, insbesondere Texte und Grafiken, sind urheberrechtlich geschützt.
+Alle urheberrechtlichen Nutzungs- und Verwertungsrechte liegen beim Bundesverwaltungsamt.</p>
+</div>
+<div class="paragraph">
+<p><span class="image right"><img src="../../../../glossary/latest/licence/_images/CC-BY.png" alt="Creative Commons Namensnennung" width="150"></span>
+Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-licence" class="xref page">Lizenzbedingungen</a> der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-short" class="xref page">Creative Commons Namensnennung 4.0 International</a> gestattet.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Liquibase ist eine Bibliothek zum Management von Änderungen an Datenbankschemas.
+Hierfür werden die Datenbankänderungen in sequenzieller Ordnung in <strong>Change Logs</strong> aufgelistet.
+Diese können in SQL, XML, JSON oder YAML geschrieben sein.
+Änderungen werden im Format des <strong>Changesets</strong> angelegt.
+Diese enthalten <strong>Change Types</strong>, Definitionen von Änderungen, die auf die Datenbank angewandt werden sollen.
+Um die richtige Reihenfolge sowie die Datenbankumgebung der Änderungen kontrollieren zu können werden Kontext, Label und Precondition Tags verwendet.</p>
+</div>
+<div class="paragraph">
+<p>Die wichtigsten Befehle von Liquibase sind: <code>update</code>, <code>rollback</code>, <code>snapshot</code>, <code>diff</code>, <code>status</code> und <code>utility</code>.
+Beim initialen Update-Befehl kontrolliert Liquibase die Datenbankverbindungsinformationen, inklusive der Berechtigungen, die Datenbank-URL und die JDBC Treiber.</p>
+</div>
+<div class="paragraph">
+<p>Bei der Verteilung von Änderungen werden zwei Tabellen in der Datenbank erstellt:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>DATABASECHANGELOG</code>, in der die Änderungen festgehalten werden, und</p>
+</li>
+<li>
+<p><code>DATABASECHANGELOGLOCK</code>, blockiert die Datenbank um zeitgleiche Änderungen durch mehrere Liquibase-Instanzen zu verhindern.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 <div class="sect1">
-<h2 id="Einleitung"><a class="anchor" href="#Einleitung"></a>1. Einleitung</h2>
+<h2 id="changelogs-in-liquibase"><a class="anchor" href="#changelogs-in-liquibase"></a>1. Change Logs in Liquibase</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Gemäß den Vorgaben der <a href="../referenzarchitektur/master.html" class="xref page">Referenzarchitektur</a> basiert die Architektur eines IT-Systems auf der bekannten Drei-Schichten-Architektur.
-Eine dieser Schichten ist die Persistenzschicht.
-In dieser Schicht ist alle Funktionalität enthalten, die zum Erzeugen, Suchen, Bearbeiten und Löschen von Datensätzen benötigt wird.
-Der Zugriff auf eine relationale Datenbank ist in dieser Schicht vollständig gekapselt.
-In Richtung Datenbank kommuniziert diese Schicht mittels JDBC und SQL, in Richtung des Anwendungskerns stellt die Schicht persistente Objekte zur Verfügung.</p>
+<p>In den Change Logs speichert Liquibase sequenziell alle Änderungen, Changesets genannt, an der Datenbank.
+Hierdurch überwacht die Bibliothek, auf welchem Stand sich die Datenbank befindet und führt noch nicht angewendete Änderungen an dieser durch.</p>
 </div>
 <div class="paragraph">
-<p>In <a href="#image-IFRefArcITSsysPers">Abbildung 1</a> ist die Referenzarchitektur eines IT-Systems noch einmal dargestellt, wobei die Persistenzschicht mit der Komponente Datenhaltung hervorgehoben ist.</p>
+<p>In den Changelogs können die folgenden Elemente eingebettet werden:</p>
 </div>
-<div id="image-IFRefArcITSsysPers" class="imageblock text-center">
-<div class="content">
-<img src="../_images/detailkonzept-datenzugriff/IFRefArcITSsysPers.png" alt="IFRefArcITSsysPers">
-</div>
-<div class="title">Abbildung 1. Referenzarchitektur eines IT-Systems</div>
-</div>
-<div class="paragraph">
-<p>Dieses Dokument beschreibt die Vorgaben zur Umsetzung einer solchen Persistenzschicht im Detail.
-Die Implementierung der Zugriffsschicht wird durch die Verwendung eines standardisierten Frameworks erleichtert.
-Als Frameworks werden JPA/Hibernate sowie Spring Data JPA verwendet.
-Das Dokument legt außerdem allgemeine Vorgaben für das Persistenzmodell (die dauerhaft zu speichernden Objekte) fest und behandelt weiterführende Themen wie Historisierung von Daten.</p>
-</div>
-<div class="admonitionblock warning">
-<table>
+<table id="changelog-elemente" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<thead>
 <tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warnung"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Das Thema Transaktionssteuerung wird nicht im Rahmen des Datenzugriffs behandelt, da Transaktionen in der IsyFact über den Anwendungskern bzw. die Nutzungsschicht gesteuert werden.
-Mehr zu diesem Thema ist in den anderen Detailkonzepten enthalten:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="../detailkonzept-komponente-anwendungskern/master.html#transaktionssteuerung" class="xref page">Detailkonzept Komponente Anwendungskern</a></p>
-</li>
-<li>
-<p><a href="../detailkonzept-komponente-batch/master.html#die-transaktionssteuerung" class="xref page">Detailkonzept Komponente Batch</a></p>
-</li>
-<li>
-<p><a href="../detailkonzept-komponente-service/master.html#transaktionssteuerung" class="xref page">Detailkonzept Komponente Service</a></p>
-</li>
-<li>
-<p><a href="../detailkonzept-komponente-web-gui/master.html#zugriff-awk" class="xref page">Detailkonzept Komponente Web-GUI</a></p>
-</li>
-</ul>
-</div>
-</td>
+<th class="tableblock halign-left valign-top">Tag</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
 </tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Die Vorgaben zum Thema JPA/Hibernate betreffen die folgenden Themenbereiche:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Die Definition des Mappings zwischen Persistenzobjekten und der Datenbank.</p>
-</li>
-<li>
-<p>Die Konfiguration von JPA.</p>
-</li>
-<li>
-<p>Die Konfiguration von Hibernate.</p>
-</li>
-<li>
-<p>Die Verwendung von JPA in der Anwendung, vor allem das Zusammenspiel mit dem Spring Framework.</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
+</thead>
+<tbody>
 <tr>
-<td class="icon">
-<i class="fa icon-note" title="Hinweis"></i>
-</td>
-<td class="content">
-Dieses Dokument ist keine allgemeine Anleitung zur Verwendung von JPA.
-Für den Einstieg in JPA mit Hibernate ist das Buch <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-jpa-hibernate" class="xref page">„Java Persistence with Hibernate“</a> sehr zu empfehlen.
-</td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>preCondition</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Voraussetzungen, die erfüllt sein müssen, bevor der Changelog ausgeführt wird.
+Der Autor kann hierdurch festhalten, welche Annahmen zum Status des Changelogs er trifft und sicherstellen, dass die Änderungen nur ausgeführt werden, wenn diese stimmen.
+Ebenfalls können hierdurch Datenprüfungen vor unwiderrufliche Änderungen gekoppelt werden.</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>property</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wird zum Einsetzen von Properties genutzt.
+Soll dasselbe Changelog für mehrere Umgebungen genutzt werden kann dies hierdurch abgebildet werden.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>changeSet</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die auszuführenden Änderungen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>include</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zusätzliche Dateien, die Changesets enthalten und inkludiert werden sollen.
+Hierdurch ist es möglich, Change Logs in übersichtliche Teile aufzugliedern.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>context</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gibt an, in welchem Kontext ein Changeset ausgeführt wird.
+Bestimmte Änderung können hiermit z.B. nur während eines Testes ausgeführt werden.</p></td>
+</tr>
+</tbody>
 </table>
-</div>
 <div class="paragraph">
-<p>Für ein Verständnis der in diesem Dokument geforderten JPA-Nutzung ist vor allem die <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-vorlageanwendung" class="xref page">Vorlageanwendung</a> zu empfehlen.
-Die:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Konfiguration in der Datei <code>application.properties</code>,</p>
-</li>
-<li>
-<p>Persistenzklassen <code>Terminfindung</code> und <code>Teilnehmer</code>,</p>
-</li>
-<li>
-<p>Data Access Objects <code>TerminfindungDao</code> und <code>TeilnehmerDao</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>entsprechen den in diesem Dokument gemachten Vorgaben und können bequem als Vorlage für eigene Implementierungen verwendet werden.
-Die in diesem Dokument gezeigten Code-Beispiele stammen in der Regel auch aus der Vorlage-Anwendung.</p>
-</div>
-<div class="paragraph">
-<p>JPA kann (gerade in Verbindung mit dem Spring Framework) auf verschiedene Arten verwendet werden.
-Die in diesem Dokument aufgestellten Vorgaben für die Verwendung von JPA verfolgen vor allem zwei Ziele:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Die Verwendung von JPA projektübergreifend zu vereinheitlichen.</p>
-</li>
-<li>
-<p>Die Verwendung von JPA so einfach, komfortabel und verständlich wie möglich zu gestalten.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Auf Grund dieser Anforderungen wird versucht, möglichst ausschließlich die Mechanismen von JPA zu verwenden.
-Nur wo dies nicht möglich ist, darf auf die Hibernate-Implementierung zugegriffen werden.
-Dabei wird in diesem Dokument die Verwendung bestimmter Hibernate-Features verboten bzw. von ihrer Verwendung abgeraten.</p>
-</div>
-<div class="paragraph">
-<p>Abweichungen zu den Vorgaben dieses Dokuments müssen als Architekturentscheidung im <a href="../../methodik/vorlage-systementwurf/antora-master.html" class="xref page">IsyFact Systementwurf</a> dokumentiert werden.</p>
-</div>
-<div class="paragraph">
-<p>Dieses Dokument ist wie folgt aufgebaut:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Zunächst werden im Kapitel <a href="master.html#anforderungen" class="xref page">Anforderungen</a> die Anforderungen an die Komponente Datenzugriff kurz motiviert.</p>
-</li>
-<li>
-<p>Anschließend werden im Kapitel <a href="master.html#persistenzlogik" class="xref page">Persistenzlogik</a> grundsätzliche Regeln vorgestellt, wie die Abbildung von Objekten auf Datenbanken stattfinden soll.</p>
-</li>
-<li>
-<p>Das Kapitel <a href="master.html#die-definition-des-mappings-zwischen-objekten-und-datenbank" class="xref page">Die Definition des Mappings zwischen Objekten und Datenbank</a> vertieft anschließend das Thema Mapping, wobei konkrete Hinweise zur Abbildung von Attributen auf Datenbankfelder gegeben werden.</p>
-</li>
-<li>
-<p>Im Anschluss daran wird die konkrete Nutzung des Datenbankzugriffs in der Anwendung beschrieben.
-Zunächst wird gezeigt, wie Spring Data JPA aus der Anwendung heraus genutzt werden soll (Kapitel <a href="master.html#verwendung-von-jpa-in-der-anwendung" class="xref page">Verwendung von JPA in der Anwendung</a> ).
-Anschließend wird erläutert, wie Datenbank-Abfragen durchgeführt werden (Kapitel <a href="master.html#jpql-fuer-datenbank-abfragen-nutzen" class="xref page">JPQL für Datenbankabfragen nutzen</a> ).</p>
-</li>
-<li>
-<p>Die generelle Konfiguration von JPA und Hibernate ist im Kapitel <a href="master.html#konfiguration-von-jpa-und-hibernate-in-der-anwendung" class="xref page">Konfiguration von JPA und Hibernate in der Anwendung</a> beschrieben.</p>
-</li>
-<li>
-<p>Abschließend wird noch das Thema Historisierung (Kapitel <a href="master.html#historisierung" class="xref page">Historisierung</a> ) behandelt.</p>
-</li>
-</ul>
+<p>Liquibase verarbeitet während der Laufzeit das Change Log.
+Zunächst werden Preconditions überprüft.
+Sind nicht alle Preconditions erfüllt, bricht Liquibase die Ausführung ab.
+Andernfalls werden die Changesets in der Reihenfolge ihrer Definition nach ausgeführt.</p>
 </div>
 </div>
 </div>

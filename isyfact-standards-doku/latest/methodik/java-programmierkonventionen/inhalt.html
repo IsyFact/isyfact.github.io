@@ -95,7 +95,19 @@
     <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/master.html">Datenzugriff</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/einordnung-ziele.html">Datenzugriff</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/persistenzlogik.html">Konzeption der Persistenzlogik</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/versionierung.html">Versionierung von Datenbankschemas</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-service/master.html">Service</a>
@@ -151,6 +163,45 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">JPA/Hibernate</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../isy-persistence/konzept.html">Konzept</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/vorgaben-konventionen.html">Vorgaben und Konventionen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung-mit-liquibase.html">Versionierung (Liquibase)</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nutzungsvorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/umsetzung-datenzugriff.html">Umsetzung des Datenzugriffs</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -1877,6 +1928,24 @@ Die Implementierung von <code>equals()</code> und <code>hashCode()</code> ist ni
 <p><code>static int Objects.hash(Object&#8230;&#8203; values)</code></p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="kryptographie"><a class="anchor" href="#kryptographie"></a>3.5. Kryptographie</h3>
+<div class="paragraph">
+<p>Kryptografische Verfahren basieren auf Zufallszahlen.
+Diese werden unter Linux standardmäßig durch <code>dev/random</code> erzeugt.
+Falls <code>dev/random</code> nicht genug Entropie vorliegt, blockiert es die Erzeugung neuer Zufallszahlen.
+Dadurch blockieren auch die kryptografischen Verfahren, welche z.B. die Kommunikation mit anderen Anwendungen oder einer Datenbank absichern.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-shield"></i></span> Erzeugung von Zufallszahlen unter Linux</div>
+<div class="paragraph">
+<p>Zur Erzeugung von Zufallszahlen unter Linux wird <code>dev/random</code> verwendet.
+Falls <code>dev/random</code> zu oft blockiert und das Risiko, potenziell schwache Zufallszahlen zu verwenden, akzeptiert wird, kann alternativ <code>dev/urandom</code> verwendet werden.</p>
+</div>
 </div>
 </div>
 </div>

@@ -95,7 +95,19 @@
     <a class="nav-link" href="../detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/master.html">Datenzugriff</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/einordnung-ziele.html">Datenzugriff</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/persistenzlogik.html">Konzeption der Persistenzlogik</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../detailkonzept-komponente-datenzugriff/versionierung.html">Versionierung von Datenbankschemas</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../detailkonzept-komponente-service/master.html">Service</a>
@@ -151,6 +163,45 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">JPA/Hibernate</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../isy-persistence/konzept.html">Konzept</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/vorgaben-konventionen.html">Vorgaben und Konventionen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung-mit-liquibase.html">Versionierung (Liquibase)</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nutzungsvorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/umsetzung-datenzugriff.html">Umsetzung des Datenzugriffs</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -692,11 +743,11 @@ So kann die Konfiguration der Webanwendung mit minimalen Anpassungen auch für d
 </div>
 <div class="paragraph">
 <p>Der Batchrahmen benötigt für die Speicherung des Fortschritts und des Status der Batches eine Datenbankverbindung.
-In der Datei werden die vom Batchrahmen benötigten Informationen gespeichert, siehe <a href="#die-tabellen-des-batchrahmens">Die Tabellen des Batchrahmens</a>.</p>
+In der Datei werden die vom Batchrahmen benötigten Informationen gespeichert, siehe <a href="#tabellen-des-batchrahmens">Tabellen des Batchrahmens</a>.</p>
 </div>
 <div class="paragraph">
 <p>Bei Bedarf können in einem Batch auch weitere Datenbankverbindungen genutzt werden.
-Die Einbindung weiterer Datenbanken ist in <a href="../detailkonzept-komponente-datenzugriff/master.html" class="xref page">Detailkonzept Komponente Datenzugriff</a> beschrieben.</p>
+Die Einbindung weiterer Datenbanken ist in <a href="../../isy-persistence/konzept/vorgaben-konventionen.html#nutzung-und-anbindung-einer-zweiten-datenbank" class="xref page">Konzept des Bausteins JPA/Hibernate</a> beschrieben.</p>
 </div>
 </div>
 </div>
@@ -1388,7 +1439,7 @@ Hierfür werden gesonderte <code>@Configuration</code>-Klassen erstellt.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="die-tabellen-des-batchrahmens"><a class="anchor" href="#die-tabellen-des-batchrahmens"></a>5. Die Tabellen des Batchrahmens</h2>
+<h2 id="tabellen-des-batchrahmens"><a class="anchor" href="#tabellen-des-batchrahmens"></a>5. Tabellen des Batchrahmens</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Der Batchrahmen benötigt für seine Checkpoint / Restart Funktionalität die Möglichkeit, bei jedem Commit den aktuellen Stand des Batches in einer Tabelle zu speichern.
@@ -2476,7 +2527,7 @@ weiteren Dateien:</p>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="_namenskonvemtion"><a class="anchor" href="#_namenskonvemtion"></a>8.2.1. Namenskonvemtion</h4>
+<h4 id="_namenskonvention_4"><a class="anchor" href="#_namenskonvention_4"></a>8.2.1. Namenskonvention</h4>
 <div class="paragraph">
 <p>Ein Shell-Skript muss folgender Namenskonvention folgen:</p>
 </div>
@@ -2651,12 +2702,8 @@ exit $\{RC}</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Eine funktionsfähige Version dieses Beispiels ist im isy-batchrahmen
-unter <code>src/main/skripte/shellbatch_template/</code> eingecheckt.
-Um dieses ausführen zu können, muss eine funktionierende Datenbankverbindung auf ein leeres Schema in der jpa.properties Datei angegeben werden.</p>
-</div>
-<div class="paragraph">
-<p>Details zu dem Datenzugriff, welcher in diesem Beispiel aufgeführt ist, oder alternative Datenzugriffe, befinden sich in dem Dokument <a href="../detailkonzept-komponente-datenzugriff/inhalt.html" class="xref page">Detailkonzept Datenzugriff</a>.</p>
+<p>Eine funktionsfähige Version dieses Beispiels ist im <code>isy-batchrahmen</code> unter <code>src/main/skripte/shellbatch_template/</code> eingecheckt.
+Um dieses ausführen zu können, muss eine funktionierende Datenbankverbindung auf ein leeres Schema in der <code>jpa.properties</code> Datei angegeben werden.</p>
 </div>
 </div>
 </div>

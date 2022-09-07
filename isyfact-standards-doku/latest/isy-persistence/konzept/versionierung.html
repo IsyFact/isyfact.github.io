@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: IsyFact Dokumentation</title>
-    <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/blaupausen/detailkonzept-komponente-datenzugriff/docinfo.html">
+    <title>Versionierung (Eigenentwicklung) :: IsyFact Dokumentation</title>
+    <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/isy-persistence/konzept/versionierung.html">
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
@@ -82,29 +82,41 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../blaupausen.html">Blaupausen</a>
+    <a class="nav-link" href="../../blaupausen/blaupausen.html">Blaupausen</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../referenzarchitektur/master.html">Referenzarchitektur</a>
+    <a class="nav-link" href="../../blaupausen/referenzarchitektur/master.html">Referenzarchitektur</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a>
+    <a class="nav-link" href="../../blaupausen/referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="master.html">Datenzugriff</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/einordnung-ziele.html">Datenzugriff</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/persistenzlogik.html">Konzeption der Persistenzlogik</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/versionierung.html">Versionierung von Datenbankschemas</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../detailkonzept-komponente-service/master.html">Service</a>
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-service/master.html">Service</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../detailkonzept-komponente-web-gui/master.html">Web GUI</a>
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-web-gui/master.html">Web GUI</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../detailkonzept-komponente-batch/master.html">Batch</a>
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-batch/master.html">Batch</a>
   </li>
 </ul>
   </li>
@@ -151,6 +163,45 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">JPA/Hibernate</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../konzept.html">Konzept</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="vorgaben-konventionen.html">Vorgaben und Konventionen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="versionierung-mit-liquibase.html">Versionierung (Liquibase)</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="4">
+    <a class="nav-link" href="versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nutzungsvorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../nutzungsvorgaben/umsetzung-datenzugriff.html">Umsetzung des Datenzugriffs</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../nutzungsvorgaben/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../nutzungsvorgaben/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -459,6 +510,13 @@
 <button class="nav-toggle"></button>
   <a href="../../einstieg/vorstellung.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../einstieg/einstieg.html">IsyFact Standards</a></li>
+    <li><a href="../../bausteine/bausteine.html">Bausteine</a></li>
+    <li>JPA/Hibernate</li>
+    <li><a href="../konzept.html">Konzept</a></li>
+    <li><a href="versionierung.html">Versionierung (Eigenentwicklung)</a></li>
+  </ul>
 </nav>
 </div>
   <div class="content">
@@ -466,30 +524,246 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
+<h1 class="page">Versionierung (Eigenentwicklung)</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
 <div class="paragraph">
-<p><strong>Java Bibliothek / IT-System</strong></p>
+<p><span class="image left"><img src="../../../../glossary/latest/licence/_images/IFS-Logo.png" alt="IFS-Logo" width="150"></span> Diese Seite ist ein Teil der IsyFact-Standards.
+Alle Inhalte der Seite, insbesondere Texte und Grafiken, sind urheberrechtlich geschützt.
+Alle urheberrechtlichen Nutzungs- und Verwertungsrechte liegen beim Bundesverwaltungsamt.</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 12.5%;">
-<col style="width: 37.5%;">
-</colgroup>
-<thead>
+<div class="paragraph">
+<p><span class="image right"><img src="../../../../glossary/latest/licence/_images/CC-BY.png" alt="Creative Commons Namensnennung" width="150"></span>
+Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-licence" class="xref page">Lizenzbedingungen</a> der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-short" class="xref page">Creative Commons Namensnennung 4.0 International</a> gestattet.</p>
+</div>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
 <tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Art</th>
-<th class="tableblock halign-left valign-top">Version</th>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Diese Seite dokumentiert die Versionierung von Datenbankschemas mittels einer Eigenentwicklung.
+Das empfohlene Vorgehen ist die <a href="versionierung-mit-liquibase.html" class="xref page">Versionierung mit Liquibase</a>.</p>
+</div>
+</td>
 </tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy-persistence</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bibliothek</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">v2.5.0-SNAPSHOT</p></td>
-</tr>
-</tbody>
 </table>
+</div>
+<div class="paragraph">
+<p>Die Verwaltung von Versionsinformationen für ein Datenbankschema innerhalb der Datenbank soll sicherstellen, dass die Anwendung und Datenmigrationsskripte erkennen können, ob ein Datenbankschema die erwartete Version hat.
+Zusätzlich sollen die Datenbankadministratoren nachvollziehen können, welche Änderungen am Datenbankschema bereits erfolgt sind.</p>
+</div>
+<div class="paragraph">
+<p>Die Versionsnummer eines Datenbankschemas ist gleich der Versionsnummer der Anwendung, mit der das Schema angelegt bzw. zuletzt geändert wurde.
+Damit ist auf einen Blick zu erkennen, welche Versionsnummer eine Anwendung mindestens haben muss, um mit dem Schema zusammenarbeiten zu können.</p>
+</div>
+<div class="paragraph">
+<p>Wird nur eine Anwendung geändert, das Datenbankschema aber nicht, so bleibt die Versionsnummer des Datenbankschemas sowohl in der Anwendung als auch in den Datenbank-Skripten unverändert.
+Nur die Versionsnummer der Anwendung selbst wird erhöht.</p>
+</div>
+<div class="paragraph">
+<p>Zusätzlich wird ein Update-Zähler mitgeführt, der jedes Mal hochgezählt wird, wenn sich das Datenbankschema ändert, aber die Anwendung unverändert bleibt. Das ist z.B. dann der Fall, wenn zusätzliche Indexe angelegt werden oder Views, die die Anwendung selbst nicht benötigt.</p>
+</div>
+<div class="paragraph">
+<p>Im Folgenden wird ein Verfahren festgelegt, das diese Anforderungen umsetzt.
+Die Umsetzung der Versionierung ist in den <a href="../nutzungsvorgaben/versionierung.html" class="xref page">Nutzungsvorgaben</a> dokumentiert.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installationsablauf-bei-der-neuanlage"><a class="anchor" href="#installationsablauf-bei-der-neuanlage"></a>1. Installationsablauf bei der Neuanlage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die Neuinstallation eines Datenbankschemas erfolgt in mehreren Schritten, die jeweils aufeinander aufbauen.
+Für die automatisierte Installation werden diese Schritte von einem Datenbankskript nacheinander durchgeführt.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Schritt 1: Umgebungsvariablen laden</dt>
+<dd>
+<p>Für Testzwecke ist es erforderlich, Datenbankschemas in unterschiedlichen Umgebungen zu installieren.
+Umgebungsspezifische Konfigurationsparameter, wie z. B. der Schema-Name oder die Angaben zur Datenbankverbindung werden in einem eigenen Datenbankskript abgelegt, das Umgebungsvariablen mit den entsprechenden Werten setzt.
+Die übrigen Installationsschritte verwenden dann diese Variablen.</p>
+</dd>
+<dt class="hdlist1">Schritt 2: Tablespace erstellen</dt>
+<dd>
+<p>Erstellen aller Tablespaces, die für die Installation der Datenbankobjekte benötigt werden.</p>
+</dd>
+<dt class="hdlist1">Schritt 3: Benutzer anlegen</dt>
+<dd>
+<p>Anlegen aller Datenbankbenutzer, einschließlich ihrer Rollen und Berechtigungen.
+Mit diesen Benutzern werden die anwendungsspezifischen Datenbankobjekte angelegt.
+Es müssen daher alle hierfür benötigten Rechte für die Dauer der Installation gesetzt werden.</p>
+</dd>
+<dt class="hdlist1">Schritt 4: Erzeugen der anwendungsspezifischen Datenbankobjekte</dt>
+<dd>
+<p>Es werden alle Tabellen, Indexe, Views, Prozeduren und Funktionen für die Anwendung angelegt.
+Weiterhin werden benötigte spezielle Datenbankobjekte, z.B. für das Oracle Advanced Queuing angelegt.
+Die anwendungsspezifischen Datenbankobjekte werden mit den in Schritt 3 angelegten Benutzern erstellt.</p>
+</dd>
+<dt class="hdlist1">Schritt 5: Abschlussbearbeitung</dt>
+<dd>
+<p>In diesem Schritt können alle Operationen ausgeführt werden, die sich auf die bisher angelegten Datenbankobjekte beziehen.</p>
+</dd>
+<dt class="hdlist1">Schritt 6: Rechte entziehen</dt>
+<dd>
+<p>Falls den Benutzern im Schritt 3 Rechte zugewiesen wurden, die nur für die Installation benötigt wurden, werden sie in diesem Schritt wieder entzogen.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Die nachfolgende Abbildung zeigt noch einmal die einzelnen Schritte der Installation.</p>
+</div>
+<div id="installation-bei-neuanlage" class="imageblock">
+<div class="content">
+<img src="../_images/instbeineuan.png" alt="instbeineuan">
+</div>
+<div class="title">Abbildung 1. Installationsablauf bei der Neuanlage</div>
+</div>
+<div class="sect2">
+<h3 id="struktur-der-installationsskripte-fuer-die-neuanlage"><a class="anchor" href="#struktur-der-installationsskripte-fuer-die-neuanlage"></a>1.1. Struktur der Installationsskripte für die Neuanlage</h3>
+<div class="paragraph">
+<p>Für die automatisierte Installation wird eine Strukturierung der Installationsskripte festgelegt.
+Es existieren folgende Aufrufbeziehungen:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Shell-Skripte</dt>
+<dd>
+<p>Über die Shell-Skripte <code>install-db-schema.bat</code> (Windows) bzw. <code>install-db-schema.sh</code> (Linux) wird das SQL-Skript <code>00_install-main.sql</code> aufgerufen.
+Als Parameter werden das Skript für das Anlegen der Umgebungsvariablen und die Log-Datei mitgegeben.</p>
+</dd>
+<dt class="hdlist1">00_install-main.sql</dt>
+<dd>
+<p>Das SQL-Skript ruft die eigentlichen Installationsskripte in der richtigen Reihenfolge über das Hilfsskript <code>99_starte-skript-mit-logging.sql</code> nacheinander auf.
+Dabei werden auch die Tabellen zur Versionierung angelegt und korrekt gefüllt.</p>
+</dd>
+<dt class="hdlist1">99_starte-skript-mit-logging.sql</dt>
+<dd>
+<p>Das Hilfsskript führt ein SQL-Skript aus und befüllt die Versionstabelle korrekt.
+Als Parameter werden der Pfad des Skripts, die Schnittnummer inklusiv der Unterschrittnummer und die Beschreibung mit übergeben.</p>
+</dd>
+<dt class="hdlist1">&lt;Installationsskript&gt;.sql</dt>
+<dd>
+<p>Die eigentlichen Installationsskripte haben das feste Namensschema: <code>&lt;Schrittnummer&gt;-&lt;Unterschrittnummer&gt;_&lt;Name&gt;.sql</code>.
+Die Schrittnummer ist 2-stellig und entspricht der Schrittnummer aus dem <a href="#installationsablauf-bei-der-neuanlage">Installationsablauf bei der Neuanlage</a>.
+Falls zu einem Schritt mehrere Skripte gehören, gibt die Unterschrittnummer die Reihenfolge an, in der diese ausgeführt werden.
+Der Name kann frei vergeben werden, sollte aber sprechend sein.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Die nachfolgende Abbildung zeigt noch einmal die Beziehung zwischen den einzelnen Skripten.</p>
+</div>
+<div id="struktur-skripte-installation" class="imageblock">
+<div class="content">
+<img src="../_images/instbeineuan.png" alt="instbeineuan">
+</div>
+<div class="title">Abbildung 2. Beziehungen zwischen den Installationsskripten</div>
+</div>
+<div class="paragraph">
+<p>Templates für die Skripte sind als Ressourcen in der Bibliothek <code>isy-persistence</code> abgelegt.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installationsablauf-bei-der-schemaaenderung"><a class="anchor" href="#installationsablauf-bei-der-schemaaenderung"></a>2. Installationsablauf bei der Schemaänderung</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die Änderung eines Datenbankschemas erfolgt analog zur Neuanlage ebenfalls in mehreren Schritten, die jeweils aufeinander aufbauen.
+Für die automatisierte Änderung werden diese Schritte von einem Datenbankskript nacheinander durchgeführt.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Schritt 1: Umgebungsvariablen laden</dt>
+<dd>
+<p>Dieser Schritt unterscheidet sich nicht von der Neuanlage.
+Je nach Art der durchzuführenden Änderung kann es aber erforderlich sein, hier weitere Variablen zu setzen.</p>
+</dd>
+<dt class="hdlist1">Schritt 2: Rechte setzen</dt>
+<dd>
+<p>Falls erforderlich, werden für den Benutzer, mit dem die Änderungen durchgeführt werden sollen, alle für die Änderung des Datenbankschemas benötigten Berechtigungen gesetzt.</p>
+</dd>
+<dt class="hdlist1">Schritt 3: Durchführen der Schemaänderungen</dt>
+<dd>
+<p>Es werden alle Änderungen am Datenbankschema vorgenommen.
+Das umfasst sowohl das Anlegen neuer Datenbankobjekte, wie z.B. Tabellen, Views und Indexe, als auch die Änderung bereits vorhandener Datenbankobjekte, wie z.B. das Löschen und Hinzufügen von Spalten in Tabellen.
+Die Änderungen werden mit dem Benutzer durchgeführt, für den in Schritt 2 die Berechtigungen entsprechend gesetzt wurden.</p>
+</dd>
+<dt class="hdlist1">Schritt 4: Abschlussbearbeitung</dt>
+<dd>
+<p>In diesem Schritt können alle Operationen ausgeführt werden, die sich auf die bisher angelegten Datenbankobjekte beziehen.</p>
+</dd>
+<dt class="hdlist1">Schritt 5: Rechte entziehen</dt>
+<dd>
+<p>Falls in Schritt 2 für Benutzer Rechte gesetzt wurden, die nur für die Durchführung der Änderungen benötigt wurden, werden sie in diesem Schritt wieder entzogen.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Die nachfolgende Abbildung zeigt noch einmal die einzelnen Schritte der Installation.</p>
+</div>
+<div id="installation-bei-aenderung" class="imageblock">
+<div class="content">
+<img src="../_images/instbeineuan.png" alt="instbeineuan">
+</div>
+<div class="title">Abbildung 3. Ablauf bei der Schemaänderung</div>
+</div>
+<div class="sect2">
+<h3 id="struktur-der-aenderungsskripte"><a class="anchor" href="#struktur-der-aenderungsskripte"></a>2.1. Struktur der Änderungsskripte</h3>
+<div class="paragraph">
+<p>Für die automatisierte Änderung wird eine Strukturierung der Änderungsskripte festgelegt.
+Diese ist analog zur Struktur der Installationsskripte aus Abschnitt <a href="#struktur-der-installationsskripte-fuer-die-neuanlage">Struktur der Installationsskripte für die Neuanlage</a>.
+Es existieren folgende Aufrufbeziehungen:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Shell-Skripte</dt>
+<dd>
+<p>Über die Shell-Skripte <code>update-db-schema.bat</code> (Windows) bzw. <code>update-db-schema.sh</code> (Linux) wird das SQL-Skript <code>00_update-main.sql</code> aufgerufen.
+Als Parameter werden das Skript für das Anlegen der Umgebungsvariablen und die Log-Datei mitgegeben.</p>
+</dd>
+<dt class="hdlist1">00_update-main.sql</dt>
+<dd>
+<p>Das SQL-Skript ruft die eigentlichen Installationsskripte in der richtigen Reihenfolge über das Hilfsskript <code>99_starte-skript-mit-logging.sql</code> nacheinander auf.
+Dabei werden auch die Tabellen zur Versionierung angelegt und korrekt gefüllt.</p>
+</dd>
+<dt class="hdlist1">99_starte-skript-mit-logging.sql</dt>
+<dd>
+<p>Das Hilfsskript führt ein SQL-Skript aus und befüllt die Versionstabelle korrekt.
+Als Parameter werden der Pfad des Skripts, die Schnittnummer inklusiv der Unterschrittnummer und die Beschreibung mit übergeben.</p>
+</dd>
+<dt class="hdlist1">&lt;Update-Skript&gt;.sql</dt>
+<dd>
+<p>Die eigentlichen Änderungsskripte haben das feste Namensschema <code>&lt;Schrittnummer&gt;-&lt;Unterschrittnummer&gt;_&lt;Name&gt;.sql</code>.
+Die Schrittnummer ist 2-stellig und entspricht der Schrittnummer aus Kapitel <a href="#installationsablauf-bei-der-schemaaenderung">Installationsablauf bei der Schemaänderung</a>.
+Falls zu einem Schritt mehrere Skripte gehören, gibt die Unterschrittnummer die Reihenfolge an, in der diese ausgeführt werden.
+Der Name kann frei vergeben werden, sollte aber sprechend sein.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Die nachfolgende Abbildung zeigt noch einmal die Beziehung zwischen den einzelnen Skripten.</p>
+</div>
+<div id="struktur-skripte-aenderung" class="imageblock">
+<div class="content">
+<img src="../_images/bezzwischenAend.png" alt="bezzwischenAend">
+</div>
+<div class="title">Abbildung 4. Beziehungen zwischen den Änderungsskripten</div>
+</div>
+<div class="paragraph">
+<p>Templates für die Skripte sind als Ressourcen in der Bibliothek <code>isy-persistence</code> abgelegt.</p>
+</div>
+</div>
+</div>
+</div>
 </article>
   </div>
 </main>
