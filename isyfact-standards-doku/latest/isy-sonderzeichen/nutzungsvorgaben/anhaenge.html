@@ -5171,7 +5171,8 @@
 <h2 id="_transkriptionsregeln"><a class="anchor" href="#_transkriptionsregeln"></a>2. Transkriptionsregeln</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In der Tabelle <a href="#table-transkription">Transkriptionsregeln</a> sind die Transkriptionsregeln für die verschiedenen Zeichen dargestellt.</p>
+<p>Die Transkriptionsregeln der IsyFact überführen den DIN SPEC 91379 Zeichensatz in der UTF-8-Codierung, einer Teilmenge des Unicode v4.x Zeichensatzes, in den ASCII-Zeichensatz (phonetische Transformation), s.a. <a href="../konzept/sonderzeichen.html#transkription" class="xref page">Transkription</a>.
+In der Tabelle <a href="#table-transkription">Transkriptionsregeln</a> sind die Transkriptionsregeln für die verschiedenen Zeichen dargestellt.</p>
 </div>
 <table id="table-transkription" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 2. Transkriptionsregeln</caption>
@@ -11668,7 +11669,10 @@
 <h2 id="_transkriptionsregeln_suchform"><a class="anchor" href="#_transkriptionsregeln_suchform"></a>3. Transkriptionsregeln Suchform</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In der Tabelle <a href="#table-suchform">Suchform Transformation</a> sind die Regeln für die Suchform-Transformation dargestellt.</p>
+<p>Für offizielle Dokumente und für Suchanfragen besteht oft der Bedarf, die Sonderzeichen der DIN SPEC 91379 auf die Grundbuchstaben A bis Z abzubilden.</p>
+</div>
+<div class="paragraph">
+<p>In der Tabelle <a href="#table-suchform">Suchform Transformation</a> sind die Regeln für die Suchform-Transformation gemäß Kapitel 5 der DIN SPEC 91379 dargestellt.</p>
 </div>
 <table id="table-suchform" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 3. Suchform Transformation</caption>
@@ -16219,7 +16223,17 @@
 <h2 id="_legacy_transformation"><a class="anchor" href="#_legacy_transformation"></a>4. Legacy Transformation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In der Tabelle <a href="#table-legacy">Legacy Transformation</a> sind die Regeln für die Legacy-Transformation dargestellt.</p>
+<p>Die DIN SPEC 91379 erweitert den alten Zeichensatz String.Latin 1.1 in größerem Umfang.
+Bis November 2024 muss dieser Umfang von allen Systemen deutscher Behörden verbindlich unterstützt werden; es ist jedoch nicht realistisch, alle Systeme gleichzeitig umzustellen.
+Stattdessen werden sie schrittweise umgestellt, wodurch es dazu kommen kann, dass umgestellte und nicht umgestellte Systeme miteinander kommunizieren müssen.</p>
+</div>
+<div class="paragraph">
+<p>Systeme, die noch nicht auf die DIN SPEC 91379 UTF-8-Codierung umgestellt wurden, sollen mit den erweiterten Sonderzeichen umgehen können.
+Wenn ein String.Latin 1.2 (= DIN SPEC 91379 ) Sonderzeichen in String.Latin 1.1 enthalten ist, ist nichts zu tun.
+Wenn das Sonderzeichen in String.Latin 1.1 nicht enthalten ist, wird es gemäß ISO-8859-15 transformiert.</p>
+</div>
+<div class="paragraph">
+<p>In der Tabelle <a href="#table-legacy">Legacy Transformation</a> sind die Transformationsregeln für noch nicht umgestellte Systeme dargestellt, genannt Legacy-Transformation.</p>
 </div>
 <table id="table-legacy" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 4. Legacy Transformation</caption>
