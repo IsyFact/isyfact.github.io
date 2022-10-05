@@ -774,38 +774,6 @@ Als Generator kommt unter Oracle ein <code>@SequenceGenerator</code> zum Einsatz
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="umgang_mit_firewalls"><a class="anchor" href="#umgang_mit_firewalls"></a>3.6. Umgang mit Firewalls</h3>
-<div class="paragraph">
-<p>Firewalls tendieren dazu inaktive Verbindungen zu Datenbanken, ohne Vorwarnung zu terminieren.
-Dies führt zu Problemen in den IT-Systemen.
-Um dieses Problem zu lösen gibt es zwei Möglichkeiten.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Testen der Verbindung vor jeder Nutzung via <code>testOnBorrow</code>.
-Hierbei handelt es sich, um eine risikofreie Möglichkeit um festzustellen, ob eine Datenbankverbindung aufrecht erhalten wird.</p>
-</li>
-<li>
-<p>Prüfen, ob inaktive und nicht mehr benötigte Verbindungen bestehen, genannt Eviction Runs.
-Empfohlen wird, dies durch die Property <code>timeBetweenEvictionRunsMillis</code> automatisiert umzusetzen.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Beide Möglichkeiten müssen bei der Konfiguration der Datenquellen-xml aktiviert werden, um nutzbar zu sein.</p>
-</div>
-<div class="paragraph">
-<p>Als Testproperty bei beiden bietet sich das Setzen der Property <code>check-valid-connection-sql</code> an.
-Genauer beschrieben wird diese im Oracle Baustein.</p>
-</div>
-<div class="paragraph">
-<p>Es ist fallabhängig zu untersuchen, ob eine Kontrolle der Verbindung bei jedem Aufruf (<code>testOnBorrow</code>) oder zeitgesteuert (Eviction Runs) besser geeignet ist.
-Oftmals ist eine Kontrolle vor jeder Verbindung zu bevorzugen.
-Trotz des hohen Loads, ist das Risiko eine nicht bestehende Verbindung aufzurufen geringer.</p>
-</div>
-</div>
 </div>
 </div>
 </article>
