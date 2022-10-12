@@ -31,7 +31,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="isyfact-standards-doku" data-version="2.5.0-SNAPSHOT">
+<div class="nav-container" data-component="isyfact-standards-doku" data-version="3.0.0-SNAPSHOT">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -194,6 +194,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/umsetzung-datenzugriff.html">Umsetzung des Datenzugriffs</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/konfiguration.html">Konfiguration des O/R-Mappings</a>
   </li>
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/historisierung.html">Historisierung</a>
@@ -465,7 +468,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">IsyFact Standards</span>
-    <span class="version">2.5 (DEV)</span>
+    <span class="version">3.0 (DEV)</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -480,7 +483,7 @@
       <a class="title" href="../../einstieg/einstieg.html">IsyFact Standards</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../../einstieg/einstieg.html">2.5 (DEV)</a>
+          <a href="../../einstieg/einstieg.html">3.0 (DEV)</a>
         </li>
       </ul>
     </li>
@@ -508,7 +511,7 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="../../einstieg/vorstellung.html" class="home-link"></a>
+  <a href="../../einstieg/einstieg.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../einstieg/einstieg.html">IsyFact Standards</a></li>
@@ -544,7 +547,7 @@ So wird für Informationen über den Systemzustand der eingebauten Endpoint <cod
 <div class="sect3">
 <h4 id="micrometer"><a class="anchor" href="#micrometer"></a>1.1.1. Micrometer</h4>
 <div class="paragraph">
-<p>Die im Endpoint <code>metrics</code> bereitgestellen Metriken werden von Micrometer erfasst.
+<p>Die im Endpoint <code>metrics</code> bereitgestellten Metriken werden von Micrometer erfasst.
 Micrometer bietet eine einfache anbieterneutrale Fassade für die gängigsten Überwachungssysteme und ermöglicht es, Metriken im Anwendungscode ohne Herstellerbindung zu implementieren.
 Seit Spring Boot 2.0 ist Micrometer die Standardbibliothek zur Bereitstellung von Anwendungsmetriken von Spring.</p>
 </div>
@@ -561,11 +564,40 @@ Für eine Liste der unterstützten Monitoring-Systeme siehe <a href="../../../..
 </table>
 </div>
 </div>
+<div class="sect3">
+<h4 id="health-checks"><a class="anchor" href="#health-checks"></a>1.1.2. Health Checks</h4>
+<div class="paragraph">
+<p>Jede Anwendung führt periodisch einen Health Check (ehemals: Selbsttest) durch, um den eigenen Zustand und die Erreichbarkeit aller angebundenen Nachbarsysteme zu prüfen.
+Das Ergebnis des Health Checks steht über den Endpoint <code>health</code> bereit.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+Anders als von Spring vorgesehen entkoppelt die IsyFact den Health Check vom Aufruf des Endpoints <code>health</code>.
+Durch diese Entkopplung wird die Systemstabilität durch häufige Aufrufe des Endpoints nicht beeinflusst.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Schlägt der Health-Check fehl, führt dies zu einem Eintrag im technischen Log.
+In diesen Fall wird eine Warnung, bei nicht-essenziellen, oder ein Fehler, bei essenziellen Nachbarsystemen, geloggt.
+Implementiert und konfiguriert wurde bzw. wird der Health-Check als Task (s. <a href="../../isy-task/konzept/master.html" class="xref page">Konzept Task Scheduling</a>).</p>
+</div>
+<div class="paragraph">
+<p>Es ist möglich, die Verfügbarkeit von Nachbarsystemen über die Konfiguration der Anwendung zu prüfen.
+Details hierzu finden sich in den <a href="../nutzungsvorgaben/inhalt.html#vorgaben-fuer-die-pruefung-der-verfuegbarkeit" class="xref page">Nutzungsvorgaben</a>.</p>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="festlegungen-und-ausgrenzungen"><a class="anchor" href="#festlegungen-und-ausgrenzungen"></a>1.2. Festlegungen und Ausgrenzungen</h3>
 <div class="paragraph">
-<p>Die Nutzungsvorgaben finden sich im dem Dokument <a href="master.html#einleitung" class="xref page">Überwachung Nutzungsvorgaben</a></p>
+<p>Die Nutzungsvorgaben finden sich in den <a href="../nutzungsvorgaben/master.html" class="xref page">Nutzungsvorgaben Überwachung</a>.</p>
 </div>
 <div class="paragraph">
 <p>Das Konzept für die Prüfung der Verfügbarkeit ist:</p>
