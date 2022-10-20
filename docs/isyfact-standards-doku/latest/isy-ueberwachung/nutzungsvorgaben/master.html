@@ -1221,6 +1221,22 @@ Ist vor das IAM-System ein Loadbalancer geschaltet, so kann es nach einem Fail-O
 </table>
 </div>
 </li>
+<li>
+<p>Anwendungen, die HTTP-Invoker Schnittstellen bereitstellen, müssen nach Vorgabe das Administration-Bean anbieten, um die Erreichbarkeit des Systems zu prüfen.
+Die Ping-Methode dieses Beans kann zur Implementierung eines Health-Indikators verwendet werden, wie in <a href="#listing-CustomHealthIndicator">Listing 9</a> dargestellt.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+Bei der Erstellung des AdministrationRemoteBean muss der Request-Timeout gesetzt werden, damit Ressourcen nicht zu lange blockiert werden.
+</td>
+</tr>
+</table>
+</div>
+</li>
 </ul>
 </div>
 <div id="listing-Pruefmethode" class="listingblock">
@@ -1239,6 +1255,41 @@ Ist vor das IAM-System ein Loadbalancer geschaltet, so kann es nach einem Fail-O
         return future.get(10, TimeUnit.SECONDS);
     } catch (Exception e) {
         return false;
+    }
+}</code></pre>
+</div>
+</div>
+<div id="listing-CustomHealthIndicator" class="listingblock">
+<div class="title">Listing 9. Beispiel: Implementierung eines eigenen Health-Indikators</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">/** Health configuration. */
+@Configuration
+@ConditionalOnAvailableEndpoint(endpoint = HealthEndpoint.class)
+public class HealthConfiguration {
+    /** Ping message. */
+    private final String pingMsg;
+
+    /**
+     * @param systemName current system name
+     */
+    HealthConfiguration(@Value("${system.name}") String systemName) {
+        pingMsg = "Ping from " + systemName;
+    }
+
+    /**
+     * App2 {@link HealthIndicator}; available in an entry named {@code app2}.
+     * @param app2AdminBean App2 {@link AdministrationRemoteBean}
+     */
+    @Bean
+    HealthIndicator app2HealthIndicator(AdministrationRemoteBean app2AdminBean) {
+        return () -&gt; {
+            try {
+                app2AdminBean.ping(pingMsg);
+                return Health.up().build();
+            } catch (Exception e) {
+                return Health.down(e).build();
+            }
+        };
     }
 }</code></pre>
 </div>
