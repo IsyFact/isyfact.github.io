@@ -380,6 +380,12 @@
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
   </li>
 </ul>
@@ -600,7 +606,7 @@ Sie ist eine Referenz auf den aufgetretenen Fehler.</p>
 <div class="sect3">
 <h4 id="exceptions-des-anwendungskerns"><a class="anchor" href="#exceptions-des-anwendungskerns"></a>1.2.1. Exceptions des Anwendungskerns</h4>
 <div class="paragraph">
-<p>Aus den Vorgaben zum Design der Fehlerklassen in Abschnitt <a href="#design-von-fehlerklassen">Design von Fehlerklassen</a>, resultiert die folgende Exception-Hierarchie, die beispielhaft Exceptions der Beispiel-Anwendung definiert:</p>
+<p>Aus den Vorgaben zum <a href="#design-von-fehlerklassen">Design von Fehlerklassen</a> resultiert die folgende Exception-Hierarchie, die beispielhaft Exceptions der Beispiel-Anwendung definiert:</p>
 </div>
 <div id="image-006" class="imageblock text-center">
 <div class="content">
@@ -617,7 +623,7 @@ Sie verwalten die Ausnahme-ID, generieren eine UUID und laden den Fehlertext.
 Die Ausnahme-ID referenziert den Fehler(-text) und unterstützt den Nutzer bzw. den Betrieb beim Erkennen der Fehlerart, da ein bestimmter Fehler immer die gleiche Ausnahme-ID besitzt.
 Die generierte UUID ist eine im System eineindeutige Nummer, die beim Erstellen der Exception vergeben wird.
 Sie ist, wie die Ausnahme-ID, Teil der Fehlernachricht und dient dazu, einen aufgetretenen Fehler im System eindeutig zu referenzieren.
-Tritt nun ein Fehler bei mehreren Nutzern des Systems auf, kann mit Hilfe dieser UUID der Fehler, der bei einem bestimmten Nutzer auftrat, in den Log-Dateien der Anwendung identifiziert werden.</p>
+Tritt nun ein Fehler bei mehreren Nutzern des Systems auf, kann mithilfe dieser UUID der Fehler, der bei einem bestimmten Nutzer auftrat, in den Log-Dateien der Anwendung identifiziert werden.</p>
 </div>
 <div class="paragraph">
 <p>Werden in einer Anwendung Exceptions benötigt, so müssen zuerst vier eigene abstrakte Oberklassen für die Anwendungs-Exceptions abgeleitet werden.
@@ -770,7 +776,7 @@ Unchecked Exceptions sind nicht in den Methoden-Signaturen zu deklarieren, aber 
 Das Vorgehen wird nur für technische checked Exceptions beschrieben, da das Vorgehen für alle Arten von Exceptions gleich ist.</p>
 </div>
 <div class="paragraph">
-<p>Gemäß der Anforderungen aus <a href="../konzept/inhalt.html#anforderungen-an-die-fehlerbehandlung" class="xref page">Anforderungen an die Fehlerbehandlung</a> sollte die Fehlerbehandlung übersichtlich sein.
+<p>Gemäß der Anforderungen aus <a href="../konzept/master.html#anforderungen-an-die-fehlerbehandlung" class="xref page">Anforderungen an die Fehlerbehandlung</a> sollte die Fehlerbehandlung übersichtlich sein.
 Zur Sicherstellung der Übersichtlichkeit darf die Anzahl der verwendeten Exceptions die Anzahl möglicher Behandlungen nicht überschreiten.
 Es sollte also für jede mögliche Fehlerbehandlung auch nur eine Exception geworfen werden.
 Sofern sie nicht behandelbar sind, sind hierfür technische unchecked Exceptions zu verwenden.
@@ -856,7 +862,7 @@ protected TerminfindungBusinessException(String ausnahmeID) {
 <div class="title">Abbildung 6. Abstrakter Ablauf der Erstellung einer Exception</div>
 </div>
 <div class="paragraph">
-<p>Die <code>TerminfindungException</code> hält eine Referenz zu einem FehlertextProvider (siehe <a href="#fehlertextprovider">Fehlertextprovider</a>), welcher die Möglichkeit bietet Fehlertexte auszulesen.
+<p>Die <code>TerminfindungException</code> hält eine Referenz zu einem <a href="#fehlertextprovider">FehlertextProvider</a>, welcher die Möglichkeit bietet Fehlertexte auszulesen.
 Diese Referenz und die übergebene <code>Ausnahme-ID</code> werden an den Konstruktor der <code>BaseException</code> übergeben, welcher nun den Fehlertext lädt.
 Hierzu ruft er auf dem <code>FehlertextProvider</code> die <code>getMessage()</code>-Methode auf und bekommt den Fehlertext zurückgeliefert.
 Durch einen Aufruf des Konstruktors der Oberklasse <code>Exception</code> wird der Fehlertext gesetzt.</p>
@@ -906,7 +912,7 @@ In diesem Kapitel geht es um Exceptions, die zur Schnittstelle einer Anwendung g
 Diese werden in IsyFact als Transport-Exceptions bezeichnet.</p>
 </div>
 <div class="paragraph">
-<p>Neben den Vorgaben zum Design der Fehlerklassen in <a href="#design-von-fehlerklassen">Design von Fehlerklassen</a> gelten für Transport-Exceptions noch weitere Vorgaben, da diese an die Aufrufer weitergereicht werden.</p>
+<p>Neben den Vorgaben zum <a href="#design-von-fehlerklassen">Design von Fehlerklassen</a> gelten für Transport-Exceptions noch weitere Vorgaben, da diese an die Aufrufer weitergereicht werden.</p>
 </div>
 <div class="paragraph">
 <p>Für Exceptions an den Anwendungsschnittstellen gelten weitere Vorgaben:</p>
@@ -992,12 +998,12 @@ Anwendungsschnittstellen verwendet werden, folgende Vorgaben gemacht:</p>
 <p>Unabhängig von der eingesetzten Technologie gelten für die Antworten an das aufrufende Nachbarsystem folgende Anforderungen:</p>
 </div>
 <div class="paragraph">
-<p><strong>Technische Exeptions</strong></p>
+<p><strong>Technische Exceptions</strong></p>
 </div>
 <div class="paragraph">
 <p>Technische Exceptions sind mit einer allgemeinen Fehler-Nachricht an das aufrufende Nachbarsystem zurückzugeben.
 Zudem muss die Ausnahme-ID und die UUID übermittelt werden, damit der Fehler in der aufgerufenen Anwendung gefunden werden kann.
-Der tatsächliche Fehler wird im Error-Log der aufgerufenden Anwendung gespeichert und muss nachvollziehbar sein, sodass eine Fehlerbehebung möglich ist.</p>
+Der tatsächliche Fehler wird im Error-Log der aufgerufenen Anwendung gespeichert und muss nachvollziehbar sein, sodass eine Fehlerbehebung möglich ist.</p>
 </div>
 <div class="paragraph">
 <p><strong>Fachliche Exceptions</strong></p>
@@ -1086,37 +1092,32 @@ Diese setzen sich aus fünf Buchstaben und fünf numerischen Zeichen zusammen:</
 </div>
 </div>
 <div class="paragraph">
-<p>Ausnahme-IDs der Geschäftsanwendung „ABCDE“ könnten dann z.B. wie folgt aussehen: <code>ABCDE10034</code></p>
+<p>Ausnahme-IDs der Geschäftsanwendung <code>EXMPL</code> könnten dann z.B. wie folgt aussehen: <code>EXMPL10034</code>.</p>
 </div>
 <div class="paragraph">
 <p>Die Ausnahme-IDs sind in Nummernkreise für die einzelnen Komponenten unterteilt.
 Ein Nummernkreis umfasst immer 1000 Nummern, d. h. es gibt die Kreise 00xxx bis 99xxx.
-Bei der Erstellung einer neuen Anwendung ist in der Spezifikations- bzw.
-Konstruktionsphase festzulegen, welche Komponente welchen Nummernkreis verwenden muss.</p>
+Bei der Erstellung einer neuen Anwendung ist im Systementwurf festzulegen, welche Komponente welche Nummernkreise verwendet.
+In der Regel verwendet eine Komponente einen Nummernkreis.
+Benötigt eine Komponente mehr als 1000 Ausnahme-IDs, können ihr auch mehrere Nummernkreise zugeordnet werden.</p>
 </div>
 <div class="paragraph">
 <p>Die Ausnahme-IDs referenzieren immer einen Fehlertext.
-Die referenzierten Fehlertexte können mit Platzhaltern versehen werden (<code>{1}</code>, <code>{2}</code> etc.), um den Text um kontextbezogene Daten zu erweitern, z. B.</p>
+Die referenzierten Fehlertexte können mit Platzhaltern versehen werden, um den Text um kontextbezogene Daten zu erweitern (s. <a href="#listing-fehlertext-platzhalter">Listing 9</a>).</p>
 </div>
-<table class="tableblock frame-none grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Der Konfigurationsparameter {0} enthält ungültigen Wert {1}.</p></td>
-</tr>
-</tbody>
-</table>
+<div id="listing-fehlertext-platzhalter" class="listingblock">
+<div class="title">Listing 9. Fehlertext mit Platzhaltern</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">EXMPL10001=Der Parameter {0} enthält den ungültigen Wert {1}.</code></pre>
+</div>
+</div>
 <div class="paragraph">
-<p>Hierzu wird dem Konstruktor der zugehörigen Exception ein String oder String-Array mit den Werten für die Platzhalter übergeben (<a href="#listing-UebergabePlatzhalter">Listing 9</a>).</p>
+<p>Hierzu wird dem Konstruktor der zugehörigen Exception ein String oder String-Array mit den Werten für die Platzhalter übergeben (s. <a href="#listing-UebergabePlatzhalter">Listing 10</a>).</p>
 </div>
 <div id="listing-UebergabePlatzhalter" class="listingblock">
-<div class="title">Listing 9. Übergabe von Werten für Platzhalter</div>
+<div class="title">Listing 10. Übergabe von Werten für Platzhalter</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">new TerminfindungNichtGefundenException(
-    VerwaltungFehlerSchluessel.MSG_TERMINFINDUNG_NICHT-GEFUNDEN,
-    terminfindungRef.toString());</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">new KonfigurationException(FehlerSchluessel.MSG_UNGUELTIGER_PARAMETER, parameter, wert);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1141,17 +1142,21 @@ Die Anwendungsklasse ist im Paket</p>
 <div class="paragraph">
 <p>Kommen neue Fehlertexte hinzu, so müssen die Schlüssel in einer der oben genannten Klassen als Konstanten hinzugefügt werden.
 Ausnahme-IDs für allgemeine Fehler müssen in die Anwendungsklasse, komponentenspezifische in die Komponentenklasse.
-Wie in <a href="#listing-FehlerSchluessel">Listing 10</a> gezeigt, müssen die Konstanten einen sprechenden Namen tragen und z.B. immer mit <code>MSG_</code> beginnen.</p>
+Wie in <a href="#listing-FehlerSchluessel">Listing 11</a> gezeigt, müssen die Konstanten einen sprechenden Namen tragen und z.B. immer mit <code>MSG_</code> beginnen.</p>
 </div>
 <div id="listing-FehlerSchluessel" class="listingblock">
-<div class="title">Listing 10. Fehlerschlüssel</div>
+<div class="title">Listing 11. Fehlerschlüssel</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">/** Die im Parameter {0} übergebene Liste ist leer. */
-public static final String MSG_LISTE_LEER = "TRMIN90004";</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class FehlerSchluessel {
+
+    /** Der Parameter {0} enthält den ungültigen Wert {1}. */
+    public static final String MSG_UNGUELTIGER_PARAMETER = "EXMPL10001";
+
+}</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="fehlertextprovider"><a class="anchor" href="#fehlertextprovider"></a>1.4.1. Fehlertextprovider</h4>
+<h4 id="fehlertextprovider"><a class="anchor" href="#fehlertextprovider"></a>1.4.1. FehlertextProvider</h4>
 <div class="paragraph">
 <p>Das Auslesen von Fehlertexten wird durch einen <code>FehlertextProvider</code> implementiert.
 Dieser <code>FehlertextProvider</code> ist pro Anwendung zu implementieren und befindet sich im Paket:</p>
@@ -1160,7 +1165,7 @@ Dieser <code>FehlertextProvider</code> ist pro Anwendung zu implementieren und b
 <p><code>&lt;organisation&gt;.&lt;domäne&gt;.&lt;anwendung&gt;.common.exception</code></p>
 </div>
 <div class="paragraph">
-<p>Zu implementieren sind die zwei <code>getMessage()</code>-Methoden des Interfaces <code>FehlertextProvider</code> aus der Bbliothek <code>isy-exception-core</code>, siehe <a href="#image-014">Abbildung 8</a>.</p>
+<p>Zu implementieren sind die zwei <code>getMessage()</code>-Methoden des Interfaces <code>FehlertextProvider</code> aus der Bibliothek <code>isy-exception-core</code>, siehe <a href="#image-014">Abbildung 8</a>.</p>
 </div>
 <div id="image-014" class="imageblock text-center">
 <div class="content">
@@ -1178,56 +1183,56 @@ Eine Beispiel-Implementierung hierfür befindet sich in der <a href="../../../..
 </div>
 </div>
 <div class="sect1">
-<h2 id="dos-und-donts"><a class="anchor" href="#dos-und-donts"></a>2. DO&#8217;s und DON&#8217;Ts</h2>
+<h2 id="dos-und-donts"><a class="anchor" href="#dos-und-donts"></a>2. Dos and Don&#8217;ts</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Im Folgenden werden Vorgaben gemacht, wie Fehler behandelt werden müssen und wie Fehler nicht behandelt werden dürfen.</p>
 </div>
 <div class="sect2">
-<h3 id="dos"><a class="anchor" href="#dos"></a>2.1. DO&#8217;s</h3>
+<h3 id="dos"><a class="anchor" href="#dos"></a>2.1. Dos</h3>
 <div class="paragraph">
-<p><strong>Log it or throw it</strong><br>
+<p><strong>Log it or throw it:</strong><br>
 Exceptions sind in der Regel zu behandeln und zu loggen.
 Ist es nicht möglich die Exception zu behandeln, muss sie an den Aufrufer weitergegeben werden.
 Die Exception wird im Fall eines Weiterwerfens nicht geloggt.
 Details zum Logging befinden sich im <a href="../../isy-logging/konzept/master.html" class="xref page">Konzept Logging</a>.</p>
 </div>
 <div class="paragraph">
-<p><strong>Nur vorkommende Exceptions verwenden</strong><br>
+<p><strong>Nur vorkommende Exceptions verwenden:</strong><br>
 Nur Exceptions in Methodensignaturen verwenden, die auch vorkommen können.
 Dies führt sonst zu leeren <code>catch</code>-Blöcken oder der Behandlung aller Fehler über das Fangen einer globalen Exception.</p>
 </div>
 <div class="paragraph">
-<p><strong>Rollback durch Besitzer der Transaktionsklammer</strong><br>
+<p><strong>Rollback durch Besitzer der Transaktionsklammer:</strong><br>
 Das Rollback geschieht durch die Schnittstelle, den Dialog oder den Batch, welcher die Transaktionsklammer bildet.</p>
 </div>
 <div class="paragraph">
-<p><strong>Aufräumen</strong><br>
+<p><strong>Aufräumen:</strong><br>
 Bei der Behandlung von Fehlern ist ein geordneter Systemzustand herzustellen, z. B. das Schließen der Datenbankverbindung über einen <code>finally</code>-Block.</p>
 </div>
 <div class="paragraph">
-<p><strong>Throw Early / Failing fast</strong><br>
+<p><strong>Throw Early / Failing fast:</strong><br>
 Fehler sollten früh erkannt werden und zu entsprechenden Ausnahmen führen, bevor sich der Aufruf in tieferen Schichten befindet.
 Beispiel: Übergibt man <code>null</code> an <code>FileInputStream</code> wird eine <code>NullPointerException</code> in <code>java.io</code> geworfen.
 Passender wäre es aber gleich in der Methode, die <code>FileInputStream</code> verwendet auf <code>null</code> zu prüfen und eine <code>Exception</code> zu werfen.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="donts"><a class="anchor" href="#donts"></a>2.2. DON&#8217;Ts</h3>
+<h3 id="donts"><a class="anchor" href="#donts"></a>2.2. Don&#8217;ts</h3>
 <div class="paragraph">
 <p>Neben den oben genannten Punkten, wie man Exceptions richtig verwendet, gibt es auch eine Liste von Anti-Patterns, die bei der Verwendung von Exceptions zu Problemen führen und daher vermieden werden sollten:</p>
 </div>
 <div class="paragraph">
-<p><strong>Interne Exceptions in der Schnittstelle</strong><br>
+<p><strong>Interne Exceptions in der Schnittstelle:</strong><br>
 Interne Exceptions dürfen in der Schnittstelle nicht vorkommen, da diese ansonsten dem Aufrufer bekannt sein müssen.
-Dies würde zu einer engeren Kopplung von Aufrufer und Aufgerufenem führen und dem Komponentengeheimnis widersprechen.</p>
+Dies würde zu einer engeren Kopplung zwischen dem Aufrufer und dem Aufgerufenen führen und dem Komponentengeheimnis widersprechen.</p>
 </div>
 <div class="paragraph">
-<p><strong>Flusssteuerung über Exceptions</strong><br>
+<p><strong>Flusssteuerung über Exceptions:</strong><br>
 Catch-Blöcke dienen der Fehlerbehandlung und dürfen nicht als <code>else</code>-Zweig genutzt werden.</p>
 </div>
 <div id="listing-FlusssteuerungExceptions" class="listingblock">
-<div class="title">Listing 11. DON&#8217;T: Flusssteuerung über Exceptions</div>
+<div class="title">Listing 12. Don&#8217;t: Flusssteuerung über Exceptions</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">try {
     obj = mgr.getObject(id);
@@ -1240,7 +1245,7 @@ Catch-Blöcke dienen der Fehlerbehandlung und dürfen nicht als <code>else</code
 <p>Ebenso sind GoTos über <code>catch</code>/<code>throw</code>-Konstrukte zu vermeiden.</p>
 </div>
 <div id="listing-FlusssteuerungExceptions2" class="listingblock">
-<div class="title">Listing 12. DON&#8217;T: GoTo über catch/throw</div>
+<div class="title">Listing 13. Don&#8217;t: GoTo über catch/throw</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public void useExceptionsForFlowControl() {
 try {
@@ -1257,12 +1262,12 @@ public void increaseCount() throws MaximumCountReachedException {
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Leere catch-Blöcke</strong><br>
+<p><strong>Leere catch-Blöcke:</strong><br>
 Wenn dies der Fall ist, dann ist die Exception unnötig oder die Ausnahme muss behandelt werden.
 Siehe auch <a href="#isyfact-bibliotheken-fuer-fehlerbehandlung">IsyFact-Bibliotheken für Fehlerbehandlung</a>.</p>
 </div>
 <div id="listing-LeererCatchBlock2" class="listingblock">
-<div class="title">Listing 13. DON&#8217;T: Leerer catch-Block</div>
+<div class="title">Listing 14. Don&#8217;t: Leerer catch-Block</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">try {
     myMethod();
@@ -1275,12 +1280,12 @@ Siehe auch <a href="#isyfact-bibliotheken-fuer-fehlerbehandlung">IsyFact-Bibliot
 In diesem Fall ist ein entsprechender Kommentar im <code>catch</code>-Block zu hinterlegen, warum die Exception nicht behandelt wird.</p>
 </div>
 <div class="paragraph">
-<p><strong>Destruktives Wrappen</strong><br>
+<p><strong>Destruktives Wrappen:</strong><br>
 Das destruktive Wrappen einer Exception zerstört den StackTrace und ist nur für Exceptions an den Außen-Schnittstellen sinnvoll.
 Destruktiv gewrappte Exceptions sind in jedem Fall vor dem Wrappen zu loggen.</p>
 </div>
 <div id="listing-DestruktivesWrappen" class="listingblock">
-<div class="title">Listing 14. DON&#8217;T: Destruktives Wrappen</div>
+<div class="title">Listing 15. Don&#8217;t: Destruktives Wrappen</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">catch (NoSuchMethodException e) {
     throw new MyServiceException("Fehlernachricht: " + e.getMessage());
@@ -1288,12 +1293,12 @@ Destruktiv gewrappte Exceptions sind in jedem Fall vor dem Wrappen zu loggen.</p
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Catch Exception</strong><br>
+<p><strong>Catch Exception:</strong><br>
 Global die Elternklasse einer Exception zu fangen ist zu unspezifisch.
 Dadurch entfällt die Möglichkeit, auf verschiedene Ausnahmen unterschiedlich reagieren zu können.</p>
 </div>
 <div id="listing-CatchException" class="listingblock">
-<div class="title">Listing 15. DON&#8217;T: Elternklasse einer Exception fangen</div>
+<div class="title">Listing 16. Don&#8217;t: Elternklasse einer Exception fangen</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">try {
     foo();
@@ -1318,11 +1323,11 @@ Ist es nicht möglich die Exceptions der Methode (<code>foo()</code>) unterschie
 </table>
 </div>
 <div class="paragraph">
-<p><strong>Exception Flut</strong><br>
+<p><strong>Exception Flut:</strong><br>
 Nur Exceptions werfen, die auch sinnvoll zu behandeln sind.</p>
 </div>
 <div id="listing-ExceptionFlut" class="listingblock">
-<div class="title">Listing 16. DON&#8217;T: Exception Flut</div>
+<div class="title">Listing 17. Don&#8217;t: Exception Flut</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public void zuViel() throws
     MeineException,
@@ -1334,11 +1339,11 @@ Nur Exceptions werfen, die auch sinnvoll zu behandeln sind.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Throw Exception</strong><br>
+<p><strong>Throw Exception:</strong><br>
 Es sollten aussagekräftige Exceptions verwendet werden, um dem Aufrufer eine adäquate Fehlerbehandlung zu ermöglichen.</p>
 </div>
 <div id="listing-ThrowException" class="listingblock">
-<div class="title">Listing 17. DON&#8217;T: Throw Exception</div>
+<div class="title">Listing 18. Don&#8217;t: Throw Exception</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public void eineMethode() throws Exception {
     ...
@@ -1346,14 +1351,14 @@ Es sollten aussagekräftige Exceptions verwendet werden, um dem Aufrufer eine ad
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Log and throw</strong><br>
+<p><strong>Log and throw:</strong><br>
 Das Loggen und Weiterwerfen von Exceptions führt zu unbrauchbaren Log-Dateien.
-Tritt eine Exception in einer tiefen Aufrufhierarchie auf, wird ein und dieselbe Exception mehrmals in einer Log-Dateien gespeichert.
+Tritt eine Exception in einer tiefen Aufrufhierarchie auf, wird ein und dieselbe Exception mehrmals in einer Log-Datei gespeichert.
 Dies behindert bei der Fehlersuche.
-Daher gilt die Regel aus <a href="#dos">DO&#8217;s</a> (<em>Log it or throw it</em>), d. h. entweder man behandelt und loggt die Exception oder man reicht sie weiter.</p>
+Daher gilt die Regel aus <a href="#dos">Dos</a> (<em>Log it or throw it</em>), d. h. entweder man behandelt und loggt die Exception oder man reicht sie weiter.</p>
 </div>
 <div id="listing-LogAndThrow" class="listingblock">
-<div class="title">Listing 18. DON&#8217;T: Log and throw</div>
+<div class="title">Listing 19. Don&#8217;t: Log and throw</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">catch (NoSuchMethodException e) {
     LOG.error("Foo", e); throw e;
@@ -1371,11 +1376,11 @@ catch (NoSuchMethodException e) {
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Log and return null / Catch and Ignore</strong><br>
+<p><strong>Log and return null / Catch and Ignore:</strong><br>
 Das Ignorieren von Fehlern ist zu vermeiden, da der Aufrufer sonst keinen Fehler bemerkt, den man unter Umständen in der weiteren Verarbeitung berücksichtigen müsste.</p>
 </div>
 <div id="listing-LogAndReturnNull" class="listingblock">
-<div class="title">Listing 19. DON&#8217;T: Log and return null / Catch and Ignore</div>
+<div class="title">Listing 20. Don&#8217;t: Log and return null / Catch and Ignore</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">catch (NoSuchMethodException e) { return null; }
 
@@ -1395,11 +1400,11 @@ Exceptions sollten weitergereicht werden, außer es handelt sich nicht um eine A
 </table>
 </div>
 <div class="paragraph">
-<p><strong>throw im finally-Block</strong><br>
+<p><strong>throw im finally-Block:</strong><br>
 Exceptions in <code>finally</code>-Blöcken führen zu einem Verlust des Original-Fehlers:</p>
 </div>
 <div id="listing-ThrowInFinally" class="listingblock">
-<div class="title">Listing 20. DON&#8217;T: throw im finally-Block</div>
+<div class="title">Listing 21. Don&#8217;t: throw im finally-Block</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">try { myMethod(); } finally { cleanUp(); }</code></pre>
 </div>
@@ -1422,13 +1427,13 @@ Es ist somit nicht gestattet in `finally`-Blöcken Methoden aufzurufen, welche p
 </table>
 </div>
 <div class="paragraph">
-<p><strong>Nicht unterstützte Methode gibt null zurück</strong><br>
+<p><strong>Nicht unterstützte Methode gibt null zurück:</strong><br>
 Null als Rückgabewert einer Methode, sofern sie nicht unterstützt wird, deckt sich mit dem oben aufgeführten Punkt "Catch and Ignore".
 Der Aufrufer hat in diesem Fall nicht mitbekommen, dass die Methode eigentlich gar nicht unterstützt wird.
 Im einfachsten Fall tritt eine <code>NullPointerException</code> auf, welche aber nicht den eigentlichen Fehlergrund widerspiegelt.</p>
 </div>
 <div id="listing-ThrowNotSupported" class="listingblock">
-<div class="title">Listing 21. DON&#8217;T: Nicht unterstützte Methode gibt null zurück</div>
+<div class="title">Listing 22. Don&#8217;t: Nicht unterstützte Methode gibt null zurück</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public String myMethod() { // Nicht unterstützt.
     return null;
@@ -1439,7 +1444,7 @@ Im einfachsten Fall tritt eine <code>NullPointerException</code> auf, welche abe
 <p>In diesem Fall sollte eine entsprechende <code>UnsupportedOperationException</code> geworfen werden:</p>
 </div>
 <div id="listing-ThrowUnsupported" class="listingblock">
-<div class="title">Listing 22. DO: Nicht unterstützte Methode wirft UnsupportedOperationException</div>
+<div class="title">Listing 23. Do: Nicht unterstützte Methode wirft UnsupportedOperationException</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public String myMethod() { // Nicht unterstützt.
     throw new UnsupportedOperationException();
@@ -1447,13 +1452,13 @@ Im einfachsten Fall tritt eine <code>NullPointerException</code> auf, welche abe
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Sich auf getCause() verlassen</strong><br>
+<p><strong>Sich auf getCause() verlassen:</strong><br>
 Dies führt zu Problemen bei gewrappten Exceptions (<code>getCause().getCause()</code> notwendig).
 Exceptions sollten zu einer eindeutigen Behandlung führen.
-Das Code-Fragment in <a href="#listing-GetCause">Listing 23</a> unterscheidet die Fehlerbehandlung anhand des Grundes der gefangenen Exception.</p>
+Das Code-Fragment in <a href="#listing-GetCause">Listing 24</a> unterscheidet die Fehlerbehandlung anhand des Grundes der gefangenen Exception.</p>
 </div>
 <div id="listing-GetCause" class="listingblock">
-<div class="title">Listing 23. DON&#8217;T: Sich auf getCause() verlassen</div>
+<div class="title">Listing 24. Don&#8217;t: Sich auf getCause() verlassen</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">catch (MyException e) {if (e.getCause() instanceof FooException) {</code></pre>
 </div>
@@ -1468,7 +1473,7 @@ Das Code-Fragment in <a href="#listing-GetCause">Listing 23</a> unterscheidet di
 <div class="paragraph">
 <p>Dies funktioniert nur, sofern eine Exception nicht mehrmals gewrappt wurde.
 Es dürfen nur die für die Schnittstelle spezifizierten Exceptions behandelt werden.
-Ist auf der Aufruferseite eine Auswertung mittels <code>getCause()</code> notwendig, so ist die Schnittstelle zu überarbeiten.
+Ist auf der Seite des Aufrufers eine Auswertung mittels <code>getCause()</code> notwendig, so ist die Schnittstelle zu überarbeiten.
 Der Grund hierfür ist die Anforderung des Aufrufers an die Schnittstelle, die Fehler genauer unterscheiden und unterschiedlich behandeln zu können.</p>
 </div>
 </td>
@@ -1476,7 +1481,7 @@ Der Grund hierfür ist die Anforderung des Aufrufers an die Schnittstelle, die F
 </table>
 </div>
 <div class="paragraph">
-<p><strong>Technische checked Exceptions zur Schnittstelle durchreichen</strong><br>
+<p><strong>Technische checked Exceptions zur Schnittstelle durchreichen:</strong><br>
 Technische checked Exceptions sind zu verwenden, um den Aufrufer zur Fehlerbehandlung zu zwingen.
 Der Aufrufer muss den Fehler behandeln und nicht in eine technische unchecked Exception wrappen.
 In Einzelfällen mag dies notwendig sein, muss dann aber mit dem Chefarchitekt abgestimmt werden.</p>

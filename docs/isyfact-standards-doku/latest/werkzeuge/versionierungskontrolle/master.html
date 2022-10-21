@@ -380,6 +380,12 @@
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
   </li>
 </ul>
@@ -548,7 +554,7 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <div class="sectionbody">
 <div class="paragraph">
 <p>Zur Sicherstellung einer validen Versionierung der Anwendung wird das Maven-Plugin isy-versioning-maven-plugin eingesetzt.
-Die Einbindung des Maven-Plugin ist unter <a href="inhalt.html#einbindung-konfiguration" class="xref page">Einbindung und Konfiguration in der Anwendung</a> erläutert.</p>
+Die Einbindung des Maven-Plugin ist unter <a href="#einbindung-konfiguration">Einbindung und Konfiguration in der Anwendung</a> erläutert.</p>
 </div>
 <div class="sect2">
 <h3 id="funktionweise"><a class="anchor" href="#funktionweise"></a>1.1. Funktionsweise</h3>
@@ -560,7 +566,7 @@ Die Versionsangabe wird in der Lifecycle-Phase "validate" geprüft. Dies ist im 
 <p>Die Versionierung ist abhängig von der Art der Komponente.
 Aus diesem Grund wird bei der Validierung zwischen Geschäftsanwendungen und Schnittstellen unterschieden.
 Dabei wird zunächst von jeder Komponente angenommen, es verfolgt die Versionierungsrichtlinien von Geschäftsanwendungen.
-Konnten diese nicht nachgewiesen werden, wird automatisch geprüft, ob die Kritierien einer Schnittstellen-Version auf die Versionsnummer zutreffen.</p>
+Konnten diese nicht nachgewiesen werden, wird automatisch geprüft, ob die Kriterien einer Schnittstellen-Version auf die Versionsnummer zutreffen.</p>
 </div>
 <div class="paragraph">
 <p><strong>Anwendungen</strong></p>
@@ -579,8 +585,7 @@ Die Stabilität dieser Version ist nicht sichergestellt.
 Dort sieht der Aufbau wie folgt aus: <strong><code>&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;[-&lt;label&gt;][+&lt;buildmetadaten&gt;]</code></strong></p>
 </div>
 <div class="paragraph">
-<p>Die Art des Szenarios, das für die zu kompilierende Anwendung genutzt werden soll, kann in der Anwendung selbst definiert werden.
-Siehe <a href="inhalt.html#einbindung-konfiguration" class="xref page">Einbindung und Konfiguration in der Anwendung</a>.</p>
+<p>Die Art des Szenarios, das für die zu kompilierende Anwendung genutzt werden soll, kann in der Anwendung selbst definiert werden (s. <a href="#einbindung-konfiguration">Einbindung und Konfiguration in der Anwendung</a>).</p>
 </div>
 <div class="paragraph">
 <p><strong>Schnittstellen</strong></p>

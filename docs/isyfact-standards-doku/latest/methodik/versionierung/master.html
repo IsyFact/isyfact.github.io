@@ -380,6 +380,12 @@
     <a class="nav-link" href="../vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vorlage-systementwurf/antora-master.html">Systementwurf</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
   </li>
 </ul>
@@ -666,7 +672,7 @@ Wie zum Beispiel von IsyFact 1.x auf IsyFact 2.0.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Zusätzlich zu den im Kapitel <a href="inhalt.html#allgemeine-nomenklatur-und-vorgaben" class="xref page">Allgemeine Nomenklatur und Vorgaben</a> getätigten Vorgaben und Empfehlungen gelten hier die folgenden
+<p>Zusätzlich zu den im Kapitel <a href="#allgemeine-nomenklatur-und-vorgaben">Allgemeine Nomenklatur und Vorgaben</a> getätigten Vorgaben und Empfehlungen gelten hier die folgenden
  Konkretisierungen:</p>
 </div>
 <div class="paragraph">
@@ -696,7 +702,7 @@ Wie zum Beispiel von IsyFact 1.x auf IsyFact 2.0.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Die Vorgaben zu Semantic Versioning (vgl. <a href="inhalt.html#allgemeine-nomenklatur-und-vorgaben" class="xref page">Allgemeine Nomenklatur und Vorgaben, Punkt 2</a>) gelten auch für alle Ressourcen, wie beispielsweise Datenbank-Skripte.
+<p>Die Vorgaben zu Semantic Versioning (vgl. <a href="#allgemeine-nomenklatur-und-vorgaben">Allgemeine Nomenklatur und Vorgaben</a>, Punkt 2) gelten auch für alle Ressourcen, wie beispielsweise Datenbank-Skripte.
 Das heißt, Fixes an Skripten sowie die Nachlieferungen fehlender Skripte müssen in einem gesonderten Release (z.B. Bugfix-Release) veröffentlicht werden.</p>
 </div>
 </td>
@@ -780,7 +786,7 @@ dies entspricht auch<br>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Zusätzlich zu den im Kapitel <a href="inhalt.html#allgemeine-nomenklatur-und-vorgaben" class="xref page">Allgemeine Nomenklatur und Vorgaben</a> getätigten Vorgaben und Empfehlungen gelten hier die folgenden
+<p>Zusätzlich zu den im Kapitel <a href="#allgemeine-nomenklatur-und-vorgaben">Allgemeine Nomenklatur und Vorgaben</a> getätigten Vorgaben und Empfehlungen gelten hier die folgenden
 Konkretisierungen.</p>
 </div>
 <div class="paragraph">
@@ -839,7 +845,7 @@ Instabile Entwicklungsversionen sollten nicht über einen längeren Zeitraum in 
 </tbody>
 </table>
 <div class="paragraph">
-<p>Zusätzlich zu den im Kapitel <a href="inhalt.html#allgemeine-nomenklatur-und-vorgaben" class="xref page">Allgemeine Nomenklatur und Vorgaben</a> getätigten Vorgaben und Empfehlungen gelten hier die folgenden
+<p>Zusätzlich zu den im Kapitel <a href="#allgemeine-nomenklatur-und-vorgaben">Allgemeine Nomenklatur und Vorgaben</a> getätigten Vorgaben und Empfehlungen gelten hier die folgenden
 Konkretisierungen und Abweichungen.</p>
 </div>
 <div class="paragraph">
@@ -884,8 +890,8 @@ Zusätzlich muss MAJOR Teil des Packagepfades sein. Dies ermöglicht das paralle
 <div class="ulist">
 <ul>
 <li>
-<p>kann ein Update auf eine höhrere Java-Version zur Inkompatibilität führen.
-Dies ist zu evaluieren und entsprechend der allgemeinen Vorgaben, wie oben beschrieben (<a href="inhalt.html#lokale-remote-schnittstellen" class="xref page">Lokale Schnittstellen und Remote-Schnittstellen (REST)</a>), zu handhaben.</p>
+<p>kann ein Update auf eine höhere Java-Version zur Inkompatibilität führen.
+Dies ist zu evaluieren und entsprechend der allgemeinen Vorgaben, wie oben beschrieben (<a href="#lokale-remote-schnittstellen">Lokale Schnittstellen und Remote-Schnittstellen (REST)</a>), zu handhaben.</p>
 </li>
 </ul>
 </div>
@@ -900,11 +906,11 @@ Dies ist zu evaluieren und entsprechend der allgemeinen Vorgaben, wie oben besch
 <li>
 <p>wird für den Nutzer der Schnittstelle empfohlen die <strong>MINOR</strong> Version zu erhöhen, wenn die URL zu der Remote-Schnittstelle im Code geändert werden muss,
 da bei einem Update der Betriebsumgebung seitens des Schnittstellenanbieters nicht zur Inkompatibilität auf Nutzerseite führen sollte.
-Sofern die Verbindung zu der Remote-Schnittstelle parameterieisert ist, ist keine Änderung der Version notwendig.</p>
+Sofern die Verbindung zu der Remote-Schnittstelle parametrisiert ist, ist keine Änderung der Version notwendig.</p>
 </li>
 <li>
 <p>als Anbieter dieser Schnittstelle ist bei einem Update der Java-Version (oder auch Betriebsumgebung) zu prüfen,
-ob eine Inkompatibilität vorliegen wird und entsprechend die Versionierung wie oben beschrieben (<a href="inhalt.html#lokale-remote-schnittstellen" class="xref page">Lokale Schnittstellen und Remote-Schnittstellen (REST)</a>) vorzunehmen.</p>
+ob eine Inkompatibilität vorliegen wird und entsprechend die Versionierung wie oben beschrieben (<a href="#lokale-remote-schnittstellen">Lokale Schnittstellen und Remote-Schnittstellen (REST)</a>) vorzunehmen.</p>
 </li>
 </ul>
 </div>
@@ -915,7 +921,7 @@ ob eine Inkompatibilität vorliegen wird und entsprechend die Versionierung wie 
 <div class="sect2">
 <h3 id="best-practices"><a class="anchor" href="#best-practices"></a>5.2. Best Practices</h3>
 <div class="sect3">
-<h4 id="_versionierung_wenn_die_parent_version_angehoben_wird_und_an_der_schnittstelle_keine_änderungen_durchgeführt_werden"><a class="anchor" href="#_versionierung_wenn_die_parent_version_angehoben_wird_und_an_der_schnittstelle_keine_änderungen_durchgeführt_werden"></a>5.2.1. Versionierung wenn die Parent-Version angehoben wird und an der Schnittstelle keine Änderungen durchgeführt werden.</h4>
+<h4 id="_versionierung_wenn_die_parent_version_angehoben_wird_und_an_der_schnittstelle_keine_änderungen_durchgeführt_werden"><a class="anchor" href="#_versionierung_wenn_die_parent_version_angehoben_wird_und_an_der_schnittstelle_keine_änderungen_durchgeführt_werden"></a>5.2.1. Versionierung, wenn die Parent-Version angehoben wird und an der Schnittstelle keine Änderungen durchgeführt werden.</h4>
 <div class="paragraph">
 <p>Führt eine Anhebung der Parent-Version zu keiner Änderung an der Schnittstelle selbst oder zu keiner inkompatiblen Änderung,
 so bedarf es keiner Erhöhung von MAJOR und MINOR der Schnittstellen-Version.</p>
