@@ -35,9 +35,3 @@ table thead tr th, table thead tr td, table tfoot tr th, table tfoot tr td { pad
 
 /* more readable table rows */
 table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #edf2f2; }
-
-.table_head_sticky thead{
-    position: sticky;
-    inset-block-start: 0;
-    top: 105px;
-}
