@@ -194,7 +194,7 @@ Es folgt eine detaillierte Beschreibung der bereitgestellten Seiten- und Bediene
 <h2 id="benoetigte-bibliotheken"><a class="anchor" href="#benoetigte-bibliotheken"></a>2. Benötigte Bibliotheken</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Die Bibliothek <code>isy-web</code> enthält alle notwendigen Abhängigkeiten, Spring-Konfigurationen, JSF-Komponenten (Composite Components) sowie zugehörige XHTML-Templates zur Erstellung der GUI-Komponente.
+<p>Die Bibliothek <code>isy-web</code> enthält alle notwendigen Abhängigkeiten, Spring-Konfigurationen, JSF-Komponenten (Composite Components) sowie zugehörige XHTML-Templates, CSS-, JavaScript-, Bilddateien und Schriftarten zur Erstellung der GUI-Komponente.
 Sie wird über eine Maven-Abhängigkeit eingebunden.
 Bei Verwendung des IsyFact-BOMs wird die Version automatisch ermittelt.</p>
 </div>
@@ -210,10 +210,10 @@ Bei Verwendung des IsyFact-BOMs wird die Version automatisch ermittelt.</p>
 <div class="paragraph">
 <p>Für die Erstellung von Web-GUIs existieren Vorgaben in Form eines <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html" class="xref page">Styleguides</a>.
 Der Baustein Styleguide legt Anforderungen an die Gestaltung und Nutzbarkeit von Oberflächen fest.
-Die zugehörige Bibliothek <code>isy-style</code> enthält die CSS-, JavaScript- und Bilddateien des Styleguides zur produktiven Nutzung aufbereitet.</p>
+Die Bibliothek <code>isy-web</code> enthält die CSS-, JavaScript-, Bilddateien und  Schriftarten des Styleguides zur produktiven Nutzung aufbereitet.</p>
 </div>
 <div class="paragraph">
-<p>Die CSS-Dateien für eine zum Styleguide konforme Anwendung werden bei Nutzung der Bibliothek <code>isy-style</code> automatisch geladen und eingebunden.
+<p>Die CSS-Dateien für eine zum Styleguide konforme Anwendung werden bei Nutzung der Bibliothek <code>isy-web</code> automatisch geladen und eingebunden.
 Zur anwendungsspezifischen Anpassung der Stylesheets dienen folgende, innerhalb der Anwendung liegende, Dateien:</p>
 </div>
 <div class="ulist">
@@ -225,9 +225,6 @@ Zur anwendungsspezifischen Anpassung der Stylesheets dienen folgende, innerhalb 
 <p><code>/css/custom-print.css</code> - spezielle CSS Klassen für die Druckansicht der Anwendung.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>Eine explizite Abhängigkeit zur Bibliothek <code>isy-style</code> ist in der Regel nicht nötig, da sie implizit mit eingebunden wird.</p>
 </div>
 </div>
 </div>
@@ -1888,7 +1885,7 @@ Die IsyFact enthält die Demo-Anwendung <code>isy-webgui</code>.
 </table>
 </div>
 <div class="paragraph">
-<p>Die Anwendung zeigt die Features der Bibliotheken <code>isy-web</code> sowie <code>isy-style</code> beispielhaft.
+<p>Die Anwendung zeigt die Features der Bibliothek <code>isy-web</code> beispielhaft.
 Insbesondere demonstriert sie Aussehen und Verhalten der nachfolgend beschriebenen JSF-Seitenelemente.
 Für die Verwendung dieser Elemente muss in den View-Templates folgender Namespace eingebunden werden: <code>xmlns:isy="http://java.sun.com/jsf/composite/isyfact"</code>.</p>
 </div>
@@ -2592,7 +2589,7 @@ Die IsyFact enthält die Demo-Anwendung <code>isy-webgui</code>.
 </table>
 </div>
 <div class="paragraph">
-<p>Die Anwendung zeigt die Features der <a href="../../../../glossary/latest/glossary/master.html#glossar-bibliothek" class="xref page">Bibliotheken</a> <code>isy-web</code> sowie <code>isy-style</code> beispielhaft.
+<p>Die Anwendung zeigt die Features der <a href="../../../../glossary/latest/glossary/master.html#glossar-bibliothek" class="xref page">Bibliothek</a> <code>isy-web</code> beispielhaft.
 Insbesondere demonstriert sie Aussehen und Verhalten der nachfolgend beschriebenen JSF-Bedienelemente.</p>
 </div>
 <div class="sect2">
@@ -6100,7 +6097,7 @@ Die Namensgebung der 4-Augen-Komponenten folgt dem Schema, dass dem Namen der Ba
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Die IsyFact enthält die Demo-Anwendung <code>isy-webgui</code> und zeigt darin die Features der Bibliotheken <code>isy-web</code> sowie <code>isy-style</code> beispielhaft.
+<p>Die IsyFact enthält die Demo-Anwendung <code>isy-webgui</code> und zeigt darin die Features der Bibliothek <code>isy-web</code>.
 Insbesondere demonstriert die Demoanwendung Aussehen und Verhalten der nachfolgend beschriebenen JSF-Seitenelemente.
 Alle Screenshots der beschriebenen 4-Augen-Prinzip Komponenten wurden dieser Demoanwendung entnommen.</p>
 </div>
