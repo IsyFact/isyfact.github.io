@@ -568,10 +568,9 @@ Daher ist für Anwendungen eine Entwicklung mittels einem oder mehrerer Maven-Mo
 <div class="sect4">
 <h5 id="_artefakte"><a class="anchor" href="#_artefakte"></a>2.1.1.1. Artefakte</h5>
 <div class="paragraph">
-<p>Bei einem Maven-Artefact wird eine Group-ID und eine Artefakt-ID definiert. Die Group-ID gibt einen direkten Anhaltspunkt auf die Domäne.
-Group-IDs werden mit einem Punkt konkateniert.
-Mit der Artefakt-ID wird die Funktionalität des Artefaktes kurz und pregnant definiert.
-Als Beispiel für diese Dokumentation wird <code>isy-documentation</code> als Artefakt-ID angegeben. Die Konkatenierung erfolgt über ein Minus.</p>
+<p>Bei einem Maven-Artefakt wird eine Group-ID und eine Artefakt-ID definiert.
+Die Group-ID gibt einen direkten Anhaltspunkt auf die Domäne.
+Group-IDs werden mit einem Punkt konkateniert.</p>
 </div>
 <table id="table-maven-grIDMod" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 1. Group-ID von Modulen/Artefakten</caption>
@@ -595,38 +594,40 @@ Als Beispiel für diese Dokumentation wird <code>isy-documentation</code> als Ar
 </tr>
 </tbody>
 </table>
-</div>
-<div class="sect4">
-<h5 id="_präfixe"><a class="anchor" href="#_präfixe"></a>2.1.1.2. Präfixe</h5>
 <div class="paragraph">
-<p>Prinzipiell soll jedes Modul, bzw. Artefakt, z. B. wie in einer Maven-Umgebung ein Präfix definiert haben.
+<p>Die Artefakt-ID beschreibt die Funktionalität des Artefaktes kurz und prägnant.
+Prinzipiell besitzt jedes Modul bzw. Artefakt ein Präfix.
 Artefakte einer Group-ID (Domäne) sollten immer ein einheitliches Präfix besitzen.
-So haben alle IsyFact-Artefakte das Präfix <code>isy-</code> in ihrer Artefakt-ID.</p>
+So haben alle IsyFact-Artefakte das Präfix <code>isy-</code> in ihrer Artefakt-ID.
+Artefakt-IDs werden mit einem Bindestrich konkateniert.</p>
 </div>
 <table id="table-table-maven-artIDMod" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 2. Artefakt-ID von maven-Modulen/-Artefakten</caption>
+<caption class="title">Tabelle 2. Artefakt-ID von Maven-Modulen/-Artefakten</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" colspan="2">Artefakt-ID von maven-Modulen/-Artefakten</th>
+<th class="tableblock halign-left valign-top" colspan="2">Artefakt-ID von Maven-Modulen/-Artefakten</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema Artefakt-ID</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;präfix&gt;-&lt;funktion/komponente&gt;<br>
-&lt;präfix&gt;-&lt;funktion/komponente&gt;-&lt;teilkomponente&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;präfix&gt;-&lt;funktion/komponente&gt;</code></p>
+<p class="tableblock"><code>&lt;präfix&gt;-&lt;funktion/komponente&gt;-&lt;teilkomponente&gt;</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiel</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy-documentation<br>
-isy-documentation-core</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy-documentation</code></p>
+<p class="tableblock"><code>isy-documentation-core</code></p></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect4">
+<h5 id="_module"><a class="anchor" href="#_module"></a>2.1.1.2. Module</h5>
 <div class="paragraph">
 <p>Wird ein Maven-Modul verwendet, sollte es folgende Struktur besitzen:</p>
 </div>
@@ -635,18 +636,11 @@ isy-documentation-core</code></p></td>
 <li>
 <p>Auf oberster Ebene, d. h. im Wurzelverzeichnis des Projekts (<code>project-root</code>), befinden sich die Dateien zur Organisation des Quellcodes,
 sowie anwendungsbezogene und allgemeine Informationen.
-Dateien in Klammern sind optional, wenn erforderlich.
-Es ist nicht ausgeschlossen, andere Dateien auf oberster Ebene abzulegen, sofern sie für die Organisation der Applikation oder deren Quellcode zuständig ist.</p>
+Dateien in Klammern sind optional.
+Es ist nicht ausgeschlossen, andere Dateien auf oberster Ebene abzulegen, sofern sie für die Organisation der Applikation oder deren Quellcode zuständig sind.</p>
 </li>
 <li>
 <p>Der Quellcode, Dokumentation, Skripte (SQL, Shell, etc.) und die Tests des Quellcodes liegen in Unterverzeichnissen des Verzeichnisses <code>src</code>.</p>
-</li>
-<li>
-<p>Im Verzeichnis <code>license</code> befinden sich Lizenz-Dateien und ggf. einen Dependency-Bericht.</p>
-</li>
-<li>
-<p>Das Verzeichnis <code>assembly/</code> beinhaltet Dateien, die beim Build des Artefaktes herangezogen werden können.
-Dort ist beschrieben, wie das auszuliefernde Artefakt gepackt wird.</p>
 </li>
 </ul>
 </div>
@@ -694,7 +688,7 @@ Dort ist beschrieben, wie das auszuliefernde Artefakt gepackt wird.</p>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>Konfigurationsdateien (z. B. <code>application.properties</code>) und anderen Ressourcen (z.B. UI- oder Fehlertexte)</td>
+<td>Konfigurationsdateien (z. B. <code>application.properties</code>) und andere Ressourcen (z.B. UI- oder Fehlertexte)</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
@@ -727,18 +721,17 @@ Dort ist beschrieben, wie das auszuliefernde Artefakt gepackt wird.</p>
 <div class="sect2">
 <h3 id="schnittstellenprojekte"><a class="anchor" href="#schnittstellenprojekte"></a>2.2. Schnittstellenprojekte</h3>
 <div class="paragraph">
-<p>Schnittstellenprojekte sind deutlich einfacher aufgebaut und beinhalten die Definition der Schnittstelle selbst sowie ihrer Transportobjekte.
+<p>Schnittstellenprojekte sind deutlich einfacher aufgebaut und beinhalten die Definition der Schnittstelle sowie ihrer Transportobjekte.
 Die Implementierung geschieht in der Anwendung, welche die Schnittstelle bereitstellt.</p>
 </div>
 <div class="paragraph">
 <p>Schnittstellenprojekte enthalten daher nur Quellcode und Dokumentation.
 Tests werden keine benötigt, da die Transportobjekte kein eigenes Verhalten besitzen.
 Sie sind einzig zur Datenübertragung vorgesehen.
-Ebenso verhält es sich mit Ressourcen und Skripten.
-Diese sind Teil der Implementierung, die in der Regel Teil eines Anwendungsprojekts ist.</p>
+Ebenso verhält es sich mit Ressourcen und Skripten, die Teil der Implementierung (s. <a href="#listing-Projektstruktur">Struktur eines Anwendungsprojekts</a>) sind.</p>
 </div>
 <div class="paragraph">
-<p>Schnittstellenprojekte besitzen unter dem Wurzelverzeichnis (<code>project-root</code>) die Verzeichnisse <code>src/main/java</code> und <code>src/docs/asciidoc/</code>.
+<p>Schnittstellenprojekte besitzen unter dem Wurzelverzeichnis (<code>project-root</code>) die Verzeichnisse <code>src/main/java</code> und <code>src/docs/asciidoc</code>.
 Der Aufbau des Verzeichnisses wird im <a href="../../blaupausen/detailkonzept-komponente-service/master.html" class="xref page">Detailkonzept Komponente Service</a> beschrieben.</p>
 </div>
 <div id="listing-Projektstruktur-Schnittstellen" class="listingblock">
@@ -778,7 +771,7 @@ Die Implementierung der Batches geschieht in der Anwendung, welche die Batches b
 Daher enthalten Batch-Projekte weder Quellcode, noch Tests.</p>
 </div>
 <div class="paragraph">
-<p>Batch-Projekte besitzen unter dem Wurzelverzeichnis (<code>project-root</code>) ein einzelnes Unterverzeichnis <code>src/main/resources/</code>.
+<p>Batch-Projekte besitzen unter dem Wurzelverzeichnis (<code>project-root</code>) ein einzelnes Unterverzeichnis <code>src/main/resources</code>.
 Der Aufbau des Verzeichnisses wird im <a href="../../blaupausen/detailkonzept-komponente-batch/master.html" class="xref page">Detailkonzept Komponente Batch</a> beschrieben.</p>
 </div>
 <div id="listing-Projektstruktur-Batch" class="listingblock">
@@ -810,7 +803,7 @@ Der Aufbau des Verzeichnisses wird im <a href="../../blaupausen/detailkonzept-ko
 <p>Deployment-Projekte bestehen im Wesentlichen aus den Skripten zur Erstellung einer Deployment-Einheit.</p>
 </div>
 <div class="paragraph">
-<p>Deployment-Projekte besitzen unter dem Wurzelverzeichnis (<code>project-root</code>) ein einzelnes Unterverzeichnis <code>src/main/resources/</code>.
+<p>Deployment-Projekte besitzen unter dem Wurzelverzeichnis (<code>project-root</code>) ein einzelnes Unterverzeichnis <code>src/main/resources</code>.
 In diesem finden sich weitere Unterverzeichnisse, die für die Erstellung von RPMs angepasst sind.</p>
 </div>
 <div id="listing-Projektstruktur-Deployment" class="listingblock">
@@ -853,7 +846,7 @@ In diesem finden sich weitere Unterverzeichnisse, die für die Erstellung von RP
 Beispiele dafür sind Dokumente übergreifender Natur aus architektonischer, technischer oder betrieblicher Sicht.</p>
 </div>
 <div class="paragraph">
-<p>Dokumentationsprojekte besitzen unter dem Wurzelverzeichnis (<code>project-root</code>) ein einzelnes Unterverzeichnis <code>src/docs/asciidoc/</code>.
+<p>Dokumentationsprojekte besitzen unter dem Wurzelverzeichnis (<code>project-root</code>) ein einzelnes Unterverzeichnis <code>src/docs/asciidoc</code>.
 In diesem finden sich weitere Verzeichnisse, z. B. für Inhalte allgemeiner Natur, sowie für die Dokumente.
 Es empfiehlt sich, für jedes Dokument ein eigenes Verzeichnis zur Ablage spezifischer Inhalte (neben Texten z. B. auch Bilder und Diagramme) anzulegen.
 Vorgaben für die Struktur einzelner Dokumente finden sich in der <a href="../../werkzeuge/dokumentation/einleitung/einfuehrung.html" class="xref page">Dokumentation gemäß IsyFact</a>.</p>
@@ -1161,7 +1154,7 @@ Die einzelnen Wörter beginnen jeweils mit einem Großbuchstaben.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Die Package-Struktur (<a href="#listing-PackageStruktur">Listing 7</a>) folgt einer Konvention, die aus der fachlichen und technischen Referenzarchitektur hergeleitet wird.</p>
+<p>Die Package-Struktur folgt einer Konvention, die aus der fachlichen und technischen Referenzarchitektur hergeleitet wird.</p>
 </div>
 <div id="listing-PackageStruktur" class="listingblock">
 <div class="title">Listing 7. Package-Struktur</div>
@@ -1282,14 +1275,14 @@ Namen von Interfaces werden NICHT mit dem Präfix „<strong><code>I</code></str
 dann wird die Klasse so genannt wie das Interface, ergänzt um das Suffix <code>Impl</code>.</p>
 </div>
 <table id="table-ssimpl" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 5. Namen der Interface-Implementierungen bei hauptsächlicher Impl. des Interfaces</caption>
+<caption class="title">Tabelle 5. Klassenname bei hauptsächlicher Implementierung eines Interfaces</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top" colspan="2">Namen der Interface-Implementierungen bei hauptsächlicher Impl. des Interfaces</th>
+<th class="tableblock halign-left valign-top" colspan="2">Klassenname bei hauptsächlicher Implementierung eines Interfaces</th>
 </tr>
 </thead>
 <tbody>
@@ -1299,8 +1292,8 @@ dann wird die Klasse so genannt wie das Interface, ergänzt um das Suffix <code>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiele</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MeldungImpl<br>
-NachrichtErzeugungImpl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MeldungImpl</code></p>
+<p class="tableblock"><code>NachrichtErzeugungImpl</code></p></td>
 </tr>
 </tbody>
 </table>
