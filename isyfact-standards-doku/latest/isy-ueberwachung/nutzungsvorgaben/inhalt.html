@@ -686,14 +686,18 @@ Die Summe der Aufrufe wird alle 60 Sekunden aktualisiert.
 </table>
 </div>
 <div class="paragraph">
-<p>Da die gesammelten Informationen für alle Services identisch sind, bringt <code>isy-ueberwachung</code> eine Klasse <code>ServiceStatistik</code>
+<p>Das Interface <code>ServiceStatistik</code> ermöglicht es, Klassen zum Sammeln von Metriken zu erstellen.
+Alle <code>ServiceStatistik</code> implementierenden Beans werden automatisch der Micrometer-Registry hinzugefügt.</p>
+</div>
+<div class="paragraph">
+<p>Da die gesammelten Informationen für alle Services identisch sind, bringt <code>isy-ueberwachung</code> eine Klasse <code>DefaultServiceStatistik</code>
 mit, die diese transparent erfasst.</p>
 </div>
 <div class="paragraph">
 <p>Um die Informationen für mehrere Services in einer Anwendung anzubieten, wird die Klasse mehrfach als Spring-Bean konfiguriert.
-Die Aktualisierung der Daten in <code>ServiceStatistik</code> wird in der Service-Fassade der jeweiligen Komponente durchgeführt.
+Die Aktualisierung der Daten in <code>DefaultServiceStatistik</code> wird in der Service-Fassade der jeweiligen Komponente durchgeführt.
 Dazu wird per Spring ein AOP-Advice für die Service-Methoden der Komponente definiert.
-Die Konfiguration für eine <code>ServiceStatistik</code>-Bean und den dazugehörigen AOP-Advice ist beispielhaft in <a href="#listing-ServiceStatistikConfig">Listing 1</a> dargestellt.</p>
+Die Konfiguration für eine <code>DefaultServiceStatistik</code>-Bean und den dazugehörigen AOP-Advice ist beispielhaft in <a href="#listing-ServiceStatistikConfig">Listing 1</a> dargestellt.</p>
 </div>
 <div id="listing-ServiceStatistikConfig" class="listingblock">
 <div class="title">Listing 1. ServiceStatistik-Bean und AOP-Advice für die Service-Methoden der Komponente</div>
@@ -703,15 +707,15 @@ Die Konfiguration für eine <code>ServiceStatistik</code>-Bean und den dazugehö
 public class UeberwachungConfig {
 
     @Bean
-    public MethodInterceptor verwaltungMonitor() {
-        return new ServiceStatistik(Tags.of("servicestatistik", "verwaltung"));
+    public DefaultServiceStatistik verwaltungMonitor() {
+        return new DefaultServiceStatistik("servicestatistik", "verwaltung");
     }
 
     @Bean
-    public Advisor verwaltungMonitorAdvice(@Qualifier("verwaltungMonitor") MethodInterceptor verwaltungMonitor) {
+    public Advisor verwaltungMonitorAdvice() {
         AspectJExpressionPointcut pointcut = new AspectJExpressionPointcut();
         pointcut.setExpression("target(de.bund.bva.anwendung.service.verwaltung.VerwaltungRemoteBean)");
-        DefaultPointcutAdvisor advisor = new DefaultPointcutAdvisor(pointcut, verwaltungMonitor);
+        DefaultPointcutAdvisor advisor = new DefaultPointcutAdvisor(pointcut, verwaltungMonitor());
         advisor.setOrder(1000);
         return advisor;
     }
@@ -720,7 +724,7 @@ public class UeberwachungConfig {
 </div>
 <div class="paragraph">
 <p>Der Advice bewirkt, dass jeder Aufruf von <code>VerwaltungRemoteBean</code> zu einem Aufruf der Methode <code>zaehleAufruf</code> in der Bean <code>verwaltungMonitor</code> führt.
-Die Bean <code>verwaltungMonitor</code> ist die <code>ServiceStatistik</code>-Instanz für die <code>VerwaltungRemoteBean</code>.
+Die Bean <code>verwaltungMonitor</code> ist die <code>DefaultServiceStatistik</code>-Instanz für die <code>VerwaltungRemoteBean</code>.
 Eine entsprechende Konfiguration wird also für jeden Service in die Spring-Konfiguration aufgenommen.</p>
 </div>
 <div class="paragraph">
