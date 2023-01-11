@@ -536,74 +536,6 @@ Im Projekt selbst sind diese Ressourcen nicht sichtbar und können somit auch ni
 In der Anwendung definierte Stylesheets sollten immer nach den Ressourcen aus <code>isy-style</code> geladen werden, damit diese überschrieben werden.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="einbindung-isy-style-nodejs"><a class="anchor" href="#einbindung-isy-style-nodejs"></a>1.4.2. Installation in Angular Projekten</h4>
-<div class="paragraph">
-<p>Für die Verwendung von <code>isy-style</code> in Angular Projekten muss zunächst die Bibliothek über installiert werden.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>$ npm i -S @isyfact/isy-style</pre>
-</div>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Wichtig"></i>
-</td>
-<td class="content">
-Für die Installation der Bibliothek wird eine Verbindung zum internen npm Repository der IsyFact benötigt.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Die statischen Ressourcen müssen anschließend an der passenden Stelle in der Angular Anwendung importiert werden.
-Stylesheets aus <code>isy-style</code> werden typischerweise immer am Anfang des projektspezifischen Templates deklariert und bei Bedarf modifiziert (siehe <a href="#listing-isy-style-less">Einbinden der Stylesheets von isy-style in Angular Projekt</a>)</p>
-</div>
-<div id="listing-isy-style-less" class="listingblock">
-<div class="title">Listing 2. Einbinden der Stylesheets von isy-style in Angular Projekt</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-less hljs" data-lang="less">@import '~@isyfact/isy-style/dist/css/styles.css';
-@import '~@isyfact/isy-style/dist/css/color.css';
-
-@import './variables.less';
-
-/* ggf. Anpassungen oder eigene Klassen */</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Bilder, Schriftarten und andere statische Ressourcen werden über die <code>assets</code> Konfiguration in der <code>angular.json</code> bereitgestellt (siehe <a href="#listing-isy-style-angular">Bereitstellen von statischen Ressourcen aus isy-style in Angular Projekten</a>).</p>
-</div>
-<div id="listing-isy-style-angular" class="listingblock">
-<div class="title">Listing 3. Bereitstellen von statischen Ressourcen aus isy-style in Angular Projekten</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
- "projects": {
-    "my-project": {
-      "architect": {
-        "build": {
-          "assets": [
-              {
-                "glob": "**/*",
-                "input": "node_modules/@isyfact/isy-style/img",
-                "output": "/img"
-              },
-              {
-                "glob": "*.svg",
-                "input": "node_modules/@isyfact/isy-style/webfonts",
-                "output": "/font-data"
-              }
-          ]
-        }
-      }
-    }
- }
-}</code></pre>
-</div>
-</div>
-</div>
 </div>
 <div class="sect2">
 <h3 id="konfiguration-portalfarbe"><a class="anchor" href="#konfiguration-portalfarbe"></a>1.5. Konfiguration Portalfarbe</h3>
@@ -620,7 +552,7 @@ Standardmäßig wird die <code>portalColor</code> auch als Fokusfarbe der Bedien
 <p><strong>1.  Konfiguration der Portalfarbe</strong>: In der Datei <code>Gruntfile.js</code> ist die Basisfarbe / Portalfarbe zu setzen:</p>
 </div>
 <div id="listing-gruntPortalfarbe" class="listingblock">
-<div class="title">Listing 4. Portalfarbe in Gruntfile.js konfigurieren</div>
+<div class="title">Listing 2. Portalfarbe in Gruntfile.js konfigurieren</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">var helper = require('./helper/helper');
 module.exports = function (grunt) {
