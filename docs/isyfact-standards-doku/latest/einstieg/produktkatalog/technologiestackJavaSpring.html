@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Technologiestack: Java/Spring :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/einstieg/produktkatalog/technologiestackJavaSpring.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -16,17 +16,16 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-        </div>
-      </div>
     </div>
   </nav>
 </header>
@@ -284,6 +283,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-security/konzept/master.html">Konzept</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -348,10 +350,10 @@
     <span class="nav-text">Styleguide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
+    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
   </li>
 </ul>
   </li>
@@ -391,32 +393,41 @@
     <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -531,14 +542,6 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
-        </li>
-      </ul>
-    </li>
   </ul>
 </div>
     </div>
@@ -575,6 +578,21 @@ Alle urheberrechtlichen Nutzungs- und Verwertungsrechte liegen beim Bundesverwal
 <div class="paragraph">
 <p><span class="image right"><img src="../../../../glossary/latest/licence/_images/CC-BY.png" alt="Creative Commons Namensnennung" width="150"></span>
 Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-licence" class="xref page">Lizenzbedingungen</a> der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-short" class="xref page">Creative Commons Namensnennung 4.0 International</a> gestattet.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Die hier aufgeführten Produkte dienen der Entwicklung und dem Test von Anwendungen mit dem Technologiestack Java und Spring (Boot).</p>
+</div>
+<div id="spring-boot-dependencies" class="sidebarblock">
+<div class="content">
+<div class="title">Spring Boot Managed Dependencies</div>
+<div class="paragraph">
+<p>Das Framework Spring Boot legt selbst zahlreiche Versionen von Drittanbieter-Bibliotheken fest.
+Wann immer ein Produkt als Version dieses Icon (<span class="icon"><i class="fa fa-leaf" title="Spring Boot Dependency"></i></span>) enthält, wird die durch Spring Boot festgelegte Version verwendet.</p>
+</div>
+<div class="paragraph">
+<p>Produkte und ihre Versionen können in der Liste der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-spring-boot-managed-dependencies" class="xref page">Spring Boot Managed Dependencies</a> nachgeschlagen werden.</p>
 </div>
 </div>
 </div>
@@ -647,12 +665,8 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>CDDL + GPLv2 with classpath exception</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Expression Language für die Entwicklung von Web-GUIs mit JSF</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -663,7 +677,7 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <p><a href="https://github.com/javaee/jpa-spec">JPA</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>2.2</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>2.2.0</p>
@@ -674,13 +688,7 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Eclipse Public License v1.0</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Verwaltung der Version über Spring Boot.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -690,7 +698,7 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <p><a href="https://github.com/javaee/jta-spec">JTA</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1.3</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>2.2.0</p>
@@ -701,12 +709,29 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>CDDL + GPLv2 with classpath exception</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Verwaltung der Version über Spring Boot.</p>
-</li>
-</ul>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>JEE API</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://projects.eclipse.org/projects/ee4j.ca">Jakarta Annotations</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>1.3.5</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>3.0.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>verbindlich</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Eclipse Public License v2.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Nur einzusetzen, falls das JDK die Annotationen nicht mehr bereitstellt.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -717,7 +742,7 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <p><a href="http://www.ehcache.org/">EHCache</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>3.x</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>1.3.2</p>
@@ -728,13 +753,7 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache 2.0 Software License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Verwaltung der Version über Spring Boot.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -744,7 +763,8 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <p><a href="https://projects.spring.io/spring-webflow/">Spring Webflow</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>2.5.x (?2.5.1)</p>
+<p>2.5.x<br>
+(≥2.5.1)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>2.0.0</p>
@@ -776,12 +796,8 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>CDDL+GPL License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Referenz-implementierung für JSF von Oracle</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -803,12 +819,8 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Software License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Implementiert JSF 2.0 (JSF 2.0 seit 12/2009 verfügbar)</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -816,7 +828,7 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <p>Javascript Bibliothek</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="http://jquery.com">Jquery</a></p>
+<p><a href="http://jquery.com">jQuery</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>3.4.x</p>
@@ -830,12 +842,8 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>MIT</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Die zugelassenen Einsatzbereiche von Javascript sind im Web-GUI-Konzept beschrieben.</p>
-</li>
-</ul>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Die zugelassenen Einsatzbereiche sind im Web-GUI-Konzept beschrieben.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -843,7 +851,7 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <p>Javascript Bibliothek</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="http://jonthornton.github.io/jquery-timepicker/">JQuery-Timepicker</a></p>
+<p><a href="http://jonthornton.github.io/jquery-timepicker/">jquery.timepicker</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>1.1.x</p>
@@ -857,12 +865,8 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>MIT</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Plugin für JQuery</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -884,17 +888,11 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>MIT</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Die zugelassenen Einsatzbereiche von HTML sind im Web-GUI-Konzept beschrieben.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Anwendungs-Framework</p>
+<p>Anwendungs-framework</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><a href="https://spring.io/projects/spring-boot">Spring Boot</a></p>
@@ -911,24 +909,18 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Software License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Die zugelassenen Einsatzbereiche von Anwendungs sind im Web-GUI-Konzept beschrieben.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Anwendungs-Framework
+<p>Anwendungs-framework<br>
 Test-Framework</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><a href="https://spring.io/projects/spring-framework">Spring</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>5.3.x</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>2.4.0</p>
@@ -941,9 +933,6 @@ Test-Framework</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
-<li>
-<p>Verwaltung der Version über Spring Boot.</p>
-</li>
 <li>
 <p>Die Kategorie Test-Framework bezieht sich auf die Features von Spring zur Testunterstützung.</p>
 </li>
@@ -961,7 +950,7 @@ Test-Framework</p>
 <p><a href="https://docs.spring.io/spring-framework/docs/current/reference/html/integration.html#remoting-httpinvoker">Spring Http Invoker</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>5.3.x</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>2.4.0</p>
@@ -972,13 +961,7 @@ Test-Framework</p>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Software License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Verwaltung der Version über Spring Boot.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -988,7 +971,7 @@ Test-Framework</p>
 <p><a href="https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc">Spring Web MVC</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>5.3.x</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>2.4.0</p>
@@ -999,15 +982,8 @@ Test-Framework</p>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Software License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Verwaltung der Version über Spring Boot.</p>
-</li>
-<li>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Spring Web MVC wird zur Bereitstellung von Services genutzt.</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -1018,7 +994,7 @@ Test-Framework</p>
 <p><a href="https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html#webflux-client">Spring WebClient</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>5.3.x</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>2.4.0</p>
@@ -1029,16 +1005,8 @@ Test-Framework</p>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Software License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Verwaltung der Version über Spring Boot.
-Als HTTP-Client muss Apache HttpComponents verwendet werden. Netty darf nicht verwendet werden.</p>
-</li>
-<li>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Spring WebClient (ein Bestandteil von Spring WebFlux) wird zum Konsumieren von Services genutzt.</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -1049,7 +1017,7 @@ Als HTTP-Client muss Apache HttpComponents verwendet werden. Netty darf nicht ve
 <p><a href="https://hc.apache.org/httpcomponents-client-5.1.x">Apache Http-Components HttpClient</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>5.1.x</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>2.4.0</p>
@@ -1060,12 +1028,8 @@ Als HTTP-Client muss Apache HttpComponents verwendet werden. Netty darf nicht ve
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Software License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Verwaltung der Version über Spring Boot.</p>
-</li>
-</ul>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Muss anstelle von Netty als HTTP-Client für Spring WebClient verwendet werden.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1076,7 +1040,7 @@ Als HTTP-Client muss Apache HttpComponents verwendet werden. Netty darf nicht ve
 <p><a href="https://spring.io/projects/spring-data-jpa">Spring Data JPA</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>2.7.x</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>3.0.0</p>
@@ -1087,13 +1051,7 @@ Als HTTP-Client muss Apache HttpComponents verwendet werden. Netty darf nicht ve
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Software License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Verwaltung der Version über Spring Boot</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1103,7 +1061,7 @@ Als HTTP-Client muss Apache HttpComponents verwendet werden. Netty darf nicht ve
 <p><a href="http://www.hibernate.org">Hibernate</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>5.6.x</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>3.0.0</p>
@@ -1114,13 +1072,7 @@ Als HTTP-Client muss Apache HttpComponents verwendet werden. Netty darf nicht ve
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>LGPL v2.1</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Verwaltung der Version über Spring Boot.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1130,7 +1082,7 @@ Als HTTP-Client muss Apache HttpComponents verwendet werden. Netty darf nicht ve
 <p><a href="https://www.liquibase.org">Liquibase</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>4.x</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>3.0.0</p>
@@ -1141,13 +1093,7 @@ Als HTTP-Client muss Apache HttpComponents verwendet werden. Netty darf nicht ve
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Software License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Verwaltung der Version über Spring Boot.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1157,7 +1103,7 @@ Als HTTP-Client muss Apache HttpComponents verwendet werden. Netty darf nicht ve
 <p><a href="https://github.com/FasterXML/jackson">Jackson</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>2.12.x</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>2.4.0</p>
@@ -1168,13 +1114,7 @@ Als HTTP-Client muss Apache HttpComponents verwendet werden. Netty darf nicht ve
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Software License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Verwaltung der Version über Spring Boot.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1184,7 +1124,7 @@ Als HTTP-Client muss Apache HttpComponents verwendet werden. Netty darf nicht ve
 <p><a href="http://projects.spring.io/spring-security/">Spring Security</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>5.7.x</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>3.0.0</p>
@@ -1195,13 +1135,7 @@ Als HTTP-Client muss Apache HttpComponents verwendet werden. Netty darf nicht ve
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Software License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Verwaltung der Version über Spring Boot.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1222,13 +1156,7 @@ Als HTTP-Client muss Apache HttpComponents verwendet werden. Netty darf nicht ve
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Software License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Die zugelassenen Einsatzbereiche von Resilience sind im Web-GUI-Konzept beschrieben.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1249,13 +1177,7 @@ Als HTTP-Client muss Apache HttpComponents verwendet werden. Netty darf nicht ve
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Software License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Die zugelassenen Einsatzbereiche von Web sind im Web-GUI-Konzept beschrieben.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1295,7 +1217,8 @@ Als HTTP-Client muss Apache HttpComponents verwendet werden. Netty darf nicht ve
 <p><a href="http://logback.qos.ch/">Logback</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1.2.x (?1.2.8)</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a><br>
+(≥1.2.8)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>2.4.0</p>
@@ -1304,16 +1227,11 @@ Als HTTP-Client muss Apache HttpComponents verwendet werden. Netty darf nicht ve
 <p>verbindlich</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>EPL v1.0, 
+<p>EPL v1.0,
 LGPL 2.1</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Verwaltung der Version über Spring Boot.
-Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="bare">https://nvd.nist.gov/vuln/detail/CVE-2021-42550</a> muss mindestens Version 1.2.8 verwendet werden.</p>
-</li>
-</ul>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550">CVE-2021-42550</a> muss mindestens Version 1.2.8 verwendet werden.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1335,12 +1253,8 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache License 2.0</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Orika ist ein Runtime-Mapper, d.h. Mappings werden zur Laufzeit erzeugt.</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -1362,12 +1276,8 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>PUBLIC DOMAIN</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>pojobuilder generiert Code nach dem Builder-Pattern für bestehende Klassen.</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -1378,7 +1288,7 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <p><a href="https://projectlombok.org/">Lombok</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1.x</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>2.4.0</p>
@@ -1389,15 +1299,8 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>MIT License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Verwaltung der Version über Spring Boot.</p>
-</li>
-<li>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Lombok kann ebenfalls das Builder-Pattern umsetzen, besitzt aber darüber hinaus deutlich mehr Funktionen als pojobuilder.</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -1408,7 +1311,7 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <p><a href="https://github.com/javaee/jaxb-v2">JAXB</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>2.3</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>2.2.0</p>
@@ -1419,13 +1322,7 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>CDDL + GPLv2 with classpath exception</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Verwaltung der Version über Spring Boot.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1444,20 +1341,14 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>GPL v2</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Die zugelassenen Einsatzbereiche von XML sind im Web-GUI-Konzept beschrieben.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>XML-Serialisierung</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://x-stream.github.io/">Xstream</a></p>
+<p><a href="https://x-stream.github.io/">XStream</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>1.4.18</p>
@@ -1471,12 +1362,8 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>BSD</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Darf nicht für die (De-)Serialisierung der hauptsächlichen fachlichen Business-Objekte / XML-Nachrichten eingesetzt werden, stattdessen JAXB. Einsatzzweck ist leichtgewichtige Serialisierung Java &#8594; XML, z.B. für die Anzeige von Objekten in einer GUI oder Erzeugung von Testdaten.</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -1496,13 +1383,7 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <p>verbindlich</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Die zugelassenen Einsatzbereiche von Excel sind im Web-GUI-Konzept beschrieben.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1521,13 +1402,7 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <p>verbindlich</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Die zugelassenen Einsatzbereiche von Excel sind im Web-GUI-Konzept beschrieben.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1548,13 +1423,7 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Software License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Die zugelassenen Einsatzbereiche von CSV sind im Web-GUI-Konzept beschrieben.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1575,10 +1444,9 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Software License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Einsatz und Umfang der genutzten Features ist jeweils mit dem Chefarchitekten abzustimmen. Generell genutzt werden darf:</p>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Einsatz und Umfang der genutzten Features ist jeweils abzustimmen. Generell genutzt werden darf:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1589,11 +1457,8 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 </li>
 </ul>
 </div>
-</li>
-<li>
+<div class="paragraph">
 <p>Bibliothek mit Utilities zur Lösung gängiger Programmierprobleme, insbesondere im Umgang mit Collections.</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -1627,7 +1492,8 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <p><a href="http://commons.apache.org/">Apache Commons NET</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>3.x (&gt;3.2.2)</p>
+<p>3.x<br>
+(&gt;3.2.2)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>1.0.0</p>
@@ -1638,12 +1504,8 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Software License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Unterstützung für den Download von Dateien von einem FTP Server.</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -1665,12 +1527,8 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Software License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Validiert Dateien bei Server- und Client-seitigem Austausch und prüft diese auf Integrität.</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -1681,7 +1539,8 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <p><a href="http://commons.apache.org/">Apache Commons BeanUtils</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1.9.x(&gt;1.9.3)</p>
+<p>1.9.x
+(&gt;1.9.3)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>1.8.1</p>
@@ -1692,12 +1551,8 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Software License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Commons BeanUtils stellt einen einfach zu nutzenden Wrapper um die  Java APIs Reflection und Introspection bereit.</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -1719,12 +1574,8 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Software License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Commons IO ist eine Bibliothek mit nützlichen Utilities um IO-Funktionalität zu implementieren.</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -1735,7 +1586,7 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <p><a href="http://www.querydsl.com/">QueryDSL</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>5.0.x</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>3.0.0</p>
@@ -1746,15 +1597,8 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache License, Version 2.0</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Verwaltung der Version über Spring Boot.</p>
-</li>
-<li>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Soll anstatt Criteria-API zur Erstellung dynamischer Queries genutzt werden. Einsatzgebiet wie Criteria-API nur dort wo notwendig.</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -1776,13 +1620,7 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>MIT License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Die zugelassenen Einsatzbereiche von HTML sind im Web-GUI-Konzept beschrieben.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1792,7 +1630,8 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <p><a href="https://tika.apache.org/">Apache Tika</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1.x (&gt;1.20)</p>
+<p>1.x
+(&gt;1.20)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>1.8.0</p>
@@ -1803,13 +1642,7 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache License, Version 2.0</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Die zugelassenen Einsatzbereiche von Dateityp sind im Web-GUI-Konzept beschrieben.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 </tbody>
 </table>
@@ -1849,10 +1682,10 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <p>Test-Framework</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="http://www.junit.org">JUnit</a></p>
+<p><a href="http://www.junit.org">JUnit 4</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>4.x</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>2.4.0</p>
@@ -1863,12 +1696,8 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Eclipse Public License 1.0</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>JUnit 5 ist bei der Erstellung von Tests zu präferieren.</p>
-</li>
-</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -1876,10 +1705,10 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <p>Test-Framework</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="http://www.junit.org">JUnit</a></p>
+<p><a href="http://www.junit.org">JUnit 5</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>5.x</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>2.4.0</p>
@@ -1919,7 +1748,7 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <p><a href="http://mockito.org/">Mockito</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>4.x</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>3.0.0</p>
@@ -1930,13 +1759,7 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>MIT License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Verwaltung der Version über Spring Boot.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -1984,7 +1807,7 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <p><a href="https://assertj.github.io/doc/">AssertJ</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>3.x</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>2.4.0</p>
@@ -1995,13 +1818,7 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache License Version 2.0</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Verwaltung der Version über Spring Boot.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -2011,7 +1828,7 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <p><a href="http://www.h2database.com/">H2</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>2.1.214</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>3.0.0</p>
@@ -2022,15 +1839,8 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Mozilla Public License Version 2.0, Eclipse Public License v1.0</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Verwaltung der Version über Spring Boot.</p>
-</li>
-<li>
-<p>Kann genutzt werden für infrastrukturunabhängige Tests, die eine Persistenz benötigen</p>
-</li>
-</ul>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Kann für infrastrukturunabhängige Tests genutzt werden, die eine Persistenz benötigen.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2052,12 +1862,31 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache License Version 2.0</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Test Suite für E-Mail Server</p>
-</li>
-</ul>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test Suite für E-Mail Server.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Test-Framework</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://www.testcontainers.org">Testcontainers</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>1.x</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>3.0.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>verbindlich</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>MIT License</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Testcontainers ist eine Java-Bibliothek, die JUnit-Tests unterstützt und leichtgewichtige, wegwerfbare Instanzen von gängigen Datenbanken, Selenium-Webbrowsern oder allem anderen, das in einem Docker-Container laufen kann, bereitstellt.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2075,5 +1904,9 @@ Aufgrund von <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42550" class="ba
 <script src="../../../../_/js/site.js"></script>
 <script async src="../../../../_/js/vendor/highlight.js"></script>
 <script src="../../../../_/js/isyfact.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
   </body>
 </html>

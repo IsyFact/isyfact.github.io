@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Konzept Sicherheit: Inhalt :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/isy-sicherheit/konzept/inhalt.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -16,17 +16,16 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-        </div>
-      </div>
     </div>
   </nav>
 </header>
@@ -284,6 +283,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-security/konzept/master.html">Konzept</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -348,10 +350,10 @@
     <span class="nav-text">Styleguide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
+    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
   </li>
 </ul>
   </li>
@@ -391,32 +393,41 @@
     <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -531,14 +542,6 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
-        </li>
-      </ul>
-    </li>
   </ul>
 </div>
     </div>
@@ -619,7 +622,7 @@ IAM steht für <a href="../../../../glossary/latest/literaturextern/inhalt.html#
 <p>Das IAM-System verwaltet <strong>Anwender</strong> und ihre <strong>Rollen</strong>.</p>
 </div>
 <div class="paragraph">
-<p>Die Authentifizierung und grobgranulare Autorisierung erfolgt, gemäß der siehe <a href="master.html#prinzipien-der-sicherheitsarchitektur" class="xref page">Prinzipien der Sicherheitsarchitektur&gt;</a>, an den Außenschnittstellen der Systemlandschaft.
+<p>Die Authentifizierung und grobgranulare Autorisierung erfolgt, gemäß der siehe <a href="master.html#prinzipien-der-sicherheitsarchitektur" class="xref page">Prinzipien der Sicherheitsarchitektur</a>, an den Außenschnittstellen der Systemlandschaft.
 Hierbei wird eine Session aufgebaut und das IAM-System ermittelt nach erfolgreicher Authentifizierung die Rollen des Anwenders.
 Die Rollen allein sind jedoch noch nicht ausreichend, um Anwender vollständig zu autorisieren.</p>
 </div>
@@ -731,7 +734,7 @@ Für den <code>Sicherheit-Adapter</code> wird ein eigenes Modul/Artefakt empfohl
 </div>
 <div class="paragraph">
 <p>Die Authentifizierung und Autorisierung von Web-Zugriffen wird über Spring Security durchgeführt.
-Die Integration von Spring Security und des Bausteins Sicherheit wird im <a href="../../blaupausen/detailkonzept-komponente-web-gui/master.html" class="xref page">Detailkonzept Komponente WebGUI</a>) beschrieben.</p>
+Die Integration von Spring Security und des Bausteins Sicherheit wird im <a href="../../blaupausen/detailkonzept-komponente-web-gui/master.html" class="xref page">Detailkonzept Komponente WebGUI</a> beschrieben.</p>
 </div>
 </div>
 <div class="sect2">
@@ -891,7 +894,7 @@ Daher werden diesen technischen Rollen im Regelfall weitere technische Rollen un
 <div class="sect3">
 <h4 id="technische-zugangsrollen"><a class="anchor" href="#technische-zugangsrollen"></a>3.3.2. Technische Zugangsrollen</h4>
 <div class="paragraph">
-<p>Anwender gelangen in der Regel entweder über das <a href="../../../../glossary/latest/glossary/master.html#glossar-portal" class="xref page">Portal</a> oder den <a href="../../../../glossary/latest/glossary/master.html#glossar-service-gateway" class="xref page">Service Gateway</a> in eine Anwendungslandschaft.
+<p>Anwender gelangen in der Regel entweder über das <a href="../../../../glossary/latest/glossary/master.html#glossar-portal" class="xref page">Portal</a> oder den <a href="../../../../glossary/latest/glossary/master.html#glossar-service-gateway" class="xref page">Service-Gateway</a> in eine Anwendungslandschaft.
 Um den Zugriff über diese Schnittstellen zentral und einfach zu verwalten, können dafür entsprechende technische Rollen definiert werden (z.B. <code>Zugang_Portal</code> und <code>Zugang_Service_Gateway</code>).
 Diese Rollen können dann einfach fachlichen Rollen untergeordnet werden, um den jeweiligen Zugriff zu erlauben.</p>
 </div>
@@ -945,12 +948,14 @@ Ist dies der Fall, sollte der Namen abgekürzt und ein sprechendes Label für di
 <div class="paragraph">
 <p>Der fachliche Systemname beschreibt die Geschäftsanwendung, bzw. die Anwendungsdomäne, in welcher die entsprechende Funktionalität bereitgestellt wird.
 Er entspricht prinzipiell dem Systemnamen der Systemspezifikation, abzüglich technischer Kürzel.
-Die Rolle zur Verwendung der Schnittstelle Auskunft der Geschäftsanwendung Terminfindung lautet nach diesem Schema: <code>Terminfindung_Auskunft</code>.</p>
+Die Rolle zur Verwendung der Schnittstelle Auskunft der Geschäftsanwendung MeineAnwendung lautet nach diesem Schema: <code>MeineAnwendung_Auskunft</code>.</p>
 </div>
 <div class="paragraph">
 <p>Da die Rollen für fachliche Operationen angelegt werden, sollten sie unabhängig von technischen Aspekten gelten.
-So kann beispielsweise die Rolle <code>Terminfindung_Auskunft</code> unabhängig davon gelten, ob die Auskunft über ein Service Gateway oder das Portal durchgeführt wird.
-Dies kann durch die Verwendung spezieller technischer Rollen (s. <a href="master.html#technische-zugangsrollen" class="xref page">Technische Zugangsrollen</a>) erreicht werden.</p>
+So kann beispielsweise die Rolle <code>MeineAnwendung_Auskunft</code> unabhängig davon gelten, ob die Auskunft über ein Service Gateway oder das Portal durchgeführt wird.</p>
+</div>
+<div class="paragraph">
+<p>Dies kann durch die Verwendung spezieller technischer Rollen (s. <a href="master.html#technische-zugangsrollen" class="xref page">Technische Zugangsrollen</a>) erreicht werden.</p>
 </div>
 <div class="paragraph">
 <p><a href="../../../../glossary/latest/glossary/master.html#glossar-it-system" class="xref page">IT-Systeme</a> werden intern in Form von Batches oder Timer-Tasks aktiv.
@@ -963,8 +968,10 @@ Das Schema zur Benennung einer fachlichen Rolle für IT-Systeme kann folgenderma
 </div>
 </div>
 <div class="paragraph">
-<p>Im Regelfall gibt es nur eine fachliche Rolle pro IT-System, die alle Batches und Tasks absichert (Beispiel analog zu oben: <code>Terminfindung_SYSTEM</code>).
-Gibt es beispielsweise mehrere Batches in einer Anwendung, so sollten die einzelnen Batches mit verschiedenen Rechten abgesichert werden, die alle derselben Rolle zugeordnet sind.
+<p>Im Regelfall gibt es nur eine fachliche Rolle pro IT-System, die alle Batches und Tasks absichert (Beispiel analog zu oben: <code>MeineAnwendung_SYSTEM</code>).</p>
+</div>
+<div class="paragraph">
+<p>Gibt es beispielsweise mehrere Batches in einer Anwendung, so sollten die einzelnen Batches mit verschiedenen Rechten abgesichert werden, die alle derselben Rolle zugeordnet sind.
 Falls mehrere differenzierte Rollen fachlich erforderlich sind, werden die Rollen um ein entsprechendes Suffix ergänzt.
 Dies kann der Fall sein, wenn es fachlich unterschiedliche Nutzer von Tasks und Batches gibt.
 Zusätzlich dazu kann es erforderlich sein, einen (technischen) Anwender anzulegen, welchem die entsprechenden Rollen zugeordnet werden.</p>
@@ -984,7 +991,7 @@ Zusätzlich dazu kann es erforderlich sein, einen (technischen) Anwender anzuleg
 <p>Die Namen technischer Rollen enthalten keine festen Bestandteile wie z.B. <code>SYSTEM</code>, da es sich immer um Services handelt.
 Der Servicename muss eindeutig und sprechend sein; vor allem, wenn mehrere Services mit derselben Rolle gemeinsam abgesichert werden.
 Da die Rollen nur innerhalb der Anwendungslandschaft zum Einsatz kommen und nicht administriert werden müssen, wird der technische Systemname verwendet.
-Die Rolle zur Verwendung der Schnittstelle "Eintragen der Teilnahme" der Geschäftsanwendung Terminfindung lautet nach diesem Schema: <code>Terminfindung-FA_TeilnahmeEintragen</code>.
+Die Rolle zur Verwendung der Schnittstelle "Eintragen der Informationen" der Geschäftsanwendung MeineAnwendung lautet nach diesem Schema: <code>MeineAnwendung_InformationenEintragen</code>.
 Auch hier sollte auf die Länge des Namens geachtet werden und im entsprechenden Fall, wie bei fachlichen Rollen, eine Abkürzung des Namens mit sprechendem Label vorgenommen werden.</p>
 </div>
 </div>
@@ -1071,5 +1078,9 @@ In beiden Fällen muss zur eigentlichen Inbetriebnahme, anstatt einer aufwändig
 <script src="../../../../_/js/site.js"></script>
 <script async src="../../../../_/js/vendor/highlight.js"></script>
 <script src="../../../../_/js/isyfact.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
   </body>
 </html>

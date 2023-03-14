@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>IsyFact Systementwurf &lt;System&gt; :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/methodik/vorlage-systementwurf/antora-master.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -16,17 +16,16 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-        </div>
-      </div>
     </div>
   </nav>
 </header>
@@ -284,6 +283,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-security/konzept/master.html">Konzept</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -348,10 +350,10 @@
     <span class="nav-text">Styleguide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
+    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
   </li>
 </ul>
   </li>
@@ -391,32 +393,41 @@
     <a class="nav-link" href="../versionierung/master.html">Versionierung</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+    <a class="nav-link" href="../java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+    <a class="nav-link" href="../vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../diagrammerstellung/diagramsnet.html">diagrams.net</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="4">
     <a class="nav-link" href="antora-master.html">Systementwurf</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -531,14 +542,6 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
-        </li>
-      </ul>
-    </li>
   </ul>
 </div>
     </div>
@@ -552,6 +555,7 @@
   <ul>
     <li><a href="../../einstieg/einstieg.html">IsyFact Standards</a></li>
     <li><a href="../methodik.html">Methodik</a></li>
+    <li><a href="../vorgaben-dokumentation.html">Vorgaben Dokumentation</a></li>
     <li><a href="../vorlagen.html">Vorlagen</a></li>
     <li><a href="antora-master.html">Systementwurf</a></li>
   </ul>
@@ -775,15 +779,39 @@ Die Anforderungen an die konkrete Ausgestaltung der Diagramme werden im Rahmen d
 <div class="paragraph">
 <p><em>Die Paketstruktur des Enterprise Architect Modells orientiert sich sowohl an der Benamung als auch an der Hierarchie der Verzeichnisstruktur des Systementwurfs.
 So wird die Einheitlichkeit der EA-Modelle für unterschiedliche Projekte erhöht und das Auffinden benötigter Diagramme erleichtert.
-Die folgende Abbildung zeigt beispielhaft das EA-Modell für die Vorlage-Anwendung CD-Register.</em></p>
+Das folgende Listing zeigt beispielhaft ein EA-Modell.</em></p>
 </div>
 </div>
 </div>
-<div id="image-packetstruktur-enterprise-architect-modells" class="imageblock text-center">
+<div id="paketstruktur-enterprise-architect-modell" class="listingblock">
+<div class="title">Listing 1. Paketstruktur eines Enterprise Architect Modells</div>
 <div class="content">
-<img src="../_images/vorlage-systementwurf/packetstruktur-enterprise-architect-modells.png" alt="packetstruktur enterprise architect modells">
+<pre>📂 Geschäftsanwendung XYZ
+  📂 Systementwurf
+    📂 Systemarchitektur des Gesamtsystems
+      📂 Querschnittkonzepte
+      📂 Systemüberblick
+      📂 TI-Architektur
+    📂 &lt;&lt;IT-System&gt;&gt; Geschäftskomponente XYZ
+      📂 Anwendungskern
+        📂 &lt;&lt;A-Komponente&gt;&gt; Auskunft
+        📂 &lt;&lt;A-Komponente&gt;&gt; Basisdaten
+        📂 &lt;&lt;T-Komponente&gt;&gt; Berechtigung
+        📂 &lt;&lt;A-Komponente&gt;&gt; Meldung
+        📂 &lt;&lt;A-Komponente&gt;&gt; Protokoll
+      📂 Batch
+      📂 Datenmodell
+      📂 Externe Schnittstellen
+      📂 Teilsystem-Querschnittskonzepte
+      📂 Teilsystem-Überblick
+    📂 &lt;&lt;IT-System&gt;&gt; Service-Gateway
+    📂 Rückbezug Systemspezifikation
+      📂 Anwendungsfälle
+      📂 Anwendungskomponenten
+      📂 Batches
+      📂 Entitäten
+      📂 Nachbarsystemschnittstellen</pre>
 </div>
-<div class="title">Abbildung 1. Paketstruktur des Enterprise Architect Modells</div>
 </div>
 <div class="sect2">
 <h3 id="zusammenfassung"><a class="anchor" href="#zusammenfassung"></a>1.1. Zusammenfassung</h3>
@@ -956,7 +984,7 @@ Für konkrete Entwürfe muss die Grafik durch eine nicht anonymisierte aktuelle 
 <div class="content">
 <img src="../_images/vorlage-systementwurf/einbettung-anwendungssystem.png" alt="einbettung anwendungssystem">
 </div>
-<div class="title">Abbildung 2. Einbettung von &lt;Anwendungssystem (roten Rahmen platzieren)&gt; in die Systemlandschaft.</div>
+<div class="title">Abbildung 1. Einbettung von &lt;Anwendungssystem (roten Rahmen platzieren)&gt; in die Systemlandschaft.</div>
 </div>
 </div>
 <div class="sect2">
@@ -1254,7 +1282,7 @@ Die folgende Tabelle führt die vom IT-System verwendeten Elemente der IsyFact a
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p><em>In diesem Kapitel wird ein Systemüberblick gegeben und die Aspekte des Gesamtsystems beschrieben, die für alle oder mehrere Teilsysteme gelten. Das können Verfahren, Festlegungen oder die Beschreibung gemeinsam genutzter Komponenten sein. In der Regel hat ein System mehrere Teilsysteme, z. B. eine Geschäftsanwendung und ein Service Gateway.</em></p>
+<p><em>In diesem Kapitel wird ein Systemüberblick gegeben und die Aspekte des Gesamtsystems beschrieben, die für alle oder mehrere Teilsysteme gelten. Das können Verfahren, Festlegungen oder die Beschreibung gemeinsam genutzter Komponenten sein. In der Regel hat ein System mehrere Teilsysteme, z. B. eine Geschäftsanwendung und ein Service-Gateway.</em></p>
 </div>
 <div class="paragraph">
 <p><em>Festlegungen, die bereits in den übergeordneten Dokumenten (z.B. Referenzarchitektur, Sicherheitsrichtlinie, …) gemacht wurden, sind im gesamten Kapitel nur zu referenzieren, Abweichungen hiervon sind zu begründen.</em></p>
@@ -1303,7 +1331,7 @@ Zweck dieser Übersicht ist es einen prinzipiellen Überblick zu geben und nicht
 <div class="content">
 <img src="../_images/vorlage-systementwurf/teilsysteme.png" alt="teilsysteme">
 </div>
-<div class="title">Abbildung 3. Teilsysteme</div>
+<div class="title">Abbildung 2. Teilsysteme</div>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -1465,7 +1493,7 @@ Eine weitere Skalierung ist durch Hinzufügen weiterer Systeme möglich.</em></p
 <div class="content">
 <img src="../_images/vorlage-systementwurf/deployment-diagramm.png" alt="deployment diagramm">
 </div>
-<div class="title">Abbildung 4. Deployment Diagramm</div>
+<div class="title">Abbildung 3. Deployment Diagramm</div>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -1501,10 +1529,12 @@ Z.B. ein neuer Native-Client der an einen bestehenden Service angebunden wird.</
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p><em>Liste der eingesetzten Produkte für die Laufzeitumgebung.
-Diese Umgebung ist für Anwendungen nach Referenzarchitektur vorgegeben, deshalb kann der Abschnitt unten in der Regel übernommen werden.
-Die Versionen sind nach dem Produktkatalog zu überprüfen und mit dem Gesamtprojekt abzustimmen.
-Für die Laufzeitumgebung wird ein Default-Tomcat bereitgestellt.</em></p>
+<p>_Liste der eingesetzten Produkte für die Laufzeitumgebung.
+Diese Umgebung ist für Anwendungen nach Referenzarchitektur vorgegeben, deshalb kann der Abschnitt unten in der Regel übernommen werden, gegebenenfalls ergänzt um das konkrete Linux-Betriebssystem.</p>
+</div>
+<div class="paragraph">
+<p>Die Versionen sind nach dem Produktkatalog zu überprüfen und mit dem Gesamtprojekt abzustimmen.
+Für die Laufzeitumgebung wird ein Default-Tomcat bereitgestellt._</p>
 </div>
 </div>
 </div>
@@ -1530,15 +1560,15 @@ Für die Laufzeitumgebung wird ein Default-Tomcat bereitgestellt.</em></p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Betriebssystem</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">SUSE Linux Enterprise Server</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><span class="yellow">10 SP1</span></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">64Bit Version</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Linux 64 bit</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Kernel &gt;= 4.12</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Java-Laufzeitumgebung</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Sun JDK</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><span class="yellow">11.5.0</span></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">64Bit Version</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><a href="https://adoptium.net/de/temurin/releases">OpenJDK (Eclipse Temurin von Adoptium)</a></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">17.x</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Servlet-Container</p></td>
@@ -1796,7 +1826,7 @@ Wie detailliert die einzelnen Komponenten und deren Teile beschrieben werden, h�
 <div class="content">
 <img src="../_images/vorlage-systementwurf/darstellung-teilsysteme.png" alt="darstellung teilsysteme" width="75%">
 </div>
-<div class="title">Abbildung 5. Darstellung der Teilsysteme</div>
+<div class="title">Abbildung 4. Darstellung der Teilsysteme</div>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -1860,7 +1890,7 @@ Keine Zusatzinformationen tragende Stereotypen wie &lt;&lt; use &gt;&gt; sind ex
 <div class="content">
 <img src="../_images/vorlage-systementwurf/ueberblick-teilsysteme.png" alt="ueberblick teilsysteme">
 </div>
-<div class="title">Abbildung 6. Überblick über die Teilsysteme</div>
+<div class="title">Abbildung 5. Überblick über die Teilsysteme</div>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -1967,7 +1997,7 @@ Es werden keine Beziehungen zwischen dem Interface und den Parameter-Klassen bzw
 <div class="content">
 <img src="../_images/vorlage-systementwurf/uml-komponentendiagramm.png" alt="uml komponentendiagramm">
 </div>
-<div class="title">Abbildung 7. UML-Komponentendiagramm</div>
+<div class="title">Abbildung 6. UML-Komponentendiagramm</div>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -2020,7 +2050,7 @@ Es sind lediglich Platzhalter.</em></p>
 <div class="content">
 <img src="../_images/vorlage-systementwurf/komponenten-zusammenhaenge.png" alt="komponenten zusammenhaenge">
 </div>
-<div class="title">Abbildung 8. Komponenten Zusammenhänge</div>
+<div class="title">Abbildung 7. Komponenten Zusammenhänge</div>
 </div>
 </div>
 <div class="sect4">
@@ -2118,7 +2148,7 @@ Ggf. werden hier Spezialisierungen und zusätzliche Festlegungen zu Services bes
 <div class="paragraph">
 <p><em>In diesem Abschnitt ist die konkrete Konstruktion der einzelnen Services beschrieben, in der Regel mit einem eigenen Abschnitt pro Service, den das System anbietet.
 Dies sind Services, die per httpInvoker bereitgestellt werden.
-Services, die externen Nutzern zur Verfügung gestellt werden, werden im Rahmen der Dokumentation des Teilsystems Service Gateway beschrieben.
+Services, die externen Nutzern zur Verfügung gestellt werden, werden im Rahmen der Dokumentation des Teilsystems Service-Gateway beschrieben.
 Die eigentliche Servicedokumentation für externe Nutzer ist dabei dann ein eigenes Dokument.</em></p>
 </div>
 <div class="paragraph">
@@ -2326,7 +2356,7 @@ Die Optimierung des Diagramms in Hinblick auf den benötigten Platz ist nicht ge
 <div class="content">
 <img src="../_images/vorlage-systementwurf/logisches-datenmodell.png" alt="logisches datenmodell">
 </div>
-<div class="title">Abbildung 9. Logisches Datenmodell</div>
+<div class="title">Abbildung 8. Logisches Datenmodell</div>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -2596,5 +2626,9 @@ Die Optimierung des Diagramms in Hinblick auf den benötigten Platz ist nicht ge
 <script src="../../../../_/js/site.js"></script>
 <script async src="../../../../_/js/vendor/highlight.js"></script>
 <script src="../../../../_/js/isyfact.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
   </body>
 </html>

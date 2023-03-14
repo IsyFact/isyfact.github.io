@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Referenzarchitektur :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/blaupausen/referenzarchitektur/master.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -16,17 +16,16 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-        </div>
-      </div>
     </div>
   </nav>
 </header>
@@ -284,6 +283,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-security/konzept/master.html">Konzept</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -348,10 +350,10 @@
     <span class="nav-text">Styleguide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
+    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
   </li>
 </ul>
   </li>
@@ -391,32 +393,41 @@
     <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -531,14 +542,6 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
-        </li>
-      </ul>
-    </li>
   </ul>
 </div>
     </div>
@@ -592,14 +595,14 @@ Der Begriff Factory steht für die schnelle Erzeugung neuer <a href="../../../..
 </div>
 <div class="paragraph">
 <p>Die <strong>IsyFact-Standards</strong> bilden das architektonische, technologische und methodische Fundament der IsyFact.
-Sie umfassen allgemeingültige und wiederverwendbare Konzepte und Komponenten, die für die Entwicklung beliebiger Geschäftsanwendungen relevant und verpflichtend sind.
-Bspw.: Allgemeine Softwarereferenzarchitektur, Vorgaben zur Fehlerbehandlung, Logging etc.</p>
+Sie umfassen allgemeingültige und wiederverwendbare Konzepte und Komponenten, die für die Entwicklung beliebiger Geschäftsanwendungen relevant und verpflichtend sind.<br>
+Beispiele: Allgemeine Softwarereferenzarchitektur, Vorgaben zur Fehlerbehandlung, Logging.</p>
 </div>
 <div class="paragraph">
 <p>Die <strong>IsyFact-Erweiterungen</strong> sind optionale wiederverwendbare Lösungen für verschiedene Problemstellungen, die aufgrund spezifischer Anforderungen des BVA oder seiner
 Kunden entwickelt wurden und
-<span class="underline">auf den IsyFact-Standards aufbauen.</span>
-Bspw.: Protokollierung, Regelwerk etc.</p>
+<span class="underline">auf den IsyFact-Standards aufbauen.</span><br>
+Beispiele: Protokollierung, Regelwerk.</p>
 </div>
 <div class="paragraph">
 <p>Die in diesem Dokument beschriebene Referenzarchitektur ist ein zentraler Teil der IsyFact-Standards und erläutert auf einer allgemeinen Ebene, wie eine Anwendungslandschaft zu beschreiben und umzusetzen ist.</p>
@@ -648,7 +651,7 @@ Dies ist in <a href="#image-GA-AW">Abbildung 1</a> dargestellt.</p>
 Anwendungssysteme unterstützen Geschäftsprozesse.
 Stellt ein Anwendungssystem eine Fachlogik dar, so handelt es sich um eine <a href="../../../../glossary/latest/glossary/master.html#glossar-geschaeftsanwendung" class="xref page">Geschäftsanwendung</a>.
 Ein Anwendungssystem ist Bestandteil der <a href="../../../../glossary/latest/glossary/master.html#glossar-a-architektur" class="xref page">A-Architektur</a>.
-Aus Sicht der <a href="../../../../glossary/latest/glossary/master.html#glossar-t-architektur" class="xref page">T-Architektur</a> bildet ein <a href="../../../../glossary/latest/glossary/master.html#glossar-it-system" class="xref page">IT-Systeme</a> die software-technische Umsetzung eines Anwendungssystems ab.</p>
+Aus Sicht der <a href="../../../../glossary/latest/glossary/master.html#glossar-t-architektur" class="xref page">T-Architektur</a> bildet ein <a href="../../../../glossary/latest/glossary/master.html#glossar-it-system" class="xref page">IT-System</a> die software-technische Umsetzung eines Anwendungssystems ab.</p>
 </div>
 <div class="paragraph">
 <p>Ein häufig anzutreffendes Beispiel hierfür ist die Trennung in ein Anwendungssystem zur Bestandsverwaltung (Register) und einem Anwendungssystem für die Benutzerinteraktion, die auf die Bestandsverwaltung zugreift.
@@ -657,7 +660,7 @@ Derartige Strukturierungsprinzipien und Regeln sind jedoch immer spezifisch für
 Im vorliegenden Dokument verwenden wir daher den neutralen Begriff <strong><a href="../../../../glossary/latest/glossary/master.html#glossar-geschaeftsanwendung" class="xref page">Geschäftsanwendung</a></strong> für alle Arten von Anwendungssystemen, die eine bestimmte fachliche Funktionalität innerhalb einer Anwendungsdomäne realisieren.</p>
 </div>
 <div class="paragraph">
-<p><strong>Querschnittsanwendungen</strong> sind Anwendungssysteme, die Services für mehrere Geschäftsanwendungen bereitstellen.
+<p><strong>Querschnittsanwendungen:</strong> Eine <a href="../../../../glossary/latest/glossary/master.html#glossar-querschnittsanwendung" class="xref page">Querschnittsanwendung</a> ist ein Anwendungssystem, das Services für mehrere Geschäftsanwendungen bereitstellt.
 Diese Services sind oft technisch motiviert.</p>
 </div>
 <div class="paragraph">
@@ -665,7 +668,7 @@ Diese Services sind oft technisch motiviert.</p>
 Einzelne Geschäftsanwendungen stellen Nutzerschnittstellen zur Verfügung, das Portal integriert diese, bildet einen zentralen Einstiegspunkt für alle Web-Anwendungen und übernimmt die Aufgabe der Authentifizierung und der Autorisierung auf Anwendungsebene.</p>
 </div>
 <div class="paragraph">
-<p><strong>Service-Gateway:</strong> Im <a href="../../../../glossary/latest/glossary/master.html#glossar-service-gateway" class="xref page">Service Gateway</a> werden alle Services der Anwendungssysteme bereitgestellt, die externe Nutzer direkt nutzen dürfen.
+<p><strong>Service-Gateway:</strong> Im <a href="../../../../glossary/latest/glossary/master.html#glossar-service-gateway" class="xref page">Service-Gateway</a> werden alle Services der Anwendungssysteme bereitgestellt, die externe Nutzer direkt nutzen dürfen.
 Dazu führt das Service-Gateway die Authentifizierung und Autorisierung der Service-Aufrufer auf Anwendungsebene durch.
 Weiterhin transformiert das Service-Gateway das interne Kommunikationsprotokoll einer IsyFact-Systemlandschaft in das vom Service-Aufrufer erwartete Protokoll.
 Dies sind in der Regel Web Service-Aufrufe.</p>
@@ -691,13 +694,13 @@ Der Zustand einer Anwendung wird in der Datenbank persistiert und bei jedem eint
 </div>
 <div class="paragraph">
 <p>In der Referenzarchitektur erfolgt die Anpassung an steigende Anforderungen durch horizontale Skalierung auf der Ebene der Anwendungsserver.
-Ein (Hardware- oder Software-) Loadbalancer verteilt die eingehenden Anfragen auf die vorhandenen Anwendungsserver.
+Ein (Hardware- oder Software-)Loadbalancer verteilt die eingehenden Anfragen auf die vorhandenen Anwendungsserver.
 Im Falle eines Serverausfalls kann die Aufgabe des ausgefallenen Servers durch einen anderen Server übernommen werden.
 Die Skalierung des Systems ist in <a href="#image-horSkal">Abbildung 2</a> dargestellt.</p>
 </div>
 <div class="paragraph">
 <p>Die Referenzarchitektur ist die Umsetzung einer Serviceorientierten Architektur.
-Im Design des <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungskern" class="xref page">Anwendungskerns</a> (siehe <a href="../detailkonzept-komponente-anwendungskern/master.html" class="xref page">Detailkonzept Komponente Anwendungskern</a> ) finden sich explizit Komponenten und Services.
+Im Design des <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungskern" class="xref page">Anwendungskerns</a> (siehe <a href="../detailkonzept-komponente-anwendungskern/master.html" class="xref page">Detailkonzept Komponente Anwendungskern</a>) finden sich explizit Komponenten und Services.
 Der Anwendungskern unterscheidet dabei noch zwischen Anwendungs-internen Services, die nur innerhalb der Anwendung aufgerufen werden und Anwendungs-externen Services, die über eine Nutzungsschnittstelle als Service anderen Anwendungen zur Verfügung gestellt werden.</p>
 </div>
 <div class="paragraph">
@@ -733,7 +736,7 @@ Es hat zur Folge, dass als Application Server ein Servlet-Container ausreichend 
 </ul>
 </div>
 <div class="paragraph">
-<p>Die Aufteilung in Zonen leitet sich aus dem SAGA 4-Standard ab <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-saga-4-0" class="xref page">SAGA 4.0</a>.</p>
+<p>Die Aufteilung in Zonen leitet sich aus dem SAGA 4-Standard ab.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -743,6 +746,7 @@ Es hat zur Folge, dass als Application Server ein Servlet-Container ausreichend 
 </td>
 <td class="content">
 Wir orientieren uns hier nach wie vor am SAGA 4-Standard, da SAGA 5 kein Zonenmodell mehr enthält.
+Leider gibt es zu SAGA 4 keine offizielle Quelle mehr.
 </td>
 </tr>
 </table>
@@ -771,25 +775,24 @@ Um Auswertungen auf Stichtagsbeständen durchführen zu können, wird ein dedizi
 <div class="sect2">
 <h3 id="inhaltsuebersicht"><a class="anchor" href="#inhaltsuebersicht"></a>1.2. Inhaltsübersicht</h3>
 <div class="paragraph">
-<p>Nachdem in Kapitel  <a href="#kurzueberblick">Kurzüberblick</a> die drei Sichten der Referenzarchitektur für eine Anwendungslandschaft kurz vorgestellt wurden, erfolgt nun eine
-Detaillierung der einzelnen Sichten:</p>
+<p>Nachdem in Kapitel <a href="#kurzueberblick">Kurzüberblick</a> die drei Sichten der Referenzarchitektur für eine Anwendungslandschaft kurz vorgestellt wurden, erfolgt nun eine Detaillierung der einzelnen Sichten:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Für die fachliche Sicht wird im Kapitel <a href="#die-fachliche-referenzarchitektur">Die fachliche Referenzarchitektur</a> eine fachliche Referenzarchitektur beschrieben.</p>
+<p>Die fachliche Sicht wird durch die <a href="#die-fachliche-referenzarchitektur">fachliche Referenzarchitektur</a> beschrieben.</p>
 </li>
 <li>
-<p>Für die softwaretechnische Sicht wird im Kapitel  <a href="#die-software-referenzarchitektur">Die Software Referenzarchitektur</a> die Einbindung der Software-Referenzarchitektur <a href="../referenzarchitektur-it-system/master.html#einleitung" class="xref page">Referenzarchitektur IT-Systeme</a> beschrieben.</p>
+<p>Die software-technische Sicht wird durch die <a href="#die-software-referenzarchitektur">software-technische Referenzarchitektur</a> beschrieben.</p>
 </li>
 <li>
-<p>Für die technische Infrastruktur wird im Kapitel <a href="#die-referenzarchitektur-der-technischen-infrastruktur">Die Referenzarchitektur der technischen Infrastruktur</a> eine Referenzarchitektur vorgestellt.</p>
+<p>Die Sicht der technischen Infrastruktur wird durch die <a href="#die-referenzarchitektur-der-technischen-infrastruktur">Referenzarchitektur der technischen Infrastruktur</a> beschrieben.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>Im Rahmen dieser Referenzarchitektur werden auch betriebliche Aspekte betrachtet, da diese Auswirkungen auf Designentscheidungen haben können.
-Diese Aspekte werden in Kapitel <a href="#betriebliche-aspekte">Betriebliche Aspekte</a> beschrieben.</p>
+Diese Aspekte werden in Kapitel <a href="#betriebliche-aspekte">"Betriebliche Aspekte"</a> beschrieben.</p>
 </div>
 </div>
 </div>
@@ -849,7 +852,7 @@ Diese Bausteine liegen in unterschiedlichen Formen vor: Es gibt fachliche und te
 Dazu gehören auch am Markt verfügbare Fertigprodukte, für die detaillierte Nutzungsvorgaben erstellt wurden.</p>
 </div>
 <div class="paragraph">
-<p><strong>Betriebsplattform:</strong> Das <a href="../../../../glossary/latest/glossary/master.html#glossar-portal" class="xref page">Portal</a> definiert allgemeine Vorgaben und Rahmenbedingungen für den Betrieb von Anwendungslandschaften, die sich aus der Verwendung der IsyFact ergeben.
+<p><strong>Betriebsplattform:</strong> Die <a href="../../../../glossary/latest/glossary/master.html#glossar-plattform" class="xref page">Plattform</a> definiert allgemeine Vorgaben und Rahmenbedingungen für den Betrieb von Anwendungslandschaften, die sich aus der Verwendung der IsyFact ergeben.
 Es werden Rechner-, Unterstützungsprogramm- und Netzwerkstrukturen beschrieben.
 Die Betriebsplattform besteht aus Hardware und Netzen sowie der benötigten Middleware mit Anwendungsserver oder Datenbankserver und ist hochverfügbar.
 Diese Plattform ist über alle Geschäftsanwendungen einheitlich und ermöglicht so einen standardisierten und effizienten Systembetrieb.</p>
@@ -861,7 +864,7 @@ Dieses Dokument ist V-Modell®-XT konform.</p>
 </div>
 <div class="paragraph">
 <p><strong>Werkzeuge:</strong> Die IsyFact setzt auf Automatisierung und Werkzeugunterstützung bei der Erstellung von Registern.
-Dazu bietet sie Konfigurationsanleitungen ausgewählter <a href="../../../../glossary/latest/glossary/master.html#glossar-werkzeug" class="xref page">Werkzeug</a>, z. B. für die Modellierung, die Programmierung, Tests oder die Fehlerverfolgung.</p>
+Dazu bietet sie Konfigurationsanleitungen ausgewählter <a href="../../../../glossary/latest/glossary/master.html#glossar-werkzeug" class="xref page">Werkzeuge</a>, z. B. für die Modellierung, die Programmierung, Tests oder die Fehlerverfolgung.</p>
 </div>
 </div>
 </div>
@@ -918,7 +921,7 @@ Hierdurch verbessert sich die Verständlichkeit, Wartbarkeit und Betreibbarkeit 
 Durch die infrastrukturelle und betriebliche Gleichartigkeit der Anwendungssysteme können diese effizienter betrieben werden.</p>
 </div>
 <div class="paragraph">
-<p><strong>Sicherheit:</strong> Die Referenzarchitektur sieht bewährte Technologien und Produkte, eine Infrastruktur nach der Architekturrichtlinie für die IT des Bundes <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-architekturrichtlinie" class="xref page">Architekturrichtlinie-IT-Bund</a>, und nach klaren architektonischen Vorgaben erstellte Anwendungssysteme vor.
+<p><strong>Sicherheit:</strong> Die Referenzarchitektur sieht bewährte Technologien und Produkte, eine Infrastruktur nach der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-architekturrichtlinie" class="xref page">Architekturrichtlinie für die IT des Bundes</a>, und nach klaren architektonischen Vorgaben erstellte Anwendungssysteme vor.
 Die Risiken für Ausfälle, Fehler oder Sicherheitslücken wird hierdurch reduziert und die Zukunftssicherheit der Anwendungssysteme erhöht.</p>
 </div>
 <div class="paragraph">
@@ -1011,12 +1014,12 @@ Oder die Geschäftsanwendung implementiert nur einen Teilbereich der Funktionali
 <li>
 <p><strong><a href="../../../../glossary/latest/glossary/master.html#glossar-querschnittsanwendung" class="xref page">Querschnittsanwendungen</a></strong> sind Anwendungssysteme, die Services für mehrere Geschäftsanwendungen bereitstellen, wie z. B. ein Behördenverzeichnis oder ein Outputmanagement.</p>
 </li>
-<li>
+</ul>
+</div>
+<div class="paragraph">
 <p><strong><a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungskomponente" class="xref page">Anwendungskomponenten</a>:</strong> Eine Anwendungskomponente beschreibt eine Menge funktional zusammenhängender Anwendungsfälle.
 Anwendungskomponenten sind Bestandteile von Anwendungssystemen.
 Im Rahmen weitergehender Architekturvorgaben beim Einsatz der IsyFact in einem konkreten Anwendungskontext wird man in der Regel auch vorgeben, welche Arten von Anwendungssystemen es in diesem Kontext geben soll und aus welchen Komponenten sie bestehen.</p>
-</li>
-</ul>
 </div>
 <div class="paragraph">
 <p>In <a href="#image-GA-AW2">Abbildung 6</a> werden Anwendungskomponenten nicht dargestellt: Sie wären die Bestandteile der blauen und gelben Kästen.</p>
@@ -1094,7 +1097,7 @@ Authentifizierung und Autorisierung als auch (bei automatisierten Schnittstellen
 <p>Im Folgenden werden die Schnittstellen und Aufrufbeziehungen pro Anwendungssystemtyp erläutert.</p>
 </div>
 <div class="paragraph">
-<p><strong>Das <a href="../../../../glossary/latest/glossary/master.html#glossar-service-gateway" class="xref page">Service Gateway</a>:</strong> Service-Gateway-Systeme haben die Aufgabe, Aufrufe von internen Anwendungssystemen an externe Systeme und Aufrufe von externen Systemen
+<p><strong>Das <a href="../../../../glossary/latest/glossary/master.html#glossar-service-gateway" class="xref page">Service-Gateway</a>:</strong> Service-Gateway-Systeme haben die Aufgabe, Aufrufe von internen Anwendungssystemen an externe Systeme und Aufrufe von externen Systemen
 an interne Anwendungssysteme weiterzuleiten und dabei unterschiedliche Schnittstellentechnologien zu überbrücken.</p>
 </div>
 <div class="paragraph">
@@ -1128,8 +1131,7 @@ In einem konkreten Anwendungskontext einer IsyFact-Systemlandschaft wird man in 
 <p>Für die Kommunikation mit externen Systemen muss eine Geschäftsanwendung ein Service-Gateway-System verwenden, egal in welche Richtung die Kommunikation verläuft.</p>
 </div>
 <div class="paragraph">
-<p>Geschäftsanwendungen, die eine Benutzeroberfläche bereitstellen, dürfen aus Sicherheitsgründen nicht direkt vom Benutzer aufgerufen werden, sondern werden in das <em>Portal</em> (siehe unten) der IsyFact-Systemlandschaft eingebunden.
-Die Kommunikation mit dem Browser des Nutzers muss immer über das Portal erfolgen.</p>
+<p>Geschäftsanwendungen, die eine Benutzeroberfläche bereitstellen, dürfen aus Sicherheitsgründen nicht direkt vom Benutzer aufgerufen werden, sondern werden in das <em>Portal</em> (siehe unten) der IsyFact-Systemlandschaft eingebunden.</p>
 </div>
 <div class="paragraph">
 <p><strong>Das <a href="../../../../glossary/latest/glossary/master.html#glossar-portal" class="xref page">Portal</a>:</strong> Die Referenzarchitektur sieht keinen Portal-Server im klassischen Sinne vor: Es gibt weder einen systemübergreifenden Rahmen noch eine systemübergreifende Navigation.</p>
@@ -1368,7 +1370,7 @@ Für das interne IT-System ist dieser Aufruf nicht von einem Aufruf zu einem and
 Für jeden Web-Service, der in die Systemlandschaft importiert werden soll, muss ein eigener Service-Consumer definiert werden.</p>
 </div>
 <div class="paragraph">
-<p>Die Gesamtheit aller Service-Provider und Service-Consumer eines internen IT-Systems wird als <a href="../../../../glossary/latest/glossary/master.html#glossar-service-gateway" class="xref page">Service Gateway</a> bezeichnet.
+<p>Die Gesamtheit aller Service-Provider und Service-Consumer eines internen IT-Systems wird als <a href="../../../../glossary/latest/glossary/master.html#glossar-service-gateway" class="xref page">Service-Gateway</a> bezeichnet.
 Die Service-Gateways stellen somit die zentrale Schnittstelle einer IsyFact-Systemlandschaft zur Außenwelt dar.</p>
 </div>
 <div class="paragraph">
@@ -1453,7 +1455,7 @@ Wichtig in Hinblick auf diese Schichten sind folgende Punkte:</p>
 </li>
 <li>
 <p>Es wurden keine Aufrufe von Querschnittsanwendungen eingezeichnet.
-Für derartige Aufrufe gibt es keine Vorgaben: Sie können aus beliebigen Schichten von Geschäftsanwendungen und Service Gateways aus aufgerufen werden.</p>
+Für derartige Aufrufe gibt es keine Vorgaben: Sie können aus beliebigen Schichten von Geschäftsanwendungen und Service-Gateways aus aufgerufen werden.</p>
 </li>
 </ul>
 </div>
@@ -1489,7 +1491,7 @@ Hierzu gehören z.B. das Betriebssystem, der Web-Server, der Application-Server,
 </div>
 <div class="paragraph">
 <p><strong>Bibliotheken für die Anwendungsentwicklung:</strong> Die Anwendungsentwicklung wird durch den Einsatz von Frameworks und entsprechenden Bibliotheken vereinfacht und beschleunigt.
-IsyFact verwendet insbesondere Spring, Hibernate und JSF.</p>
+Die IsyFact verwendet insbesondere Spring, Hibernate und Angular.</p>
 </div>
 <div class="paragraph">
 <p>Eine detaillierte Liste der verbindlichen und empfohlenen Produkte ist im <a href="../../einstieg/produkte.html#produktkatalog" class="xref page">Produktkatalog</a> zu finden.</p>
@@ -1561,9 +1563,9 @@ Für eine bessere Übersichtlichkeit in den Abbildungen der einzelnen Systemumge
 Alle nichtfunktionalen Anforderungen müssen von dieser Systemumgebung vollständig erfüllt werden.</p>
 </div>
 <div class="paragraph">
-<p><a href="#image-TIArchPRU">Abbildung 16</a> skizziert die TI-Architektur der Produktionsumgebung. Einzelne Server werden durch UML-Knoten (engl. UML-Nodes) dargestellt.
+<p><a href="#image-TIArchPRU">Abbildung 16</a> skizziert die TI-Architektur der Produktionsumgebung. Einzelne Server werden durch UML-Knoten (engl. <em>UML nodes</em>) dargestellt.
 Die größeren Knoten gruppieren einzelne Server zu einer logischen Einheit, die <em>Cluster</em> genannt wird.
-Die Knoten eines Clusters sind dabei auf das Rechenzentrum und das Ausweich-Rechenzentrum verteilt, um bestmögliche Ausfallsicherheit zu erreichen.
+Die Knoten eines Clusters können bei Bedarf auf mehrere Rechenzentren verteilt sein, um bestmögliche Ausfallsicherheit zu erreichen.
 Die Verbindungen zeigen die Kommunikation der Server untereinander.
 Der Datenfluss erfolgt in der Regel in beiden Richtungen.
 Geht eine Verbindung von beziehungsweise zu einem Cluster, so entspricht dies Verbindungen von beziehungsweise zu allen Servern im Cluster.</p>
@@ -1582,7 +1584,7 @@ Damit entspricht die TI-Architektur der Produktionsumgebung den SAGA-Vorgaben.</
 </div>
 <div class="paragraph">
 <p>Der Zugriff durch die Anwender (Clients) und die über externe Systeme angeschlossener Anwender erfolgt über das WAN bzw. das interne LAN.
-Die Kommunikation erfolgt per Secure HTTP (HTTPS) mit einem Web-Browser oder ebenfalls per HTTPS oder SMTP via XML- oder Web-Service-Schnittstelle direkt aus der externen Anwendung über ein Service-Gateway-System.
+Die Kommunikation erfolgt per Secure HTTP (HTTPS) mit einem Browser oder ebenfalls per HTTPS oder SMTP via XML- oder Web-Service-Schnittstelle direkt aus der externen Anwendung über ein Service-Gateway-System.
 Innerhalb der Produktionsumgebung sollten die Anwendungssysteme ebenfalls verschlüsselt miteinander kommunizieren.</p>
 </div>
 <div class="paragraph">
@@ -1600,7 +1602,8 @@ In <a href="#image-TIArchPRU">Abbildung 16</a> wird aus Gründen der Vereinfachu
 Zu empfehlen ist allerdings generell die Nutzung eines Rechnersystems mit mehreren Applikationsservern.</p>
 </div>
 <div class="paragraph">
-<p>Für die Datenhaltung wird ein auf einem relationalen Datenbank-Management-System (RDBMS) basierender Datenbank-Cluster in zweifacher Ausprägung eingesetzt.
+<p>Für die Datenhaltung wird i.d.R. ein auf einem relationalen Datenbank-Management-System (RDBMS) basierender Datenbank-Cluster eingesetzt.
+Bei Bedarf ist dieser ausfallsicher zu skalieren, z.B. durch die Bildung von zwei Clustern.
 Eine Ausprägung steuert die Primärdatenbank, die für die operative Bearbeitung von Auskünften und Meldungen zuständig ist.
 Der operative Datenbestand wird permanent in eine Standby-Datenbank auf dem zweiten Cluster gespiegelt, die für die Datensicherung und für die Erstellung von Auswertungen und Statistiken verwendet wird.
 Um Auswertungen auf Stichtagsbeständen durchführen zu können, wird ein dedizierter Datenbankserver vorgesehen.</p>
@@ -1611,7 +1614,7 @@ Um Auswertungen auf Stichtagsbeständen durchführen zu können, wird ein dedizi
 <div class="paragraph">
 <p>Mit dem Begriff „Staging-Umgebung“ werden die Komponenten der technischen Infrastruktur bezeichnet, die zum internen Test verwendet werden und auf denen Probleme des Wirkbetriebs nachgestellt werden können.
 Eine solche Umgebung ist notwendig, um Problemanalysen durchzuführen und Lösungen für bekannte Probleme vor dem Einsatz im Wirkbetrieb auf ihre Funktionsfähigkeit hin zu prüfen.
-Die Staging-Umgebung dient auch zu Last- und Performancetests, zur Überprüfung der Installationsroutinen und zur Überprüfung der Ausfallsicherheit.
+Die Staging-Umgebung dient auch zu Last- und Performance-Tests, zur Überprüfung der Installationsroutinen und zur Überprüfung der Ausfallsicherheit.
 Daher muss sie so ausgelegt sein, dass verlässliche Aussagen in Bezug auf die Produktionsumgebung möglich sind.</p>
 </div>
 <div class="paragraph">
@@ -1722,7 +1725,7 @@ Es gibt keine weitere Unterteilung in Sicherheitszonen.
 </div>
 <div class="paragraph">
 <p>Die konkrete Ausprägung der TI-Architektur wird im <a href="../../methodik/vorlage-systemhandbuch/antora-master.html" class="xref page">IsyFact Systemhandbuch (Vorlage)</a> beschrieben.
-Die <a href="#ti-architektur-ga">folgende Abbildung</a> zeigt die TI-Architektur einer beispielhaften Geschäftsanwendung.</p>
+<a href="#ti-architektur-ga">Abbildung 20</a> zeigt die TI-Architektur einer beispielhaften Geschäftsanwendung.</p>
 </div>
 <div id="ti-architektur-ga" class="imageblock">
 <div class="content">
@@ -1744,7 +1747,7 @@ Dazu gehören Verfügbarkeit, Ausfallsicherheit, Performance, Lastverteilung, Au
 <h3 id="verfuegbarkeit-und-ausfallsicherheit"><a class="anchor" href="#verfuegbarkeit-und-ausfallsicherheit"></a>6.1. Verfügbarkeit und Ausfallsicherheit</h3>
 <div class="paragraph">
 <p>Die Verfügbarkeit wird über einen Prozentwert gemessen, der unter Berücksichtigung von definierten Betriebs- und Wartungsfenstern angibt, wie ausfallsicher ein System sein soll und tatsächlich ist.
-<a href="#image-verfuegbar">Abbildung 20</a> gibt einen Überblick, was bei der Messung der Verfügbarkeit zu berücksichtigen ist.</p>
+<a href="#image-verfuegbar">Abbildung 21</a> gibt einen Überblick, was bei der Messung der Verfügbarkeit zu berücksichtigen ist.</p>
 </div>
 <div id="image-verfuegbar" class="imageblock text-center">
 <div class="content">
@@ -1753,19 +1756,32 @@ Dazu gehören Verfügbarkeit, Ausfallsicherheit, Performance, Lastverteilung, Au
 <div class="title">Abbildung 21. Verfügbarkeit</div>
 </div>
 <div class="paragraph">
-<p>Der Aufbau der Produktionsumgebung ist so gestaltet, dass eine Verfügbarkeit von 7x24 Stunden und eine auf den Monat berechnete Verfügbarkeit von über 99 % erreicht werden kann.</p>
+<p>Der Aufbau der Produktionsumgebung ist so zu gestalten, dass die angestrebte Verfügbarkeit erreicht werden kann.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Dies kann beispielsweise eine Verfügbarkeit von 7x24 Stunden und eine auf den Monat berechnete Verfügbarkeit von über 99 % sein.
+Eine Beispielrechnung findet sich im <a href="../detailkonzept-komponente-service/master.html#verfuegbarkeit" class="xref page">Detailkonzept Service</a>.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>In der Produktionsumgebung einer IsyFact-Systemlandschaft wird die geforderte Verfügbarkeit über das Mittel der Redundanz realisiert.
-Jede Komponente der technischen Infrastruktur ist mindestens zweimal vorhanden.
-Auf einem Rechnersystem können mehrere Instanzen eines Servers (Applikationsserver, Datenbankserver) betrieben werden.
+Jede Komponente der technischen Infrastruktur ist mehrfach vorhanden.
 Bei einem Ausfall einer Komponente kann der Wirkbetrieb immer noch über die andere Komponente abgewickelt werden (Failover).
-Die Zustandslosigkeit der Applikationsserver (siehe Kapitel <a href="#die-software-referenzarchitektur">Die Software-Referenzarchitektur</a>) unterstützt diese Redundanz und das Failover:
-Beim Ausfall eines Applikationsservers sind die notwendigen Informationen, um den Betrieb über einen anderen Applikationsserver abzuwickeln, beim Ausfall des Knotens nicht verloren gegangen.</p>
+Die Zustandslosigkeit der Applikationsserver (siehe Kapitel <a href="#die-software-referenzarchitektur">Die Software-Referenzarchitektur</a>) unterstützt diese Redundanz und das Failover.
+Beim Ausfall eines Applikationsservers gehen die notwendigen Informationen, um den Betrieb über einen anderen Applikationsserver abzuwickeln, nicht verloren.</p>
 </div>
 <div class="paragraph">
-<p>Die Server-Knoten der technischen Infrastruktur sind über verschiedene Standorte, Racks, Enclosures verteilt.
-Dadurch ist die Verfügbarkeit auch in Katastrophen-Szenarien (zum Beispiel dem Brand an einem der beiden Standorte) sichergestellt.</p>
+<p>Neben der technischen Redundanz sollte auch eine räumliche Redundanz gegeben sein.
+Die Komponenten der technischen Infrastruktur sollten über mehrere Rechenzentren redundant verteilt sein.
+Dadurch ist die Verfügbarkeit auch in Katastrophen-Szenarien (z.B. einem Brand in einem Rechenzentrum) sichergestellt.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1864,10 +1880,7 @@ Der Betrieb ist auch für die Dokumentation der Konfigurationsänderungen durch 
 <p>Um den Gesamt-Status eines Systems zu überwachen, sind die Überwachung der IT-Systeme sowie das Monitoring der Komponenten der technischen Infrastruktur notwendig.
 Auf die Überwachung der IT-Systeme wird im Dokument <a href="../../isy-ueberwachung/konzept/master.html#einleitung" class="xref page">Konzept Überwachung</a> im Detail eingegangen.
 Hier wird unter anderem festgelegt, welche Informationen ein nach der Referenzarchitektur erstelltes IT-System für die Überwachung mindestens bereitstellen muss.
-Die Schnittstellentechnologie, über die die Informationen der einzelnen Anwendungen zur Überwachung angeboten werden, ist dabei der Standard JMX, der in alle gängigen Überwachungstools integrierbar ist.</p>
-</div>
-<div class="paragraph">
-<p>Als zentrales Überwachungstool kann z.B. das OpenSource-Werkzeug Nagios verwendet werden.</p>
+Hierfür wird das Framework Micrometer verwendet, das sich an eine Vielzahl gängiger Überwachungstools anbinden kann.</p>
 </div>
 <div class="paragraph">
 <p>Zum Monitoring der technischen Infrastruktur können für das zentrale Überwachungstool verfügbare Client-Programme verwendet werden.
@@ -1876,7 +1889,7 @@ Zusätzlich ist auch ein Betriebsmonitoring der Netzwerkkomponenten (Router, Swi
 </div>
 <div class="paragraph">
 <p>Beim Über- oder Unterschreiten bestimmter Schwellwerte oder bei einem Totalausfall von Komponenten kann vom zentralen Überwachungstool ein Alarm ausgelöst und der zuständige Systembetreuer informiert werden.
-Es müssen Abhängigkeitsgraphen für die Rechnersysteme und Anwendungen erstellt werden, an Hand derer das zentrale Überwachungstool sinnvolle Alarmierungen vornehmen kann.
+Es müssen Abhängigkeitsgrafen für die Rechnersysteme und Anwendungen erstellt werden, an Hand derer das zentrale Überwachungstool sinnvolle Alarmierungen vornehmen kann.
 Auch müssen darüber hinaus – am besten bereits während der Entwicklung – sicherheitskritische Ereignisse definiert werden, deren Auftreten explizit überwacht werden soll.</p>
 </div>
 <div class="paragraph">
@@ -1913,7 +1926,7 @@ Gemäß einer Anforderung des Bundesamtes für Sicherheit in der Informationstec
 <p>Die Log-Dateien eines Servers werden regelmäßig von einem Scheduler-Job auf einen zentralen Log-Server transferiert, von wo aus sie gesichert werden.
 Der Betrieb ist für die Datensicherung der Log-Dateien verantwortlich.
 Durch die Vorgaben zum Logging wird sichergestellt, dass Log-Dateien zusammengeführt werden können, und dass der technische Ablauf auch über verschiedene Log-Dateien hinweg nachvollzogen werden kann.
-Die Grundidee dabei ist, dass alle Log-Dateien in einem einheitlichen Format vorliegen und zusätzlich jeder Anfrage an das Gesamtsystem eine spezielle ID (correlation id) zugeordnet wird, mit der sich zusammen gehörende Einträge unterschiedlicher Log-Files einander zuordnen lassen.</p>
+Die Grundidee dabei ist, dass alle Log-Dateien in einem einheitlichen Format vorliegen und zusätzlich jeder Anfrage an das Gesamtsystem eine <a href="../../isy-logging/konzept/master.html#korrelations-id" class="xref page">Korrelations-ID</a> zugeordnet wird, mit der sich zusammen gehörende Einträge unterschiedlicher Log-Files einander zuordnen lassen.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2007,7 +2020,7 @@ Daher bietet die Auflösung in Services ein wichtiges Mittel, um die Komplexitä
 <p>In einigen Fällen bestehen diese Anforderungen nicht, daher wäre dann der Aufbau und Betrieb einer SOA-Plattform nicht angemessen.
 In diesem Fall können Anwendungen auch in einer kompakten Form gebaut werden.
 Dies ist sinnvoll, wenn der Funktionsumfang der Anwendung beschränkt ist, keine zentralen Services oder Datenbestände genutzt werden sollen und keine größeren Erweiterungen in der Zukunft zu erwarten sind.
-Dieses Szenario ist in <a href="#image-einfachSOArch">Abbildung 21</a> dargestellt.</p>
+Dieses Szenario ist in <a href="#image-einfachSOArch">Abbildung 22</a> dargestellt.</p>
 </div>
 <div id="image-einfachSOArch" class="imageblock text-center">
 <div class="content">
@@ -2017,7 +2030,7 @@ Dieses Szenario ist in <a href="#image-einfachSOArch">Abbildung 21</a> dargestel
 </div>
 <div class="paragraph">
 <p>Links ist eine typische Umsetzung einer Geschäftsanwendung in der IsyFact-Systemlandschaft zu sehen.
-Sie ist über ein Portal in eine Unternehmenslandschaft integriert, hat Außenschnittstellen zu anderen Organisationen, die über ein Service Gateway angeboten werden und sie nutzen die zentralen Services „Output Management“, „Alphanumerisches Suchverfahren“ und das zentrale Schlüsselverzeichnis.</p>
+Sie ist über ein Portal in eine Unternehmenslandschaft integriert, hat Außenschnittstellen zu anderen Organisationen, die über ein Service-Gateway angeboten werden und sie nutzen die zentralen Services „Output Management“, „Alphanumerisches Suchverfahren“ und das zentrale Schlüsselverzeichnis.</p>
 </div>
 <div class="paragraph">
 <p>In der Mitte ist dargestellt, dass es Anwendungen gibt, die diese Anforderungen nicht haben:</p>
@@ -2051,14 +2064,14 @@ Die Software-Referenzarchitektur der Anwendung (vgl. Kapitel <a href="#die-softw
 <h3 id="vereinfachungen-in-der-technischen-infrastruktur"><a class="anchor" href="#vereinfachungen-in-der-technischen-infrastruktur"></a>7.3. Vereinfachungen in der technischen Infrastruktur</h3>
 <div class="paragraph">
 <p>Die technische Infrastruktur kann an zwei Stellen vereinfacht werden.
-Zum einen ist es möglich, auf den Clusterbetrieb zu verzichten, zum anderen kann die Aufteilung in SAGA-konforme Zonen weggelassen werden.
+Zum einen ist es möglich, auf den Betrieb eines Clusters zu verzichten, zum anderen kann die Aufteilung in SAGA-konforme Zonen weggelassen werden.
 Dies wird im Folgenden ausgeführt.</p>
 </div>
 <div class="sect3">
 <h4 id="installation-ohne-clusterung"><a class="anchor" href="#installation-ohne-clusterung"></a>7.3.1. Installation ohne Clustering</h4>
 <div class="paragraph">
 <p>Bei geringeren nicht-funktionalen Anforderungen kann auch nur eine Anwendungsinstanz zum Einsatz kommen und kein Cluster für die Datenbank verwendet werden.
-Dies ist in <a href="#image-noCluster">Abbildung 22</a> dargestellt.</p>
+Dies ist in <a href="#image-noCluster">Abbildung 23</a> dargestellt.</p>
 </div>
 <div id="image-noCluster" class="imageblock text-center">
 <div class="content">
@@ -2177,5 +2190,9 @@ Falls die Kosten-Nutzen-Betrachtung es erlaubt, kann auf die Vereinfachungen nat
 <script src="../../../../_/js/site.js"></script>
 <script async src="../../../../_/js/vendor/highlight.js"></script>
 <script src="../../../../_/js/isyfact.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
   </body>
 </html>

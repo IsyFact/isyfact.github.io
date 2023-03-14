@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Konzept :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-jsf-doku/latest/isy-web/konzept/konzept.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -16,17 +16,16 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-        </div>
-      </div>
     </div>
   </nav>
 </header>
@@ -84,14 +83,6 @@
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="konzept.html">5.3</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
         </li>
       </ul>
     </li>
@@ -194,7 +185,7 @@ Schließlich enthält es noch ein Kapitel zum Thema Session Behandlung.</p>
 <p>Im Anhang steht eine Checkliste, die als Ausgangspunkt für die Qualitätssicherung der nach diesem Konzept umgesetzten <a href="../../../../glossary/latest/glossary/master.html#glossar-gui" class="xref page">GUIs</a> dienen soll.</p>
 </div>
 <div class="paragraph">
-<p>Allgemeine Angaben zur Gestaltung von Oberflächen finden sich im <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html" class="xref page">Styleguide</a>.</p>
+<p>Allgemeine Angaben zur Gestaltung von Oberflächen finden sich im <a href="../../../../isyfact-standards-doku/latest/isy-styleguide/styleguide.html" class="xref page">Styleguide</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="zielsetzung"><a class="anchor" href="#zielsetzung"></a>1.1. Zielsetzung des Bausteins JSF</h3>
@@ -353,7 +344,7 @@ Mit der EL werden direkt die Attribute des zugehörigen Beans genutzt.</p>
 </div>
 <div class="paragraph">
 <p>Ein weiterer Vorteil von Facelets ist die Verwendung von Templates.
-Durch diese ist es möglich, bereits einen zum <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html" class="xref page">Styleguide</a> konformen Rahmen zur Verfügung zu stellen, in welchen die
+Durch diese ist es möglich, bereits einen zum <a href="../../../../isyfact-standards-doku/latest/isy-styleguide/styleguide.html" class="xref page">Styleguide</a> konformen Rahmen zur Verfügung zu stellen, in welchen die
 Applikation lediglich durch definierte Einfügungen ihre Inhalte einbetten.</p>
 </div>
 </div>
@@ -508,7 +499,7 @@ Die Details dazu, wie in Spring Web Flow die zu speichernden Daten einer Session
 <div class="sect2">
 <h3 id="jquery"><a class="anchor" href="#jquery"></a>2.4. JQuery</h3>
 <div class="paragraph">
-<p>JQuery ist ein JavaScript-Framework, das auf einfache Weise JavaScript-Funktionen bereitstellt, die insbesondere auf die grafische Gestaltung einer Oberfläche benötigt werden.
+<p>JQuery ist ein JavaScript-Framework, das auf einfache Weise JavaScript-Funktionen bereitstellt, die insbesondere für die grafische Gestaltung einer Oberfläche benötigt werden.
 Erklärtes Ziel ist es, die Oberfläche durch den Einsatz von JavaScript eleganter nutzbar zu machen.
 Besonderer Fokus liegt dabei auf den Sicherheitsaspekten, die eine Aktivierung von JavaScript mit sich bringt.
 Die Oberfläche muss jedoch auch mit deaktiviertem JavaScript mit Komforteinschränkungen nutzbar sein.</p>
@@ -812,7 +803,7 @@ Welche Controller im Detail (LinksnavigationController, QuicklinksController, Va
 <div class="sect3">
 <h4 id="verwendung-von-jsf-widgets"><a class="anchor" href="#verwendung-von-jsf-widgets"></a>3.2.1. Verwendung von JSF-Widgets</h4>
 <div class="paragraph">
-<p>Für die Arbeit mit JSF werden gemäß dem <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html" class="xref page">Styleguide</a> sowohl Seitenelemente als auch Bedienelemente bereitgestellt.
+<p>Für die Arbeit mit JSF werden gemäß dem <a href="../../../../isyfact-standards-doku/latest/isy-styleguide/styleguide.html" class="xref page">Styleguide</a> sowohl Seitenelemente als auch Bedienelemente bereitgestellt.
 Seitenelemente helfen, den Seitenrahmen aufzubauen und erleichtern so einen zum Styleguide konformen Aufbau der Masken.
 Bedienelemente helfen, die Masken selbst zu strukturieren und bieten vorgefertigte Widgets zur Anzeige und Eingabe von Daten.
 Daneben gibt es noch einige spezielle Komponenten, z.B. um den Fokus beim Laden der Maske zu setzen oder eine Druckansicht bereitzustellen.</p>
@@ -1285,7 +1276,7 @@ ermöglicht. <code>isy-session</code> kapselt und vereinfacht die Nutzung von <c
 <p>Weitere Erläuterungen zum Session-Manager finden sich im dazugehörigen <code>Konzept Session Management</code>. Die Einbindung des Session-Managements ist in den <code>Nutzungsvorgaben isy-session</code> beschrieben. Konkrete Anweisungen zum Aufbau des Session-Speichers finden sich in den <code>Nutzungsvorgaben Redis</code>.</p>
 </div>
 <div class="paragraph">
-<p>Wenn <code>ìsy-session</code> als Erweiterung der IsyFact nicht eingesetzt wird, muss die Session-Persistierung auf andere Weise durchgeführt
+<p>Wenn <code>isy-session</code> als Erweiterung der IsyFact nicht eingesetzt wird, muss die Session-Persistierung auf andere Weise durchgeführt
 werden, wobei sicherzustellen ist, dass die Requests eines Benutzers immer auf die gleiche
 Instanz gehen (Sticky Sessions). Die Session-Daten müssen dabei möglichst klein gehalten werden, um
 die Performance der Anwendung nicht zu verschlechtern.</p>
@@ -1307,5 +1298,9 @@ Daher muss darauf geachtet werden, nur unbedingt notwendige Daten im Model zu ha
 <script src="../../../../_/js/site.js"></script>
 <script async src="../../../../_/js/vendor/highlight.js"></script>
 <script src="../../../../_/js/isyfact.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
   </body>
 </html>

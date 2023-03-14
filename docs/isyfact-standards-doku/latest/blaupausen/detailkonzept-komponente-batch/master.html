@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Detailkonzept Batch :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/blaupausen/detailkonzept-komponente-batch/master.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -16,17 +16,16 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-        </div>
-      </div>
     </div>
   </nav>
 </header>
@@ -284,6 +283,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-security/konzept/master.html">Konzept</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -348,10 +350,10 @@
     <span class="nav-text">Styleguide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
+    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
   </li>
 </ul>
   </li>
@@ -391,32 +393,41 @@
     <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -531,14 +542,6 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
-        </li>
-      </ul>
-    </li>
   </ul>
 </div>
     </div>
@@ -616,10 +619,10 @@ Er stellt eine Variante zur Dialogverarbeitung dar, bei welcher die Datenverarbe
 </div>
 <div class="paragraph">
 <p>In Kapitel <a href="#anforderungen">Anforderungen</a> werden die Anforderungen, in Kapitel <a href="#ausgrenzungen">Ausgrenzungen</a> die Ausgrenzungen definiert.
-Die Funktionsweise des Batchrahmens und die verschiedenen Startarten sowie die Konfiguration folgt in Kapitel <a href="#der-batchrahmen">Der Batchrahmen</a>.
+Die Funktionsweise des Batchrahmens und die verschiedenen Startarten sowie die Konfiguration folgt in Kapitel <a href="#der-batchrahmen">"Der Batchrahmen"</a>.
 Dort werden auch die Transaktionssteuerung und die Restart-Funktionalität beschrieben, die es ermöglicht, abgebrochene Batches fortzusetzen.
 Die Überwachung mittels JMX ist ebenfalls enthalten.
-Das Kapitel <a href="#die-ausfuehrungsbeans">Die Ausführungsbeans</a> beschreibt schließlich, wie die konkrete Batchlogik über Ausführungsbeans angebunden wird.</p>
+Das Kapitel <a href="#die-ausfuehrungsbeans">"Die Ausführungsbeans"</a> beschreibt schließlich, wie die konkrete Batchlogik über Ausführungsbeans angebunden wird.</p>
 </div>
 </div>
 </div>
@@ -709,7 +712,7 @@ Die querschnittliche Logik wird lediglich als Bibliothek eingebunden und ist in 
 </div>
 <div class="paragraph">
 <p>Die Komponente „Batchsteuerung“ der Zielarchitektur bezieht sich auf die Steuerung eines Batch-Netzes (siehe <a href="#image-BatNetz">Abbildung 2</a>) und
-wird über UC4 (siehe auch <a href="../../isy-konfiguration/konzept/master.html#einleitung" class="xref page">Konzept Konfiguration</a>) umgesetzt.
+wird über eine betriebliche Batchsteuerung umgesetzt.
 Sie wird in diesem Dokument nicht betrachtet.</p>
 </div>
 <div class="paragraph">
@@ -733,7 +736,7 @@ Im Dokument wird unter Batchlogik diese Klassensammlung und keine Komponente ver
 Ebenso soll nicht jeder Datensatz in einer eigenen Transaktion verarbeitet werden, wie es die Transaktionssteuerung des Anwendungskerns vorsieht.
 Vielmehr wird ein Batch sein Arbeitspaket in mehreren Paketen, und damit auch Transaktionen, abarbeiten.
 Bei einem Wiederanlauf nach einem Fehler muss der Batch in der Lage sein, die bis zu seinem letzten Commit verarbeiteten Datensätze zu überlesen und nur die „neuen“ Datensätze zu verarbeiten.
-Das Commit einer Transaktion bezeichnet man in diesem Fall als Checkpoint.
+Den Commit einer Transaktion bezeichnet man in diesem Fall als Checkpoint.
 Das Überlesen bereits verarbeiteter Datensätze nennt man Checkpoint / Restart Fähigkeit.</p>
 </div>
 <div class="paragraph">
@@ -839,7 +842,7 @@ Die Komponente Batchrahmen übernimmt die Steuerung des Batches und den Aufruf d
 <div class="paragraph">
 <p>Die Komponenten einer Geschäftsanwendung werden für einen Batch, genau wie in der Webanwendung, über das Spring-Framework verwaltet.
 Damit die Konfigurationen für die Webanwendung und für die Batch-Implementierungen möglichst gleich sind, werden die Komponenten für den Batchrahmen und die Batchlogik in einer separaten Konfigurationsdatei und einem separaten Spring-Kontext abgelegt.
-Dieser Kontext ist ein Kind-Kontext des eigentlichen <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungskontext" class="xref page">Anwendunskontextes</a> und kann alle Beans des Anwendungskontextes verwenden.
+Dieser Kontext ist ein Kind-Kontext des eigentlichen <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungskontext" class="xref page">Anwendungskontextes</a> und kann alle Beans des Anwendungskontextes verwenden.
 So kann die Konfiguration der Webanwendung mit minimalen Anpassungen auch für den Batch verwendet werden.</p>
 </div>
 <div class="paragraph">
@@ -1036,7 +1039,7 @@ Da eine Batch-Anwendung über Spring verwaltet wird, wird die Batchlogik als Spr
 Diese Bean wiederum ruft die Geschäftsanwendungs-Komponenten auf, welche die fachliche Logik enthalten.</p>
 </div>
 <div class="paragraph">
-<p>Für die <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-vorlageanwendung" class="xref page">Vorlage-Anwendung</a> zeigt <a href="#image-BeanGriffBat">Abbildung 4</a> eine Auswahl der vorhandenen Beans.
+<p>Für eine Beispielanwendung zeigt <a href="#image-BeanGriffBat">Abbildung 4</a> eine Auswahl der vorhandenen Beans.
 Wichtig ist ihre Verteilung auf zwei Anwendungskontexte: Der Batchrahmen und die Ausführungsbeans werden in einem eigenen Kontext konfiguriert.
 So müssen wenige Anpassungen vorgenommen werden, um aus der Anwendungskontext-Konfiguration als Webanwendung die Konfiguration für den Anwendungskontext im Batchbetrieb zu erhalten.</p>
 </div>
@@ -1186,18 +1189,18 @@ müssen die Dateien mit absoluten Pfaden angegeben werden.
 <div class="sect4">
 <h5 id="_reihenfolge_der_auswertung"><a class="anchor" href="#_reihenfolge_der_auswertung"></a>5.2.1.1. Reihenfolge der Auswertung</h5>
 <div class="paragraph">
-<p>Konfigurationsparameter werden in der folgenden Reihenfolge im Spring-Kontext angezogen. Gleichnamige Parameter werden in dieser Reihenfolge überschrieben.</p>
+<p>Konfigurationsparameter werden in der folgenden Reihenfolge im Spring-Kontext angezogen. Gleichnamige Parameter werden in dieser Reihenfolge überschrieben:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Konfiguration des Betriebssystems / der JVM</p>
+<p>Konfiguration des Betriebssystems / der JVM,</p>
 </li>
 <li>
-<p>Konfigurationsdatei</p>
+<p>Konfigurationsdatei,</p>
 </li>
 <li>
-<p>Kommandouzeilen-Parameter</p>
+<p>Kommandozeilen-Parameter.</p>
 </li>
 </ol>
 </div>
@@ -1602,7 +1605,7 @@ Falls der Schlüssel ein zusammengesetzter Schlüssel ist, müssen sämtliche Sc
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>DatumLetzterStart</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Das Datum des Starts des aktuellen Batch-Laufs (falls der Status „laeuft“ ist) bzw.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Das Datum des Starts des aktuellen Batch-Laufs (falls der Status "laeuft" ist) bzw.
 des letzten Laufes.</p></td>
 </tr>
 <tr>
@@ -1616,7 +1619,7 @@ des letzten Laufes.</p></td>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Die Tabelle liegt im Datenbank-Schema der eigenen Geschäftsanwendung.
+<p>Die Tabelle liegt im Datenbankschema der eigenen Geschäftsanwendung.
 Es darf keine übergreifenden Tabellen oder ein übergreifendes Datenbankschema für alle Batches gemäß IsyFact-Architektur geben.</p>
 </div>
 <div class="sect2">
@@ -1683,7 +1686,7 @@ Der nächste Lauf muss dann mit dem Parameter <code>-ignoriereLauf</code> gestar
 </div>
 </div>
 <div class="sect2">
-<h3 id="die-restart-funktionalitaet"><a class="anchor" href="#die-restart-funktionalitaet"></a>6.3. Die Restart Funktionalität</h3>
+<h3 id="die-restart-funktionalitaet"><a class="anchor" href="#die-restart-funktionalitaet"></a>6.3. Die Restart-Funktionalität</h3>
 <div class="paragraph">
 <p>Falls ein Batch durch einen Fehler oder durch das Erreichen der Anzahl zu verarbeitender Datensätze abgebrochen ist, muss ein Restart für ihn durchgeführt werden.
 In diesem Fall müssen alle bereits verarbeiteten Datensätze übersprungen werden.
@@ -1774,13 +1777,7 @@ Für die Nachverfolgung können durch die Verarbeitungsbean zu verschiedenen Zei
 </div>
 </div>
 <div class="paragraph">
-<p>Über die Java Management Console kann man danach auf die Daten zugreifen:</p>
-</div>
-<div id="image-JMXOverBat" class="imageblock text-center">
-<div class="content">
-<img src="../_images/detailkonzept-batch/JMXOverBat.png" alt="JMXOverBat">
-</div>
-<div class="title">Abbildung 6. Die JMX Überwachung eines Batches</div>
+<p>Über die Java Management Console kann man danach auf die Daten zugreifen.</p>
 </div>
 <div class="paragraph">
 <p>Bereitgestellt werden folgende Informationen:</p>
@@ -1925,7 +1922,7 @@ eigenen Benutzer ausstatten.</p>
 <div class="sect2">
 <h3 id="das-deployment-eines-batches"><a class="anchor" href="#das-deployment-eines-batches"></a>6.6. Das Deployment eines Batches</h3>
 <div class="paragraph">
-<p>Die Batches werden nicht einzeln deployed.
+<p>Die Batches werden nicht einzeln deployt.
 Stattdessen wird ein Paket angeboten, welches sämtliche Batches der Geschäftsanwendung enthält.</p>
 </div>
 <div class="paragraph">
@@ -1963,8 +1960,8 @@ $BATCHDIR/batch-ausfuehren.sh -start -cfg /resources/batch/batch-erinnerung-conf
 </div>
 <div class="paragraph">
 <p>Bei der betrieblichen Konfiguration wird nicht zwischen dem Deployment als Web-Anwendung und dem Deployment als Batch unterschieden: Es werden jeweils dieselben betrieblichen Konfigurationsdateien verwendet.
-Damit der Betrieb Anpassungen dieser Dateien nicht zweimal durchführen muss, wird die betriebliche Konfiguration mit der Web-Anwendung deployed.
-Vor dem Deployment des Batch-Pakets muss die Webanwendung deployed sein.
+Damit der Betrieb Anpassungen dieser Dateien nicht zweimal durchführen muss, wird die betriebliche Konfiguration mit der Web-Anwendung deployt.
+Vor dem Deployment des Batch-Pakets muss die Webanwendung deployt sein.
 Falls der Batch nicht auf dem Server der Webanwendung läuft, muss die Konfigurationsdatei der Webanwendung vor der Installation des Batches auch auf diesem Server verfügbar gemacht (z.B. gemountet oder kopiert) werden.
 Beim Deployment des Batch-Pakets werden über symbolische Links diese betriebliche Konfigurationsdatei referenziert.</p>
 </div>
@@ -1972,9 +1969,9 @@ Beim Deployment des Batch-Pakets werden über symbolische Links diese betrieblic
 <div class="sect2">
 <h3 id="rueckgabewerte-des-batchrahmens"><a class="anchor" href="#rueckgabewerte-des-batchrahmens"></a>6.7. Rückgabewerte des Batchrahmens</h3>
 <div class="paragraph">
-<p>Der Batchrahmen endet mit einem Returncode und erzeugt optional zusätzlich noch ein ausführliches Verarbeitungsergebnis in Form einer Ergebnisdatei im XML-Format.
+<p>Der Batchrahmen endet mit einem Return-Code und erzeugt optional zusätzlich noch ein ausführliches Verarbeitungsergebnis in Form einer Ergebnisdatei im XML-Format.
 Die Ergebnisdatei ist eine <strong>fachliche Datei</strong>, sie enthält keine betrieblichen Informationen.
-Alle betrieblichen Informationen über Ausführung des Batches werden in die Logdatei geschrieben, so dass der Betrieb nur diese Datei betrachten muss.
+Alle betrieblichen Informationen über Ausführung des Batches werden in die Logdatei geschrieben, sodass der Betrieb nur diese Datei betrachten muss.
 Es gibt keine weiteren betriebsrelevanten Dateien neben der Logdatei.</p>
 </div>
 <div class="paragraph">
@@ -2072,7 +2069,7 @@ ob an dieser Stelle ein anderer Schlüssel ausgegeben werden kann.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Batch-Ergebnis / Statistik</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Liste von statistischen Daten die während des Batchlaufs ermittelt wurden.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Liste von statistischen Daten, die während des Batchlaufs ermittelt wurden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Batch-Ergebnis / Statistik / Statistik-Eintrag</code></p></td>
@@ -2096,13 +2093,13 @@ ob an dieser Stelle ein anderer Schlüssel ausgegeben werden kann.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Batch-Ergebnis / Ende</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Datum</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Text</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Datum des Ende des Batchlaufs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Datum des Endes des Batchlaufs</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Batch-Ergebnis / Ende</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Uhrzeit</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Text</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Uhrzeit des Ende des Batchlaufs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Uhrzeit des Endes des Batchlaufs</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Batch-Ergebnis / Return-Code</code></p></td>
@@ -2125,13 +2122,13 @@ ob an dieser Stelle ein anderer Schlüssel ausgegeben werden kann.</p>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;Batch-Ergebnis&gt;
-&lt;Start BatchID="terminfindungLoeschBatch" Datum="2017-01-30" Uhrzeit="09:33:53" Parameter="-start -cfg /resources/batch/batch-loeschen-config.properties -Batchrahmen.Ergebnisdatei loeschen-batch_out.xml"/&gt;
+&lt;Start BatchID="GenersicheAnwendungLoeschBatch" Datum="2017-01-30" Uhrzeit="09:33:53" Parameter="-start -cfg /resources/batch/batch-loeschen-config.properties -Batchrahmen.Ergebnisdatei loeschen-batch_out.xml"/&gt;
 &lt;Meldungen&gt;
 &lt;Meldung ID="COMMIT" Typ="I" Text="Checkpunkt geschrieben."/&gt;
 &lt;Meldung ID="ENDE" Typ="I" Text="Batch beendet."/&gt;
 &lt;/Meldungen&gt;
 &lt;Statistik&gt;
-&lt;Statistik-Eintrag ID="ANZAHL_GELOESCHT" Text="Anzahl gelöschter Terminfindungen" Wert="5"/&gt;
+&lt;Statistik-Eintrag ID="ANZAHL_GELOESCHT" Text="Anzahl gelöschter generischer Anwendungen" Wert="5"/&gt;
 &lt;/Statistik&gt;
 &lt;Ende Datum="2017-01-30" Uhrzeit="09:33:58"/&gt;
 &lt;Return-Code RC="0" Text="Verarbeitung ohne Fehler durchgeführt."/&gt;
@@ -2225,7 +2222,7 @@ Kapitel <a href="#testmodus-ohne-schreiboperationen">Testmodus ohne Schreibopera
 <div class="sect3">
 <h4 id="testmodus-mit-rollback"><a class="anchor" href="#testmodus-mit-rollback"></a>6.8.1. Testmodus mit Rollback</h4>
 <div class="paragraph">
-<p>Dieses Muster sieht vor, dass bei der Batchverarbeitung statt eines Commits ein Rollback ausgeführt wird, so dass die Änderungen, die durch den Batch erzeugt werden, nicht in die Datenbank geschrieben werden.
+<p>Dieses Muster sieht vor, dass bei der Batchverarbeitung statt eines Commits ein Rollback ausgeführt wird, sodass die Änderungen, die durch den Batch erzeugt werden, nicht in die Datenbank geschrieben werden.
 Das Muster ist für datenbankorientierte Batches gut geeignet, die keine Änderungen an Nachbarsystemen erfordern.</p>
 </div>
 <div class="paragraph">
@@ -2275,7 +2272,7 @@ Zusätzlich ist bei einer entsprechenden Protokollierung nachvollziehbar, welche
 <p>Ein weiteres Konzept für die Umsetzung des Testmodus sieht vor, dass ändernde Operationen in der Datenbank unterbunden werden. Änderungen in der Datenbank oder in Nachbarsystemen werden durch entsprechende If-Abfragen abgefangen.</p>
 </div>
 <div class="paragraph">
-<p>Dieses Muster ist dann einzusetzen, wenn die Realisierung durch einen Rollback nicht möglich oder angemessen ist.
+<p>Dieses Muster ist dann einzusetzen, wenn die Realisierung durch ein Rollback nicht möglich oder angemessen ist.
 Durch Tests muss sichergestellt werden, dass nicht trotz Testmodus versehentlich Änderungen durchgeführt werden.</p>
 </div>
 <div class="paragraph">
@@ -2297,9 +2294,6 @@ In diesem Kapitel werden Vorgaben für die Ausführungsbeans definiert.</p>
 </div>
 <div class="sect2">
 <h3 id="_namenskonvention_3"><a class="anchor" href="#_namenskonvention_3"></a>7.1. Namenskonvention</h3>
-<div class="paragraph">
-<p>Ausführungsbeans folgend folegender Namenskonvention:</p>
-</div>
 <div class="paragraph">
 <p>Analog zu den Anwendungsfällen werden Batchklassen mit dem Präfix <code>Bat</code> gekennzeichnet.</p>
 </div>
@@ -2383,7 +2377,7 @@ Mittlerweile wurde dies durch eine UUID ersetzt.
 <div class="sect2">
 <h3 id="fachliche-logik-in-den-komponenten-der-geschaeftsanwendung-implementieren"><a class="anchor" href="#fachliche-logik-in-den-komponenten-der-geschaeftsanwendung-implementieren"></a>7.4. Fachliche Logik in den Komponenten der Geschäftsanwendung implementieren</h3>
 <div class="paragraph">
-<p>Falls für die Verarbeitung im Batch Fachlogik benötigt wird, welche für die Webanwendung nicht benötigt wird, ist diese trotzdem den Geschäftsnwendungskomponenten hinzuzufügen.
+<p>Falls für die Verarbeitung im Batch Fachlogik benötigt wird, welche für die Webanwendung nicht benötigt wird, ist diese trotzdem den Geschäftsanwendungskomponenten hinzuzufügen.
 Die Ausführungsbean erhält die Referenzen auf die Komponenten über Dependency Injection und ruft die Fachlogik dort auf.</p>
 </div>
 <div class="paragraph">
@@ -2464,7 +2458,7 @@ Dazu ist für das Ausführungsbean die Methode <code>getAuthenticationCredential
 <p>Der Batchrahmen unterstützt beispielsweise <em>nicht</em> das Auslassen von Datensätzen im Fehlerfall (etwa für eine Verarbeitung im nächsten Batch). Falls dies umgesetzt werden soll, ist eine entsprechende Verarbeitung in der Ausführungsbean zu implementieren.</p>
 </div>
 <div class="paragraph">
-<p>Wenn eine Ausführungsbean einen Fehler wirft, so muss dies eine „BeanAusfuehrungsException“ oder ein davon erbender Fehler sein.
+<p>Wenn eine Ausführungsbean einen Fehler wirft, so muss dies eine <code>BeanAusfuehrungsException</code> oder ein davon erbender Fehler sein.
 In diesen Exceptions ist es möglich, den Return-Code des Batches zu definieren.
 Die Return-Codes sind für den konkreten Batch zu konfigurieren und müssen den Vorgaben in
 Abschnitt <a href="#rueckgabewerte-des-batchrahmens">Rückgabewerte des Batchrahmens</a> entsprechen.</p>
@@ -2477,7 +2471,8 @@ Dieses Vorgehen ermöglicht es dem Betrieb, die Ursache des Fehlers zu korrigier
 <div class="sect2">
 <h3 id="beispiele-satzverarbeitung"><a class="anchor" href="#beispiele-satzverarbeitung"></a>7.9. Beispiele Satzverarbeitung</h3>
 <div class="paragraph">
-<p>Abschließend ist in die beispielhafte Satzverarbeitung in einer Batch-Ausführungsbean zu sehen Die gezeigte Satzverarbeitung setzt den Testmodus um, die Anwendungslogik ist weiterhin im Anwendungskern umgesetzt und sie übernimmt Logging, Protokollierung und Statistik-Zählung.</p>
+<p>Abschließend ist in die beispielhafte Satzverarbeitung in einer Batch-Ausführungsbean zu sehen.
+Die gezeigte Satzverarbeitung setzt den Testmodus um, die Anwendungslogik ist weiterhin im Anwendungskern umgesetzt und sie übernimmt Logging, Protokollierung und Statistik-Zählung.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2556,10 +2551,10 @@ Dies ist beispielsweise der Fall, wenn ein im Datenzugriff auftretender Fehler a
 Das Auftreten einer solchen Exception führt dazu, dass die Transaktion nur noch zurückgerollt werden kann, selbst wenn die Exception gefangen und ignoriert wird.</p>
 </div>
 <div class="paragraph">
-<p>Um dieser Problematik zu begegnen, kann in der Satzverarbeitung selbst die Transaktionsklammer nur für einen Satz geöffnet und nach der Verarbeitung entweder commited oder zurückgerollt werden.</p>
+<p>Um dieser Problematik zu begegnen, kann in der Satzverarbeitung selbst die Transaktionsklammer nur für einen Satz geöffnet und nach der Verarbeitung entweder committed oder zurückgerollt werden.</p>
 </div>
 <div class="paragraph">
-<p>In diesem Fall sollte der Commit-Intervall des Batchrahmens entsprechend hoch konfiguriert werden, um unnötige Commits zu vermeiden, auch wenn in dieser Transaktion nichts passiert.</p>
+<p>In diesem Fall sollte das Commit-Intervall des Batchrahmens entsprechend hoch konfiguriert werden, um unnötige Commits zu vermeiden, auch wenn in dieser Transaktion nichts passiert.</p>
 </div>
 </div>
 </div>
@@ -2656,7 +2651,7 @@ weiteren Dateien:</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Die Dateien sollten entweder in einen eigenen Ordner unter <code>/opt</code> abgelegt werden oder – falls der Batch Teil eines bestehenden Batch-Projekts ist – in den vorhandenen Batch-Ordner des Systems deployed werden.</p>
+<p>Die Dateien sollten entweder in einen eigenen Ordner unter <code>/opt</code> abgelegt werden oder – falls der Batch Teil eines bestehenden Batch-Projekts ist – in den vorhandenen Batch-Ordner des Systems deployt werden.</p>
 </div>
 <div class="paragraph">
 <p>In letzterem Fall sollte das Deployment über das RPM des Batch-Projekts erfolgen.
@@ -2671,7 +2666,7 @@ Andernfalls ist – insbesondere bei nur einmaligen Migrationsbatches – ein ma
 <p>Beschreibungskommentar mit Parametern und Rückgabewerten</p>
 </li>
 <li>
-<p>Automatisches Ermitteln des Homeverzeichnisses des Batches</p>
+<p>Automatisches Ermitteln des Home-Verzeichnisses des Batches</p>
 </li>
 <li>
 <p>Einlesen der Übergabe-Parameter</p>
@@ -2685,10 +2680,10 @@ Andernfalls ist – insbesondere bei nur einmaligen Migrationsbatches – ein ma
 </ul>
 </div>
 <div class="paragraph">
-<p>Der Batch gibt zudem die Startzeit, Endezeit und Laufzeit aus.</p>
+<p>Der Batch gibt zudem die Startzeit, Endzeit und Laufzeit aus.</p>
 </div>
 <div class="paragraph">
-<p>Es müssen dokumentierte Returncodes für erwartete Fehlerfälle verwendet werden, um die Fehleranalyse zu vereinfachen.</p>
+<p>Es müssen dokumentierte Return-Codes für erwartete Fehlerfälle verwendet werden, um die Fehleranalyse zu vereinfachen.</p>
 </div>
 <div class="paragraph">
 <p>Folgende Rahmenbedingungen sind bei der Umsetzung einzuhalten:</p>
@@ -2696,17 +2691,17 @@ Andernfalls ist – insbesondere bei nur einmaligen Migrationsbatches – ein ma
 <div class="ulist">
 <ul>
 <li>
-<p>Das Homeverzeichnis (in dem das SH-Skript liegt) wird automatisiert ermittelt und wird nicht als Parameter übergeben.</p>
+<p>Das Home-Verzeichnis, in dem das SH-Skript liegt, wird automatisiert ermittelt und wird nicht als Parameter übergeben.</p>
 </li>
 <li>
-<p>Das Logverzeichnis muss ein optionaler Parameter sein (und damit als letzter Eingabeparameter definiert sein).
+<p>Das Log-Verzeichnis muss ein optionaler Parameter sein (und damit als letzter Eingabeparameter definiert sein).
 Bei Nichtangabe wird der Standard-Logpfad unter <code>&lt;HOMEVEREICHNIS&gt;/log/</code> verwendet.</p>
 </li>
 <li>
 <p>Datenbankverbindungsangaben müssen in einer Konfigurationsdatei (<code>&lt;HOMEVERZEICHNIS&gt;/etc/jpa.properties</code>) stehen und dürfen nicht als Parameter übergeben werden.</p>
 </li>
 <li>
-<p>SQL-Skripte, die vom SH-Skript verwendet werden müssen im Verzeichnis <code>&lt;HOMEVERZEICHNIS&gt;/sql/</code> abgelegt werden.</p>
+<p>SQL-Skripte, die vom SH-Skript verwendet werden, müssen im Verzeichnis <code>&lt;HOMEVERZEICHNIS&gt;/sql/</code> abgelegt werden.</p>
 </li>
 <li>
 <p>Weitere SH-Skripte, die vom Hauptskript aufgerufen werden, müssen unter <code>&lt;HOMEVERZEICHNIS&gt;/sh/</code> abgelegt werden.</p>
@@ -2741,7 +2736,7 @@ Bei Nichtangabe wird der Standard-Logpfad unter <code>&lt;HOMEVEREICHNIS&gt;/log
 #Zeit zu Beginn ermitteln +
 start=`date +%s`
 
-# Homeverzeichnis ermitteln
+# Home-Verzeichnis ermitteln
 HomeVerzeichnis=$(cd -P -- "$(dirname -- "$0")" &amp;&amp; pwd -P)
 
 # Parameter prüfen
@@ -2819,5 +2814,9 @@ Um dieses ausführen zu können, muss eine funktionierende Datenbankverbindung a
 <script src="../../../../_/js/site.js"></script>
 <script async src="../../../../_/js/vendor/highlight.js"></script>
 <script src="../../../../_/js/isyfact.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
   </body>
 </html>

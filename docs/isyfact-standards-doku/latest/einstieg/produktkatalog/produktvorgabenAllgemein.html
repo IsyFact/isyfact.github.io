@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Allgemeine Produktvorgaben :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/einstieg/produktkatalog/produktvorgabenAllgemein.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -16,17 +16,16 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-        </div>
-      </div>
     </div>
   </nav>
 </header>
@@ -284,6 +283,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-security/konzept/master.html">Konzept</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -348,10 +350,10 @@
     <span class="nav-text">Styleguide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
+    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
   </li>
 </ul>
   </li>
@@ -391,32 +393,41 @@
     <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -531,14 +542,6 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
-        </li>
-      </ul>
-    </li>
   </ul>
 </div>
     </div>
@@ -612,19 +615,46 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <p>Programmiersprache für die Anwendungsentwicklung</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="http://www.oracle.com/technetwork/java/javase">Oracle JDK</a></p>
+<p><a href="https://adoptium.net/de/temurin/releases">OpenJDK (Eclipse Temurin von Adoptium)</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1.8.x</p>
+<p>JDK: 17.x, Compile Target: 8, 17</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1.0.0</p>
+<p>3.0.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>verbindlich</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Apache License, Version 2.0,Eclipse Distribution License 1.0 (BSD), GPL v2 with Classpath Exception (GPLv2+CE) GPL v2 with Assembly Exception (GPLv2+Assembly), Eclipse Public License 2.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Installationsanweisungen: <a href="https://adoptium.net/de/installation/" class="bare">https://adoptium.net/de/installation/</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Programmiersprache für die Bibliotheksentwicklung</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://adoptium.net/de/temurin/releases">OpenJDK (Eclipse Temurin von Adoptium)</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>JDK: 17.x, Compile Target: 8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>3.0.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>verbindlich</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Apache License, Version 2.0,Eclipse Distribution License 1.0 (BSD), GPL v2 with Classpath Exception (GPLv2+CE) GPL v2 with Assembly Exception (GPLv2+Assembly), Eclipse Public License 2.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Installationsanweisungen: <a href="https://adoptium.net/de/installation/" class="bare">https://adoptium.net/de/installation/</a></p>
+</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -664,10 +694,10 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <p>Betriebssystem für die Application-Server</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="http://www.novell.com/products/server">Suse Linux Enterprise Server (SLES)</a></p>
+<p>Linux 64bit mit Kernel</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>12.x</p>
+<p>Kernel &gt;= 4.12, 64bit</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>1.5.0</p>
@@ -675,12 +705,34 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>verbindlich</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Kommerziell</p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Java Runtime Environment (JRE)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://adoptium.net/de/temurin/releases">OpenJDK (Eclipse Temurin von Adoptium)</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>17.x</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>3.0.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>verbindlich</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Apache License, Version 2.0,Eclipse Distribution License 1.0 (BSD), GPL v2 with Classpath Exception (GPLv2+CE) GPL v2 with Assembly Exception (GPLv2+Assembly), Eclipse Public License 2.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Installationsanweisungen: <a href="https://adoptium.net/de/installation/linux/" class="bare">https://adoptium.net/de/installation/linux/</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Application-Server</p>
 </div></div></td>
@@ -699,9 +751,9 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Software License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Java Service Wrapper</p>
 </div></div></td>
@@ -720,11 +772,11 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>GPL v2</p>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Community Edition 3.3.2</p>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Web-Server</p>
 </div></div></td>
@@ -743,9 +795,9 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Software License</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Buildmanagement</p>
 </div></div></td>
@@ -763,9 +815,6 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Apache Software License</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Aktuell eingesetzt: 3.1.1</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -852,6 +901,18 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <div class="sect1">
 <h2 id="_anwendungsentwicklung_sonstiges"><a class="anchor" href="#_anwendungsentwicklung_sonstiges"></a>4. Anwendungsentwicklung Sonstiges</h2>
 <div class="sectionbody">
+<div id="spring-boot-dependencies" class="sidebarblock">
+<div class="content">
+<div class="title">Spring Boot Managed Dependencies</div>
+<div class="paragraph">
+<p>Das Framework Spring Boot legt selbst zahlreiche Versionen von Drittanbieter-Bibliotheken fest.
+Wann immer ein Produkt als Version dieses Icon (<span class="icon"><i class="fa fa-leaf" title="Spring Boot Dependency"></i></span>) enthält, wird die durch Spring Boot festgelegte Version verwendet.</p>
+</div>
+<div class="paragraph">
+<p>Produkte und ihre Versionen können in der Liste der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-spring-boot-managed-dependencies" class="xref page">Spring Boot Managed Dependencies</a> nachgeschlagen werden.</p>
+</div>
+</div>
+</div>
 <div class="openblock table_head_sticky unordered_list_identation">
 <div class="content">
 <table class="tableblock frame-all grid-all stretch">
@@ -928,10 +989,10 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <p><a href="https://selenium.dev">Selenium</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>4.x</p>
+<p><a href="#spring-boot-dependencies"><span class="icon"><i class="fa fa-leaf"></i></span></a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>2.5.0</p>
+<p>3.0.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>empfohlen</p>
@@ -941,9 +1002,6 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
-<li>
-<p>Verwaltung der Version über Spring Boot.</p>
-</li>
 <li>
 <p>Tool für eine Browserautomatisierung der GUI Tests.</p>
 </li>
@@ -968,5 +1026,9 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <script src="../../../../_/js/site.js"></script>
 <script async src="../../../../_/js/vendor/highlight.js"></script>
 <script src="../../../../_/js/isyfact.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
   </body>
 </html>

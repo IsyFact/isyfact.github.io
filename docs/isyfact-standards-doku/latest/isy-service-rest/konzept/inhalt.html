@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Konzept REST-Services: Inhalt :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/isy-service-rest/konzept/inhalt.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -16,17 +16,16 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-        </div>
-      </div>
     </div>
   </nav>
 </header>
@@ -284,6 +283,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-security/konzept/master.html">Konzept</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -348,10 +350,10 @@
     <span class="nav-text">Styleguide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
+    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
   </li>
 </ul>
   </li>
@@ -391,32 +393,41 @@
     <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -531,14 +542,6 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
-        </li>
-      </ul>
-    </li>
   </ul>
 </div>
     </div>
@@ -642,7 +645,7 @@ Für einen tiefen Einstieg in die Grundlagen bietet sich die <a href="../../../.
 </div>
 <div class="sidebarblock">
 <div class="content">
-<div class="title"><span class="icon"><i class="fa fa-university"></i></span> Architekturvorgabe</div>
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
 <div class="paragraph">
 <p>Ein auf der IsyFact basierendes IT-System muss seine REST-Services mindestens anhand Stufe zwei des Richardson Maturity Models umsetzen.</p>
 </div>
@@ -824,8 +827,8 @@ Stufe 3 in <a href="#image-richard-maturity-model">Abbildung 1</a>) oder über d
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiele</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>/nachrichten/{id}/absender</code></p>
 <p class="tableblock">adressiert den Absender einer bestimmten Nachricht.</p>
-<p class="tableblock"><code>/nachrichten/{id_n}/empfaenger/{id_e}</code></p>
-<p class="tableblock">adressiert den bestimmten Empfänger (mit der Id <code>id_e</code>) einer bestimmten Nachricht (mit der Id <code>id_n</code>).</p></td>
+<p class="tableblock"><code>/nachrichten/{id_n}/cc/{id_e}</code></p>
+<p class="tableblock">adressiert den bestimmten CC-Empfänger (mit der Id <code>id_e</code>) einer bestimmten Nachricht (mit der Id <code>id_n</code>).</p></td>
 </tr>
 </tbody>
 </table>
@@ -889,7 +892,7 @@ Stufe 3 in <a href="#image-richard-maturity-model">Abbildung 1</a>) oder über d
 </div>
 <div class="sidebarblock">
 <div class="content">
-<div class="title"><span class="icon"><i class="fa fa-university"></i></span> Architekturvorgabe</div>
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
 <div class="paragraph">
 <p>Es dürfen nur nicht datenschutzrelevante Informationen in Query Parametern verwendet werden, um das Loggen von datenschutzrelevanten Daten zu verhindern.</p>
 </div>
@@ -901,16 +904,7 @@ Stufe 3 in <a href="#image-richard-maturity-model">Abbildung 1</a>) oder über d
 </div>
 </div>
 <div class="sect2">
-<h3 id="idempotenz"><a class="anchor" href="#idempotenz"></a>2.2. Idempotenz</h3>
-<div class="paragraph">
-<p>Idempotenz beschreibt die Möglichkeit, den gleichen HTTP-Request mehrfach an die Schnittstelle senden zu können, ohne dass ein anderes Ergebnis erzielt wird als bei einem einzelnen Request.</p>
-</div>
-<div class="paragraph">
-<p>Ob eine Methode idempotent ist, wird im nächsten Kapitel beschrieben.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="http-methoden"><a class="anchor" href="#http-methoden"></a>2.3. Verwendung von HTTP-Methoden</h3>
+<h3 id="http-methoden"><a class="anchor" href="#http-methoden"></a>2.2. Verwendung von HTTP-Methoden</h3>
 <div class="paragraph">
 <p>Die folgenden Kapitel beschreiben, welche HTTP-Methoden zu unterstützen sind und welche Funktion sie besitzen.
 Die übrigen HTTP-Methoden werden nicht verwendet.</p>
@@ -918,6 +912,9 @@ Die übrigen HTTP-Methoden werden nicht verwendet.</p>
 <div class="paragraph">
 <p><strong>GET</strong> wird verwendet, um eine Ressource zu lesen.
 Die Ressource wird dabei nicht verändert, wodurch diese Methode idempotent ist.</p>
+</div>
+<div class="paragraph">
+<p>Idempotenz beschreibt die Möglichkeit, den gleichen HTTP-Request mehrfach an die Schnittstelle senden zu können, ohne dass ein anderes Ergebnis erzielt wird als bei einem einzelnen Request.</p>
 </div>
 <div id="listing-get-anfrage-beispiele" class="listingblock">
 <div class="title">Listing 1. Beispiele für GET-Anfrage</div>
@@ -976,7 +973,7 @@ Content-Type: application/json; charset=utf-8
 </div>
 <div class="sidebarblock">
 <div class="content">
-<div class="title"><span class="icon"><i class="fa fa-university"></i></span> Architekturvorgabe</div>
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
 <div class="paragraph">
 <p>POST wird auch für fachliche Operationen genutzt, die keiner der anderen HTTP-Methoden zugeordnet werden können (z. B. Verifikation eines Antrags).</p>
 </div>
@@ -1049,7 +1046,7 @@ Content-Type: application/json; charset=utf-8
 </div>
 <div class="sidebarblock">
 <div class="content">
-<div class="title"><span class="icon"><i class="fa fa-university"></i></span> Architekturvorgabe</div>
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
 <div class="paragraph">
 <p>PATCH ist nur zu verwenden, wenn PUT aus triftigen Gründen nicht funktioniert.</p>
 </div>
@@ -1095,7 +1092,7 @@ Eine Übersicht über die HTTP-Methoden und ihre Eigenschaften findet sich in <a
 </table>
 </div>
 <div class="sect3">
-<h4 id="post-suche-filterung"><a class="anchor" href="#post-suche-filterung"></a>2.3.1. Suche und Filterung mittels POST</h4>
+<h4 id="post-suche-filterung"><a class="anchor" href="#post-suche-filterung"></a>2.2.1. Suche und Filterung mittels POST</h4>
 <div class="paragraph">
 <p>Eine Filterung und Suche sollte im Regelfall über Query Parameter einer Anfrage mit dem HTTP-Methoden "GET" geschehen.
 Einige Abfragen sind jedoch zu komplex, um sie über HTTP GET abzubilden.
@@ -1124,7 +1121,7 @@ Die Filter- und Suchkriterien werden in den Body der Anfrage aufgenommen.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="verwendung-http-statuscodes"><a class="anchor" href="#verwendung-http-statuscodes"></a>2.4. Verwendung von HTTP-Statuscodes</h3>
+<h3 id="verwendung-http-statuscodes"><a class="anchor" href="#verwendung-http-statuscodes"></a>2.3. Verwendung von HTTP-Statuscodes</h3>
 <div class="paragraph">
 <p>Im Folgenden werden die HTTP-Statuscodes dargestellt, die zu verwenden sind.</p>
 </div>
@@ -1224,7 +1221,7 @@ Empfehlenswert ist außerdem diese gut strukturierte Übersicht von <a href="../
 </div>
 </div>
 <div class="sect2">
-<h3 id="repraesentationen"><a class="anchor" href="#repraesentationen"></a>2.5. Repräsentationen</h3>
+<h3 id="repraesentationen"><a class="anchor" href="#repraesentationen"></a>2.4. Repräsentationen</h3>
 <div class="paragraph">
 <p>REST-Services können verschiedene Repräsentationen derselben Ressource anbieten.
 Diese Repräsentationen sind entweder textbasiert oder binär.</p>
@@ -1241,7 +1238,7 @@ Stattdessen sollte der URI der binären Ressource in der textbasierten Ressource
 </div>
 <div class="sidebarblock">
 <div class="content">
-<div class="title"><span class="icon"><i class="fa fa-university"></i></span> Architekturvorgabe</div>
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
 <div class="paragraph">
 <p>Alle REST-Services innerhalb einer Systemlandschaft nutzen eine einheitliche, textbasierte Repräsentationsform.
 Binäre Daten werden über direkte Anfragen binär ohne Transformation zurückgeliefert.</p>
@@ -1271,7 +1268,7 @@ Hier sind jedoch gesetzliche Vorgaben, Rahmenbedingungen und die Anforderungen d
 </table>
 </div>
 <div class="sect3">
-<h4 id="content-negotiation"><a class="anchor" href="#content-negotiation"></a>2.5.1. Content Negotiation</h4>
+<h4 id="content-negotiation"><a class="anchor" href="#content-negotiation"></a>2.4.1. Content Negotiation</h4>
 <div class="paragraph">
 <p>Liegen Ressourcen in mehreren Repräsentationen vor (z. B. als JSON- und XML-Dokumente oder Medien in Form von komprimierten Daten oder Rohdaten), geschieht die Auslieferung einer konkreten Repräsentation über HTTP Content Negotiation.</p>
 </div>
@@ -1301,7 +1298,7 @@ Für die häufigsten Repräsentationen legt <a href="master.html#anhang-content-
 </div>
 </div>
 <div class="sect2">
-<h3 id="metadaten"><a class="anchor" href="#metadaten"></a>2.6. Metadaten</h3>
+<h3 id="metadaten"><a class="anchor" href="#metadaten"></a>2.5. Metadaten</h3>
 <div class="paragraph">
 <p>Der Bereich Metadaten kann optional implementiert werden.</p>
 </div>
@@ -1311,7 +1308,7 @@ Die HEAD-Methode ist identisch zu GET, außer, dass sie keinen Response-Body zur
 </div>
 </div>
 <div class="sect2">
-<h3 id="caching"><a class="anchor" href="#caching"></a>2.7. Caching</h3>
+<h3 id="caching"><a class="anchor" href="#caching"></a>2.6. Caching</h3>
 <div class="paragraph">
 <p>Caching ist eine optionale Technik.</p>
 </div>
@@ -1341,7 +1338,7 @@ Eine Übersicht, welche HTTP-Methoden Caching-Fähig sind, findet sich unter <a 
 </div>
 </div>
 <div class="sect2">
-<h3 id="hateoas"><a class="anchor" href="#hateoas"></a>2.8. HATEOAS</h3>
+<h3 id="hateoas"><a class="anchor" href="#hateoas"></a>2.7. HATEOAS</h3>
 <div class="paragraph">
 <p>Nach dem HATEOAS-Paradigma soll eine zurückgelieferte Ressourcen weiterführende URLs (vergleichbar mit HTML-Links) zu verwandten Ressourcen enthalten, anstelle die verwandten Ressourcen mit der angefragten Ressource zusammengeführt zu übermitteln.</p>
 </div>
@@ -1499,7 +1496,7 @@ Gängige Clients im Kontext der IsyFact sind Java (Spring) und Javascript (Angul
 <h3 id="verwendung-transportobjekte"><a class="anchor" href="#verwendung-transportobjekte"></a>3.4. Verwendung von Transportobjekten</h3>
 <div class="sidebarblock">
 <div class="content">
-<div class="title"><span class="icon"><i class="fa fa-university"></i></span> Architekturvorgabe</div>
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
 <div class="paragraph">
 <p>REST-Schnittstellen verwenden ausschließlich Transferobjekte (Data Transfer Objects, DTOs).</p>
 </div>
@@ -1936,5 +1933,9 @@ https://service.de/api/v2/messages/{id}</pre>
 <script src="../../../../_/js/site.js"></script>
 <script async src="../../../../_/js/vendor/highlight.js"></script>
 <script src="../../../../_/js/isyfact.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
   </body>
 </html>

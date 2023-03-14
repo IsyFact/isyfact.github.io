@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Tutorial: Inhalt :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/einstieg/tutorial/inhalt.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -16,17 +16,16 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-        </div>
-      </div>
     </div>
   </nav>
 </header>
@@ -284,6 +283,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-security/konzept/master.html">Konzept</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -348,10 +350,10 @@
     <span class="nav-text">Styleguide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
+    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
   </li>
 </ul>
   </li>
@@ -391,32 +393,41 @@
     <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -528,14 +539,6 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../../../isyfact-jsf-doku/latest/isy-web/konzept/konzept.html">5.3</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
         </li>
       </ul>
     </li>
@@ -734,8 +737,7 @@ Weitere Details können der <a href="../../blaupausen/referenzarchitektur/master
 <h4 id="anlegen-des-datenbankschemas"><a class="anchor" href="#anlegen-des-datenbankschemas"></a>2.3.1. Anlegen des Datenbankschemas</h4>
 <div class="paragraph">
 <p>Das Datenbankschema muss angelegt werden.
-Dazu werden die benötigten DDL-Anweisungen, wie in <a href="../../blaupausen/detailkonzept-komponente-datenzugriff/versionierung.html" class="xref page">Versionierung von Datenbankschemas</a> beschrieben, in einem Verzeichnis abgelegt.
-Die <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-vorlageanwendung" class="xref page">Vorlageanwendung</a> enthält diese Anweisungen im Verzeichnis <code>src/main/skripte/sql/terminfindung</code>.</p>
+Dazu werden die benötigten DDL-Anweisungen, wie in <a href="../../blaupausen/detailkonzept-komponente-datenzugriff/versionierung.html" class="xref page">Versionierung von Datenbankschemas</a> beschrieben, in einem Verzeichnis abgelegt.</p>
 </div>
 <div class="paragraph">
 <p>Das initiale Datenmodell kann über das Tool <code>hbm2ddl</code> erzeugt werden.
@@ -773,9 +775,6 @@ Nutzungsdokumentation unter:
     ...
 &lt;/dependencies&gt;</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>Eine passende Beispielkonfiguration findet sich in der Maven-Konfiguration der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-vorlageanwendung" class="xref page">Vorlageanwendung</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1024,9 +1023,9 @@ Gegebenenfalls muss die Schnittstelle auf eine ältere Version kompiliert werden
 <li>
 <p>Schnittstellen werden versioniert.
 Die Versionsnummer wird dreistellig im Package-Namen der Service-Schnittstelle angegeben.
-Beispiel: Die Version 1.0.0 der Schnittstelle der Komponente Meldung der Anwendung Vorlage-Register, wird in den folgenden
+Beispiel: Die Version 1.0.0 einer generischen Schnittstelle einer generischen Anwendung, wird in den folgenden
 Packages implementiert:<br>
-<code>de.bund.bva.cd.registercd.service.httpinvoker.v1_0_0.*</code></p>
+<code>de.bund.bva.&lt;anwendung&gt;.&lt;schnittstelle&gt;.httpinvoker.v1_0_0.*</code></p>
 </li>
 <li>
 <p>Interfaces, Transport-Exceptions und Transportobjekte werden im Package<br>
@@ -1161,8 +1160,7 @@ Wichtig ist, dass darin die Compiler-Version so festgelegt wird, wie es im <a hr
 </div>
 <div class="paragraph">
 <p>Das Projekt muss ein Jar erzeugen, das von anderen Systemen zur Nutzung der Service-Schnittstelle benötigt wird.
-In der Pom-Datei muss konfiguriert werden, dass das Jar in das Verzeichnis <code>repository-deploy</code> (Deployment-Repository) deployt wird.
-Ein Beispiel dafür findet sich in <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-vorlageanwendung" class="xref page">Vorlageanwendung</a>.</p>
+In der Pom-Datei muss konfiguriert werden, dass das Jar in das Verzeichnis <code>repository-deploy</code> (Deployment-Repository) deployt wird.</p>
 </div>
 <div class="paragraph">
 <p>Das Schnittstellen-Projekt erhält dieselbe Group-ID wie das eigentliche Anwendungsprojekt.
@@ -1195,9 +1193,6 @@ Genauso erhält die Service-Implementierung eine Referenz auf den Bean Mapper pe
 </div>
 <div class="paragraph">
 <p>An den Methoden der Service-Implementierung werden die Annotationen <code>@StelltAufrufKontextBereit</code> und <code>@Gesichert</code> gemäß <a href="../../isy-sicherheit/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben Sicherheit</a> verwendet, um den Zugriff auf die Service-Methode zu autorisieren.</p>
-</div>
-<div class="paragraph">
-<p>Beispiele dafür finden sich in <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-vorlageanwendung" class="xref page">Vorlageanwendung</a>.</p>
 </div>
 </div>
 <div class="sect4">
@@ -1526,13 +1521,11 @@ Die Ausführungs-Bean übermittelt dem Batchrahmen Status-Informationen für das
 </div>
 <div class="sect3">
 <h4 id="klassendesign-4"><a class="anchor" href="#klassendesign-4"></a>4.3.2. Klassendesign</h4>
-<div class="paragraph">
-<p>Klassendesign eines Batches</p>
-</div>
 <div id="image-KDBatch" class="imageblock text-center">
 <div class="content">
 <img src="../_images/tutorial/KDBatch.png" alt="KDBatch" width="80%">
 </div>
+<div class="title">Abbildung 6. Klassendesign eines Batches</div>
 </div>
 <div class="paragraph">
 <p><a href="#image-KDBatch">Abbildung 6</a> zeigt eine beispielhafte Implementierung eines Batches, der die Komponenten <code>Auskunft</code> und <code>Basisdaten</code> verwendet.</p>
@@ -1636,7 +1629,7 @@ bereits eine Bean dieses Typs definiert, kann sie mit der Annotation <code>@Excl
 </div>
 <div class="paragraph">
 <p>Die Spring-Konfiguration der Anwendung kann auch für den Batches verwendet werden.
-Dazu müssen Beans, nicht die nicht für Ausführung eines Batches instanziiert werden sollen, mit
+Dazu müssen Beans, die nicht für Ausführung eines Batches instanziiert werden sollen, mit
 <code>@ExcludeFromBatchContext</code> annotiert werden.</p>
 </div>
 </div>
@@ -1648,8 +1641,7 @@ Dieses hat die Aufgabe das Deployment-Paket für den Batch zusammenzustellen.</p
 </div>
 <div class="paragraph">
 <p>Dazu wird eine neue pom.xml angelegt, die als Ziel-Typ ein Jar mit allen Dateien des Batches erzeugt.
-Zusätzlich können in diesem Projekt Shell-Skripte und ähnliches für den Batch abgelegt werden.
-Ein Beispiel ist in <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-vorlageanwendung" class="xref page">Vorlageanwendung</a> enthalten.</p>
+Zusätzlich können in diesem Projekt Shell-Skripte und ähnliches für den Batch abgelegt werden.</p>
 </div>
 <div class="paragraph">
 <p>Das Batch-Projekt enthält keinen Java-Code.
@@ -1719,9 +1711,13 @@ Je nach Anwendungsszenario sind andere spezifische Logger (<code>IsyLoggerFachda
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@StelltLoggingKontextBereit
-public int cdErworben(AufrufKontext kontext, …)
-…</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class ServiceSchnittstelleExceptionFassade {
+
+    @StelltLoggingKontextBereit
+    public Object serviceMethode(AufrufKontext kontext, Parameter serviceParameter) {
+        // ...
+    }
+}</code></pre>
 </div>
 </div>
 </div>
@@ -1945,8 +1941,7 @@ aufgelisteten Bibliotheken eingebunden werden.</p>
 Diese erbt von der entsprechenden Klasse aus <code>isy-exception-core</code>. Zum Laden der
  Fehlertexte wird das Interface FehlertextProvider aus derselben Bibliothek verwendet.
 In <code>isy-util</code> ist die Implementierung <code>MessageSourceFehlertextProvider</code> enthalten.
-Diese unterstützt das Laden von Fehlertexten aus einer Spring-Message-Source.
-Ein Beispiel für die Verwendung ist in der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-vorlageanwendung" class="xref page">Vorlageanwendung</a> enthalten.</p>
+Diese unterstützt das Laden von Fehlertexten aus einer Spring-Message-Source.</p>
 </div>
 </div>
 <div class="sect4">
@@ -1977,9 +1972,6 @@ Vor dem Werfen der so erzeugten Exception über die Schnittstelle wird ein Log-E
 </div>
 <div class="paragraph">
 <p>Beim Umwandeln der internen Exceptions in Transport-Exceptions wird der Stack-Trace der internen Exceptions verworfen.</p>
-</div>
-<div class="paragraph">
-<p>Ein Beispiel hierfür ist wieder in <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-vorlageanwendung" class="xref page">Vorlageanwendung</a> enthalten.</p>
 </div>
 </div>
 </div>
@@ -2268,5 +2260,9 @@ Dieser Advice wird so konfiguriert, dass bei jedem Aufruf einer Methode der Serv
 <script src="../../../../_/js/site.js"></script>
 <script async src="../../../../_/js/vendor/highlight.js"></script>
 <script src="../../../../_/js/isyfact.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
   </body>
 </html>

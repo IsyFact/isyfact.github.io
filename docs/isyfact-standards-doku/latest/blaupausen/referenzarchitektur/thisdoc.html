@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>IsyFact-Referenzarchitektur: Einleitung :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/blaupausen/referenzarchitektur/thisdoc.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -16,17 +16,16 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-        </div>
-      </div>
     </div>
   </nav>
 </header>
@@ -284,6 +283,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-security/konzept/master.html">Konzept</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -348,10 +350,10 @@
     <span class="nav-text">Styleguide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
+    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
   </li>
 </ul>
   </li>
@@ -391,32 +393,41 @@
     <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -531,14 +542,6 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
-        </li>
-      </ul>
-    </li>
   </ul>
 </div>
     </div>
@@ -574,14 +577,14 @@ Der Begriff Factory steht für die schnelle Erzeugung neuer <a href="../../../..
 </div>
 <div class="paragraph">
 <p>Die <strong>IsyFact-Standards</strong> bilden das architektonische, technologische und methodische Fundament der IsyFact.
-Sie umfassen allgemeingültige und wiederverwendbare Konzepte und Komponenten, die für die Entwicklung beliebiger Geschäftsanwendungen relevant und verpflichtend sind.
-Bspw.: Allgemeine Softwarereferenzarchitektur, Vorgaben zur Fehlerbehandlung, Logging etc.</p>
+Sie umfassen allgemeingültige und wiederverwendbare Konzepte und Komponenten, die für die Entwicklung beliebiger Geschäftsanwendungen relevant und verpflichtend sind.<br>
+Beispiele: Allgemeine Softwarereferenzarchitektur, Vorgaben zur Fehlerbehandlung, Logging.</p>
 </div>
 <div class="paragraph">
 <p>Die <strong>IsyFact-Erweiterungen</strong> sind optionale wiederverwendbare Lösungen für verschiedene Problemstellungen, die aufgrund spezifischer Anforderungen des BVA oder seiner
 Kunden entwickelt wurden und
-<span class="underline">auf den IsyFact-Standards aufbauen.</span>
-Bspw.: Protokollierung, Regelwerk etc.</p>
+<span class="underline">auf den IsyFact-Standards aufbauen.</span><br>
+Beispiele: Protokollierung, Regelwerk.</p>
 </div>
 <div class="paragraph">
 <p>Die in diesem Dokument beschriebene Referenzarchitektur ist ein zentraler Teil der IsyFact-Standards und erläutert auf einer allgemeinen Ebene, wie eine Anwendungslandschaft zu beschreiben und umzusetzen ist.</p>
@@ -630,7 +633,7 @@ Dies ist in <a href="#image-GA-AW">Abbildung 1</a> dargestellt.</p>
 Anwendungssysteme unterstützen Geschäftsprozesse.
 Stellt ein Anwendungssystem eine Fachlogik dar, so handelt es sich um eine <a href="../../../../glossary/latest/glossary/master.html#glossar-geschaeftsanwendung" class="xref page">Geschäftsanwendung</a>.
 Ein Anwendungssystem ist Bestandteil der <a href="../../../../glossary/latest/glossary/master.html#glossar-a-architektur" class="xref page">A-Architektur</a>.
-Aus Sicht der <a href="../../../../glossary/latest/glossary/master.html#glossar-t-architektur" class="xref page">T-Architektur</a> bildet ein <a href="../../../../glossary/latest/glossary/master.html#glossar-it-system" class="xref page">IT-Systeme</a> die software-technische Umsetzung eines Anwendungssystems ab.</p>
+Aus Sicht der <a href="../../../../glossary/latest/glossary/master.html#glossar-t-architektur" class="xref page">T-Architektur</a> bildet ein <a href="../../../../glossary/latest/glossary/master.html#glossar-it-system" class="xref page">IT-System</a> die software-technische Umsetzung eines Anwendungssystems ab.</p>
 </div>
 <div class="paragraph">
 <p>Ein häufig anzutreffendes Beispiel hierfür ist die Trennung in ein Anwendungssystem zur Bestandsverwaltung (Register) und einem Anwendungssystem für die Benutzerinteraktion, die auf die Bestandsverwaltung zugreift.
@@ -639,7 +642,7 @@ Derartige Strukturierungsprinzipien und Regeln sind jedoch immer spezifisch für
 Im vorliegenden Dokument verwenden wir daher den neutralen Begriff <strong><a href="../../../../glossary/latest/glossary/master.html#glossar-geschaeftsanwendung" class="xref page">Geschäftsanwendung</a></strong> für alle Arten von Anwendungssystemen, die eine bestimmte fachliche Funktionalität innerhalb einer Anwendungsdomäne realisieren.</p>
 </div>
 <div class="paragraph">
-<p><strong>Querschnittsanwendungen</strong> sind Anwendungssysteme, die Services für mehrere Geschäftsanwendungen bereitstellen.
+<p><strong>Querschnittsanwendungen:</strong> Eine <a href="../../../../glossary/latest/glossary/master.html#glossar-querschnittsanwendung" class="xref page">Querschnittsanwendung</a> ist ein Anwendungssystem, das Services für mehrere Geschäftsanwendungen bereitstellt.
 Diese Services sind oft technisch motiviert.</p>
 </div>
 <div class="paragraph">
@@ -647,7 +650,7 @@ Diese Services sind oft technisch motiviert.</p>
 Einzelne Geschäftsanwendungen stellen Nutzerschnittstellen zur Verfügung, das Portal integriert diese, bildet einen zentralen Einstiegspunkt für alle Web-Anwendungen und übernimmt die Aufgabe der Authentifizierung und der Autorisierung auf Anwendungsebene.</p>
 </div>
 <div class="paragraph">
-<p><strong>Service-Gateway:</strong> Im <a href="../../../../glossary/latest/glossary/master.html#glossar-service-gateway" class="xref page">Service Gateway</a> werden alle Services der Anwendungssysteme bereitgestellt, die externe Nutzer direkt nutzen dürfen.
+<p><strong>Service-Gateway:</strong> Im <a href="../../../../glossary/latest/glossary/master.html#glossar-service-gateway" class="xref page">Service-Gateway</a> werden alle Services der Anwendungssysteme bereitgestellt, die externe Nutzer direkt nutzen dürfen.
 Dazu führt das Service-Gateway die Authentifizierung und Autorisierung der Service-Aufrufer auf Anwendungsebene durch.
 Weiterhin transformiert das Service-Gateway das interne Kommunikationsprotokoll einer IsyFact-Systemlandschaft in das vom Service-Aufrufer erwartete Protokoll.
 Dies sind in der Regel Web Service-Aufrufe.</p>
@@ -673,13 +676,13 @@ Der Zustand einer Anwendung wird in der Datenbank persistiert und bei jedem eint
 </div>
 <div class="paragraph">
 <p>In der Referenzarchitektur erfolgt die Anpassung an steigende Anforderungen durch horizontale Skalierung auf der Ebene der Anwendungsserver.
-Ein (Hardware- oder Software-) Loadbalancer verteilt die eingehenden Anfragen auf die vorhandenen Anwendungsserver.
+Ein (Hardware- oder Software-)Loadbalancer verteilt die eingehenden Anfragen auf die vorhandenen Anwendungsserver.
 Im Falle eines Serverausfalls kann die Aufgabe des ausgefallenen Servers durch einen anderen Server übernommen werden.
 Die Skalierung des Systems ist in <a href="#image-horSkal">Abbildung 2</a> dargestellt.</p>
 </div>
 <div class="paragraph">
 <p>Die Referenzarchitektur ist die Umsetzung einer Serviceorientierten Architektur.
-Im Design des <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungskern" class="xref page">Anwendungskerns</a> (siehe <a href="../detailkonzept-komponente-anwendungskern/master.html" class="xref page">Detailkonzept Komponente Anwendungskern</a> ) finden sich explizit Komponenten und Services.
+Im Design des <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungskern" class="xref page">Anwendungskerns</a> (siehe <a href="../detailkonzept-komponente-anwendungskern/master.html" class="xref page">Detailkonzept Komponente Anwendungskern</a>) finden sich explizit Komponenten und Services.
 Der Anwendungskern unterscheidet dabei noch zwischen Anwendungs-internen Services, die nur innerhalb der Anwendung aufgerufen werden und Anwendungs-externen Services, die über eine Nutzungsschnittstelle als Service anderen Anwendungen zur Verfügung gestellt werden.</p>
 </div>
 <div class="paragraph">
@@ -715,7 +718,7 @@ Es hat zur Folge, dass als Application Server ein Servlet-Container ausreichend 
 </ul>
 </div>
 <div class="paragraph">
-<p>Die Aufteilung in Zonen leitet sich aus dem SAGA 4-Standard ab <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-saga-4-0" class="xref page">SAGA 4.0</a>.</p>
+<p>Die Aufteilung in Zonen leitet sich aus dem SAGA 4-Standard ab.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -725,6 +728,7 @@ Es hat zur Folge, dass als Application Server ein Servlet-Container ausreichend 
 </td>
 <td class="content">
 Wir orientieren uns hier nach wie vor am SAGA 4-Standard, da SAGA 5 kein Zonenmodell mehr enthält.
+Leider gibt es zu SAGA 4 keine offizielle Quelle mehr.
 </td>
 </tr>
 </table>
@@ -753,25 +757,24 @@ Um Auswertungen auf Stichtagsbeständen durchführen zu können, wird ein dedizi
 <div class="sect2">
 <h3 id="inhaltsuebersicht"><a class="anchor" href="#inhaltsuebersicht"></a>1.2. Inhaltsübersicht</h3>
 <div class="paragraph">
-<p>Nachdem in Kapitel  <a href="master.html#kurzueberblick" class="xref page">Kurzüberblick</a> die drei Sichten der Referenzarchitektur für eine Anwendungslandschaft kurz vorgestellt wurden, erfolgt nun eine
-Detaillierung der einzelnen Sichten:</p>
+<p>Nachdem in Kapitel <a href="#kurzueberblick">Kurzüberblick</a> die drei Sichten der Referenzarchitektur für eine Anwendungslandschaft kurz vorgestellt wurden, erfolgt nun eine Detaillierung der einzelnen Sichten:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Für die fachliche Sicht wird im Kapitel <a href="master.html#die-fachliche-referenzarchitektur" class="xref page">Die fachliche Referenzarchitektur</a> eine fachliche Referenzarchitektur beschrieben.</p>
+<p>Die fachliche Sicht wird durch die <a href="master.html#die-fachliche-referenzarchitektur" class="xref page">fachliche Referenzarchitektur</a> beschrieben.</p>
 </li>
 <li>
-<p>Für die softwaretechnische Sicht wird im Kapitel  <a href="master.html#die-software-referenzarchitektur" class="xref page">Die Software Referenzarchitektur</a> die Einbindung der Software-Referenzarchitektur <a href="../referenzarchitektur-it-system/master.html#einleitung" class="xref page">Referenzarchitektur IT-Systeme</a> beschrieben.</p>
+<p>Die software-technische Sicht wird durch die <a href="master.html#die-software-referenzarchitektur" class="xref page">software-technische Referenzarchitektur</a> beschrieben.</p>
 </li>
 <li>
-<p>Für die technische Infrastruktur wird im Kapitel <a href="master.html#die-referenzarchitektur-der-technischen-infrastruktur" class="xref page">Die Referenzarchitektur der technischen Infrastruktur</a> eine Referenzarchitektur vorgestellt.</p>
+<p>Die Sicht der technischen Infrastruktur wird durch die <a href="master.html#die-referenzarchitektur-der-technischen-infrastruktur" class="xref page">Referenzarchitektur der technischen Infrastruktur</a> beschrieben.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>Im Rahmen dieser Referenzarchitektur werden auch betriebliche Aspekte betrachtet, da diese Auswirkungen auf Designentscheidungen haben können.
-Diese Aspekte werden in Kapitel <a href="master.html#betriebliche-aspekte" class="xref page">Betriebliche Aspekte</a> beschrieben.</p>
+Diese Aspekte werden in Kapitel <a href="master.html#betriebliche-aspekte" class="xref page">"Betriebliche Aspekte"</a> beschrieben.</p>
 </div>
 </div>
 </div>
@@ -785,5 +788,9 @@ Diese Aspekte werden in Kapitel <a href="master.html#betriebliche-aspekte" class
 <script src="../../../../_/js/site.js"></script>
 <script async src="../../../../_/js/vendor/highlight.js"></script>
 <script src="../../../../_/js/isyfact.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
   </body>
 </html>

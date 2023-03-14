@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Methodik :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/methodik/methodik.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../_/css/isyfact.css">
@@ -16,17 +16,16 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-        </div>
-      </div>
     </div>
   </nav>
 </header>
@@ -284,6 +283,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../isy-security/konzept/master.html">Konzept</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../isy-security/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -348,10 +350,10 @@
     <span class="nav-text">Styleguide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
+    <a class="nav-link" href="../isy-styleguide/styleguide.html">Styleguide</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../isyfact-style-doku/latest/isy-style/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
   </li>
 </ul>
   </li>
@@ -391,32 +393,41 @@
     <a class="nav-link" href="versionierung/master.html">Versionierung</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+    <a class="nav-link" href="java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+    <a class="nav-link" href="vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="diagrammerstellung/diagramsnet.html">diagrams.net</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="vorlage-systementwurf/antora-master.html">Systementwurf</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -531,14 +542,6 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
-        </li>
-      </ul>
-    </li>
   </ul>
 </div>
     </div>
@@ -577,6 +580,12 @@ Die Nutzung ist unter den <a href="../../../glossary/latest/literaturextern/inha
 <div class="paragraph">
 <p><strong>Konventionen und Vorgaben für die Spezifikation und Programmierung sowie das Projektvorgehen nach V-Modell XT.</strong></p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/methodik-v-modell.dn.svg" alt="methodik v modell.dn">
+</div>
+<div class="title">Abbildung 1. Methodik: Vorgehen auf Basis des V-Modell XT</div>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -590,32 +599,53 @@ Das <a href="../../../glossary/latest/literaturextern/inhalt.html#litextern-v-mo
 </table>
 </div>
 <div class="paragraph">
-<p>Die spezifische Methodik der IsyFact umfasst:</p>
+<p>Die spezifische Methodik der IsyFact umfasst folgende Konventionen und Vorgaben.</p>
 </div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Dokumentation</dt>
+<dd>
 <div class="ulist">
 <ul>
 <li>
-<p>Richtlinien und Methodiken für fachliche und technische Modellierung,</p>
+<p><a href="vorgaben-dokumentation.html" class="xref page">Konventionen und Vorgaben Dokumentation</a></p>
 </li>
 <li>
-<p>Richtlinien und Vorgaben für Generierung von Code und Konzepten,</p>
+<p><a href="diagrammerstellung.html" class="xref page">Richtlinien und Methodiken für fachliche und technische Modellierung</a></p>
 </li>
 <li>
-<p>Konventionen für die Implementierung,</p>
-</li>
-<li>
-<p>Methodik für Systemspezifikation und Systementwurf mit entsprechenden Dokumentvorlagen,</p>
-</li>
-<li>
-<p>eine einheitliche Vorgehensweise zur Auswahl von Fremdprodukten.</p>
+<p><a href="vorlagen.html" class="xref page">Methodik und Vorlagen zur Spezifikation und Dokumentation von Anwendungen</a></p>
 </li>
 </ul>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/Methodik_V-Modell.png" alt="Methodik V Modell">
+</dd>
+<dt class="hdlist1">Vorgehensweise zur Auswahl von Fremdprodukten</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="_attachments/produktauswahl/Template_Produktauswahl.dotx" class="xref attachment">Vorlage zur Produktauswahl <span class="icon"><i class="fa fa-file-word-o"></i></span></a></p>
+</li>
+</ul>
 </div>
-<div class="title">Abbildung 1. Methodik: Vorgehen auf Basis von V-Modell XT</div>
+</dd>
+<dt class="hdlist1">Konventionen für die Implementierung</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="java-programmierkonventionen/master.html" class="xref page">Java Programmierkonventionen</a></p>
+</li>
+<li>
+<p><a href="namenskonventionen/master.html" class="xref page">Namenskonventionen</a></p>
+</li>
+<li>
+<p><a href="versionierung/master.html" class="xref page">Versionierung</a></p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
 </div>
 </article>
   </div>
@@ -626,5 +656,9 @@ Das <a href="../../../glossary/latest/literaturextern/inhalt.html#litextern-v-mo
 <script src="../../../_/js/site.js"></script>
 <script async src="../../../_/js/vendor/highlight.js"></script>
 <script src="../../../_/js/isyfact.js"></script>
+<script src="../../../_/js/vendor/lunr.js"></script>
+<script src="../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../.." data-snippet-length="100" data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
   </body>
 </html>
