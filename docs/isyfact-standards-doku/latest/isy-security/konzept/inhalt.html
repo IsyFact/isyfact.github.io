@@ -979,27 +979,44 @@ Das Access-Token enthält alle notwendigen Daten, um zu verifizieren, ob die auf
 </div>
 <div class="sect3">
 <h4 id="validierung-der-token"><a class="anchor" href="#validierung-der-token"></a>2.4.2. Validierung der Token</h4>
-
-</div>
-<div class="sect3">
-<h4 id="bereitstellung-der-tokeninformationen"><a class="anchor" href="#bereitstellung-der-tokeninformationen"></a>2.4.3. Bereitstellung der Tokeninformationen</h4>
 <div class="paragraph">
-<p>Das Access-Token wird in den Spring <code>SecurityContext</code> übernommen.
-Zudem wird der Access-Token als aufgeschlüsseltes JSON-Objekt inklusive aller Claims (Inhalte des Access-Tokens) in der Anwendung innerhalb des <code>SecurityContexts</code> bereitgestellt.</p>
+<p>Wenn eine Ressource oder ein Service einer Anwendung angefragt wird, muss das Access-Token von der empfangenden Anwendung validiert werden.
+Dazu sind folgende Validierungen verpflichtend:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Prüfung des Access-Tokens auf Echtheit/Authentizität</p>
+</li>
+<li>
+<p>Prüfung des Access-Tokens auf Gültigkeit</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>Die vom IAM-Service im 'roles'-Claim hinterlegten Rollen des Benutzers werden auf die anwendungsspezifischen Rechte umgesetzt und als <code>GrantedAuthorities</code> in den <code>SecurityContext</code> eintragen (durch eigene Implementierung von) <code>JwtGrantedAuthoritiesConverter</code>).
-Der Spring <code>SecurityContextHolder</code> hält den <code>SecurityContext</code> (in einem <code>ThreadLocal</code> Objekt) und der IsyFact <code>Berechtigungsmanager</code> kann darüber die Rollen und Rechte des Benutzers abfragen und der Anwendung in Form der Methoden <code>getRollen</code>, <code>getRechte</code>, <code>hatRecht</code>, <code>pruefeRecht</code> zu Verfügung stellen.</p>
+<p><strong>Prüfung des Access-Tokens auf Echtheit/Authentizität</strong></p>
 </div>
 <div class="paragraph">
-<p>Weitere Informationen zum angemeldeten Benutzer, wie das Behördenkennzeichen oder seine Benutzerkennung (Anmeldename), kann in der Anwendung aus dem <code>SecurityContext</code> mit der Angabe des zugehörigen Claims ausgelesen werden.</p>
+<p>Die Prüfung auf Echtheit belegt, ob das Access-Token wirklich von dem bekannten IAM-Service der Anwendungslandschaft ausgestellt wurde und dass es nicht nachträglich verändert wurde.
+IsyFact verwendet vom IAM-Service signierte JWT Access-Token, wie in <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-self-encoded-access-token" class="xref page">OAuth: Self-Encoded Access Tokens</a> beschrieben.
+Zur Prüfung der Echtheit muss die Signatur von dem IsyFact-Anwendungssystem verifiziert werden, wie in <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-validating-jwt-access-tokens" class="xref page">RFC 9068: Validating JWT Access Tokens</a> beschrieben.</p>
 </div>
 <div class="paragraph">
-<p>Ein direkter Zugriff auf das Access-Token in einer Anwendung sollte nicht geschehen.</p>
+<p><strong>Prüfung des Access-Tokens auf Gültigkeit</strong></p>
 </div>
+<div class="paragraph">
+<p>Acess-Tokens besitzen eine zeitlich begrenzte Gültigkeit, die im Ermessen der Anwendlungslandschaft definiert werden kann
+Durch die begrenzte zeitliche Gültigkeit kann sichergestellt werden, dass das Access-Token kein 'ewiger Universalschlüssel' ist, sondern regelmäßig erneuert werden muss.
+Die Prüfung auf Gültigkeit gibt an, ob der Ablaufzeitpunkt des Access-Tokens bereits erreicht wurde.
+Zur Prüfung der Gültigkeit muss der im Header-Claim 'exp' enthaltene Zeitstempel in der Zukunft liegen.</p>
 </div>
-<div class="sect3">
-<h4 id="weitergabe-der-token"><a class="anchor" href="#weitergabe-der-token"></a>2.4.4. Weitergabe der Token</h4>
+<div class="paragraph">
+<p><strong>Beide Prüfungen werden durch den Baustein <code>isy-security</code> bzw. durch das <code>Spring Security Framework</code> implementiert.</strong></p>
+</div>
+<div class="paragraph">
+<p>Bei einem höheren Sicherheitsbedarf können weitere Informationen (Registered Claims) im Token mitgeliefert und validiert werden.
+Falls gefordert ist, auch vorzeitig abgelaufene Access-Token (z.B. durch globales Logout des Benutzers oder Rücknahme (Revoke) der Legitimation des Benutzers) zu erkennen und zu sperren, kann das IsyFact-Anwendungssystem das Access-Token zur Prüfung an den IAM-Service schicken, wie in <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-token-introspection" class="xref page">RFC 7662: OAuth 2.0 Token Introspection</a> beschrieben.</p>
+</div>
 <div class="paragraph">
 <p>Um auf eine geschützte Ressource eines anderen Anwendungssystems (Ressourcen-Server) zugreifen zu können, muss die Anwendung in der Anfrage (Request) das Access-Token mitgeben.
 Dazu wird es aus dem <code>SecurityContext</code> gelesen und - Base64-codiert, wie erhalten - mit in den Header des HTTP-Requests gesetzt.
@@ -1011,7 +1028,7 @@ Genauer gesagt, in das "Authorization" Request-header Feld und mit dem "Bearer" 
 </div>
 </div>
 <div class="sect3">
-<h4 id="aktualisierung-der-token"><a class="anchor" href="#aktualisierung-der-token"></a>2.4.5. Aktualisierung der Token</h4>
+<h4 id="aktualisierung-der-token"><a class="anchor" href="#aktualisierung-der-token"></a>2.4.3. Aktualisierung der Token</h4>
 
 </div>
 </div>
