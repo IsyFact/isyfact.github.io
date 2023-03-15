@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Glossar :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/glossary/latest/glossary/master.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../_/css/isyfact.css">
@@ -16,17 +16,16 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-        </div>
-      </div>
     </div>
   </nav>
 </header>
@@ -61,14 +60,6 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../../isyfact-jsf-doku/latest/isy-web/konzept/konzept.html">5.3</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
         </li>
       </ul>
     </li>
@@ -156,7 +147,7 @@ Dieser Begriff sollte <strong>nicht</strong> pauschal als Synonym für Anwendung
 <dl>
 <dt class="hdlist1">Anwendungsdomäne</dt>
 <dd>
-<p>Spezialisierung des Begriffs <a href="#glossar-domaene">[glossar-domaene]</a> im Kontext von <a href="#glossar-geschaeftsanwendung">Geschäftsanwendungen</a>.</p>
+<p>Spezialisierung des Begriffs <a href="#glossar-domaene">Domäne</a> im Kontext von <a href="#glossar-geschaeftsanwendung">Geschäftsanwendungen</a>.</p>
 </dd>
 </dl>
 </div>
@@ -608,14 +599,6 @@ Die IsyFact stellt ein fertiges Persistenz-Framework zur Verfügung.</p>
 </dd>
 </dl>
 </div>
-<div id="glossar-pib" class="dlist">
-<dl>
-<dt class="hdlist1">PIB</dt>
-<dd>
-<p>PLIS IT-Architecture Board</p>
-</dd>
-</dl>
-</div>
 <div id="glossar-plattform" class="dlist">
 <dl>
 <dt class="hdlist1">Plattform</dt>
@@ -663,7 +646,7 @@ Bei der Entwicklung von Anwendungslandschaften können ebenfalls Querschnittsanw
 <dl>
 <dt class="hdlist1">Querschnittsdomäne</dt>
 <dd>
-<p>Spezialisierung des Begriffs <a href="#glossar-domaene">[glossar-domaene]</a> im Kontext von <a href="#glossar-querschnittsanwendung">Querschnittsanwendungen</a>.
+<p>Spezialisierung des Begriffs <a href="#glossar-domaene">Domäne</a> im Kontext von <a href="#glossar-querschnittsanwendung">Querschnittsanwendungen</a>.
 Die Querschnittsdomäne bildet keine fachliche Klammer, sondern bündelt alle Querschnittsanwendungen einer Anwendungslandschaft unabhängig von ihrer Fachlichkeit.
 Aufgrund dieser Eigenschaft gibt es pro Anwendungslandschaft maximal eine Querschnittsdomäne.</p>
 </dd>
@@ -711,11 +694,12 @@ Zugriffe von außerhalb der Anwendungslandschaft laufen zusätzlich über ein Se
 </dd>
 </dl>
 </div>
-<div id="glossar-sles" class="dlist">
+<div id="glossar-spa" class="dlist">
 <dl>
-<dt class="hdlist1">SLES</dt>
+<dt class="hdlist1">Single Page Application (SPA)</dt>
 <dd>
-<p>Suse Linux Enterprise Server</p>
+<p>Als Alternative zur klassischen Web-Anwendung kann eine GUI als "Single Page Application" umgesetzt werden.
+Hierbei wird nur eine Seite aufgerufen, welche die gesamte Dialoglogik und den Sitzungszustand auf der Clientseite belässt und Inhalte dynamisch über Services nachlädt, die unabhängig und losgekoppelt vom Client implementiert werden.</p>
 </dd>
 </dl>
 </div>
@@ -804,5 +788,9 @@ Dazu bietet sie vorkonfigurierte Werkzeuge für Modellierung, Programmierung, In
 <script src="../../../_/js/site.js"></script>
 <script async src="../../../_/js/vendor/highlight.js"></script>
 <script src="../../../_/js/isyfact.js"></script>
+<script src="../../../_/js/vendor/lunr.js"></script>
+<script src="../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../.." data-snippet-length="100" data-stylesheet="../../../_/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
   </body>
 </html>

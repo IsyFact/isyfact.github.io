@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Migrationsleitfaden IsyFact 2 :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/einstieg/migrationsleitfaden-if2/master.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -16,17 +16,16 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-        </div>
-      </div>
     </div>
   </nav>
 </header>
@@ -284,6 +283,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-security/konzept/master.html">Konzept</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -348,10 +350,10 @@
     <span class="nav-text">Styleguide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
+    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
   </li>
 </ul>
   </li>
@@ -391,32 +393,41 @@
     <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -531,14 +542,6 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
-        </li>
-      </ul>
-    </li>
   </ul>
 </div>
     </div>
@@ -578,71 +581,36 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 </div>
 </div>
 <div class="paragraph">
-<p><strong>JavaScript Bibliothek / IT-System</strong></p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 20%;">
-<col style="width: 30%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Art</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Version</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">isy-documentation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bibliothek</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">v2.1.0</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="einleitung"><a class="anchor" href="#einleitung"></a>1. Einleitung</h2>
-<div class="sectionbody">
-<div class="paragraph">
 <p>Die IsyFact ist eine vom Bundesverwaltungsamt entwickele Software Factory für den Bau von Informationssystemen in komplexen IT-Anwendungslandschaften.
 Sie bündelt bestehendes technisches Know-how um Anwendungssysteme effizienter entwickeln und betreiben zu können.</p>
 </div>
 <div class="paragraph">
-<p>Für die IsyFact gibt es zwei Versionszweige, IsyFact 1.x und IsyFact 2.x.</p>
+<p>Für die IsyFact gibt es zwei Versionszweige: IsyFact 1 und IsyFact 2.</p>
 </div>
 <div class="paragraph">
-<p>Seit dem Jahr 2020 steht der neue Major Release Zweig IsyFact 2.x zur Verfügung.
-Dieser beruht auf allen IsyFact Bausteinen aus IsyFact 1.8 mit zwei wesentlichen Neuerungen:</p>
+<p>Seit dem Jahr 2020 steht das neue Major-Release IsyFact 2 zur Verfügung.
+Dieser beruht auf den IsyFact Bausteinen der IsyFact 1 mit zwei wesentlichen Neuerungen:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>IsyFact basierend auf Spring Boot</p>
+<p>Einführung von Spring Boot,</p>
 </li>
 <li>
-<p>Zusätzliche Unterstützung des Frondend-Frameworks Angular (bisher nur JSF)</p>
+<p>Unterstützung des Frontend-Frameworks Angular, zusätzlich zu JSF.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Der bisherige, erste Release Zweig der IsyFact endet mit der Version 1.8.
-In diesem Releasezweig werden keine neuen Features mehr Eingang finden.
-Die Pflege dieses Releasezweigs wird sich auf Security-Patches beschränken und in Minor Releases 1.8.x veröffentlicht werden.</p>
-</div>
-<div class="sect2">
-<h3 id="aufbau-und-zweck-des-dokuments"><a class="anchor" href="#aufbau-und-zweck-des-dokuments"></a>1.1. Aufbau und Zweck des Dokuments</h3>
-<div class="paragraph">
-<p>Die in diesem Dokument aufgeführten Hinweise sollen IsyFact Anwendungsentwicklern bei der Umstellung einer auf IsyFact 1.x basierenden Anwendung auf IsyFact 2.x helfen.</p>
-</div>
+<p>Die auf dieser Seite aufgeführten Hinweise sollen IsyFact Anwendungsentwicklern bei der Umstellung einer auf IsyFact 1 basierenden Anwendung auf IsyFact 2 helfen.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="kapitel-geschaeftsanwendung"><a class="anchor" href="#kapitel-geschaeftsanwendung"></a>2. Geschäftsanwendung</h2>
+<h2 id="kapitel-geschaeftsanwendung"><a class="anchor" href="#kapitel-geschaeftsanwendung"></a>1. Geschäftsanwendung</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="kapitel-spring-konfiguration"><a class="anchor" href="#kapitel-spring-konfiguration"></a>2.1. Spring Konfiguration</h3>
+<h3 id="kapitel-spring-konfiguration"><a class="anchor" href="#kapitel-spring-konfiguration"></a>1.1. Spring Konfiguration</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -661,7 +629,7 @@ Die Pflege dieses Releasezweigs wird sich auf Security-Patches beschränken und 
 </div>
 </div>
 <div class="sect2">
-<h3 id="kapitel-konfiguration"><a class="anchor" href="#kapitel-konfiguration"></a>2.2. Konfigurationsparameter</h3>
+<h3 id="kapitel-konfiguration"><a class="anchor" href="#kapitel-konfiguration"></a>1.2. Konfigurationsparameter</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -673,7 +641,7 @@ Die Liste mit den Property-Dateien wird nach <code>application.properties</code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Applikationsklasse"><a class="anchor" href="#Applikationsklasse"></a>2.3. Applikationsklasse</h3>
+<h3 id="Applikationsklasse"><a class="anchor" href="#Applikationsklasse"></a>1.3. Applikationsklasse</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -697,12 +665,12 @@ public class IsyFact2Application extends SpringBootServletInitializer {
 </div>
 </div>
 <div class="sect2">
-<h3 id="kapitel-web-xml"><a class="anchor" href="#kapitel-web-xml"></a>2.4. Deployment Descriptor web.xml</h3>
+<h3 id="kapitel-web-xml"><a class="anchor" href="#kapitel-web-xml"></a>1.4. Deployment Descriptor web.xml</h3>
 <div class="paragraph">
-<p>Bei einer Migraton von einer IsyFact 1.x Version auf IsyFact 2.x sind Änderungen an der <code>web.xml</code> Datei (Deployment Descriptor) vorzunehmen.</p>
+<p>Bei einer Migration von einer IsyFact 1.x Version auf IsyFact 2.x sind Änderungen an der <code>web.xml</code> Datei (Deployment Descriptor) vorzunehmen.</p>
 </div>
 <div class="sect3">
-<h4 id="_spring_kontext"><a class="anchor" href="#_spring_kontext"></a>2.4.1. Spring Kontext</h4>
+<h4 id="_spring_kontext"><a class="anchor" href="#_spring_kontext"></a>1.4.1. Spring Kontext</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -718,7 +686,7 @@ public class IsyFact2Application extends SpringBootServletInitializer {
 </div>
 </div>
 <div class="sect3">
-<h4 id="web-xml-logging"><a class="anchor" href="#web-xml-logging"></a>2.4.2. Logging</h4>
+<h4 id="web-xml-logging"><a class="anchor" href="#web-xml-logging"></a>1.4.2. Logging</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -737,7 +705,7 @@ public class IsyFact2Application extends SpringBootServletInitializer {
 </div>
 </div>
 <div class="sect3">
-<h4 id="spring-context-loader"><a class="anchor" href="#spring-context-loader"></a>2.4.3. Spring Context Loader</h4>
+<h4 id="spring-context-loader"><a class="anchor" href="#spring-context-loader"></a>1.4.3. Spring Context Loader</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -756,7 +724,7 @@ public class IsyFact2Application extends SpringBootServletInitializer {
 </div>
 </div>
 <div class="sect3">
-<h4 id="dispatcher-servlet"><a class="anchor" href="#dispatcher-servlet"></a>2.4.4. Dispatcher Servlet</h4>
+<h4 id="dispatcher-servlet"><a class="anchor" href="#dispatcher-servlet"></a>1.4.4. Dispatcher Servlet</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -773,7 +741,7 @@ Die Trennung von Web- und Anwendungskontext entfällt.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="loadbalancer"><a class="anchor" href="#loadbalancer"></a>2.4.5. Loadbalancer</h4>
+<h4 id="loadbalancer"><a class="anchor" href="#loadbalancer"></a>1.4.5. Loadbalancer</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -792,7 +760,7 @@ Die Trennung von Web- und Anwendungskontext entfällt.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="http-invoker-service-exporter"><a class="anchor" href="#http-invoker-service-exporter"></a>2.4.6. HttpInvokerServiceExporter</h4>
+<h4 id="http-invoker-service-exporter"><a class="anchor" href="#http-invoker-service-exporter"></a>1.4.6. HttpInvokerServiceExporter</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -827,7 +795,7 @@ Die Trennung von Web- und Anwendungskontext entfällt.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="kapitel-unittests"><a class="anchor" href="#kapitel-unittests"></a>2.5. Unit-Tests</h3>
+<h3 id="kapitel-unittests"><a class="anchor" href="#kapitel-unittests"></a>1.5. Unit-Tests</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -837,8 +805,10 @@ Die Trennung von Web- und Anwendungskontext entfällt.</p>
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@RunWith(SpringRunner.class)
 @SpringBootTest(classes = RaumplanungApplication.class)
 @TestExecutionListeners({DependencyInjectionTestExecutionListener.class, TransactionDbUnitTestExecutionListener.class})
-@DatabaseSetup("eintraege.xml")
-public class EintragControllerTest {</code></pre>
+@DatabaseSetup("testdatensatz.xml")
+public class EintragControllerTest {
+
+}</code></pre>
 </div>
 </div>
 </li>
@@ -848,17 +818,17 @@ public class EintragControllerTest {</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="kapitel-bausteine"><a class="anchor" href="#kapitel-bausteine"></a>3. Bausteine</h2>
+<h2 id="kapitel-bausteine"><a class="anchor" href="#kapitel-bausteine"></a>2. Bausteine</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="kapitel-persistenz"><a class="anchor" href="#kapitel-persistenz"></a>3.1. Persistenz</h3>
+<h3 id="kapitel-persistenz"><a class="anchor" href="#kapitel-persistenz"></a>2.1. Persistenz</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Die Spring-Konfiguration für die Persistenz muss geändernt werden (<em>EntityManager</em>, <em>DataSource</em>).
+<p>Die Spring-Konfiguration für die Persistenz muss geändert werden (<em>EntityManager</em>, <em>DataSource</em>).
 Ebenso wird die betriebliche Konfiguration aus <code>jpa.properties</code> nach <code>application.properties</code> übertragen.</p>
 <div class="paragraph">
-<p>Siehe <a href="../../blaupausen/detailkonzept-komponente-anwendungskern/master.html#einleitung" class="xref page">Detailkonzept Komponente Anwendungskern</a> Kapitel: Konfiguration von JPA über Spring Beans durchführen.</p>
+<p>Siehe <a href="../../isy-persistence/nutzungsvorgaben/konfiguration.html#konfiguration-von-jpa-ueber-spring-beans-durchfuehren" class="xref page">Nutzungsvorgaben JPA/Hibernate - Kapitel: Konfiguration von JPA über Spring Beans</a> durchführen.</p>
 </div>
 </li>
 <li>
@@ -868,17 +838,17 @@ Ebenso wird die betriebliche Konfiguration aus <code>jpa.properties</code> nach 
 </div>
 </div>
 <div class="sect2">
-<h3 id="kapitel-logging"><a class="anchor" href="#kapitel-logging"></a>3.2. Logging</h3>
+<h3 id="kapitel-logging"><a class="anchor" href="#kapitel-logging"></a>2.2. Logging</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Die Konfiguration des Loggings erfolgt über <code>logback.xml</code> und zusätzliche Properties in <code>application.properties</code>.</p>
+<p>Die Konfiguration des Logging-Frameworks erfolgt über <code>logback.xml</code> und zusätzliche Properties in <code>application.properties</code>.</p>
 <div class="paragraph">
 <p>Die Datei <code>logback.xml</code> liegt unter <code>src/main/resources</code>.
 Die Änderung der Log-Level erfolgt über <code>application.properties</code>, diese werden nicht in <code>logback.xml</code> angegeben.</p>
 </div>
 <div class="paragraph">
-<p>Siehe <a href="../../isy-logging/nutzungsvorgaben/master.html#logback-konfiguration" class="xref page">Nutzungsvorgaben Logging- Kapitel: Logback-Konfiguration</a>.</p>
+<p>Siehe <a href="../../isy-logging/nutzungsvorgaben/master.html#logback-konfiguration" class="xref page">Nutzungsvorgaben Logging - Kapitel: Logback-Konfiguration</a>.</p>
 </div>
 </li>
 <li>
@@ -889,9 +859,9 @@ Die Änderung der Log-Level erfolgt über <code>application.properties</code>, d
 Die System- und Komponentengrenzen werden nicht über manuell konfigurierte Pointcuts, sondern über die Annotation <code>@Systemgrenze</code>  und <code>@Komponentengrenze</code> festgelegt.</p>
 </li>
 <li>
-<p>Die Konfiguration der Interceptoren für das Logging an System- und Komponentengrenzen (wenn abweichend von der Default-Konfiguration) über Properties in <code>application.properties</code> erfolgt nach dem Schema:</p>
+<p>Die Konfiguration der Interceptoren für das Logging an System- und Komponentengrenzen über Properties in <code>application.properties</code> erfolgt, falls abweichend von der Default-Konfiguration, nach dem Schema:</p>
 <div class="paragraph">
-<p>Siehe <a href="../../isy-logging/nutzungsvorgaben/master.html#spring-konfiguration" class="xref page">Nutzungsvorgaben Logging- Kapitel: Spring-Konfiguration</a>.</p>
+<p>Siehe <a href="../../isy-logging/nutzungsvorgaben/master.html#spring-konfiguration" class="xref page">Nutzungsvorgaben Logging - Kapitel: Spring-Konfiguration</a>.</p>
 </div>
 </li>
 <li>
@@ -921,7 +891,7 @@ isy.logging.anwendung.typ=GA</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="kapitel-ueberwachung"><a class="anchor" href="#kapitel-ueberwachung"></a>3.3. Überwachung</h3>
+<h3 id="kapitel-ueberwachung"><a class="anchor" href="#kapitel-ueberwachung"></a>2.3. Überwachung</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -954,7 +924,7 @@ Eine eventuell vorhandene manuelle Prüfung kann entfernt werden.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="kapitel-polling"><a class="anchor" href="#kapitel-polling"></a>3.4. Polling</h3>
+<h3 id="kapitel-polling"><a class="anchor" href="#kapitel-polling"></a>2.4. Polling</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -973,7 +943,7 @@ Eine eventuell vorhandene manuelle Prüfung kann entfernt werden.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="kapitel-batchrahmen"><a class="anchor" href="#kapitel-batchrahmen"></a>3.5. Batchrahmen</h3>
+<h3 id="kapitel-batchrahmen"><a class="anchor" href="#kapitel-batchrahmen"></a>2.5. Batchrahmen</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -981,11 +951,11 @@ Eine eventuell vorhandene manuelle Prüfung kann entfernt werden.</p>
 Eine gesonderte Konfiguration des Anwendungskontextes für den Batchrahmen ist nicht zwingend notwendig.
 Um Beans aus der Spring-Konfiguration der Anwendung für die Ausführung eines Batches auszuschließen, kann die Annotation (<code>@ExcludeFromBatchContext</code>) verwendet werden.</p>
 <div class="paragraph">
-<p>Siehe <a href="../../blaupausen/detailkonzept-komponente-batch/master.html#die-konfiguration-der-spring-kontexte" class="xref page">Detailkonzept Komponente Batch - Kapitel: Die Konfiguration der Spring-Kontexte</a>.</p>
+<p>Siehe <a href="../../blaupausen/detailkonzept-komponente-batch/master.html#die-konfiguration-der-spring-kontexte" class="xref page">Detailkonzept Komponente Batch - Kapitel: Konfiguration der Spring-Kontexte</a>.</p>
 </div>
 </li>
 <li>
-<p>In den Property-Dateien zur Konfigration der Batches werden statt XML-Konfigurationsdateien, die vollqualifizierten Namen der Java-Konfigurationsklassen eingetragen.</p>
+<p>In den Property-Dateien zur Konfiguration der Batches werden statt XML-Konfigurationsdateien, die vollqualifizierten Namen der Java-Konfigurationsklassen eingetragen.</p>
 <div class="paragraph">
 <p>Siehe <a href="../../blaupausen/detailkonzept-komponente-batch/master.html#konfigurationsdatei-und-kommandozeilen-parameter" class="xref page">Detailkonzept Komponente Batch - Kapitel: Konfigurationsdatei und Kommandozeilen-Parameter</a>.</p>
 </div>
@@ -994,14 +964,14 @@ Um Beans aus der Spring-Konfiguration der Anwendung für die Ausführung eines B
 </div>
 </div>
 <div class="sect2">
-<h3 id="kapitel-util"><a class="anchor" href="#kapitel-util"></a>3.6. Standards</h3>
+<h3 id="kapitel-util"><a class="anchor" href="#kapitel-util"></a>2.6. Standards</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>In allen Bausteinen (isy-util, isy-sonderzeichen, isy-exeption, &#8230;&#8203;) der IsyFact Bibliothek <code>ìsyfact-standards</code> haben sich die bisherigen Packagepfade von</p>
+<p>In allen Bausteinen (<code>isy-util</code>, <code>isy-sonderzeichen</code>, <code>isy-exception</code>, &#8230;&#8203;) der IsyFact Bibliothek <code>ìsyfact-standards</code> haben sich die bisherigen Packages von</p>
 <div class="literalblock">
 <div class="content">
-<pre>de.bund.bva.pliscommon.xxx</pre>
+<pre>de.bund.bva.pliscommon.{baustein}</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1009,7 +979,7 @@ Um Beans aus der Spring-Konfiguration der Anwendung für die Ausführung eines B
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>de.bund.bva.isyfact.xxx</pre>
+<pre>de.bund.bva.isyfact.{baustein}</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1023,7 +993,7 @@ Um Beans aus der Spring-Konfiguration der Anwendung für die Ausführung eines B
 </div>
 </div>
 <div class="sect2">
-<h3 id="kapitel-sicherheit"><a class="anchor" href="#kapitel-sicherheit"></a>3.7. Sicherheit</h3>
+<h3 id="kapitel-sicherheit"><a class="anchor" href="#kapitel-sicherheit"></a>2.7. Sicherheit</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1039,16 +1009,16 @@ Automatisch konfiguriert werden die <code>@Gesichert</code>-Annotation, die <cod
 <li>
 <p>Die Konfiguration des Caches für Authentifizierungen erfolgt in <code>application.properties</code>.</p>
 <div class="paragraph">
-<p>Siehe <a href="../../isy-sicherheit/nutzungsvorgaben/master.html#_caching_von_authentifizierungen" class="xref page">Nutzungsvorgaben Sicherheit - Kapitel: Caching von Authentifizierungen</a>.</p>
+<p>Siehe <a href="../../isy-sicherheit/nutzungsvorgaben/master.html#cache-authentifizierungen" class="xref page">Nutzungsvorgaben Sicherheit - Kapitel: Caching von Authentifizierungen</a>.</p>
 </div>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="kapitel-task-scheduler"><a class="anchor" href="#kapitel-task-scheduler"></a>3.8. Task Scheduler</h3>
+<h3 id="kapitel-task-scheduler"><a class="anchor" href="#kapitel-task-scheduler"></a>2.8. Task Scheduler</h3>
 <div class="sect3">
-<h4 id="_task_spring_konfiguration"><a class="anchor" href="#_task_spring_konfiguration"></a>3.8.1. Task Spring Konfiguration</h4>
+<h4 id="_task_spring_konfiguration"><a class="anchor" href="#_task_spring_konfiguration"></a>2.8.1. Task Spring Konfiguration</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1073,7 +1043,7 @@ in <code>application.properties</code> auf <code>true</code> oder <code>false</c
 </div>
 </div>
 <div class="sect2">
-<h3 id="kapitel-service"><a class="anchor" href="#kapitel-service"></a>3.9. Service</h3>
+<h3 id="kapitel-service"><a class="anchor" href="#kapitel-service"></a>2.9. Service</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1084,8 +1054,15 @@ in <code>application.properties</code> auf <code>true</code> oder <code>false</c
 Der Pfad für das Mapping wird vom Namen der Bean abgeleitet.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Bean(name = "/AuskunftBean_v1_0")
-public HttpInvokerServiceExporter meldung() {</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Configuration
+public class ServiceConfiguration {
+
+    @Bean(name = "/AuskunftBean_v1_0")
+    public HttpInvokerServiceExporter meldung() {
+        // ...
+    }
+
+}</code></pre>
 </div>
 </div>
 </li>
@@ -1095,7 +1072,7 @@ public HttpInvokerServiceExporter meldung() {</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="kapitel-dokumentation-vzwei"><a class="anchor" href="#kapitel-dokumentation-vzwei"></a>4. Dokumentation</h2>
+<h2 id="kapitel-dokumentation-vzwei"><a class="anchor" href="#kapitel-dokumentation-vzwei"></a>3. Dokumentation</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Die Dokumentation des Major Release Zweigs IsyFact 2.x (Konzepte, Bausteine, &#8230;&#8203;) basiert auf dem Stand der IsyFact 1.8.0.
@@ -1111,42 +1088,42 @@ Sollten sich durch die Versionsanhebung Änderungen, z.B. bei der Konfiguration 
 <p>Auf folgende Dokumentenänderungen (seit IsyFact IF-1.8) soll besonders hingewiesen werden:</p>
 </div>
 <div class="sect2">
-<h3 id="dok-frondend-technologien"><a class="anchor" href="#dok-frondend-technologien"></a>4.1. Frontend Technologien</h3>
+<h3 id="dok-frondend-technologien"><a class="anchor" href="#dok-frondend-technologien"></a>3.1. Frontend Technologien</h3>
 <div class="paragraph">
-<p>Das Dokument <code>Detailkonzept Komponente-WebGUI</code> enthielt bisher Erläuterungen zur Bibliothek <code>isy-webgui</code>, welche eine rein JSF-basierende Frontend-Demo-Anwendung erzeugt, in der JSF-Widgets beispielhaft implementiert und damit dargestellt werden.</p>
+<p>Das Detailkonzept Web-GUI enthielt bisher Erläuterungen zur Bibliothek <code>isy-webgui</code>, welche eine rein JSF-basierende Frontend-Demo-Anwendung erzeugt, in der JSF-Widgets beispielhaft implementiert und damit dargestellt werden.</p>
 </div>
 <div class="paragraph">
-<p>Mit der Einführung von Angular als zweites, großes von der IsyFact unterstütztes Frontend-Framework, wurde das bisherige Dokument <code>Detailkonzept Komponente-WebGUI</code> aufgesplittet in</p>
+<p>Mit der Einführung von Angular als zweites, großes von der IsyFact unterstütztes Frontend-Framework, wurde das Dokument aufgesplittet in:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Detailkonzept Komponente WebGUI (nur noch technologieübergreifende Themen)</p>
+<p><a href="../../blaupausen/detailkonzept-komponente-web-gui/master.html" class="xref page">Detailkonzept Web-GUI</a> (nur noch technologieübergreifende Themen),</p>
 </li>
 <li>
-<p>Konzept JSF</p>
+<p><a href="../../../../isyfact-jsf-doku/latest/isy-web/konzept/konzept.html" class="xref page">Konzept</a>,</p>
 </li>
 <li>
-<p>Nutzungsvorgaben JSF</p>
+<p><a href="../../../../isyfact-jsf-doku/latest/isy-web/nutzungsvorgaben/nutzungsvorgaben.html" class="xref page">Nutzungsvorgaben</a>,</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>und den neuen Dokumenten</p>
+<p>und den neuen Dokumenten:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Konzept Angular</p>
+<p>Konzept Angular,</p>
 </li>
 <li>
-<p>Nutzungsvorgaben Angular</p>
+<p>Nutzungsvorgaben Angular.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="dok-sicherheit-grundschutz"><a class="anchor" href="#dok-sicherheit-grundschutz"></a>4.2. IT-Grundschutz</h3>
+<h3 id="dok-sicherheit-grundschutz"><a class="anchor" href="#dok-sicherheit-grundschutz"></a>3.2. IT-Grundschutz</h3>
 <div class="paragraph">
 <p>Sicherheit ist ein zentrales Thema einer jeden Geschäftsanwendung.
 Bei der Umsetzung von Geschäftsanwendungen in IT-Systeme wird ein Großteil der Anforderungen an die Sicherheit durch Maßnahmen der IT-Sicherheit abgedeckt.</p>
@@ -1167,9 +1144,9 @@ Die IsyFact richtet sich beim Thema Sicherheit nach behördlichen Standards sowi
 </div>
 </div>
 <div class="sect2">
-<h3 id="kapitel-isyfact-Referenzarchitektur"><a class="anchor" href="#kapitel-isyfact-Referenzarchitektur"></a>4.3. IsyFact Referenzarchitektur</h3>
+<h3 id="kapitel-isyfact-Referenzarchitektur"><a class="anchor" href="#kapitel-isyfact-Referenzarchitektur"></a>3.3. IsyFact Referenzarchitektur</h3>
 <div class="paragraph">
-<p>Auf eine Änderung im Dokument <code>IsyFact Referenzarchitektur</code> soll besonders hingewiesen werden:</p>
+<p>Auf eine Änderung im Dokument <a href="../../blaupausen/referenzarchitektur/master.html" class="xref page">Referenzarchitektur</a> soll besonders hingewiesen werden:</p>
 </div>
 <div class="paragraph">
 <p><strong>Service-Framework:</strong> Das Service-Framework dient als Kapsel für die Technologie, mit der die Services des Anwendungskerns zur Verfügung gestellt werden.
@@ -1183,9 +1160,9 @@ Hierfür wird das Framework Spring HTTP-Invoker verwendet.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Ab IsyFact 2.0 ist die <strong>Verwendung von REST-Schnittstellen</strong> erlaubt.
-Spring HTTP-Invoker wird in folgenden Releases (IsyFact 2.x) als Schnittstellenformat abgelöst.
-Die Verwendung von REST-Schnitstellen wird in einem gesonderten Konzept erläutert.</p>
+<p>Ab IsyFact 2 ist die <strong>Verwendung von REST-Schnittstellen</strong> erlaubt.
+Spring HTTP-Invoker wird in folgenden Releases als Schnittstellenformat abgelöst.
+Die Verwendung von REST-Schnittstellen wird im Baustein REST (siehe <a href="../../isy-service-rest/konzept/master.html" class="xref page">Konzept REST</a> und <a href="../../isy-service-rest/nutzungsvorgaben/master.html" class="xref page">Nutzungsvorgaben REST</a>) erläutert.</p>
 </div>
 </td>
 </tr>
@@ -1210,5 +1187,9 @@ Diese werden in der Komponente Service-Logik implementiert.</p>
 <script src="../../../../_/js/site.js"></script>
 <script async src="../../../../_/js/vendor/highlight.js"></script>
 <script src="../../../../_/js/isyfact.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
   </body>
 </html>

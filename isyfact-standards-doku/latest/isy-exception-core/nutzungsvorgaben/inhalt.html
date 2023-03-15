@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Nutzungsvorgaben Fehlerbehandlung: Inhalt :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/isy-exception-core/nutzungsvorgaben/inhalt.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -16,17 +16,16 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-        </div>
-      </div>
     </div>
   </nav>
 </header>
@@ -284,6 +283,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-security/konzept/master.html">Konzept</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -348,10 +350,10 @@
     <span class="nav-text">Styleguide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
+    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
   </li>
 </ul>
   </li>
@@ -391,32 +393,41 @@
     <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -531,14 +542,6 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
-        </li>
-      </ul>
-    </li>
   </ul>
 </div>
     </div>
@@ -587,7 +590,7 @@ Sie sind somit in der Regel unerwartet.</p>
 </div>
 <div id="image-004" class="imageblock text-center">
 <div class="content">
-<img src="../_images/nutzungsvorgaben/fehlerbehandlung004.png" alt="fehlerbehandlung004" width="60%">
+<img src="../_images/nutzungsvorgaben/fehlerbehandlung004.png" alt="fehlerbehandlung004" width="50%">
 </div>
 <div class="title">Abbildung 1. Abstrakte Exception Hierarchie</div>
 </div>
@@ -626,7 +629,7 @@ Sie ist eine Referenz auf den aufgetretenen Fehler.</p>
 </div>
 <div id="image-005" class="imageblock text-center">
 <div class="content">
-<img src="../_images/nutzungsvorgaben/fehlerbehandlung005.png" alt="fehlerbehandlung005" width="20%">
+<img src="../_images/nutzungsvorgaben/fehlerbehandlung005.png" alt="fehlerbehandlung005" width="40">
 </div>
 <div class="title">Abbildung 2. Attribute von Fehlern</div>
 </div>
@@ -640,7 +643,7 @@ Sie ist eine Referenz auf den aufgetretenen Fehler.</p>
 </div>
 <div id="image-006" class="imageblock text-center">
 <div class="content">
-<img src="../_images/nutzungsvorgaben/fehlerbehandlung006.png" alt="fehlerbehandlung006" width="100%">
+<img src="../_images/nutzungsvorgaben/fehlerbehandlung006.svg" alt="fehlerbehandlung006" width="100%">
 </div>
 <div class="title">Abbildung 3. Exception-Hierarchie innerhalb einer Anwendung</div>
 </div>
@@ -662,16 +665,16 @@ Hier im Beispiel sind das:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>TerminfindungException</code>: Abstrakte Oberklasse innerhalb einer Anwendung für checked Exceptions</p>
+<p><code>MeineAnwendungException</code>: Abstrakte Oberklasse innerhalb einer Anwendung für checked Exceptions</p>
 </li>
 <li>
-<p><code>TerminfindungTechnicalRuntimeException</code>: Abstrakte Oberklasse innerhalb einer Anwendung für unchecked Exceptions</p>
+<p><code>MeineAnwendungTechnicalRuntimeException</code>: Abstrakte Oberklasse innerhalb einer Anwendung für unchecked Exceptions</p>
 </li>
 <li>
-<p><code>TerminfindungBusinessException</code>: Kindklasse von <code>TerminfindungException</code> für fachliche Exceptions</p>
+<p><code>MeineAnwendungBusinessException</code>: Kindklasse von <code>MeineAnwendungException</code> für fachliche Exceptions</p>
 </li>
 <li>
-<p><code>TerminfindungTechnicalException</code>: Kindklasse von <code>TerminfindungException</code> für technische Exceptions</p>
+<p><code>MeineAnwendungTechnicalException</code>: Kindklasse von <code>MeineAnwendungException</code> für technische Exceptions</p>
 </li>
 </ul>
 </div>
@@ -681,10 +684,7 @@ Dieser wird benötigt, um die Fehlertexte zu laden.
 Diese vier Exceptions sind ebenfalls abstrakt, da auch diese Exceptions rein zur Unterscheidung der Art der Exception innerhalb der Anwendung dienen.</p>
 </div>
 <div class="paragraph">
-<p>Die letztlich in einer Anwendung eingesetzten Exceptions werden dann von den genannten Klassen <code>TerminfindungBusinessException</code>, <code>TerminfindungTechnicalException</code> und <code>TerminfindungTechnicalRuntimeException</code> abgeleitet.</p>
-</div>
-<div class="paragraph">
-<p>Die gezeigten Basis-Exceptions der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-vorlageanwendung" class="xref page">Vorlageanwendung</a> sind im Paket <code>de.msg.terminfindung.common.exception</code> abgelegt.</p>
+<p>Die letztlich in einer Anwendung eingesetzten Exceptions werden dann von den genannten Klassen <code>MeineAnwendungBusinessException</code>, <code>MeineAnwendungTechnicalException</code> und <code>MeineAnwendungTechnicalRuntimeException</code> abgeleitet.</p>
 </div>
 <div class="paragraph">
 <p>Eine Anwendung besitzt Exceptions auf zwei Ebenen.
@@ -720,7 +720,6 @@ Diese Exceptions gehören in das Paket:</p>
 <div class="paragraph">
 <p>Die abstrakten Exceptions einer Anwendung müssen alle vier Konstruktoren implementieren.
 Die letztlich eingesetzten Exceptions implementieren nur die Konstruktoren, die benötigt werden.
-Eine Beispiel-Implementierung hierfür befindet sich in der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-vorlageanwendung" class="xref page">Vorlageanwendung</a>.
 Dies ist sinnvoll, um Aufwände bei der Erstellung von Exceptions zu sparen, da in diesem Fall lediglich der Konstruktor der Oberklasse aufgerufen werden muss.</p>
 </div>
 <div class="paragraph">
@@ -728,16 +727,16 @@ Dies ist sinnvoll, um Aufwände bei der Erstellung von Exceptions zu sparen, da 
 </div>
 <div id="image-007" class="imageblock text-center">
 <div class="content">
-<img src="../_images/nutzungsvorgaben/fehlerbehandlung007.png" alt="fehlerbehandlung007" width="50%">
+<img src="../_images/nutzungsvorgaben/fehlerbehandlung007.png" alt="fehlerbehandlung007" width="70%">
 </div>
 <div class="title">Abbildung 4. Beispiel fachliche Exception Hierarchie</div>
 </div>
 <div class="paragraph">
-<p>Das Beispiel in <a href="#image-007">Abbildung 4</a> zeigt eine fachliche Exception der Vorlageanwendung.
-Die fachliche Exception <code>TerminfindungNichtGefundenException</code> besitzt in diesem Beispiel nicht alle möglichen Konstruktoren.
+<p>Das Beispiel in <a href="#image-007">Abbildung 4</a> zeigt eine fachliche Exception der Anwendung MeineAnwendung.
+Die fachliche Exception <code>MeineNichtGefundenException</code> besitzt in diesem Beispiel nicht alle möglichen Konstruktoren.
 Dies dient lediglich der Veranschaulichung.
 Wie oben erwähnt ist es nicht notwendig, immer alle Konstruktoren zu implementieren.
-Voraussetzung für das Erstellen dieser Exception sind die Basis-Exceptions der Anwendung (hier <code>TerminfindungException</code> und <code>TerminfindungBusinessException</code>).</p>
+Voraussetzung für das Erstellen dieser Exception sind die Basis-Exceptions der Anwendung (hier <code>MeineAnwendungException</code> und <code>MeineAnwendungBusinessException</code>).</p>
 </div>
 <div class="paragraph">
 <p>Die <a href="#table-001">Tabelle 1</a> erläutert die Bedeutung der Argumente der Konstruktoren.</p>
@@ -745,24 +744,27 @@ Voraussetzung für das Erstellen dieser Exception sind die Basis-Exceptions der 
 <table id="table-001" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 1. Argumente der Konstruktoren von Exceptions des Anwendungskerns</caption>
 <colgroup>
-<col style="width: 30%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 30%;">
+<col style="width: 23.0769%;">
+<col style="width: 15.3846%;">
+<col style="width: 15.3846%;">
+<col style="width: 23.0769%;">
+<col style="width: 23.077%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Exception</th>
 <th class="tableblock halign-left valign-top">String</th>
 <th class="tableblock halign-left valign-top">Throwable (optional)</th>
+<th class="tableblock halign-left valign-top">FehlertextProvider</th>
 <th class="tableblock halign-left valign-top">String&#8230;&#8203; (optional)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TerminfindungNichtGefundenException</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MeineNichtGefundenException</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ausnahme-ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Original-Exception, die gefangen wurde.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die FehlertextProvider-Implementierung, welche verwendet wird, um eine Fehlertext zu laden.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String oder String-Array mit Variablenwerten, für Platzhalter in parametrisierten Fehlertexten.</p></td>
 </tr>
 </tbody>
@@ -772,12 +774,12 @@ Voraussetzung für das Erstellen dieser Exception sind die Basis-Exceptions der 
 </div>
 <div id="image-008" class="imageblock text-center">
 <div class="content">
-<img src="../_images/nutzungsvorgaben/fehlerbehandlung008.png" alt="fehlerbehandlung008" width="45%">
+<img src="../_images/nutzungsvorgaben/fehlerbehandlung008.png" alt="fehlerbehandlung008" width="65%">
 </div>
 <div class="title">Abbildung 5. Beispiel technische Runtime-Exception Hierarchie</div>
 </div>
 <div class="paragraph">
-<p>Die <a href="#image-008">Abbildung 5</a> zeigt die technische Runtime-Exception <code>KonfigurationException</code>.
+<p>Die <a href="#image-008">Abbildung 5</a> zeigt die technische Runtime-Exception <code>FehlerhafteKonfigurationException</code>.
 Diese Exception könnte dafür verwendet werden, um bei einem Konfigurationsfehler z.B. "Konfigurationsparameter nicht gesetzt" geworfen zu werden.
 Die Exception ist eine <code>RuntimeException</code>, da ein solcher Fehler nicht behandelbar wäre.
 Um nun eine solche Klasse zu erstellen, muss zuvor nach obigem Schema (siehe <a href="#image-006">Abbildung 3</a>) die entsprechende Oberklasse erstellt worden sein.</p>
@@ -785,8 +787,7 @@ Um nun eine solche Klasse zu erstellen, muss zuvor nach obigem Schema (siehe <a 
 <div class="paragraph">
 <p>Das Beispiel enthält wiederum alle möglichen Konstruktoren.
 Dies dient jedoch auch hier nur der Veranschaulichung.
-Es ist für Exceptions im <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungskern" class="xref page">Anwendungskern</a> nicht notwendig, alle Konstruktoren zur Verfügung zu stellen.
-Eine Beschreibung der Argumente der Konstruktoren befindet sich in <a href="#table-001">Tabelle 1</a>.</p>
+Es ist für Exceptions im <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungskern" class="xref page">Anwendungskern</a> nicht notwendig, alle Konstruktoren zur Verfügung zu stellen.</p>
 </div>
 <div class="paragraph">
 <p>Die unter <a href="#image-007">Abbildung 4</a> und <a href="#image-008">Abbildung 5</a> dargestellten Konstruktoren sind notwendig, um zu gewährleisten, dass alle Exceptions immer eine Ausnahme-ID besitzen, die den Fehlertext identifiziert, d.h. andere Konstruktoren sind nicht gestattet.</p>
@@ -833,18 +834,18 @@ Ein Aufruf einer solchen Exception mit einem generischen Fehlertext sieht dann w
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">/** Generische Exception für alle unbekannten Fehler. */
 
-public static final String MSG_ALLGEMEINER_FEHLER = "TRMIN90001";</code></pre>
+public static final String MSG_ALLGEMEINER_FEHLER = "MNMDL90001";</code></pre>
 </div>
 </div>
 <div id="listing-GenerischerFehlertext" class="listingblock">
 <div class="title">Listing 3. Generischer Fehlertext</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">TRMIN90001 = Es ist ein allgemeiner Fehler im Modul Terminfindung aufgetreten.</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">MNMDL90001 = Es ist ein allgemeiner Fehler im Modul MeinModul aufgetreten.</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Beim Einsatz von Exceptions muss immer eine Konstante zur Referenzierung von Fehlern verwendet werden.
-Die Fehlertexte dürfen nicht direkt mit dem String referenziert werden (z. B. hier <code>TRMIN90001</code>).</p>
+Die Fehlertexte dürfen nicht direkt mit dem String referenziert werden (z. B. hier <code>MNMDL90001</code>).</p>
 </div>
 <div class="paragraph">
 <p>Beim Aufruf einer Exception wird im einfachsten Fall lediglich eine Ausnahme-ID übergeben, welche den Fehlertext identifiziert:</p>
@@ -852,34 +853,31 @@ Die Fehlertexte dürfen nicht direkt mit dem String referenziert werden (z. B. 
 <div id="listing-UebergabeAusnahmeId" class="listingblock">
 <div class="title">Listing 4. Übergabe einer Ausnahme-ID</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">new TerminfindungNichtGefundenException(
-    FehlerSchluessel.MSG_TERMINFINDUNG_NICHT_GEFUNDEN);</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">new MeineNichtGefundenException(
+    FehlerSchluessel.MODUL_NICHT_GEFUNDEN);</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Der Konstruktor der Exception ruft den Konstruktor der abstrakten Eltern-Klasse auf (hier <code>TerminfindungBusinessException</code>):</p>
+<p>Der Konstruktor der Exception ruft den Konstruktor der abstrakten Eltern-Klasse auf (hier <code>MeineAnwendungBusinessException</code>):</p>
 </div>
 <div id="listing-Konstruktur" class="listingblock">
 <div class="title">Listing 5. Konstruktor</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public TerminfindungNichtGefundenException(String ausnahmeID) {
-    super(ausnahmeID);
-}
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java"> public MeineAnwendungBusinessException(FehlerSchluessel schluessel, String... parameter) {
 
-protected TerminfindungBusinessException(String ausnahmeID) {
-    super(ausnahmeID);
-}</code></pre>
+        super(schluessel.getCode(), FEHLERTEXT_PROVIDER, parameter);
+    }</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Dieser Konstruktor wiederum ruft den Konstruktor seiner Eltern-Klasse auf (hier <code>TerminfindungException</code>), welcher die oberste Exception-Hierarchie-Stufe einer Anwendung darstellt:</p>
+<p>Dieser Konstruktor wiederum ruft den Konstruktor seiner Eltern-Klasse auf (hier <code>MeineAnwendungException</code>), welcher die oberste Exception-Hierarchie-Stufe einer Anwendung darstellt:</p>
 </div>
 <div id="listing-ObersterKonstruktur" class="listingblock">
 <div class="title">Listing 6. Konstruktor der obersten Exception</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">protected TerminfindungException(String ausnahmeID) {
-    super(ausnahmeID, FEHLERTEXT_PROVIDER);
-}</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  protected MeineAnwendungException(String ausnahmeId, FehlertextProvider fehlertextProvider, String... parameter) {
+        super(ausnahmeId, fehlertextProvider, parameter);
+    }</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -887,12 +885,12 @@ protected TerminfindungBusinessException(String ausnahmeID) {
 </div>
 <div id="image-009" class="imageblock text-center">
 <div class="content">
-<img src="../_images/nutzungsvorgaben/fehlerbehandlung009.png" alt="fehlerbehandlung009">
+<img src="../_images/nutzungsvorgaben/fehlerbehandlung009.svg" alt="fehlerbehandlung009">
 </div>
 <div class="title">Abbildung 6. Abstrakter Ablauf der Erstellung einer Exception</div>
 </div>
 <div class="paragraph">
-<p>Die <code>TerminfindungException</code> hält eine Referenz zu einem <a href="#fehlertextprovider">FehlertextProvider</a>, welcher die Möglichkeit bietet Fehlertexte auszulesen.
+<p>Die <code>MeineAnwendungException</code> hält eine Referenz zu einem <a href="#fehlertextprovider">FehlertextProvider</a>, welcher die Möglichkeit bietet Fehlertexte auszulesen.
 Diese Referenz und die übergebene <code>Ausnahme-ID</code> werden an den Konstruktor der <code>BaseException</code> übergeben, welcher nun den Fehlertext lädt.
 Hierzu ruft er auf dem <code>FehlertextProvider</code> die <code>getMessage()</code>-Methode auf und bekommt den Fehlertext zurückgeliefert.
 Durch einen Aufruf des Konstruktors der Oberklasse <code>Exception</code> wird der Fehlertext gesetzt.</p>
@@ -1094,8 +1092,8 @@ Die Fehlerbehandlung entspricht den gängigen <code>try-catch</code>-Blöcken mi
 <div class="title">Listing 8. Weiterwerfen der Original-Exception</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">try {
-    verwaltung.leseTerminfindung(terminfindungsRefNr);
-} catch (TerminfindungNichtGefundenException ex) {
+    verwaltung.leseMeineNummer(meineNummer);
+} catch (MeineNichtGefundenException ex) {
     // Exception kann nicht behandelt werden, also wird sie weitergereicht
     throw ex;
 }</code></pre>
@@ -1199,14 +1197,13 @@ Dieser <code>FehlertextProvider</code> ist pro Anwendung zu implementieren und b
 </div>
 <div id="image-014" class="imageblock text-center">
 <div class="content">
-<img src="../_images/nutzungsvorgaben/fehlerbehandlung014.png" alt="fehlerbehandlung014" width="40%">
+<img src="../_images/nutzungsvorgaben/fehlerbehandlung014.png" alt="fehlerbehandlung014" width="60%">
 </div>
 <div class="title">Abbildung 8. Fehlertextprovider</div>
 </div>
 <div class="paragraph">
 <p>Die Implementierung muss Spring-Mechanismen verwenden, um die Fehlertexte aus einem <code>ResourceBundle</code> auszulesen.
-Dies führt zu einer Vereinheitlichung der Fehlerbehandlung, da sich das Laden von Fehlertexten in den einzelnen Anwendungen nicht unterscheidet.
-Eine Beispiel-Implementierung hierfür befindet sich in der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-vorlageanwendung" class="xref page">Vorlageanwendung</a>.</p>
+Dies führt zu einer Vereinheitlichung der Fehlerbehandlung, da sich das Laden von Fehlertexten in den einzelnen Anwendungen nicht unterscheidet.</p>
 </div>
 </div>
 </div>
@@ -1446,11 +1443,9 @@ Exceptions in <code>finally</code>-Blöcken führen zu einem Verlust des Origina
 <i class="fa icon-note" title="Hinweis"></i>
 </td>
 <td class="content">
-<div class="literalblock">
-<div class="content">
-<pre> Wirft `cleanUp()` eine Exception, ist die original Exception von `myMethod()` verloren.
-Es ist somit nicht gestattet in `finally`-Blöcken Methoden aufzurufen, welche potentiell Exceptions werfen.</pre>
-</div>
+<div class="paragraph">
+<p>Wirft <code>cleanUp()</code> eine Exception, ist die original Exception von <code>myMethod()</code> verloren.
+Es ist somit nicht gestattet in <code>finally</code>-Blöcken Methoden aufzurufen, welche potenziell Exceptions werfen.</p>
 </div>
 </td>
 </tr>
@@ -1528,5 +1523,9 @@ In Einzelfällen mag dies notwendig sein, muss dann aber mit dem Chefarchitekt a
 <script src="../../../../_/js/site.js"></script>
 <script async src="../../../../_/js/vendor/highlight.js"></script>
 <script src="../../../../_/js/isyfact.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
   </body>
 </html>

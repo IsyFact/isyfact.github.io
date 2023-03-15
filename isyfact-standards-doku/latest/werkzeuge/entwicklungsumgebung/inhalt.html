@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Einrichtung Entwicklungsumgebung: Inhalt :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/werkzeuge/entwicklungsumgebung/inhalt.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -16,17 +16,16 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-        </div>
-      </div>
     </div>
   </nav>
 </header>
@@ -284,6 +283,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-security/konzept/master.html">Konzept</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -348,10 +350,10 @@
     <span class="nav-text">Styleguide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
+    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
   </li>
 </ul>
   </li>
@@ -391,32 +393,41 @@
     <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -531,14 +542,6 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
-        </li>
-      </ul>
-    </li>
   </ul>
 </div>
     </div>
@@ -575,16 +578,10 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="#virtuelle-maschine-vorbereiten">Virtuelle Maschine vorbereiten</a> (optional),</p>
+<p><a href="#virtuelle-maschine-vorbereiten">Virtuelle Maschine vorbereiten</a> (optional) und</p>
 </li>
 <li>
-<p>benötigte <a href="#werkzeuge-installieren">Werkzeuge installieren</a> und konfigurieren,</p>
-</li>
-<li>
-<p><a href="#isyfact-projektgenerator-installieren">IsyFact-Projektgenerator installieren</a>,</p>
-</li>
-<li>
-<p><a href="#hello-world-anwendung-generieren">Hello-World-Anwendung generieren</a>.</p>
+<p>benötigte <a href="#werkzeuge-installieren">Werkzeuge installieren</a> und konfigurieren.</p>
 </li>
 </ol>
 </div>
@@ -600,7 +597,7 @@
 <p>Git 2.x</p>
 </li>
 <li>
-<p>JDK 1.8</p>
+<p>JDK (<a href="../../einstieg/produktkatalog/produktvorgabenAllgemein.html" class="xref page">siehe Produkt-Katalog</a>)</p>
 </li>
 <li>
 <p>Maven 3.1.1+</p>
@@ -917,26 +914,20 @@ Anschließend sollte die Installation der Gasterweiterungen starten.</p>
 <div class="sect2">
 <h3 id="_jdk"><a class="anchor" href="#_jdk"></a>3.1. JDK</h3>
 <div class="paragraph">
-<p>Auf der Kommandozeile installieren Sie mit folgender Anweisung das JDK:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>sudo apt-get install openjdk-8-jdk</pre>
-</div>
+<p>Folgen Sie den Installationsanweisungen, die im <a href="../../einstieg/produktkatalog/produktvorgabenAllgemein.html" class="xref page">Produktkatalog beim Java JDK</a> verlinkt sind.</p>
 </div>
 <div class="paragraph">
-<p>In der Datei <code>.bashrc</code> fügen Sie die Umgebungsvariable <code>JAVA_HOME</code> hinzu und erweitern die Umgebungsvariable <code>PATH</code>:</p>
+<p>Fügen sie in der Datei <code>.bashrc</code> die Umgebungsvariable <code>JAVA_HOME</code> hinzu bzw. passen Sie diese auf das Installationsverzeichnis des JDK an. Unter Ubuntu/Debian ist dies in der Regel /usr/lib/jvm/temurin-17-jdk-amd64, also</p>
+</div>
+<div class="paragraph">
+<p><code>JAVA_HOME=/usr/lib/jvm/temurin-17-jdk-amd64</code></p>
+</div>
+<div class="paragraph">
+<p>Erweitern die Umgebungsvariable <code>PATH</code>:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-export JAVA_HOME</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>PATH=$JAVA_HOME/bin:$PATH
-export PATH</pre>
+<pre>PATH=$JAVA_HOME/bin:$PATH</pre>
 </div>
 </div>
 </div>
@@ -1769,197 +1760,6 @@ Mehr Details zur Verwendung der Checkstyle-Regeln finden sich im <a href="../../
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="isyfact-projektgenerator-installieren"><a class="anchor" href="#isyfact-projektgenerator-installieren"></a>5. IsyFact-Projektgenerator installieren</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In diesem Abschnitt wird gezeigt, wie Sie den IsyFact Projektgenerator in der Spring Tool Suite (STS) installieren und Ihre Entwicklungsumgebung auf die Entwicklung einer neuen Anwendung vorbereiten.
-Mit dem Projektgenerator werden Sie später die Hello-World-Anwendung erzeugen.</p>
-</div>
-<div class="paragraph">
-<p>Für den IsyFact Projektgenerator müssen keine Bibliotheken manuell installiert werden.
-Benötigte Bibliotheken werden während des Build-Vorgangs automatisch heruntergeladen.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Das IsyFact-Framework besteht aus einer Reihe von <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-url-isyfact-github" class="xref page">GitHub-Repositories</a>, die wiederum jeweils eines oder mehrere Maven-Projekte enthalten.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Um das GitHub-Repository für den IsyFact Projektgenerator zu klonen, könnten Sie Git auf der Kommandozeile einsetzen.
-In dieser Anleitung wird jedoch das Arbeiten mit Git innerhalb der STS gezeigt.
-Starten Sie also die STS und öffnen Sie dort die Perspektive Git.
-Klicken Sie in der Perspektive Git entweder auf die Clone-Schaltfläche oder auf den Link "Clone a Git repository".</p>
-</div>
-<div id="image-leitfaden_entwicklungsumgebung_bibliotheken_04" class="imageblock text-center">
-<div class="content">
-<img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_bibliotheken_04.png" alt="leitfaden entwicklungsumgebung bibliotheken 04">
-</div>
-<div class="title">Abbildung 42. Klonen des Git Repositories</div>
-</div>
-<div class="paragraph">
-<p>Klicken Sie im erscheinenden Fenster auf GitHub.</p>
-</div>
-<div id="image-leitfaden_entwicklungsumgebung_bibliotheken_05" class="imageblock text-center">
-<div class="content">
-<img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_bibliotheken_05.png" alt="leitfaden entwicklungsumgebung bibliotheken 05" width="60%">
-</div>
-<div class="title">Abbildung 43. Github</div>
-</div>
-<div class="paragraph">
-<p>Klicken Sie anschließend auf "Next".
-In dem aufkommenden Fenster können Sie online nach GitHub-Repositories suchen.
-Geben Sie im Suchfeld "IsyFact" ein und klicken Sie auf den Button "Search".
-Daraufhin sollten im Fenster alle GitHub-Repositories aufgelistet werden, bei denen im Namen der Bezeichner "IsyFact" vorkommt.
-Selektieren Sie dort das GitHub-Repository <code>isyfact-projektgenerator</code> und klicken Sie auf "Next".</p>
-</div>
-<div id="image-leitfaden_entwicklungsumgebung_bibliotheken_29" class="imageblock text-center">
-<div class="content">
-<img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_bibliotheken_29.png" alt="leitfaden entwicklungsumgebung bibliotheken 29" width="60%">
-</div>
-<div class="title">Abbildung 44. Selektion isyfact-projektgenerator auf GitHub</div>
-</div>
-<div class="paragraph">
-<p>Im nächsten Fenster wird der Branch ausgewählt, der lokal heruntergeladen werden soll.
-Wählen Sie den <code>master</code>-Branch aus und klicken Sie erneut auf "Next".</p>
-</div>
-<div id="image-leitfaden_entwicklungsumgebung_bibliotheken_21" class="imageblock text-center">
-<div class="content">
-<img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_bibliotheken_21.png" alt="leitfaden entwicklungsumgebung bibliotheken 21" width="60%">
-</div>
-<div class="title">Abbildung 45. Selektion des master-branch</div>
-</div>
-<div class="paragraph">
-<p>Geben Sie nun den lokalen Pfad an, unter dem das Repository gespeichert werden soll.</p>
-</div>
-<div id="image-leitfaden_entwicklungsumgebung_bibliotheken_22" class="imageblock text-center">
-<div class="content">
-<img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_bibliotheken_22.png" alt="leitfaden entwicklungsumgebung bibliotheken 22" width="60%">
-</div>
-<div class="title">Abbildung 46. lokaler Speicherort für isyfact-projektgenerator</div>
-</div>
-<div class="paragraph">
-<p>Bestätigen Sie mit einem Mausklick auf "Finish".</p>
-</div>
-<div class="paragraph">
-<p>Als Nächstes importieren Sie das Maven-Projekt aus dem heruntergeladenen Repository.
-Hierfür klicken Sie mit der rechten Maustaste auf das Repository und wählen den Eintrag "Import Projects" aus.
-Im daraufhin erscheinenden Fenster bestätigen Sie den Import des Maven-Projekts <code>isyfact-projektgenerator</code> mit einem Klick auf Finish.
-Wechseln Sie anschließend in die Perspective "Spring".
-Hier sollte jetzt im Package-Explorer das Maven-Projekt <code>isyfact-projektgenerator</code> zu sehen sein.</p>
-</div>
-<div id="image-leitfaden_entwicklungsumgebung_bibliotheken_30" class="imageblock text-center">
-<div class="content">
-<img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_bibliotheken_30.png" alt="leitfaden entwicklungsumgebung bibliotheken 30">
-</div>
-<div class="title">Abbildung 47. Import des Projektes isyfact-projektgenerator</div>
-</div>
-<div class="paragraph">
-<p>Nachdem das Projekt <code>isyfact-projektgenerator</code> importiert worden ist, wechseln Sie in die Perspective "Spring" und führen Sie die Aktion <span class="menuseq"><b class="menu">Run As</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Maven Install</b></span> aus.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="hello-world-anwendung-generieren"><a class="anchor" href="#hello-world-anwendung-generieren"></a>6. Hello-World-Anwendung generieren</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In diesem Abschnitt wird die Generierung der IsyFact-konformen Hello-World-Anwendung gezeigt.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Bei der generierten Hello-World-Anwendung handelt es sich um ein Maven-Projekt, das für Ihre eigene Implementierung als Grundgerüst dient.
-</td>
-</tr>
-</table>
-</div>
-<div id="image-leitfaden_entwicklungsumgebung_bibliotheken_01" class="imageblock text-center">
-<div class="content">
-<img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_bibliotheken_01.png" alt="leitfaden entwicklungsumgebung bibliotheken 01">
-</div>
-<div class="title">Abbildung 48. Hello-World-Anwendung</div>
-</div>
-<div class="paragraph">
-<p>Hierfür klicken Sie im Hauptmenü auf <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">New</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Other</b></span>.
-Im Wizard selektieren Sie <span class="menuseq"><b class="menu">Maven</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Maven Project</b></span>.</p>
-</div>
-<div id="image-leitfaden_entwicklungsumgebung_projektgenerator_01" class="imageblock text-center">
-<div class="content">
-<img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_projektgenerator_01.png" alt="leitfaden entwicklungsumgebung projektgenerator 01" width="60%">
-</div>
-<div class="title">Abbildung 49. Auswahl des Maven-Wizards</div>
-</div>
-<div class="paragraph">
-<p>Klicken Sie auf "Next".
-Im nächsten Fenster selektieren Sie die Checkbox "Use default workspace location".</p>
-</div>
-<div id="image-leitfaden_entwicklungsumgebung_projektgenerator_02" class="imageblock text-center">
-<div class="content">
-<img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_projektgenerator_02.png" alt="leitfaden entwicklungsumgebung projektgenerator 02" width="60%">
-</div>
-<div class="title">Abbildung 50. Default-Location wählen</div>
-</div>
-<div class="paragraph">
-<p>Klicken Sie auf "Next".
-Selektieren Sie den Maven Archetype des IsyFact-Projektgenerators in der aktuellsten Version.</p>
-</div>
-<div id="image-leitfaden_entwicklungsumgebung_projektgenerator_03" class="imageblock text-center">
-<div class="content">
-<img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_projektgenerator_03.png" alt="leitfaden entwicklungsumgebung projektgenerator 03" width="60%">
-</div>
-<div class="title">Abbildung 51. Wahl des Maven-Archetyps</div>
-</div>
-<div class="paragraph">
-<p>Danach wählen Sie die Group Id und Artifact Id Ihres Maven-Projekts.</p>
-</div>
-<div id="image-leitfaden_entwicklungsumgebung_projektgenerator_04" class="imageblock text-center">
-<div class="content">
-<img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_projektgenerator_04.png" alt="leitfaden entwicklungsumgebung projektgenerator 04" width="60%">
-</div>
-<div class="title">Abbildung 52. Angabe der Parameter</div>
-</div>
-<div class="paragraph">
-<p>Zuletzt bestätigen Sie die Erstellung des neuen Maven Projekts mit einem Klick auf "Finish".
-Die Hello-World-Anwendung wird nun erzeugt.
-Führen Sie ggf. "Update Maven Projekt" bei dem neu generierten Projekt durch.</p>
-</div>
-<div class="paragraph">
-<p>Um die Hello-World-Anwendung zu starten, klicken Sie mit der rechten Maustaste auf das generierte Projekt und wählen im Kontextmenü <span class="menuseq"><b class="menu">Run as</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Run on Server</b></span>.
-Selektieren Sie den <a href="#apache-tomcat">eingerichteten Server</a> und setzen Sie ein Häkchen bei der Checkbox "Always use this server when running this project".</p>
-</div>
-<div id="image-leitfaden_entwicklungsumgebung_projektgenerator_05" class="imageblock text-center">
-<div class="content">
-<img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_projektgenerator_05.png" alt="leitfaden entwicklungsumgebung projektgenerator 05" width="60%">
-</div>
-<div class="title">Abbildung 53. Auf Server starten</div>
-</div>
-<div class="paragraph">
-<p>Mit "Finish" wird der Application Server gestartet.
-Im Anschluss sollte der Webbrowser von STS mit der Startseite der Anwendung erscheinen.
-Zum Test geben Sie im ersten Eingabefeld einen Namen und im zweiten eine Nachricht ein.
-Über den Button "Abschicken" wird die Nachricht gespeichert und alle gespeicherten Nachrichten im unteren Bereich ausgegeben.</p>
-</div>
-<div id="image-leitfaden_entwicklungsumgebung_projektgenerator_06" class="imageblock text-center">
-<div class="content">
-<img src="../_images/entwicklungsumgebung/leitfaden_entwicklungsumgebung_projektgenerator_06.png" alt="leitfaden entwicklungsumgebung projektgenerator 06">
-</div>
-<div class="title">Abbildung 54. Hello World starten</div>
-</div>
-</div>
-</div>
 </article>
   </div>
 </main>
@@ -1969,5 +1769,9 @@ Zum Test geben Sie im ersten Eingabefeld einen Namen und im zweiten eine Nachric
 <script src="../../../../_/js/site.js"></script>
 <script async src="../../../../_/js/vendor/highlight.js"></script>
 <script src="../../../../_/js/isyfact.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
   </body>
 </html>

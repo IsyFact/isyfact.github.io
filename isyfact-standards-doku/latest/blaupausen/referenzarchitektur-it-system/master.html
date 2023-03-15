@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Softwaretechnische Referenzarchitektur :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/blaupausen/referenzarchitektur-it-system/master.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -16,17 +16,16 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-        </div>
-      </div>
     </div>
   </nav>
 </header>
@@ -284,6 +283,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-security/konzept/master.html">Konzept</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -348,10 +350,10 @@
     <span class="nav-text">Styleguide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
+    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
   </li>
 </ul>
   </li>
@@ -391,32 +393,41 @@
     <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -531,14 +542,6 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
-        </li>
-      </ul>
-    </li>
   </ul>
 </div>
     </div>
@@ -586,7 +589,7 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <p>Die in diesem Dokument beschriebene technische Architektur eines IT-Systems, erläutert wie ein IT-System der Systemlandschaft zu beschreiben und umzusetzen ist.</p>
 </div>
 <div class="sect2">
-<h3 id="kurzüberblick-referenzarchitektur-eines-it-systems"><a class="anchor" href="#kurzüberblick-referenzarchitektur-eines-it-systems"></a>1.1. Kurzüberblick Referenzarchitektur eines IT-Systems</h3>
+<h3 id="kurzueberblick-referenzarchitektur-eines-it-systems"><a class="anchor" href="#kurzueberblick-referenzarchitektur-eines-it-systems"></a>1.1. Kurzüberblick Referenzarchitektur eines IT-Systems</h3>
 <div class="paragraph">
 <p>Dieser Abschnitt gibt einen kurzen Überblick über die wesentlichen Inhalte der technischen Architektur, die in späteren Kapiteln ausführlich dargestellt werden.</p>
 </div>
@@ -644,7 +647,7 @@ Daher wird im Folgenden die Referenz-Architektur beschrieben, nach der diese Anw
 <p>In der <strong>Persistenzschicht</strong> ist alle Funktionalität enthalten, die zum Erzeugen, Suchen, Bearbeiten und Löschen von Datenobjekten benötigt wird.
 Der Datenzugriff auf das DBMS ist in dieser Schicht vollständig gekapselt.
 In Richtung Datenbank kommuniziert diese Schicht mittels JDBC und SQL, in Richtung des Anwendungskerns stellt die Schicht Geschäftsobjekte zur Verfügung.
-Die Persistenz nutzt dazu das Persistenzframework Hibernate über die Java Persistence API (JPA).</p>
+Die Persistenz nutzt dazu das Framework Hibernate über die Java Persistence API (JPA).</p>
 </div>
 <div class="paragraph">
 <p>Der <strong>Anwendungskern</strong> umfasst die fachliche Logik zur Datenbearbeitung, die mit dem System realisiert werden soll.
@@ -660,7 +663,7 @@ In der Referenzarchitektur für ein IT-System wird diese Schicht noch zusätzlic
 <p>Aufgabe der <strong>GUI</strong> ist es, die Funktionalität der Anwendung für einen menschlichen Anwender zur Verfügung zu stellen.
 Dabei unterstützt die GUI den Bearbeitungsprozess einer fachlichen Aufgabe.
 Innerhalb des Bearbeitungsprozesses stellt sie Dialoge dar und transferiert die durch den Anwendungskern gelieferten Datenobjekte in eine präsentable Form.
-Dies kann sowohl durch eine Web-basierte HTML-GUI als auch durch eine sogenannte Rich-Client Anwendung geschehen.</p>
+Dies kann sowohl durch eine Web-basierte HTML-GUI als auch durch eine sogenannte Rich-Client-Anwendung geschehen.</p>
 </li>
 <li>
 <p>Aufgabe des <strong>Batch</strong>es ist es, automatisierte Prozesse ohne einen direkten menschlichen Anwender durchzuführen.
@@ -676,7 +679,7 @@ Dadurch können auf einfache Art technische Attribute in die Außenschnittstelle
 </ul>
 </div>
 <div class="paragraph">
-<p>Details zur Konstruktion eines IT-Systems werden in <a href="../../methodik/vorlage-systementwurf/antora-master.html" class="xref page">IsyFact Systementwurf</a> festgelegt und für das jeweilige IT-System dokumentiert.</p>
+<p>Details zur Konstruktion eines IT-Systems werden im <a href="../../methodik/vorlage-systementwurf/antora-master.html" class="xref page">IsyFact Systementwurf</a> festgelegt und für das jeweilige IT-System dokumentiert.</p>
 </div>
 </div>
 <div class="sect2">
@@ -702,7 +705,7 @@ In der Fachliteratur sind diese Eigenschaften als ACID-Eigenschaften (atomicity,
 <div class="paragraph">
 <p>Änderungen am Datenbestand können komplex sein, das heißt es können viele Informationen und Zusammenhänge von den Änderungen betroffen sein.
 Solche komplexen Änderungen werden vom Informationssystem meist in einzelne, einfache Änderungsschritte zerlegt.
-Damit die ACID-Eigenschaften der komplexen Änderung erhalten bleiben, muss das Informationssystem entweder alle Änderungsschritte ausführen – oder keinen.
+Damit die ACID-Eigenschaften der komplexen Änderung erhalten bleiben, muss das Informationssystem entweder alle Änderungsschritte ausführen oder keinen.
 Damit es dazu in der Lage ist, werden die Änderungsschritte zunächst zu einer logischen Einheit zusammengefasst – einer Transaktion.</p>
 </div>
 <div class="paragraph">
@@ -726,7 +729,7 @@ Dabei werden Datentypen der Datenbank in ihre Objekt-Äquivalente umgesetzt, ein
 <li>
 <p><strong>Transaktionssteuerung und Sperren:</strong> Es müssen fachliche Transaktionen auf technische Transaktionen gegen die Datenbank abgebildet werden.
 Dabei wird eine optimistische Sperrstrategie umgesetzt.
-Ein übliches Verhalten ist zum Beispiel das folgende: Erstreckt sich eine fachliche Transaktion über mehrere Dialogschritte, wird die Zugriffsschicht erst beim Verlassen des letzten Dialogs eine technische Datenbanktransaktion auslösen.
+Ein übliches Verhalten ist zum Beispiel das Folgende: Erstreckt sich eine fachliche Transaktion über mehrere Dialogschritte, wird die Zugriffsschicht erst beim Verlassen des letzten Dialogs eine technische Datenbanktransaktion auslösen.
 Um zu prüfen, ob die Daten in der Zwischenzeit nicht durch einen anderen Anwender verändert worden sind, wird die Zugriffsschicht beim Schreiben Zeitstempel oder Versionszähler der Datensätze überprüfen.</p>
 <div class="paragraph">
 <p>Um diesen großen Funktionsumfang abzudecken, wird ein Produkt zum objekt-relationalen Mapping gemäß JPA-Standard eingesetzt.
@@ -757,7 +760,7 @@ Diese drei Aspekte werden im Folgenden im Detail beschrieben.</p>
 <div class="paragraph">
 <p>Nicht Teil des Anwendungskerns sind spezielle Dialogabläufe, z.B. dialogspezifische Bearbeitungsverfahren wie die Anwenderführung über Wizards.
 Diese Prozesse, die nur durch einen einzigen Dialog genutzt werden, sind Teil der Schicht Nutzung.
-Der Anwendungskern stellt somit im wesentlichen allgemein nutzbare <a href="../../../../glossary/latest/glossary/master.html#glossar-service" class="xref page">Service</a> zur Verfügung.</p>
+Der Anwendungskern stellt somit im Wesentlichen allgemein nutzbare <a href="../../../../glossary/latest/glossary/master.html#glossar-service" class="xref page">Services</a> zur Verfügung.</p>
 </div>
 <div class="paragraph">
 <p><strong>Fachkomponenten</strong> setzen die Anwendungskomponenten aus der fachlichen Architektur um.
@@ -765,7 +768,7 @@ Sie bilden damit den Schnitt der Anwendungskomponenten in die technische Archite
 Fachkomponenten beinhalten möglichst wenig Technik und trennen so Anwendungslogik von Technologie.</p>
 </div>
 <div class="paragraph">
-<p>Die Vorlageanwendung enthält die Fachkomponenten <em>Erstellung</em>, <em>Teilnahme</em> und <em>Verwaltung</em>.</p>
+<p>Eine allgemeine Anwendung enthält die Fachkomponenten <em>Erstellung</em>, <em>Teilnahme</em> und <em>Verwaltung</em>.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -792,7 +795,7 @@ Dadurch ist die Funktionalität sauber gekapselt, was die Wartbarkeit erhöht.
 Wenn der externe Service ausgetauscht werden soll, ist keine Änderung der gesamten Anwendung notwendig – es ist lediglich eine interne Änderung der externen Service-Komponente notwendig.
 Für andere fachliche Komponenten des Anwendungskerns ist nicht zu unterscheiden, ob es sich beim Aufruf einer Komponentenschnittstelle um eine in dieser Komponente implementierte Funktion oder um einen Serviceaufruf handelt.
 Komponenten, die externe Services kapseln, sind im Idealfall von außen nicht von fachlichen Komponenten des Anwendungskerns unterscheidbar.
-Diese Komponenten haben damit zwei Hauptaufgaben: Sie müssen die technische Aspekte der Kommunikation umsetzen und sie müssen Schnittstellendaten und Exceptions der aufgerufenen Services in die Datenformate der Anwendung transformieren.</p>
+Diese Komponenten haben damit zwei Hauptaufgaben: Sie müssen die technischen Aspekte der Kommunikation umsetzen und sie müssen Schnittstellendaten und Exceptions der aufgerufenen Services in die Datenformate der Anwendung transformieren.</p>
 </div>
 <div class="paragraph">
 <p>Weitere Details können dem <a href="../detailkonzept-komponente-anwendungskern/master.html" class="xref page">Detailkonzept Komponente Anwendungskern</a> entnommen werden.</p>
@@ -814,11 +817,11 @@ Wenn Objekte von mehreren Komponenten genutzt werden und keiner einzelnen Kompon
 <p>Vereinfachend können Anwendungskern-Komponenten persistente Daten an die <a href="../../../../glossary/latest/glossary/master.html#glossar-service" class="xref page">Service</a>-Schicht (s. Kapitel <a href="#servicezugriffe">Servicezugriffe</a>) weitergeben.
 Dies ist insbesondere dann angebracht, wenn die Komponente ausschließlich durch eine Service-Komponente genutzt wird.<br>
 Da die Service-Schicht keine Logik enthält und daher ohnehin keine Änderung an solchen Entitäten vornehmen darf und eindeutig der Anwendungskern-Komponente zugeordnet ist, bedeutet dies keine Verletzung der Datenhoheit.
-Da die Anwendungskern-Komponente an Ihrer Schnittstelle nun potentiell persistente und nicht persistente Entitäten bereitstellt, müssen Verwechselungen vermieden werden, z.B. in dem solche Methoden in getrennten Interfaces deklariert werden.</p>
+Da die Anwendungskern-Komponente an Ihrer Schnittstelle nun potenziell persistente und nicht persistente Entitäten bereitstellt, müssen Verwechselungen vermieden werden, z.B. indem solche Methoden in getrennten Interfaces deklariert werden.</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
-<div class="title"><span class="icon"><i class="fa fa-university"></i></span> Architekturregel</div>
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
 <div class="paragraph">
 <p>Persistente Entitäten dürfen nicht über den Anwendungskern hinaus herausgegeben werden. Sie haben im Anwendungskern zu verbleiben.</p>
 </div>
@@ -854,7 +857,7 @@ Dieser ist in der Regel in der Dialogsteuerung abgebildet, er kann auch durch ei
 </ul>
 </div>
 <div class="paragraph">
-<p>Vorgaben zum Layout sind im <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html" class="xref page">Styleguide</a> beschrieben.</p>
+<p>Vorgaben zum Layout sind im <a href="../../isy-styleguide/styleguide.html" class="xref page">Styleguide</a> beschrieben.</p>
 </div>
 <div class="paragraph">
 <p>Die Validierung auf GUI-Ebene ist optional.
@@ -905,10 +908,10 @@ Dabei sind zum Beispiel folgende Aufgaben zu lösen:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Über mehrere Dialogschritte muss ein „Gedächtnis“ gehalten werden.</p>
+<p>Über mehrere Dialogschritte müssen Zustandsinformationen erhalten werden.</p>
 </li>
 <li>
-<p>Ergebnisse von aufwändigen Operationen sollen gecached werden.</p>
+<p>Ergebnisse von aufwändigen Operationen sollen in einem Cache gehalten werden.</p>
 </li>
 </ul>
 </div>
@@ -927,10 +930,10 @@ Mit dieser Lösung lassen sich sehr einfach Loadbalancing- und Failover-Lösunge
 <div class="sect3">
 <h4 id="SPA"><a class="anchor" href="#SPA"></a>2.5.2. Single Page Application</h4>
 <div class="paragraph">
-<p>Als moderne Alternative zur klassischen Web-Anwendung kann eine GUI als Single Page Application (SPA) umgesetzt werden. Hierbei wird nur eine Seite aufgerufen, welche die gesamte Dialoglogik und den Sitzungszustand auf der Clientseite belässt und Inhalte dynamisch über RESTful-Services (in der IsyFact angesiedelt in den Fachanwendungen) nachlädt, die unabhängig und losgekoppelt vom Client implementiert werden.</p>
+<p>Eine GUI kann auch als <a href="../../../../glossary/latest/glossary/master.html#glossar-spa" class="xref page">Single Page Application (SPA)</a> umgesetzt werden.</p>
 </div>
 <div class="paragraph">
-<p>Dadurch ist eine Reduzierung der Last auf den Server möglich und die Umsetzung von komplexeren Nutzerinteraktionen wird erleichtert;
+<p>Dadurch ist eine Reduzierung der Last auf dem Server möglich und die Umsetzung von komplexeren Nutzerinteraktionen wird erleichtert;
 vor allem bei diesen Fällen kann sich eine Migration lohnen.
 Zudem können teilweise Offline-Funktionalitäten umgesetzt werden.</p>
 </div>
@@ -943,7 +946,7 @@ Zudem können teilweise Offline-Funktionalitäten umgesetzt werden.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>GUI-Framework: Das Framework kümmert sich darum, vom Browser korrekt renderbaren Code zu erzeugen und gibt die dazu nötigen Mittel vor. Für die IsyFact ist hier Angular vorgesehen (Baustein Angular).</p>
+<p>GUI-Framework: Das Framework kümmert sich darum, vom Browser korrekt renderbaren Code zu erzeugen und gibt die dazu nötigen Mittel vor. Für die IsyFact ist hier Angular vorgesehen.</p>
 </li>
 <li>
 <p>GUI-Bibliothek(en): Die GUI-Bibliotheken bieten wiederverwendbare und stylebare Komponenten im Kontext des Frameworks an.</p>
@@ -962,7 +965,7 @@ Zudem können teilweise Offline-Funktionalitäten umgesetzt werden.</p>
 An einen Batch werden verschiedene Anforderungen gestellt: Ausführungszeitpunkt, Abhängigkeiten, Datenvolumen, ausgeführte Funktionalität, Eingaben, Ausgaben usw.</p>
 </div>
 <div class="paragraph">
-<p>Aus Architektur-Sicht werden diese Anforderungen durch zwei Komponenten abgedeckt: der Batchrahmen und der Batchlogik.</p>
+<p>Aus Architektur-Sicht werden diese Anforderungen durch zwei Komponenten abgedeckt: den Batchrahmen und die Batchlogik.</p>
 </div>
 <div class="paragraph">
 <p><strong>Batchrahmen:</strong> Der Batchrahmen stellt die Schnittstelle für den Aufruf der Batchfunktionalität zur Verfügung.
@@ -970,7 +973,7 @@ Er übernimmt auch die Transaktionssteuerung und die Steuerung für einen Restar
 </div>
 <div class="paragraph">
 <p><strong>Batchlogik:</strong> Die Batchlogik wird vom Batchrahmen aufgerufen, um die Funktionalität des Batchverarbeitungsprogramms zu aktivieren.
-Die Funktionalität, das heißt die fachliche Logik und die Arbeitsschritte eines Batches, wird als Anwendungsfälle erfasst.
+Die Funktionalität, das heißt die fachliche Logik und die Arbeitsschritte eines Batches, werden als Anwendungsfälle erfasst.
 Wenn diese Anwendungsfälle auch von anderen Nutzern benötigt werden, dann sind sie im Anwendungskern implementiert.</p>
 </div>
 <div id="image-TeileBat" class="imageblock text-center">
@@ -982,7 +985,7 @@ Wenn diese Anwendungsfälle auch von anderen Nutzern benötigt werden, dann sind
 <div class="paragraph">
 <p>Batches werden als eigener Prozess auf einem eigenen Server ausgeführt, das heißt sie laufen nicht in der virtuellen Maschine des Application Servers ab.
 Batches werden somit in einer eigenen Ablaufumgebung ausgeführt und greifen direkt auf die Datenbank oder auch auf Dateien zu.
-Die benötigte Funktionalität des Anwendungskerns wird dem Batch als Bibliothek zur Verfügung gestellt und nicht über einen Remoteaufruf genutzt.
+Die benötigte Funktionalität des Anwendungskerns wird dem Batch als Bibliothek zur Verfügung gestellt und nicht über einen Service-Aufruf genutzt.
 Der Grund für diese Entscheidung liegt in den Datenmengen, die normalerweise von einem Batch verarbeitet werden: Die Übermittlung dieser Datenmengen über eine remote genutzte Schnittstelle ist ein möglicher Flaschenhals in der Anwendung.
 Dieser Flaschenhals wird durch die Nutzung der Anwendungskernfunktionalität als Bibliothek vermieden.</p>
 </div>
@@ -1074,5 +1077,9 @@ Eine Übersicht dazu liefern die Beschreibungen der Bausteine der <a href="../..
 <script src="../../../../_/js/site.js"></script>
 <script async src="../../../../_/js/vendor/highlight.js"></script>
 <script src="../../../../_/js/isyfact.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
   </body>
 </html>

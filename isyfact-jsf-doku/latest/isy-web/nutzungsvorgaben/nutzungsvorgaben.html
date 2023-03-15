@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Nutzungsvorgaben :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-jsf-doku/latest/isy-web/nutzungsvorgaben/nutzungsvorgaben.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -16,17 +16,16 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-        </div>
-      </div>
     </div>
   </nav>
 </header>
@@ -87,14 +86,6 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
-        </li>
-      </ul>
-    </li>
   </ul>
 </div>
     </div>
@@ -141,12 +132,14 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <col style="width: 20%;">
 <col style="width: 30%;">
 </colgroup>
-<tbody>
+<thead>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Art</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Version</p></td>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Art</th>
+<th class="tableblock halign-left valign-top">Version</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy-web</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Bibliothek</p></td>
@@ -186,7 +179,7 @@ Diese Vorgaben umfassen sowohl Hinweise zur Programmierung als auch Konfiguratio
 Es folgt eine detaillierte Beschreibung der bereitgestellten Seiten- und Bedienelemente auf Basis von JSF.</p>
 </div>
 <div class="paragraph">
-<p>Allgemeine Angaben zur Gestaltung von Oberflächen finden sich im <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html" class="xref page">Styleguide</a>.</p>
+<p>Allgemeine Angaben zur Gestaltung von Oberflächen finden sich im <a href="../../../../isyfact-standards-doku/latest/isy-styleguide/styleguide.html" class="xref page">Styleguide</a>.</p>
 </div>
 </div>
 </div>
@@ -208,7 +201,7 @@ Bei Verwendung des IsyFact-BOMs wird die Version automatisch ermittelt.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Für die Erstellung von Web-GUIs existieren Vorgaben in Form eines <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html" class="xref page">Styleguides</a>.
+<p>Für die Erstellung von Web-GUIs existieren Vorgaben in Form eines <a href="../../../../isyfact-standards-doku/latest/isy-styleguide/styleguide.html" class="xref page">Styleguides</a>.
 Der Baustein Styleguide legt Anforderungen an die Gestaltung und Nutzbarkeit von Oberflächen fest.
 Die Bibliothek <code>isy-web</code> enthält die CSS-, JavaScript-, Bilddateien und  Schriftarten des Styleguides zur produktiven Nutzung aufbereitet.</p>
 </div>
@@ -225,6 +218,89 @@ Zur anwendungsspezifischen Anpassung der Stylesheets dienen folgende, innerhalb 
 <p><code>/css/custom-print.css</code> - spezielle CSS Klassen für die Druckansicht der Anwendung.</p>
 </li>
 </ul>
+</div>
+<div class="sect2">
+<h3 id="enthaltene-bibliotheken-plugins-skripte"><a class="anchor" href="#enthaltene-bibliotheken-plugins-skripte"></a>2.1. Enthaltene Bibliotheken, Plugins und Skripte</h3>
+<div class="paragraph">
+<p>Um eine umfassendere Funktionalität zu gewährleisten, muss teilweise zusätzliches JavaScript eingesetzt werden.
+Diese Skripte dienen beispielsweise zum Styling applikationsspezifischer Bedienelemente, Optimieren der Browser-Kompatibilität oder Erweiterung der Standardinteraktivität.
+Zu diesem Zweck wurden diverse Plugins mit freier (permissive) Software Lizenz integriert.</p>
+</div>
+<div class="paragraph">
+<p><strong>jQuery 3.6.0</strong></p>
+</div>
+<div class="paragraph">
+<p>Bootstrap JS setzt jQuery voraus</p>
+</div>
+<div class="paragraph">
+<p><strong>Bootstrap JS 3.4.1</strong></p>
+</div>
+<div class="paragraph">
+<p>Zusätzliche JavaScript-Komponenten für erweiterte Bootstrap-Bedienelemente (affix, alert, button, carousel, collapse, dropdown, modal, popover, scrollspy,tab,tooltip,transition)</p>
+</div>
+<div class="paragraph">
+<p><strong>Modernizr 2.7.1</strong></p>
+</div>
+<div class="paragraph">
+<p>Ermöglicht es, herauszufinden, welche Features durch den Browser unterstützt werden und setzt dementsprechende CSS-Klassen. (- Bisher ungenutzt -)</p>
+</div>
+<div class="paragraph">
+<p><strong>Bootstrap Datepicker 1.8.0</strong></p>
+</div>
+<div class="paragraph">
+<p>Implementiert einen interaktiven <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-eternicode-bootstrap-datepicker" class="xref page">Standard Date Picker</a></p>
+</div>
+<div class="paragraph">
+<p><strong>Bootstrap Select 1.13.18</strong></p>
+</div>
+<div class="paragraph">
+<p>Implementiert eine <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-snapappointments-bootstrap-auswahlbox" class="xref page">Auswahlbox</a></p>
+</div>
+<div class="paragraph">
+<p><strong>Bootstrap Timepicker 0.3.0</strong></p>
+</div>
+<div class="paragraph">
+<p>Implementiert einen interaktiven <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-jdewit-bootstrap-time-picker" class="xref page">Standard Time Picker</a></p>
+</div>
+<div class="paragraph">
+<p><strong>ExtendedBootstrapTab 0.1</strong></p>
+</div>
+<div class="paragraph">
+<p>Eine erweiterte Version der Bootstrap Tabs, die das Anzeigen der Inhalte aller Tabs innerhalb eines Tabs ermöglicht.</p>
+</div>
+<div class="paragraph">
+<p><strong>harmonizePanelHeadlineWidth 0.1</strong></p>
+</div>
+<div class="paragraph">
+<p>Gruppierungs-Container (panel groups) können Toolbars enthalten.
+Diese wiederum können Funktionen in Form von Icon-Buttons enthalten.
+Dieses Skript ermöglicht eine vertikale Ausrichtung dieser Buttons innerhalb von verschachtelten Gruppierungs-Containern unabhängig von der Länge der Gruppierungsüberschrift (Label).</p>
+</div>
+<div class="paragraph">
+<p><strong>infoPanel 0.1</strong></p>
+</div>
+<div class="paragraph">
+<p>Dieses Skript ermöglicht das Ein- und Ausblenden des optionalen Informationsbereiches auf den Applikationsdetailseiten.</p>
+</div>
+<div class="paragraph">
+<p><strong>jquery.maskedinput.js 1.4.1</strong></p>
+</div>
+<div class="paragraph">
+<p>Dieses Plugin unterstützt die Eingabe formatierter Daten (z. B. TT/MM/JJ) in Standard-Eingabefelder.
+Zur besseren Orientierung werden Platzhalter in Form von Unterstrichen in dem entsprechenden Eingabefeld angezeigt.</p>
+</div>
+<div class="paragraph">
+<p><strong>Magnific Popup 0.9.9</strong></p>
+</div>
+<div class="paragraph">
+<p>Dieses Plugin ermöglicht die Verwendung einer Lightbox.</p>
+</div>
+<div class="paragraph">
+<p><strong>Functions</strong></p>
+</div>
+<div class="paragraph">
+<p>Dieses Skript enthält eine Sammlung von allgemeinen Funktionen.</p>
+</div>
 </div>
 </div>
 </div>
@@ -323,8 +399,7 @@ Hintergrund ist, dass JSF 2.0 ansonsten im Zusammenhang mit der Replikation der 
 <div class="sect2">
 <h3 id="der-flow"><a class="anchor" href="#der-flow"></a>3.2. Erstellung der Flows</h3>
 <div class="paragraph">
-<p>Für eine GUI-Komponente wird zunächst die Definition des Flow als XML-Datei erstellt.
-Spring Web Flow sucht und findet den Flow selbständig und nimmt ihn in die Flow-Registry auf.</p>
+<p>Für eine GUI-Komponente wird zunächst die Definition des Flows als XML-Datei erstellt. 'WebFlowAutoConfiguration' sucht und findet den Flow selbständig und fügt ihn der Flow-Registry hinzu.</p>
 </div>
 <div class="paragraph">
 <p>Je nach Seitentyp muss entweder der <code>detailseiteParentFlow</code> oder der <code>applikationseiteParentFlow</code> als Parent-Flow angegeben werden.
@@ -333,7 +408,7 @@ Das Model wird als Variable definiert und damit im Flow erzeugt (hier: <code>aus
 Im Tag <code>on-start</code> wird, falls nötig, der Controller aufgerufen, um das Model zu initialisieren.</p>
 </div>
 <div id="listing-bspFlowDatei" class="listingblock">
-<div class="title">Listing 5. Beispiel einer Flow Datei</div>
+<div class="title">Listing 5. Beispiel einer Flow-Datei</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;flow
@@ -381,10 +456,10 @@ Im Tag <code>on-start</code> wird, falls nötig, der Controller aufgerufen, um d
 </div>
 <div class="paragraph">
 <p><strong>Flow-Tag</strong>: Deklariert alle verwendeten Taglibs und Namespaces sowie den Parent Flow.
-Dieser enthält anwendungsübergreifend einheitliche Vorgaben zu global gültigen Regeln, Fehler-Handler und Layoutkonfigurationen.</p>
+Dieser enthält anwendungsübergreifend einheitliche Vorgaben zu global gültigen Regeln, Fehler-Handler und Layout-Konfigurationen.</p>
 </div>
 <div class="paragraph">
-<p><strong>Flow Model</strong>: Definition des Models unter Angabe der Model-Bean-Klasse als Flow-Variable.</p>
+<p><strong>Flow-Model</strong>: Definition des Models unter Angabe der Model-Bean-Klasse als Flow-Variable.</p>
 </div>
 <div class="paragraph">
 <p><strong>On-Start-Handler</strong>: Das Model sollte immer über die standardisierte Initialisierungsmethode beim Starten des Flows initialisiert werden.
@@ -467,7 +542,7 @@ Es gelten die gleichen Richtlinien wie bei Input-Parametern.</p>
 <div class="paragraph">
 <p><strong>Aufruf von Spring-Beans</strong>: An nahezu allen Stellen der Flow-Definition ist der Aufruf von Spring-Beans per <code>evaluate</code>-Tag möglich.
 Genutzt wird die Möglichkeit ausschließlich zum Aufruf des zustandslosen Controller-Beans – meist unter Bereitstellung des Model-Beans.
-Das Ergebnis kann in einer neuen Flow-Variablen hinterlegt werden. Üblicherweise aktualisieren die Aufrufe des Controllers aber direkt das zentrale Flow Model.</p>
+Das Ergebnis kann in einer neuen Flow-Variablen hinterlegt werden. Üblicherweise aktualisieren die Aufrufe des Controllers aber direkt das zentrale Flow-Model.</p>
 </div>
 <div class="admonitionblock caution">
 <table>
@@ -489,7 +564,7 @@ Im <code>evaluate</code>-Tag wird die Java-Expression-Language verwendet, nicht 
 <h3 id="der-controller"><a class="anchor" href="#der-controller"></a>3.3. Erstellung der Controller</h3>
 <div class="paragraph">
 <p>Jede GUI-Komponente verfügt über einen Controller.
-Der Controller ist der „verlängerte Arm“ des Flow, denn im Flow darf keine GUI-Logik ausgeführt werden.
+Der Controller ist der „verlängerte Arm“ des Flows, denn im Flow darf keine GUI-Logik ausgeführt werden.
 Jegliche zu programmierende GUI-Logik wird im Controller in zustandslosen Methoden bereitgestellt.
 Typische Methoden im Controller sind:</p>
 </div>
@@ -507,14 +582,14 @@ Typische Methoden im Controller sind:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Der Controller wird in der Spring Konfiguration als einfaches Spring-Bean definiert und ist somit im Flow automatisch sichtbar und nutzbar.
+<p>Der Controller wird in der <code>ControllerAutoConfiguration</code> als einfaches Spring-Bean definiert und ist somit im Flow automatisch sichtbar und nutzbar.
 Jeder Controller muss von <code>AbstractGuiController</code> erben.
 Da der Controller zustandslos ist, benötigt jeder Aufruf das zugehörige Model.
 Der Controller kann auch eine eigene Fehlerbehandlung enthalten.
 In seltenen Fällen schreibt er selbst Meldungen in den <code>FlowRequestContext</code>, die dann als Fehler- oder Hinweismeldung ausgegeben werden.</p>
 </div>
 <div class="paragraph">
-<p>Eine Rückgabe von Zielzuständen zur Steuerung des Flow in Methoden des Controllers ist zu vermeiden.
+<p>Eine Rückgabe von Zielzuständen zur Steuerung des Flows in Methoden des Controllers ist zu vermeiden.
 Sinnvoll ist die Rückgabe eines Ergebnistokens (Erfolg oder Fehler), um dann im Flow den Zielzustand festzulegen und anzusteuern.
 Solche Entscheidungen können im Flow auch per Action- oder Decision-State umgesetzt werden, wobei im Controller eine Methode <code>is…</code> mit Rückgabewert <code>boolean</code> verwendet wird.</p>
 </div>
@@ -579,8 +654,7 @@ Spring Web Flow steuert das Rendering des Views.</p>
 </div>
 <div class="paragraph">
 <p>Der View einer GUI Komponente ist nach dem Umsetzungsmuster der IsyFact wie folgt aufgebaut: Eine Facelet-Datei dient dazu, die im Seitentemplate inkludierte Definition der Seitenbereiche des Inhaltsbereiches zu definieren.
-Das Tag <code>&lt;ui:composition&gt;</code> referenziert hierbei das Seitentemplate, in welchem die über <code>&lt;ui:define&gt;</code>
-definierten Teile eingebunden werden.</p>
+Das Tag <code>&lt;ui:composition&gt;</code> referenziert hierbei das Seitentemplate, in welchem die über <code>&lt;ui:define&gt;</code> definierten Teile eingebunden werden.</p>
 </div>
 <div class="paragraph">
 <p>Je nach Seitentyp muss entweder</p>
@@ -713,7 +787,7 @@ Das Model ist zum Zeitpunkt des Renderns bereits mit Daten befüllt, da im <code
 </div>
 </div>
 <div class="paragraph">
-<p>Es ist wichtig zu verstehen, dass durch das Rendern der Daten aus dem Model eine Bindung der Model-Property mit dem GUI-Element (im Beispiel ein Form-Input-Feld) hergestellt wird, welches nach Submit des Webformulars automatisch durch Spring Web Flow in das Model zurücksynchronisiert wird.
+<p>Es ist wichtig zu verstehen, dass durch das Rendern der Daten aus dem Model eine Bindung der Model-Property mit dem GUI-Element (im Beispiel ein Form-Input-Feld) hergestellt wird, welches nach Submit des Webformulars automatisch durch Spring Web Flow in das Model zurück synchronisiert wird.
 Damit das funktioniert ist eine eindeutige HTML-ID zu vergeben.
 Die HTML Elemente erhalten entsprechend ihres Inhaltes den Bezeichner des zugehörigen Attributes.
 Würde keine ID vergeben, so würde JSF selbständig eine dynamische ID vergeben.
@@ -778,46 +852,46 @@ Folgende Komponenten werden entsprechend behandelt:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>actionInput</code></p>
+<p><code>actionInput</code>,</p>
 </li>
 <li>
-<p><code>actionInputWithFourEyes</code></p>
+<p><code>actionInputWithFourEyes</code>,</p>
 </li>
 <li>
-<p><code>formActionInput</code></p>
+<p><code>formActionInput</code>,</p>
 </li>
 <li>
-<p><code>formActionInputWithFourEyes</code></p>
+<p><code>formActionInputWithFourEyes</code>,</p>
 </li>
 <li>
-<p><code>formCurrencyInput</code></p>
+<p><code>formCurrencyInput</code>,</p>
 </li>
 <li>
-<p><code>formCurrencyInputWithFourEyes</code></p>
+<p><code>formCurrencyInputWithFourEyes</code>,</p>
 </li>
 <li>
-<p><code>formDate</code></p>
+<p><code>formDate</code>,</p>
 </li>
 <li>
-<p><code>formDateWithFourEyes</code></p>
+<p><code>formDateWithFourEyes</code>,</p>
 </li>
 <li>
-<p><code>formInput</code></p>
+<p><code>formInput</code>,</p>
 </li>
 <li>
-<p><code>formInputWithFourEyes</code></p>
+<p><code>formInputWithFourEyes</code>,</p>
 </li>
 <li>
-<p><code>formNumericInput</code></p>
+<p><code>formNumericInput</code>,</p>
 </li>
 <li>
-<p><code>formNumericInputWithFourEyes</code></p>
+<p><code>formNumericInputWithFourEyes</code>,</p>
 </li>
 <li>
-<p><code>formTextArea</code></p>
+<p><code>formTextArea</code>,</p>
 </li>
 <li>
-<p><code>formTextAreaWithFourEyes</code></p>
+<p><code>formTextAreaWithFourEyes</code>.</p>
 </li>
 </ul>
 </div>
@@ -848,16 +922,16 @@ Analog gilt dies auch für Booleans und Aufzählungstypen.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>jquery-core</code> (Kernfunktionalität zur DOM-Manipulation)</p>
+<p><code>jquery-core</code> (Kernfunktionalität zur DOM-Manipulation),</p>
 </li>
 <li>
-<p><code>jquery-effects</code> (Effekte für das Ein- und Ausblenden von Elementen)</p>
+<p><code>jquery-effects</code> (Effekte für das Ein- und Ausblenden von Elementen),</p>
 </li>
 <li>
-<p><code>jqueryui-datepicker</code> (Kalender-Widget)</p>
+<p><code>jqueryui-datepicker</code> (Kalender-Widget),</p>
 </li>
 <li>
-<p><code>jquery-validation-plugin</code> (Datenvalidierung)</p>
+<p><code>jquery-validation-plugin</code> (Datenvalidierung).</p>
 </li>
 </ul>
 </div>
@@ -868,7 +942,7 @@ Analog gilt dies auch für Booleans und Aufzählungstypen.</p>
 <p>Enthält eine View interaktive Elemente, wird eine entsprechend benannte JavaScript-Datei am Seitenende (d.h. am Ende des View-Templates) eingebunden:</p>
 </div>
 <div id="listing-BindViewspezJS" class="listingblock">
-<div class="title">Listing 13. Einbindung viewspezifischer JavaScript-Dateien</div>
+<div class="title">Listing 13. Einbindung view-spezifischer JavaScript-Dateien</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;script type="text/javascript"
     src="#{facesContext.externalContext.requestContextPath}/js/vorgangSuchen.js"&gt;
@@ -880,7 +954,7 @@ Analog gilt dies auch für Booleans und Aufzählungstypen.</p>
 Die Vorgaben zur Nutzung von JavaScript aus dem <a href="../konzept/konzept.html" class="xref page">Konzept JSF</a> sind unbedingt einzuhalten.</p>
 </div>
 <div class="paragraph">
-<p>Wie <a href="#listing-BindViewspezJS">Einbindung viewspezifischer JavaScript-Dateien</a> zeigt, sind beim Einbinden niemals relative Pfade zu verwenden, um die Same-Origin-Policy zu forcieren.
+<p>Wie <a href="#listing-BindViewspezJS">Einbindung view-spezifischer JavaScript-Dateien</a> zeigt, sind beim Einbinden niemals relative Pfade zu verwenden, um die Same-Origin-Policy zu forcieren.
 Zusätzlich sorgt das <code>script</code>-Tag dafür, dass im Fall von deaktiviertem JavaScript kein Fehler auftritt und die
 XHTML-Konformität erhalten bleibt.</p>
 </div>
@@ -896,7 +970,7 @@ XHTML-Konformität erhalten bleibt.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>In der Regel bieten die <a href="#jsf-bedienelemente">JSF Bedienelemente</a> der IsyFact Zugriff auf Visualisierungsformen mittels JavaScript (z.B. Kalenderwidget, Tags, Panels).
+<p>In der Regel bieten die <a href="#jsf-bedienelemente">JSF Bedienelemente</a> der IsyFact Zugriff auf Darstellungsformen mittels JavaScript (z.B. Kalenderwidget, Tags, Panels).
 Für bestimmte Zusatzanforderungen (z.B. bedingtes Deaktivieren eines Felds, weitere GUI-Verschönerungen) kann es jedoch notwendig sein zusätzliches JavaScript einzubinden.</p>
 </div>
 </div>
@@ -904,14 +978,15 @@ Für bestimmte Zusatzanforderungen (z.B. bedingtes Deaktivieren eines Felds, wei
 <h3 id="_konfiguration_der_web_anwendung"><a class="anchor" href="#_konfiguration_der_web_anwendung"></a>3.7. Konfiguration der Web-Anwendung</h3>
 <div class="paragraph">
 <p>Mit SpringBoot 2 ist eine <code>web.xml</code> nicht mehr vorgesehen.
-Die Konfiguration erfolgt in der Regel mit <code>@Configuration</code>-annotierten Java-Klassen.</p>
+Die Konfiguration erfolgt in der Regel mit <code>@Configuration</code>-annotierten Java-Klassen.
+Zur Autokonfiguration von Controllern, WebMVC und Flows sind hierbei die Klassen <code>ControllerAutoConfiguration</code>, <code>MvcAutoConfiguration</code> und <code>WebFlowAutoConfiguration</code> vorgesehen und müssen importiert werden.</p>
 </div>
 <div class="sect3">
 <h4 id="festlegung-der-startseite"><a class="anchor" href="#festlegung-der-startseite"></a>3.7.1. Festlegung der Startseite</h4>
 <div class="paragraph">
 <p>Standardmäßig ist die Startseite der Anwendung die index.html.
 In ihr muss ein Redirect auf den Startflow erfolgen.
-Dieses ist notwendig, weil eine Angabe der Flow Engine im für Welcome Files nicht direkt möglich ist.</p>
+Dieses ist notwendig, weil eine Angabe der Flow Engine für Welcome Files nicht direkt möglich ist.</p>
 </div>
 <div class="paragraph">
 <p>Die Datei <code>index.html</code> sieht folgendermaßen aus:</p>
@@ -948,25 +1023,28 @@ Es ist jeweils ein führendes <code>/</code> anzugeben.</p>
 <div id="listing-Snipwebxml2" class="listingblock">
 <div class="title">Listing 16. Ausschnitt WebConfig.java</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Bean
-public FilterRegistrationBean&lt;ApplicationInitialisierungFilter&gt; applicationInitialisierungFilter() {
-    FilterRegistrationBean&lt;ApplicationInitialisierungFilter&gt; registrationBean =
-        new FilterRegistrationBean&lt;&gt;();
-    registrationBean.setFilter(new ApplicationInitialisierungFilter());
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class WebConfig {
 
-    registrationBean.addUrlPatterns("/app/*");
+    @Bean
+    public FilterRegistrationBean&lt;ApplicationInitialisierungFilter&gt; applicationInitialisierungFilter() {
+        FilterRegistrationBean&lt;ApplicationInitialisierungFilter&gt; registrationBean =
+            new FilterRegistrationBean&lt;&gt;();
+        registrationBean.setFilter(new ApplicationInitialisierungFilter());
 
-    //Optionaler Parameter: Der Parameter "urlsToSkip" dient zur Aufnahme von Url-Pfaden,
-    // relativ zum ApplicationContext-Pfad, die von der Filterung ausgenommen werden.
-    // Mehrere Url-Pfade sind kommasepariert anzugeben. Es ist pro Url ein fuehrendes "/" anzugeben.
-    registrationBean.addInitParameter("urlsToSkip", "/app/resources");
-    registrationBean.addInitParameter("ajaxRedirectUrl", "/");
-    // Pflicht-Parameter:
-    // Der Parameter "urlApplicationInitialisierung" enthält die Url zur Application-Initialisierungsseite.
-    // Es ist ein fuehrendes "/" anzugeben.
-    registrationBean.addInitParameter("urlApplicationInitialisierung",
-        "/app/common/init/applicationInitialisierung.xhtml");
-    return registrationBean;
+        registrationBean.addUrlPatterns("/app/*");
+
+        // Optionaler Parameter: Der Parameter "urlsToSkip" dient zur Aufnahme von Url-Pfaden,
+        // relativ zum ApplicationContext-Pfad, die von der Filterung ausgenommen werden.
+        // Mehrere Url-Pfade sind kommasepariert anzugeben. Es ist pro Url ein führendes "/" anzugeben.
+        registrationBean.addInitParameter("urlsToSkip", "/app/resources");
+        registrationBean.addInitParameter("ajaxRedirectUrl", "/");
+        // Pflicht-Parameter:
+        // Der Parameter "urlApplicationInitialisierung" enthält die Url zur Application-Initialisierungsseite.
+        // Es ist ein führendes "/" anzugeben.
+        registrationBean.addInitParameter("urlApplicationInitialisierung",
+            "/app/common/init/applicationInitialisierung.xhtml");
+        return registrationBean;
+    }
 }</code></pre>
 </div>
 </div>
@@ -983,23 +1061,15 @@ public FilterRegistrationBean&lt;ApplicationInitialisierungFilter&gt; applicatio
 <p>Der JSF Flow Builder Service initialisiert aus der Dialog-Ablaufbeschreibung die konkreten Dialoge.
 Zusätzlich kann hier noch der Expression Parser für die EL-Implementierung definiert werden.
 Durch die Definition des EL-Parsers kann die konkrete EL-Implementierung festgelegt werden.
-Standardmäßig sollte hier keine spezifische Konfiguration vorgenommen werden.</p>
-</div>
-<div class="listingblock">
-<div class="title">Listing 17. Ausschnitt aus webflow.xml</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;!-- Configures the Spring Web Flow JSF integration --&gt;
-&lt;faces:flow-builder-services id="facesFlowBuilderServices"
-              expression-parser="expressionParser"/&gt;</code></pre>
-</div>
+Standardmäßig sollte hier keine spezifische Konfiguration vorgenommen werden, eine Autokonfiguration findet bereits in <code>WebFlowAutoConfiguration</code> statt.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="ablage-der-konfiguration"><a class="anchor" href="#ablage-der-konfiguration"></a>3.8.2. Ablage der Flow-Konfiguration</h4>
 <div class="paragraph">
-<p>Die Spring Webflow Konfiguration erfolgt standardmäßig in der Isy-Web Autokonfiguration.
+<p>Die Spring Webflow Konfiguration erfolgt standardmäßig in der Autokonfiguration.
 Als Lokation der Flows ist dabei <code>/WEB-INF/gui/**/*Flow.xml</code> angegeben.
-Das heißt, die Flows sind in Unterordnern von <code>/WEB-INF/gui</code> abzulegen und als Namenskonvention mit <code>Flow.xml</code> enden (z.B. <code>beispielFlow.xml</code>).</p>
+Das heißt, die Flows sind in Unterordnern von <code>/WEB-INF/gui</code> abzulegen und enden gemäß Namenskonvention mit <code>Flow.xml</code> (z.B. <code>beispielFlow.xml</code>).</p>
 </div>
 </div>
 </div>
@@ -1011,7 +1081,7 @@ Wenn die jeweilige Konfigurationsdatei vorhanden ist, werden die Maskentexte aut
 Die Maskentexte des jeweiligen Flows können dann beispielsweise wie folgt ausgelesen werden:</p>
 </div>
 <div id="listing-maskentexteKonfigurierbar" class="listingblock">
-<div class="title">Listing 18. Maskentexte über Konfigurationsdatei</div>
+<div class="title">Listing 17. Maskentexte über Konfigurationsdatei</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;h:outputText value="#{msg_currentflow.MAS_Ueberschrift}" /&gt;</code></pre>
 </div>
@@ -1021,23 +1091,21 @@ Die Maskentexte des jeweiligen Flows können dann beispielsweise wie folgt ausge
 Hierfür wird eine ResourceBundleMessageSource als Bean definiert:</p>
 </div>
 <div id="listing-maskentextebean" class="listingblock">
-<div class="title">Listing 19. Maskentexte</div>
+<div class="title">Listing 18. Maskentexte</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">    /**
-     * Diese Bean sorgt fuer die Message-ResourceBundle Bereitstellung.
-     * zugreifbar ueber Klasse SpringContextHolder.
-     **/
-    @Bean
-    public ResourceBundleMessageSource messageSource() {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Diese Bean sorgt für die Message-ResourceBundle Bereitstellung,
+// zugreifbar über Klasse SpringContextHolder.
+@Bean
+public ResourceBundleMessageSource messageSource() {
 
-        ResourceBundleMessageSource source = new ResourceBundleMessageSource();
-        source.addBasenames(
-            "resources/nachrichten/fehler",
-            "resources/nachrichten/maskentexte",
-            "resources/nachrichten/titles");
+    ResourceBundleMessageSource source = new ResourceBundleMessageSource();
+    source.addBasenames(
+        "resources/nachrichten/fehler",
+        "resources/nachrichten/maskentexte",
+        "resources/nachrichten/titles");
 
-        return source;
-    }</code></pre>
+    return source;
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1047,7 +1115,7 @@ Hierfür wird eine ResourceBundleMessageSource als Bean definiert:</p>
 <div class="sect2">
 <h3 id="konfiguration-des-resource-caching-mechanismus"><a class="anchor" href="#konfiguration-des-resource-caching-mechanismus"></a>3.10. Konfiguration des Resource Caching Mechanismus</h3>
 <div class="paragraph">
-<p>Möchte man Webressourcen wie Bilder oder CSS-Dateien von Softwareversionen abhängig machen, muss das folgende gemacht werden:</p>
+<p>Möchte man Webressourcen wie Bilder oder CSS-Dateien von Softwareversionen abhängig machen, muss das Folgende gemacht werden:</p>
 </div>
 <div class="sect3">
 <h4 id="jsf-resourcehandler-einrichten"><a class="anchor" href="#jsf-resourcehandler-einrichten"></a>3.10.1. JSF ResourceHandler einrichten</h4>
@@ -1152,10 +1220,10 @@ Es müssen JSF Tags benutzt werden:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>JavaScript: <code>&lt;h:outputScript&gt;</code> anstatt <code>&lt;script&gt;</code></p>
+<p>JavaScript: <code>&lt;h:outputScript&gt;</code> anstatt <code>&lt;script&gt;</code>,</p>
 </li>
 <li>
-<p>CSS: <code>&lt;h:outputStylesheet&gt;</code> anstatt <code>&lt;link&gt;</code></p>
+<p>CSS: <code>&lt;h:outputStylesheet&gt;</code> anstatt <code>&lt;link&gt;</code>.</p>
 </li>
 </ul>
 </div>
@@ -1182,7 +1250,7 @@ Dieser entfällt dann einfach.
 In <a href="#listing-AnzeigeVersionNameImTitel">Konfiguration der Anzeige von Name und Version im Seitentitel</a> finden sich eine beispielhafte Konfiguration und in <a href="#image-DispNameVersTitle">Anzeige von Name und Version im Seitentitel</a> wird das eigentliche Feature gezeigt.</p>
 </div>
 <div id="listing-AnzeigeVersionNameImTitel" class="listingblock">
-<div class="title">Listing 20. Konfiguration der Anzeige von Name und Version im Seitentitel</div>
+<div class="title">Listing 19. Konfiguration der Anzeige von Name und Version im Seitentitel</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby"># Ob die Versionsnummer im Seitentitel angezeigt werden soll.
 # Mögliche Werte `true` oder `false`. Standardwert ist `false`.
@@ -1258,7 +1326,7 @@ Gibt es View-übergreifende Funktionalität, kann diese in eine wiederverwendbar
 </ul>
 </div>
 <div class="paragraph">
-<p><a href="#image-VerzBspErstellen">Verzeichnisstruktur der Dialog-Komponente Erstellen</a> zeigt den Verzeichnisbaum der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-vorlageanwendung" class="xref page">Vorlageanwendung</a> und verdeutlicht, wie die Elemente einer Dialog-Komponente (hier: <code>Erstellen</code>) im Dateisystem abgelegt werden.</p>
+<p>Die Abbildung  <a href="#image-VerzBspErstellen">Verzeichnisstruktur der Dialog-Komponente Erstellen</a> zeigt einen Verzeichnisbaum und verdeutlicht, wie die Elemente einer Dialog-Komponente (hier: <code>Erstellen</code>) im Dateisystem abgelegt werden.</p>
 </div>
 <div id="image-VerzBspErstellen" class="imageblock text-center">
 <div class="content">
@@ -1283,7 +1351,7 @@ Das <a href="../../../../isyfact-standards-doku/latest/isy-logging/konzept/maste
 Zur Konfiguration des Logging ist folgende Abhängigkeit nötig:</p>
 </div>
 <div id="listing-SnipLoggingDep" class="listingblock">
-<div class="title">Listing 21. Abhängigkeit isy-logging (Ausschnitt pom.xml)</div>
+<div class="title">Listing 20. Abhängigkeit isy-logging (Ausschnitt pom.xml)</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
     &lt;groupId&gt;de.bund.bva.isyfact&lt;/groupId&gt;
@@ -1307,19 +1375,19 @@ Dabei sind folgende Arten von Fehlern zu unterscheiden:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Validierungsfehler</p>
+<p>Validierungsfehler,</p>
 </li>
 <li>
-<p>Fehler innerhalb des Dialogablaufs (AWK)</p>
+<p>Fehler innerhalb des Dialogablaufs (AWK),</p>
 </li>
 <li>
-<p>Fehler innerhalb des Dialogablaufs (GUI)</p>
+<p>Fehler innerhalb des Dialogablaufs (GUI),</p>
 </li>
 <li>
-<p>Fehler außerhalb des Dialogablaufs</p>
+<p>Fehler außerhalb des Dialogablaufs,</p>
 </li>
 <li>
-<p>Fehler innerhalb des Clients</p>
+<p>Fehler innerhalb des Clients.</p>
 </li>
 </ul>
 </div>
@@ -1336,7 +1404,7 @@ Die Fehlermeldungen werden hierbei im Kopfbereich des Applikations-Inhaltsfenste
 <p>Das JSF-Tag <code>message</code> kommt zum Einsatz, um einen Fehler für ein bestimmtes Feld anzuzeigen:</p>
 </div>
 <div id="listing-BspFaceletError" class="listingblock">
-<div class="title">Listing 22. Beispiel aus Facelet</div>
+<div class="title">Listing 21. Beispiel aus Facelet</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;h:message for="isbn" showDetail="false" errorClass="error"/&gt;</code></pre>
 </div>
@@ -1350,13 +1418,13 @@ Fehlernachricht für die JSF-ID <code>isbn</code> geschrieben wurde.</p>
 Hierdurch werden alle Fehler, unabhängig von ihren JSF-IDs, in einer Liste dargestellt:</p>
 </div>
 <div id="listing-DarstError" class="listingblock">
-<div class="title">Listing 23. Darstellung von Fehlermeldungen</div>
+<div class="title">Listing 22. Darstellung von Fehlermeldungen</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;h:messages/&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Die Darstellung von Fehlern und Validierungsnachrichten wird auch im <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html" class="xref page">Styleguide</a> beschrieben.</p>
+<p>Die Darstellung von Fehlern und Validierungsnachrichten wird auch im <a href="../../../../isyfact-standards-doku/latest/isy-styleguide/styleguide.html" class="xref page">Styleguide</a> beschrieben.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1412,8 +1480,7 @@ Hierzu finden sich weitere Informationen im Dokument <a href="../../../../isyfac
 <p>Im Error-Log: <strong>{Fehler-ID}: {Fehlernachricht} (Referenzcode: {UUID})</strong></p>
 </li>
 <li>
-<p>Über die GUI: <strong>„Es ist ein technischer Fehler aufgetreten {Fehler-ID}. Bitte versuchen Sie es später
-noch einmal (Referenzcode: {UUID}).</strong></p>
+<p>Über die GUI: <strong>Es ist ein technischer Fehler aufgetreten {Fehler-ID}. Bitte versuchen Sie es später noch einmal (Referenzcode: {UUID}).</strong></p>
 </li>
 </ul>
 </div>
@@ -1438,7 +1505,7 @@ Für diese wird eine standardisierte Fehlerseite mit der in Punkt <a href="#ausg
 <p><strong>Globaler Übergang auf einen Fehler-Flow:</strong> Der globale Parent-Flow definiert einen Übergang auf den globalen  Fehler-Flow.</p>
 </div>
 <div id="listing-flowtransitionOnException" class="listingblock">
-<div class="title">Listing 24. Flow Übergang auf Fehlerseite</div>
+<div class="title">Listing 23. Flow Übergang auf Fehlerseite</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;flow&gt;
   &lt;subflow-state id="fehler" subflow="errorFlow" /&gt;
@@ -1453,7 +1520,7 @@ Für diese wird eine standardisierte Fehlerseite mit der in Punkt <a href="#ausg
 <p><strong>Konfiguration des JSF Exception Handlers:</strong> Dieser Handler wird in der <code>faces-config.xml</code> konfiguriert:</p>
 </div>
 <div id="listing-flowExceptionHandlerKonfiguration" class="listingblock">
-<div class="title">Listing 25. Flow JSF Exception Handler Konfiguration</div>
+<div class="title">Listing 24. Flow JSF Exception Handler Konfiguration</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;factory&gt;
   &lt;exception-handler-factory&gt;
@@ -1487,7 +1554,7 @@ Die eigentliche Fehlerursache kann nur aus den Server-Logs ermittelt werden.</p>
 <div class="sect3">
 <h4 id="behandlung-von-optimisticlockexceptions"><a class="anchor" href="#behandlung-von-optimisticlockexceptions"></a>4.2.6. Behandlung von OptimisticLockExceptions</h4>
 <div class="paragraph">
-<p>Für Die Behandlung einer <code>OptimisticLockException</code> innerhalb der Anwendung ist ein spezieller Handler eingerichtet.
+<p>Für die Behandlung einer <code>OptimisticLockException</code> innerhalb der Anwendung ist ein spezieller Handler eingerichtet.
 Beim Auftreten einer <code>OptimisticLockException</code> wird eine gesonderte Fehlermeldung ausgegeben, die auf einen konkurrierenden Zugriff hinweist.
 Zusätzlich wechselt der Handler in den Zustand <code>abbrechenEndState</code> des aktiven Flows, wenn dieser vorhanden ist.
 Sonst wird in den allgemeinen Fehlerzustand (<code>fehler</code>) gewechselt.</p>
@@ -1520,7 +1587,7 @@ Durch die Verwendung des Tags wird vor dem Anzeigen des <code>&lt;view-state&gt;
 Fehlt dem Benutzer diese, wird die Fehlerseite angezeigt.</p>
 </div>
 <div id="listing-Snipcreateflow" class="listingblock">
-<div class="title">Listing 26. Ausschnitt aus Flow erstellenFlow.xml</div>
+<div class="title">Listing 25. Ausschnitt aus Flow erstellenFlow.xml</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;view-state id="erstellenViewState1" model="erstellenModel"&gt;
     &lt;secured attributes="Erstellen"/&gt;
@@ -1531,7 +1598,7 @@ Fehlt dem Benutzer diese, wird die Fehlerseite angezeigt.</p>
 </div>
 </div>
 <div id="listing-Snipflowmanage" class="listingblock">
-<div class="title">Listing 27. Ausschnitt aus Flow verwaltenFlow.xml</div>
+<div class="title">Listing 26. Ausschnitt aus Flow verwaltenFlow.xml</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;view-state id="verwaltenViewState"&gt;
     &lt;secured attributes="Verwalten"/&gt;
@@ -1550,12 +1617,12 @@ Dieser Controller ist dafür zuständig, den Rechte-Schlüssel aufzulösen und d
 Beantwortet werden die Anfragen stets mit einem einfachen Booleschen Wert.</p>
 </div>
 <div class="paragraph">
-<p>Mit Hilfe dieses Controllers lassen sich einzelne Maskenelemente, aber auch Gruppen von Maskenelementen berechtigungsabhängig ausblenden.
+<p>Mithilfe dieses Controllers lassen sich einzelne Maskenelemente, aber auch Gruppen von Maskenelementen berechtigungsabhängig ausblenden.
 Die JSF-Komponenten bietet hierfür das <code>rendered</code>-Attribut (siehe <a href="#listing-HideJSFComp">JSF-Komponente berechtigungsabhängig ausblenden</a>).
-Beantwortet der BerechtigungsController den Methoden-Aufruf von <code>getBenutzerDarfAdministrieren()</code> mit <code>false</code>, so wird der Button nicht dargestellt.</p>
+Beantwortet der <code>BerechtigungsController</code> den Methoden-Aufruf von <code>getBenutzerDarfAdministrieren()</code> mit <code>false</code>, so wird der Button nicht dargestellt.</p>
 </div>
 <div id="listing-HideJSFComp" class="listingblock">
-<div class="title">Listing 28. JSF-Komponente berechtigungsabhängig ausblenden</div>
+<div class="title">Listing 27. JSF-Komponente berechtigungsabhängig ausblenden</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;t:commandButton rendered="#{berechtigungsController.benutzerDarfAdministrieren}"/&gt;</code></pre>
 </div>
@@ -1565,7 +1632,7 @@ Beantwortet der BerechtigungsController den Methoden-Aufruf von <code>getBenutze
 Dieses kann eine beliebige Anzahl an weiteren Maskenelementen umschließen und bietet ebenfalls das <code>rendered</code>-Attribut, welches sich dann auf alle enthaltenen Komponenten auswirkt (siehe <a href="#listing-HideGUIComp">GUI-Komponenten berechtigungsabhängig ausblenden</a>).</p>
 </div>
 <div id="listing-HideGUIComp" class="listingblock">
-<div class="title">Listing 29. GUI-Komponenten berechtigungsabhängig ausblenden</div>
+<div class="title">Listing 28. GUI-Komponenten berechtigungsabhängig ausblenden</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;ui:fragment
    rendered="#{berechtigungsController.benutzerDarfAnwenderAdministrieren}"&gt;
@@ -1577,7 +1644,7 @@ Dieses kann eine beliebige Anzahl an weiteren Maskenelementen umschließen und b
 <div class="sect3">
 <h4 id="vermeidung-von-sicherheitsluecken-bei-aktiviertem-javascript"><a class="anchor" href="#vermeidung-von-sicherheitsluecken-bei-aktiviertem-javascript"></a>4.3.3. Vermeidung von Sicherheitslücken bei aktiviertem JavaScript</h4>
 <div class="paragraph">
-<p>Ist JavaScript in einem Browser aktiviert, eröffnet dies gewisse Risiken bei der Verarbeitung datenschutzbedenklicher Informationen.
+<p>Ist JavaScript in einem Browser aktiviert, eröffnet dies gewisse Risiken bei der Verarbeitung datenschutzrelevanter Informationen.
 Folgende Maßnahmen reduzieren jedoch das Risiko möglicher Attacken für Cross-site-Scripting (XSS):</p>
 </div>
 <div class="ulist">
@@ -1619,24 +1686,27 @@ Somit wird verhindert, dass ein Angreifer ein ungewünschtes Script-Tag übergib
 <div class="ulist">
 <ul>
 <li>
-<p>aus isy-sicherheit: <code>Sicherheit</code> und <code>AccessManager</code></p>
+<p>aus isy-sicherheit: <code>Sicherheit</code> und <code>AccessManager</code>,</p>
 </li>
 <li>
-<p>aus isy-aufrufkontext: <code>AufrufKontextVerwalter</code> und <code>AufrufKontextFactory</code></p>
+<p>aus isy-aufrufkontext: <code>AufrufKontextVerwalter</code> und <code>AufrufKontextFactory</code>,</p>
 </li>
 <li>
-<p>aus spring-security: <code>AccessDecisionManager</code>, der auf die Bean <code>Sicherheit</code> delegiert</p>
+<p>aus spring-security: <code>AccessDecisionManager</code>, der auf die Bean <code>Sicherheit</code> delegiert.</p>
 </li>
 </ul>
 </div>
 <div id="listing-sec" class="listingblock">
-<div class="title">Listing 30. Konfiguration Sicherheitskomponente</div>
+<div class="title">Listing 29. Konfiguration Sicherheitskomponente</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">    @Bean
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Configuration
+public class SecurityConfiguration {
+
+    @Bean
     Sicherheit&lt;AufrufKontext&gt; sicherheit(AufrufKontextVerwalter&lt;AufrufKontext&gt; aufrufKontextVerwalter,
         AufrufKontextFactory&lt;AufrufKontext&gt; aufrufKontextFactory, AccessManager accessManager,
         IsySicherheitConfigurationProperties properties) {
-        return new SicherheitImpl&lt;AufrufKontext, AuthentifzierungErgebnis&gt;(
+        return new SicherheitImpl&lt;AufrufKontext, AuthentifizierungErgebnis&gt;(
             "/resources/sicherheit/rollenrechte.xml", aufrufKontextVerwalter, aufrufKontextFactory,
             accessManager, properties);
     }
@@ -1661,8 +1731,9 @@ Somit wird verhindert, dass ein Angreifer ein ungewünschtes Script-Tag übergib
 
     @Bean
     AccessManager accessManager() {
-// Der entsprechende AccessManager
-    }</code></pre>
+        // der entsprechende AccessManager
+    }
+}</code></pre>
 </div>
 </div>
 </div>
@@ -1671,7 +1742,7 @@ Somit wird verhindert, dass ein Angreifer ein ungewünschtes Script-Tag übergib
 <h4 id="setup-csrf-protection"><a class="anchor" href="#setup-csrf-protection"></a>4.3.4. Konfiguration des CSRF Schutzes</h4>
 <div class="paragraph">
 <p>Seit JSF 2.0 ist der CSRF Schutz für <code>POST</code> Requests standardmäßig aktiviert.
-Für den Schutzbedarf <strong>mittel</strong> und <strong>hoch</strong> reicht die Implementierung der Variante <em>Token per Session</em>, für Schutzbedarf <strong>sehr hoch</strong> muss die Varainte <em>Token per Request</em> implementiert werden (vgl. <a href="../konzept/konzept.html" class="xref page">Konzept JSF</a>).</p>
+Für den Schutzbedarf <strong>mittel</strong> und <strong>hoch</strong> reicht die Implementierung der Variante <em>Token per Session</em>, für Schutzbedarf <strong>sehr hoch</strong> muss die Variante <em>Token per Request</em> implementiert werden (vgl. <a href="../konzept/konzept.html" class="xref page">Konzept JSF</a>).</p>
 </div>
 <div class="sect4">
 <h5 id="_token_per_session_schutzbedarf_mittel_und_hoch"><a class="anchor" href="#_token_per_session_schutzbedarf_mittel_und_hoch"></a>4.3.4.1. Token per Session (Schutzbedarf mittel und hoch)</h5>
@@ -1680,7 +1751,7 @@ Für den Schutzbedarf <strong>mittel</strong> und <strong>hoch</strong> reicht d
 Dafür wird typischerweise das versteckte Element <code>&lt;h:inputHidden&gt;</code> verwendet.</p>
 </div>
 <div id="listing-hiddenInput" class="listingblock">
-<div class="title">Listing 31. Verwendung eines hiddenInput Elements für die CSRF-Token Übertragung</div>
+<div class="title">Listing 30. Verwendung eines hiddenInput Elements für die CSRF-Token Übertragung</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;!-- [...] --&gt;
 &lt;h:form&gt;
@@ -1707,7 +1778,7 @@ Auch bei dieser Variante muss das von Spring bereitgestellte CSRF-Token über di
 Da die Tokens immer nur für einen Request gültig sind, muss sichergestellt werden, dass vor jedem Request ein neues CSRF-Token vom Server abgeholt wird.</p>
 </div>
 <div id="listing-isySicherheitWeb" class="listingblock">
-<div class="title">Listing 32. Ausschnitt aus isy-sicherheit-web.xml: Verwendung eines eigenen CsrfTokenRepositories</div>
+<div class="title">Listing 31. Ausschnitt aus isy-sicherheit-web.xml: Verwendung eines eigenen CsrfTokenRepositories</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;!-- [...] --&gt;
 &lt;security:http auto-config="true"&gt;
@@ -1736,7 +1807,7 @@ Zum Beispiel sollten nicht benötigte Elemente ausgeblendet und Farben für den 
 angezeigt werden (z.B. bei Tabs alle Tabs anzeigen).</p>
 </div>
 <div class="paragraph">
-<p>Im <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html" class="xref page">Styleguide</a> finden sich Beispiele für Druckansichten.</p>
+<p>Im <a href="../../../../isyfact-standards-doku/latest/isy-styleguide/styleguide.html" class="xref page">Styleguide</a> finden sich Beispiele für Druckansichten.</p>
 </div>
 <div id="image-seitendruck1" class="imageblock text-center">
 <div class="content">
@@ -1752,7 +1823,7 @@ Durch Aufruf des <code>BasisController</code> s wird sie aktiviert oder deaktivi
 <p>Beispiel:</p>
 </div>
 <div id="listing-druckAnsichtGenerisch" class="listingblock">
-<div class="title">Listing 33. Generische Druckansicht anzeigen</div>
+<div class="title">Listing 32. Generische Druckansicht anzeigen</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;view-state id="auskunftAnzeigenDruckansichtViewState" model="auskunftAnzeigenModel"&gt;
     &lt;on-entry&gt;
@@ -1818,48 +1889,54 @@ Diese Funktionalität wird in der Bibliothek <code>isy-web</code> durch die Klas
 Unterstützt wird der Download einzelner Dateien (<a href="#listing-dynamischerDownload">Download von dynamische generierten Dateien</a>) und der Download mehrerer Dateien, die in einer ZIP-Datei zusammengefasst werden (<a href="#listing-dynamischerDownloadZip">Download von dynamische generierten Dateien als ZIP-Datei</a>).</p>
 </div>
 <div id="listing-dynamischerDownload" class="listingblock">
-<div class="title">Listing 34. Download von dynamische generierten Dateien</div>
+<div class="title">Listing 33. Download von dynamische generierten Dateien</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">...
-private DownloadHelper downloadHelper;
-...
-public void download() {
-    DokumentDatenModel dokumentDatenModel = new DokumentDatenModel();
-    dokumentDatenModel.setInhalt(new byte[] {'T', 'e', 's', 't'});
-    dokumentDatenModel.setDateiname("Test");
-    dokumentDatenModel.setDateityp(DateitypEnum.TXT);
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Controller
+public class DownloadController {
 
-    downloadHelper.starteDownload(dokumentDatenModel);
+    private DownloadHelper downloadHelper;
+
+    public void download() {
+        DokumentDatenModel dokumentDatenModel = new DokumentDatenModel();
+        dokumentDatenModel.setInhalt(new byte[] {'T', 'e', 's', 't'});
+        dokumentDatenModel.setDateiname("Test");
+        dokumentDatenModel.setDateityp(DateitypEnum.TXT);
+
+        downloadHelper.starteDownload(dokumentDatenModel);
+    }
 }</code></pre>
 </div>
 </div>
 <div id="listing-dynamischerDownloadZip" class="listingblock">
-<div class="title">Listing 35. Download von dynamische generierten Dateien als ZIP-Datei</div>
+<div class="title">Listing 34. Download von dynamische generierten Dateien als ZIP-Datei</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">...
-private DownloadHelper downloadHelper;
-...
-public void downloadZip() {
-    FileModel datei1 = new FileModel();
-    datei1.setInhalt(new byte[] {'T', 'e', 's', 't', '1'});
-    datei1.setDateiname("Test1.txt");
-    datei1.setMimeType(DateitypEnum.TXT.getMimeType());
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Controller
+public class DownloadController {
 
-    FileModel datei2 = new FileModel();
-    datei2.setInhalt(new byte[] {'T', 'e', 's', 't', '2'});
-    datei2.setDateiname("Test2.txt");
-    datei2.setMimeType(DateitypEnum.TXT.getMimeType());
+    private DownloadHelper downloadHelper;
 
-    downloadHelper.downloadZipFileByModel("Test.zip", datei1, datei2);
+    public void downloadZip() {
+        FileModel datei1 = new FileModel();
+        datei1.setInhalt(new byte[] {'T', 'e', 's', 't', '1'});
+        datei1.setDateiname("Test1.txt");
+        datei1.setMimeType(DateitypEnum.TXT.getMimeType());
+
+        FileModel datei2 = new FileModel();
+        datei2.setInhalt(new byte[] {'T', 'e', 's', 't', '2'});
+        datei2.setDateiname("Test2.txt");
+        datei2.setMimeType(DateitypEnum.TXT.getMimeType());
+
+        downloadHelper.downloadZipFileByModel("Test.zip", datei1, datei2);
+    }
 }</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Um den <code>DownloadHelper</code> zu verwenden, müssen die Beans aus <a href="#listing-downloadHelperBean">Konfiguration DownloadHelper als Bean</a> konfiguriert werden.
-Die Einbindung erfolgt dann per Depedency Injection z.B. in einem Controller.</p>
+Die Einbindung erfolgt dann per Dependency Injection z.B. in einem Controller.</p>
 </div>
 <div id="listing-downloadHelperBean" class="listingblock">
-<div class="title">Listing 36. Konfiguration DownloadHelper als Bean</div>
+<div class="title">Listing 35. Konfiguration DownloadHelper als Bean</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;bean id="zipHelper" class="de.bund.bva.isyfact.common.web.filetransfer.ZipHelper"/&gt;
 
@@ -1906,13 +1983,13 @@ Für die Verwendung dieser Elemente muss in den View-Templates folgender Namespa
 <div class="ulist">
 <ul>
 <li>
-<p>Header-Bereich</p>
+<p>Header-Bereich,</p>
 </li>
 <li>
-<p>Linksnavigation (optional)</p>
+<p>Linksnavigation (optional),</p>
 </li>
 <li>
-<p>Inhaltsbereich</p>
+<p>Inhaltsbereich.</p>
 </li>
 </ul>
 </div>
@@ -1939,13 +2016,13 @@ Für die Verwendung dieser Elemente muss in den View-Templates folgender Namespa
 <p><strong>B</strong> Balken in der Standardfarbe der Anwendungslandschaft ("Portalfarbe")</p>
 </li>
 <li>
-<p><strong>C</strong> Logo des Anwendungslandschaft</p>
+<p><strong>C</strong> Logo der Anwendungslandschaft</p>
 </li>
 <li>
 <p><strong>D</strong> Informationen zum angemeldeten Anwender ("Nutzerbereich")</p>
 </li>
 <li>
-<p><strong>E + F</strong> Hauptfnavigation und Subnavigation als Flyout (zur Nutzung siehe <a href="#horizontale-navigation">Horizontale Navigation</a>)</p>
+<p><strong>E + F</strong> Hauptnavigation und Subnavigation als Flyout (zur Nutzung siehe <a href="#horizontale-navigation">Horizontale Navigation</a>)</p>
 </li>
 </ul>
 </div>
@@ -1979,7 +2056,7 @@ Um das Verhalten zu überschreiben, kann die Property <code>gui.logout.url</code
 <p>Um hiervon Gebrauch zu machen, muss eine entsprechende Konfigurationsdatei über die Bean-Definition eingebunden werden:</p>
 </div>
 <div id="listing-anpassung-rahmen-config" class="listingblock">
-<div class="title">Listing 37. Konfigurationsdatei zur Anpassung des Seitenrahmens einbinden</div>
+<div class="title">Listing 36. Konfigurationsdatei zur Anpassung des Seitenrahmens einbinden</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;beans&gt;
     ...
@@ -2063,7 +2140,7 @@ Setzt die Anwendungen einzelne Werte für bestimmte Anwendungsgruppen nicht, wer
 <p>Das folgende Beispiel zeigt eine vollständige Konfiguration.</p>
 </div>
 <div id="listing-AnpassungSeitenrahmen" class="listingblock">
-<div class="title">Listing 38. Konfiguration zur Anpassung des Seitenrahmens</div>
+<div class="title">Listing 37. Konfiguration zur Anpassung des Seitenrahmens</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-none hljs"># Globale Standardwerte
 gui.header.logo.links.pfad = /javax.faces.resource/img/isyfactschriftzug.jpeg
@@ -2095,7 +2172,7 @@ gui.header.text.logo.rechts.gruppeZwei = Zweite Gruppe</code></pre>
 <div class="paragraph">
 <p>Wenn eine Applikationsseite erstellt werden soll, dann muss der Flow der Applikationsseite vom Flow <code>applikationseiteParentFlow</code> erben.
 Es muss weiterhin ein Controller erstellt werden, der vom <code>AbstractGuiController</code> erbt und ein Model, das vom <code>AbstractMaskenModel</code> erbt.
-Die XHTML-Seiten der ViewStates müssen alle vom -Masken-Template <code>/WEB-INF/gui/common/layout/applikation.xhtml</code> erben (s.a. <a href="#listing-jsfViewState">Beispiel für eine JSF ViewState Seite mit Inhaltsbereichsangabe</a>).</p>
+Die XHTML-Seiten der ViewStates müssen alle vom Masken-Template <code>/WEB-INF/gui/common/layout/applikation.xhtml</code> erben (s.a. <a href="#listing-jsfViewState">Beispiel für eine JSF ViewState Seite mit Inhaltsbereichsangabe</a>).</p>
 </div>
 <div class="paragraph">
 <p>Der <code>ApplikationseiteController</code> stellt sicher, dass alle layoutspezifischen Funktionen (z.B. der Linksnavigation) einer Applikationsseite initialisiert und zur Verfügung gestellt werden.
@@ -2158,13 +2235,15 @@ Weiterhin kann mit <code>MAS_Global_Title_Prefix</code> ein globaler Präfix fü
 Im Folgenden ein Beispiel:</p>
 </div>
 <div id="listing-zusatzmaskentitel" class="listingblock">
-<div class="title">Listing 39. Zusatz-Maskentitel im Header-Bereich</div>
+<div class="title">Listing 38. Zusatz-Maskentitel im Header-Bereich</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;ui:define name="titel"&gt;
    &lt;h:outputText value="zusätzlicher Text" /&gt;
-&lt;/ui:define&gt; Über die Angaben
+&lt;/ui:define&gt;
+&lt;!-- über die Angaben --&gt;
 &lt;ui:define name="titelzeileInfoLinks"/&gt;
-  bzw. &lt;ui:define name="titelzeileInfoRechts"/&gt;</code></pre>
+&lt;!-- bzw. --&gt;
+&lt;ui:define name="titelzeileInfoRechts"/&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2172,7 +2251,7 @@ Im Folgenden ein Beispiel:</p>
 Im Folgenden ein Beispiel:</p>
 </div>
 <div id="listing-titelzeileninfo" class="listingblock">
-<div class="title">Listing 40. Titelzeileninfo</div>
+<div class="title">Listing 39. Titelzeileninfo</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;ui:define name="titelzeileInfoLinks"&gt;
    &lt;h:outputText value="zusätzlicher Text" /&gt;
@@ -2186,7 +2265,59 @@ Im Folgenden ein Beispiel:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_modaler_dialog"><a class="anchor" href="#_modaler_dialog"></a>5.2. Modaler Dialog</h3>
+<h3 id="konfiguration-portalfarbe"><a class="anchor" href="#konfiguration-portalfarbe"></a>5.2. Konfiguration Portalfarbe</h3>
+<div class="paragraph">
+<p>Für eine Anwendung kann eine Basisfarbe / Portalfarbe konfiguriert werden.
+Von dieser <code>portalColor</code> werden viele der weiteren Farbstyles für die Anwendung abgeleitet und in der generierten Datei <code>color.css</code> abgelegt, die in der Zielanwendung einzubinden ist.
+Es kann zudem eine abweichende Fokusfarbe für Bedienelemente <code>focusColor</code> konfiguriert werden.
+Standardmäßig wird die <code>portalColor</code> auch als Fokusfarbe der Bedienelemente gesetzt.</p>
+</div>
+<div class="paragraph">
+<p>Zur Generierung der Datei <code>color.css</code> mit der eigenen Portalfarbe sind folgende Schritte erforderlich:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Konfiguration der Portalfarbe</strong>: In der Datei <code>isy-web-lib/src/main/less/portal-color.less</code> des <code>isy-web</code> Repositories ist die Basisfarbe / Portalfarbe zu setzen. Hier kann auch eine abweichende Fokusfarbe für Bedienelemente konfiguriert werden.</p>
+</li>
+</ol>
+</div>
+<div id="listing-gruntPortalfarbe" class="listingblock">
+<div class="title">Listing 40. Portalfarbe konfigurieren</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">@portal-color: #004179;
+@focus-color: @portal-color;
+
+@es-portal-color-100: @portal-color;
+@es-portal-color-80: tint(@portal-color, 20%);
+@es-portal-color-60: tint(@portal-color, 40%);
+@es-portal-color-40: tint(@portal-color, 60%);
+@es-portal-color-20: tint(@portal-color, 80%);
+@input-border-focus: @focus-color;
+
+@import "es/color/color-base";</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p><strong>Maven Install</strong>: In dem Modul <code>isy-web-lib</code> ist ein "Maven install" durchzuführen.
+Dadurch wird ein "webpack build" ausgelöst und die Farbstyles befinden sich nach der Generierung in <code>target/classes/META-INF/resources/css/color.css</code>.</p>
+</li>
+<li>
+<p><strong>Einbindung in Zielanwendung</strong>: Die Datei <code>color.css</code> aus dem Target-Verzeichnis von <code>isy-web-lib</code> ist in die Zielanwendung unterhalb des WEB-INF Verzeichnisses zu kopieren.</p>
+</li>
+</ol>
+</div>
+<div id="image-colorCssPosition" class="imageblock text-center">
+<div class="content">
+<img src="../_images/nutzungsvorgaben/color-css-position.png" alt="color css position">
+</div>
+<div class="title">Abbildung 7. Zielordner für color.css Datei</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_modaler_dialog"><a class="anchor" href="#_modaler_dialog"></a>5.3. Modaler Dialog</h3>
 <div class="paragraph">
 <p>Modale Dialoge werden mit dem Tag <code>&lt;isy:modalDialogContent&gt;</code> definiert.
 Der Dialog besitzt folgende Facets:</p>
@@ -2194,13 +2325,13 @@ Der Dialog besitzt folgende Facets:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Der Header-Bereich</p>
+<p>Der Header-Bereich,</p>
 </li>
 <li>
-<p>Der Body-Bereich</p>
+<p>Der Body-Bereich,</p>
 </li>
 <li>
-<p>Der Footer-Bereich</p>
+<p>Der Footer-Bereich.</p>
 </li>
 </ul>
 </div>
@@ -2208,7 +2339,7 @@ Der Dialog besitzt folgende Facets:</p>
 <div class="content">
 <img src="../_images/nutzungsvorgaben/demoflow-modaler-dialog.png" alt="demoflow modaler dialog">
 </div>
-<div class="title">Abbildung 7. Beispiel eines modalen Dialogs</div>
+<div class="title">Abbildung 8. Beispiel eines modalen Dialogs</div>
 </div>
 <div class="paragraph">
 <p>Das Tag <code>&lt;isy:modalDialogContent&gt;</code> wird über den UI-Platzhalter modalDialog eingefügt.
@@ -2260,7 +2391,7 @@ Beim Verlassen des View-States wird dieser wieder geschlossen.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_bestätigungsdialog"><a class="anchor" href="#_bestätigungsdialog"></a>5.3. Bestätigungsdialog</h3>
+<h3 id="_bestätigungsdialog"><a class="anchor" href="#_bestätigungsdialog"></a>5.4. Bestätigungsdialog</h3>
 <div class="paragraph">
 <p>Bestätigungsdialoge, auch Popup-Dialoge genannt, sind spezielle modale Dialoge, die als Subflows eingebunden werden.
 Die anzuzeigenden Texte und Button-Beschriftungen werden dem Flow als Parameter übergeben.
@@ -2271,7 +2402,7 @@ Sollte kein Java-Script	aktiviert sein, so wird der Dialog direkt im Fenster ang
 <div class="content">
 <img src="../_images/nutzungsvorgaben/demoflow-bestaetigungs-dialog.png" alt="demoflow bestaetigungs dialog">
 </div>
-<div class="title">Abbildung 8. Beispiel eines Bestätigungsdialogs (Popup-Dialog)</div>
+<div class="title">Abbildung 9. Beispiel eines Bestätigungsdialogs (Popup-Dialog)</div>
 </div>
 <div class="paragraph">
 <p>Bei einem Bestätigungsdialog können auch mehrzeilige Texte hinterlegt werden.
@@ -2290,7 +2421,6 @@ Die anzuzeigenden Texte aus einer weiteren Ressource werden dem Flow als neuer P
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;flow xmlns="http://www.springframework.org/schema/webflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ui="http://java.sun.com/jsf/facelets"
     xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
     parent="applikationseiteParentFlow"&gt;
 
@@ -2317,7 +2447,7 @@ Die anzuzeigenden Texte aus einer weiteren Ressource werden dem Flow als neuer P
 </div>
 </div>
 <div class="sect2">
-<h3 id="wizard"><a class="anchor" href="#wizard"></a>5.4. Wizard</h3>
+<h3 id="wizard"><a class="anchor" href="#wizard"></a>5.5. Wizard</h3>
 <div class="paragraph">
 <p>Wizards, auch Assistenten genannt, bezeichnen eine geführte Abfolge von Interaktionsschritten.</p>
 </div>
@@ -2325,7 +2455,7 @@ Die anzuzeigenden Texte aus einer weiteren Ressource werden dem Flow als neuer P
 <div class="content">
 <img src="../_images/nutzungsvorgaben/Wizard_Beispiel_Schritt_2.png" alt="Wizard Beispiel Schritt 2">
 </div>
-<div class="title">Abbildung 9. Beispiel eines Wizards</div>
+<div class="title">Abbildung 10. Beispiel eines Wizards</div>
 </div>
 <div class="paragraph">
 <p>Wizards werden mit dem Tag <code>&lt;isy:wizard&gt;</code> definiert.</p>
@@ -2336,16 +2466,16 @@ Die anzuzeigenden Texte aus einer weiteren Ressource werden dem Flow als neuer P
 <div class="ulist">
 <ul>
 <li>
-<p><code>wizardHeader</code>: Der Header-Bereich</p>
+<p><code>wizardHeader</code>: Der Header-Bereich,</p>
 </li>
 <li>
-<p><code>wizardBody</code>: Der Body-Bereich</p>
+<p><code>wizardBody</code>: Der Body-Bereich,</p>
 </li>
 <li>
-<p><code>wizardFooterLeftButtons</code>: Ergänzungen zu den angezeigten Buttons auf der linken Seite</p>
+<p><code>wizardFooterLeftButtons</code>: Ergänzungen zu den angezeigten Buttons auf der linken Seite,</p>
 </li>
 <li>
-<p><code>wizardFooterRightButtons</code>: Ergänzungen zu den angezeigten Buttons auf der rechten Seite</p>
+<p><code>wizardFooterRightButtons</code>: Ergänzungen zu den angezeigten Buttons auf der rechten Seite.</p>
 </li>
 </ul>
 </div>
@@ -2365,7 +2495,7 @@ Die anzuzeigenden Texte aus einer weiteren Ressource werden dem Flow als neuer P
 <div class="ulist">
 <ul>
 <li>
-<p><code>width</code>: Die Breite des modalen Dialogs. (Standard: <code>auto</code>)</p>
+<p><code>width</code>: Die Breite des modalen Dialogs (Standard: <code>auto</code>),</p>
 </li>
 <li>
 <p><code>globalConfig</code>: Eine spezifische globale Konfiguration, falls notwendig.</p>
@@ -2405,19 +2535,19 @@ Eine <code>WizardDialogPage</code> hat u.A. folgende Attribute:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>wizardDialogPageId</code>: Eine ID, welche die Wizardseite eindeutig innerhalb des Wizards identifiziert</p>
+<p><code>wizardDialogPageId</code>: Eine ID, welche die Wizardseite eindeutig innerhalb des Wizards identifiziert.</p>
 </li>
 <li>
-<p><code>title</code>: Title der Wizardseite</p>
+<p><code>title</code>: Title der Wizardseite,</p>
 </li>
 <li>
-<p><code>pageDone</code>: Seite wurde abgearbeitet</p>
+<p><code>pageDone</code>: Seite wurde abgearbeitet.</p>
 </li>
 <li>
-<p><code>pageSuccessful</code>: Seite wurde erfolgreich oder nicht erfolgreich abgearbeitet</p>
+<p><code>pageSuccessful</code>: Seite wurde erfolgreich oder nicht erfolgreich abgearbeitet.</p>
 </li>
 <li>
-<p><code>pageDisabled</code>: Seite wurde deaktiviert</p>
+<p><code>pageDisabled</code>: Seite wurde deaktiviert.</p>
 </li>
 </ul>
 </div>
@@ -2427,16 +2557,16 @@ Eine <code>WizardDialogPage</code> hat u.A. folgende Attribute:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>previous</code>: zurück zur vorherigen Seite</p>
+<p><code>previous</code>: zurück zur vorherigen Seite,</p>
 </li>
 <li>
-<p><code>next</code>: weiter zur nächsten Seite</p>
+<p><code>next</code>: weiter zur nächsten Seite,</p>
 </li>
 <li>
-<p><code>complete</code>: Wizard abschließen</p>
+<p><code>complete</code>: Wizard abschließen,</p>
 </li>
 <li>
-<p><code>abort</code>: Wizard abbrechen</p>
+<p><code>abort</code>: Wizard abbrechen.</p>
 </li>
 </ul>
 </div>
@@ -2471,22 +2601,22 @@ Eine <code>WizardDialogPage</code> hat u.A. folgende Attribute:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>activeWizardDialogPageId</code>: ID der derzeit aktiven Seite</p>
+<p><code>activeWizardDialogPageId</code>: ID der derzeit aktiven Seite,</p>
 </li>
 <li>
-<p><code>activeWizardDialogPage</code>: momentan aktive Seite</p>
+<p><code>activeWizardDialogPage</code>: momentan aktive Seite,</p>
 </li>
 <li>
-<p><code>nextActiveWizardDialogPageId</code>: ID der nächsten Seite</p>
+<p><code>nextActiveWizardDialogPageId</code>: ID der nächsten Seite,</p>
 </li>
 <li>
-<p><code>wizardDialogPages</code>: Liste der einzelnen Seiten des Wizards (<code>WizardDialogPage</code>-Objekte)</p>
+<p><code>wizardDialogPages</code>: Liste der einzelnen Seiten des Wizards (<code>WizardDialogPage</code>-Objekte),</p>
 </li>
 <li>
-<p><code>boolean isPageDone(String id)</code>: Gibt an, ob die Seite mit der angegebenen ID bereits abgearbeitet wurde</p>
+<p><code>boolean isPageDone(String id)</code>: Gibt an, ob die Seite mit der angegebenen ID bereits abgearbeitet wurde.</p>
 </li>
 <li>
-<p><code>boolean isPageDisabled(String id)</code>: Gibt an, ob die Seite mit der angegebenen ID deaktiviert ist</p>
+<p><code>boolean isPageDisabled(String id)</code>: Gibt an, ob die Seite mit der angegebenen ID deaktiviert ist.</p>
 </li>
 <li>
 <p><code>WizardDialogPage getWizardDialogPage(String wizardDialogPageId)</code>: Gibt die Seite zur angegebenen ID zurück.</p>
@@ -2500,7 +2630,7 @@ Folgende Methoden müssen dabei überschrieben werden:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>boolean finish(WizardDialogModel model)</code> beendet die Verarbeitung des Wizards,</p>
+<p><code>boolean finish(WizardDialogModel model)</code> beendet die Verarbeitung des Wizards.</p>
 </li>
 <li>
 <p><code>boolean cancel(WizardDialogModel model)</code> bricht die Verarbeitung ab.</p>
@@ -2525,12 +2655,12 @@ Folgende Methoden müssen dabei überschrieben werden:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="dialoge-ohne-javascript"><a class="anchor" href="#dialoge-ohne-javascript"></a>5.5. Dialoge ohne JavaScript</h3>
+<h3 id="dialoge-ohne-javascript"><a class="anchor" href="#dialoge-ohne-javascript"></a>5.6. Dialoge ohne JavaScript</h3>
 <div id="nojs" class="imageblock text-center">
 <div class="content">
 <img src="../_images/nutzungsvorgaben/no-js.png" alt="no js">
 </div>
-<div class="title">Abbildung 10. Kein Javascript</div>
+<div class="title">Abbildung 11. Kein Javascript</div>
 </div>
 <div class="paragraph">
 <p>Die modalen Dialoge werden automatisch in das Layout integriert, sofern kein JavaScript verfügbar ist.</p>
@@ -2539,13 +2669,13 @@ Folgende Methoden müssen dabei überschrieben werden:</p>
 <div class="content">
 <img src="../_images/nutzungsvorgaben/Menuepunkt_Flows.png" alt="Menuepunkt Flows">
 </div>
-<div class="title">Abbildung 11. Kein JavaScript – Dialog</div>
+<div class="title">Abbildung 12. Kein JavaScript – Dialog</div>
 </div>
 <div id="image-keinjavascriptwizard" class="imageblock text-center">
 <div class="content">
 <img src="../_images/nutzungsvorgaben/Kein_Javascript_Wizard.png" alt="Kein Javascript Wizard">
 </div>
-<div class="title">Abbildung 12. Kein JavaScript – Wizard</div>
+<div class="title">Abbildung 13. Kein JavaScript – Wizard</div>
 </div>
 </div>
 </div>
@@ -2601,7 +2731,7 @@ Insbesondere demonstriert sie Aussehen und Verhalten der nachfolgend beschrieben
 <div class="content">
 <img src="../_images/nutzungsvorgaben/demopanel-button.png" alt="demopanel button">
 </div>
-<div class="title">Abbildung 13. Beispiele für &lt;isy:button&gt; Aktionen (Normal, Ajax, Formular)</div>
+<div class="title">Abbildung 14. Beispiele für &lt;isy:button&gt; Aktionen (Normal, Ajax, Formular)</div>
 </div>
 <div class="paragraph">
 <p>Die Komponente besitzt folgende notwendige Parameter:</p>
@@ -2609,10 +2739,10 @@ Insbesondere demonstriert sie Aussehen und Verhalten der nachfolgend beschrieben
 <div class="ulist">
 <ul>
 <li>
-<p><code>action</code>: Die auszuführende Aktion.</p>
+<p><code>action</code>: Die auszuführende Aktion,</p>
 </li>
 <li>
-<p><code>value</code>: Das Label des Buttons.</p>
+<p><code>value</code>: Das Label des Buttons,</p>
 </li>
 </ul>
 </div>
@@ -2622,7 +2752,7 @@ Insbesondere demonstriert sie Aussehen und Verhalten der nachfolgend beschrieben
 <div class="ulist">
 <ul>
 <li>
-<p><code>styleClass</code>: Die zu ergänzenden Style-Klassen.</p>
+<p><code>styleClass</code>: Die zu ergänzenden Style-Klassen,</p>
 </li>
 <li>
 <p><code>disabled</code>: Gibt an, ob der Button deaktiviert ist oder nicht. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
@@ -2655,7 +2785,7 @@ Insbesondere demonstriert sie Aussehen und Verhalten der nachfolgend beschrieben
 Andernfalls wird immer ein Full-Page-Reload ausgeführt.</p>
 </div>
 <div class="paragraph">
-<p>Einen Button, bei dem die Oberfläche während der Ajax-Aktion blockiert ist, würde man Einbindung über &lt;isy:button&gt; mit dem <code>block="true"</code> einbinden.</p>
+<p>Einen Button, bei dem die Oberfläche während der Ajax-Aktion blockiert ist, würde man Einbindung über <code>&lt;isy:button&gt;</code> mit dem <code>block="true"</code> einbinden.</p>
 </div>
 <div id="listing-button" class="listingblock">
 <div class="title">Listing 45. Codebeispiel für <code>&lt;isy:button&gt;</code></div>
@@ -2676,7 +2806,7 @@ Andernfalls wird immer ein Full-Page-Reload ausgeführt.</p>
 <div class="content">
 <img src="../_images/nutzungsvorgaben/demopanel-buttonRow.png" alt="demopanel buttonRow">
 </div>
-<div class="title">Abbildung 14. Beispiel für <code>&lt;isy:buttonRow&gt;</code> mit <code>&lt;isy:buttonToolbar&gt;</code></div>
+<div class="title">Abbildung 15. Beispiel für <code>&lt;isy:buttonRow&gt;</code> mit <code>&lt;isy:buttonToolbar&gt;</code></div>
 </div>
 <div class="paragraph">
 <p>Folgende optionale Parameter sind für das Tag <code>&lt;isy:buttonRow&gt;</code> zulässig:</p>
@@ -2719,10 +2849,10 @@ Der Hauptanwendungszweck dieses Tags ist die gemeinsame Ausrichtung der Buttons 
 <div class="ulist">
 <ul>
 <li>
-<p><code>alignRight</code>: Gibt an, ob die Button Row eine Alignment nach Rechts besitzen soll oder nicht (Standard: <code>false</code>, Typ: <code>Boolean</code>).</p>
+<p><code>alignRight</code>: Gibt an, ob die Button Row eine Alignment nach rechts besitzen soll oder nicht (Standard: <code>false</code>, Typ: <code>Boolean</code>).</p>
 </li>
 <li>
-<p><code>alignLeft</code>: Gibt an, ob die Button Row eine Alignment nach Links besitzen soll oder nicht (Standard: <code>false</code>, Typ: <code>Boolean</code>).</p>
+<p><code>alignLeft</code>: Gibt an, ob die Button Row eine Alignment nach links besitzen soll oder nicht (Standard: <code>false</code>, Typ: <code>Boolean</code>).</p>
 </li>
 </ul>
 </div>
@@ -2741,7 +2871,7 @@ Der Hauptanwendungszweck dieses Tags ist die gemeinsame Ausrichtung der Buttons 
 <h4 id="_mehrere_aktionen"><a class="anchor" href="#_mehrere_aktionen"></a>6.1.3. Mehrere Aktionen</h4>
 <div class="paragraph">
 <p>In bestimmten Fällen kann es notwendig sein mehrere Formulare an den Server zu senden, um bestimmte Aktionen auszuführen (z.B. das Formular für den Inhaltsbereich soll auch beim Klick auf Drucken in der Seitentoolbar übermittelt werden).
-Dies kann durch verwenden des Tags <code>&lt;isy:buttonInjectPost&gt;</code> erreicht werden.
+Dies kann durch Verwenden des Tags <code>&lt;isy:buttonInjectPost&gt;</code> erreicht werden.
 Dadurch lässt sich eine andere Aktion vor der eigentlichen Aktion des Buttons innerhalb des Tags ausführen.</p>
 </div>
 <div class="paragraph">
@@ -2750,7 +2880,7 @@ Dadurch lässt sich eine andere Aktion vor der eigentlichen Aktion des Buttons i
 <div class="ulist">
 <ul>
 <li>
-<p><code>postButton</code>: Die ID des Buttons, der die zusätzliche POST-Aktion durchführen soll</p>
+<p><code>postButton</code>: Die ID des Buttons, der die zusätzliche POST-Aktion durchführen soll.</p>
 </li>
 <li>
 <p><code>continueAfterPost</code>: Über diesen Wert true/false kann gesteuert werden, ob nach der POST-Aktion auch tatsächlich der eigentliche Button geklickt werden soll (z.B. um Fehlerfälle abzufangen).</p>
@@ -2766,13 +2896,13 @@ Dadurch lässt sich eine andere Aktion vor der eigentlichen Aktion des Buttons i
 Die Buttons innerhalb der Toolbar können sowohl horizontal als auch vertikal angeordnet sein.</p>
 </div>
 <div class="paragraph">
-<p>Die folgende Abbildung zeigt z.B. die Verwendung der Komponente <code>&lt;isy:buttonToolbar</code> oberhalb einer DataTable-Komponente.</p>
+<p>Die folgende Abbildung zeigt z.B. die Verwendung der Komponente <code>&lt;isy:buttonToolbar&gt;</code> oberhalb einer DataTable-Komponente.</p>
 </div>
 <div id="image-toolbarButton" class="imageblock text-center">
 <div class="content">
 <img src="../_images/nutzungsvorgaben/demopanel-toolbarButton.png" alt="demopanel toolbarButton">
 </div>
-<div class="title">Abbildung 15. &lt;isy:buttonToolbar&gt; mit Button-Komponenten</div>
+<div class="title">Abbildung 16. &lt;isy:buttonToolbar&gt; mit Button-Komponenten</div>
 </div>
 <div class="paragraph">
 <p>Eine Button-Toolbar besitzt folgende notwendige Parameter:</p>
@@ -2790,7 +2920,7 @@ Die Buttons innerhalb der Toolbar können sowohl horizontal als auch vertikal an
 <div class="ulist">
 <ul>
 <li>
-<p><code>value</code>: Der Wert/Text des Buttons. (Standard: ``)</p>
+<p><code>value</code>: Der Wert/Text des Buttons, (Standard: ``)</p>
 </li>
 <li>
 <p><code>icon</code>: Das Icon aus der Icon-Bibliothek (ohne Präfix 'icon-'). (Standard: <code>placeholder</code>)</p>
@@ -2831,12 +2961,12 @@ Andernfalls wird immer ein Full-Page-Reload durchgeführt.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>buttonActionEvent</code>: Das Action Event für den Button.</p>
+<p><code>buttonActionEvent</code>: Das Action-Event für den Button.</p>
 </li>
 </ul>
 </div>
 <div id="listing-buttonToolbar" class="listingblock">
-<div class="title">Listing 48. Codebeispiel für <code>&lt;isy:buttonToolbar&gt;</code> , vertikale Darstellung</div>
+<div class="title">Listing 48. Codebeispiel für <code>&lt;isy:buttonToolbar&gt;</code>, vertikale Darstellung</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;f:facet name="panelHeader"&gt;Toolbar Buttons&lt;/f:facet&gt;
 
@@ -2875,13 +3005,13 @@ Andernfalls wird immer ein Full-Page-Reload durchgeführt.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>buttonId</code>: Eindeutige ButtonId.</p>
+<p><code>buttonId</code>: Eindeutige ButtonId,</p>
 </li>
 <li>
-<p><code>value</code>: Der Wert/Text des Buttons. (Standard: ``)</p>
+<p><code>value</code>: Der Wert/Text des Buttons, (Standard: ``)</p>
 </li>
 <li>
-<p><code>icon</code>: Das Icon aus der Icon-Bibliothek (ohne Präfix 'icon-'). (Standard: <code>placeholder</code>)</p>
+<p><code>icon</code>: Das Icon aus der Icon-Bibliothek (ohne Präfix 'icon-'), (Standard: <code>placeholder</code>)</p>
 </li>
 <li>
 <p><code>showIcon</code>: Gibt an, ob ein Icon angezeigt werden soll oder nicht. (Standard: <code>true</code>, Typ: <code>Boolean</code>)</p>
@@ -2915,7 +3045,7 @@ Andernfalls wird immer ein Full-Page-Reload durchgeführt.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>toggleButton</code>: Das Action Event für den Button.</p>
+<p><code>toggleButton</code>: Das Action-Event für den Button.</p>
 </li>
 </ul>
 </div>
@@ -2941,13 +3071,13 @@ Andernfalls wird immer ein Full-Page-Reload durchgeführt.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>value</code>: Das Label des Buttons. (Standard: ``)</p>
+<p><code>value</code>: Das Label des Buttons, (Standard: ``)</p>
 </li>
 <li>
-<p><code>size</code>: Die Größe des Icons. Mögliche Werte: small/large. (Standard: <code>large</code>)</p>
+<p><code>size</code>: Die Größe des Icons, (Mögliche Werte: small/large. (Standard: <code>large</code>))</p>
 </li>
 <li>
-<p><code>icon</code>: Der Suffix des zu verwendenden Icons. (Standard: <code>placeholder</code>)</p>
+<p><code>icon</code>: Der Suffix des zu verwendenden Icons, (Standard: <code>placeholder</code>)</p>
 </li>
 <li>
 <p><code>showIcon</code>: Gibt an, ob das Icon angezeigt werden soll oder nicht. (Standard: <code>true</code>, Typ: <code>java.lang.Boolean</code>)</p>
@@ -2987,7 +3117,7 @@ Andernfalls wird immer ein Full-Page-Reload durchgeführt.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>buttonActionEvent</code>: Das Action Event für den Button.</p>
+<p><code>buttonActionEvent</code>: Das Action-Event für den Button.</p>
 </li>
 </ul>
 </div>
@@ -3029,19 +3159,19 @@ Dieses Tag stellt sicher, dass falls JavaScript deaktiviert ist, ein Button mit 
 <div class="ulist">
 <ul>
 <li>
-<p><code>action</code>: Die Action, die ausgeführt werden soll.</p>
+<p><code>action</code>: Die Action, die ausgeführt werden soll,</p>
 </li>
 <li>
-<p><code>value</code>: Das Label des Links</p>
+<p><code>value</code>: Das Label des Links,</p>
 </li>
 <li>
-<p><code>title</code>: Der Alternativtext.</p>
+<p><code>title</code>: Der Alternativtext,</p>
 </li>
 <li>
-<p><code>baseStyleClass</code>:  Die Basistyleklasse zum Überschreiben. (Standard: <code>cmdbtn-link</code>)</p>
+<p><code>baseStyleClass</code>:  Die Basis-CSS-Klasse zum Überschreiben, (Standard: <code>cmdbtn-link</code>)</p>
 </li>
 <li>
-<p><code>additionalStyleClass</code>: Eine zusätzliche Styleklasse. (Standard: ``)</p>
+<p><code>additionalStyleClass</code>: Eine zusätzliche Styleklasse, (Standard: ``)</p>
 </li>
 <li>
 <p><code>openInNewTab</code>: Gibt an, ob der Link in einem neuen Tab geöffnet werden soll. Funktioniert nur mit aktiviertem JavaScript. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
@@ -3079,25 +3209,25 @@ Für das Ausgeben eines Textes (mit zugehörigem Label) in einem Formular kann d
 <div class="ulist">
 <ul>
 <li>
-<p><code>reference</code>: Referenz des Objekts für die Validierung.</p>
+<p><code>reference</code>: Referenz des Objekts für die Validierung,</p>
 </li>
 <li>
-<p><code>value</code>: Text des Ausgabebereichs</p>
+<p><code>value</code>: Text des Ausgabebereichs,</p>
 </li>
 <li>
-<p><code>label</code>: Text des Labels</p>
+<p><code>label</code>: Text des Labels,</p>
 </li>
 <li>
-<p><code>labelStyleClass</code>: Die CSS-Klasse des Labels. (Standard: <code>col-lg-6</code>)</p>
+<p><code>labelStyleClass</code>: Die CSS-Klasse des Labels, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>inputStyleClass</code>: Die CSS-Klasse des Ausgabebereiches. (Standard: <code>col-lg-6</code>)</p>
+<p><code>inputStyleClass</code>: Die CSS-Klasse des Ausgabebereiches, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>textStyleClass</code>: Die CSS-Klasse des auszugebenden Textes.</p>
+<p><code>textStyleClass</code>: Die CSS-Klasse des auszugebenden Textes,</p>
 </li>
 <li>
-<p><code>tooltip</code>: Tooltip des Ausgabebereichs.</p>
+<p><code>tooltip</code>: Tooltip des Ausgabebereichs,</p>
 </li>
 <li>
 <p><code>escapeLabel</code>: Gibt an, ob Sonderzeichen für das Label escaped werden sollen. (Standard: <code>true</code>)</p>
@@ -3131,7 +3261,7 @@ Nähere Informationen hierzu finden sich in <a href="#layout-von-Formularen">Lay
 <div class="ulist">
 <ul>
 <li>
-<p><code>reference</code>: Die Referenz des Objekts.</p>
+<p><code>reference</code>: Die Referenz des Objekts,</p>
 </li>
 <li>
 <p><code>value</code>: Der Wert für das Databinding im Eingabefeld.</p>
@@ -3154,34 +3284,34 @@ Mögliche Werte sind alle Werte für das Feld <code>type</code> des HTML-Tags <c
 <p><code>readonly</code>: Gibt an, ob die Darstellung nur lesend erfolgen soll. (Standard: <code>false</code>)</p>
 </li>
 <li>
-<p><code>label</code>: Text für das Label.</p>
+<p><code>label</code>: Text für das Label,</p>
 </li>
 <li>
-<p><code>labelStyleClass</code>: Die CSS-Klasse des Labels. (Standard: <code>col-lg-6</code>)</p>
+<p><code>labelStyleClass</code>: Die CSS-Klasse des Labels, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>inputStyleClass</code>: Die CSS-Klasse des Eingabebereiches. (Standard: <code>col-lg-6</code>)</p>
+<p><code>inputStyleClass</code>: Die CSS-Klasse des Eingabebereiches, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
 <p><code>placeholder</code>: Platzhalter, welcher im Eingabefeld angezeigt wird.</p>
 </li>
 <li>
-<p><code>inputmask</code>: Eingabemaske</p>
+<p><code>inputmask</code>: Eingabemaske,</p>
 </li>
 <li>
 <p><code>inputmaskInsertMode</code>: Gibt an, ob der Text bei der Eingabe überschrieben wird. (Standard: <code>true</code>)</p>
 </li>
 <li>
-<p><code>maxlength</code>: Die maximale Länge der Eingabe. (Standard: 255)</p>
+<p><code>maxlength</code>: Die maximale Länge der Eingabe, (Standard: 255)</p>
 </li>
 <li>
-<p><code>width</code>: Die maximale Breite des Eingabefeldes. (Standard: 100%)</p>
+<p><code>width</code>: Die maximale Breite des Eingabefeldes, (Standard: 100%)</p>
 </li>
 <li>
 <p><code>disabled</code>: Gibt an, ob das Eingabefeld deaktiviert ist. (Standard: <code>false</code>)</p>
 </li>
 <li>
-<p><code>showPrintView</code>: Spezifisches Flag zur Erkennung der Druckansicht. (Standard: <code>basisModel.showPrintView</code>)</p>
+<p><code>showPrintView</code>: Spezifisches Flag zur Erkennung der Druckansicht, (Standard: <code>basisModel.showPrintView</code>)</p>
 </li>
 <li>
 <p><code>tooltip</code>: Tooltip, der über dem Eingabefeld angezeigt wird. (Standard: '')</p>
@@ -3190,7 +3320,7 @@ Mögliche Werte sind alle Werte für das Feld <code>type</code> des HTML-Tags <c
 <p><code>validationModel</code>: Ein spezifisches Validation-Model, falls benötigt. (Standard: <code>#{validationModel}</code>)</p>
 </li>
 <li>
-<p><code>globalConfig</code>: Spezifische, globale Konfiguration. (Standard: <code>globalConfigurationModel</code>)</p>
+<p><code>globalConfig</code>: Spezifische, globale Konfiguration, (Standard: <code>globalConfigurationModel</code>)</p>
 </li>
 <li>
 <p><code>charpicker</code>: Gibt an, welche Eingabe für Sonderzeichen verwendet werden soll.
@@ -3206,7 +3336,7 @@ Standardmäßig wird kein Character-Picker verwendet.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>contentRight</code>: Inhalt, der rechts vom Eingabefeld angezeigt wird</p>
+<p><code>contentRight</code>: Inhalt, der rechts vom Eingabefeld angezeigt wird.</p>
 </li>
 </ul>
 </div>
@@ -3232,19 +3362,19 @@ Zur Auswahl stehen folgende Optionen:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>DATENTYP_A</code></p>
+<p><code>DATENTYP_A</code>,</p>
 </li>
 <li>
-<p><code>DATENTYP_B</code></p>
+<p><code>DATENTYP_B</code>,</p>
 </li>
 <li>
-<p><code>DATENTYP_C</code></p>
+<p><code>DATENTYP_C</code>,</p>
 </li>
 <li>
-<p><code>DATENTYP_D</code></p>
+<p><code>DATENTYP_D</code>,</p>
 </li>
 <li>
-<p><code>DATENTYP_E</code></p>
+<p><code>DATENTYP_E</code>.</p>
 </li>
 </ul>
 </div>
@@ -3258,7 +3388,7 @@ Ein Eingabefeld mit CharPicker besitzt, wie in <a href="#image-charpicker-button
 <div class="content">
 <img src="../_images/nutzungsvorgaben/charpicker-button.png" alt="charpicker button">
 </div>
-<div class="title">Abbildung 16. Eingabefeld mit CharPicker</div>
+<div class="title">Abbildung 17. Eingabefeld mit CharPicker</div>
 </div>
 <div class="paragraph">
 <p>Der CharPicker (zu sehen in <a href="#image-charpicker-widget">CharPicker nach DIN SPEC 91379</a>) besteht aus folgenden Komponenten:</p>
@@ -3283,7 +3413,7 @@ Mit dem Button <code>Einfügen</code> kann man bestätigen, dass das Symbol in d
 <div class="content">
 <img src="../_images/nutzungsvorgaben/charpicker-widget.png" alt="charpicker widget">
 </div>
-<div class="title">Abbildung 17. CharPicker nach DIN SPEC 91379</div>
+<div class="title">Abbildung 18. CharPicker nach DIN SPEC 91379</div>
 </div>
 <div class="paragraph">
 <p>Alternativ kann der CharPicker auch mit den folgenden Eingaben mit der Tastatur bedient werden:</p>
@@ -3291,22 +3421,22 @@ Mit dem Button <code>Einfügen</code> kann man bestätigen, dass das Symbol in d
 <div class="ulist">
 <ul>
 <li>
-<p><code>Alt+Runter</code> öffnet den CharPicker, wenn das Eingabefeld fokussiert ist</p>
+<p><code>Alt+Runter</code> öffnet den CharPicker, wenn das Eingabefeld fokussiert ist.</p>
 </li>
 <li>
-<p><code>Alt+Hoch</code> bzw. <code>Escape</code> schließt den CharPicker</p>
+<p><code>Alt+Hoch</code> bzw. <code>Escape</code> schließt den CharPicker.</p>
 </li>
 <li>
-<p>Pfeiltasten können zum Auswählen von Schriftzeichen verwendet werden</p>
+<p>Pfeiltasten können zum Auswählen von Schriftzeichen verwendet werden.</p>
 </li>
 <li>
-<p>Mit <code>Enter</code> wird das ausgewählte Schriftzeichen in das Eingabefeld eingefügt</p>
+<p>Mit <code>Enter</code> wird das ausgewählte Schriftzeichen in das Eingabefeld eingefügt.</p>
 </li>
 <li>
-<p><code>TAB</code> wechselt zur nächsten Kategorie</p>
+<p><code>TAB</code> wechselt zur nächsten Kategorie.</p>
 </li>
 <li>
-<p><code>Shift+TAB</code> wechselt zur vorherigen Kategorie</p>
+<p><code>Shift+TAB</code> wechselt zur vorherigen Kategorie.</p>
 </li>
 </ul>
 </div>
@@ -3323,7 +3453,7 @@ Mit dem Button <code>Einfügen</code> kann man bestätigen, dass das Symbol in d
 <div class="ulist">
 <ul>
 <li>
-<p><code>reference</code>: Die Referenz des Objekts.</p>
+<p><code>reference</code>: Die Referenz des Objekts,</p>
 </li>
 <li>
 <p><code>value</code>: Der Wert für das Databinding im Eingabefeld.</p>
@@ -3343,37 +3473,37 @@ Mögliche Werte sind alle Werte für das Feld <code>type</code> des HTML-Tags <c
 <p><code>readonly</code>: Gibt an, ob die Darstellung nur lesend erfolgen soll. (Standard: <code>false</code>)</p>
 </li>
 <li>
-<p><code>labelStyleClass</code>: Die CSS-Klasse des Labels. (Standard: <code>col-lg-6</code>)</p>
+<p><code>labelStyleClass</code>: Die CSS-Klasse des Labels, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>inputStyleClass</code>: Die CSS-Klasse des Eingabebereiches. (Standard: <code>col-lg-6</code>)</p>
+<p><code>inputStyleClass</code>: Die CSS-Klasse des Eingabebereiches, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
 <p><code>placeholder</code>: Platzhalter, welcher im Eingabefeld angezeigt wird.</p>
 </li>
 <li>
-<p><code>inputmask</code>: Eingabemaske</p>
+<p><code>inputmask</code>: Eingabemaske,</p>
 </li>
 <li>
 <p><code>inputmaskInsertMode</code>: Gibt an, ob der Text bei der Eingabe überschrieben wird. (Standard: <code>true</code>)</p>
 </li>
 <li>
-<p><code>maxlength</code>: Die maximale Länge der Eingabe. (Standard: 255)</p>
+<p><code>maxlength</code>: Die maximale Länge der Eingabe, (Standard: 255)</p>
 </li>
 <li>
-<p><code>width</code>: Die maximale Breite des Eingabefeldes. (Standard: 100%)</p>
+<p><code>width</code>: Die maximale Breite des Eingabefeldes, (Standard: 100%)</p>
 </li>
 <li>
 <p><code>disabled</code>: Gibt an, ob das Eingabefeld deaktiviert ist. (Standard: <code>false</code>)</p>
 </li>
 <li>
-<p><code>showPrintView</code>: Spezifisches Flag zur Erkennung der Druckansicht. (Standard: <code>basisModel.showPrintView</code>)</p>
+<p><code>showPrintView</code>: Spezifisches Flag zur Erkennung der Druckansicht, (Standard: <code>basisModel.showPrintView</code>)</p>
 </li>
 <li>
 <p><code>tooltip</code>: Tooltip, der über dem Eingabefeld angezeigt wird. (Standard: '')</p>
 </li>
 <li>
-<p><code>globalConfig</code>: Spezifische, globale Konfiguration. (Standard: <code>globalConfigurationModel</code>)</p>
+<p><code>globalConfig</code>: Spezifische, globale Konfiguration, (Standard: <code>globalConfigurationModel</code>)</p>
 </li>
 <li>
 <p><code>charpicker</code>: Gibt an, welche Eingabe für Sonderzeichen verwendet werden soll.
@@ -3389,7 +3519,7 @@ Standardmäßig wird kein Character-Picker verwendet.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>contentRight</code>: Inhalt, der rechts vom Eingabefeld angezeigt wird</p>
+<p><code>contentRight</code>: Inhalt, der rechts vom Eingabefeld angezeigt wird.</p>
 </li>
 </ul>
 </div>
@@ -3405,7 +3535,7 @@ Standardmäßig wird kein Character-Picker verwendet.</p>
 <div class="content">
 <img src="../_images/nutzungsvorgaben/Aktionseingabefeld.png" alt="Aktionseingabefeld">
 </div>
-<div class="title">Abbildung 18. Aktionseingabefeld</div>
+<div class="title">Abbildung 19. Aktionseingabefeld</div>
 </div>
 <div class="paragraph">
 <p>Ein Aktionseingabefeld besitzt folgende notwendige Parameter:</p>
@@ -3413,13 +3543,13 @@ Standardmäßig wird kein Character-Picker verwendet.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>reference</code>: Die Referenz des Objekts.</p>
+<p><code>reference</code>: Die Referenz des Objekts,</p>
 </li>
 <li>
-<p><code>value</code>: Der Wert für das Databinding im Eingabefeld.</p>
+<p><code>value</code>: Der Wert für das Databinding im Eingabefeld,</p>
 </li>
 <li>
-<p><code>action</code>: Die auszulösende Aktion.</p>
+<p><code>action</code>: Die auszulösende Aktion,</p>
 </li>
 <li>
 <p><code>icon</code>: Das anzuzeigendes Icon aus der Icon-Bibliothek.</p>
@@ -3435,16 +3565,16 @@ Standardmäßig wird kein Character-Picker verwendet.</p>
 <p><code>placeholder</code>: Platzhalter, welcher im Eingabefeld angezeigt wird.</p>
 </li>
 <li>
-<p><code>maxlength</code>: Die maximale Länge der Eingabe. (Standard: 20)</p>
+<p><code>maxlength</code>: Die maximale Länge der Eingabe, (Standard: 20)</p>
 </li>
 <li>
-<p><code>iconColor</code>: Farbe des Icons. (Standard: <code>#45484D</code>)</p>
+<p><code>iconColor</code>: Farbe des Icons, (Standard: <code>#45484D</code>)</p>
 </li>
 <li>
 <p><code>tooltip</code>: Tooltip, der über dem Eingabefeld angezeigt wird. (Standard: <code>&#8230;&#8203;</code>)</p>
 </li>
 <li>
-<p><code>mode</code>: [normal|button-only|input-only]. <code>normal</code> für Eingabefeld und Icon aktiv. <code>button-only</code> für nur Icon aktiv. <code>input-only</code> für nur Eingabefeld aktiv. (Standard: <code>normal</code>)</p>
+<p><code>mode</code>: [normal|button-only|input-only]. <code>normal</code> für Eingabefeld und Icon aktiv, <code>button-only</code> für nur Icon aktiv, <code>input-only</code> für nur Eingabefeld aktiv, (Standard: <code>normal</code>)</p>
 </li>
 <li>
 <p><code>disabled</code>: Gibt an, ob das Eingabefeld deaktiviert ist. (Standard: <code>false</code>)</p>
@@ -3463,13 +3593,13 @@ Standardmäßig wird kein Character-Picker verwendet.</p>
 <p><code>required</code>: Gibt an, ob die Eingabe eine Pflichteingabe ist. (Standard: <code>false</code>)</p>
 </li>
 <li>
-<p><code>label</code>: Text für das Label.</p>
+<p><code>label</code>: Text für das Label,</p>
 </li>
 <li>
-<p><code>labelStyleClass</code>: Die CSS-Klasse des Labels. (Standard: <code>col-lg-6</code>)</p>
+<p><code>labelStyleClass</code>: Die CSS-Klasse des Labels, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>inputStyleClass</code>: Die CSS-Klasse des Eingabebereiches. (Standard: <code>col-lg-6</code>)</p>
+<p><code>inputStyleClass</code>: Die CSS-Klasse des Eingabebereiches, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
 <p><code>validationModel</code>: Ein spezifisches Validation-Model, falls benötigt. (Standard: <code>#{validationModel}</code>)</p>
@@ -3503,13 +3633,13 @@ Das Eingabefeld für Geldbeträge:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Ohne Nachkommastelle ist 999999999999999</p>
+<p>Ohne Nachkommastelle ist <code>999999999999999</code>,</p>
 </li>
 <li>
-<p>für 1 Nachkommastelle ist 99999999999999,9</p>
+<p>für 1 Nachkommastelle ist <code>99999999999999,9</code>,</p>
 </li>
 <li>
-<p>für 2 Nachkommastellen ist 9999999999999,99 der maximale Betrag ohne Rundung.</p>
+<p>für 2 Nachkommastellen ist <code>9999999999999,99</code> der maximale Betrag ohne Rundung.</p>
 </li>
 </ul>
 </div>
@@ -3522,7 +3652,7 @@ Das Eingabefeld für Geldbeträge:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>reference</code>: Die Referenz des Objekts.</p>
+<p><code>reference</code>: Die Referenz des Objekts,</p>
 </li>
 <li>
 <p><code>value</code>: Der Wert für das Databinding im Eingabefeld.</p>
@@ -3541,13 +3671,13 @@ Das Eingabefeld für Geldbeträge:</p>
 <p><code>readonly</code>: Gibt an, ob die Darstellung nur lesend erfolgen soll. (Standard: <code>false</code>)</p>
 </li>
 <li>
-<p><code>label</code>: Text für das Label.</p>
+<p><code>label</code>: Text für das Label,</p>
 </li>
 <li>
-<p><code>labelStyleClass</code>: Die CSS-Klasse des Labels. (Standard: <code>col-lg-6</code>)</p>
+<p><code>labelStyleClass</code>: Die CSS-Klasse des Labels,(Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>inputStyleClass</code>: Die CSS-Klasse des Eingabebereiches. (Standard: <code>col-lg-6</code>)</p>
+<p><code>inputStyleClass</code>: Die CSS-Klasse des Eingabebereiches, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
 <p><code>placeholder</code>: Platzhalter, welcher im Eingabefeld angezeigt wird.</p>
@@ -3556,10 +3686,10 @@ Das Eingabefeld für Geldbeträge:</p>
 <p><code>disabled</code>: Gibt an, ob das Eingabefeld deaktiviert ist. (Standard: <code>false</code>)</p>
 </li>
 <li>
-<p><code>maxlength</code>: Die maximale Länge der Eingabe. (Standard: 255)</p>
+<p><code>maxlength</code>: Die maximale Länge der Eingabe, (Standard: 255)</p>
 </li>
 <li>
-<p><code>width</code>: Die maximale Breite des Eingabefeldes. (Standard: 100%)</p>
+<p><code>width</code>: Die maximale Breite des Eingabefeldes, (Standard: 100%)</p>
 </li>
 <li>
 <p><code>tooltip</code>: Tooltip, der über dem Eingabefeld angezeigt wird. (Standard: '')</p>
@@ -3568,16 +3698,16 @@ Das Eingabefeld für Geldbeträge:</p>
 <p><code>validationModel</code>: Ein spezifisches Validation-Model, falls benötigt. (Standard: <code>#{validationModel}</code>)</p>
 </li>
 <li>
-<p><code>globalConfig</code>: Spezifische, globale Konfiguration. (Standard: <code>globalConfigurationModel</code>)</p>
+<p><code>globalConfig</code>: Spezifische, globale Konfiguration, (Standard: <code>globalConfigurationModel</code>)</p>
 </li>
 <li>
-<p><code>onchange</code>: JavaScript-Funktion, die bei Verlassen des Feldes aufgerufen wird</p>
+<p><code>onchange</code>: JavaScript-Funktion, die bei Verlassen des Feldes aufgerufen wird.</p>
 </li>
 <li>
-<p><code>onkeyup</code>: JavaScript-Funktion, die direkt nach einer Eingabe aufgerufen wird</p>
+<p><code>onkeyup</code>: JavaScript-Funktion, die direkt nach einer Eingabe aufgerufen wird.</p>
 </li>
 <li>
-<p><code>decimalplaces</code>: Anzahl der Nachkommastellen. (Standard: 2)</p>
+<p><code>decimalplaces</code>: Anzahl der Nachkommastellen, (Standard: 2)</p>
 </li>
 <li>
 <p><code>alignright</code>: Gibt an, ob der Text innerhalb des Eingabefeldes rechts ausgerichtet sein soll. (Standard: <code>false</code>)</p>
@@ -3596,7 +3726,7 @@ Das Eingabefeld für Geldbeträge:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>reference</code>: Die Referenz des Objekts.</p>
+<p><code>reference</code>: Die Referenz des Objekts,</p>
 </li>
 <li>
 <p><code>value</code>: Der Wert für das Databinding im Eingabefeld.</p>
@@ -3609,7 +3739,7 @@ Das Eingabefeld für Geldbeträge:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>accept</code>: Einschränkung der angenommenen Dateien gemäß ihres MIME-Types</p>
+<p><code>accept</code>: Einschränkung der angenommenen Dateien gemäß ihres MIME-Types,</p>
 </li>
 <li>
 <p><code>required</code>: Gibt an, ob die Eingabe eine Pflichteingabe ist. (Standard: <code>false</code>)</p>
@@ -3618,13 +3748,13 @@ Das Eingabefeld für Geldbeträge:</p>
 <p><code>disabled</code>: Gibt an, ob das Eingabefeld deaktiviert ist. (Standard: <code>false</code>)</p>
 </li>
 <li>
-<p><code>label</code>: Text für das Label.</p>
+<p><code>label</code>: Text für das Label,</p>
 </li>
 <li>
-<p><code>labelStyleClass</code>: Die CSS-Klasse des Labels. (Standard: <code>col-lg-6</code>)</p>
+<p><code>labelStyleClass</code>: Die CSS-Klasse des Labels, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>inputStyleClass</code>: Die CSS-Klasse des Eingabebereiches. (Standard: <code>col-lg-6</code>)</p>
+<p><code>inputStyleClass</code>: Die CSS-Klasse des Eingabebereiches, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
 <p><code>placeholder</code>: Platzhalter, welcher im Eingabefeld angezeigt wird.</p>
@@ -3633,7 +3763,7 @@ Das Eingabefeld für Geldbeträge:</p>
 <p><code>tooltip</code>: Tooltip, der über dem Eingabefeld angezeigt wird. (Standard: '')</p>
 </li>
 <li>
-<p><code>showPrintView</code>: Spezifisches Flag zur Erkennung der Druckansicht. (Standard: <code>basisModel.showPrintView</code>)</p>
+<p><code>showPrintView</code>: Spezifisches Flag zur Erkennung der Druckansicht, (Standard: <code>basisModel.showPrintView</code>)</p>
 </li>
 <li>
 <p><code>validationModel</code>: Ein spezifisches Validation-Model, falls benötigt. (Standard: <code>#{validationModel}</code>)</p>
@@ -3650,13 +3780,13 @@ Das Eingabefeld für Geldbeträge:</p>
 <p>Eine Textbox kann über das HTML-Tag <code>&lt;textarea&gt;</code> mit der CSS-Klasse <code>form-control</code> von Bootstrap eingebunden werden.</p>
 </div>
 <div class="paragraph">
-<p>Text Boxen sehen optisch aus wie Eingabefelder, es können jedoch mehrzeilige Daten eingegeben werden.</p>
+<p>Textboxen sehen optisch aus wie Eingabefelder, es können jedoch mehrzeilige Daten eingegeben werden.</p>
 </div>
 <div id="image-bildtextbox" class="imageblock text-center">
 <div class="content">
 <img src="../_images/nutzungsvorgaben/Textbox.png" alt="Textbox">
 </div>
-<div class="title">Abbildung 19. Textbox</div>
+<div class="title">Abbildung 20. Textbox</div>
 </div>
 <div class="paragraph">
 <p>Für Formulare kann das Tag <code>&lt;isy:formTextarea&gt;</code> verwendet werden.</p>
@@ -3667,7 +3797,7 @@ Das Eingabefeld für Geldbeträge:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>reference</code>: Die Referenz des Objekts.</p>
+<p><code>reference</code>: Die Referenz des Objekts,</p>
 </li>
 <li>
 <p><code>value</code>: Der Wert für das Databinding im Eingabefeld.</p>
@@ -3689,16 +3819,16 @@ Das Eingabefeld für Geldbeträge:</p>
 <p><code>readonly</code>: Gibt an, ob die Darstellung nur lesend erfolgen soll. (Standard: <code>false</code>)</p>
 </li>
 <li>
-<p><code>label</code>: Text für das Label.</p>
+<p><code>label</code>: Text für das Label,</p>
 </li>
 <li>
-<p><code>labelStyleClass</code>: Die CSS-Klasse des Labels. (Standard: <code>col-lg-6</code>)</p>
+<p><code>labelStyleClass</code>: Die CSS-Klasse des Labels, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>inputStyleClass</code>: Die CSS-Klasse des Eingabebereiches. (Standard: <code>col-lg-6</code>)</p>
+<p><code>inputStyleClass</code>: Die CSS-Klasse des Eingabebereiches, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>textareaStyleClass</code>: Die CSS-Klasse der Textbox. (Standard: leer)</p>
+<p><code>textareaStyleClass</code>: Die CSS-Klasse der Textbox, (Standard: leer)</p>
 </li>
 <li>
 <p><code>placeholder</code>: Platzhalter, welcher im Eingabefeld angezeigt wird.</p>
@@ -3707,19 +3837,19 @@ Das Eingabefeld für Geldbeträge:</p>
 <p><code>tooltip</code>: Tooltip, der über dem Eingabefeld angezeigt wird. (Standard: '')</p>
 </li>
 <li>
-<p><code>rows</code>: Anzahl an Zeilen. (Standard: 5)</p>
+<p><code>rows</code>: Anzahl an Zeilen, (Standard: 5)</p>
 </li>
 <li>
-<p><code>cols</code>: Anzahl an Spalten</p>
+<p><code>cols</code>: Anzahl an Spalten,</p>
 </li>
 <li>
-<p><code>maxlength</code>: Die maximale Länge der Eingabe. (Standard: 4000)</p>
+<p><code>maxlength</code>: Die maximale Länge der Eingabe, (Standard: 4000)</p>
 </li>
 <li>
-<p><code>showPrintView</code>: Spezifisches Flag zur Erkennung der Druckansicht. (Standard: <code>basisModel.showPrintView</code>)</p>
+<p><code>showPrintView</code>: Spezifisches Flag zur Erkennung der Druckansicht, (Standard: <code>basisModel.showPrintView</code>)</p>
 </li>
 <li>
-<p><code>validationModel</code>: Ein spezifisches Validation-Model, falls benötigt. (Standard: <code>#{validationModel}</code>)</p>
+<p><code>validationModel</code>: Ein spezifisches Validation-Model, falls diese benötigt wird. (Standard: <code>#{validationModel}</code>)</p>
 </li>
 <li>
 <p><code>globalConfig</code>: Spezifische, globale Konfiguration. (Standard: <code>globalConfigurationModel</code>)</p>
@@ -3742,7 +3872,7 @@ Der Kalender öffnet sich nach einem Klick auf das Icon neben dem Eingabefeld.</
 <div class="ulist">
 <ul>
 <li>
-<p><code>reference</code>: Die Referenz des Objekts.</p>
+<p><code>reference</code>: Die Referenz des Objekts,</p>
 </li>
 <li>
 <p><code>value</code>: Der Wert für das Databinding im Eingabefeld.</p>
@@ -3758,16 +3888,16 @@ Der Kalender öffnet sich nach einem Klick auf das Icon neben dem Eingabefeld.</
 <p><code>required</code>: Gibt an, ob die Eingabe eine Pflichteingabe ist. (Standard: <code>false</code>)</p>
 </li>
 <li>
-<p><code>label</code>: Text für das Label.</p>
+<p><code>label</code>: Text für das Label,</p>
 </li>
 <li>
-<p><code>labelStyleClass</code>: Die CSS-Klasse des Labels. (Standard: <code>col-lg-6</code>)</p>
+<p><code>labelStyleClass</code>: Die CSS-Klasse des Labels, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>inputStyleClass</code>: Die CSS-Klasse des Eingabebereiches. (Standard: <code>col-lg-6</code>)</p>
+<p><code>inputStyleClass</code>: Die CSS-Klasse des Eingabebereiches, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>inputFieldClass</code>: Die CSS-Klasse des Eingabefeldes. (Standard: leer)</p>
+<p><code>inputFieldClass</code>: Die CSS-Klasse des Eingabefeldes, (Standard: leer)</p>
 </li>
 <li>
 <p><code>placeholder</code>: Platzhalter, welcher im Eingabefeld angezeigt wird. (Standard: <code>TT.MM.JJJJ</code>)</p>
@@ -3776,13 +3906,13 @@ Der Kalender öffnet sich nach einem Klick auf das Icon neben dem Eingabefeld.</
 <p><code>readonly</code>: Gibt an, ob die Darstellung nur lesend erfolgen soll. (Standard: <code>false</code>)</p>
 </li>
 <li>
-<p><code>language</code>: Angezeigte Sprache. (Standard: <code>de</code>)</p>
+<p><code>language</code>: Angezeigte Sprache, (Standard: <code>de</code>)</p>
 </li>
 <li>
-<p><code>dateformat</code>: Datumsformat. (Standard: <code>dd.mm.yyyy</code>)</p>
+<p><code>dateformat</code>: Datumsformat, (Standard: <code>dd.mm.yyyy</code>)</p>
 </li>
 <li>
-<p><code>inputmask</code>: Eingabemaske</p>
+<p><code>inputmask</code>: Eingabemaske,</p>
 </li>
 <li>
 <p><code>inputmaskInsertMode</code>: Gibt an, ob der Text bei der Eingabe überschrieben wird. (Standard: <code>true</code>)</p>
@@ -3820,13 +3950,13 @@ Für Formulareingaben existiert das Tag <code>&lt;isy:formSelectOneDropdown&gt;<
 <div class="content">
 <img src="../_images/nutzungsvorgaben/Dropdown_Menue_Flyout.png" alt="Dropdown Menue Flyout">
 </div>
-<div class="title">Abbildung 20. Dropdown Menü (innerhalb einer Form)</div>
+<div class="title">Abbildung 21. Dropdown Menü (innerhalb einer Form)</div>
 </div>
 <div id="image-demopanelselectOneDropdown" class="imageblock text-center">
 <div class="content">
 <img src="../_images/nutzungsvorgaben/demopanel-selectOneDropdown.png" alt="demopanel selectOneDropdown">
 </div>
-<div class="title">Abbildung 21. WebGui-Demoanwendung: Dropdown Menü (außerhalb einer Form)</div>
+<div class="title">Abbildung 22. Demo-Anwendung: Dropdown Menü (außerhalb einer Form)</div>
 </div>
 <div class="paragraph">
 <p>Folgende Parameter sind Pflicht:</p>
@@ -3876,7 +4006,7 @@ Für Formulareingaben existiert das Tag <code>&lt;isy:formSelectOneDropdown&gt;<
 </ul>
 </div>
 <div class="paragraph">
-<p>Für das Bedienelement `&lt;isy:formSelectOneDropdown /&gt;`gibt es zusätzlich die folgenden Parameter:</p>
+<p>Für das Bedienelement <code>&lt;isy:formSelectOneDropdown /&gt;</code> gibt es zusätzlich die folgenden Parameter:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3915,7 +4045,7 @@ Tabs werden häufig dazu verwendet, um Eigenschaften eines Objekts in inhaltlich
 <div class="content">
 <img src="../_images/nutzungsvorgaben/Tabs_Beispiel.png" alt="Tabs Beispiel">
 </div>
-<div class="title">Abbildung 22. Tabs</div>
+<div class="title">Abbildung 23. Tabs</div>
 </div>
 <div class="paragraph">
 <p>Tabs werden über die Tags <code>&lt;isy:tabGroup&gt;</code>, <code>&lt;isy:tabHeader&gt;</code> und <code>&lt;isy:tabContent&gt;</code> eingebunden.
@@ -3962,7 +4092,7 @@ Im Folgenden ein Beispiel:</p>
 <ul>
 <li>
 <p><code>tabGroupId</code>: Das Widget tabGroup.xhtml ist das Parent-Widget von tabHeader.xhtml.
-Das Attribut tabGroupId wird zwar in tabGroup.xhtml nicht implementiert, ist aber als composite:attribute Deklaration unbedingt erforderlich, da von tabHeader.xhtml über cc.parent.attrs.tabGroupId darauf zugegriffen wird!</p>
+Das Attribut tabGroupId wird zwar in tabGroup.xhtml nicht implementiert, ist aber als <code>composite:attribute</code> Deklaration unbedingt erforderlich, da von tabHeader.xhtml über cc.parent.attrs.tabGroupId darauf zugegriffen wird!</p>
 </li>
 <li>
 <p><code>defaultTab</code>: Name des Default-Tabs, der beim ersten Anzeigen des Elements aktiv ist.</p>
@@ -3974,7 +4104,7 @@ Das Attribut tabGroupId wird zwar in tabGroup.xhtml nicht implementiert, ist abe
 <p><code>globalTabContentRefs</code>: Die Liste an Namen der Tabs, welche beim Anzeigen des globalen Tabs auch angezeigt werden sollen.</p>
 </li>
 <li>
-<p><code>execute</code>: AJAX: Welcher Template-Seitenbereich ausgeführt werden soll.(Standard: <code>@form</code>)</p>
+<p><code>execute</code>: AJAX: Welcher Template-Seitenbereich ausgeführt werden soll. (Standard: <code>@form</code>)</p>
 </li>
 <li>
 <p><code>render</code>: AJAX: Welcher Template-Seitenbereich gerendert werden soll. (Standard: <code>@form</code>)</p>
@@ -4102,7 +4232,7 @@ Wenn das Vorladen gewünscht ist, müssen beide Werte explizit auf <code>true</c
 <div class="content">
 <img src="../_images/nutzungsvorgaben/Liste_mit_Listenkopf.png" alt="Liste mit Listenkopf">
 </div>
-<div class="title">Abbildung 23. Liste mit Listenkopf</div>
+<div class="title">Abbildung 24. Liste mit Listenkopf</div>
 </div>
 <div class="paragraph">
 <p>Für eine Liste mit Einfachauswahl gibt es die Tags <code>&lt;isy:selectOneList&gt;</code> bzw. <code>&lt;isy:formSelectOneList&gt;</code>.
@@ -4257,7 +4387,7 @@ Für eine Liste mit Mehrfachauswahl stehen die Tags <code>&lt;isy:selectManyList
 </ul>
 </div>
 <div class="paragraph">
-<p>Falls JavaScript nicht aktiviert ist, dann wird statt dem List Picker ein einfaches <a href="#dropdown-menue">Dropdown Menü</a> angezeigt.</p>
+<p>Falls JavaScript nicht aktiviert ist, dann wird statt des List Pickers ein einfaches <a href="#dropdown-menue">Dropdown Menü</a> angezeigt.</p>
 </div>
 <div class="paragraph">
 <p>Beispiel für die Integration eines List-Pickers (ohne Ajax):</p>
@@ -4281,7 +4411,7 @@ Für eine Liste mit Mehrfachauswahl stehen die Tags <code>&lt;isy:selectManyList
 Die Filterung der Items geschieht automatisch über JavaScript.
 Falls die Liste an Items zu groß wird, besteht die Möglichkeit die Auswahl über AJAX nachzuladen.
 Dazu können die Attribute <code>ajaxLoading="true"</code> und <code>ajaxForm="gruppeListpickerAjaxForm"</code> ergänzt werden.
-Zusätzlich muss im View State das entsprechende Form Element ergänzt werden:</p>
+Zusätzlich muss im View State das entsprechende Form-Element ergänzt werden:</p>
 </div>
 <div id="listing-listpickerAjaxForm" class="listingblock">
 <div class="title">Listing 52. ListpickerAjaxForm</div>
@@ -4343,22 +4473,22 @@ Zweitens muss der Wert des Parameters sich in der Konfiguration des HandlerServl
 <div id="listing-beispielEinbindungServlet" class="listingblock">
 <div class="title">Listing 54. Beispielhafte HandlerServlet-Konfiguration</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">    // Bean, die AbstractListpickerProviderRequestHandler implementiert
-    @Bean
-    ListpickerProviderRequestHandler listpickerProviderRequestHandler() {
-        return new ListpickerProviderRequestHandler();
-    }
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Bean, die AbstractListpickerProviderRequestHandler implementiert
+@Bean
+ListpickerProviderRequestHandler listpickerProviderRequestHandler() {
+    return new ListpickerProviderRequestHandler();
+}
 
-    //Registrierung des Servlets
-    @Bean
-    public ServletRegistrationBean&lt;HttpRequestHandlerServlet&gt; listPickerServletBean() {
-        ServletRegistrationBean&lt;HttpRequestHandlerServlet&gt; bean = new ServletRegistrationBean&lt;&gt;(
-            new HttpRequestHandlerServlet(), "/app/listpicker/*"
-        );
-        bean.setName("listpickerProviderRequestHandler");
-        bean.setLoadOnStartup(1);
-        return bean;
-    }</code></pre>
+//Registrierung des Servlets
+@Bean
+public ServletRegistrationBean&lt;HttpRequestHandlerServlet&gt; listPickerServletBean() {
+    ServletRegistrationBean&lt;HttpRequestHandlerServlet&gt; bean = new ServletRegistrationBean&lt;&gt;(
+        new HttpRequestHandlerServlet(), "/app/listpicker/*"
+    );
+    bean.setName("listpickerProviderRequestHandler");
+    bean.setLoadOnStartup(1);
+    return bean;
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -4412,13 +4542,13 @@ Die Tabelle besteht aus mehreren Informationsspalten, die zur Sortierung verwend
 <div class="content">
 <img src="../_images/nutzungsvorgaben/Tabelle_Einfuehrung.png" alt="Tabelle Einfuehrung">
 </div>
-<div class="title">Abbildung 24. Tabelle</div>
+<div class="title">Abbildung 25. Tabelle</div>
 </div>
 <div id="image-interaktivezeilen" class="imageblock text-center">
 <div class="content">
 <img src="../_images/nutzungsvorgaben/Tabelle_Zustaende_Zeilen.png" alt="Tabelle Zustaende Zeilen">
 </div>
-<div class="title">Abbildung 25. Tabelle – Zustände interaktiver Zeilen</div>
+<div class="title">Abbildung 26. Tabelle – Zustände interaktiver Zeilen</div>
 </div>
 <div class="paragraph">
 <p>Die Umsetzung der Tabelle unterscheidet sich grundsätzlich zu Widgets wie der von JSF bereitgestellten <code>&lt;h:dataTable&gt;</code>. Die <code>&lt;isy:dataTable&gt;</code> ist näher am Layout einer eigentlichen Tabelle aufgebaut und dadurch flexibler nutzbar (z.B. dynamische Anzahl an Spalten).
@@ -4591,7 +4721,7 @@ Ein Tag entspricht dabei einem Titel einer Spalte.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>name</code>: Header-Name / Spaltenüberschrift</p>
+<p><code>name</code>: Header-Name / Spaltenüberschrift,</p>
 </li>
 <li>
 <p><code>sortable</code>: Gibt an, ob die Spalte sortierbar ist. (Standard: <code>false</code>)</p>
@@ -4600,16 +4730,16 @@ Ein Tag entspricht dabei einem Titel einer Spalte.</p>
 <p><code>hidden</code>: Gibt an, ob die Spalte ausgeblendet ist. (Standard: <code>false</code>)</p>
 </li>
 <li>
-<p><code>sortProperty</code>: Attribut der Datensätze (Items), nach dem sortiert wird</p>
+<p><code>sortProperty</code>: Attribut der Datensätze (Items), nach dem sortiert wird.</p>
 </li>
 <li>
-<p><code>width</code>: Breite der Spalte</p>
+<p><code>width</code>: Breite der Spalte,</p>
 </li>
 <li>
 <p><code>title</code>: Tooltip, der über der Spalte angezeigt wird. (Standard: '')</p>
 </li>
 <li>
-<p><code>align</code>: horizontale Ausrichtung der Spaltenüberschrift</p>
+<p><code>align</code>: horizontale Ausrichtung der Spaltenüberschrift.</p>
 </li>
 </ul>
 </div>
@@ -4619,7 +4749,7 @@ Ein Tag entspricht dabei einem Titel einer Spalte.</p>
 <div class="paragraph">
 <p>Die Zeilen der Tabelle werden mit dem Tag <code>&lt;isy:dataTableRows&gt;</code> definiert.
 Hier steht der eigentliche Inhalt der Datatable.
-Dieses Tag sollte nach den Headern in den Body der Data-Table geschrieben werden.</p>
+Dieses Tag sollte nach den Headern in den Body der Datatable geschrieben werden.</p>
 </div>
 <div class="paragraph">
 <p>Folgende optionale Parameter sind zulässig:</p>
@@ -4673,13 +4803,13 @@ Die Reihenfolge der Spalten werden durch die Definition des Tabellen-Headers fes
 <p><code>hidden</code>: Gibt an, ob die Spalte angezeigt werden soll. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
 </li>
 <li>
-<p><code>id</code>: Identifier.</p>
+<p><code>id</code>: Identifier,</p>
 </li>
 <li>
-<p><code>sortData</code>: Optionales Feld für die clientseitige Sortierung, falls nicht nach dem Inhalt sortieren werden soll, z.B. bei Datum</p>
+<p><code>sortData</code>: Optionales Feld für die clientseitige Sortierung, falls nicht nach dem Inhalt (z.B. beim Datum) sortieren werden soll.</p>
 </li>
 <li>
-<p><code>filterData</code>: Damit Client- und Server-Mode konsistent sind, sollte hier die sortProperty des Headers angegeben werden</p>
+<p><code>filterData</code>: Damit Client- und Server-Mode konsistent sind, sollte hier die sortProperty des Headers angegeben werden.</p>
 </li>
 <li>
 <p><code>align</code>: Gibt die horizontale Ausrichtung des Inhalts der Tabellenzelle an.
@@ -4781,14 +4911,14 @@ Spalten, die nicht gefiltert werden sollen (bzw. können), werden mittels des Ta
 <div class="content">
 <img src="../_images/nutzungsvorgaben/no-js.png" alt="no js">
 </div>
-<div class="title">Abbildung 26. Kein Javascript</div>
+<div class="title">Abbildung 27. Kein Javascript</div>
 </div>
 <div class="paragraph">
 <p>Die Komfortfunktionen der Filter-Zeile können ohne JavaScript nicht zur Verfügung gestellt werden.
 Die Filter-Zeile ist in diesem Fall nicht vorhanden und wird auch nicht angezeigt.</p>
 </div>
 <div class="paragraph">
-<p>Die Komponente &lt;isy:dataTableFilter&gt; hat folgende optionale Parameter:</p>
+<p>Die Komponente <code>&lt;isy:dataTableFilter&gt;</code> hat folgende optionale Parameter:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -4796,7 +4926,8 @@ Die Filter-Zeile ist in diesem Fall nicht vorhanden und wird auch nicht angezeig
 <p><code>property</code>: Die Property, die gefiltert werden soll, i.A. gleich zur sortProperty im zugehörigen Header, falls nicht angegeben wird einfach eine Platzhalter-Spalte generiert. (Standard: ``)</p>
 </li>
 <li>
-<p><code>dropdown</code>: Gibt an, ob eine Auswahlliste zur Filterung angezeigt werden soll, falls ja müssen die Einträge mittels selectItem(s) angegeben werden. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
+<p><code>dropdown</code>: Gibt an, ob eine Auswahlliste zur Filterung angezeigt werden soll.
+Falls ja, müssen die Einträge mittels selectItem(s) angegeben werden. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
 </li>
 <li>
 <p><code>clearFilterTooltip</code>: Tooltip, der über dem Icon "clear-filter" angezeigt werden soll. (Standard: <code>Filter aufheben</code>)</p>
@@ -4804,7 +4935,7 @@ Die Filter-Zeile ist in diesem Fall nicht vorhanden und wird auch nicht angezeig
 </ul>
 </div>
 <div class="paragraph">
-<p>&lt;isy:dataTableFilterClearer&gt; -  Tooltip, der über dem Icon "clear-all-filter" angezeigt werden soll.</p>
+<p><code>&lt;isy:dataTableFilterClearer&gt;</code> -  Tooltip, der über dem Icon "clear-all-filter" angezeigt werden soll.</p>
 </div>
 <div class="paragraph">
 <p>Die Komponente hat folgende optionale Parameter:</p>
@@ -4833,13 +4964,13 @@ Die Spalte <code>Nachname</code> ist abwärts-sortiert, dargestellt durch das na
 <div class="content">
 <img src="../_images/nutzungsvorgaben/demopanel-dataTableHeader.png" alt="demopanel dataTableHeader">
 </div>
-<div class="title">Abbildung 27. Tabelle – Sortierungs-Indikator im Tabellenkopf</div>
+<div class="title">Abbildung 28. Tabelle – Sortierungs-Indikator im Tabellenkopf</div>
 </div>
 <div class="paragraph">
 <p>Durch Angabe von <code>sortable="true"</code> und dem Attribut <code>sortProperty</code> werden automatisch Buttons und Symbole zur Sortierung hinzugefügt.
 Beim Initialisieren des Models muss der Operationsmodus (<code>SERVER</code> oder <code>CLIENT</code>) gesetzt werden: <code>model.setMode(DatatableOperationMode.SERVER)</code>.
 Im Modus <code>CLIENT</code> erfolgt die Sortierung automatisch per JavaScript.
-Im Modus <code>SERVER</code> wird die Methode <code>DataTableController.updateDisplayItems(&#8230;&#8203;)</code> aufgerufen, welche die Tabelleneinträge filtert sowie sortiert und anschließend seitenweise anzeigt.</p>
+Im Modus <code>SERVER</code> wird die Methode <code>DataTableController.updateDisplayItems(&#8230;&#8203;)</code> aufgerufen, welche die Tabelleneinträge filtert, sortiert und anschließend seitenweise anzeigt.</p>
 </div>
 <div id="listing-dataTableHeader2" class="listingblock">
 <div class="title">Listing 60. Beispiel für dataTableHeader</div>
@@ -4882,19 +5013,19 @@ Im Modus <code>SERVER</code> wird die Methode <code>DataTableController.updateDi
 <div class="content">
 <img src="../_images/nutzungsvorgaben/Tabelle_Mehrfachselektion.png" alt="Tabelle Mehrfachselektion">
 </div>
-<div class="title">Abbildung 28. Tabelle – Mehrfachselektion über STRG Taste &amp; Maus</div>
+<div class="title">Abbildung 29. Tabelle – Mehrfachselektion über STRG Taste &amp; Maus</div>
 </div>
 <div id="image-tabellemehrfachselektioncheckbox" class="imageblock text-center">
 <div class="content">
 <img src="../_images/nutzungsvorgaben/Tabelle_Mehrfach_Checkbox.png" alt="Tabelle Mehrfach Checkbox">
 </div>
-<div class="title">Abbildung 29. Tabelle – Mehrfachselektion über Checkboxen</div>
+<div class="title">Abbildung 30. Tabelle – Mehrfachselektion über Checkboxen</div>
 </div>
 <div id="image-textlinkkennzeichen" class="imageblock text-center">
 <div class="content">
 <img src="../_images/nutzungsvorgaben/Textlink_Kennzeichnung_Objekt.png" alt="Textlink Kennzeichnung Objekt">
 </div>
-<div class="title">Abbildung 30. Textlink zur Kennzeichnung eines Objektes</div>
+<div class="title">Abbildung 31. Textlink zur Kennzeichnung eines Objektes</div>
 </div>
 </div>
 <div class="sect3">
@@ -4908,7 +5039,7 @@ Um dem Benutzer den Umgang mit solchen Tabellen zu vereinfachen, werden zunächs
 <div class="content">
 <img src="../_images/nutzungsvorgaben/Tabelle_Button_MehrAnzeigen.png" alt="Tabelle Button MehrAnzeigen">
 </div>
-<div class="title">Abbildung 31. Tabelle mit <em>Mehr anzeigen</em> Button</div>
+<div class="title">Abbildung 32. Tabelle mit "mehr zeigen" Button</div>
 </div>
 <div class="paragraph">
 <p>Die Implementierung einer Paginierung erfolgt über das Facet <code>&lt;f:tablePagination&gt;</code>, das Tag <code>&lt;t:dataTablePaginator&gt;</code> und das dazugehörige <code>DataTablePaginationModel</code>.
@@ -5008,9 +5139,6 @@ Der Benutzer kann beliebige Optionen auswählen.</p>
 <p>Eine einzelne Checkbox wird über das Tag <code>&lt;isy:selectBooleanCheckbox&gt;</code> eingebunden.</p>
 </div>
 <div class="paragraph">
-<p>Eine einzelne Checkbox wird über das Tag <code>&lt;isy:selectBooleanCheckbox&gt;</code> eingebunden.</p>
-</div>
-<div class="paragraph">
 <p>Die Komponente besitzt folgende notwendige Parameter:</p>
 </div>
 <div class="ulist">
@@ -5044,7 +5172,7 @@ Der Benutzer kann beliebige Optionen auswählen.</p>
 <p><code>fourEyesMode</code>: 4 Augen Prinzip Mode (locked, unlock)</p>
 </li>
 <li>
-<p><code>fourEyesLastValue</code>: 4 Augen Prinzip Letzter Wert</p>
+<p><code>fourEyesLastValue</code>: 4 Augen Prinzip letzter Wert</p>
 </li>
 </ul>
 </div>
@@ -5087,10 +5215,10 @@ Realisiert über Select-Items.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>reference</code>: Die Referenz des Objekts.</p>
+<p><code>reference</code>: Die Referenz des Objekts,</p>
 </li>
 <li>
-<p><code>value</code>: Der Wert für das Databinding im Eingabefeld.</p>
+<p><code>value</code>: Der Wert für das Databinding im Eingabefeld,</p>
 </li>
 <li>
 <p><code>disabled</code>: Gibt an, ob die Checkbox deaktiviert ist oder nicht. (Standard: <code>false</code>)</p>
@@ -5107,22 +5235,22 @@ Realisiert über Select-Items.</p>
 Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 </li>
 <li>
-<p><code>label</code>: Der Text für das Label.</p>
+<p><code>label</code>: Der Text für das Label,</p>
 </li>
 <li>
-<p><code>labelRight</code>: Der Text für das Label rechts daneben.</p>
+<p><code>labelRight</code>: Der Text für das Label rechts daneben,</p>
 </li>
 <li>
-<p><code>labelStyleClass</code>: Die CSS-Klasse für das Label. (Standard: <code>col-lg-6</code>)</p>
+<p><code>labelStyleClass</code>: Die CSS-Klasse für das Label, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>inputStyleClass</code>: Die CSS-Klasse für den Eingabebereich. (Standard: <code>col-lg-6</code>)</p>
+<p><code>inputStyleClass</code>: Die CSS-Klasse für den Eingabebereich, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
 <p><code>required</code>: Gibt an, ob die Eingabe eine Pflichteingabe ist. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
 </li>
 <li>
-<p><code>optional</code>: Gibt an, ob die Eingabe ein Optionale-Pflichteingabe ist (blaues Sternchen). (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
+<p><code>optional</code>: Gibt an, ob die Eingabe ein optionale Pflichteingabe ist (blaues Sternchen). (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
 </li>
 <li>
 <p><code>validationModel</code>: Ein spezifisches Validation-Model, falls benötigt. (Standard: <code>#{validationModel}</code>)</p>
@@ -5131,7 +5259,7 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 <p><code>globalConfig</code>: Eine spezifische globale Konfiguration, falls benötigt. (Standard: <code>#{globalConfigurationModel}</code>)</p>
 </li>
 <li>
-<p><code>valueChangeListener</code>: Value Change Listener</p>
+<p><code>valueChangeListener</code>: Value Change Listener.</p>
 </li>
 </ul>
 </div>
@@ -5146,7 +5274,7 @@ Der Benutzer kann also nur eine der Optionen auswählen.</p>
 <div class="content">
 <img src="../_images/nutzungsvorgaben/RadioButton_Normal_Disabled.png" alt="RadioButton Normal Disabled">
 </div>
-<div class="title">Abbildung 32. Radio Button – Darstellungsbeispiel IE 9</div>
+<div class="title">Abbildung 33. Radio Button – Darstellungsbeispiel IE 9</div>
 </div>
 <div class="paragraph">
 <p>Ein Radio Button wird über das Tag <code>&lt;isy:selectOneRadio&gt;</code> (bzw. <code>&lt;isy:selectOneRadioInline&gt;</code>) und <code>&lt;isy:formSelectOneRadio&gt;</code> eingebunden.</p>
@@ -5161,10 +5289,10 @@ Die Komponente besitzt folgende notwendige Parameter:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>value</code>: Der Wert der Auswahl für das Data-Binding</p>
+<p><code>value</code>: Der Wert der Auswahl für das Data-Binding,</p>
 </li>
 <li>
-<p><code>selectItems</code>: Liste der auszuwählenden Werte, den Select-Items.
+<p><code>selectItems</code>: Liste der auszuwählenden Werte den Select-Items.
 Jedes Item entspricht einem Radio-Button.</p>
 </li>
 </ul>
@@ -5191,7 +5319,7 @@ Jedes Item entspricht einem Radio-Button.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>value</code>: Der Wert der Auswahl für das Data-Binding</p>
+<p><code>value</code>: Der Wert der Auswahl für das Data-Binding,</p>
 </li>
 <li>
 <p><code>selectItems</code>: Liste der auszuwählenden Werte, den Select-Items.
@@ -5221,7 +5349,7 @@ Jedes Item entspricht einem Radio-Button.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>value</code>: Der Wert der Auswahl für das Data-Binding.</p>
+<p><code>value</code>: Der Wert der Auswahl für das Data-Binding,</p>
 </li>
 <li>
 <p><code>selectItems</code>: Liste der auszuwählenden Werte, den Select-Items. Jedes Item entspricht einem Radio-Button.</p>
@@ -5247,19 +5375,19 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 <p><code>disabled</code>: Gibt an, ob die Darstellung nur lesend erfolgen soll. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
 </li>
 <li>
-<p><code>label</code>: Der Text für das Label.</p>
+<p><code>label</code>: Der Text für das Label,</p>
 </li>
 <li>
-<p><code>labelStyleClass</code>: Die CSS-Klasse für das Label. (Standard: <code>col-lg-6</code>)</p>
+<p><code>labelStyleClass</code>: Die CSS-Klasse für das Label, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>inputStyleClass</code>: Die CSS-Klasse für den Eingabebereich. (Standard: <code>col-lg-6</code>)</p>
+<p><code>inputStyleClass</code>: Die CSS-Klasse für den Eingabebereich, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>inlineInputStyleClass</code>: Die CSS-Klasse für den Eingabebereich eines einzelnen Inline-Radio-Buttons. (Standard: ``)</p>
+<p><code>inlineInputStyleClass</code>: Die CSS-Klasse für den Eingabebereich eines einzelnen Inline-Radio-Button, (Standard: ``)</p>
 </li>
 <li>
-<p><code>required</code>: Ob die Eingabe eine Pflichteingabe ist. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
+<p><code>required</code>: Gibt an, ob die Eingabe eine Pflichteingabe ist. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
 </li>
 <li>
 <p><code>validationModel</code>: Ein spezifisches Validation-Model, falls benötigt. (Standard: <code>#{validationModel}</code>)</p>
@@ -5268,7 +5396,7 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 <p><code>globalConfig</code>: Eine spezifische globale Konfiguration, falls benötigt. (Standard: <code>#{globalConfigurationModel}</code>)</p>
 </li>
 <li>
-<p><code>valueChangeListener</code>: Value Change Listener</p>
+<p><code>valueChangeListener</code>: Value Change Listener.</p>
 </li>
 </ul>
 </div>
@@ -5387,7 +5515,7 @@ Ein Anwender sieht den jeweiligen Eintrag, sobald er mindestens eine der benöti
 <div class="content">
 <img src="../_images/nutzungsvorgaben/horizontale-navigation-submenu.png" alt="horizontale navigation submenu" width="350">
 </div>
-<div class="title">Abbildung 33. Navigation mit ausgeklapptem Flyout Menü</div>
+<div class="title">Abbildung 34. Navigation mit ausgeklapptem Flyout Menü</div>
 </div>
 <div class="paragraph">
 <p>Das folgende Beispiel zeigt, wie die Navigationsleiste um einen weiteren Eintrag samt Flyout Menü erweitert werden könnte:</p>
@@ -5461,13 +5589,13 @@ Weiterhin kann auf einer Applikationsseite eine individuelle Linksnavigation man
 <div class="content">
 <img src="../_images/nutzungsvorgaben/Quicklinks_LetzteObjekte.png" alt="Quicklinks LetzteObjekte">
 </div>
-<div class="title">Abbildung 34. Quicklinks unterhalb der Linksnavigation</div>
+<div class="title">Abbildung 35. Quicklinks unterhalb der Linksnavigation</div>
 </div>
 <div id="image-quicklinksaufdashboard" class="imageblock text-center">
 <div class="content">
 <img src="../_images/nutzungsvorgaben/Quicklinks_Wiedervorlage.png" alt="Quicklinks Wiedervorlage">
 </div>
-<div class="title">Abbildung 35. Quicklinks auf Dashboard</div>
+<div class="title">Abbildung 36. Quicklinks auf Dashboard</div>
 </div>
 <div class="paragraph">
 <p>Quicklinks werden durch den Controller <code>QuicklinksController</code> und das Model <code>QuicklinksModel</code> realisiert.
@@ -5543,7 +5671,7 @@ In diesem Breadcrumb wird der Pfad zum aktuellen Element angezeigt (<a href="#im
 <div class="content">
 <img src="../_images/nutzungsvorgaben/breadcrumb.png" alt="breadcrumb">
 </div>
-<div class="title">Abbildung 36. Breadcrumb in der Titelzeile der Detailseite der Applikation</div>
+<div class="title">Abbildung 37. Breadcrumb in der Titelzeile der Detailseite der Applikation</div>
 </div>
 <div class="paragraph">
 <p>Die angezeigten Daten werden nicht automatisch angezeigt, sondern müssen programmatisch gesetzt werden.
@@ -5647,7 +5775,7 @@ Das <a href="#listing-hilfe-flow">Ausschalten des Hilfe-Buttons in einem Flow</a
 <div class="paragraph">
 <p>Ein Toggle-Filter ist eine Tabellen-Toolbar, mit der durch einen Klick auf einen Button eine Liste
 von Objekten oder Formularen nach bestimmten vordefinierten Kriterien eingeschränkt werden kann.
-Der Filter wird über das Tag <code>&lt;isy:toggleFilter&gt;</code> eingebunden und die einzelnen Filter-Optionen sollten als &lt;f:selectItem&gt; angegeben werden.</p>
+Der Filter wird über das Tag <code>&lt;isy:toggleFilter&gt;</code> eingebunden und die einzelnen Filter-Optionen sollten als <code>&lt;f:selectItem&gt;</code> angegeben werden.</p>
 </div>
 <div class="paragraph">
 <p>Die Komponente besitzt folgende notwendige Parameter:</p>
@@ -5692,7 +5820,7 @@ Der Filter wird über das Tag <code>&lt;isy:toggleFilter&gt;</code> eingebunden 
 Hierbei werden Objekte von einer Quellliste in eine Zielliste übertragen.</p>
 </div>
 <div class="paragraph">
-<p>Browse and Collect kann über das Tag <code>&lt;isy:browseAndCollect&gt;</code> (bzw. <code>&lt;isy:formBrowseAndCollect&gt;</code>) eingebunden werden.</p>
+<p>Browse &amp; Collect kann über das Tag <code>&lt;isy:browseAndCollect&gt;</code> (bzw. <code>&lt;isy:formBrowseAndCollect&gt;</code>) eingebunden werden.</p>
 </div>
 <div class="paragraph">
 <p>Folgende Parameter sind für <code>&lt;isy:browseAndCollect&gt;</code> verpflichtend:</p>
@@ -5738,7 +5866,7 @@ Hierbei werden Objekte von einer Quellliste in eine Zielliste übertragen.</p>
 <p><code>browsecollectStyleClass</code>: Die CSS-Klasse für die Komponente.</p>
 </li>
 <li>
-<p><code>size</code>: Dieses Attribut wird im Sinne von bootstrap-selectlist.js interpretiert, d.h. es gibt die Anzahl der Zeilen die sichtbar sind an.</p>
+<p><code>size</code>: Dieses Attribut wird im Sinne von <code>bootstrap-selectlist.js</code> interpretiert, d.h. es gibt die Anzahl der Zeilen, die sichtbar sind, an.</p>
 </li>
 <li>
 <p><code>globalConfig</code>: Eine spezifische globale Konfiguration, falls notwendig. (Standard: <code>#{globalConfigurationModel}</code>)</p>
@@ -5773,7 +5901,7 @@ Zum Beispiel kann eine Liste von Objekten in einer Tabelle (Master) dargestellt 
 Die dazugehörigen Informationen (Detail) werden je nach Layout in einem Bereich darunter oder daneben angezeigt.</p>
 </div>
 <div class="paragraph">
-<p>Die Master-Detail Ansicht kann durch die Nutzung von einfachen Elementen (Tabelle, Buttons, bedingtes Rendern (<code>ui:fragment</code>)) umgesetzt werden.</p>
+<p>Die Master-Detail-Ansicht kann durch die Nutzung von einfachen Elementen (Tabelle, Buttons, bedingtes Rendern (<code>ui:fragment</code>)) umgesetzt werden.</p>
 </div>
 </div>
 </div>
@@ -5840,7 +5968,8 @@ Das Tag besitzt folgende Parameter:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>headerPanel</code>: Gibt an, ob die Gruppe als Container für den Header des Inhaltsbereichs dient; falls ja werden entsprechende CSS-Klassen für das Layouting eingebunden. (Standard: <code>false</code>, Typ: <code>java.lang.Boolean</code>)</p>
+<p><code>headerPanel</code>: Gibt an, ob die Gruppe als Container für den Header des Inhaltsbereichs dient.
+Falls ja, werden entsprechende CSS-Klassen für das Layouting eingebunden. (Standard: <code>false</code>, Typ: <code>java.lang.Boolean</code>)</p>
 </li>
 </ul>
 </div>
@@ -5855,26 +5984,28 @@ Um ein einfaches Suchformular umzusetzen, genügt z.B. folgender Code:</p>
 <div id="listing-bspFormularumsetzung" class="listingblock">
 <div class="title">Listing 73. Beispiel für Formularumsetzung</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;div class="form-horizontal"&gt;
-  &lt;div class="row"&gt;
-    &lt;div class="col-lg-6"&gt;
-      &lt;isy:formInput reference="vorname" /&gt;
-      &lt;isy:formInput reference="nachname" /&gt;
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;div&gt;
+    &lt;div class="form-horizontal"&gt;
+      &lt;div class="row"&gt;
+        &lt;div class="col-lg-6"&gt;
+          &lt;isy:formInput reference="vorname" /&gt;
+          &lt;isy:formInput reference="nachname" /&gt;
+        &lt;/div&gt;
+        &lt;div class="col-lg-6"&gt;
+          &lt;isy:formInput reference="geburtsort" /&gt;
+          &lt;isy:formSelectOneDropdown reference="geschlecht" /&gt;
+          &lt;isy:formListpicker reference="staatsangehoerigkeit" /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class="col-lg-6"&gt;
-      &lt;isy:formInput reference="geburtsort" /&gt;
-      &lt;isy:formSelectOneDropdown reference="geschlecht" /&gt;
-      &lt;isy:formListpicker reference="staatsangehoerigkeit" /&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
 
-...
+    &lt;!-- ... --&gt;
 
-&lt;isy:buttonRow alignRight="true"&gt;
-  &lt;isy:button id="suchen" action="suchen" value="#{...}" /&gt;
-  &lt;isy:button id="suchfelderLeeren" action="suchfelderLeeren" value="#{...}" /&gt;
-&lt;/isy:buttonRow&gt;</code></pre>
+    &lt;isy:buttonRow alignRight="true"&gt;
+      &lt;isy:button id="suchen" action="suchen" value="#{...}" /&gt;
+      &lt;isy:button id="suchfelderLeeren" action="suchfelderLeeren" value="#{...}" /&gt;
+    &lt;/isy:buttonRow&gt;
+&lt;/div&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -5892,7 +6023,7 @@ Die einzelnen Formularkomponenten sind zusammen mit ihren jeweiligen Bedieneleme
 </div>
 <div class="paragraph">
 <p>In den Formularen kann durch die Verwendung von <code>&lt;isy:formDefaultButton&gt;</code> ein Standard-Button zum Abschicken des Formulars definiert werden.
-Ein Druck auf kbd:[Enter] führt die Aktion aus.
+Ein Druck auf <code>kbd:[Enter]</code> führt die Aktion aus.
 Diese Funktionalität ist nur bei aktiviertem JavaScript verfügbar.</p>
 </div>
 <div class="paragraph">
@@ -5957,7 +6088,7 @@ Die Angabe von Platzhaltern ist derzeit noch nicht in allen Bedienelementen mög
 <div class="ulist">
 <ul>
 <li>
-<p><code>text</code>: Text, der bei Hover über das Element angezeigt werden soll</p>
+<p><code>text</code>: Text, der bei Hover über das Element angezeigt werden soll.</p>
 </li>
 </ul>
 </div>
@@ -5967,7 +6098,7 @@ Die Angabe von Platzhaltern ist derzeit noch nicht in allen Bedienelementen mög
 <div class="ulist">
 <ul>
 <li>
-<p><code>title</code>: Optionale Überschrift, die fett über dem Text angezeigt wird.</p>
+<p><code>title</code>: Optionale Überschrift, die fett über dem Text angezeigt wird,</p>
 </li>
 <li>
 <p><code>globalConfig</code>: Spezifische, globale Konfiguration. (Standard: <code>#{globalConfigurationModel}</code>)</p>
@@ -6062,16 +6193,16 @@ Er bietet folgende Methoden für Hinweise, Erfolgsmeldungen, Warnungen und Fehle
 <div class="ulist">
 <ul>
 <li>
-<p><code>code</code>: Der (Fehler)Code der Nachricht (z.B. <code>ISYWG99999</code>)</p>
+<p><code>code</code>: Der (Fehler)Code der Nachricht, (z.B. <code>ISYWG99999</code>)</p>
 </li>
 <li>
-<p><code>reference</code>: Die Referenz auf den Fehler (z.B. <code>person.geburtsdatum</code>)</p>
+<p><code>reference</code>: Die Referenz auf den Fehler, (z.B. <code>person.geburtsdatum</code>)</p>
 </li>
 <li>
-<p><code>readableReference</code>: Die lesbare Darstellung der Referenz (z.B. "Geburtsdatum")</p>
+<p><code>readableReference</code>: Die lesbare Darstellung der Referenz,(z.B. "Geburtsdatum")</p>
 </li>
 <li>
-<p><code>message</code>: Text der Nachricht (z.B. "Geburtsdatum liegt weniger als 18 Jahre zurück.")</p>
+<p><code>message</code>: Text der Nachricht. (z.B. "Geburtsdatum liegt weniger als 18 Jahre zurück.")</p>
 </li>
 </ul>
 </div>
@@ -6098,8 +6229,8 @@ Die Namensgebung der 4-Augen-Komponenten folgt dem Schema, dass dem Namen der Ba
 <td class="content">
 <div class="paragraph">
 <p>Die IsyFact enthält die Demo-Anwendung <code>isy-webgui</code> und zeigt darin die Features der Bibliothek <code>isy-web</code>.
-Insbesondere demonstriert die Demoanwendung Aussehen und Verhalten der nachfolgend beschriebenen JSF-Seitenelemente.
-Alle Screenshots der beschriebenen 4-Augen-Prinzip Komponenten wurden dieser Demoanwendung entnommen.</p>
+Insbesondere demonstriert die Demo-Anwendung Aussehen und Verhalten der nachfolgend beschriebenen JSF-Seitenelemente.
+Alle Screenshots der beschriebenen 4-Augen-Prinzip Komponenten wurden dieser Demo-Anwendung entnommen.</p>
 </div>
 </td>
 </tr>
@@ -6300,7 +6431,7 @@ public class VieraugenMaskenController extends AbstractGuiController&lt;Vierauge
 <div class="content">
 <img src="../_images/nutzungsvorgaben/demopanel-formActionInput.png" alt="demopanel formActionInput">
 </div>
-<div class="title">Abbildung 37. WebGui-Demoanwendung: isy_formActionInput</div>
+<div class="title">Abbildung 38. Demo-Anwendung: isy_formActionInput</div>
 </div>
 <div class="paragraph">
 <p>Das Aktionseingabefeld <code>&lt;isy:actionInputWithFourEyes&gt;</code> besitzt folgende notwendige Parameter:</p>
@@ -6308,16 +6439,16 @@ public class VieraugenMaskenController extends AbstractGuiController&lt;Vierauge
 <div class="ulist">
 <ul>
 <li>
-<p><code>reference</code>: Die Referenz des Objekts.</p>
+<p><code>reference</code>: Die Referenz des Objekts,</p>
 </li>
 <li>
-<p><code>value</code>: Der Wert für das Databinding im Eingabefeld.</p>
+<p><code>value</code>: Der Wert für das Databinding im Eingabefeld,</p>
 </li>
 <li>
-<p><code>action</code>: Die auszulösende Aktion.</p>
+<p><code>action</code>: Die auszulösende Aktion,</p>
 </li>
 <li>
-<p><code>icon</code>: Das anzuzeigendes Icon aus der Icon-Bibliothek.</p>
+<p><code>icon</code>: Das anzuzeigendes Icon aus der Icon-Bibliothek,</p>
 </li>
 <li>
 <p><code>fourEyesMode</code>: Zustandsmodus des Feldes <code>[locked|unlocked]</code>.</p>
@@ -6336,16 +6467,16 @@ public class VieraugenMaskenController extends AbstractGuiController&lt;Vierauge
 <p><code>placeholder</code>: Platzhalter, welcher im Eingabefeld angezeigt wird.</p>
 </li>
 <li>
-<p><code>maxlength</code>: Die maximale Länge der Eingabe. (Standard: 20)</p>
+<p><code>maxlength</code>: Die maximale Länge der Eingabe, (Standard: 20)</p>
 </li>
 <li>
-<p><code>iconColor</code>: Farbe des Icons. (Standard: <code>#45484D</code>)</p>
+<p><code>iconColor</code>: Farbe des Icons, (Standard: <code>#45484D</code>)</p>
 </li>
 <li>
 <p><code>tooltip</code>: Tooltip, der über dem Eingabefeld angezeigt wird. (Standard: <code>&#8230;&#8203;</code>, drei Punkte)</p>
 </li>
 <li>
-<p><code>mode</code>: [normal|button-only|input-only]. <code>normal</code> für Eingabefeld und Icon aktiv. <code>button-only</code> für nur Icon aktiv. <code>input-only</code> für nur Eingabefeld aktiv. (Standard: <code>normal</code>)</p>
+<p><code>mode</code>: [normal|button-only|input-only]. <code>normal</code> für Eingabefeld und Icon aktiv, <code>button-only</code> für nur Icon aktiv, <code>input-only</code> für nur Eingabefeld aktiv, (Standard: <code>normal</code>)</p>
 </li>
 <li>
 <p><code>disabled</code>: Flag, ob das Eingabefeld deaktiviert ist. (Standard: <code>false</code>)</p>
@@ -6370,13 +6501,13 @@ public class VieraugenMaskenController extends AbstractGuiController&lt;Vierauge
 <p><code>required</code>: Gibt an, ob die Eingabe eine Pflichteingabe ist. (Standard: <code>false</code>)</p>
 </li>
 <li>
-<p><code>label</code>: Der Text für das Label.</p>
+<p><code>label</code>: Der Text für das Label,</p>
 </li>
 <li>
-<p><code>labelStyleClass</code>: Die CSS-Klasse des Labels. (Standard: <code>col-lg-6</code>)</p>
+<p><code>labelStyleClass</code>: Die CSS-Klasse des Labels, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>inputStyleClass</code>: Die CSS-Klasse des Eingabebereiches. (Standard: <code>col-lg-6</code>)</p>
+<p><code>inputStyleClass</code>: Die CSS-Klasse des Eingabebereiches, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
 <p><code>validationModel</code>: Ein spezifisches Validation-Model, falls benötigt. (Standard: <code>#{validationModel}</code>)</p>
@@ -6396,7 +6527,7 @@ public class VieraugenMaskenController extends AbstractGuiController&lt;Vierauge
 <div class="content">
 <img src="../_images/nutzungsvorgaben/demopanel-formCheckboxWithFourEyes.png" alt="demopanel formCheckboxWithFourEyes">
 </div>
-<div class="title">Abbildung 38. Komponente isy_formCheckboxWithFourEyes</div>
+<div class="title">Abbildung 39. Komponente isy_formCheckboxWithFourEyes</div>
 </div>
 <div class="paragraph">
 <p>Folgende Komponentenattribute müssen angegeben werden:</p>
@@ -6404,16 +6535,16 @@ public class VieraugenMaskenController extends AbstractGuiController&lt;Vierauge
 <div class="ulist">
 <ul>
 <li>
-<p><code>reference</code>: Die Referenz des Objekts.</p>
+<p><code>reference</code>: Die Referenz des Objekts,</p>
 </li>
 <li>
-<p><code>value</code>: Der Wert für das Databinding im Eingabefeld.</p>
+<p><code>value</code>: Der Wert für das Databinding im Eingabefeld,</p>
 </li>
 <li>
 <p><code>disabled</code>: Gibt an, ob die Checkbox deaktiviert ist oder nicht. (Standard: <code>false</code>)</p>
 </li>
 <li>
-<p><code>fourEyesMode</code>: 4 Augen Prinzip Mode (locked, unlock)</p>
+<p><code>fourEyesMode</code>: 4 Augen Prinzip Mode (locked, unlock).</p>
 </li>
 </ul>
 </div>
@@ -6427,16 +6558,16 @@ public class VieraugenMaskenController extends AbstractGuiController&lt;Vierauge
 Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 </li>
 <li>
-<p><code>label</code>: Der Text für das Label.</p>
+<p><code>label</code>: Der Text für das Label,</p>
 </li>
 <li>
-<p><code>labelRight</code>: Fontawesome char-Zeichen für die Anzeige rechts neben dem Eingabefeld. (Standard: offenes Vorhängeschloss)</p>
+<p><code>labelRight</code>: Fontawesome char-Zeichen für die Anzeige rechts neben dem Eingabefeld, (Standard: offenes Vorhängeschloss)</p>
 </li>
 <li>
-<p><code>labelStyleClass</code>: Die CSS-Klasse für das Label. (Standard: <code>col-lg-6</code>)</p>
+<p><code>labelStyleClass</code>: Die CSS-Klasse für das Label, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>inputStyleClass</code>: Die CSS-Klasse für den Eingabebereich. (Standard: <code>col-lg-6</code>)</p>
+<p><code>inputStyleClass</code>: Die CSS-Klasse für den Eingabebereich, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
 <p><code>required</code>: Gibt an, ob die Eingabe eine Pflichteingabe ist. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
@@ -6451,7 +6582,7 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 <p><code>globalConfig</code>: Eine spezifische globale Konfiguration, falls benötigt. (Standard: <code>#{globalConfigurationModel}</code>)</p>
 </li>
 <li>
-<p><code>valueChangeListener</code>: Value Change Listener</p>
+<p><code>valueChangeListener</code>: Value Change Listener,</p>
 </li>
 <li>
 <p><code>fourEyesLastValue</code>: Letzter Wert im 4-Augen-Eingabefeld.</p>
@@ -6486,9 +6617,11 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 <div class="paragraph">
 <p>Die Komponente <code>&lt;isy:formCurrencyInputWithFourEyes&gt;</code> stellt ein Eingabefeld für eine Fließkommazahl nach dem Vier-Augen-Prinzip innerhalb von Formularen zur Verfügung.</p>
 </div>
-<div id="image-demopanelformCurrencyInpu" class="paragraph">
-<p>Ansicht von isy_formCurrencyInputWithFourEyes
-image::nutzungsvorgaben/demopanel-formCurrencyInput.png[align="center"]</p>
+<div id="demopanel-formCurrencyInput.png" class="imageblock text-center">
+<div class="content">
+<img src="../_images/nutzungsvorgaben/demopanel-formCurrencyInput.png" alt="demopanel formCurrencyInput">
+</div>
+<div class="title">Abbildung 40. Ansicht von isy_formCurrencyInputWithFourEyes</div>
 </div>
 <div class="paragraph">
 <p>Die Komponente besitzt folgende notwendige Parameter:</p>
@@ -6496,13 +6629,13 @@ image::nutzungsvorgaben/demopanel-formCurrencyInput.png[align="center"]</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>reference</code>: Die Referenz des Objekts.</p>
+<p><code>reference</code>: Die Referenz des Objekts,</p>
 </li>
 <li>
-<p><code>value</code>: Der Wert für das Databinding im Eingabefeld.</p>
+<p><code>value</code>: Der Wert für das Databinding im Eingabefeld,</p>
 </li>
 <li>
-<p><code>fourEyesMode</code>: 4 Augen Prinzip Mode (locked, unlock)</p>
+<p><code>fourEyesMode</code>: 4 Augen Prinzip Mode (locked, unlock).</p>
 </li>
 </ul>
 </div>
@@ -6518,13 +6651,13 @@ image::nutzungsvorgaben/demopanel-formCurrencyInput.png[align="center"]</p>
 <p><code>readonly</code>: Gibt an, ob die Darstellung nur lesend erfolgen soll. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
 </li>
 <li>
-<p><code>label</code>: Der Text für das Label.</p>
+<p><code>label</code>: Der Text für das Label,</p>
 </li>
 <li>
-<p><code>labelStyleClass</code>: Die CSS-Klasse für das Label. (Standard: <code>col-lg-6</code>)</p>
+<p><code>labelStyleClass</code>: Die CSS-Klasse für das Label, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>inputStyleClass</code>: Die CSS-Klasse für den Eingabebereich. (Standard: <code>col-lg-6</code>)</p>
+<p><code>inputStyleClass</code>: Die CSS-Klasse für den Eingabebereich, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
 <p><code>placeholder</code>: Der Platzhalter, welcher im Eingabefeld angezeigt wird.</p>
@@ -6533,7 +6666,7 @@ image::nutzungsvorgaben/demopanel-formCurrencyInput.png[align="center"]</p>
 <p><code>disabled</code>: Gibt an, ob das Eingabefeld deaktiviert ist. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
 </li>
 <li>
-<p><code>maxlength</code>: Die maximale Länge der Eingabe. (Standard: <code>255</code>, Typ: <code>Integer</code>)</p>
+<p><code>maxlength</code>: Die maximale Länge der Eingabe, (Standard: <code>255</code>, Typ: <code>Integer</code>)</p>
 </li>
 <li>
 <p><code>validationModel</code>: Ein spezifisches Validation-Model, falls benötigt. (Standard: <code>#{validationModel}</code>)</p>
@@ -6548,10 +6681,10 @@ image::nutzungsvorgaben/demopanel-formCurrencyInput.png[align="center"]</p>
 <p><code>onkeyup</code>: onkeyup JavaScript-Funktion wird aufgerufen, wenn eine Tastatureingabe in dem Feld gemacht wurde. (Standard: <code>deleteNonDigitCharacters(this)</code>)</p>
 </li>
 <li>
-<p><code>decimalplaces</code>: Die Anzahl der Nachkommastellen. (Standard: <code>2</code>, Typ: <code>Integer</code>)</p>
+<p><code>decimalplaces</code>: Die Anzahl der Nachkommastellen, (Standard: <code>2</code>, Typ: <code>Integer</code>)</p>
 </li>
 <li>
-<p><code>fourEyesLastValue</code>: Letzter Wert im 4-Augen-Eingabefeld.</p>
+<p><code>fourEyesLastValue</code>: Letzter Wert im 4-Augen-Eingabefeld,</p>
 </li>
 <li>
 <p><code>alignright</code>: Gibt an, ob der Text innerhalb des Eingabefeldes rechts ausgerichtet sein soll. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
@@ -6593,7 +6726,7 @@ image::nutzungsvorgaben/demopanel-formCurrencyInput.png[align="center"]</p>
 				labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
 				required="true" placeholder="24,00" value=""
 				reference="formCurrencyInputFourEyes" fourEyesMode="locked"
-				fourEyesLastValue="Letzer Wert"&gt;
+				fourEyesLastValue="Letzter Wert"&gt;
 		&lt;/isy:formCurrencyInputWithFourEyes&gt;
 	&lt;/div&gt;
 &lt;/div&gt;</code></pre>
@@ -6609,7 +6742,7 @@ image::nutzungsvorgaben/demopanel-formCurrencyInput.png[align="center"]</p>
 <div class="content">
 <img src="../_images/nutzungsvorgaben/demopanel-formDate.png" alt="demopanel formDate">
 </div>
-<div class="title">Abbildung 39. WebGui-Demoanwendung: isy_formDateWithFourEyes Varianten</div>
+<div class="title">Abbildung 41. Demo-Anwendung: isy_formDateWithFourEyes Varianten</div>
 </div>
 <div class="paragraph">
 <p>Folgende Komponentenattribute müssen angegeben werden:</p>
@@ -6617,13 +6750,13 @@ image::nutzungsvorgaben/demopanel-formCurrencyInput.png[align="center"]</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>reference</code>: Die Referenz des Objekts.</p>
+<p><code>reference</code>: Die Referenz des Objekts,</p>
 </li>
 <li>
-<p><code>value</code>: Der Wert für das Databinding im Eingabefeld.</p>
+<p><code>value</code>: Der Wert für das Databinding im Eingabefeld,</p>
 </li>
 <li>
-<p><code>fourEyesMode</code>: 4 Augen Prinzip Mode (locked, unlock)</p>
+<p><code>fourEyesMode</code>: 4 Augen Prinzip Mode (locked, unlock).</p>
 </li>
 </ul>
 </div>
@@ -6633,7 +6766,7 @@ image::nutzungsvorgaben/demopanel-formCurrencyInput.png[align="center"]</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>tooltip</code>: Tooltip. (Standard: '')</p>
+<p><code>tooltip</code>: Tooltip, (Standard: '')</p>
 </li>
 <li>
 <p><code>customId</code>: Erlaubt, eine spezielle ID zu setzen, um die Komponente z.B. für JavaScript oder Tests zugreifbar zu machen.
@@ -6643,16 +6776,16 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 <p><code>required</code>: Gibt an, ob die Eingabe eine Pflichteingabe ist. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
 </li>
 <li>
-<p><code>label</code>: Der Text für das Label.</p>
+<p><code>label</code>: Der Text für das Label,</p>
 </li>
 <li>
-<p><code>labelStyleClass</code>: Die CSS-Klasse für das Label. (Standard: <code>col-lg-6</code>)</p>
+<p><code>labelStyleClass</code>: Die CSS-Klasse für das Label, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>inputStyleClass</code>: Die CSS-Klasse für den Eingabebereich. (Standard: <code>col-lg-6</code>)</p>
+<p><code>inputStyleClass</code>: Die CSS-Klasse für den Eingabebereich, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>inputFieldClass</code>: Die CSS-Klasse für das Input-Feld im Eingabebereich. (Standard: ``)</p>
+<p><code>inputFieldClass</code>: Die CSS-Klasse für das Input-Feld im Eingabebereich, (Standard: ``)</p>
 </li>
 <li>
 <p><code>placeholder</code>: Der Platzhalter, welcher im Eingabefeld angezeigt wird. (Standard: <code>TT.MM.JJJJ</code>)</p>
@@ -6661,13 +6794,13 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 <p><code>readonly</code>: Gibt an, ob die Darstellung nur lesend erfolgen soll. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
 </li>
 <li>
-<p><code>language</code>: Die Sprache für den Datepicker. (Standard: <code>de</code>)</p>
+<p><code>language</code>: Die Sprache für den Datepicker, (Standard: <code>de</code>)</p>
 </li>
 <li>
-<p><code>dateFormat</code>: Das Datumsformat für den Datepicker. (Standard: <code>dd.mm.yyyy</code>)</p>
+<p><code>dateFormat</code>: Das Datumsformat für den Datepicker, (Standard: <code>dd.mm.yyyy</code>)</p>
 </li>
 <li>
-<p><code>inputmask</code>: Das Maskenformat für das Eingabefeld. (Standard: <code>99.99.9999</code>)</p>
+<p><code>inputmask</code>: Das Maskenformat für das Eingabefeld, (Standard: <code>99.99.9999</code>)</p>
 </li>
 <li>
 <p><code>inputmaskInsertMode</code>: Die Eingabemaske: Gibt an, ob der Text beim Eintippen überschrieben werden soll. (Standard: <code>true</code>, Typ: <code>Boolean</code>)</p>
@@ -6721,7 +6854,7 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 <div class="content">
 <img src="../_images/nutzungsvorgaben/demopanel-formInput.png" alt="demopanel formInput">
 </div>
-<div class="title">Abbildung 40. WebGui-Demoanwendung: isy_formInputWithFourEyes Varianten</div>
+<div class="title">Abbildung 42. Demo-Anwendung: isy_formInputWithFourEyes Varianten</div>
 </div>
 <div class="paragraph">
 <p>Folgende Facets können innerhalb des Tags verwendet werden:</p>
@@ -6739,13 +6872,13 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>reference</code>: Die Referenz des Objekts.</p>
+<p><code>reference</code>: Die Referenz des Objekts,</p>
 </li>
 <li>
-<p><code>value</code>: Der Wert für das Databinding im Eingabefeld.</p>
+<p><code>value</code>: Der Wert für das Databinding im Eingabefeld,</p>
 </li>
 <li>
-<p><code>fourEyesMode</code>: 4 Augen Prinzip Mode (locked, unlock)</p>
+<p><code>fourEyesMode</code>: 4 Augen Prinzip Mode (locked, unlock).</p>
 </li>
 </ul>
 </div>
@@ -6765,34 +6898,34 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 <p><code>readonly</code>: Gibt an, ob die Darstellung nur lesend erfolgen soll. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
 </li>
 <li>
-<p><code>label</code>: Der Text für das Label.</p>
+<p><code>label</code>: Der Text für das Label,</p>
 </li>
 <li>
-<p><code>labelStyleClass</code>: Die CSS-Klasse für das Label. (Standard: <code>col-lg-6</code>)</p>
+<p><code>labelStyleClass</code>: Die CSS-Klasse für das Label, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>inputStyleClass</code>: Die CSS-Klasse für den Eingabebereich. (Standard: <code>col-lg-6</code>)</p>
+<p><code>inputStyleClass</code>: Die CSS-Klasse für den Eingabebereich, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
 <p><code>placeholder</code>: Der Platzhalter, welcher im Eingabefeld angezeigt wird.</p>
 </li>
 <li>
-<p><code>inputmask</code>: Die Eingabemaske.</p>
+<p><code>inputmask</code>: Die Eingabemaske,</p>
 </li>
 <li>
 <p><code>inputmaskInsertMode</code>: Die Eingabemaske: Gibt an, ob text soll überschrieben werden beim eintippen. (Standard: <code>true</code>, Typ: <code>Boolean</code>)</p>
 </li>
 <li>
-<p><code>maxlength</code>: Die maximale Länge der Eingabe. (Standard: <code>255</code>, Typ: <code>Integer</code>)</p>
+<p><code>maxlength</code>: Die maximale Länge der Eingabe, (Standard: <code>255</code>, Typ: <code>Integer</code>)</p>
 </li>
 <li>
-<p><code>width</code>: Die maximale Breite des Eingabefeldes. (Standard: <code>100%</code>)</p>
+<p><code>width</code>: Die maximale Breite des Eingabefeldes, (Standard: <code>100%</code>)</p>
 </li>
 <li>
-<p><code>showPrintView</code>: Zur aktuellen Druckansicht-Anzeige aus dem BasisModel. (Standard: <code>#\{not empty basisModel and basisModel.showPrintView}</code>, Typ: <code>Boolean</code>)</p>
+<p><code>showPrintView</code>: Zur aktuellen Druckansicht-Anzeige aus dem BasisModel, (Standard: <code>#\{not empty basisModel and basisModel.showPrintView}</code>, Typ: <code>Boolean</code>)</p>
 </li>
 <li>
-<p><code>tooltip</code>: Tooltip. (Standard: '')</p>
+<p><code>tooltip</code>: Tooltip, (Standard: '')</p>
 </li>
 <li>
 <p><code>disabled</code>: Gibt an, ob das Eingabefeld deaktiviert ist. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
@@ -6840,7 +6973,7 @@ Mögliche Werte alle Werte für das Feld type des HTML Input Felds. (Standard: <
 			reference="formInputReferenz"
 			value="#{jsfSteuerelementeModel.formInputField8}"
 			fourEyesMode="locked"
-			fourEyesLastValue="Letzer Wert"/&gt;
+			fourEyesLastValue="Letzter Wert"/&gt;
 	&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 </div>
@@ -6855,7 +6988,7 @@ Mögliche Werte alle Werte für das Feld type des HTML Input Felds. (Standard: <
 <div class="content">
 <img src="../_images/nutzungsvorgaben/demopanel-formNumericInputWithFourEyes.png" alt="demopanel formNumericInputWithFourEyes">
 </div>
-<div class="title">Abbildung 41. WebGui-Demoanwendung: isy_formNumericInputWithFourEyes Varianten</div>
+<div class="title">Abbildung 43. Demo-Anwendung: isy_formNumericInputWithFourEyes Varianten</div>
 </div>
 <div class="paragraph">
 <p>Die Komponente besitzt folgende notwendige Parameter:</p>
@@ -6863,13 +6996,13 @@ Mögliche Werte alle Werte für das Feld type des HTML Input Felds. (Standard: <
 <div class="ulist">
 <ul>
 <li>
-<p><code>reference</code>: Die Referenz des Objekts.</p>
+<p><code>reference</code>: Die Referenz des Objekts,</p>
 </li>
 <li>
-<p><code>value</code>: Der Wert für das Databinding im Eingabefeld.</p>
+<p><code>value</code>: Der Wert für das Databinding im Eingabefeld,</p>
 </li>
 <li>
-<p><code>fourEyesMode</code>: 4 Augen Prinzip Mode (locked, unlock)</p>
+<p><code>fourEyesMode</code>: 4 Augen Prinzip Mode (locked, unlock).</p>
 </li>
 </ul>
 </div>
@@ -6885,13 +7018,13 @@ Mögliche Werte alle Werte für das Feld type des HTML Input Felds. (Standard: <
 <p><code>readonly</code>: Gibt an, ob die Darstellung nur lesend erfolgen soll. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
 </li>
 <li>
-<p><code>label</code>: Der Text für das Label.</p>
+<p><code>label</code>: Der Text für das Label,</p>
 </li>
 <li>
-<p><code>labelStyleClass</code>: Die CSS-Klasse für das Label. (Standard: <code>col-lg-6</code>)</p>
+<p><code>labelStyleClass</code>: Die CSS-Klasse für das Label, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>inputStyleClass</code>: Die CSS-Klasse für den Eingabebereich. (Standard: <code>col-lg-6</code>)</p>
+<p><code>inputStyleClass</code>: Die CSS-Klasse für den Eingabebereich, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
 <p><code>placeholder</code>: Der Platzhalter, welcher im Eingabefeld angezeigt wird.</p>
@@ -6900,7 +7033,7 @@ Mögliche Werte alle Werte für das Feld type des HTML Input Felds. (Standard: <
 <p><code>disabled</code>: Gibt an, ob das Eingabefeld deaktiviert ist. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
 </li>
 <li>
-<p><code>maxlength</code>: Die maximale Länge der Eingabe. (Standard: <code>255</code>, Typ: <code>Integer</code>)</p>
+<p><code>maxlength</code>: Die maximale Länge der Eingabe, (Standard: <code>255</code>, Typ: <code>Integer</code>)</p>
 </li>
 <li>
 <p><code>validationModel</code>: Ein spezifisches Validation-Model, falls benötigt. (Standard: <code>#{validationModel}</code>)</p>
@@ -6921,7 +7054,7 @@ Mögliche Werte alle Werte für das Feld type des HTML Input Felds. (Standard: <
 <p><code>tausenderPunkt</code>: Wird ein Tausender-Punkt gewünscht? (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
 </li>
 <li>
-<p><code>fourEyesLastValue</code>: Letzter Wert im 4-Augen-Eingabefeld.</p>
+<p><code>fourEyesLastValue</code>: Letzter Wert im 4-Augen-Eingabefeld,</p>
 </li>
 <li>
 <p><code>alignright</code>: Gibt an, ob der Text innerhalb des Eingabefeldes rechts ausgerichtet sein soll. Default ist false.(Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
@@ -6964,7 +7097,7 @@ Mögliche Werte alle Werte für das Feld type des HTML Input Felds. (Standard: <
 <div class="content">
 <img src="../_images/nutzungsvorgaben/demopanel-formSelectOneDropdownWithFourEyes.png" alt="demopanel formSelectOneDropdownWithFourEyes">
 </div>
-<div class="title">Abbildung 42. WebGui-Demoanwendung: isy_formSelectOneDropdownWithFourEyes Varianten</div>
+<div class="title">Abbildung 44. Demo-Anwendung: isy_formSelectOneDropdownWithFourEyes Varianten</div>
 </div>
 <div class="paragraph">
 <p>Folgende Komponentenattribute müssen angegeben werden:</p>
@@ -6972,13 +7105,13 @@ Mögliche Werte alle Werte für das Feld type des HTML Input Felds. (Standard: <
 <div class="ulist">
 <ul>
 <li>
-<p><code>reference</code>: Die Referenz des Objekts.</p>
+<p><code>reference</code>: Die Referenz des Objekts,</p>
 </li>
 <li>
-<p><code>value</code>: Der Wert der Auswahl für das Databinding</p>
+<p><code>value</code>: Der Wert der Auswahl für das Databinding,</p>
 </li>
 <li>
-<p><code>fourEyesMode</code>: Evente müssen explizit deklariert werden</p>
+<p><code>fourEyesMode</code>: Events müssen explizit deklariert werden.</p>
 </li>
 </ul>
 </div>
@@ -7015,31 +7148,31 @@ Mögliche Werte alle Werte für das Feld type des HTML Input Felds. (Standard: <
 <div class="ulist">
 <ul>
 <li>
-<p><code>valueChangeListener</code>: Value Change Listener</p>
+<p><code>valueChangeListener</code>: Value Change Listener,</p>
 </li>
 <li>
-<p><code>fourEyesLastValue</code>: 4 Augen Prinzip Mode (locked, unlock)</p>
+<p><code>fourEyesLastValue</code>: 4 Augen Prinzip Mode, (locked, unlock)</p>
 </li>
 <li>
-<p><code>converter</code>: Letzter Wert im 4-Augen-Eingabefeld.</p>
+<p><code>converter</code>: Letzter Wert im 4-Augen-Eingabefeld,</p>
 </li>
 <li>
-<p><code>converterAttribute</code>: Konverter-Bean für die angezeigten Elemente</p>
+<p><code>converterAttribute</code>: Konverter-Bean für die angezeigten Elemente,</p>
 </li>
 <li>
-<p><code>label</code>: Parameter für den Konverter</p>
+<p><code>label</code>: Parameter für den Konverter,</p>
 </li>
 <li>
-<p><code>labelStyleClass</code>: Formspezifisch. (Standard: <code>col-lg-6</code>)</p>
+<p><code>labelStyleClass</code>: Formspezifisch, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>inputStyleClass</code>: Der Text für das Label. (Standard: <code>col-lg-6</code>)</p>
+<p><code>inputStyleClass</code>: Der Text für das Label, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>dropdownStyleClass</code>: Die CSS-Klasse für das Label. (Standard: <code>form-selectonedropdown</code>)</p>
+<p><code>dropdownStyleClass</code>: Die CSS-Klasse für das Label, (Standard: <code>form-selectonedropdown</code>)</p>
 </li>
 <li>
-<p><code>showPrintView</code>: Die CSS-Klasse für den Eingabebereich. (Standard: <code>#\{not empty basisModel and basisModel.showPrintView}</code>, Typ: <code>Boolean</code>)</p>
+<p><code>showPrintView</code>: Die CSS-Klasse für den Eingabebereich, (Standard: <code>#\{not empty basisModel and basisModel.showPrintView}</code>, Typ: <code>Boolean</code>)</p>
 </li>
 <li>
 <p><code>validationModel</code>: Ein spezifisches Validation-Model, falls benötigt. (Standard: <code>#{validationModel}</code>)</p>
@@ -7059,7 +7192,7 @@ Mögliche Werte alle Werte für das Feld type des HTML Input Felds. (Standard: <
 <div class="content">
 <img src="../_images/nutzungsvorgaben/demopanel-formTextarea.png" alt="demopanel formTextarea">
 </div>
-<div class="title">Abbildung 43. WebGui-Demoanwendung: isy_formTextareaWithFourEyes</div>
+<div class="title">Abbildung 45. Demo-Anwendung: isy_formTextareaWithFourEyes</div>
 </div>
 <div class="paragraph">
 <p>Folgende Komponentenattribute müssen angegeben werden:</p>
@@ -7067,13 +7200,13 @@ Mögliche Werte alle Werte für das Feld type des HTML Input Felds. (Standard: <
 <div class="ulist">
 <ul>
 <li>
-<p><code>reference</code>: Die Referenz des Objekts.</p>
+<p><code>reference</code>: Die Referenz des Objekts,</p>
 </li>
 <li>
-<p><code>value</code>: Der Wert für das Databinding im Eingabefeld.</p>
+<p><code>value</code>: Der Wert für das Databinding im Eingabefeld,</p>
 </li>
 <li>
-<p><code>fourEyesMode</code>: 4 Augen Prinzip Mode (locked, unlock)</p>
+<p><code>fourEyesMode</code>: 4 Augen Prinzip Mode (locked, unlock).</p>
 </li>
 </ul>
 </div>
@@ -7096,16 +7229,16 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 <p><code>readonly</code>: Gibt an, ob auf das Feld nur lesend zugegriffen wird. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
 </li>
 <li>
-<p><code>label</code>: Der Text für das Label.</p>
+<p><code>label</code>: Der Text für das Label,</p>
 </li>
 <li>
 <p><code>labelStyleClass</code>: Die CSS-Klasse für das Label. (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>inputStyleClass</code>: Die CSS-Klasse für den Eingabebereich. (Standard: <code>col-lg-6</code>)</p>
+<p><code>inputStyleClass</code>: Die CSS-Klasse für den Eingabebereich, (Standard: <code>col-lg-6</code>)</p>
 </li>
 <li>
-<p><code>textareaStyleClass</code>: Die CSS-Klasse für die Textarea. (Standard: ``)</p>
+<p><code>textareaStyleClass</code>: Die CSS-Klasse für die Textarea, (Standard: ``)</p>
 </li>
 <li>
 <p><code>tooltip</code>: Der Tooltip, welcher angezeigt wird.</p>
@@ -7114,16 +7247,16 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 <p><code>placeholder</code>: Der Platzhalter, welcher im Eingabefeld angezeigt wird.</p>
 </li>
 <li>
-<p><code>rows</code>: Die Anzahl an Zeilen. (Standard: <code>5</code>, Typ: <code>Integer</code>)</p>
+<p><code>rows</code>: Die Anzahl an Zeilen, (Standard: <code>5</code>, Typ: <code>Integer</code>)</p>
 </li>
 <li>
-<p><code>cols</code>: Die Anzahl an Spalten (Typ: <code>Integer</code>)</p>
+<p><code>cols</code>: Die Anzahl an Spalten, (Typ: <code>Integer</code>)</p>
 </li>
 <li>
-<p><code>maxlength</code>: Die maximal Anzahl von Zeichen. (Standard: <code>4000</code>, Typ: <code>Integer</code>)</p>
+<p><code>maxlength</code>: Die maximal Anzahl von Zeichen, (Standard: <code>4000</code>, Typ: <code>Integer</code>)</p>
 </li>
 <li>
-<p><code>showPrintView</code>: Zur aktuellen Druckansicht-Anzeige aus dem BasisModel. (Standard: <code>#\{not empty basisModel and basisModel.showPrintView}</code>, Typ: <code>Boolean</code>)</p>
+<p><code>showPrintView</code>: Zur aktuellen Druckansicht-Anzeige aus dem BasisModel, (Standard: <code>#\{not empty basisModel and basisModel.showPrintView}</code>, Typ: <code>Boolean</code>)</p>
 </li>
 <li>
 <p><code>validationModel</code>: Ein spezifisches Validation-Model, falls benötigt. (Standard: <code>#{validationModel}</code>)</p>
@@ -7164,7 +7297,7 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 <div class="content">
 <img src="../_images/nutzungsvorgaben/demopanel-selectOneDropdownWithFourEyes.png" alt="demopanel selectOneDropdownWithFourEyes">
 </div>
-<div class="title">Abbildung 44. WebGui-Demoanwendung: isy_selectOneDropdownWithfourEyes</div>
+<div class="title">Abbildung 46. Demo-Anwendung: isy_selectOneDropdownWithfourEyes</div>
 </div>
 <div class="paragraph">
 <p>Gegenüber der Komponente <code>&lt;isy:selectOneDropdownWithfourEyes&gt;</code> besitzt <code>&lt;isy:selectOneDropdownWithfourEyes&gt;</code> kein (vorangestelltes) Label, sondern nur eine Tooltip-Beschreibung, welches über das Attribut 'title' gesetzt werden kann.</p>
@@ -7175,13 +7308,13 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>reference</code>: Die Referenz des Objekts.</p>
+<p><code>reference</code>: Die Referenz des Objekts,</p>
 </li>
 <li>
-<p><code>value</code>: Der Wert der Auswahl für das Databinding</p>
+<p><code>value</code>: Der Wert der Auswahl für das Databinding,</p>
 </li>
 <li>
-<p><code>fourEyesMode</code>: 4 Augen Prinzip Mode (locked, unlock)</p>
+<p><code>fourEyesMode</code>: 4 Augen Prinzip Mode (locked, unlock).</p>
 </li>
 </ul>
 </div>
@@ -7191,7 +7324,7 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>referenceId</code>: Der Wert der id. (Standard: <code>#\{jsfHelper.escapeIdentifier(cc.attrs.reference)}</code>)</p>
+<p><code>referenceId</code>: Der Wert der id, (Standard: <code>#\{jsfHelper.escapeIdentifier(cc.attrs.reference)}</code>)</p>
 </li>
 <li>
 <p><code>invalid</code>: Gibt an, ob die Auswahl invalide ist oder nicht. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
@@ -7200,13 +7333,13 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 <p><code>disabled</code>: Gibt an, ob die Auswahl deaktiviert ist oder nicht. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
 </li>
 <li>
-<p><code>title</code>: Das Tooltip über dem SelectOneDropdown.</p>
+<p><code>title</code>: Der Tooltip über dem SelectOneDropdown,</p>
 </li>
 <li>
 <p><code>globalConfig</code>: Eine spezifische globale Konfiguration, falls notwendig. (Standard: <code>#{globalConfigurationModel}</code>)</p>
 </li>
 <li>
-<p><code>dropdownStyleClass</code>: Die CSS-Klasse für das Dropdownmenü.</p>
+<p><code>dropdownStyleClass</code>: Die CSS-Klasse für das Dropdown-Menü,</p>
 </li>
 <li>
 <p><code>readonly</code>: Gibt an, ob die Darstellung nur lesend erfolgen soll. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
@@ -7233,20 +7366,20 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 <p><code>disabled</code>: Gibt an, ob die Auswahl deaktiviert ist oder nicht. (Standard: <code>false</code>, Typ: <code>Boolean</code>)</p>
 </li>
 <li>
-<p><code>converter</code>: Konverter-Bean für die angezeigten Elemente</p>
+<p><code>converter</code>: Konverter-Bean für die angezeigten Elemente,</p>
 </li>
 <li>
-<p><code>converterAttribute</code>: Parameter für den Konverter</p>
+<p><code>converterAttribute</code>: Parameter für den Konverter,</p>
 </li>
 <li>
 <p><code>customId</code>: Erlaubt, eine spezielle ID zu setzen, um die Komponente z.B. für JavaScript oder Tests zugreifbar zu machen.
 Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 </li>
 <li>
-<p><code>fourEyesLastValue</code>: Letzter Wert im 4-Augen-Eingabefeld.</p>
+<p><code>fourEyesLastValue</code>: Letzter Wert im 4-Augen-Eingabefeld,</p>
 </li>
 <li>
-<p><code>valueChangeListener</code>: Value Change Listener</p>
+<p><code>valueChangeListener</code>: Value Change Listener.</p>
 </li>
 </ul>
 </div>
@@ -7319,7 +7452,7 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>warning</code>: Die anzuzeigende Warnung wenn die browserseitige Druckansicht einer Seite angezeigt wird (optional). (Standard: ``)</p>
+<p><code>warning</code>: Die anzuzeigende Warnung, wenn die browserseitige Druckansicht einer Seite angezeigt wird (optional). (Standard: ``)</p>
 </li>
 <li>
 <p><code>basis</code>: BasisModel. (Standard: <code>#{basisModel}</code>)</p>
@@ -7338,5 +7471,9 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 <script src="../../../../_/js/site.js"></script>
 <script async src="../../../../_/js/vendor/highlight.js"></script>
 <script src="../../../../_/js/isyfact.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
   </body>
 </html>

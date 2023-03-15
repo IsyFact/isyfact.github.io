@@ -41,3 +41,18 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #edf2f2; }
     inset-block-start: 0;
     top: 105px;
 }
+
+/* center images */
+.imageblock.text-center {
+    text-align: center;
+}
+
+.scrollbar-table{
+    overflow-x: auto;
+}
+
+/* no scrollbar for Produktkatalog */
+.table_head_sticky .scrollbar-table{
+    overflow-x: revert;
+}
+

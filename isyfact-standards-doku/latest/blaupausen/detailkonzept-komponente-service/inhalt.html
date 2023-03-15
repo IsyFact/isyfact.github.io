@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Detailkonzept Service: Inhalt :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/blaupausen/detailkonzept-komponente-service/inhalt.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -16,17 +16,16 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-        </div>
-      </div>
     </div>
   </nav>
 </header>
@@ -284,6 +283,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-security/konzept/master.html">Konzept</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -348,10 +350,10 @@
     <span class="nav-text">Styleguide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
+    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
   </li>
 </ul>
   </li>
@@ -391,32 +393,41 @@
     <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -528,14 +539,6 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../../../isyfact-jsf-doku/latest/isy-web/konzept/konzept.html">5.3</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
         </li>
       </ul>
     </li>
@@ -823,7 +826,7 @@ Dazu wird ein neuer Service innerhalb der Service-Schicht implementiert, der die
 </div>
 <div class="paragraph">
 <p>Werden die beiden Services durch ein Service-Gateway nach außen verfügbar gemacht, existieren dort zwei parallele Mappings auf die jeweiligen Services des IT-Systems.
-Innerhalb des Service Gateways existiert keine Geschäftslogik, d.h. die Abbildung von Version 1.0 auf 1.1 findet erst im IT-System statt.</p>
+Innerhalb des Service-Gateways existiert keine Geschäftslogik, d.h. die Abbildung von Version 1.0 auf 1.1 findet erst im IT-System statt.</p>
 </div>
 </div>
 <div class="sect2">
@@ -915,11 +918,10 @@ Die Definition ist dementsprechend durch die jeweiligen Aufrufer vorzunehmen.</p
 Hierbei ist zu beachten, dass IT-Systeme in der Regel andere IT-Systeme und Querschnittsanwendungen aufrufen, um Anfragen zu beantworten.
 Die Gesamtverfügbarkeit sinkt dadurch ab, da zur erfolgreichen Bearbeitung einer Anfrage alle Systeme zeitgleich verfügbar sein müssen.
 Im Szenario wird für alle Systeme ein Richtwert für die Verfügbarkeit von 99,7 % angenommen.
-<a href="#table-GMTMT">Tabelle 1</a> zeigt eine Beispielrechnung (die Gesamtverfügbarkeit ergibt sich aus dem Produkt der Einzelverfügbarkeiten).
-Durch eine Verfügbarkeit von 99,7 % pro System kann im Beispiel also eine Gesamtverfügbarkeit von über 98 % erreicht werden.</p>
+Wie die <a href="#table-GMTMT">Beispielrechnung der Verfügbarkeit</a> zeigt, ergibt sich eine Gesamtverfügbarkeit von über 98 % bei einer Verfügbarkeit von 99,7 % pro System.</p>
 </div>
 <div class="paragraph">
-<p>Eine Berechnung der Gesamtverfügbarkeit nach dem Schema von <a href="#table-GMTMT">Tabelle 1</a> muss für jedes IT-System einzeln durchgeführt werden.
+<p>Eine Berechnung der Gesamtverfügbarkeit nach diesem Schema muss für jedes IT-System einzeln durchgeführt werden.
 Dabei müssen die berechneten oder gemessenen Verfügbarkeiten aller IT-Systeme zugrunde gelegt werden, die das IT-System aufruft.</p>
 </div>
 <table id="table-GMTMT" class="tableblock frame-all grid-all stretch">
@@ -1170,5 +1172,9 @@ Da die Anforderung besteht, auch andere Services vorübergehend deaktivieren zu 
 <script src="../../../../_/js/site.js"></script>
 <script async src="../../../../_/js/vendor/highlight.js"></script>
 <script src="../../../../_/js/isyfact.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
   </body>
 </html>

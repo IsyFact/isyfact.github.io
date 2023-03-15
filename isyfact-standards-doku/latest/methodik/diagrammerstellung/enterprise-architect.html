@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Handbuch Enterprise Architect :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/methodik/diagrammerstellung/enterprise-architect.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -16,17 +16,16 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-        </div>
-      </div>
     </div>
   </nav>
 </header>
@@ -284,6 +283,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-security/konzept/master.html">Konzept</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -348,10 +350,10 @@
     <span class="nav-text">Styleguide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
+    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
   </li>
 </ul>
   </li>
@@ -391,32 +393,41 @@
     <a class="nav-link" href="../versionierung/master.html">Versionierung</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+    <a class="nav-link" href="../java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+    <a class="nav-link" href="../vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="diagramsnet.html">diagrams.net</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="4">
     <a class="nav-link" href="enterprise-architect.html">Enterprise Architect</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../vorlage-systementwurf/antora-master.html">Systementwurf</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -531,14 +542,6 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
-        </li>
-      </ul>
-    </li>
   </ul>
 </div>
     </div>
@@ -552,6 +555,7 @@
   <ul>
     <li><a href="../../einstieg/einstieg.html">IsyFact Standards</a></li>
     <li><a href="../methodik.html">Methodik</a></li>
+    <li><a href="../vorgaben-dokumentation.html">Vorgaben Dokumentation</a></li>
     <li><a href="../diagrammerstellung.html">Diagrammerstellung und Modellierung</a></li>
     <li><a href="enterprise-architect.html">Enterprise Architect</a></li>
   </ul>
@@ -584,9 +588,16 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <h2 id="enterprise-architect-fuer-die-modellierung"><a class="anchor" href="#enterprise-architect-fuer-die-modellierung"></a>1. Enterprise Architect für die Modellierung</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Enterprise Architect ist ein Werkzeug mit dem Schwerpunkt Prozess- und Systemmodellierung.
-Die folgende Dokumentation beschreibt den optionalen Einsatz des Werkzeugs im Zuge der Systemspezifikation.
-Darüber hinaus wird das Werkzeug häufig auch für Systementwürfe oder Deployment- und Verteilungsdarstellungen genutzt, auf die hier allerdings nicht näher eingegangen wird.</p>
+<p>Das Werkzeug „Enterprise Architect“ (nachfolgend kurz „EA“) der Firma SparxSystems unterstützt im Kontext der IsyFact in erster Linie die Modellierung und Diagrammerstellung im Zuge der Systemspezifikation und Geschäftsprozessdokumentation.
+Der Einsatz des Werkzeuges EA ist optional, jedoch für die genannten Einsatzzwecke empfohlen.
+Ziel dieser Dokumentation ist, dass alle mit dem EA erstellten Modelle einer einheitlichen Methodik folgen.
+Dadurch soll der Einarbeitungsaufwand für neue Projektmitarbeitende verringert, die Wartbarkeit der erstellten Modelle verbessert und die Übernahme von Spezifikationen in eine Masterspezifikation erleichtert werden.</p>
+</div>
+<div class="paragraph">
+<p>Darüber hinaus kann das Werkzeug auch für Systementwürfe oder Deployment- und Verteilungsdarstellungen genutzt werden, worauf hier allerdings nicht näher eingegangen wird.</p>
+</div>
+<div class="paragraph">
+<p>Die Dokumentation des Werkzeugs entstand für die Version EA 7.5.</p>
 </div>
 </div>
 </div>
@@ -594,33 +605,23 @@ Darüber hinaus wird das Werkzeug häufig auch für Systementwürfe oder Deploym
 <h2 id="vorgehen-zur-erstellung-der-spezifikationsdokumente"><a class="anchor" href="#vorgehen-zur-erstellung-der-spezifikationsdokumente"></a>2. Vorgehen zur Erstellung der Spezifikationsdokumente</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Man erstellt die Dokumente Systemspezifikation und Geschäftsprozesse nach den hier beschriebenen Vorgaben in Microsoft Word (oder einer dazu kompatiblen Textverarbeitung).
-Diagramme aus dem Enterprise Architect kopiert man nach der Erstellung / Aktualisierung in MS Word.
+<p>Die Dokumente Systemspezifikation und Geschäftsprozesse werden nach den hier beschriebenen Vorgaben in Microsoft Word (oder einer dazu kompatiblen Textverarbeitung) erstellt.
+Diagramme aus dem Enterprise Architect, werden nach der Erstellung / Aktualisierung in MS Word aktualisiert.
 Die beschriebenen Aufzählungen der Elemente unter den Diagrammen dienen dazu, Querverweise auf die Spezifikationselemente hinzufügen zu können.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="nutzung-des-enterprise-architect-zur-erstellung-von-systemspezifikationen"><a class="anchor" href="#nutzung-des-enterprise-architect-zur-erstellung-von-systemspezifikationen"></a>3. Nutzung des Enterprise Architect zur Erstellung von Systemspezifikationen</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Die Software „Enterprise Architect“ (nachfolgend kurz „EA“) der Firma SparxSystems ist für die Erstellung der Systemspezifikation und der zugehörigen Geschäftsprozesse in der im Projekt abgestimmten Version zu verwenden (Diese Dokumentation wurde für EA 7.5 erstellt).
-Die Anleitungen in diesem Dokument sollen dafür sorgen, dass alle damit erstellten Modelle einer einheitlichen Methodik folgen.
-Dies verringert den Einarbeitungsaufwand für neue Projektmitarbeiter, verbessert die Wartbarkeit der erstellten Modelle und erleichtert die Übernahme von Spezifikationen in die Masterspezifikation.</p>
-</div>
 <div class="sect2">
-<h3 id="uml-profile-einbinden"><a class="anchor" href="#uml-profile-einbinden"></a>3.1. UML-Profile einbinden</h3>
+<h3 id="uml-profile-einbinden"><a class="anchor" href="#uml-profile-einbinden"></a>2.1. UML-Profile einbinden</h3>
 <div class="paragraph">
-<p>Um eine einheitliche Nutzung des EA zu vereinfachen, wurden vorgefertigte UML-Profile erstellt, die die benötigten Elementtypen enthalten.
+<p>Um eine einheitliche Nutzung des EA zu ermöglichen, wurden vorgefertigte UML-Profile erstellt, welche die benötigten Elementtypen enthalten.
 Diese Profile werden auf Anfrage bereitgestellt.</p>
 </div>
 <div class="paragraph">
-<p>Im EA kann man zur Erstellung der Spezifikation mit einem neuen, leeren Modell beginnen (<span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">New Project&#8230;&#8203;</b></span>).</p>
+<p>Im EA kann zur Erstellung der Spezifikation mit einem neuen, leeren Modell begonnen werden (<span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">New Project&#8230;&#8203;</b></span>).</p>
 </div>
 <div class="paragraph">
-<p>Nun fügt man die UML-Profile hinzu.
-Hierzu nutzt man den „Resource Browser“ (<span class="menuseq"><b class="menu">View</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Resources</b></span>).
-Dort wählt man im Kontextmenü der UML-Profile <b class="button">Import Profile</b> aus und importiert so nacheinander alle Dateien.</p>
+<p>Nun ist ein Hinzufügen der UML-Profile möglich.
+Hierzu wird der „Resource Browser“ genutzt (<span class="menuseq"><b class="menu">View</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Resources</b></span>).
+Über das Kontextmenü wird <b class="button">Import Profile</b> ausgewählt und importiert hiermit alle UML-Profile.</p>
 </div>
 <div class="paragraph">
 <p>Danach sollte der Resource Browser etwa wie folgt aussehen:</p>
@@ -632,78 +633,113 @@ Dort wählt man im Kontextmenü der UML-Profile <b class="button">Import Profile
 <div class="title">Abbildung 1. Resource Browser mit hinzugefügten UML-Profilen</div>
 </div>
 <div class="paragraph">
-<p>Nun kann man die einzelnen Elemente aus den UML-Profilen nutzen.
-Elemente wie Anwendungsfälle erzeugt man, indem man sie in ein Diagramm zieht und benennt.
-Verbinder erzeugt man, indem man sie im UML-Profil auswählt und dann die Verbindung zwischen zwei Elementen zieht.</p>
+<p>Nun ist es möglich die einzelnen Elemente aus den UML-Profilen zu nutzen.
+Elemente wie Anwendungsfälle werden erzeugt, indem man diese in ein Diagramm zieht und benennt.
+Verbinder werden im UML-Profil ausgewählt und dann zwischen zwei Elementen eine Verbindung gezogen.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="struktur-des-modells-im-enterprise-architect"><a class="anchor" href="#struktur-des-modells-im-enterprise-architect"></a>3.2. Struktur des Modells im Enterprise Architect</h3>
+<h3 id="struktur-des-modells-im-enterprise-architect"><a class="anchor" href="#struktur-des-modells-im-enterprise-architect"></a>2.2. Struktur des Modells im Enterprise Architect</h3>
 <div class="paragraph">
-<p>Generell orientiert sich die Struktur im EA am Aufbau des zu erstellenden Dokuments.
-Die folgende Struktur muss man beim Aufbau des EA-Modells der Geschäftsprozesse und der Systemspezifikation im EA einhalten.</p>
+<p>Generell orientiert sich die Struktur im EA am Aufbau des zu erstellenden Dokumentationstyps.
+Zur Modellierung der Geschäftsprozesse und der Systemspezifikation gelten Empfehlungen zur Strukturierung des EA-Modells, die in den nun folgenden Abbildungen verdeutlicht werden sollen.</p>
 </div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Elemente, die in der Systemspezifikation benannt werden (z.B. Anwendungsfälle, Entitätstypen, usw.) dürfen nur einmal im EA-Modell enthalten sein.
+Wird dieselbe Entität in mehreren Diagrammen verwendet, wird diese nicht jedes mal neu angelegt, sondern wird aus den UML-Profilen herausgezogen. Nun kann die Entität aus dem Project Browser heraus in anderen Diagrammen genutzt werden.</p>
+</div>
+<div class="paragraph">
+<p>Bei Nichtbeachtung dieser Regel besteht die Gefahr der Inkonsistenz bei Umbenennungen.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_geschäftsprozessmodellierung"><a class="anchor" href="#_geschäftsprozessmodellierung"></a>2.2.1. Geschäftsprozessmodellierung</h4>
 <div id="image-eastructgpm" class="imageblock text-center">
 <div class="content">
 <img src="../_images/enterprise-architect/eastructgpm.png" alt="eastructgpm">
 </div>
 <div class="title">Abbildung 2. EA-Struktur der Geschäftsprozessmodellierung</div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_spezifikation_anwendungskomponenten"><a class="anchor" href="#_spezifikation_anwendungskomponenten"></a>2.2.2. Spezifikation - Anwendungskomponenten</h4>
 <div id="image-eastructanwcomp" class="imageblock text-center">
 <div class="content">
 <img src="../_images/enterprise-architect/eastructanwcomp.png" alt="eastructanwcomp">
 </div>
 <div class="title">Abbildung 3. EA-Struktur der Spezifikation: Anwendungskomponenten</div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_spezifikation_datenmodell"><a class="anchor" href="#_spezifikation_datenmodell"></a>2.2.3. Spezifikation - Datenmodell</h4>
 <div id="image-eastructdatmod" class="imageblock text-center">
 <div class="content">
 <img src="../_images/enterprise-architect/eastructdatmod.png" alt="eastructdatmod">
 </div>
 <div class="title">Abbildung 4. EA-Struktur der Spezifikation: Datenmodell</div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_spezifikation_dialoge"><a class="anchor" href="#_spezifikation_dialoge"></a>2.2.4. Spezifikation - Dialoge</h4>
 <div id="image-eastructdialog" class="imageblock text-center">
 <div class="content">
 <img src="../_images/enterprise-architect/eastructdialog.png" alt="eastructdialog">
 </div>
 <div class="title">Abbildung 5. EA-Struktur der Spezifikation: Dialoge</div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_spezifikation_druckausgaben"><a class="anchor" href="#_spezifikation_druckausgaben"></a>2.2.5. Spezifikation - Druckausgaben</h4>
 <div id="image-eastructdruck" class="imageblock text-center">
 <div class="content">
 <img src="../_images/enterprise-architect/eastructdruck.png" alt="eastructdruck">
 </div>
 <div class="title">Abbildung 6. EA-Struktur der Spezifikation: Druckausgaben</div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_spezifikation_schnittstellen"><a class="anchor" href="#_spezifikation_schnittstellen"></a>2.2.6. Spezifikation - Schnittstellen</h4>
 <div id="image-eastructschnitt" class="imageblock text-center">
 <div class="content">
 <img src="../_images/enterprise-architect/eastructschnitt.png" alt="eastructschnitt">
 </div>
 <div class="title">Abbildung 7. EA-Struktur der Spezifikation: Schnittstellen</div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_spezifikation_nichtfunktionale_anforderungen"><a class="anchor" href="#_spezifikation_nichtfunktionale_anforderungen"></a>2.2.7. Spezifikation - Nichtfunktionale Anforderungen</h4>
 <div id="image-eastructnfa" class="imageblock text-center">
 <div class="content">
 <img src="../_images/enterprise-architect/eastructnfa.png" alt="eastructnfa">
 </div>
 <div class="title">Abbildung 8. EA-Struktur der Spezifikation: Nichtfunktionale Anforderungen</div>
 </div>
-<div class="paragraph">
-<p>Elemente, die in der Systemspezifikation benannt werden (z.B. Anwendungsfälle, Entitätstypen, usw.) dürfen nur einmal im EA-Modell enthalten sein.
-Wird dieselbe Entität in mehreren Diagrammen verwendet, erzeugt man sie initial durch Ziehen aus den UML-Profilen in das erste Diagramm.
-Danach holt man sie aus dem Project Browser, um sie in weiteren Diagrammen zu nutzen.
-Falls man diese Regel nicht einhält, besteht die Gefahr der Inkonsistenz bei Umbenennungen.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="tipps-zur-arbeit-mit-dem-enterprise-architect"><a class="anchor" href="#tipps-zur-arbeit-mit-dem-enterprise-architect"></a>4. Tipps zur Arbeit mit dem Enterprise Architect</h2>
+<h2 id="tipps-zur-arbeit-mit-dem-enterprise-architect"><a class="anchor" href="#tipps-zur-arbeit-mit-dem-enterprise-architect"></a>3. Tipps zur Arbeit mit dem Enterprise Architect</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="farben-von-elementen-anpassen"><a class="anchor" href="#farben-von-elementen-anpassen"></a>4.1. Farben von Elementen anpassen</h3>
+<h3 id="farben-von-elementen-anpassen"><a class="anchor" href="#farben-von-elementen-anpassen"></a>3.1. Farben von Elementen anpassen</h3>
 <div class="paragraph">
-<p>Meistens haben Elemente, die aus den UML-Profilen erzeugt werden, schon die richtige Farbe.
-Wenn diese verändert werden soll, dann muss man hierzu die Elemente im Diagramm auswählen im Kontextmenü der markierten Elemente (<span class="menuseq"><b class="menu">Appearance</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Default Appearance</b></span> auswählen oder <kbd>F4</kbd> drücken).
-Damit kann man die Standarddarstellung der markierten Elemente für alle Diagramme setzen.
-Nun kann man RGB-Farbwerte eingeben.</p>
+<p>In der Regel haben Elemente, die aus den UML-Profilen erzeugt worden sind, schon die richtige Farbe.
+Zum Ändern der Farbe kann im Kontextmenü des markierten Elements (<span class="menuseq"><b class="menu">Appearance</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Default Appearance</b></span> auswählen oder <kbd>F4</kbd> drücken).
+Hierdurch ist es möglich, alle Standarddarstellungen der markierten Elemente für alle Diagramme zu setzen.</p>
+</div>
+<div class="paragraph">
+<p>Als Farbwert wird die RGB-Farbpalette genutzt.</p>
 </div>
 <div id="image-guidefault" class="imageblock text-center">
 <div class="content">
@@ -712,7 +748,7 @@ Nun kann man RGB-Farbwerte eingeben.</p>
 <div class="title">Abbildung 9. Dialog "Default Appearance“</div>
 </div>
 <div class="paragraph">
-<p>Alternativ kann man seit EA Version 7 die Farbe des Elements für ein einzelnes Diagramm setzen, indem man den Pinsel neben dem markierten Element anklickt und das Farbwahl-Feld nutzt (siehe <a href="#image-guiselectcol">Farbwahl-Feld</a>).</p>
+<p>Alternativ kann seit EA Version 7 die Farbe eines Elements für ein einzelnes Diagramm gesetzt werden, indem man den Pinsel neben dem markierten Element anklickt und das Farbwahl-Feld nutzt (siehe <a href="#image-guiselectcol">Farbwahl-Feld</a>).</p>
 </div>
 <div id="image-guiselectcol" class="imageblock text-center">
 <div class="content">
@@ -721,7 +757,7 @@ Nun kann man RGB-Farbwerte eingeben.</p>
 <div class="title">Abbildung 10. Farbwahl-Feld</div>
 </div>
 <div class="paragraph">
-<p>Die genutzten Farbwerte in RGB werden in folgendem Diagramm gezeigt.</p>
+<p>Die genutzten Farbwerte in RGB werden im folgenden Diagramm gezeigt.</p>
 </div>
 <div id="image-colorval" class="imageblock text-center">
 <div class="content">
@@ -731,9 +767,9 @@ Nun kann man RGB-Farbwerte eingeben.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="schriftart-von-elementen-anpassen"><a class="anchor" href="#schriftart-von-elementen-anpassen"></a>4.2. Schriftart von Elementen anpassen</h3>
+<h3 id="schriftart-von-elementen-anpassen"><a class="anchor" href="#schriftart-von-elementen-anpassen"></a>3.2. Schriftart von Elementen anpassen</h3>
 <div class="paragraph">
-<p>Seit der EA Version 7 kann man die Schriftart eines Elements für ein einzelnes Diagramm setzen, indem man den Pinsel neben dem markierten Element anklickt und das Schriftart-Feld nutzt (siehe <a href="#image-guiselectfnt">Schriftwahl-Feld</a>).</p>
+<p>Seit der EA Version 7 wird auch die Schriftart eines Elements für ein einzelnes Diagramm gesetzt, indem der Pinsel neben dem markierten Element anklickt wird, um dann im Schriftart-Feld die Anpassung vorzunehmen (siehe <a href="#image-guiselectfnt">Schriftwahl-Feld</a>).</p>
 </div>
 <div id="image-guiselectfnt" class="imageblock text-center">
 <div class="content">
@@ -743,7 +779,7 @@ Nun kann man RGB-Farbwerte eingeben.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="markierung-von-elementen-aus-anderen-ordnern-im-ea-abschalten"><a class="anchor" href="#markierung-von-elementen-aus-anderen-ordnern-im-ea-abschalten"></a>4.3. Markierung von Elementen aus anderen Ordnern im EA abschalten</h3>
+<h3 id="markierung-von-elementen-aus-anderen-ordnern-im-ea-abschalten"><a class="anchor" href="#markierung-von-elementen-aus-anderen-ordnern-im-ea-abschalten"></a>3.3. Markierung von Elementen aus anderen Ordnern im EA abschalten</h3>
 <div class="paragraph">
 <p>Standardmäßig zeichnet der EA Diagrammelemente aus anderen Ordnern als dem des Diagramms speziell aus.</p>
 </div>
@@ -754,59 +790,59 @@ Nun kann man RGB-Farbwerte eingeben.</p>
 <div class="title">Abbildung 13. Auszeichnung von Elementen aus anderen Ordnern im Diagramm</div>
 </div>
 <div class="paragraph">
-<p>Man muss dies je Diagramm wie folgt abschalten: Mit der rechten Maustaste auf den Diagramm-Hintergrund klicken und dann <span class="menuseq"><b class="menu">Properties&#8230;&#8203;</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Diagram</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Show Namespace</b></span> auswählen.</p>
+<p>Dies wird je Diagramm wie folgt abgeschaltet: Mit der rechten Maustaste auf den Diagramm-Hintergrund klicken und dann <span class="menuseq"><b class="menu">Properties&#8230;&#8203;</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Diagram</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Show Namespace</b></span> auswählen.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="inhalte-einzelner-elemente-und-aller-elemente-im-diagramm-ausblenden"><a class="anchor" href="#inhalte-einzelner-elemente-und-aller-elemente-im-diagramm-ausblenden"></a>4.4. Inhalte einzelner Elemente und aller Elemente im Diagramm ausblenden</h3>
+<h3 id="inhalte-einzelner-elemente-und-aller-elemente-im-diagramm-ausblenden"><a class="anchor" href="#inhalte-einzelner-elemente-und-aller-elemente-im-diagramm-ausblenden"></a>3.4. Inhalte einzelner Elemente und aller Elemente im Diagramm ausblenden</h3>
 <div class="paragraph">
-<p>Um die Inhalte eines Elements (z.B. Elemente in einem Ordner oder Attribute in einer Entität) auszublenden, entfernt man in dessen Kontextmenü die Häkchen bei <span class="menuseq"><b class="menu">Feature Visibility&#8230;&#8203;</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Attribute Visibility</b></span> sowie <span class="menuseq"><b class="menu">Feature Visibility&#8230;&#8203;</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Operation Visibility</b></span>.</p>
+<p>Um die Inhalte eines Elements (z.B. Elemente in einem Ordner oder Attribute in einer Entität) auszublenden, werden in dessen Kontextmenü die Häkchen bei <span class="menuseq"><b class="menu">Feature Visibility&#8230;&#8203;</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Attribute Visibility</b></span> sowie <span class="menuseq"><b class="menu">Feature Visibility&#8230;&#8203;</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Operation Visibility</b></span> entfernt.</p>
 </div>
 <div class="paragraph">
-<p>Um die Inhalte aller Elemente in einem Diagramm auszublenden, muss man in dessen Kontextmenü <span class="menuseq"><b class="menu">Properties&#8230;&#8203;</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Elements</b></span> auswählen und die Häkchen <b class="button">Attributes</b>, <b class="button">Operations</b> und <b class="button">Package Contents</b> entfernen.</p>
+<p>Um die Inhalte aller Elemente in einem Diagramm auszublenden, muss in dessen Kontextmenü <span class="menuseq"><b class="menu">Properties&#8230;&#8203;</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Elements</b></span> ausgewählt und die Häkchen bei <b class="button">Attributes</b>, <b class="button">Operations</b> und <b class="button">Package Contents</b> entfernt werden.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="rahmen-um-diagramme-beim-kopieren-unterdruecken"><a class="anchor" href="#rahmen-um-diagramme-beim-kopieren-unterdruecken"></a>4.5. Rahmen um Diagramme beim Kopieren unterdrücken</h3>
+<h3 id="rahmen-um-diagramme-beim-kopieren-unterdruecken"><a class="anchor" href="#rahmen-um-diagramme-beim-kopieren-unterdruecken"></a>3.5. Rahmen um Diagramme beim Kopieren unterdrücken</h3>
 <div class="paragraph">
-<p>Im Dialog <span class="menuseq"><b class="menu">Tools</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Options</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Diagram</b></span> kann man den Rahmen der Diagramme beim Druck (Checkbox <b class="button">Print with Border</b>) oder Export über den Zwischenspeicher (Checkbox <b class="button">On Clipboard Images</b>) unterdrücken.</p>
+<p>Im Dialog <span class="menuseq"><b class="menu">Tools</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Options</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Diagram</b></span> kann der Rahmen eines Diagrammes beim Druck (Checkbox <b class="button">Print with Border</b>) oder Export über den Zwischenspeicher (Checkbox <b class="button">On Clipboard Images</b>) unterdrückt werden.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="verbinder-im-aktuellen-diagramm-in-allen-anderen-diagrammen-und-in-ausgewaehlten-diagrammen-ausblenden"><a class="anchor" href="#verbinder-im-aktuellen-diagramm-in-allen-anderen-diagrammen-und-in-ausgewaehlten-diagrammen-ausblenden"></a>4.6. Verbinder im aktuellen Diagramm, in allen anderen Diagrammen und in ausgewählten Diagrammen ausblenden</h3>
+<h3 id="verbinder-im-aktuellen-diagramm-in-allen-anderen-diagrammen-und-in-ausgewaehlten-diagrammen-ausblenden"><a class="anchor" href="#verbinder-im-aktuellen-diagramm-in-allen-anderen-diagrammen-und-in-ausgewaehlten-diagrammen-ausblenden"></a>3.6. Verbinder im aktuellen Diagramm, in allen anderen Diagrammen und in ausgewählten Diagrammen ausblenden</h3>
 <div class="paragraph">
-<p>Die Verbinder zwischen verschiedenen Elementen kann man über ihr Kontextmenü im Diagramm mit <span class="menuseq"><b class="menu">Visibility</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Hide Connector</b></span> ausblenden.
-Über <span class="menuseq"><b class="menu">Visibility</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Hide Connector in other Diagrams</b></span> kann man die Diagramme (außer dem aktuellen) auswählen, in denen der Verbinder angezeigt werden soll.
-Um den Verbinder im aktuellen Diagramm wieder anzuzeigen, geht man auf die Properties eines der beiden verbundenen Elemente im Diagramm, sucht ihn unter <b class="button">Links</b> heraus und wählt per Kontextmenü <b class="button">Show Property</b>.</p>
+<p>Ein Ausblenden der Verbinder zwischen verschiedenen Elementen erfolgt über ihr Kontextmenü im Diagramm mit <span class="menuseq"><b class="menu">Visibility</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Hide Connector</b></span>.
+Über <span class="menuseq"><b class="menu">Visibility</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Hide Connector in other Diagrams</b></span> werden die Diagramme (außer dem aktuellen) auswählen, in denen die Verbinder ausgeblendet werden soll.
+Um den Verbinder im aktuellen Diagramm wieder anzuzeigen, kann auf die Properties eines der beiden verbundenen Elemente im Diagramm geklickt werden, sucht anschließend den Verbinder unter <b class="button">Links</b> heraus und wählt per Kontextmenü <b class="button">Show Property</b>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="mehrere-gleichartige-verbinder-nacheinander-zeichnen"><a class="anchor" href="#mehrere-gleichartige-verbinder-nacheinander-zeichnen"></a>4.7. Mehrere gleichartige Verbinder nacheinander zeichnen</h3>
+<h3 id="mehrere-gleichartige-verbinder-nacheinander-zeichnen"><a class="anchor" href="#mehrere-gleichartige-verbinder-nacheinander-zeichnen"></a>3.7. Mehrere gleichartige Verbinder nacheinander zeichnen</h3>
 <div class="paragraph">
-<p>Wenn man einen Verbinder mit bestimmtem Stereotyp aus dem UML-Profil gezeichnet hat, kann man mit <kbd>F3</kbd> weitere Verbinder derselben Art zeichnen.</p>
+<p>Wird ein Verbinder mit einem bestimmten Stereotyp aus dem UML-Profil gezeichnet, kann mit <kbd>F3</kbd> ein weiterer Verbinder derselben Art erzeugt werden.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="import-und-export-in-ea-modellen"><a class="anchor" href="#import-und-export-in-ea-modellen"></a>4.8. Import und Export in EA-Modellen</h3>
+<h3 id="import-und-export-in-ea-modellen"><a class="anchor" href="#import-und-export-in-ea-modellen"></a>3.8. Import und Export in EA-Modellen</h3>
 <div class="paragraph">
-<p>Für die Übernahme von Teilen eines Modells in ein anderes geht man wie folgt vor:</p>
+<p>Für die Übernahme von Teilen eines Modells in ein anderes wird wie folgt vorgegangen:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Export aus dem ersten Modell: Man wählt im Kontextmenü des zu exportierenden Ordners <span class="menuseq"><b class="menu">Import/Export</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Export Package To XMI File&#8230;&#8203;</b></span> aus und erzeugt so eine XMI-Datei.</p>
+<p>Export aus dem ersten Modell: Im Kontextmenü des zu exportierenden Ordners <span class="menuseq"><b class="menu">Import/Export</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Export Package To XMI File&#8230;&#8203;</b></span> auswählen und erzeugt so eine XMI-Datei.</p>
 </li>
 <li>
-<p>Import in das zweite Modell: Man wählt im Kontextmenü des Ordners, in den importiert werden soll, <span class="menuseq"><b class="menu">Import/Export</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Import Package From XMI File&#8230;&#8203;</b></span> aus.
-Hier kann man sich entscheiden:</p>
+<p>Import in das zweite Modell: Im Kontextmenü des Ordners, in den importiert werden soll, <span class="menuseq"><b class="menu">Import/Export</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Import Package From XMI File&#8230;&#8203;</b></span> auswählen.
+Hier kann entschieden werden:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Setzt man das Häkchen bei <b class="button">Strip GUIDs</b>, dann werden die eindeutigen IDs der Elemente verworfen und neu vergeben.
+<p>Wird das Häkchen bei <b class="button">Strip GUIDs</b> gesetzt, dann werden die eindeutigen IDs der Elemente verworfen und neu vergeben.
 Falls die Elemente in einer früheren Version bereits im Modell sind, dann werden Kopien der Elemente daneben gelegt.</p>
 </li>
 <li>
-<p>Entfernt man das Häkchen bei <b class="button">Strip GUIDs</b>, dann werden die eindeutigen IDs der Elemente beibehalten.
+<p>Wird das Häkchen bei <b class="button">Strip GUIDs</b> gesetzt, dann werden die eindeutigen IDs der Elemente beibehalten.
 Falls Elemente mit denselben GUIDs bereits im Modell sind, dann werden sie durch die neuen Versionen überschrieben.</p>
 </li>
 </ol>
@@ -815,13 +851,13 @@ Falls Elemente mit denselben GUIDs bereits im Modell sind, dann werden sie durch
 </ol>
 </div>
 <div class="paragraph">
-<p>Beide Vorgehen können in unterschiedlichen Situationen sinnvoll sein: Wenn man z.B. eine Altsystem-Spezifikation „kopiert“ um das Neusystem zu beschreiben, dann will man beide Spezifikationen nicht vermischen.
-Hier sollte man <b class="button">Strip GUIDs</b> anschalten.</p>
+<p>Beide Vorgehen können in unterschiedlichen Situationen sinnvoll sein: Wenn z.B. eine Altsystem-Spezifikation „kopiert“ wird, um das Neusystem zu beschreiben, dann sollen beide Spezifikationen nicht vermischt werden.
+Hierbei sollte <b class="button">Strip GUIDs</b> anschaltet werden.</p>
 </div>
 <div class="paragraph">
-<p>Will man ein in einem Teilprojekt verändertes System hingegen zurück in ein zentrales Modell bringen, dann kann man hierfür <b class="button">Strip GUIDs</b> ausschalten.
+<p>Soll ein - in einem Teilprojekt verändertes - System hingegen zurück in ein zentrales Modell gebracht werden, wird hierfür <b class="button">Strip GUIDs</b> ausgeschaltet.
 Dadurch werden die alten Versionen der Elemente durch die neuen ersetzt.
-Dieses Vorgehen muss man sich aber vor Beginn der Änderungsspezifikation überlegen und bei den Änderungen beachten, wie der Rückimport später funktioniert.
+Dieses Vorgehen muss sich aber vor Beginn der Änderungsspezifikation überlegt und bei den Änderungen beachten werden, wie der Rückimport später funktioniert.
 Im Normalfall ist eine manuelle Übernahme der Änderungen hier der weniger fehleranfällige Weg.</p>
 </div>
 </div>
@@ -836,5 +872,9 @@ Im Normalfall ist eine manuelle Übernahme der Änderungen hier der weniger fehl
 <script src="../../../../_/js/site.js"></script>
 <script async src="../../../../_/js/vendor/highlight.js"></script>
 <script src="../../../../_/js/isyfact.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
   </body>
 </html>

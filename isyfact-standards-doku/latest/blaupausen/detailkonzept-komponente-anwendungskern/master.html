@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Detailkonzept Anwendungskern :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/blaupausen/detailkonzept-komponente-anwendungskern/master.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -16,17 +16,16 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-        </div>
-      </div>
     </div>
   </nav>
 </header>
@@ -284,6 +283,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-security/konzept/master.html">Konzept</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -348,10 +350,10 @@
     <span class="nav-text">Styleguide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
+    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
   </li>
 </ul>
   </li>
@@ -391,32 +393,41 @@
     <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -528,14 +539,6 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../../../isyfact-jsf-doku/latest/isy-web/konzept/konzept.html">5.3</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
         </li>
       </ul>
     </li>
@@ -664,7 +667,7 @@ Sie bilden damit den Schnitt der Anwendungskomponenten in die technische Archite
 Fachkomponenten beinhalten möglichst wenig Technik und trennen so Anwendungslogik von Technologie.</p>
 </div>
 <div class="paragraph">
-<p>Die Vorlageanwendung enthält die Fachkomponenten <em>Erstellung</em>, <em>Teilnahme</em> und <em>Verwaltung</em>.</p>
+<p>Eine allgemeine Anwendung enthält die Fachkomponenten <em>Erstellung</em>, <em>Teilnahme</em> und <em>Verwaltung</em>.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -732,7 +735,7 @@ Sie werden primär nach ihrer Funktion benannt.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>In der Vorlageanwendung gibt es z.B. die Geschäftsobjekte <code>Terminfindung</code>, <code>Tag</code> und <code>Teilnehmer</code>.</p>
+<p>In einer allgemeinen Anwendung gibt es z.B. die Geschäftsobjekte <code>Aufgabe</code>, <code>Zeitpunkt</code> und <code>Nutzer</code>.</p>
 </div>
 <div class="paragraph">
 <p>In Ausnahmefällen können Geschäftsobjekte fachlich nicht genau einer Komponente zugeordnet werden.
@@ -872,8 +875,8 @@ Um den Austausch von Objekten innerhalb einer Teilanwendung zwischen den Schicht
 Die hierfür bereitgestellte Schnittstelle der Schicht gehört damit aber zur Teilanwendung darf von einer anderen Teilanwendung nicht genutzt werden.</p>
 </div>
 <div class="paragraph">
-<p>In der Vorlageanwendung ist z.B. „Terminfindung“ eine Teilanwendung.
-Zu dieser Teilanwendung gehören in der Schicht Nutzung die Oberfläche <em>Terminfindung</em> und der Batch <code>TerminfindungLoeschBatch</code>, in der Schicht Anwendungslogik die Fachkomponenten <em>Erstellen</em>, <em>Teilnehmen</em>, <em>Verwalten</em> und <em>Datenpflege</em> und der Schicht Datenhaltung die Entitäten <code>Terminfindung</code>, <code>Tag</code>, <code>Teilnehmer</code>, <code>Zeitraum</code> und <code>Teilnehmerzeitraum</code>.</p>
+<p>In der einer allgemeinen Anwendung ist z.B. „Aspektanwendung“ eine Teilanwendung.
+Zu dieser Teilanwendung gehören in der Schicht Nutzung die Oberfläche <em>Aspektanwendung</em> und der Batch <code>AspektanwendungLoeschBatch</code>, in der Schicht Anwendungslogik die Fachkomponenten <em>Erstellen</em>, <em>Verwalten</em> und <em>Datenpflege</em> und der Schicht Datenhaltung die Entitäten <code>Aspektanwendung</code>, <code>Zeitpunkt</code>, <code>Nutzer</code>, <code>Intervall</code> und <code>Nutzerintervall</code>.</p>
 </div>
 </div>
 </div>
@@ -969,17 +972,17 @@ Für diese Klassen kann man benötigte andere Beans oder Konfigurationsparameter
 Diese werden beim Start des Applikations-Containers gescannt und ausgewertet (<em>Component Scan</em>).</p>
 </div>
 <div class="paragraph">
-<p>Die folgende Abbildung zeigt einen Ausschnitt der für die Vorlageanwendung erstellten Beans.
+<p>Die folgende Abbildung zeigt einen Ausschnitt der für eine allgemeine Anwendung erstellten Beans.
 Diese werden grün dargestellt und besitzen „referenzierte“ Abhängigkeiten zu benötigten anderen Beans.</p>
 </div>
-<div id="image-SpringBeansVorlag" class="imageblock text-center">
+<div id="image-SpringBeansBeispiel" class="imageblock text-center">
 <div class="content">
-<img src="../_images/detailkonzept-anwendungskern/SpringBeansVorlag.png" alt="SpringBeansVorlag" width="80%">
+<img src="../_images/detailkonzept-anwendungskern/SpringBeansBeispiel.svg" alt="SpringBeansBeispiel" width="80%">
 </div>
-<div class="title">Abbildung 5. Spring-Beans der Vorlageanwendung</div>
+<div class="title">Abbildung 5. Spring-Beans einer allgemeinen Anwendung</div>
 </div>
 <div class="paragraph">
-<p><a href="#image-SpringBeansVorlag">Abbildung 4</a> zeigt bereits, dass nicht alle Klassen der Anwendung als Beans konfiguriert werden: Für die Komponente
+<p><a href="#image-SpringBeansBeispiel">Abbildung 4</a> zeigt bereits, dass nicht alle Klassen der Anwendung als Beans konfiguriert werden: Für die Komponente
 <code>Verwaltung</code> wird eine Klasse als Bean konfiguriert, welche die Funktionalität der Komponente bereitstellt.
 Generell gilt, dass jede zentrale und wichtige Klasse aber als Spring Bean konfiguriert werden sollte.</p>
 </div>
@@ -994,7 +997,7 @@ Alle relevanten und zentralen Klassen werden daher als Spring Beans konfiguriert
 Das umfasst vor allem, aber nicht ausschließlich, die Fassade und zugehörige Anwendungsfallklassen.</p>
 </div>
 <div class="paragraph">
-<p>Ein Beispiel dafür ist die Klasse <code>VerwaltungImpl</code> der Vorlageanwendung.</p>
+<p>Ein Beispiel dafür ist die Klasse <code>VerwaltungImpl</code> einer allgemeinen Anwendung.</p>
 </div>
 <div class="paragraph">
 <p>Bei Anwendungsfunktionsklassen oder Hilfsklassen ist je nach Relevanz zu entscheiden, ob diese als eigene Spring Beans definiert werden.
@@ -1103,7 +1106,7 @@ public class ReloadablePropertyKonfiguration {
          return new ReloadablePropertyKonfiguration(String[]{
             "/resources/nachrichten/gui-linksnavigation.properties",
             "/config/isy-webgui.properties",
-            "/config/terminfindung.properties",
+            "/config/allgemeine-anwendung.properties",
             "/config/jpa.properties",
             "/config/tasks.properties"
          });
@@ -1137,7 +1140,7 @@ Generell sind die standardisierten Lifecycle-Annotationen <code>@PostConstruct</
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;context-param&gt;
   &lt;param-name&gt;webAppRootKey&lt;/param-name&gt;
-  &lt;param-value&gt;terminfindung&lt;/param-value&gt;
+  &lt;param-value&gt;allgemeine-anwendung&lt;/param-value&gt;
 &lt;/context-param&gt;</code></pre>
 </div>
 </div>
@@ -1147,7 +1150,7 @@ Wenn mehrere Anwendungen gleichzeitig in einem Tomcat betrieben werden (bspw.
 in einer Entwicklungsumgebung), wird dieser Parameter durch die verschiedenen Anwendungen überschrieben.
 Dies kann zu ungewünschten Seiteneffekten führen.
 Ist der Kontextparameter <code>webAppRootKey</code> wie im obigen Beispiel gesetzt, wird der Pfad statt im Parameter <code>webapp.root</code>
-im Parameter <code>terminfindung</code> abgelegt.
+im Parameter <code>allgemeine-anwendung</code> abgelegt.
 Da jede Webanwendung einen eindeutigen Namen besitzt, und damit einen eigenen Kontextparameter verwendet, wird das Überschreiben vermieden.</p>
 </div>
 </div>
@@ -1457,5 +1460,9 @@ public class SomeBean {
 <script src="../../../../_/js/site.js"></script>
 <script async src="../../../../_/js/vendor/highlight.js"></script>
 <script src="../../../../_/js/isyfact.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
   </body>
 </html>

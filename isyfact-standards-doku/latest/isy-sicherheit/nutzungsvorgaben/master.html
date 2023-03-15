@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Nutzungsvorgaben Sicherheit :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/isy-sicherheit/nutzungsvorgaben/master.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -16,17 +16,16 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-        </div>
-      </div>
     </div>
   </nav>
 </header>
@@ -284,6 +283,9 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-security/konzept/master.html">Konzept</a>
   </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
@@ -348,10 +350,10 @@
     <span class="nav-text">Styleguide</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
+    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../../isyfact-style-doku/latest/isy-style/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
   </li>
 </ul>
   </li>
@@ -391,32 +393,41 @@
     <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java-Programmierkonventionen</a>
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -531,14 +542,6 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">Styleguide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../../isyfact-style-doku/latest/isy-style/styleguide.html">5.4</a>
-        </li>
-      </ul>
-    </li>
   </ul>
 </div>
     </div>
@@ -613,7 +616,7 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <h2 id="einleitung"><a class="anchor" href="#einleitung"></a>1. Einleitung</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Das Dokument <a href="#einleitung">Sicherheit - Konzept</a> konzentriert sich auf die konzeptionellen Aspekte der Authentifizierung und Autorisierung.</p>
+<p>Das Dokument <a href="../konzept/master.html" class="xref page">Sicherheit - Konzept</a> konzentriert sich auf die konzeptionellen Aspekte der Authentifizierung und Autorisierung.</p>
 </div>
 <div class="paragraph">
 <p>Dieses Dokument beschreibt, wie der Baustein Sicherheit und die von ihm bereitgestellte Bibliothek <code>isy-sicherheit</code> verwendet werden, um die Autorisierung innerhalb von IT-Systemen umzusetzen.
@@ -645,9 +648,6 @@ Dann folgen weitere Themen:</p>
 </div>
 <div class="paragraph">
 <p>Schließlich beschreibt das letzte Kapitel, wie siehe <a href="#entwickeln-und-testen">Entwickeln und Testen</a> mit dem Baustein Sicherheit möglich ist.</p>
-</div>
-<div class="paragraph">
-<p>Viele der in diesem Dokument beschriebenen Vorgaben sind in der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-vorlageanwendung" class="xref page">Vorlageanwendung</a> umgesetzt.</p>
 </div>
 </div>
 </div>
@@ -790,8 +790,9 @@ Eine Beschreibung der Konfiguration findet sich in den jeweiligen Nutzungsvorgab
 </tr>
 </table>
 </div>
-<div class="sect3">
-<h4 id="_caching_von_authentifizierungen"><a class="anchor" href="#_caching_von_authentifizierungen"></a>2.2.1. Caching von Authentifizierungen</h4>
+</div>
+<div class="sect2">
+<h3 id="cache-authentifizierungen"><a class="anchor" href="#cache-authentifizierungen"></a>2.3. Caching von Authentifizierungen</h3>
 <div class="paragraph">
 <p>Der Baustein liefert eine <a href="#standard-cache-konfiguration">Standard-Konfiguration für das Caching von Authentifizierungen</a> an.
 Der Standardwert für die Lebensdauer von Cache-Elementen liegt bei 5 Minuten (300 Sekunden), die maximale Anzahl an Elementen im Cache bei 1000.
@@ -812,19 +813,16 @@ isy.sicherheit.cache.maxelements=1000</code></pre>
 Wird der Parameter <code>isy.sicherheit.cache.maxelements</code> auf 0 gesetzt, werden beliebig viele Elemente im Cache vorgehalten.</p>
 </div>
 </div>
-</div>
 <div class="sect2">
-<h3 id="konfiguration-von-rollen-und-rechten"><a class="anchor" href="#konfiguration-von-rollen-und-rechten"></a>2.3. Konfiguration von Rollen und Rechten</h3>
+<h3 id="konfiguration-von-rollen-und-rechten"><a class="anchor" href="#konfiguration-von-rollen-und-rechten"></a>2.4. Konfiguration von Rollen und Rechten</h3>
 <div class="paragraph">
 <p>Jede Geschäftsanwendung spezifiziert im Rahmen ihrer Systemspezifikation Rechte und bildet diese auf fachliche und technische Rollen ab.
 Bei der technischen Umsetzung müssen alle spezifizierten Rollen und Rechte konfiguriert und korrekt zugeordnet werden.
 Dies geschieht in der statischen Konfiguration in der Datei <code>/resources/sicherheit/rollenrechte.xml</code>.
-Der Baustein liefert ein <a href="#einleitung">XML-Schema für den Aufbau der Konfigurationsdatei</a> mit.</p>
+Der Baustein liefert ein <a href="#anhang-rollen-rechte-schema">XML-Schema für den Aufbau der Konfigurationsdatei</a> mit.</p>
 </div>
-<div class="sect3">
-<h4 id="rollen-rechte-schema"><a class="anchor" href="#rollen-rechte-schema"></a>2.3.1. rollen-rechte-schema</h4>
 <div class="paragraph">
-<p>Die Geschäftsanwendung X spezifiziert zwei Rechte, <code>DialogA.Aufrufen</code> und <code>DialogB.Aufrufen</code>.
+<p>Dieser Zusammenhang wird mit einem Beispiel verdeutlicht: Die Geschäftsanwendung X spezifiziert zwei Rechte, <code>DialogA.Aufrufen</code> und <code>DialogB.Aufrufen</code>.
 Aus diesen werden zwei fachliche Rollen gebildet:</p>
 </div>
 <div class="ulist">
@@ -869,6 +867,9 @@ Aus diesen werden zwei fachliche Rollen gebildet:</p>
 &lt;/tns:Anwendung&gt;</code></pre>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="zusammenhang-von-rechten-und-rollen"><a class="anchor" href="#zusammenhang-von-rechten-und-rollen"></a>2.5. Zusammenhang von Rechten und Rollen</h3>
 <div class="paragraph">
 <p>Innerhalb jeder Rolle werden gemäß Spezifikation die zugeordneten Rechte festgelegt.
 Rollen können überlappende Teilmengen von Rechten enthalten.</p>
@@ -887,14 +888,13 @@ Rollen können überlappende Teilmengen von Rechten enthalten.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Werden in Überprüfungen Rollen oder Rechte verwendet, die hier nicht definiert sind, so wird ein technischer Fehler erzeugt.
+<p>Werden in Überprüfungen Rollen oder Rechte verwendet, die hier nicht definiert sind, wird ein technischer Fehler erzeugt.
 Die Konfiguration gibt also verlässlich Auskunft darüber, welche Rollen und Rechte in der Geschäftsanwendung überprüft werden.</p>
 </div>
 <div class="paragraph">
 <p>Der Baustein Sicherheit ermöglicht eine Autorisierung nur auf Basis von Rechten, nicht von Rollen.
-Jeder Rolle muss also zumindest ein Recht zugeordnet werden, um anhand ihr eine Autorisierung durchführen zu können.
-Werden im Lebenszyklus der Geschäftsanwendung weitere Rollen (z.B. für neu hinzukommende Akteure) spezifiziert und mit bestehenden Rechten ausgestattet, so sind neben den Änderungen in der Konfigurationsdatei keine weiteren Änderungen notwendig.</p>
-</div>
+Jeder Rolle muss also zumindest ein Recht zugeordnet werden, um anhand dessen eine Autorisierung durchführen zu können.
+Werden im Lebenszyklus der Geschäftsanwendung weitere Rollen (z.B. für neu hinzukommende Akteure) spezifiziert und mit bestehenden Rechten ausgestattet, sind neben den Änderungen in der Konfigurationsdatei keine weiteren Änderungen notwendig.</p>
 </div>
 </div>
 </div>
@@ -1108,7 +1108,7 @@ Es ist jedoch bei Bedarf auch möglich, Prüfungen innerhalb des Anwendungskerns
 <h4 id="awk-autorisierung-an-methoden"><a class="anchor" href="#awk-autorisierung-an-methoden"></a>3.4.1. Autorisierung an Methoden des Anwendungskerns</h4>
 <div class="paragraph">
 <p>An den Schnittstellen des Anwendungskerns können durch Verwendung der Annotation <code>@Gesichert</code> einzelne Methoden deklarativ abgesichert werden.
-Die Verwendung funktioniert genauso wie bei der <a href="#service-autorisierung">service-autorisierung</a>.
+Die Verwendung funktioniert genauso wie bei der <a href="#service-autorisierung">Autorisierung an einer Service-Schnittstelle</a>.
 Die wichtigste Voraussetzung für das Funktionieren dieses Ansatzes ist, dass im Rahmen des Aufrufs der Anwendung der Aufrufkontext bereits gefüllt wurde.</p>
 </div>
 </div>
@@ -1258,14 +1258,11 @@ MdcHelper.pushKorrelationsId(korrelationsId);</code></pre>
 <p>Neben dem MDC wird die Korrelations-ID ebenfalls im Aufrufkontext hinterlegt.
 So wird die Korrelations-ID beim Aufruf eines Nachbar­systems als Bestandteil des Aufrufkontextes automatisch weitergeleitet.</p>
 </div>
-<div class="sect2">
-<h3 id="entgegennahme-der-korrelations-id-in-der-gui"><a class="anchor" href="#entgegennahme-der-korrelations-id-in-der-gui"></a>5.1. Entgegennahme der Korrelations-ID in der GUI</h3>
 <div class="paragraph">
 <p>Im Fall einer zentralen Authentifizierung kümmert sich die mitgelieferte Implementierung des Bausteins Sicherheit um die Entgegennahme der Korrelations-ID.</p>
 </div>
 <div class="paragraph">
 <p>Im Fall der lokalen Authentifizierung wird keine Korrelations-ID von außen übertragen und das IT-System muss für jede Anfrage eine neue Korrelations-ID manuell erzeugen (s. <a href="#listing-manuelle-erzeugung-korrelations-id">Listing 9</a>).</p>
-</div>
 </div>
 </div>
 </div>
@@ -1364,9 +1361,7 @@ Mit der Eigenschaft <code>festerAufrufKontext</code> lässt sich darüber hinaus
 <h2 id="_anhang"><a class="anchor" href="#_anhang"></a>9. Anhang</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="konfigurationsdateien"><a class="anchor" href="#konfigurationsdateien"></a>9.1. Anhang A: Konfigurationsdateien</h3>
-<div class="sect3">
-<h4 id="standard-cache-konfiguration"><a class="anchor" href="#standard-cache-konfiguration"></a>9.1.1. Standard-Cache-Konfiguration</h4>
+<h3 id="standard-cache-konfiguration"><a class="anchor" href="#standard-cache-konfiguration"></a>9.1. Anhang A: Standard-Cache-Konfiguration</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
@@ -1396,7 +1391,6 @@ Mit der Eigenschaft <code>festerAufrufKontext</code> lässt sich darüber hinaus
     overflowToDisk="false"
     memoryStoreEvictionPolicy="LRU" /&gt;
 &lt;/ehcache&gt;</code></pre>
-</div>
 </div>
 </div>
 </div>
@@ -1674,5 +1668,9 @@ Sie hängt von den Abhängigkeiten der Systeme ab, die in den Releaselettern der
 <script src="../../../../_/js/site.js"></script>
 <script async src="../../../../_/js/vendor/highlight.js"></script>
 <script src="../../../../_/js/isyfact.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
   </body>
 </html>
