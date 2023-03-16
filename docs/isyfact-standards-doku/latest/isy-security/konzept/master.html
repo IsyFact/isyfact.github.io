@@ -599,12 +599,7 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy-sicherheit</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bibliothek</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">v3.0.0-SNAPSHOT</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy-aufrufkontext</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy-security</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Bibliothek</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">v3.0.0-SNAPSHOT</p></td>
 </tr>
@@ -617,7 +612,7 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <div class="sectionbody">
 <div class="paragraph">
 <p>Sicherheit ist ein zentrales Thema einer jeder  <a href="../../../../glossary/latest/glossary/master.html#glossar-geschaeftsanwendung" class="xref page">Geschäftsanwendung</a>.
-Bei der Umsetzung von Geschäftsanwendungen in IT-Systeme werden ein Gutteil der Anforderungen an die Sicherheit durch Maßnahmen der IT-Sicherheit abgedeckt.
+Bei der Umsetzung von Geschäftsanwendungen in IT-Systeme wird ein Großteil der Anforderungen an die Sicherheit durch Maßnahmen der IT-Sicherheit abgedeckt.
 Die IsyFact richtet sich beim Thema Sicherheit nach behördlichen Standards sowie De-Facto-Standards aus der Industrie:</p>
 </div>
 <div class="ulist">
@@ -628,6 +623,9 @@ Die IsyFact richtet sich beim Thema Sicherheit nach behördlichen Standards sowi
 <li>
 <p><a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-owasp" class="xref page">OWASP Top Ten Project</a></p>
 </li>
+<li>
+<p><a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-oauth-homepage" class="xref page">OAuth 2.0 Homepage</a></p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -636,18 +634,21 @@ Es sorgt dafür, dass Authentifizierung und Autorisierung in allen IT-Systemen g
 Es richtet sich vor allem an Software-Architekten, die eine Geschäftsanwendung gemäß den Vorgaben der IsyFact absichern müssen und beschreibt, wie und in welchen Teilen eines IT-Systems die Authentifizierung und Autorisierung stattfindet.</p>
 </div>
 <div class="paragraph">
-<p>Dazu erläutert das Kapitel <a href="#prinzipien-der-sicherheitsarchitektur">Prinzipien der Sicherheitsarchitektur</a> zunächst, wie sich die Sicherheitsarchitektur auf Ebene der Systemlandschaft und auf Ebene eines einzelnen IT-Systems darstellt.</p>
+<p>Das Kapitel <a href="#prinzipien-der-sicherheitsarchitektur">Prinzipien der Sicherheitsarchitektur</a> erläutert zunächst, wie sich die Sicherheitsarchitektur auf Ebene der Systemlandschaft und auf Ebene eines einzelnen IT-Systems darstellt.</p>
 </div>
 <div class="paragraph">
-<p>Im Kapitel <a href="#oauth2.0-und-openidconnect">OAuth2.0 und OpenIDConnect</a> ist das Verfahren zur Authentifizierung und Autorisierung nur mit Spring (OAuth2) beschrieben.</p>
+<p>Im Kapitel <a href="#oauth2.0-und-openidconnect">OAuth2.0 und OpenIDConnect</a> ist das Verfahren zur Authentifizierung und Autorisierung mit OAuth2 und Spring Security beschrieben.
+Die Begrifflichkeiten zum Verständnis von OAuth2.0 werden im Abschnitt <a href="inhalt.html#oauth2.0-zur-autorisierung" class="xref page">OAuth2.0 zur Autorisierung</a> erläutert und im Abschnitt <a href="inhalt.html#authentifizierung-und-autorisierung" class="xref page">Authentifizierung und Autorisierung</a> wird die Authentifizierung und Autorisierung für Web-Oberflächen, Service-Gateways sowie Batches und Tasks beschrieben.</p>
 </div>
 <div class="paragraph">
-<p>Danach beleuchtet das Kapitel <a href="#sicherheitsarchitektur-eines-it-systems">Sicherheitsarchitektur eines IT Systems</a> die Einbettung des Bausteins Sicherheit in ein konkretes <a href="../../../../glossary/latest/glossary/master.html#glossar-it-system" class="xref page">IT-System</a>.
-Zentrale Schnittstellen beschreibt das Kapitel <a href="#aussensicht-der-komponente-sicherheit">Schnittstelle des Bausteins Sicherheit</a>.
-Das Kapitel <a href="#aufruf-von-nachbarsystemen">Aufruf von Nachbarsystemen</a> befasst sicht mit Vorgaben und Konventionen beim Einbinden von Nachbarsystemen.</p>
+<p>Im Kapitel <a href="inhalt.html#token" class="xref page">Token</a> wird der Aufbau und die Verwendung von Tokens erklärt.</p>
 </div>
 <div class="paragraph">
-<p>Das Kapitel <a href="#rollen-und-rechte">Rollen und Rechte</a> beschreibt dann, wie Rollen und Rechte für eine neue Geschäftsanwendung spezifiziert werden.</p>
+<p>Danach beleuchtet das Kapitel <a href="#sicherheitsarchitektur-eines-it-systems">Sicherheitsarchitektur eines IT Systems</a> die Einbettung des Bausteins Security in ein konkretes <a href="../../../../glossary/latest/glossary/master.html#glossar-it-system" class="xref page">IT-System</a>.
+Hierbei werden im Abschnitt <a href="inhalt.html#aussensicht-der-komponente-security" class="xref page">Schnittstelle des Bausteins Security</a> die zur Verfügung gestellen Schnittstellen aufgeführt und der Abschnitt <a href="inhalt.html#aufruf-von-nachbarsystemen" class="xref page">Aufruf von Nachbarsystemen</a> befasst sich mit Vorgaben und Konventionen beim Einbinden von Nachbarsystemen.</p>
+</div>
+<div class="paragraph">
+<p>Das Kapitel <a href="#rollen-und-rechte">Rollen und Rechte</a> beschreibt dann abschließend, wie Rollen und Rechte für eine neue Geschäftsanwendung spezifiziert werden.</p>
 </div>
 </div>
 </div>
