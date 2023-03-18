@@ -1162,22 +1162,29 @@ Berechtigungsprüfungen erfolgen innerhalb eines IT-Systems immer über die Bibl
 <div class="ulist">
 <ul>
 <li>
-<p>Anfragen, die am Dialog eines IT-Systems eingehen, sind immer bereits durch das IAM-System bzw. die lokale Authentifizierung erfolgreich  authentifiziert.
-Sorgt ein IAM-System für die Authentifizierung, enthält der HTTP-Header der Anfrage die Identifikation des Anwenders und dessen Rollen.
-Die Informationen aus dem HTTP-Header werden als <code>AufrufKontext</code> in das IT-System übernommen.</p>
+<p>Anfragen, die am Dialog (Web-App) eines IT-Systems eingehen, sind immer bereits durch das IAM-System bzw. die lokale Authentifizierung erfolgreich authentifiziert.
+Sorgt ein IAM-System für die Authentifizierung, enthält der HTTP-Header der Anfrage die Identifikation des Anwenders und dessen Rollen (in Form eines JWT Access-Token).
+Die Informationen aus dem Access-Token werden als <code>SecurityContext</code> in das IT-System übernommen.</p>
 </li>
 <li>
-<p>Anfragen, die an einer Service-Schnittstelle eines IT-Systems eingehen, sind ebenso bereits authentifiziert.
-Das mit der Anfrage an das IT-System als Parameter übergebene Transportobjekt <code>AufrufKontextTo</code> enthält die Identifikation des Anwenders und dessen Rollen und wird als <code>AufrufKontext</code> in das IT-System übernommen.</p>
+<p>Anfragen, die an einer Service-Schnittstelle (von außen über ein Service-Gateway (SGW) oder von anderen IT-Systemen innerhalb der IT-Systemlandschaft) eines IT-Systems eingehen, sind ebenso bereits authentifiziert.
+Das mit der Anfrage an das IT-System im Header übergebene JWT Access-Token enthält die Identifikation des Anwenders und dessen Rollen und wird als <code>SecurityContext</code> in das IT-System übernommen.</p>
 </li>
 <li>
-<p>Prozesse, die unabhängig von eingehenden Anfragen (über Dialog und Service) durch ein IT-System gestartet werden, müssen zunächst einen (meist technischen) Anwender gegen das IAM-System bzw. die lokale Authentifizierung erfolgreich authentifizieren, dessen Rollen ermitteln und diese Informationen als <code>AufrufKontext</code> im IT-System hinterlegen.</p>
+<p>Prozesse, die unabhängig von eingehenden Anfragen (über Dialog und Service) durch ein IT-System gestartet werden (z.B. Batch/Task), müssen zunächst einen (technischen) Nutzer gegen das IAM-System bzw. die lokale Authentifizierung erfolgreich authentifizieren, dessen Rollen ermitteln und diese Informationen als <code>SecurityContext</code> im IT-System hinterlegen.</p>
 </li>
 <li>
-<p>Ein innerhalb der Logik- und Verarbeitungszone eines IT-Systems übergebener <code>AufrufKontext</code> ist vertrauenswürdig.
-Er kann ohne erneute Rückfrage an das IAM-System bzw. die lokale Authentifizierung verwendet werden.</p>
+<p>Bei der Übernahme der Anwenderinformationen in den <code>SecurityContext</code> bildet das IT-System die Rollen des Anwenders auf systemspezifische Rechte ab.
+Vor Ausführung des Service bzw. Prozesses prüft das IT-System, ob der Anwender die dafür benötigten Rechte besitzt.</p>
+</li>
+<li>
+<p>Innerhalb der Logik- und Verarbeitungszone eines IT-Systems wird der <code>JWT Access-Token</code> weitergegeben. Zur Stärkung der Vertrauenswürdigkeit wird jeder <code>JWT Access-Token</code> beim Eintritt in ein IT-System auf Gültigkeit und Authentizität geprüft.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Die Außenschnittstellen eines IT-Systems können also nur mit einer gültigen Legitimation aufgerufen werden und sind so vor unberechtigter Nutzung geschützt.
+Umgekehrt können die Module und Verarbeitungsprozesse innerhalb des IT-Systems sich darauf verlassen, dass ihr Aufruf legitim ist und die ihnen übergebenen Daten vertrauenswürdig sind.</p>
 </div>
 </div>
 <div class="sect2">
