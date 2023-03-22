@@ -396,6 +396,9 @@
     <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/typescript-programmierkonventionen/master.html">TypeScript Programmierkonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
 <ul class="nav-list">
@@ -599,12 +602,7 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy-sicherheit</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bibliothek</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">v3.0.0-SNAPSHOT</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy-aufrufkontext</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy-security</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Bibliothek</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">v3.0.0-SNAPSHOT</p></td>
 </tr>
@@ -617,7 +615,7 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <div class="sectionbody">
 <div class="paragraph">
 <p>Sicherheit ist ein zentrales Thema einer jeder  <a href="../../../../glossary/latest/glossary/master.html#glossar-geschaeftsanwendung" class="xref page">Geschäftsanwendung</a>.
-Bei der Umsetzung von Geschäftsanwendungen in IT-Systeme werden ein Gutteil der Anforderungen an die Sicherheit durch Maßnahmen der IT-Sicherheit abgedeckt.
+Bei der Umsetzung von Geschäftsanwendungen in IT-Systeme wird ein Großteil der Anforderungen an die Sicherheit durch Maßnahmen der IT-Sicherheit abgedeckt.
 Die IsyFact richtet sich beim Thema Sicherheit nach behördlichen Standards sowie De-Facto-Standards aus der Industrie:</p>
 </div>
 <div class="ulist">
@@ -628,6 +626,9 @@ Die IsyFact richtet sich beim Thema Sicherheit nach behördlichen Standards sowi
 <li>
 <p><a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-owasp" class="xref page">OWASP Top Ten Project</a></p>
 </li>
+<li>
+<p><a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-oauth-homepage" class="xref page">OAuth 2.0 Homepage</a></p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -636,18 +637,21 @@ Es sorgt dafür, dass Authentifizierung und Autorisierung in allen IT-Systemen g
 Es richtet sich vor allem an Software-Architekten, die eine Geschäftsanwendung gemäß den Vorgaben der IsyFact absichern müssen und beschreibt, wie und in welchen Teilen eines IT-Systems die Authentifizierung und Autorisierung stattfindet.</p>
 </div>
 <div class="paragraph">
-<p>Dazu erläutert das Kapitel <a href="#prinzipien-der-sicherheitsarchitektur">Prinzipien der Sicherheitsarchitektur</a> zunächst, wie sich die Sicherheitsarchitektur auf Ebene der Systemlandschaft und auf Ebene eines einzelnen IT-Systems darstellt.</p>
+<p>Das Kapitel <a href="#prinzipien-der-sicherheitsarchitektur">Prinzipien der Sicherheitsarchitektur</a> erläutert zunächst, wie sich die Sicherheitsarchitektur auf Ebene der Systemlandschaft und auf Ebene eines einzelnen IT-Systems darstellt.</p>
 </div>
 <div class="paragraph">
-<p>Im Kapitel <a href="#oauth2.0-und-openidconnect">OAuth2.0 und OpenIDConnect</a> ist das Verfahren zur Authentifizierung und Autorisierung nur mit Spring (OAuth2) beschrieben.</p>
+<p>Im Kapitel <a href="#oauth2.0-und-openidconnect">OAuth2.0 und OpenIDConnect</a> ist das Verfahren zur Authentifizierung und Autorisierung mit OAuth2 und Spring Security beschrieben.
+Die Begrifflichkeiten zum Verständnis von OAuth2.0 werden im Abschnitt <a href="inhalt.html#oauth2.0-zur-autorisierung" class="xref page">OAuth2.0 zur Autorisierung</a> erläutert und im Abschnitt <a href="inhalt.html#authentifizierung-und-autorisierung" class="xref page">Authentifizierung und Autorisierung</a> wird die Authentifizierung und Autorisierung für Web-Oberflächen, Service-Gateways sowie Batches und Tasks beschrieben.</p>
 </div>
 <div class="paragraph">
-<p>Danach beleuchtet das Kapitel <a href="#sicherheitsarchitektur-eines-it-systems">Sicherheitsarchitektur eines IT Systems</a> die Einbettung des Bausteins Sicherheit in ein konkretes <a href="../../../../glossary/latest/glossary/master.html#glossar-it-system" class="xref page">IT-System</a>.
-Zentrale Schnittstellen beschreibt das Kapitel <a href="#aussensicht-der-komponente-sicherheit">Schnittstelle des Bausteins Sicherheit</a>.
-Das Kapitel <a href="#aufruf-von-nachbarsystemen">Aufruf von Nachbarsystemen</a> befasst sicht mit Vorgaben und Konventionen beim Einbinden von Nachbarsystemen.</p>
+<p>Im Kapitel <a href="inhalt.html#token" class="xref page">Token</a> wird der Aufbau und die Verwendung von Tokens erklärt.</p>
 </div>
 <div class="paragraph">
-<p>Das Kapitel <a href="#rollen-und-rechte">Rollen und Rechte</a> beschreibt dann, wie Rollen und Rechte für eine neue Geschäftsanwendung spezifiziert werden.</p>
+<p>Danach beleuchtet das Kapitel <a href="#sicherheitsarchitektur-eines-it-systems">Sicherheitsarchitektur eines IT Systems</a> die Einbettung des Bausteins Security in ein konkretes <a href="../../../../glossary/latest/glossary/master.html#glossar-it-system" class="xref page">IT-System</a>.
+Hierbei werden im Abschnitt <a href="inhalt.html#aussensicht-der-komponente-security" class="xref page">Schnittstelle des Bausteins Security</a> die zur Verfügung gestellen Schnittstellen aufgeführt und der Abschnitt <a href="inhalt.html#aufruf-von-nachbarsystemen" class="xref page">Aufruf von Nachbarsystemen</a> befasst sich mit Vorgaben und Konventionen beim Einbinden von Nachbarsystemen.</p>
+</div>
+<div class="paragraph">
+<p>Das Kapitel <a href="#rollen-und-rechte">Rollen und Rechte</a> beschreibt dann abschließend, wie Rollen und Rechte für eine neue Geschäftsanwendung spezifiziert werden.</p>
 </div>
 </div>
 </div>
@@ -664,6 +668,9 @@ Konkret wird das im Baustein <code>Security</code> durch ein Rollen-, Rechte- un
 <li>
 <p>Authentifizierungsinformationen, wie Benutzername und Passwort, werden nicht über IT-Systeme hinweg weitergegeben.
 Nur der Eigentümer der Authentifizierungsinformationen und der IAM-Service besitzen Kenntnis über diese Informationen.</p>
+</li>
+<li>
+<p>Eine Zweifaktor-Authentifizierung ist durch das Behördenkennzeichen (BHKNZ) als zusätzliches Authentifizierungsmerkmal konzipiert, allerdings setzt dies im IAM-Service voraus, dass dieses Merkmal dort auch ausgewertet werden kann.</p>
 </li>
 <li>
 <p>Die Authentifizierung und grobgranulare Autorisierung (mittels dem Nutzer zugeordneten Rollen) erfolgt an den Außenschnittstellen der Systemlandschaft (Portal, Authentication-Gateway bzw. Service-Gateway).</p>
@@ -724,7 +731,9 @@ IAM steht für <a href="../../../../glossary/latest/literaturextern/inhalt.html#
 </div>
 <div class="paragraph">
 <p>Die Authentifizierung und grobgranulare Autorisierung erfolgt, gemäß der  <a href="#prinzipien-der-sicherheitsarchitektur">Prinzipien der Sicherheitsarchitektur</a>, an den Außenschnittstellen der Systemlandschaft.
-Hierbei übermittelt der Benutzer seine Authentifizierungsmerkmale (z.B. Login-Name u. Passwort) an den IAM-Service, der sie gegen die bei ihm gespeicherten Merkmale verifiziert und nach erfolgreicher Authentifizierung sein OK gibt, zusammen mit den bei ihm hinterlegten Rollen des Anwenders.<br>
+Hierbei übermittelt der Benutzer seine Authentifizierungsmerkmale (z.B. Login-Name u. Passwort) und für eine Zwei-Faktor-Authentifizierung das Behördenkennzeichen (BHKNZ) an den IAM-Service, der sie gegen die bei ihm gespeicherten Merkmale verifiziert.
+Falls der IAM-Service die Auswertung des BHKNZ nicht unterstützt, wird dieses Authentifizierungsmerkmal als optional gewertet.
+Nach erfolgreicher Authentifizierung gibt der IAM-Service das Authentifizierungsergebnis zusammen mit den bei ihm hinterlegten Rollen des Anwenders an das aufrufende Anwendungssystem zurück.<br>
 Die Rollen allein sind jedoch noch nicht ausreichend, um den Benutzer in der Anwendung vollständig zu autorisieren.</p>
 </div>
 </div>
@@ -761,7 +770,7 @@ Ein (menschlicher) Endbenutzer kann mit Hilfe eines Autorisierungsservers (IAM-S
 Der Endbenutzer kann so der Anwendung gestatten, in seinem Namen einen Service zu benutzen.
 Dazu wird der Endbenutzer auf eine Login-Seite des Autorisierungsservers (IAM-Service) umgeleitet und nach erfolgreicher Authentifizierung zurück in die Anwendung.
 Dabei wird die Übermittlung von vertraulichen Daten wie z.B. Passwörtern an die Anwendung vermieden.
-Bei M2M-Kommunikation (Machine to Machine) enthält die Konfiguration der Anwendung die zur Authentifizierung notwendigen Daten des dafür verwendeten technischen Nutzers (Client, die direkt an den IAM-Service geschickt werden.
+Bei M2M-Kommunikation (Machine to Machine) enthält die Konfiguration der Anwendung die zur Authentifizierung notwendigen Daten des dafür verwendeten technischen Nutzers (Client), die direkt an den IAM-Service geschickt werden.
 Bei erfolgreicher Authentifizierung erhält die Anwendung ein Access-Token (Zugriffstoken), eine Art 'Freibrief' für die Anwendung, mit dem der IAM-Service das Zugangsrecht bestätigt.</p>
 </div>
 <div class="paragraph">
@@ -1122,13 +1131,15 @@ Genauer gesagt, in das "Authorization" Request-header Feld und mit dem "Bearer" 
 <div class="sect2">
 <h3 id="nutzung-des-behoerdenkennzeichens"><a class="anchor" href="#nutzung-des-behoerdenkennzeichens"></a>3.5. Nutzung des Behördenkennzeichens</h3>
 <div class="paragraph">
-<p>Als zusätzliche Sicherheitsmaßnahme ist zur Authentifizierung im IAM-Service ein Behördenkennzeichen (BHKZN) erforderlich, welches zu dem Behördenkennzeichen passen muss, dass im Nutzerprofil hinterlegt ist.
-Das BHKZN wird im HTTP-Header übertragen und aus diesem vom IAM-System ausgelesen.</p>
+<p>Als optional mögliche 2-Faktor-Authentifizierung ist im IAM-Service das Behördenkennzeichen (BHKNZ) vorgesehen.
+Die Implementierung des IAM-Service muss für die 2-Faktor-Authentifizierung dieses Feature unterstützen, andernfalls wird das BHKNZ als optionales Attribut betrachtet.
+Das BHKNZ wird im HTTP-Header übertragen und kann von der Implementierung des IAM-Service ausgelesen werden.
+Wenn die IAM-Service Implementierung dieses Feature unterstützt, dann wird ein mit den Authentifizierungsdaten gemeinsam übergebenes Behördenkennzeichen gegen das Behördenkennzeichen aus dem zu authentifizierenden Nutzerprofil geprüft.</p>
 </div>
 <div class="paragraph">
 <p>Wie in <a href="inhalt.html#aussensicht-der-komponente-security" class="xref page">Schnittstelle des Bausteins Security</a> beschrieben, wird bei der Authentifizierung das Behördenkennzeichen als String an den <code>Authentifizierungsmanager</code> übergeben.
-Zur Authentifizierung von technischen Nutzern mithilfe der Methode <code>authentifiziereClient()</code> wird daher die Client-Id, das Client-Secret und das BHKZN übergeben.
-Der alternative Weg benötigt die Benutzerkennung (Nutzername), das Passwort und das BHKZN zur Authentifizierung mit der Methode <code>authentifiziereSystem()</code>.</p>
+Zur Authentifizierung von technischen Nutzern mithilfe der Methode <code>authentifiziereClient()</code> wird daher die Client-Id, das Client-Secret und das BHKNZ übergeben.
+Der alternative Weg benötigt die Benutzerkennung (Nutzername), das Passwort und das BHKNZ zur Authentifizierung mit der Methode <code>authentifiziereSystem()</code>.</p>
 </div>
 </div>
 </div>
@@ -1161,22 +1172,29 @@ Berechtigungsprüfungen erfolgen innerhalb eines IT-Systems immer über die Bibl
 <div class="ulist">
 <ul>
 <li>
-<p>Anfragen, die am Dialog eines IT-Systems eingehen, sind immer bereits durch das IAM-System bzw. die lokale Authentifizierung erfolgreich  authentifiziert.
-Sorgt ein IAM-System für die Authentifizierung, enthält der HTTP-Header der Anfrage die Identifikation des Anwenders und dessen Rollen.
-Die Informationen aus dem HTTP-Header werden als <code>AufrufKontext</code> in das IT-System übernommen.</p>
+<p>Anfragen, die am Dialog (Web-App) eines IT-Systems eingehen, sind immer bereits durch das IAM-System bzw. die lokale Authentifizierung erfolgreich authentifiziert.
+Sorgt ein IAM-System für die Authentifizierung, enthält der HTTP-Header der Anfrage die Identifikation des Anwenders und dessen Rollen (in Form eines JWT Access-Token).
+Die Informationen aus dem Access-Token werden als <code>SecurityContext</code> in das IT-System übernommen.</p>
 </li>
 <li>
-<p>Anfragen, die an einer Service-Schnittstelle eines IT-Systems eingehen, sind ebenso bereits authentifiziert.
-Das mit der Anfrage an das IT-System als Parameter übergebene Transportobjekt <code>AufrufKontextTo</code> enthält die Identifikation des Anwenders und dessen Rollen und wird als <code>AufrufKontext</code> in das IT-System übernommen.</p>
+<p>Anfragen, die an einer Service-Schnittstelle (von außen über ein Service-Gateway (SGW) oder von anderen IT-Systemen innerhalb der IT-Systemlandschaft) eines IT-Systems eingehen, sind ebenso bereits authentifiziert.
+Das mit der Anfrage an das IT-System im Header übergebene JWT Access-Token enthält die Identifikation des Anwenders und dessen Rollen und wird als <code>SecurityContext</code> in das IT-System übernommen.</p>
 </li>
 <li>
-<p>Prozesse, die unabhängig von eingehenden Anfragen (über Dialog und Service) durch ein IT-System gestartet werden, müssen zunächst einen (meist technischen) Anwender gegen das IAM-System bzw. die lokale Authentifizierung erfolgreich authentifizieren, dessen Rollen ermitteln und diese Informationen als <code>AufrufKontext</code> im IT-System hinterlegen.</p>
+<p>Prozesse, die unabhängig von eingehenden Anfragen (über Dialog und Service) durch ein IT-System gestartet werden (z.B. Batch/Task), müssen zunächst einen (technischen) Nutzer gegen das IAM-System bzw. die lokale Authentifizierung erfolgreich authentifizieren, dessen Rollen ermitteln und diese Informationen als <code>SecurityContext</code> im IT-System hinterlegen.</p>
 </li>
 <li>
-<p>Ein innerhalb der Logik- und Verarbeitungszone eines IT-Systems übergebener <code>AufrufKontext</code> ist vertrauenswürdig.
-Er kann ohne erneute Rückfrage an das IAM-System bzw. die lokale Authentifizierung verwendet werden.</p>
+<p>Bei der Übernahme der Anwenderinformationen in den <code>SecurityContext</code> bildet das IT-System die Rollen des Anwenders auf systemspezifische Rechte ab.
+Vor Ausführung des Service bzw. Prozesses prüft das IT-System, ob der Anwender die dafür benötigten Rechte besitzt.</p>
+</li>
+<li>
+<p>Innerhalb der Logik- und Verarbeitungszone eines IT-Systems wird der <code>JWT Access-Token</code> weitergegeben. Zur Stärkung der Vertrauenswürdigkeit wird jeder <code>JWT Access-Token</code> beim Eintritt in ein IT-System auf Gültigkeit und Authentizität geprüft.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Die Außenschnittstellen eines IT-Systems können also nur mit einer gültigen Legitimation aufgerufen werden und sind so vor unberechtigter Nutzung geschützt.
+Umgekehrt können die Module und Verarbeitungsprozesse innerhalb des IT-Systems sich darauf verlassen, dass ihr Aufruf legitim ist und die ihnen übergebenen Daten vertrauenswürdig sind.</p>
 </div>
 </div>
 <div class="sect2">

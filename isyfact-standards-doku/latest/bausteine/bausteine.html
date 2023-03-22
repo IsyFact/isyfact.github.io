@@ -396,6 +396,9 @@
     <a class="nav-link" href="../methodik/java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../methodik/typescript-programmierkonventionen/master.html">TypeScript Programmierkonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../methodik/vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
 <ul class="nav-list">
@@ -619,13 +622,13 @@ Die Nutzung ist unter den <a href="../../../glossary/latest/literaturextern/inha
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Fehlerbehandlung</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Der Baustein Fehlerbehandlung enthält das technische Konzept und eine Bibliothek zur einheitlichen Implementierung der Fehlerbehandlung.</p>
+<p>Der Baustein <em>Fehlerbehandlung</em> enthält das technische Konzept und eine Bibliothek zur einheitlichen Implementierung der Fehlerbehandlung.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Http Invoker</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Der Baustein Http Invoker bietet die Möglichkeit, interne Services der Anwendungslandschaft mit der Technologie Spring Http Invoker zu realisieren.</p>
+<p>Der Baustein <em>Http Invoker</em> bietet die Möglichkeit, interne Services der Anwendungslandschaft mit der Technologie Spring Http Invoker zu realisieren.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -637,7 +640,7 @@ Die Nutzung ist unter den <a href="../../../glossary/latest/literaturextern/inha
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>JSF</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Der Baustein JSF ermöglicht es Anwendungen, grafische Oberflächen auf Basis von Java Server Faces umzusetzen.
+<p>Der Baustein <em>JSF</em> ermöglicht es Anwendungen, grafische Oberflächen auf Basis von Java Server Faces umzusetzen.
 Er enthält architektonische sowie technische Vorgaben und beschreibt die konkrete Umsetzung.
 Dabei integriert er den Styleguide und stellt auf dessen Grundlage wiederverwendbare Widgets bereit.
 Der Baustein basiert auf JSF und Spring Webflow.</p>
@@ -658,14 +661,21 @@ Der Baustein basiert auf JSF und Spring Webflow.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Polling</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Der Baustein Polling implementiert Verfahren zum koordinierten, regelmäßigen Abholen von Daten (Polling) durch mehrere redundant ausgelegte Instanzen einer Anwendung.
+<p>Der Baustein <em>Polling</em> implementiert Verfahren zum koordinierten, regelmäßigen Abholen von Daten (Polling) durch mehrere redundant ausgelegte Instanzen einer Anwendung.
 Der Baustein unterstützt unterschiedliche Arten von Schnittstellen und sorgt dafür, dass Daten jeweils nur von einer Instanz der Anwendung verarbeitet werden.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>REST</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Der Baustein REST bietet die Möglichkeit, interne Services der Anwendungslandschaft als REST-Services zu realisieren.</p>
+<p>Der Baustein <em>REST</em> bietet die Möglichkeit, interne Services der Anwendungslandschaft als REST-Services zu realisieren.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Security</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Als Nachfolger des Bausteins <em>Sicherheit</em> übernimmt der Baustein <em>Security</em> die Authentifizierungsanfragen von natürlichen Anwendern als auch von technischen Systemen und leitet diese in die entsprechenden Credential-Flows des IAM-Service.
+Aus den vom IAM-Service erhaltenen Zugangsdaten übernimmt der Baustein das Rollen- und Rechte-Handling zur Autorisierung der Anwendungsaufrufe innerhalb der Aufrufkette der Fachanwendungen.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -684,7 +694,7 @@ Unterstützt werden die Standards String Latin 1.1 und String Latin 1.2 („DIN 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Styleguide</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Der Styleguide beschreibt die Gestaltungsregeln, nach denen grafische Oberflächen von Geschäftsanwendungen zu erstellen sind.
+<p>Der <em>Styleguide</em> beschreibt die Gestaltungsregeln, nach denen grafische Oberflächen von Geschäftsanwendungen zu erstellen sind.
 Basis des Styleguides sind der Styleguide der Bundesregierung und Gestaltungsregeln für Internetauftritte des Bundesverwaltungsamtes.</p>
 </div></div></td>
 </tr>
@@ -704,7 +714,7 @@ Die einheitliche Überwachungsschnittstelle erlaubt die frühzeitige Erkennung v
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Util</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Der Baustein Util bietet nützliche Hilfsmittel, die von den Anwendungen der IsyFact genutzt werden können.
+<p>Der Baustein <em>Util</em> bietet nützliche Hilfsmittel, die von den Anwendungen der IsyFact genutzt werden können.
 Es handelt sich dabei um kleinere Utility-Klassen, wie z.B. Interzeptoren, mit denen sich das Laufzeitverhalten von Anwendungen nachvollziehen lässt.</p>
 </div></div></td>
 </tr>
