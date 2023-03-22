@@ -396,6 +396,9 @@
     <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/typescript-programmierkonventionen/master.html">TypeScript Programmierkonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
 <ul class="nav-list">
@@ -667,6 +670,9 @@ Konkret wird das im Baustein <code>Security</code> durch ein Rollen-, Rechte- un
 Nur der Eigentümer der Authentifizierungsinformationen und der IAM-Service besitzen Kenntnis über diese Informationen.</p>
 </li>
 <li>
+<p>Eine Zweifaktor-Authentifizierung ist durch das Behördenkennzeichen (BHKNZ) als zusätzliches Authentifizierungsmerkmal konzipiert, allerdings setzt dies im IAM-Service voraus, dass dieses Merkmal dort auch ausgewertet werden kann.</p>
+</li>
+<li>
 <p>Die Authentifizierung und grobgranulare Autorisierung (mittels dem Nutzer zugeordneten Rollen) erfolgt an den Außenschnittstellen der Systemlandschaft (Portal, Authentication-Gateway bzw. Service-Gateway).</p>
 </li>
 <li>
@@ -725,7 +731,9 @@ IAM steht für <a href="../../../../glossary/latest/literaturextern/inhalt.html#
 </div>
 <div class="paragraph">
 <p>Die Authentifizierung und grobgranulare Autorisierung erfolgt, gemäß der  <a href="#prinzipien-der-sicherheitsarchitektur">Prinzipien der Sicherheitsarchitektur</a>, an den Außenschnittstellen der Systemlandschaft.
-Hierbei übermittelt der Benutzer seine Authentifizierungsmerkmale (z.B. Login-Name u. Passwort) an den IAM-Service, der sie gegen die bei ihm gespeicherten Merkmale verifiziert und nach erfolgreicher Authentifizierung sein OK gibt, zusammen mit den bei ihm hinterlegten Rollen des Anwenders.<br>
+Hierbei übermittelt der Benutzer seine Authentifizierungsmerkmale (z.B. Login-Name u. Passwort) und für eine Zwei-Faktor-Authentifizierung das Behördenkennzeichen (BHKNZ) an den IAM-Service, der sie gegen die bei ihm gespeicherten Merkmale verifiziert.
+Falls der IAM-Service die Auswertung des BHKNZ nicht unterstützt, wird dieses Authentifizierungsmerkmal als optional gewertet.
+Nach erfolgreicher Authentifizierung gibt der IAM-Service das Authentifizierungsergebnis zusammen mit den bei ihm hinterlegten Rollen des Anwenders an das aufrufende Anwendungssystem zurück.<br>
 Die Rollen allein sind jedoch noch nicht ausreichend, um den Benutzer in der Anwendung vollständig zu autorisieren.</p>
 </div>
 </div>
@@ -762,7 +770,7 @@ Ein (menschlicher) Endbenutzer kann mit Hilfe eines Autorisierungsservers (IAM-S
 Der Endbenutzer kann so der Anwendung gestatten, in seinem Namen einen Service zu benutzen.
 Dazu wird der Endbenutzer auf eine Login-Seite des Autorisierungsservers (IAM-Service) umgeleitet und nach erfolgreicher Authentifizierung zurück in die Anwendung.
 Dabei wird die Übermittlung von vertraulichen Daten wie z.B. Passwörtern an die Anwendung vermieden.
-Bei M2M-Kommunikation (Machine to Machine) enthält die Konfiguration der Anwendung die zur Authentifizierung notwendigen Daten des dafür verwendeten technischen Nutzers (Client, die direkt an den IAM-Service geschickt werden.
+Bei M2M-Kommunikation (Machine to Machine) enthält die Konfiguration der Anwendung die zur Authentifizierung notwendigen Daten des dafür verwendeten technischen Nutzers (Client), die direkt an den IAM-Service geschickt werden.
 Bei erfolgreicher Authentifizierung erhält die Anwendung ein Access-Token (Zugriffstoken), eine Art 'Freibrief' für die Anwendung, mit dem der IAM-Service das Zugangsrecht bestätigt.</p>
 </div>
 <div class="paragraph">
@@ -1123,13 +1131,15 @@ Genauer gesagt, in das "Authorization" Request-header Feld und mit dem "Bearer" 
 <div class="sect2">
 <h3 id="nutzung-des-behoerdenkennzeichens"><a class="anchor" href="#nutzung-des-behoerdenkennzeichens"></a>3.5. Nutzung des Behördenkennzeichens</h3>
 <div class="paragraph">
-<p>Als zusätzliche Sicherheitsmaßnahme ist zur Authentifizierung im IAM-Service ein Behördenkennzeichen (BHKZN) erforderlich, welches zu dem Behördenkennzeichen passen muss, dass im Nutzerprofil hinterlegt ist.
-Das BHKZN wird im HTTP-Header übertragen und aus diesem vom IAM-System ausgelesen.</p>
+<p>Als optional mögliche 2-Faktor-Authentifizierung ist im IAM-Service das Behördenkennzeichen (BHKNZ) vorgesehen.
+Die Implementierung des IAM-Service muss für die 2-Faktor-Authentifizierung dieses Feature unterstützen, andernfalls wird das BHKNZ als optionales Attribut betrachtet.
+Das BHKNZ wird im HTTP-Header übertragen und kann von der Implementierung des IAM-Service ausgelesen werden.
+Wenn die IAM-Service Implementierung dieses Feature unterstützt, dann wird ein mit den Authentifizierungsdaten gemeinsam übergebenes Behördenkennzeichen gegen das Behördenkennzeichen aus dem zu authentifizierenden Nutzerprofil geprüft.</p>
 </div>
 <div class="paragraph">
 <p>Wie in <a href="inhalt.html#aussensicht-der-komponente-security" class="xref page">Schnittstelle des Bausteins Security</a> beschrieben, wird bei der Authentifizierung das Behördenkennzeichen als String an den <code>Authentifizierungsmanager</code> übergeben.
-Zur Authentifizierung von technischen Nutzern mithilfe der Methode <code>authentifiziereClient()</code> wird daher die Client-Id, das Client-Secret und das BHKZN übergeben.
-Der alternative Weg benötigt die Benutzerkennung (Nutzername), das Passwort und das BHKZN zur Authentifizierung mit der Methode <code>authentifiziereSystem()</code>.</p>
+Zur Authentifizierung von technischen Nutzern mithilfe der Methode <code>authentifiziereClient()</code> wird daher die Client-Id, das Client-Secret und das BHKNZ übergeben.
+Der alternative Weg benötigt die Benutzerkennung (Nutzername), das Passwort und das BHKNZ zur Authentifizierung mit der Methode <code>authentifiziereSystem()</code>.</p>
 </div>
 </div>
 </div>
