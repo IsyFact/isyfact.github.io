@@ -56,3 +56,6 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #edf2f2; }
     overflow-x: revert;
 }
 
+.fa-ban{
+    color: #ff0000;
+}
