@@ -1013,10 +1013,17 @@ Zur Prüfung der Echtheit muss die Signatur von dem IsyFact-Anwendungssystem ver
 <p><strong>Prüfung des Access-Tokens auf Gültigkeit</strong></p>
 </div>
 <div class="paragraph">
-<p>Acess-Tokens besitzen eine zeitlich begrenzte Gültigkeit, die im Ermessen der Anwendlungslandschaft definiert werden kann
+<p>Acess-Tokens besitzen eine zeitlich begrenzte Gültigkeit, die im Ermessen der Anwendungslandschaft definiert werden kann
 Durch die begrenzte zeitliche Gültigkeit kann sichergestellt werden, dass das Access-Token kein 'ewiger Universalschlüssel' ist, sondern regelmäßig erneuert werden muss.
 Die Prüfung auf Gültigkeit gibt an, ob der Ablaufzeitpunkt des Access-Tokens bereits erreicht wurde.
 Zur Prüfung der Gültigkeit muss der im Header-Claim 'exp' enthaltene Zeitstempel in der Zukunft liegen.</p>
+</div>
+<div class="paragraph">
+<p><strong>Reaktion auf ein invalides Access-Token</strong></p>
+</div>
+<div class="paragraph">
+<p>Wenn eine der oben beschriebenen Prüfungen fehlschlägt, ist das Access-Token invalide und die Anfrage muss abgelehnt werden.
+Als Antwort wird der HTTP status error code: 401 (Unauthorized) gesendet mit dem WWW-Authenticate header: Bearer error="invalid_token" u. error_description= &lt;Fehlerbeschreibung&gt; z.B. "The access token expired".</p>
 </div>
 <div class="paragraph">
 <p><strong>Beide Prüfungen werden durch den Baustein <code>isy-security</code> bzw. durch das <code>Spring Security Framework</code> implementiert.</strong></p>
@@ -1036,8 +1043,32 @@ Genauer gesagt, in das "Authorization" Request-header Feld und mit dem "Bearer" 
 </div>
 </div>
 <div class="sect3">
-<h4 id="aktualisierung-der-token"><a class="anchor" href="#aktualisierung-der-token"></a>2.4.3. Aktualisierung der Token</h4>
-
+<h4 id="aktualisierung-der-token"><a class="anchor" href="#aktualisierung-der-token"></a>2.4.3. Aktualisierung der Acess-Token</h4>
+<div class="paragraph">
+<p>Ein Access-Token muss ein begrenzte Gültigkeitesdauer besitzen, um den Zugriff auf geschützte Ressourcen zeitlich zu beschränken.
+Sobald die Gültigkeitsdauer überschritten ist, muss das Access-Token als ungültig erkannt werden (siehe <a href="#validierung-der-token">Validierung der Token</a>).
+Die Verwendung eines abgelaufenen Access-Tokens bei einer Anfrage muss vom empfangenden System erkannt und mit HTTP status error code: 401 und der Fehlerbeschreibung: "The access token expired" beantwortet werden, wie in beschrieben.
+Der Aufrufer muss die Antwort verarbeiten und die Anfrage mit einem gültigen Access-Token erneut senden.</p>
+</div>
+<div class="paragraph">
+<p>Für menschliche Nutzer wurde mit dem Refresh Token ein Mechanismus eingeführt, der eine automatische Aktualisierung des Access-Tokens erlaubt, ohne dass der Benutzer interagieren muss:
+Das Webserver-Modul <code>mod_auth_openidc</code> koordiniert für Portal-Anwendungen die Erneuerung des Access-Tokens (automatisch mit Refresh-Token bzw. durch erneute Authentifizierung (siehe: <a href="#aufruf-weboberflaeche-portal">Aufruf Web-Oberfläche/Portal</a>)) - der Baustein Security wird hierfür nicht verwendet.<br></p>
+</div>
+<div class="paragraph">
+<p>Technische Nutzer (Clients) können ihr Access-Token nur durch eine erneute Authentifizierung (siehe: <a href="#aufruf-service-gateway">Aufruf Service-Gateway</a> bzw. <a href="#ausfuehrung-batch-u-task">Ausführung Batch &amp; Task</a>) erneuern.</p>
+</div>
+<div class="paragraph">
+<p><strong>Konfiguration des Refresh-Tokens im IAM-System</strong></p>
+</div>
+<div class="paragraph">
+<p>Zur weiteren Erhöhung der Sicherheit kann und sollte das Refresh Token mit Rotation konfiguriert werden, denn dann wird bei Aktualisierung des Access Token auch ein neues Refresh Token ausgestellt.
+Eine eventuelle nochmalige Einreichung desselben Refresh Token bedeutet, dass sich unbefugte Dritte dieses Refresh Token aneignen konnten.
+Das wird durch die 'Automatic Reuse Detection' im IAM-System erkannt und Gegenmaßnahmen ergriffen.</p>
+</div>
+<div class="paragraph">
+<p>Die Ablaufzeit des Refresh Token bestimmt, wie lange der Benutzer an der Anwendung angemeldet ist und mit ihr arbeiten kann, ohne sich neu authentifizieren zu müssen.
+Hierbei muss Sicherheit gegen Benutzerkomfort abgewogen werden.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
