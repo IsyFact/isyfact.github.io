@@ -91,9 +91,6 @@
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="whitepaper.html">Whitepaper</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
-  </li>
 </ul>
   </li>
 </ul>
@@ -508,7 +505,22 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../changelog/aenderungen.html">Änderungen Version 3.0 (DEV)</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../changelog/releasenotes.html">Release Notes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../changelog/changelog.html">Changelog</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../changelog/migrationsleitfaden.html">Migrationsleitfaden IsyFact 3.0 (DEV)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -821,7 +833,7 @@ Auch können mehrere technische Komponenten auf einer gemeinsamen Hardware laufe
 <div class="paragraph">
 <p>Die folgende Abbildung zeigt einen Überblick über die Bausteine im aktuellen Release der IsyFact.</p>
 </div>
-<div class="imageblock">
+<div id="bausteine-isyfact" class="imageblock">
 <div class="content">
 <img src="../bausteine/_images/bausteine.dn.svg" alt="bausteine.dn">
 </div>
@@ -855,9 +867,9 @@ Auch können mehrere technische Komponenten auf einer gemeinsamen Hardware laufe
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Http Invoker</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><span class="icon"><i class="fa fa-ban" title="Deprecation"></i></span> <span class="line-through">Http Invoker</span></strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Der Baustein <em>Http Invoker</em> bietet die Möglichkeit, interne Services der Anwendungslandschaft mit der Technologie Spring Http Invoker zu realisieren.</p>
+<p>Der Baustein Http Invoker bietet die Möglichkeit, interne Services der Anwendungslandschaft mit der Technologie Spring Http Invoker zu realisieren.</p>
 </div></div></td>
 </tr>
 <tr>

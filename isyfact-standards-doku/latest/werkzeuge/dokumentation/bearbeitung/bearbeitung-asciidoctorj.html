@@ -91,9 +91,6 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../einstieg/whitepaper.html">Whitepaper</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../../einstieg/migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
-  </li>
 </ul>
   </li>
 </ul>
@@ -508,7 +505,22 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../../changelog/aenderungen.html">Änderungen Version 3.0 (DEV)</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../changelog/releasenotes.html">Release Notes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../../changelog/changelog.html">Changelog</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../changelog/migrationsleitfaden.html">Migrationsleitfaden IsyFact 3.0 (DEV)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../einstieg/migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -1348,6 +1360,36 @@ Die ID soll mit dem Bezeichner <code>glossar-</code> beginnen.</p>
 </div>
 <div class="paragraph">
 <p><code>Hier wurde ein <a href="#glossar-halloweltbeispiel">Hallo Welt Beispiel</a> verwendet.</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deprecations"><a class="anchor" href="#deprecations"></a>10. Deprecations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Gelegentlich veralten Bausteine und ihre Dokumentation.
+In der Dokumentation werden Bausteine, die deprecated sind, die demnach in einer späteren Version entfallen können, als Deprecation gekennzeichnet.
+Es gibt zwei Möglichkeiten, Deprecations auszuzeichnen.</p>
+</div>
+<div class="paragraph">
+<p><strong>Deprecation für Baustein</strong></p>
+</div>
+<div class="paragraph">
+<p>Mit dem Attribut <code>:deprecated-baustein:</code> im Kopf des Dokuments vor dem <code>colophon</code>-Eintrag wird ein vollständiger Baustein als deprecated gekennzeichnet.</p>
+</div>
+<div class="paragraph">
+<p><strong>Deprecation für beliebigen Abschnitt</strong></p>
+</div>
+<div class="paragraph">
+<p>Mit dem Attribut <code>:deprecated-abschnitt:</code> kann ein beliebiger Abschnitt mitten im Text als deprecated gekennzeichnet werden.
+Dabei sollte das Attribut direkt unterhalb einer Überschrift platziert werden, damit der Abschnitt inklusive untergeordneter Abschnitte tieferer Ebenen bis zur nächsten Überschrift der gleichen Ebene als deprecated erkennbar ist.</p>
+</div>
+<div class="paragraph">
+<p><strong>Anmerkung</strong></p>
+</div>
+<div class="paragraph">
+<p>Für die Isy-AsciidoctorJ-Extensions wurde keine automatisierte Möglichkeit geschaffen, auf eine neuere Version der Dokumentation zu verweisen.
+Dies muss im Bedarfsfall individuell im Text erstellt werden.</p>
 </div>
 </div>
 </div>
