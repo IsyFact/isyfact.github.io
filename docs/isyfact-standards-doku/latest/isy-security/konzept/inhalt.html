@@ -91,9 +91,6 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../einstieg/whitepaper.html">Whitepaper</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../einstieg/migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
-  </li>
 </ul>
   </li>
 </ul>
@@ -508,7 +505,22 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../changelog/aenderungen.html">Änderungen Version 3.0 (DEV)</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../changelog/releasenotes.html">Release Notes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../changelog/changelog.html">Changelog</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../changelog/migrationsleitfaden.html">Migrationsleitfaden IsyFact 3.0 (DEV)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -674,7 +686,182 @@ Wie genau Rollen und Rechte spezifiziert werden, beschreibt das Kapitel <a href=
 </div>
 </div>
 <div class="sect1">
-<h2 id="oauth2.0-und-openidconnect"><a class="anchor" href="#oauth2.0-und-openidconnect"></a>2. OAuth2.0 und OpenIDConnect</h2>
+<h2 id="sicherheitsarchitektur-eines-it-systems"><a class="anchor" href="#sicherheitsarchitektur-eines-it-systems"></a>2. Sicherheitsarchitektur eines IT-Systems</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Der Baustein Security bildet eine Komponente des Querschnitts der <a href="../../blaupausen/referenzarchitektur-it-system/master.html#einleitung" class="xref page">IsyFact Referenzarchitektur IT-Systeme</a>.
+Er ist von jedem IT-System zur Autorisierung von Zugriffen und Vorgängen zu verwenden.</p>
+</div>
+<div class="paragraph">
+<p>Die Mechanismen zur Absicherung IsyFact-konformer IT-Systeme haben zum Ziel, die Autorisierung von Zugriffen <em>systematisch</em>, <em>einheitlich</em> und <em>einfach</em> umzusetzen.</p>
+</div>
+<div class="paragraph">
+<p>Die <strong>Systematik</strong> und Vollständigkeit der Berechtigungsprüfungen wird dadurch erreicht, dass Berechtigungsprüfungen in den IT-Systemen an definierten Stellen und auf identische Weise stattfinden.</p>
+</div>
+<div class="paragraph">
+<p>Die <strong>Einheitlichkeit</strong> wird durch Bereitstellung der Bibliothek <code>isy-security</code> und Nutzungsvorgaben gewährleistet, die von allen IT-Systemen zu verwenden sind.
+Berechtigungsprüfungen erfolgen innerhalb eines IT-Systems immer über die Bibliothek <code>isy-security</code>.</p>
+</div>
+<div class="paragraph">
+<p>Die <strong>Einfachheit</strong> der Nutzung der Bibliothek <code>isy-security</code> wird durch weitgehende Transparenz bei der Initialisierung, kompakte Schnittstellen und deklarative (z.B. per Annotation) statt programmatischer Implementierung erreicht.</p>
+</div>
+<div class="sect2">
+<h3 id="praemissen"><a class="anchor" href="#praemissen"></a>2.1. Prämissen</h3>
+<div class="paragraph">
+<p>Aus den <a href="master.html#prinzipien-der-sicherheitsarchitektur" class="xref page">Prinzipien der Sicherheitsarchitektur</a> leiten sich die folgenden Randbedingungen für die Umsetzung der Berechtigungsprüfung innerhalb eines IT-Systems ab:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Anfragen, die am Dialog (Web-App) eines IT-Systems eingehen, sind immer bereits durch das IAM-System bzw. die lokale Authentifizierung erfolgreich authentifiziert.
+Sorgt ein IAM-System für die Authentifizierung, enthält der HTTP-Header der Anfrage die Identifikation des Anwenders und dessen Rollen (in Form eines JWT Access-Token).
+Die Informationen aus dem Access-Token werden als <code>SecurityContext</code> in das IT-System übernommen.</p>
+</li>
+<li>
+<p>Anfragen, die an einer Service-Schnittstelle (von außen über ein Service-Gateway (SGW) oder von anderen IT-Systemen innerhalb der IT-Systemlandschaft) eines IT-Systems eingehen, sind ebenso bereits authentifiziert.
+Das mit der Anfrage an das IT-System im Header übergebene JWT Access-Token enthält die Identifikation des Anwenders und dessen Rollen und wird als <code>SecurityContext</code> in das IT-System übernommen.</p>
+</li>
+<li>
+<p>Prozesse, die unabhängig von eingehenden Anfragen (über Dialog und Service) durch ein IT-System gestartet werden (z.B. Batch/Task), müssen zunächst einen (technischen) Nutzer gegen das IAM-System bzw. die lokale Authentifizierung erfolgreich authentifizieren, dessen Rollen ermitteln und diese Informationen als <code>SecurityContext</code> im IT-System hinterlegen.</p>
+</li>
+<li>
+<p>Bei der Übernahme der Anwenderinformationen in den <code>SecurityContext</code> bildet das IT-System die Rollen des Anwenders auf systemspezifische Rechte ab.
+Vor Ausführung des Service bzw. Prozesses prüft das IT-System, ob der Anwender die dafür benötigten Rechte besitzt.</p>
+</li>
+<li>
+<p>Innerhalb der Logik- und Verarbeitungszone eines IT-Systems wird der <code>JWT Access-Token</code> weitergegeben. Zur Stärkung der Vertrauenswürdigkeit wird jeder <code>JWT Access-Token</code> beim Eintritt in ein IT-System auf Gültigkeit und Authentizität geprüft.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Die Außenschnittstellen eines IT-Systems können also nur mit einer gültigen Legitimation aufgerufen werden und sind so vor unberechtigter Nutzung geschützt.
+Umgekehrt können die Module und Verarbeitungsprozesse innerhalb des IT-Systems sich darauf verlassen, dass ihr Aufruf legitim ist und die ihnen übergebenen Daten vertrauenswürdig sind.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="software-architektur"><a class="anchor" href="#software-architektur"></a>2.2. Software-Architektur</h3>
+<div class="paragraph">
+<p>Die folgende Abbildung zeigt den logischen Aufbau für die Authentifizierung und für die Bereitstellung von Berechtigungsinformationen an die Komponenten eines IT-Systems.</p>
+</div>
+<div id="image-Berechtigungspruefung" class="imageblock text-center">
+<div class="content">
+<img src="../_images/konzept/software-architektur-berechtigungspruefung.png" alt="software architektur berechtigungspruefung">
+</div>
+<div class="title">Abbildung 1. Software-Architektur der Berechtigungsprüfung</div>
+</div>
+<div class="paragraph">
+<p>Im Folgenden werden die Aufgaben und grobe Funktionsweise der Komponenten für die Autorisierung von Anfragen in einer <a href="../../../../glossary/latest/glossary/master.html#glossar-geschaeftsanwendung" class="xref page">Geschäftsanwendung</a>  erläutert.</p>
+</div>
+<div class="paragraph">
+<p>Der Baustein <code>isy-security</code> basiert auf dem Framework Spring Security und bietet querschnittliche Funktionalität zur Authentifizierung und Autorisierung (Berechtigungsprüfung) von Anfragen.
+Um IsyFact-spezifische Anforderungen, wie z.B. die Nutzung des Behördenkennzeichens, zu erfüllen, existiert eine Zugriffsschicht, die eben diese Funktionalität bereitstellt und den Zugriff auf Spring Security kapselt.
+Die einheitliche Zugriffsschicht für Authentifizierung und Autorisierung erleichtert zudem, durch die teilweise Übernahme bestehender Schnittstellen, die Migration von einer älteren IsyFact Version.
+Die Authentifizierung und Autorisierung an der Benutzeroberfläche findet im Zuge der Einführung von Single-Page-Applications (SPAs) nicht mehr über das Backend oder den Baustein isy-security statt.</p>
+</div>
+<div class="paragraph">
+<p>Der Zugriff auf den Baustein erfolgt über das Interface <code>Security</code>, das mehrere Manager bereitstellt:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Authentifizierungsmanager</code></p>
+</li>
+<li>
+<p><code>Berechtigungsmanager</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Das Interface <code>Security</code> hat Zugriff auf eine Liste von allen im System hinterlegten Rollen.
+Das Anwendungssystem greift darüber auf den <code>Authentifizierungsmanager</code> und den <code>Berechtigungsmanager</code> zu.</p>
+</div>
+<div class="paragraph">
+<p>Der <code>Authentifizierungsmanager</code> ist für die Kommunikation mit dem IAM-Service über den <code>OAuth2AuthorizedClientProvider</code> zuständig.
+Die Authentifizierung (Anmeldung) verläuft über diesen Aufruf.
+Nach einer erfolgreichen Authentifizierung erfolgt der Erhalt des Access-Tokens und der dem Benutzer zugeordneten Rollen.
+Diese Informationen werden anschließend im <code>SecurityContext</code> abgelegt.</p>
+</div>
+<div class="paragraph">
+<p>Über den <code>Berechtigungsmanager</code> kann die Anwendung die Rollen und anwendungsspezifischen Rechte des angemeldeten Benutzers abfragen.</p>
+</div>
+<div class="paragraph">
+<p>Der <code>RolePrivilegeGrantedAuthoritiesConverter</code> ist für die Konvertierung vom IAM-Service im Access-Token übermittelten Rollen des Benutzers in die anwendungsspezifischen Rechte zuständig.</p>
+</div>
+<div class="paragraph">
+<p>Mit der von Spring Security bereitgestellten Annotation <code>@secured</code> werden angebotene Services und Methoden der Anwendung abgesichert.
+Dieser Annotation muss noch der Name eines anwendungsspezifischen Rechts mitgegeben werden.
+Im Interceptor <code>SecuredInterceptor</code> wird sichergestellt, dass nur dann der Zugriff gewährt wird, wenn der angemeldete Nutzer auch über das vorhandene anwendungsspezifische Recht verfügt.</p>
+</div>
+<div class="paragraph">
+<p>Hinweis: Die Annotation <code>@secured</code> löst die Annotation <code>@gesichert</code> ab und ist analog dazu verwenden.</p>
+</div>
+<div class="paragraph">
+<p>Der <code>NutzerAuthentifizierunginterceptor</code> ist für die Authentifizierung von technischen Nutzern zuständig und wird über eine Annotation (<code>@NutzerAuthentifikation</code>) bereitgestellt.
+Parallel zur Annotation <code>@NutzerAuthentifikation</code> existiert die Annotation <code>@ClientAuthentification</code> zur Authentifizierung von OAuth2.0 Clients.
+Dies ermöglicht die Umstellung von technische Nutzer auf OAuth2.0 Clients, ohne große Auswirkungen im Anwendungssystem zu erzeugen.
+Die Authentifizierungsdaten werden aus der Konfiguration der Anwendung ausgelesen und zur Authentifizierung verwendet.
+Die Authentifizierung findet über die Implementierung des Interfaces <code>Authentifizierungsmanager</code> statt.
+Das Ergebnis einer Authentifizierung über die Annotationen <code>@ClientAuthentification</code> und <code>@NutzerAuthentifikation</code> ist ein voll initialisierter <code>SecurityContext</code> mit einem validen Access-Token.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="aussensicht-der-komponente-security"><a class="anchor" href="#aussensicht-der-komponente-security"></a>2.3. Schnittstelle des Bausteins Security</h3>
+<div class="paragraph">
+<p>Im Folgenden wird die Schnittstelle des Bausteins <code>isy-security</code> beschrieben.</p>
+</div>
+<div id="image-schnittstelle-security" class="imageblock text-center">
+<div class="content">
+<img src="../_images/konzept/security-schnittstellen.dn.svg" alt="security schnittstellen.dn">
+</div>
+<div class="title">Abbildung 2. Schnittstelle des Bausteins Security</div>
+</div>
+<div class="paragraph">
+<p>Das Interface <code>Security</code> ist der zentrale Einstiegspunkt in den Baustein <code>isy-security</code>.
+Bei seiner Instanziierung wird die anwendungsspezifische Rollen-Rechte-Datei eingelesen und damit der <code>Authentifizierungsmanager</code> sowie der <code>Berechtigungsmanager</code> erzeugt.
+Das Interface <code>Security</code> stellt der Fachanwendung die im weiteren beschriebenen <code>Authentifizierungsmanager</code> und <code>Berechtigungsmanager</code> der Fachanwendung zur Verfügung.
+Außerdem kann die Fachanwendung über die Methode <code>getAlleRollen</code> eine Liste von allen im System hinterlegten Rollen erhalten.</p>
+</div>
+<div class="paragraph">
+<p>Der <code>Authentifizierungsmanager</code> übernimmt die Authentifizierung von technischen Nutzern am IAM-System.
+Mit der Methode <code>authentifiziereClient</code> wird die OAuth2.0-konforme Authentifizierung eines Client mittels Client-ID u. Client-Secret unterstützt und mit der Methode <code>authentifiziereSystem</code> der alternative Weg mittels (techn.) Nutzername u. Passwort.
+Bei erfolgreicher Authentifizierung werden die vom IAM-System zurückgegebenen Daten (Access-Token, Rollen des Anwenders, &#8230;&#8203;) im <code>Spring SecurityContext</code> abgelegt.
+Dort werden auch die den aus den Rollen resultierenden Rechte des Anwenders gespeichert.
+Eine nicht erfolgreiche Authentifizierung (fachliche Ablehnung oder technisches Problem) löst eine <code>AuthentifizierungFehlgeschlagenException</code> bzw. <code>AuthentifizierungTechnicalException</code> aus.</p>
+</div>
+<div class="paragraph">
+<p>Der <code>Berechtigungsmanager</code> gibt Auskunft über die Rollen und Rechte des Anwenders.
+Die in der Benutzeradministration dem Anwender zugewiesenen Rollen werden mithilfe einer anwendungsspezifischen Rollen-Rechte-Datei in konkrete Rechte des Anwenders für diese Anwendung umgewandelt.
+Die aktuellen Rollen und Rechte des Anwenders können mit den Methoden des <code>Berechtigungsmanager</code> erfragt werden und es kann geprüft werden, ob der Anwender ein bestimmtes Recht hat.
+Die Methoden <code>getRechte</code> und <code>getRollen</code> liefern die aktuell dem Anwender zugeordneten Rechte bzw. Rollen.
+Mit der Methode <code>hatRecht</code> kann die Anwendung feststellen, ob der Anwender aktuell ein bestimmtes Recht besitzt, während mit <code>pruefeRecht</code> der nachfolgende Code mit dem angegebenen Recht abgesichert wird: falls der Anwender das Recht nicht hat, wird eine <code>AutorisierungFehlgeschlagenException</code> geworfen.
+Mit diesen Berechtigungsabfragen kann die Fachanwendung z.B. feingranular bestimmen, ob und wie der Anwender bestimmte Daten sehen oder bearbeiten kann bzw. ob und wie er bestimmte Funktionen der Anwendung benutzen kann.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="aufruf-von-nachbarsystemen"><a class="anchor" href="#aufruf-von-nachbarsystemen"></a>2.4. Aufruf von Nachbarsystemen</h3>
+<div class="paragraph">
+<p>Ein Anwendungssystem erwartet bei einem Aufruf, dass alle notwendigen Authentifizierungs- und Autorisierungsdaten in valider und gültiger Form übergeben werden.
+Folglich muss ein Anwendungssystem, das ein Nachbarsystem aufruft, diesem Aufruf ebenfalls gültige und valide Authentifzierungs- und Autorisierungsdaten mitgeben.
+Im Regelfall werden diese Authentifizierungs- und Autorisierungsdaten bei der Authentifizierung der originären Anfrage bzw. der <a href="#validierung-der-token">Validierung des Access-Token</a> über den Sicherheitsbaustein <code>isy-security</code> des Anwendungssystems als aus dem Access-Token initialisierten <code>SecurityContext</code> übergeben.
+Für eine fachliche und prozessbezogene Aufrufkette wird dieser <code>Access-Token</code> in allen weiteren Aufrufen wiederverwendet und unverändert weitergeleitet.</p>
+</div>
+<div class="paragraph">
+<p>Es erfolgt an der jeweiligen Schnittstelle des Nachbarsystems eine entsprechende Transformation der Daten des <code>Access-Tokens</code> in einen <code>SecurityContext</code>.</p>
+</div>
+<div class="paragraph">
+<p>Gemäß Referenzarchitektur ist HTTP als das Übertragungsprotokoll der <a href="../../blaupausen/referenzarchitektur/master.html#servicekommunikation" class="xref page">Servicekommunikation</a> definiert.
+Dazu sind an den Schnittstellen meist dedizierte Consumer-Provider-Bibliotheken vorgesehen, die bereits die Logik zur Transformation und  Weiterleitung des <code>Access-Tokens</code> übernehmen.</p>
+</div>
+<div class="paragraph">
+<p>Gibt es diese Bibliotheken nicht an den Schnittstellen, dann muss das Nachbarsystem direkt aufgerufen werden.
+Hierbei muss das aufrufende Anwendungssystem stets das <code>Access-Tokens</code> manuell in den Header der ausgehenden Nachricht schreiben.
+Weitere Details hierzu sind im Kapitel <a href="#authentifizierung-und-autorisierung">Authentifizierung &amp; Autorisierung</a> beschrieben.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="oauth2.0-und-openidconnect"><a class="anchor" href="#oauth2.0-und-openidconnect"></a>3. OAuth2.0 und OpenIDConnect</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>OAuth 2.0 ist ein offenes Autorisierungsprotokoll, das eine standardisierte, sichere API-Autorisierung für Desktop-, Web- und Mobile-Anwendungen erlaubt.
@@ -690,7 +877,7 @@ Bei erfolgreicher Authentifizierung erhält die Anwendung ein Access-Token (Zugr
 Die Implementierung von OpenID Connect basiert auf der Ausstellung von ID-Tokens und auf der HTTP-Programmierschnittstelle mit REST-Mechanismen und auf dem Datenformat JSON.</p>
 </div>
 <div class="sect2">
-<h3 id="oauth2.0-zur-autorisierung"><a class="anchor" href="#oauth2.0-zur-autorisierung"></a>2.1. OAuth2.0 zur Autorisierung</h3>
+<h3 id="oauth2.0-zur-autorisierung"><a class="anchor" href="#oauth2.0-zur-autorisierung"></a>3.1. OAuth2.0 zur Autorisierung</h3>
 <div class="paragraph">
 <p>OAuth 2.0 ist ein Autorisierungsprotokoll und kein Authentifizierungsprotokoll.
 Als Solches ist es in erster Linie dafür vorgesehen, den Zugriff auf bestimmte Ressourcen zu ermöglichen, beispielsweise externe APIs oder Nutzerdaten.<br>
@@ -715,7 +902,7 @@ Wir übernehmen für die IsyFact die konkrete Ausprägung "Anwender", "Techn. Nu
 <p><strong>Ressourcen-Server bzw. Anwendungssystem (Resource-Server)</strong></p>
 </div>
 <div class="paragraph">
-<p>Der Server, in dem die geschützte Ressource liegt und der in der Lage ist, auf Anfragen an diese geschützte Ressource zu reagieren, wenn sie ein Access Token enthalten.<br>
+<p>Der Server, in dem die geschützte Ressource liegt und der in der Lage ist, auf Anfragen an diese geschützte Ressource zu reagieren, wenn sie ein Access-Token enthalten.<br>
 Beispiel: Geschäftsanwendung<br>
 Wir übernehmen für die IsyFact die IsyFact-spezifische Bezeichnung "Anwendungssystem".</p>
 </div>
@@ -726,14 +913,15 @@ Wir übernehmen für die IsyFact die IsyFact-spezifische Bezeichnung "Anwendungs
 <p>Eine vom Ressourcenbesitzer gesteuerte Anwendung, die in seinem Namen eine geschützte Ressource verwenden möchte.
 Der Begriff 'Client' impliziert hier nicht bestimmte Implementierungscharakteristiken, sondern den Teil der Anwendung, mit der der Ressourcenbesitzer interagiert.<br>
 Beispiel: Batch. <br>
+Handelt es sich bei der Anwendung um eine Backend-Anwendung, so wird diese als "Confidential Client" bezeichnet.
 Wir übernehmen für die IsyFact die englische Bezeichnung "Client".</p>
 </div>
 <div class="paragraph">
 <p><strong>IAM-Service (Authorization-Server)</strong></p>
 </div>
 <div class="paragraph">
-<p>Der Service, der Access Tokens ausstellt, nach erfolgreicher Authentifizierung und Autorisierung des Ressourcenbesitzers.
-Er bestätigt auch gegenüber dem Ressourcen-Server die Gültigkeit des Access Tokens, das der Client dem Ressourcen-Server in der Zugangsanfrage mitgegeben hat. <br>
+<p>Der Service, der Access-Tokens ausstellt, nach erfolgreicher Authentifizierung und Autorisierung des Ressourcenbesitzers.
+Er bestätigt auch gegenüber dem Ressourcen-Server die Gültigkeit des Access-Tokens, das der Client dem Ressourcen-Server in der Zugangsanfrage mitgegeben hat. <br>
 Beispiel: Keycloak (Produkt). <br>
 Wir übernehmen für die IsyFact die IsyFact-spezifische Bezeichnung "IAM-Service".</p>
 </div>
@@ -756,15 +944,13 @@ Der Inhalt ist für den Client meist nicht lesbar, er gibt es einfach weiter an 
 Er gilt für einen spezifischen Bereich und nur für eine bestimmte Zeit.<br></p>
 </div>
 <div class="paragraph">
-<p><strong>Refresh-Token</strong></p>
-</div>
-<div class="paragraph">
 <p>'Meta'-Berechtigungsnachweis: Ermöglicht dem Client, ein neues Access-Token vom IAM-Service zu erhalten, ohne dass der Ressourcenbesitzer sich erneut ausweisen muss.
-Diese neue Access Token kann z.B. ein späteres Ablaufdatum (autom. Nutzungsverlängerung) oder andere Rechte (innerhalb aller an den Ressourcenbesitzer vergebenen Rechte) aufweisen. <br></p>
+Diese neue Access-Token kann z.B. ein späteres Ablaufdatum (autom. Nutzungsverlängerung) oder andere Rechte (innerhalb aller an den Ressourcenbesitzer vergebenen Rechte) aufweisen. <br>
+Wir übernehmen für die IsyFact die englische Bezeichnung "Refresh-Token".</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="openidconnect-zur-authentifizierung"><a class="anchor" href="#openidconnect-zur-authentifizierung"></a>2.2. OpenIDConnect zur Authentifizierung</h3>
+<h3 id="openidconnect-zur-authentifizierung"><a class="anchor" href="#openidconnect-zur-authentifizierung"></a>3.2. OpenIDConnect zur Authentifizierung</h3>
 <div class="paragraph">
 <p>OpenID Connect ist eine Identitätsschicht über dem OAuth 2.0-Protokoll und ist eine Erweiterung und nicht Teil des OAuth2.0-Protokolls.
 Es ermöglicht Clients, die Identität des Endbenutzers basierend auf der von einem Autorisierungsserver durchgeführten Authentifizierung zu überprüfen und grundlegende Profilinformationen über den Endbenutzer auf interoperable und REST-ähnliche Weise zu erhalten.</p>
@@ -781,9 +967,9 @@ Für den Transport von Benutzerinformationen, wie z.B. BHKNZ, wird das Access-To
 </div>
 </div>
 <div class="sect2">
-<h3 id="authentifizierung-und-autorisierung"><a class="anchor" href="#authentifizierung-und-autorisierung"></a>2.3. Authentifizierung &amp; Autorisierung</h3>
+<h3 id="authentifizierung-und-autorisierung"><a class="anchor" href="#authentifizierung-und-autorisierung"></a>3.3. Authentifizierung &amp; Autorisierung</h3>
 <div class="sect3">
-<h4 id="aufruf-weboberflaeche-portal"><a class="anchor" href="#aufruf-weboberflaeche-portal"></a>2.3.1. Aufruf Web-Oberfläche/Portal</h4>
+<h4 id="aufruf-weboberflaeche-portal"><a class="anchor" href="#aufruf-weboberflaeche-portal"></a>3.3.1. Aufruf Web-Oberfläche/Portal</h4>
 <div class="paragraph">
 <p>Damit ein Anwender eine geschützte Anwendung über deren Web-Oberfläche (im Web-Browser) aufrufen kann, muss er über den IAM-Service authentifiziert und dazu autorisiert sein.
 Die IsyFact folgt der Empfehlung des OAuth 2.0 Frameworks und definiert den Flow <em>Authorization Code</em> als Authentifizierungsweg.
@@ -800,7 +986,7 @@ Die folgende Abbildung zeigt die System-Architektur mit dem Webserver in der Inf
 <div class="content">
 <img src="../_images/konzept/authorization-code-connections.dn.svg" alt="authorization code connections.dn">
 </div>
-<div class="title">Abbildung 1. Beteiligte Systeme bei Aufruf über Web-Oberfläche / Portal</div>
+<div class="title">Abbildung 3. Beteiligte Systeme bei Aufruf über Web-Oberfläche / Portal</div>
 </div>
 <div class="paragraph">
 <p>Ein menschlicher Nutzer, der eine Anwendung über deren Web-Oberfläche (im Web-Browser) bedienen möchte, ist im Besitz von Authentifizierungsdaten (Nutzername u. Passwort) mit denen er sich gegenüber dem IAM-System ausweisen kann.
@@ -818,27 +1004,27 @@ Das nachfolgende Sequenzdiagramm zeigt noch einmal schematisch den logischen und
 <div class="content">
 <img src="../_images/konzept/authorization-code-flow.dn.svg" alt="authorization code flow.dn">
 </div>
-<div class="title">Abbildung 2. Ablauf Authentifizierung bei Aufruf über Web-Oberfläche / Portal für single page applications (SPA)</div>
+<div class="title">Abbildung 4. Ablauf Authentifizierung bei Aufruf über Web-Oberfläche / Portal für single page applications (SPA)</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="aufruf-service-gateway"><a class="anchor" href="#aufruf-service-gateway"></a>2.3.2. Aufruf Service-Gateway</h4>
+<h4 id="aufruf-service-gateway"><a class="anchor" href="#aufruf-service-gateway"></a>3.3.2. Aufruf Service-Gateway</h4>
 <div class="paragraph">
-<p>Mit der <code>IsyFact 3</code> wird eine neue Authentifizierungslogik (<a href="#aufruf-service-gateway-mit-authentication-gateway">Direkte Authentifizierung am IAM-Service</a>) für die Authentifizierung von Anwendungen, die außerhalb der Anwendungslandschaft betrieben werden, eingeführt.
+<p>Mit der <code>IsyFact-3</code> wird eine neue Authentifizierungslogik (<a href="#aufruf-service-gateway-mit-authentication-gateway">Direkte Authentifizierung am IAM-Service</a>) für die Authentifizierung von Anwendungen, die außerhalb der Anwendungslandschaft betrieben werden, eingeführt.
 Für eine weiche Migration der externen Anwendungen auf die neue IsyFact-Version wird zusätzlich die bisherige Authentifizierungslogik (<a href="#aufruf-service-gateway-ohne-authentication-gateway">Authentifizierung über das SGW am IAM-Service</a>) beibehalten.</p>
 </div>
 <div class="sect4">
-<h5 id="aufruf-service-gateway-mit-authentication-gateway"><a class="anchor" href="#aufruf-service-gateway-mit-authentication-gateway"></a>2.3.2.1. Direkte Authentifizierung am IAM-Service</h5>
+<h5 id="aufruf-service-gateway-mit-authentication-gateway"><a class="anchor" href="#aufruf-service-gateway-mit-authentication-gateway"></a>3.3.2.1. Direkte Authentifizierung am IAM-Service</h5>
 <div class="paragraph">
 <p>Die folgende Abbildung zeigt die neue System-Architektur, die bei Aufrufen von externen Anwendungen zum Einsatz kommt.
 Dabei werden die Aufrufe mit Authentifizierungsdaten von Aufrufen mit Nutzungsdaten getrennt.
 Die Authentifizierungsaufrufe werden über das <em>Authentication-Gateway</em> geleitet, wohingegen die Aufrufe mit den Nutzdaten über das <em>ServiceGateway (SGW)</em> geleitet werden.</p>
 </div>
-<div id="image-servicegateway_plus_authgateway" class="imageblock text-center">
+<div id="image-servicegateway-plus-authgateway" class="imageblock text-center">
 <div class="content">
 <img src="../_images/konzept/ServiceGateway_plus_AuthGateway.dn.svg" alt="ServiceGateway plus AuthGateway.dn">
 </div>
-<div class="title">Abbildung 3. Authentifizierung am Authentication-Gateway</div>
+<div class="title">Abbildung 5. Authentifizierung am Authentication-Gateway</div>
 </div>
 <div class="paragraph">
 <p>Damit ein Client einer externen Anwendung auf die Ressourcen einer Anwendung zugreifen kann, benötigt er ein gültiges Access-Token.
@@ -865,24 +1051,24 @@ So sind neben einer Gültigkeitsdauer auch die für den Benutzer autorisierten R
 <div class="content">
 <img src="../_images/konzept/Squenzdiagramm_ServiceGateway_plus_AuthGateway.dn.svg" alt="Squenzdiagramm ServiceGateway plus AuthGateway.dn">
 </div>
-<div class="title">Abbildung 4. Sequenzdiagramm Authentifizierung am Authentication-Gateway</div>
+<div class="title">Abbildung 6. Sequenzdiagramm Authentifizierung am Authentication-Gateway</div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="aufruf-service-gateway-ohne-authentication-gateway"><a class="anchor" href="#aufruf-service-gateway-ohne-authentication-gateway"></a>2.3.2.2. Authentifizierung über das SGW am IAM-Service</h5>
+<h5 id="aufruf-service-gateway-ohne-authentication-gateway"><a class="anchor" href="#aufruf-service-gateway-ohne-authentication-gateway"></a>3.3.2.2. Authentifizierung über das SGW am IAM-Service</h5>
 <div class="paragraph">
 <p>Die nachfolgende Abbildung zeigt die System-Architektur, die bei Aufrufen von externen Anwendungen für die Authentifizierung ohne <em>Authentication-Gateway</em> zum Einsatz kommt.
-Diese Authentifzierungs- und Autorisierungs-Variante wird aus Vereinfachungsgründen der Migration von externen Anwendungen auf die neue <code>IsyFact Version-3</code> zusätzlich beibehalten, da hierdurch die Umstellungsaufwände reduziert werden.</p>
+Diese Authentifzierungs- und Autorisierungs-Variante wird aus Vereinfachungsgründen der Migration von externen Anwendungen auf die neue <code>IsyFact-3</code> zusätzlich beibehalten, da hierdurch die Umstellungsaufwände reduziert werden.</p>
 </div>
 <div class="paragraph">
 <p>So muss der verwendete techn. Nutzer für diese externe Anwendung noch nicht gemäß <em>SpringSecurity (OAuth2.0)</em> auf einen <em>OAuth2.0 Client</em> migriert worden sein, sondern es kann nach wie vor ein techn. Nutzer zur Authentifizierung verwendet werden.
 Zusätzlich kann die externe Anwendung den gleichen Kommunikationskanal für die Authentifizierung verwenden, wie für ihre fachlichen Anfragen.</p>
 </div>
-<div id="image-servicegateway_ohne_authgateway" class="imageblock text-center">
+<div id="image-servicegateway-ohne-authgateway" class="imageblock text-center">
 <div class="content">
 <img src="../_images/konzept/ServiceGateway-Authentifizierung.dn.svg" alt="ServiceGateway Authentifizierung.dn">
 </div>
-<div class="title">Abbildung 5. Authentifizierung ohne Authentication-Gateway</div>
+<div class="title">Abbildung 7. Authentifizierung ohne Authentication-Gateway</div>
 </div>
 <div class="paragraph">
 <p>Für den Zugriff auf die Ressourcen eines Anwendungssystems benötigt die externe Anwendung ein gültiges Access-Token.
@@ -908,17 +1094,17 @@ In der Anwendung kann anschließend die Ausführungsberechtigung des Benutzers v
 <div class="content">
 <img src="../_images/konzept/Squenzdiagramm_ServiceGateway_ohne_AuthGateway.dn.svg" alt="Squenzdiagramm ServiceGateway ohne AuthGateway.dn">
 </div>
-<div class="title">Abbildung 6. Sequenzdiagramm Authentifizierung ohne Authentication-Gateway</div>
+<div class="title">Abbildung 8. Sequenzdiagramm Authentifizierung ohne Authentication-Gateway</div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="autorization-grant"><a class="anchor" href="#autorization-grant"></a>2.3.2.3. Autorisierungsverfahren</h5>
+<h5 id="autorization-grant"><a class="anchor" href="#autorization-grant"></a>3.3.2.3. Autorisierungsverfahren</h5>
 <div class="paragraph">
 <p>Mit SpringSecurity(OAuth2.0) werden die vier Berechtigungszuteilungsverfahren <em>Authorization-Code-Credentials</em>, <em>Implicit-Credentials</em>, <em>Resource-Owner-Password-Credentials</em> und <em>Client-Credentials</em> spezifiziert.
 In IsyFact spielen davon bei den externen Anwendungsaufrufen über ein <em>Service-Gateway</em> die beiden Verfahren <em>Resource-Owner-Password-Credential</em> und <em>Client-Credential</em> ein Rolle, da es sich hierbei um die Berechtigungszuteilung für ausschließlich <em>Confidential-Clients</em> dreht.</p>
 </div>
 <div class="sect5">
-<h6 id="resource-owner-password-credential-flow"><a class="anchor" href="#resource-owner-password-credential-flow"></a>2.3.2.3.1. Resource-Owner-Password-Credential Flow (Deprecated)</h6>
+<h6 id="resource-owner-password-credential-flow"><a class="anchor" href="#resource-owner-password-credential-flow"></a>3.3.2.3.1. Resource-Owner-Password-Credential Flow (Deprecated)</h6>
 <div class="paragraph">
 <p>Hinweis: Dieser Flow soll gemäß OAuth2.0 Vorgaben nicht mehr verwendet werden und wird in zukünftigen Versionen aus dem OAuth-Standard entfernt.
 Als Nachfolger ist der <a href="#client-credential-flow">Client-Credential Flow</a> zu wählen.</p>
@@ -927,11 +1113,11 @@ Als Nachfolger ist der <a href="#client-credential-flow">Client-Credential Flow<
 <p>Der <em>Resource-Owner-Password-Credential</em>-Flow, der als Authentifizierungsdaten die Attribute <code>Username</code> und <code>Passwort</code> verwendet, sollte nur eingesetzt werden, wenn die involvierte Client-Anwendung ein hohes Vertrauen zur Wahrung der Authentifizierungsdaten sicherstellt oder wenn keine andere Art der Berechtigungszuteilung verfügbar ist.
 So wird die Authentifizierung für einen techn. Nutzer über diesen Authorization-Flow abgebildet.</p>
 </div>
-<div id="image-resourceowner_password_credential_flow" class="imageblock text-center">
+<div id="image-resourceowner-password-credential-flow" class="imageblock text-center">
 <div class="content">
 <img src="../_images/konzept/Resource-Owner-Passwort-Credential-Flow.dn.svg" alt="Resource Owner Passwort Credential Flow.dn">
 </div>
-<div class="title">Abbildung 7. OAuth2.0 Resource-Owner-Password-Credential Flow</div>
+<div class="title">Abbildung 9. OAuth2.0 Resource-Owner-Password-Credential Flow</div>
 </div>
 <div class="paragraph">
 <p>Im vorherigen Bild wird der logische Ablauf des <em>Resource-Owner-Password-Credential</em>-Flows dargestellt.
@@ -946,18 +1132,18 @@ Das Access-Token enthält alle notwendigen Daten, um zu verifizieren, ob die auf
 </div>
 </div>
 <div class="sect5">
-<h6 id="client-credential-flow"><a class="anchor" href="#client-credential-flow"></a>2.3.2.3.2. Client-Credential Flow</h6>
+<h6 id="client-credential-flow"><a class="anchor" href="#client-credential-flow"></a>3.3.2.3.2. Client-Credential Flow</h6>
 <div class="paragraph">
 <p>Der <em>Client-Credential</em>-Flow wird und darf nur zur Berechtigungszuteilung eingesetzt werden, wenn die Client-Anwendung selbst auch der Besitzer der Authentifizierungsdaten und damit als Confidential-Client-Anwendung eingestuft ist.
 Dieser Credential-Flow ist nach SpringSecurity OAuth2.0 auch die einzige Möglichkeit einen technischen Nutzer (Client) zu authentifizieren.
 Es erfolgt hierbei keine Interaktion durch einen Benutzer, der sein Passwort eingeben müsste, sondern die Schritte zur Authentifizierung und Autorisierung der Client-Anwendung laufen selbständig als Hintergrundprozess analog einer Batch-Anwendung ab.
 Die dabei verwendeten Authentifizierungsdaten <code>Client-ID</code> und <code>Client-Secret</code> müssen vor der Nutzung für die Client-Anwendung definiert und mit dem IAM-System abgestimmt sein.</p>
 </div>
-<div id="image-clientcredential_flow" class="imageblock text-center">
+<div id="image-clientcredential-flow" class="imageblock text-center">
 <div class="content">
 <img src="../_images/konzept/Client-Credential-Flow.dn.svg" alt="Client Credential Flow.dn">
 </div>
-<div class="title">Abbildung 8. OAuth2.0 Client-Credential Flow</div>
+<div class="title">Abbildung 10. OAuth2.0 Client-Credential Flow</div>
 </div>
 <div class="paragraph">
 <p>Im vorherigen Bild wird der logische Ablauf des <em>Client-Credential</em>-Flows dargestellt.
@@ -971,22 +1157,165 @@ Das Access-Token enthält alle notwendigen Daten, um zu verifizieren, ob die auf
 </div>
 </div>
 <div class="sect3">
-<h4 id="ausfuehrung-batch-u-task"><a class="anchor" href="#ausfuehrung-batch-u-task"></a>2.3.3. Ausführung Batch &amp; Task</h4>
-
+<h4 id="ausfuehrung-batch-u-task"><a class="anchor" href="#ausfuehrung-batch-u-task"></a>3.3.3. Ausführung Batch &amp; Task</h4>
+<div class="sect4">
+<h5 id="absicherung-batch"><a class="anchor" href="#absicherung-batch"></a>3.3.3.1. Absicherung eines Batch</h5>
+<div class="paragraph">
+<p>Gemäß der IsyFact-Systemlandschaft - siehe <a href="../../blaupausen/detailkonzept-komponente-batch/master.html#grobe-architektur-des-batchrahmens" class="xref page">Grobe Architektur des Batchrahmens</a> - ist ein Batch teil eines Anwendungssystems und setzt sich - siehe <a href="#image-awlogbat">Fachliche Architektur eines Batch in der Anwendungslandschaft</a> - aus den Komponenten (1) Batch-Logik und -Steuerung sowie den dabei eingesetzten (2) Fachkomponenten zusammen.
+Da die Absicherung zur Ausführung eines Batches immer ohne User-Interaktionen stattfindet, ist dieser als <em>Confidential Client</em> einzustufen, weil er in der Lage sein muss, die notwendige Vertraulichkeit zur Wahrung seiner Anmeldeinformationen sicherzustellen.</p>
+</div>
+<div id="image-awlogbat" class="imageblock text-center">
+<div class="content">
+<img src="../_images/konzept/AnwLogBat.dn.svg" alt="AnwLogBat.dn">
+</div>
+<div class="title">Abbildung 11. Fachliche Architektur eines Batches in der Anwendungslandschaft</div>
+</div>
+<div class="paragraph">
+<p>Ein Batch wird über ein Batch-Client oder Startprogramm – meist ein Shellscript, UC4, JobNetz, CronJob, o.ä. – initialisiert und gestartet.
+Diese Batch-Clients sind systemseitig dazu berechtigt, den dedizierten Batch auszuführen und damit zu starten.
+Somit ruft der Batch-Client die Komponente <em>Batch-Logik</em> in der Nutzungsschicht der Anwendung auf, das die notwendigen Initialisierungen vornimmt.
+Genau hier erfolgt frühzeitig die Unterscheidung welcher <em>Credential</em>-Flow (<a href="#resource-owner-password-credential-flow">Resource-Owner-Password-Credential Flow (Deprecated)</a> oder <a href="#client-credential-flow">Client-Credential Flow</a>) zur Authentifizierung und Autorisierung des Batch verwendet werden soll.</p>
+</div>
+<div class="paragraph">
+<p>Die Abbildung <a href="#image-sequenzdiagramm-absicherung-batch">Absicherung eines Batch</a> stellt den logischen Ablauf zur Absicherung eines Batches skizzenhaft dar.</p>
+</div>
+<div id="image-sequenzdiagramm-absicherung-batch" class="imageblock text-center">
+<div class="content">
+<img src="../_images/konzept/Sequenzdiagramm_AbsicherungBatch.dn.svg" alt="Sequenzdiagramm AbsicherungBatch.dn">
+</div>
+<div class="title">Abbildung 12. Absicherung eines Batches</div>
+</div>
+<div class="paragraph">
+<p>Über die Batch-Konfiguration wird gesteuert, ob der Batch mit einem <em>NatürlichenNutzer</em> und den zugehörigen Authentifizierungsdaten <code>Benutzer</code> und <code>Passwort</code> über den <a href="#resource-owner-password-credential-flow">Resource-Owner-Password-Credential Flow (Deprecated)</a> oder über den <a href="#client-credential-flow">Client-Credential Flow</a> mit als <em>TechnischenNutzer</em> (Client) mit <code>Client-ID</code> und <code>Client-Secret</code> authentifiziert und autorisiert wird.</p>
+</div>
+<div class="paragraph">
+<p>Je nach verwendetem <em>Credential</em>-Flow erfolgt mit den jeweiligen erhaltenen Authentifizierungsdaten des Batch-Nutzers dann die eigentliche Authentifizierung über den IAM-Service der Plattform.
+Dazu werden die durch den Baustein bereitgestellten <a href="#aussensicht-der-komponente-security">Schnittstellen</a> genutzt.</p>
+</div>
+<div class="paragraph">
+<p>Im IAM-Service wird zu den übergebenen <em>Authentifizierungsdaten</em> der dort verwaltete Benutzer ermittelt und validiert.
+Bei erfolgreicher Authentifizierung wird aus den Benutzerdaten ein <em>Access-Token</em> generiert.
+Dieses Token beinhaltet alle notwendigen Informationen - siehe <a href="#inhalte-der-token">Inhalte der Access-Token</a>, um eine Authentifizierung und Autorisierung an den nachfolgenden Aufrufen von Fachkomponenten durchführen zu können.
+Das IAM-System liefert das so generierte <em>Access-Token</em> an die aufrufende Komponente zurück.</p>
+</div>
+<div class="paragraph">
+<p>Im Sicherheitsbaustein <em>isy-security</em> wird zur weiteren Verwendung aus dem <em>Access-Token</em> ein <code>SecurityContext</code> initialisiert und aufbereitet, der somit alle notwendigen Informationen wie das <em>Access-Token</em>, dem Nutzer zugeordnete Rollen, etc. enthält.
+Für die weiteren Prozessschritte im Batch wird dieser <em>Access-Token</em>  immer weitergereicht, so dass dieser bei der Ausführung seiner Fachanwendungen sich entsprechend diesen gegenüber authentifizieren und autorisieren kann.</p>
+</div>
+<div class="paragraph">
+<p>Um sicherzustellen, dass ein Batch über seine gesamte Laufzeit ein gültiges <em>Access-Token</em> besitzt und sich jederzeit an den Fachanwendungen authentifizieren und autorisieren kann, sollte der Batch die Gültigkeitsdauer des <em>Access-Tokens</em> prüfen.
+Sollte die Gültigkeitsdauer des <em>Access-Tokens</em> kleiner sein als die vorgegebene bzw. konfigurierbare Mindestgültigkeitsdauer, dann muss der Batch das <em>Access-Token</em> durch eine erneute Authentifizierung erneuern.
+Das so erneuerte <em>Access-Token</em> kann nun wieder für ein oder mehrere Verarbeitungszyklen verwendet werden, ohne dass es in den evtl. kaskadierend aufgerufenen Fachanwendungen zu einem Fehler mangels gültigem <em>Access-Tokens</em> kommen kann.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="absicherung-task"><a class="anchor" href="#absicherung-task"></a>3.3.3.2. Absicherung von Aufgaben (Tasks)</h5>
+<div class="paragraph">
+<p>Die in diesem Kapitel beschriebene Absicherung von <em>Aufgaben</em> unterscheidet sich gegenüber eigenständigen <em>Batch</em>-Anwendungen dahingehend, dass <em>Aufgaben</em> als integrierter Anteil einer eigentlichen Anwendung definiert sind.
+Sie besitzen in der Regel einen kleineren Umfang als <em>Batches</em> und werden nicht manuell von außen gesteuert.
+Stattdessen werden sie durch die Anwendung selbst konfiguriert, zeitlich geplant und selbstständig ausgeführt.
+Daher müssen <em>Aufgaben</em>, als Teil einer Komponente des Anwendungskerns, über andere Mechanismen abgesichert werden.</p>
+</div>
+<div class="paragraph">
+<p>Mit Einführung des Bausteins <code>isy-security</code> werden auch für die Absicherung von <em>Aufgaben</em> beide <em>Credential</em>-Flows <a href="#client-credential-flow">Client-Credential Flow</a> und <a href="#resource-owner-password-credential-flow">Resource-Owner-Password-Credential Flow (Deprecated)</a> unterstützt.
+Das bedeutet, dass die für die <em>Aufgaben</em>-Authentifizierung verwendete Parametrisierung per Konfiguration in <em>isy_task</em> einerseits wie bisher als <em>NatürlicherNutzer</em> zu <code>Benutzer</code> und <code>Passwort</code> und neu als <em>TechnischerNutzer</em> (Client) zu <code>Client-ID</code> und <code>Client-Secret</code> aufgelöst werden kann.</p>
+</div>
+<div class="paragraph">
+<p>Mit <code>IsyFact-3</code> soll bevorzugt der <a href="#client-credential-flow">Client-Credential Flow</a> und den Properties <code>Client-ID</code> und <code>Client-Secret</code> verwendet werden.</p>
+</div>
+<div class="paragraph">
+<p>Zur Unterstützung einer weichen Migration wird mit <code>IsyFact-3</code> der <a href="#resource-owner-password-credential-flow">Resource-Owner-Password-Credential Flow (Deprecated)</a> mit <code>Benutzer</code> und <code>Passwort</code> weiterhin möglich sein.</p>
+</div>
+<div class="paragraph">
+<p>Für jede <em>Aufgabe</em> wird per <code>Task-ID</code> die Definition der Authentifizierungsdaten in der Betriebskonfiguration erstellt.
+In Abbildung <a href="#image-sequenzdiagramm-absicherung-task">Absicherung von Aufgaben (Tasks)</a> wird der logische Ablauf zur Absicherung einer <em>Aufgabe</em> mit dem neuen Security-Baustein <code>isy-security</code> im Zusammenspiel mit der Bibliothek <code>isy-task</code> skizziert.</p>
+</div>
+<div id="image-sequenzdiagramm-absicherung-task" class="imageblock text-center">
+<div class="content">
+<img src="../_images/konzept/Sequenzdiagramm_AbsicherungTask.dn.svg" alt="Sequenzdiagramm AbsicherungTask.dn">
+</div>
+<div class="title">Abbildung 13. Absicherung von Aufgaben (Tasks)</div>
+</div>
+<div class="paragraph">
+<p>Sobald eine Anwendungskomponente einen fachlichen Ablauf als abgekoppelten Hintergrundprozess und somit als <em>Aufgabe</em> ausführen möchte, startet diese eine Initialisierung der <em>Aufgabe</em> mit der <code>TaskID</code> als Parameter.
+In <code>isy-task</code> wird die übergebene <code>TaskID</code> verwendet, um in der Betriebskonfiguration gemäß den <a href="../../isy-task/konzept/master.html#konfiguration" class="xref page">Task-Konfigurations-Konventionen</a> nach den entsprechenden Konfigurationswerten aufzulösen.</p>
+</div>
+<div class="paragraph">
+<p>Der gestartete <em>Aufgaben</em>-Prozess von <code>isy-task</code> ermittelt dann anhand der übergebenen <code>TaskID</code> den <em>Credential</em>-Flow und entscheidet durch diese die entsprechende Authentifizierungsmethode in <code>isy-security</code> aufzurufen.</p>
+</div>
+<div class="paragraph">
+<p>Der Baustein <code>isy-security</code> gibt die Authentifizierungsdaten an das IAM-System weiter und erhält von diesem bei erfolgreicher Authentifizierung ein gültiges <em>Access-Token</em> zurück.
+Dieses erhaltene <em>Access-Token</em> wird interpretiert und zur weiteren Verwendung ein <code>SecurityContext</code> initialisiert und aufbereitet.
+Der <em>Aufgaben</em>-Prozess erhält dann den initialisierten <code>SecurityContext</code> zurück.</p>
+</div>
+</div>
 </div>
 <div class="sect3">
-<h4 id="verarbeitung-asynchroner-anfragen"><a class="anchor" href="#verarbeitung-asynchroner-anfragen"></a>2.3.4. Verarbeitung asynchroner Anfragen</h4>
+<h4 id="verarbeitung-asynchroner-anfragen"><a class="anchor" href="#verarbeitung-asynchroner-anfragen"></a>3.3.4. Verarbeitung asynchroner Anfragen</h4>
 
 </div>
 </div>
 <div class="sect2">
-<h3 id="token"><a class="anchor" href="#token"></a>2.4. Token</h3>
+<h3 id="token"><a class="anchor" href="#token"></a>3.4. Access-Token</h3>
 <div class="sect3">
-<h4 id="inhalte-der-token"><a class="anchor" href="#inhalte-der-token"></a>2.4.1. Inhalte der Token</h4>
-
+<h4 id="inhalte-der-token"><a class="anchor" href="#inhalte-der-token"></a>3.4.1. Inhalte der Access-Token</h4>
+<div class="paragraph">
+<p>In IsyFact sind Access-Token vom Typ JSON Web Token (JWT), das heißt, sie sind konform zum JWT-Standard (<a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-rfc7519-json-web-token" class="xref page">JSON Web Token (JWT)</a>) und enthalten Informationen den authentifizierten Nutzer in Form von 'Claims', die für die Autorisierung und Ausführung des angeforderten Service benötigt werden.
+Diese werden bei Erzeugung des Access-Tokens durch das IAM-System hineingeschrieben und können von der Anwendung ausgelesen werden.</p>
+</div>
+<div class="paragraph">
+<p>Das Minimum an Informationen, die ein JWT in IsyFact enthalten muss - zusätzlich zu den im JWT-Standard vorgeschriebenen, sind folgende:</p>
+</div>
+<table id="access-token-claims" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Access-Token claims</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Information:</th>
+<th class="tableblock halign-left valign-top">Claim Name:</th>
+<th class="tableblock halign-left valign-top">Claim Art:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kennung der durchführenden Behörde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bhknz</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">non-namespaced custom claim</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interne Kennung des durchführenden Benutzers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">internekennung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">non-namespaced custom claim</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kennung des durchführenden Benutzers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">preferred_username</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IANA Public Claim Name / OIDC Standard Claim</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name des durchführenden Sachbearbeiters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">family_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IANA Public Claim Name / OIDC Standard Claim</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rollen des durchführenden Benutzers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">roles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IANA Public Claim Name</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Refresh-Token sind für Anwendungen 'opaque Token', eine zufällige aber einzigartige Zeichenkette (UUID), die nur für den IAM-Service eine Bedeutung hat.
+Sie werden vom IAM-Service erzeugt und mit dem Access-Token an die Anwendung geschickt.
+Diese speichert es und schickt es wieder an den IAM-Service, um ein neues Access-Token zu erhalten.</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="validierung-der-token"><a class="anchor" href="#validierung-der-token"></a>2.4.2. Validierung der Token</h4>
+<h4 id="validierung-der-token"><a class="anchor" href="#validierung-der-token"></a>3.4.2. Validierung der Access-Token</h4>
 <div class="paragraph">
 <p>Wenn eine Ressource oder ein Service einer Anwendung angefragt wird, muss das Access-Token von der empfangenden Anwendung validiert werden.
 Dazu sind folgende Validierungen verpflichtend:</p>
@@ -1043,10 +1372,10 @@ Genauer gesagt, in das "Authorization" Request-header Feld und mit dem "Bearer" 
 </div>
 </div>
 <div class="sect3">
-<h4 id="aktualisierung-der-token"><a class="anchor" href="#aktualisierung-der-token"></a>2.4.3. Aktualisierung der Acess-Token</h4>
+<h4 id="aktualisierung-der-token"><a class="anchor" href="#aktualisierung-der-token"></a>3.4.3. Aktualisierung der Acess-Token</h4>
 <div class="paragraph">
 <p>Ein Access-Token muss ein begrenzte Gültigkeitesdauer besitzen, um den Zugriff auf geschützte Ressourcen zeitlich zu beschränken.
-Sobald die Gültigkeitsdauer überschritten ist, muss das Access-Token als ungültig erkannt werden (siehe <a href="#validierung-der-token">Validierung der Token</a>).
+Sobald die Gültigkeitsdauer überschritten ist, muss das Access-Token als ungültig erkannt werden (siehe <a href="#validierung-der-token">Validierung der Access-Token</a>).
 Die Verwendung eines abgelaufenen Access-Tokens bei einer Anfrage muss vom empfangenden System erkannt und mit HTTP status error code: 401 und der Fehlerbeschreibung: "The access token expired" beantwortet werden, wie in beschrieben.
 Der Aufrufer muss die Antwort verarbeiten und die Anfrage mit einem gültigen Access-Token erneut senden.</p>
 </div>
@@ -1072,7 +1401,7 @@ Hierbei muss Sicherheit gegen Benutzerkomfort abgewogen werden.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="nutzung-des-behoerdenkennzeichens"><a class="anchor" href="#nutzung-des-behoerdenkennzeichens"></a>2.5. Nutzung des Behördenkennzeichens</h3>
+<h3 id="nutzung-des-behoerdenkennzeichens"><a class="anchor" href="#nutzung-des-behoerdenkennzeichens"></a>3.5. Nutzung des Behördenkennzeichens</h3>
 <div class="paragraph">
 <p>Als optional mögliche 2-Faktor-Authentifizierung ist im IAM-Service das Behördenkennzeichen (BHKNZ) vorgesehen.
 Die Implementierung des IAM-Service muss für die 2-Faktor-Authentifizierung dieses Feature unterstützen, andernfalls wird das BHKNZ als optionales Attribut betrachtet.
@@ -1083,181 +1412,6 @@ Wenn die IAM-Service Implementierung dieses Feature unterstützt, dann wird ein 
 <p>Wie in <a href="#aussensicht-der-komponente-security">Schnittstelle des Bausteins Security</a> beschrieben, wird bei der Authentifizierung das Behördenkennzeichen als String an den <code>Authentifizierungsmanager</code> übergeben.
 Zur Authentifizierung von technischen Nutzern mithilfe der Methode <code>authentifiziereClient()</code> wird daher die Client-Id, das Client-Secret und das BHKNZ übergeben.
 Der alternative Weg benötigt die Benutzerkennung (Nutzername), das Passwort und das BHKNZ zur Authentifizierung mit der Methode <code>authentifiziereSystem()</code>.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="sicherheitsarchitektur-eines-it-systems"><a class="anchor" href="#sicherheitsarchitektur-eines-it-systems"></a>3. Sicherheitsarchitektur eines IT-Systems</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Der Baustein Security bildet eine Komponente des Querschnitts der <a href="../../blaupausen/referenzarchitektur-it-system/master.html#einleitung" class="xref page">IsyFact Referenzarchitektur IT-Systeme</a>.
-Er ist von jedem IT-System zur Autorisierung von Zugriffen und Vorgängen zu verwenden.</p>
-</div>
-<div class="paragraph">
-<p>Die Mechanismen zur Absicherung IsyFact-konformer IT-Systeme haben zum Ziel, die Autorisierung von Zugriffen <em>systematisch</em>, <em>einheitlich</em> und <em>einfach</em> umzusetzen.</p>
-</div>
-<div class="paragraph">
-<p>Die <strong>Systematik</strong> und Vollständigkeit der Berechtigungsprüfungen wird dadurch erreicht, dass Berechtigungsprüfungen in den IT-Systemen an definierten Stellen und auf identische Weise stattfinden.</p>
-</div>
-<div class="paragraph">
-<p>Die <strong>Einheitlichkeit</strong> wird durch Bereitstellung der Bibliothek <code>isy-security</code> und Nutzungsvorgaben gewährleistet, die von allen IT-Systemen zu verwenden sind.
-Berechtigungsprüfungen erfolgen innerhalb eines IT-Systems immer über die Bibliothek <code>isy-security</code>.</p>
-</div>
-<div class="paragraph">
-<p>Die <strong>Einfachheit</strong> der Nutzung der Bibliothek <code>isy-security</code> wird durch weitgehende Transparenz bei der Initialisierung, kompakte Schnittstellen und deklarative (z.B. per Annotation) statt programmatischer Implementierung erreicht.</p>
-</div>
-<div class="sect2">
-<h3 id="praemissen"><a class="anchor" href="#praemissen"></a>3.1. Prämissen</h3>
-<div class="paragraph">
-<p>Aus den <a href="master.html#prinzipien-der-sicherheitsarchitektur" class="xref page">Prinzipien der Sicherheitsarchitektur</a> leiten sich die folgenden Randbedingungen für die Umsetzung der Berechtigungsprüfung innerhalb eines IT-Systems ab:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Anfragen, die am Dialog (Web-App) eines IT-Systems eingehen, sind immer bereits durch das IAM-System bzw. die lokale Authentifizierung erfolgreich authentifiziert.
-Sorgt ein IAM-System für die Authentifizierung, enthält der HTTP-Header der Anfrage die Identifikation des Anwenders und dessen Rollen (in Form eines JWT Access-Token).
-Die Informationen aus dem Access-Token werden als <code>SecurityContext</code> in das IT-System übernommen.</p>
-</li>
-<li>
-<p>Anfragen, die an einer Service-Schnittstelle (von außen über ein Service-Gateway (SGW) oder von anderen IT-Systemen innerhalb der IT-Systemlandschaft) eines IT-Systems eingehen, sind ebenso bereits authentifiziert.
-Das mit der Anfrage an das IT-System im Header übergebene JWT Access-Token enthält die Identifikation des Anwenders und dessen Rollen und wird als <code>SecurityContext</code> in das IT-System übernommen.</p>
-</li>
-<li>
-<p>Prozesse, die unabhängig von eingehenden Anfragen (über Dialog und Service) durch ein IT-System gestartet werden (z.B. Batch/Task), müssen zunächst einen (technischen) Nutzer gegen das IAM-System bzw. die lokale Authentifizierung erfolgreich authentifizieren, dessen Rollen ermitteln und diese Informationen als <code>SecurityContext</code> im IT-System hinterlegen.</p>
-</li>
-<li>
-<p>Bei der Übernahme der Anwenderinformationen in den <code>SecurityContext</code> bildet das IT-System die Rollen des Anwenders auf systemspezifische Rechte ab.
-Vor Ausführung des Service bzw. Prozesses prüft das IT-System, ob der Anwender die dafür benötigten Rechte besitzt.</p>
-</li>
-<li>
-<p>Innerhalb der Logik- und Verarbeitungszone eines IT-Systems wird der <code>JWT Access-Token</code> weitergegeben. Zur Stärkung der Vertrauenswürdigkeit wird jeder <code>JWT Access-Token</code> beim Eintritt in ein IT-System auf Gültigkeit und Authentizität geprüft.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Die Außenschnittstellen eines IT-Systems können also nur mit einer gültigen Legitimation aufgerufen werden und sind so vor unberechtigter Nutzung geschützt.
-Umgekehrt können die Module und Verarbeitungsprozesse innerhalb des IT-Systems sich darauf verlassen, dass ihr Aufruf legitim ist und die ihnen übergebenen Daten vertrauenswürdig sind.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="software-architektur"><a class="anchor" href="#software-architektur"></a>3.2. Software-Architektur</h3>
-<div class="paragraph">
-<p>Die folgende Abbildung zeigt den logischen Aufbau für die Authentifizierung und für die Bereitstellung von Berechtigungsinformationen an die Komponenten eines IT-Systems.</p>
-</div>
-<div id="image-Berechtigungspruefung" class="imageblock text-center">
-<div class="content">
-<img src="../_images/konzept/software-architektur-berechtigungspruefung.png" alt="software architektur berechtigungspruefung">
-</div>
-<div class="title">Abbildung 9. Software-Architektur der Berechtigungsprüfung</div>
-</div>
-<div class="paragraph">
-<p>Im Folgenden werden die Aufgaben und grobe Funktionsweise der Komponenten für die Autorisierung von Anfragen in einer <a href="../../../../glossary/latest/glossary/master.html#glossar-geschaeftsanwendung" class="xref page">Geschäftsanwendung</a>  erläutert.</p>
-</div>
-<div class="paragraph">
-<p>Der Baustein <code>isy-security</code> basiert auf dem Framework Spring Security und bietet querschnittliche Funktionalität zur Authentifizierung und Autorisierung (Berechtigungsprüfung) von Anfragen.
-Um IsyFact-spezifische Anforderungen, wie z.B. die Nutzung des Behördenkennzeichens, zu erfüllen, existiert eine Zugriffsschicht, die eben diese Funktionalität bereitstellt und den Zugriff auf Spring Security kapselt.
-Die einheitliche Zugriffsschicht für Authentifizierung und Autorisierung erleichtert zudem, durch die teilweise Übernahme bestehender Schnittstellen, die Migration von einer älteren IsyFact Version.
-Die Authentifizierung und Autorisierung an der Benutzeroberfläche findet im Zuge der Einführung von Single-Page-Applications (SPAs) nicht mehr über das Backend oder den Baustein isy-security statt.</p>
-</div>
-<div class="paragraph">
-<p>Der Zugriff auf den Baustein erfolgt über das Interface <code>Security</code>, das mehrere Manager bereitstellt:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>Authentifizierungsmanager</code></p>
-</li>
-<li>
-<p><code>Berechtigungsmanager</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Das Interface <code>Security</code> hat Zugriff auf eine Liste von allen im System hinterlegten Rollen.
-Das Anwendungssystem greift darüber auf den <code>Authentifizierungsmanager</code> und den <code>Berechtigungsmanager</code> zu.</p>
-</div>
-<div class="paragraph">
-<p>Der <code>Authentifizierungsmanager</code> ist für die Kommunikation mit dem IAM-Service über den <code>OAuth2AuthorizedClientProvider</code> zuständig.
-Die Authentifizierung (Anmeldung) verläuft über diesen Aufruf.
-Nach einer erfolgreichen Authentifizierung erfolgt der Erhalt des Access Tokens und der dem Benutzer zugeordneten Rollen.
-Diese Informationen werden anschließend im <code>SecurityContext</code> abgelegt.</p>
-</div>
-<div class="paragraph">
-<p>Über den <code>Berechtigungsmanager</code> kann die Anwendung die Rollen und anwendungsspezifischen Rechte des angemeldeten Benutzers abfragen.</p>
-</div>
-<div class="paragraph">
-<p>Der <code>RolePrivilegeGrantedAuthoritiesConverter</code> ist für die Konvertierung vom IAM-Service im Access Token übermittelten Rollen des Benutzers in die anwendungsspezifischen Rechte zuständig.</p>
-</div>
-<div class="paragraph">
-<p>Mit der von Spring Security bereitgestellten Annotation <code>@secured</code> werden angebotene Services und Methoden der Anwendung abgesichert.
-Dieser Annotation muss noch der Name eines anwendungsspezifischen Rechts mitgegeben werden.
-Im Interceptor <code>SecuredInterceptor</code> wird sichergestellt, dass nur dann der Zugriff gewährt wird, wenn der angemeldete Nutzer auch über das vorhandene anwendungsspezifische Recht verfügt.</p>
-</div>
-<div class="paragraph">
-<p>Hinweis: Die Annotation <code>@secured</code> löst die Annotation <code>@gesichert</code> ab und ist analog dazu verwenden.</p>
-</div>
-<div class="paragraph">
-<p>Der <code>NutzerAuthentifizierunginterceptor</code> ist für die Authentifizierung von technischen Nutzern zuständig und wird über eine Annotation (<code>@NutzerAuthentifikation</code>) bereitgestellt.
-Parallel zur Annotation <code>@NutzerAuthentifikation</code> existiert die Annotation <code>@ClientAuthentification</code> zur Authentifizierung von OAuth2.0 Clients.
-Dies ermöglicht die Umstellung von technische Nutzer auf OAuth2.0 Clients, ohne große Auswirkungen im Anwendungssystem zu erzeugen.
-Die Authentifizierungsdaten werden aus der Konfiguration der Anwendung ausgelesen und zur Authentifizierung verwendet.
-Die Authentifizierung findet über die Implementierung des Interfaces <code>Authentifizierungsmanager</code> statt.
-Das Ergebnis einer Authentifizierung über die Annotationen <code>@ClientAuthentification</code> und <code>@NutzerAuthentifikation</code> ist ein voll initialisierter <code>SecurityContext</code> mit einem validen AccessToken.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="aussensicht-der-komponente-security"><a class="anchor" href="#aussensicht-der-komponente-security"></a>3.3. Schnittstelle des Bausteins Security</h3>
-<div class="paragraph">
-<p>Im Folgenden wird die Schnittstelle des Bausteins <code>isy-security</code> beschrieben.</p>
-</div>
-<div id="image-schnittstelle-security" class="imageblock text-center">
-<div class="content">
-<img src="../_images/konzept/security-schnittstellen.dn.svg" alt="security schnittstellen.dn">
-</div>
-<div class="title">Abbildung 10. Schnittstelle des Bausteins Security</div>
-</div>
-<div class="paragraph">
-<p>Das Interface <code>Security</code> ist der zentrale Einstiegspunkt in den Baustein <code>isy-security</code>.
-Bei seiner Instanziierung wird die anwendungsspezifische Rollen-Rechte-Datei eingelesen und damit der <code>Authentifizierungsmanager</code> sowie der <code>Berechtigungsmanager</code> erzeugt.
-Das Interface <code>Security</code> stellt der Fachanwendung die im weiteren beschriebenen <code>Authentifizierungsmanager</code> und <code>Berechtigungsmanager</code> der Fachanwendung zur Verfügung.
-Außerdem kann die Fachanwendung über die Methode <code>getAlleRollen</code> eine Liste von allen im System hinterlegten Rollen erhalten.</p>
-</div>
-<div class="paragraph">
-<p>Der <code>Authentifizierungsmanager</code> übernimmt die Authentifizierung von technischen Nutzern am IAM-System.
-Mit der Methode <code>authentifiziereClient</code> wird die OAuth2.0-konforme Authentifizierung eines Client mittels Client-ID u. Client-Secret unterstützt und mit der Methode <code>authentifiziereSystem</code> der alternative Weg mittels (techn.) Nutzername u. Passwort.
-Bei erfolgreicher Authentifizierung werden die vom IAM-System zurückgegebenen Daten (Access-Token, Rollen des Anwenders, &#8230;&#8203;) im <code>Spring SecurityContext</code> abgelegt.
-Dort werden auch die den aus den Rollen resultierenden Rechte des Anwenders gespeichert.
-Eine nicht erfolgreiche Authentifizierung (fachliche Ablehnung oder technisches Problem) löst eine <code>AuthentifizierungFehlgeschlagenException</code> bzw. <code>AuthentifizierungTechnicalException</code> aus.</p>
-</div>
-<div class="paragraph">
-<p>Der <code>Berechtigungsmanager</code> gibt Auskunft über die Rollen und Rechte des Anwenders.
-Die in der Benutzeradministration dem Anwender zugewiesenen Rollen werden mithilfe einer anwendungsspezifischen Rollen-Rechte-Datei in konkrete Rechte des Anwenders für diese Anwendung umgewandelt.
-Die aktuellen Rollen und Rechte des Anwenders können mit den Methoden des <code>Berechtigungsmanager</code> erfragt werden und es kann geprüft werden, ob der Anwender ein bestimmtes Recht hat.
-Die Methoden <code>getRechte</code> und <code>getRollen</code> liefern die aktuell dem Anwender zugeordneten Rechte bzw. Rollen.
-Mit der Methode <code>hatRecht</code> kann die Anwendung feststellen, ob der Anwender aktuell ein bestimmtes Recht besitzt, während mit <code>pruefeRecht</code> der nachfolgende Code mit dem angegebenen Recht abgesichert wird: falls der Anwender das Recht nicht hat, wird eine <code>AutorisierungFehlgeschlagenException</code> geworfen.
-Mit diesen Berechtigungsabfragen kann die Fachanwendung z.B. feingranular bestimmen, ob und wie der Anwender bestimmte Daten sehen oder bearbeiten kann bzw. ob und wie er bestimmte Funktionen der Anwendung benutzen kann.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="aufruf-von-nachbarsystemen"><a class="anchor" href="#aufruf-von-nachbarsystemen"></a>3.4. Aufruf von Nachbarsystemen</h3>
-<div class="paragraph">
-<p>Ein Anwendungssystem erwartet bei einem Aufruf, dass alle notwendigen Authentifizierungs- und Autorisierungsdaten in valider und gültiger Form übergeben werden.
-Folglich muss ein Anwendungssystem, das ein Nachbarsystem aufruft, diesem Aufruf ebenfalls gültige und valide Authentifzierungs- und Autorisierungsdaten mitgeben.
-Im Regelfall werden diese Authentifizierungs- und Autorisierungsdaten bei der Authentifizierung der originären Anfrage bzw. der <a href="#validierung-der-token">Validierung des Access-Token</a> über den Sicherheitsbaustein <code>isy-security</code> des Anwendungssystems als aus dem Access-Token initialisierten <code>SecurityContext</code> übergeben.
-Für eine fachliche und prozessbezogene Aufrufkette wird dieser <code>Access-Token</code> in allen weiteren Aufrufen wiederverwendet und unverändert weitergeleitet.</p>
-</div>
-<div class="paragraph">
-<p>Es erfolgt an der jeweiligen Schnittstelle des Nachbarsystems eine entsprechende Transformation der Daten des <code>Access-Tokens</code> in einen <code>SecurityContext</code>.</p>
-</div>
-<div class="paragraph">
-<p>Gemäß Referenzarchitektur ist HTTP als das Übertragungsprotokoll der <a href="../../blaupausen/referenzarchitektur/master.html#servicekommunikation" class="xref page">Servicekommunikation</a> definiert.
-Dazu sind an den Schnittstellen meist dedizierte Consumer-Provider-Bibliotheken vorgesehen, die bereits die Logik zur Transformation und  Weiterleitung des <code>Access-Tokens</code> übernehmen.</p>
-</div>
-<div class="paragraph">
-<p>Gibt es diese Bibliotheken nicht an den Schnittstellen, dann muss das Nachbarsystem direkt aufgerufen werden.
-Hierbei muss das aufrufende Anwendungssystem stets das <code>Access-Tokens</code> manuell in den Header der ausgehenden Nachricht schreiben.
-Weitere Details hierzu sind im Kapitel <a href="#authentifizierung-und-autorisierung">Authentifizierung &amp; Autorisierung</a> beschrieben.</p>
 </div>
 </div>
 </div>
@@ -1356,13 +1510,13 @@ Wichtig ist vor allem die Beziehung zwischen fachlichen und technischen Rollen.
 Des weiteren sollte die Menge der Rollen so klein wie möglich gehalten werden.</p>
 </div>
 <div class="paragraph">
-<p>Die Abbildung <a href="#image-rollen-beziehungen">Abbildung 11</a> verdeutlicht den Inhalt der folgenden Abschnitte grafisch.</p>
+<p>Die Abbildung <a href="#image-rollen-beziehungen">Abbildung 14</a> verdeutlicht den Inhalt der folgenden Abschnitte grafisch.</p>
 </div>
 <div id="image-rollen-beziehungen" class="imageblock text-center">
 <div class="content">
 <img src="../_images/konzept/rollen-beziehungen.png" alt="rollen beziehungen" width="70%">
 </div>
-<div class="title">Abbildung 11. Beziehungen zwischen fachlichen und technischen Rollen</div>
+<div class="title">Abbildung 14. Beziehungen zwischen fachlichen und technischen Rollen</div>
 </div>
 <div class="sect3">
 <h4 id="technische-rollen"><a class="anchor" href="#technische-rollen"></a>4.3.1. Technische Rollen</h4>
@@ -1500,7 +1654,7 @@ Der folgende Prozess bietet eine grobe Richtlinie:</p>
 <div class="content">
 <img src="../_images/konzept/rollen-erstellung.png" alt="rollen erstellung" width="70%]">
 </div>
-<div class="title">Abbildung 12. Absicherung durch Rechte und Aggregation in Rollen</div>
+<div class="title">Abbildung 15. Absicherung durch Rechte und Aggregation in Rollen</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic" start="3">

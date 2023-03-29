@@ -91,9 +91,6 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../einstieg/whitepaper.html">Whitepaper</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../einstieg/migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
-  </li>
 </ul>
   </li>
 </ul>
@@ -508,7 +505,22 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../changelog/aenderungen.html">Änderungen Version 3.0 (DEV)</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../changelog/releasenotes.html">Release Notes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../changelog/changelog.html">Changelog</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../changelog/migrationsleitfaden.html">Migrationsleitfaden IsyFact 3.0 (DEV)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -648,11 +660,11 @@ Hierzu wird in der Regel ein Bean Mapper verwendet.
 In Einzelfällen können Teile der Transformation auch programmiert werden, sofern der Nutzen daraus den Aufwand nicht übersteigt.</p>
 </div>
 <div class="paragraph">
-<p>Die Service-Fassade übernimmt auch die Autorisierung des Aufrufs.
-Dazu nutzt sie die <a href="../../isy-sicherheit/nutzungsvorgaben/master.html#autorisierung" class="xref page">Möglichkeiten des Bausteins Sicherheit</a>.
-Voraussetzung für die Autorisierung ist die Auswertung des mitgelieferten Aufrufkontextes über die Annotation <code>@StelltAufrufKontextBereit</code> an der Methode oder an der Service-Fassade selbst.
-Anschließend wird über die Annotation <code>@Gesichert</code> die Berechtigung zum Zugriff auf die Methode anhand der Rechte des Aufrufers geprüft.
-Alternativ kann die Annotation <code>@Gesichert</code> auch an der Service-Fassade selbst verwendet werden, wenn alle Methoden die gleichen Rechte erfordern.</p>
+<p>Die <em>Service-Fassade</em> übernimmt auch die Autorisierung des Aufrufs.
+Dazu nutzt sie die <a href="../../isy-security/nutzungsvorgaben/master.html#autorisierung_service_schnittstelle" class="xref page">Möglichkeiten des Bausteins Security</a>.
+Voraussetzung für die Autorisierung ist die Auswertung des mitgelieferten Access-Tokens.
+Über die Annotation <code>@Secured</code> wird die Berechtigung zum Zugriff auf die Methode anhand der Rechte des Aufrufers geprüft.
+Alternativ kann die Annotation <code>@Secured</code> auch an der <em>Service-Fassade</em> selbst verwendet werden, wenn alle Methoden die gleichen Rechte erfordern.</p>
 </div>
 </div>
 <div class="sect2">
@@ -676,8 +688,8 @@ Diese Reihenfolge wird durch Einfügen der <code>Order</code> für den Advisor <
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Die weiteren Inhalte zum Aufbau, zur Realisierung und zur Nutzung von Service-Schnittstellen wurden wegen ihrer Abhängigkeit zur konkreten Schnittstellentechnologie HTTP Invoker in den Baustein HTTP Invoker verschoben.
-Die Inhalte finden sich in den Dokumenten  <a href="../../isy-serviceapi-core/konzept/master.html#einleitung" class="xref page">Konzept HTTP-Invoker</a> sowie <a href="../../isy-serviceapi-core/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben HTTP-Invoker</a>.</p>
+<p>Die weiteren Inhalte zum Aufbau, zur Realisierung und zur Nutzung von Service-Schnittstellen wurden wegen ihrer Abhängigkeit zur konkreten Schnittstellentechnologie in den entsprechenden Technologie-Baustein verschoben.
+Die Inhalte finden sich in den Dokumenten  <a href="../../isy-serviceapi-core/konzept/master.html#einleitung" class="xref page">Konzept HTTP-Invoker</a> und <a href="../../isy-service-rest/konzept/master.html#einleitung" class="xref page">Konzept REST-Schnittstellen</a>, sowie <a href="../../isy-serviceapi-core/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben HTTP-Invoker</a> und <a href="../../isy-service-rest/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben REST-Schnittstellen</a>.</p>
 </div>
 </td>
 </tr>
@@ -745,16 +757,16 @@ Nur so ist gewährleistet, dass auch Fehler, die beim Commit entstehen, von der 
 </div>
 <div class="paragraph">
 <p>Die Transaktionssteuerung wird an der jeweiligen Service-Methode angesetzt.
-Für das obige Beispiel verdeutlicht dies <a href="#listing-service-fassade-tx">Listing 1</a>.</p>
+Für das obige Beispiel verdeutlicht dies <a href="#listing-service-fassade-tx">Listing 1</a>.
+.Transaktionssteuerung in der Service-Fassade</p>
 </div>
 <div id="listing-service-fassade-tx" class="listingblock">
-<div class="title">Listing 1. Transaktionssteuerung in der Service-Fassade</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class BeispielServiceFassade {
     ...
     @StelltAufrufKontextBereit
     @StelltLoggingKontextBereit
-    @Gesichert(Rechte.RECHT_ZUGRIFFBEISPIEL)
+    @Secured(Rechte.RECHT_ZUGRIFFBEISPIEL)
     @Transactional(rollbackFor = Throwable.class, propagation = Propagation.REQUIRED)
     public BeispielHolenAntwortTo holeBeispiel(
         AufrufKontextTo kontext, BeispielHolenAnfrageTo anfrage)
@@ -771,7 +783,7 @@ Der AOP-Transaktionsmanager wird niemals ein Rollback durchführen, da alle Exce
 Um auch in diesem Fall ein Rollback der Transaktion zu erzwingen, ist folgender Aufruf durchzuführen:</p>
 </div>
 <div id="listing-service-fassade-tx-rollback-only" class="listingblock">
-<div class="title">Listing 2. Rollback von Transaktionen im Fehlerfall ohne Exceptions</div>
+<div class="title">Listing 1. Rollback von Transaktionen im Fehlerfall ohne Exceptions</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();</code></pre>
 </div>
@@ -863,7 +875,7 @@ Für die Versionierung von Schnittstellen gelten gesonderte Vorgaben, die in  <a
 Kompatible Änderungen sind beispielsweise Bugfixes, neue Operationen in der Schnittstelle oder neue, optionale Attribute im Datenmodell.</p>
 </div>
 <div id="listing-versioning-pom" class="listingblock">
-<div class="title">Listing 3. Realisierung der Versionierungsvorgaben für Schnittstellen bei HTTP Invoker</div>
+<div class="title">Listing 2. Realisierung der Versionierungsvorgaben für Schnittstellen bei HTTP Invoker</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependencies&gt;
     ...
