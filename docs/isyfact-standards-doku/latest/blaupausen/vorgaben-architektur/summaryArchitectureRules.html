@@ -137,6 +137,18 @@
   </li>
 </ul>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Vorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="summaryArchitectureRules.html">Architektur</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vorgaben-it-sicherheit/summarySecurityRules.html">IT-Sicherheit</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -569,7 +581,9 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../einstieg/einstieg.html">IsyFact Standards</a></li>
-    <li><a href="summaryArchitectureRules.html">IsyFact Architekturregeln</a></li>
+    <li><a href="../blaupausen.html">Blaupausen</a></li>
+    <li>Vorgaben</li>
+    <li><a href="summaryArchitectureRules.html">Architektur</a></li>
   </ul>
 </nav>
 </div>
@@ -607,7 +621,112 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <div class="sect1">
 <h2 id="architekturregeln"><a class="anchor" href="#architekturregeln"></a>2. Architekturregeln</h2>
 <div class="sectionbody">
-
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Benennung von Metadaten</div>
+<div class="paragraph">
+<p>Metadaten sind, egal über welches Protokoll sie übertragen werden, <strong>einheitlich benannt</strong>.
+Gibt es eine durch einen Standard vorgegebene Benennung, ist diese zu verwenden.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Verwendung von HTTP für Service-Aufrufe</div>
+<div class="paragraph">
+<p>Synchrone Service-Aufrufe finden über das Protokoll <strong>HTTP</strong> statt und werden sowohl zur internen als auch externen Servicekommunikation genutzt.
+HTTP-Anfragen bzw. HTTP-Antworten (s. <a href="#image-http-messages">Abbildung 1</a>) erlauben es an drei Stellen, anwendungsspezifische Daten zu übertragen: in der URL, in den Headern sowie im Body.</p>
+</div>
+<div id="image-http-messages" class="imageblock text-center">
+<div class="content">
+<img src="../_images/referenzarchitektur/http-messages-aufbau.dn.svg" alt="http messages aufbau.dn">
+</div>
+<div class="title">Abbildung 1. Aufbau von HTTP-Anfragen bzw. HTTP-Antworten</div>
+</div>
+<div class="paragraph">
+<p>Header enthalten Metadaten.
+Der Body enthält Nutzdaten.
+Bei Anfragen mittels <code>GET</code> und <code>DELETE</code>, die keinen Body erwarten, enthalten URL-Parameter Nutzdaten.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>Persistente Entitäten dürfen nicht über den Anwendungskern hinaus herausgegeben werden. Sie haben im Anwendungskern zu verbleiben.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>Beim Loggen der Nachrichten sind grundsätzlich die Vorgaben der Datenschutzgrundverordnung (<a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-dsgvo" class="xref page">DSGVO</a>) einzuhalten.
+Eine besondere Rolle spielen dabei personenbezogene Daten und insbesondere Daten gemäß Artikel 9 DSGVO.
+Ebenso dürfen grundsätzlich keine sicherheitsrelevanten Daten (z.B. Passwörter) geloggt werden.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>Logback wird durch eine Anwendung niemals direkt, sondern ausschließlich über die Bibliothek <code>isy-logging</code> aufgerufen.
+Dadurch wird die einheitliche Nutzung von <em>logback</em> sichergestellt.
+Ausnahmen sind hierbei externe Bibliotheken (siehe <a href="../../isy-logging/konzept/inhalt.html#logging-externer-bibliotheken" class="xref page">Logging externer Bibliotheken</a>).</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>Ein auf der IsyFact basierendes IT-System muss seine REST-Services mindestens anhand Stufe zwei des Richardson Maturity Models umsetzen.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>Es dürfen nur nicht datenschutzrelevante Informationen in Query Parametern verwendet werden, um das Loggen von datenschutzrelevanten Daten zu verhindern.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>POST wird auch für fachliche Operationen genutzt, die keiner der anderen HTTP-Methoden zugeordnet werden können (z. B. Verifikation eines Antrags).</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>PATCH ist nur zu verwenden, wenn PUT aus triftigen Gründen nicht funktioniert.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>Alle REST-Services innerhalb einer Systemlandschaft nutzen eine einheitliche, textbasierte Repräsentationsform.
+Binäre Daten werden über direkte Anfragen binär ohne Transformation zurückgeliefert.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>REST-Schnittstellen verwenden ausschließlich Transferobjekte (Data Transfer Objects, DTOs).</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </article>
