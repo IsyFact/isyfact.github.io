@@ -1204,10 +1204,26 @@ In der Anwendung kann anschließend die Ausführungsberechtigung des Benutzers v
 In IsyFact spielen davon bei den externen Anwendungsaufrufen über ein <em>Service-Gateway</em> die beiden Verfahren <em>Resource-Owner-Password-Credential</em> und <em>Client-Credential</em> ein Rolle, da es sich hierbei um die Berechtigungszuteilung für ausschließlich <em>Confidential-Clients</em> dreht.</p>
 </div>
 <div class="sect5">
-<h6 id="resource-owner-password-credential-flow"><a class="anchor" href="#resource-owner-password-credential-flow"></a>4.3.2.3.1. Resource-Owner-Password-Credential Flow (Deprecated)</h6>
+<h6 id="resource-owner-password-credential-flow"><a class="anchor" href="#resource-owner-password-credential-flow"></a>4.3.2.3.1. Resource-Owner-Password-Credential Flow</h6>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-ban"></i></span> Deprecation</div>
 <div class="paragraph">
-<p>Hinweis: Dieser Flow soll gemäß OAuth2.0 Vorgaben nicht mehr verwendet werden und wird in zukünftigen Versionen aus dem OAuth-Standard entfernt.
-Als Nachfolger ist der <a href="#client-credential-flow">Client-Credential Flow</a> zu wählen.</p>
+<p>Dieser Teil der Dokumentation ist veraltet und wird in einem zukünftigen Release entfernt.
+Die Inhalte sollten zur Entwicklung neuer Anwendungen nicht mehr berücksichtigt werden.
+Stattdessen wird empfohlen, <a href="#client-credential-flow">Client-Credential Flow</a> zu verwenden.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Anmerkung zur Deprecation</strong></p>
+</div>
+<div class="paragraph">
+<p>Dieser Flow soll gemäß OAuth2.0 Vorgaben nicht mehr verwendet werden und wird in zukünftigen Versionen aus dem OAuth-Standard entfernt.</p>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Der <em>Resource-Owner-Password-Credential</em>-Flow, der als Authentifizierungsdaten die Attribute <code>Username</code> und <code>Passwort</code> verwendet, sollte nur eingesetzt werden, wenn die involvierte Client-Anwendung ein hohes Vertrauen zur Wahrung der Authentifizierungsdaten sicherstellt oder wenn keine andere Art der Berechtigungszuteilung verfügbar ist.
@@ -1274,7 +1290,7 @@ Da die Absicherung zur Ausführung eines Batches immer ohne User-Interaktionen s
 <p>Ein Batch wird über ein Batch-Client oder Startprogramm – meist ein Shellscript, UC4, JobNetz, CronJob, o.ä. – initialisiert und gestartet.
 Diese Batch-Clients sind systemseitig dazu berechtigt, den dedizierten Batch auszuführen und damit zu starten.
 Somit ruft der Batch-Client die Komponente <em>Batch-Logik</em> in der Nutzungsschicht der Anwendung auf, das die notwendigen Initialisierungen vornimmt.
-Genau hier erfolgt frühzeitig die Unterscheidung welcher <em>Credential</em>-Flow (<a href="#resource-owner-password-credential-flow">Resource-Owner-Password-Credential Flow (Deprecated)</a> oder <a href="#client-credential-flow">Client-Credential Flow</a>) zur Authentifizierung und Autorisierung des Batch verwendet werden soll.</p>
+Genau hier erfolgt frühzeitig die Unterscheidung welcher <em>Credential</em>-Flow (<a href="#resource-owner-password-credential-flow">Resource-Owner-Password-Credential Flow</a> oder <a href="#client-credential-flow">Client-Credential Flow</a>) zur Authentifizierung und Autorisierung des Batch verwendet werden soll.</p>
 </div>
 <div class="paragraph">
 <p>Die Abbildung <a href="#image-sequenzdiagramm-absicherung-batch">Absicherung eines Batch</a> stellt den logischen Ablauf zur Absicherung eines Batches skizzenhaft dar.</p>
@@ -1286,7 +1302,7 @@ Genau hier erfolgt frühzeitig die Unterscheidung welcher <em>Credential</em>-Fl
 <div class="title">Abbildung 12. Absicherung eines Batches</div>
 </div>
 <div class="paragraph">
-<p>Über die Batch-Konfiguration wird gesteuert, ob der Batch mit einem <em>NatürlichenNutzer</em> und den zugehörigen Authentifizierungsdaten <code>Benutzer</code> und <code>Passwort</code> über den <a href="#resource-owner-password-credential-flow">Resource-Owner-Password-Credential Flow (Deprecated)</a> oder über den <a href="#client-credential-flow">Client-Credential Flow</a> mit als <em>TechnischenNutzer</em> (Client) mit <code>Client-ID</code> und <code>Client-Secret</code> authentifiziert und autorisiert wird.</p>
+<p>Über die Batch-Konfiguration wird gesteuert, ob der Batch mit einem <em>NatürlichenNutzer</em> und den zugehörigen Authentifizierungsdaten <code>Benutzer</code> und <code>Passwort</code> über den <a href="#resource-owner-password-credential-flow">Resource-Owner-Password-Credential Flow</a> oder über den <a href="#client-credential-flow">Client-Credential Flow</a> mit als <em>TechnischenNutzer</em> (Client) mit <code>Client-ID</code> und <code>Client-Secret</code> authentifiziert und autorisiert wird.</p>
 </div>
 <div class="paragraph">
 <p>Je nach verwendetem <em>Credential</em>-Flow erfolgt mit den jeweiligen erhaltenen Authentifizierungsdaten des Batch-Nutzers dann die eigentliche Authentifizierung über den IAM-Service der Plattform.
@@ -1317,14 +1333,14 @@ Stattdessen werden sie durch die Anwendung selbst konfiguriert, zeitlich geplant
 Daher müssen <em>Aufgaben</em>, als Teil einer Komponente des Anwendungskerns, über andere Mechanismen abgesichert werden.</p>
 </div>
 <div class="paragraph">
-<p>Mit Einführung des Bausteins <code>isy-security</code> werden auch für die Absicherung von <em>Aufgaben</em> beide <em>Credential</em>-Flows <a href="#client-credential-flow">Client-Credential Flow</a> und <a href="#resource-owner-password-credential-flow">Resource-Owner-Password-Credential Flow (Deprecated)</a> unterstützt.
+<p>Mit Einführung des Bausteins <code>isy-security</code> werden auch für die Absicherung von <em>Aufgaben</em> beide <em>Credential</em>-Flows <a href="#client-credential-flow">Client-Credential Flow</a> und <a href="#resource-owner-password-credential-flow">Resource-Owner-Password-Credential Flow</a> unterstützt.
 Das bedeutet, dass die für die <em>Aufgaben</em>-Authentifizierung verwendete Parametrisierung per Konfiguration in <em>isy_task</em> einerseits wie bisher als <em>NatürlicherNutzer</em> zu <code>Benutzer</code> und <code>Passwort</code> und neu als <em>TechnischerNutzer</em> (Client) zu <code>Client-ID</code> und <code>Client-Secret</code> aufgelöst werden kann.</p>
 </div>
 <div class="paragraph">
 <p>Mit <code>IsyFact-3</code> soll bevorzugt der <a href="#client-credential-flow">Client-Credential Flow</a> und den Properties <code>Client-ID</code> und <code>Client-Secret</code> verwendet werden.</p>
 </div>
 <div class="paragraph">
-<p>Zur Unterstützung einer weichen Migration wird mit <code>IsyFact-3</code> der <a href="#resource-owner-password-credential-flow">Resource-Owner-Password-Credential Flow (Deprecated)</a> mit <code>Benutzer</code> und <code>Passwort</code> weiterhin möglich sein.</p>
+<p>Zur Unterstützung einer weichen Migration wird mit <code>IsyFact-3</code> der <a href="#resource-owner-password-credential-flow">Resource-Owner-Password-Credential Flow</a> mit <code>Benutzer</code> und <code>Passwort</code> weiterhin möglich sein.</p>
 </div>
 <div class="paragraph">
 <p>Für jede <em>Aufgabe</em> wird per <code>Task-ID</code> die Definition der Authentifizierungsdaten in der Betriebskonfiguration erstellt.
