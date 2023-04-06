@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Konzept Task Scheduling: Einleitung :: IsyFact Dokumentation</title>
-    <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/isy-task/konzept/thisdoc.html">
+    <title>Task Scheduling mit Spring :: IsyFact Dokumentation</title>
+    <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/isy-task/konzept/erweiterung-spring.html">
     <meta name="generator" content="Antora 3.1.2">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
@@ -326,7 +326,16 @@
     <span class="nav-text">Task Scheduling</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="master.html">Konzept</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../konzept.html">Konzept</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="4">
+    <a class="nav-link" href="erweiterung-spring.html">Task Scheduling mit Spring</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="integration-isyfact.html">Integration der IsyFact in das Task Scheduling</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
@@ -581,7 +590,10 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../einstieg/einstieg.html">IsyFact Standards</a></li>
-    <li><a href="thisdoc.html">Konzept Task Scheduling: Einleitung</a></li>
+    <li><a href="../../bausteine/bausteine.html">Bausteine</a></li>
+    <li>Task Scheduling</li>
+    <li><a href="../konzept.html">Konzept</a></li>
+    <li><a href="erweiterung-spring.html">Task Scheduling mit Spring</a></li>
   </ul>
 </nav>
 </div>
@@ -590,52 +602,169 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Konzept Task Scheduling: Einleitung</h1>
+<h1 class="page">Task Scheduling mit Spring</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><span class="image left"><img src="../../../../glossary/latest/licence/_images/IFS-Logo.png" alt="IFS-Logo" width="150"></span> Diese Seite ist ein Teil der IsyFact-Standards.
+Alle Inhalte der Seite, insbesondere Texte und Grafiken, sind urheberrechtlich geschützt.
+Alle urheberrechtlichen Nutzungs- und Verwertungsrechte liegen beim Bundesverwaltungsamt.</p>
+</div>
+<div class="paragraph">
+<p><span class="image right"><img src="../../../../glossary/latest/licence/_images/CC-BY.png" alt="Creative Commons Namensnennung" width="150"></span>
+Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-licence" class="xref page">Lizenzbedingungen</a> der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-short" class="xref page">Creative Commons Namensnennung 4.0 International</a> gestattet.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Das Task Scheduling mit Spring muss einmalig mit der Annotation <code>@EnableScheduling</code> aktiviert werden,
+das ist bereits durchgeführt in einer Konfigurationsklasse des Bausteins <code>isy-task</code>.
+Dadurch wird implizit einer der Spring Scheduler genutzt.
+Die Geschäftsanwendung zeichnet eine beliebige Methode einer Klasse aus als "durch einen Task auszuführenden Code" durch das Setzen der Annotation @Scheduled.
+Die Parameter der Annotation legen fest, wie genau Tasks eingeplant und ausgeführt werden.</p>
+</div>
+<div class="listingblock">
+<div class="title">Listing 1. Beispiele für die Einplanung von Tasks</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class ExampleTasks {
+
+    @Scheduled(fixedDelay = 1000)
+    public void scheduleTaskWithFixedDelay() {
+        // ...
+    }
+
+    @Scheduled(fixedRate = 1000)
+    public void scheduleTaskWithFixedRate() {
+        // ...
+    }
+
+    @Scheduled(fixedDelay = 1000, initialDelay = 1000)
+    public void scheduleTaskWithFixedRateAndInitialDelay() {
+        // ...
+    }
+
+    @Scheduled(cron = "0 15 10 15 * ?")
+    public void scheduleTaskWithCronExpression() {
+        // ...
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der größte Vorteil des Ansatzes von Spring ist die Einfachheit der Verwendung für die Entwicklung.
+Diesen Vorteil nutzt der Baustein Task Scheduling vollständig aus, indem er sich nahtlos in diesen Ansatz integriert.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+Mehr Informationen zu dem Thema finden sich in der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-spring-boot-task-scheduling" class="xref page">Dokumentation über Task Scheduling von Spring</a> sowie in der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-spring-task-scheduling-annotations" class="xref page">Dokumentation über die Annotationen zum Scheduling des Spring Frameworks</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
 <div class="sect1">
-<h2 id="einleitung"><a class="anchor" href="#einleitung"></a>1. Einleitung</h2>
+<h2 id="_erweiterung_des_task_scheduling"><a class="anchor" href="#_erweiterung_des_task_scheduling"></a>1. Erweiterung des Task Scheduling</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Dieses Dokument beschreibt die konzeptionellen Grundlagen der Steuerung (d.h. Planung und Ausführung) von Aufgaben (Task Scheduling) in der IsyFact.
-Mit „Aufgaben“ sind hier periodisch wiederkehrende Tätigkeiten gemeint, die innerhalb einer <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungskomponente" class="xref page">Anwendungskomponente</a> angesiedelt sind und zur Erfüllung der fachlichen oder technischen Anforderungen der Anwendung beitragen.
-Das Dokument beschreibt die Anforderungen und Vorgaben zur Umsetzung der Steuerung von Aufgaben und bildet so die Grundlage einer technisch und fachlich einheitlichen Umsetzung.</p>
+<p>Der Spring Scheduler stösst die Ausführung des Tasks an.
+Der Baustein Task Scheduling nutzt Spring AOP und @AspectJ-Annotationen, um vor und nach der Ausführung von Methoden mit der Annotation <code>@Scheduled</code> eigenen Code auszuführen.
+Hierzu wird ein Around Advice verwendet.
+Dieser ist dafür zuständig:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>die integrierten Bausteine der IsyFact zur Ausführung des Tasks zu initialisieren,</p>
+</li>
+<li>
+<p>die eigentliche mit <code>@Scheduled</code> annotierte Methode aufzurufen,</p>
+</li>
+<li>
+<p>Aufräumarbeiten zu erledigen, sodass die Verarbeitung des Tasks sauber beendet werden kann,</p>
+</li>
+<li>
+<p>das Ergebnis der mit <code>@Scheduled</code> annotierten Methode zurückzugeben.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/konzept/around-aspect-ablauf.dn.svg" alt="around aspect ablauf.dn">
+</div>
+<div class="title">Abbildung 1. Ausführung eines Tasks mit dem Baustein Task Scheduling</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+Mehr Informationen zu Around Advices (und zu Spring AOP) finden sich in der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-spring-aop-aspectj-around-advice" class="xref page">Dokumentation des Spring Frameworks</a>.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Die aus diesem Dokument abgeleitete Umsetzung der Steuerung von Aufgaben im Rahmen der Anwendungsentwicklung ist in dem Dokument <a href="../nutzungsvorgaben/master.html#einleitung" class="xref page">Task-Scheduling - Nutzungsvorgaben</a> beschrieben.</p>
+<p>Neben dem Advice gibt es für jeden Task eine eigene Konfiguration sowie eine globale Konfiguration mit Standardwerten für alle Tasks.
+Hierüber lassen sich die <a href="integration-isyfact.html" class="xref page">integrierten IsyFact-Bausteine</a> und der Task selbst konfigurieren.</p>
 </div>
 <div class="paragraph">
-<p>Sowohl dieses Dokument als auch das Umsetzungsdokument bedienen sich Erfahrungen sowie Best Practices aus erfolgreich abgeschlossenen Projekten.</p>
+<p>Alle genannten Fähigkeiten des Bausteins Task Scheduling konfigurieren sich per Spring Autokonfiguration selbst, sobald die Bibliothek zum Baustein in eine Anwendung integriert wird. Für die Umsetzung eines Tasks gemäß IsyFact wird somit benötigt:</p>
 </div>
-<div class="sect2">
-<h3 id="abgrenzung-zu-batches"><a class="anchor" href="#abgrenzung-zu-batches"></a>1.1. Abgrenzung zu Batches</h3>
-<div class="paragraph">
-<p>Das <a href="../../blaupausen/detailkonzept-komponente-batch/master.html" class="xref page">Detailkonzept Komponente Batch</a> definiert <a href="../../../../glossary/latest/glossary/master.html#glossar-batch" class="xref page">Batches</a> wie folgt:
-<em>„Der Begriff „Batch“ bedeutet im Kern lediglich „nicht interaktive Stapelverarbeitung“.
-Ein Batch teilt sich auf in einen „Batchrahmen“, die Batchlogik der einzelnen Batch-Anwendungen, sowie die von ihnen aufgerufenen Komponenten des Anwendungskerns. […]
-Typischerweise verarbeiten Batches dabei Dateilieferungen oder eine definierte Menge von Datensätzen aus dem Datenbestand.“</em></p>
-</div>
-<div class="paragraph">
-<p>Die in diesem Konzept beschriebenen Aufgaben sind hingegen nicht die Grundlage einer eigenen (Batch-) Anwendung, sondern in die eigentliche Anwendung integriert.
-Die Aufgaben sind Teil einer Komponente des <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungskern" class="xref page">Anwendungskerns</a>.
-Sie besitzen in der Regel einen kleineren Umfang als Batches und werden nicht manuell von außen gesteuert.
-Stattdessen werden sie durch die Anwendung selbst konfiguriert, zeitlich geplant und selbstständig ausgeführt.</p>
-</div>
+<div class="ulist">
+<ul>
+<li>
+<p>die Einbindung der IsyFact-Bibliothek zum Task Scheduling,</p>
+</li>
+<li>
+<p>eine mit <code>@Scheduled</code> annotierte Methode,</p>
+</li>
+<li>
+<p>eine globale Konfiguration für alle Tasks,</p>
+</li>
+<li>
+<p>(optional) eine Task-spezifische Konfiguration.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="aufbau-und-zweck-des-dokuments"><a class="anchor" href="#aufbau-und-zweck-des-dokuments"></a>2. Aufbau und Zweck des Dokuments</h2>
+<h2 id="_einmalig_ausgeführte_tasks"><a class="anchor" href="#_einmalig_ausgeführte_tasks"></a>2. Einmalig ausgeführte Tasks</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ziel des Dokuments ist die Definition einheitlicher Vorgaben für die Steuerung von Aufgaben unter Berücksichtigung fachlicher und technischer Anforderungen.</p>
+<p>Das Task Scheduling von Spring fokussiert sich auf mehrfach ausgeführte Tasks.
+Einmalig ausgeführte Tasks unterstützt es nicht.
+Hier springt der Baustein Task Scheduling ein und ermöglicht es, Tasks genau einmal auszuführen, ohne die Vorteile der <a href="integration-isyfact.html" class="xref page">Integration der IsyFact in das Task Scheduling</a> zu verlieren.</p>
 </div>
 <div class="paragraph">
-<p>Das Dokument ist entsprechend dieser Zielsetzungen folgendermaßen aufgebaut:</p>
+<p>Dazu definiert der Baustein die Annotation <code>@OnceTask</code>.
+Die Tasks müssen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>von <code>Runnable</code> ableiten,</p>
+</li>
+<li>
+<p>die Methode <code>run()</code> mit der Annotation <code>@OnceTask</code> kennzeichnen, und</p>
+</li>
+<li>
+<p>programmatisch im von Spring bereitgestellten Task Scheduler eingeplant werden.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Zunächst werden die <a href="master.html#anforderungen" class="xref page">Anforderungen</a> an die Steuerung von Aufgaben definiert, welche die Grundlage für das nachfolgende Kapitel bilden.</p>
-</div>
-<div class="paragraph">
-<p>Anschließend werden die <a href="master.html#vorgaben" class="xref page">Vorgaben</a> zur Steuerung von Aufgaben innerhalb der Anwendungen sowie zur Umsetzung in der zu diesem <a href="../../../../glossary/latest/glossary/master.html#glossar-baustein" class="xref page">Baustein</a> gehörenden <a href="../../../../glossary/latest/glossary/master.html#glossar-bibliothek" class="xref page">Bibliothek</a> definiert.</p>
+<p>Für diese Tasks gelten dieselben Integrationsvorteile wie für mit <code>@Scheduled</code> geplante Tasks.</p>
 </div>
 </div>
 </div>

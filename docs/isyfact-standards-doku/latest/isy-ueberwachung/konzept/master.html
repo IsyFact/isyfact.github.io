@@ -326,7 +326,16 @@
     <span class="nav-text">Task Scheduling</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-task/konzept/master.html">Konzept</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../isy-task/konzept.html">Konzept</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-task/konzept/erweiterung-spring.html">Task Scheduling mit Spring</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-task/konzept/integration-isyfact.html">Integration der IsyFact in das Task Scheduling</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-task/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
@@ -691,7 +700,7 @@ Durch diese Entkopplung wird die Systemstabilität durch häufige Aufrufe des En
 <div class="paragraph">
 <p>Schlägt der Health-Check fehl, führt dies zu einem Eintrag im technischen Log.
 In diesen Fall wird eine Warnung, bei nicht-essenziellen, oder ein Fehler, bei essenziellen Nachbarsystemen, geloggt.
-Implementiert und konfiguriert wurde bzw. wird der Health-Check als Task (s. <a href="../../isy-task/konzept/master.html" class="xref page">Konzept Task Scheduling</a>).</p>
+Implementiert und konfiguriert wurde bzw. wird der Health-Check als <a href="../../isy-task/nutzungsvorgaben/master.html#erstellung-eines-tasks" class="xref page">Task</a>.</p>
 </div>
 <div class="paragraph">
 <p>Es ist möglich, die Verfügbarkeit von Nachbarsystemen über die Konfiguration der Anwendung zu prüfen.
