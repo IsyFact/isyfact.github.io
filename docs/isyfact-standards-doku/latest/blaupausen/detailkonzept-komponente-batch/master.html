@@ -1574,6 +1574,39 @@ public class ServiceConfig {
 <p>Die Spring-Konfiguration für den Kontext des Batchrahmens muss neu erstellt werden.
 Hierfür werden gesonderte <code>@Configuration</code>-Klassen erstellt.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Da <code>isy-batchrahmen</code> die JPA-Konfiguration und den PersistenceContext der Anwendung nutzt, muss ggf. ein explizites Object-Relational Mapping (Tabelle &#8660; Java Klasse) definiert werden.</p>
+</div>
+<div class="paragraph">
+<p>Für Anwendungen, welche die <code>PhysicalNamingStrategyStandardImpl</code> und die aktuelle <a href="#image-SchemTabBatStat">BatchStatus-Tabelle</a> verwenden, stellt <code>isy-batchrahmen</code> explizites ORM bereit, das in der Anwendung wie folgt benutzt werden kann:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.jpa.mapping-resources = resources/isy-batchrahmen/hibernate/hibernate-mapping.xml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Für Anwendungen, welche die <code>CamelCaseToUnderscoresNamingStrategy</code> mit der IsyFact 2 <code>BatchStatus</code> Tabelle (ohne Unterstriche) verwenden, stellt <code>isy-batchrahmen</code> explizites ORM bereit, das in der Anwendung wie folgt benutzt werden kann:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.jpa.mapping-resources = resources/isy-batchrahmen/hibernate/hibernate-mapping-if2.xml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Im Nachfolgenden wird die Tabelle <code>BATCH_STATUS</code> mit <code>CamelCaseToUnderscoresNamingStrategy</code> (Standard aus Spring Boot) verwendet und es ist kein explizites ORM erforderlich.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -1583,22 +1616,22 @@ Hierfür werden gesonderte <code>@Configuration</code>-Klassen erstellt.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Der Batchrahmen benötigt für seine Checkpoint / Restart Funktionalität die Möglichkeit, bei jedem Commit den aktuellen Stand des Batches in einer Tabelle zu speichern.
-Dies wird über die Tabelle BatchStatus umgesetzt.</p>
+Dies wird über die Tabelle <code>BATCH_STATUS</code> umgesetzt.</p>
 </div>
 <div id="image-SchemTabBatStat" class="imageblock text-center">
 <div class="content">
-<img src="../_images/detailkonzept-batch/SchemTabBatStat.png" alt="SchemTabBatStat">
+<img src="../_images/detailkonzept-batch/SchemTabBatStat.dn.png" alt="SchemTabBatStat.dn">
 </div>
 <div class="title">Abbildung 5. Tabellen-Schema für die Batchrahmen-Tabelle</div>
 </div>
 <div class="paragraph">
-<p>Die Tabelle BatchStatus enthält für jeden Batch eine Zeile.
+<p>Die Tabelle <code>BATCH_STATUS</code> enthält für jeden Batch eine Zeile.
 Ein Batch ist nicht gleichzusetzen mit der Batch-Ausführungsbean.
 Für eine Bean darf es mehrere Batches geben, welche die Bean für die Ausführung jeweils anders konfigurieren.
 Für einen Batch werden folgende Informationen verwendet:</p>
 </div>
 <table id="table-SchemTabBatStat2" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 7. Das Schema der Tabelle BatchStatus</caption>
+<caption class="title">Tabelle 7. Das Schema der Tabelle BATCH_STATUS</caption>
 <colgroup>
 <col style="width: 30%;">
 <col style="width: 70%;">
@@ -1611,16 +1644,16 @@ Für einen Batch werden folgende Informationen verwendet:</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BatchId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BATCH_ID</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Der Schlüssel für den Batch.
 Die ID sollte aus einem gemeinsamen Präfix für die Geschäftsanwendung, gefolgt von einem Suffix für den konkreten Batch, bestehen.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BatchName</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BATCH_NAME</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ein kurzer informativer Name des Batches.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BatchStatus</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BATCH_STATUS</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Einer der folgenden Werte:<br>
 <strong>laeuft</strong>: Der Batch wurde gestartet und läuft aktuell.<br>
@@ -1629,27 +1662,27 @@ Die ID sollte aus einem gemeinsamen Präfix für die Geschäftsanwendung, gefolg
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SatznummerLetztesCommit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SATZ_NUMMER_LETZTES_COMMIT</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Die Anzahl an Sätzen, welche beim letzten Commit verarbeitet worden sind.
 Dies wird für die Umsetzung der Restart-Funktionalität verwendet.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SchluesselLetztesCommit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SCHLUESSEL_LETZTES_COMMIT</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Der Datenbank-Schlüssel des Datensatzes, der als letztes vor dem Commit bearbeitet wurde.
 Dies wird für die Umsetzung der Restart-Funktionalität verwendet.
 Falls der Schlüssel ein zusammengesetzter Schlüssel ist, müssen sämtliche Schlüsselteile (durch Trennzeichen getrennt) in dieses Feld geschrieben werden.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DatumLetzterStart</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATUM_LETZTER_START</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Das Datum des Starts des aktuellen Batch-Laufs (falls der Status "laeuft" ist) bzw.
 des letzten Laufes.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DatumLetzterAbbruch</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATUM_LETZTER_ABBRUCH</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Das Datum des letzten fehlerhaften Abbruchs des Batches.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DatumLetzterErfolg</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATUM_LETZTER_ERFOLG</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Das Datum des letzten erfolgreichen Abschlusses des Batches.</p></td>
 </tr>
 </tbody>
