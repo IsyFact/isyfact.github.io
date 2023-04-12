@@ -326,7 +326,16 @@
     <span class="nav-text">Task Scheduling</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-task/konzept/master.html">Konzept</a>
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../isy-task/konzept.html">Konzept</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-task/konzept/erweiterung-spring.html">Task Scheduling mit Spring</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-task/konzept/integration-isyfact.html">Integration der IsyFact in das Task Scheduling</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../isy-task/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
@@ -854,9 +863,9 @@ Ein XML-Schema dazu findet sich im Anhang von <a href="../../isy-sicherheit/nutz
 <div class="sect2">
 <h3 id="task-scheduling"><a class="anchor" href="#task-scheduling"></a>3.7. Task Scheduling</h3>
 <div class="paragraph">
-<p>Der Baustein verwendet die <em>Java Concurrency API</em> (<code>java.util.concurrent</code>) für die Steuerung (d.h. Planung und Ausführung) periodisch wiederkehrender Aufgaben.
+<p>Der Baustein verwendet als Grundlage das Spring Task Scheduling für die Steuerung (d.h. Planung und Ausführung) periodisch wiederkehrender Aufgaben.
 Aufgaben sind (in Abgrenzung zu Batches) innerhalb einer Anwendungskomponente angesiedelt und werden von der Anwendung selbstständig ausgeführt.
-Das <a href="../../isy-task/konzept/master.html#einleitung" class="xref page">Konzept Task Scheduling</a> beschreibt die konzeptionellen Grundlagen der Steuerung von Aufgaben.
+Das <a href="../../isy-task/konzept.html" class="xref page">Konzept Task Scheduling</a> beschreibt die konzeptionellen Grundlagen der Steuerung von Aufgaben.
 Die <a href="../../isy-task/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben Task Scheduling</a> beschreiben alle Aspekte, die bei der Entwicklung einer Anwendung zu berücksichtigen sind, und alle bereits in der IsyFact definierten Aufgaben (wie z.B. das periodische Neuladen der Anwendungskonfiguration).</p>
 </div>
 </div>
