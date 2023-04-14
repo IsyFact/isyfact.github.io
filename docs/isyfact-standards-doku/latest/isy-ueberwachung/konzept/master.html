@@ -623,43 +623,159 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <h2 id="einleitung"><a class="anchor" href="#einleitung"></a>1. Einleitung</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Dieses Dokument enthält das technische Feinkonzept zur Überwachung von Anwendungen gemäß den <a href="../../../../glossary/latest/glossary/master.html#glossar-ifs" class="xref page">Bibliothek (IsyFact Standards)</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="aufbau-und-zweck-des-dokuments"><a class="anchor" href="#aufbau-und-zweck-des-dokuments"></a>2. Aufbau und Zweck des Dokuments</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In diesem Dokument werden die Designvorgaben für die Überwachung von Anwendungen gemäß der <a href="../../blaupausen/referenzarchitektur/master.html#einleitung" class="xref page">IsyFact Referenzarchitektur</a> vorgestellt.</p>
+<p>In diesem Konzept werden die Designvorgaben für die Überwachung von Anwendungen gemäß der <a href="../../blaupausen/referenzarchitektur/master.html#einleitung" class="xref page">IsyFact Referenzarchitektur</a> vorgestellt.</p>
 </div>
 <div class="paragraph">
-<p>Die Realisierung einer einheitlichen Überwachungsschnittstelle erlaubt es dem Betrieb frühzeitig Probleme in der <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungslandschaft" class="xref page">Anwendungslandschaft</a> zu erkennen und darauf zu reagieren.
+<p>Die Realisierung einer einheitlichen Überwachungsschnittstelle erlaubt dem Betrieb frühzeitig Probleme in der <a href="../../../../glossary/latest/glossary/master.html#glossar-anwendungslandschaft" class="xref page">Anwendungslandschaft</a> zu erkennen und darauf zu reagieren.
 Dadurch können Ausfallzeiten minimiert werden.</p>
 </div>
+<div class="paragraph">
+<p>Der Fokus des Konzepts liegt auf der Schaffung von einheitlichen Administrationsschnittstellen, welche dem Betrieb eine einfache Überwachung der Anwendungen erlauben.
+In Systementwürfen können Verfeinerungen der hier getroffenen Vorgaben gemacht werden.
+Weiterhin können die hier gemachten Vorgaben als Basis für die Beschreibung der Überwachungsschnittstelle im Betriebshandbuch der Anwendungssysteme verwendet werden.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ueberwachung-von-anwendungen"><a class="anchor" href="#ueberwachung-von-anwendungen"></a>3. Überwachung von Anwendungen</h2>
+<h2 id="kurzeinfuehrung-in-spring-boot-actuator"><a class="anchor" href="#kurzeinfuehrung-in-spring-boot-actuator"></a>2. Kurzeinführung in Spring Boot Actuator</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>In diesem Kapitel werden die Anforderungen an die Überwachung von Anwendungen beschrieben.
-Der Fokus liegt dabei auf der Schaffung von einheitlichen Administrationsschnittstellen, welche dem Betrieb eine einfache Überwachung der Anwendungen erlauben.
-Alle Vorgaben sind beim Entwurf und der Realisierung von neuen Anwendungen nach IsyFact-Architektur zu berücksichtigen.
-Gegebenenfalls können in Systementwürfen Verfeinerungen der hier getroffenen Vorgaben gemacht werden.
-Weiterhin können die hier gemachten Vorgaben als Basis für die Beschreibung der Überwachungsschnittstelle im Betriebshandbuch der Anwendungssysteme verwendet werden.</p>
-</div>
-<div class="sect2">
-<h3 id="kurzeinfuehrung-in-das-system-monitoring-mit-spring-boot-actuator"><a class="anchor" href="#kurzeinfuehrung-in-das-system-monitoring-mit-spring-boot-actuator"></a>3.1. Kurzeinführung in das System-Monitoring mit Spring Boot Actuator</h3>
 <div class="paragraph">
 <p>Spring Boot bringt mit Actuator eine Reihe zusätzlicher Funktionen mit, die dabei helfen, Anwendungen zu überwachen und zu verwalten.
 Die Kommunikation mit der Anwendung erfolgt über sogenannte <em>Endpoints</em>.
 Diese können über HTTP oder JMX bereitgestellt werden.
 Actuator bringt eine Reihe von eingebauten Endpoints mit und bietet auch die Möglichkeit, eigene Endpoints hinzuzufügen.
-So wird für Informationen über den Systemzustand der eingebauten Endpoint <code>health</code> angeboten und über den Endpoint <code>metrics</code> können Metriken gelesen werden.</p>
+So wird für Informationen über den Systemzustand die Endpoints <code>health</code>, <code>livenessProbe</code>, <code>ReadinessProbe</code> angeboten und über den Endpoint <code>metrics</code> können Metriken gelesen werden.</p>
+</div>
+<div class="paragraph">
+<p>Weitergehende Details zu den Actuator Endpoints können bei <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-spring-boot-info-endpoint" class="xref page">Spring Boot Actuator Endpoint</a> nachgelesen werden.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="informationen-ueber-den-systemzustand"><a class="anchor" href="#informationen-ueber-den-systemzustand"></a>3. Informationen über den Systemzustand</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Zur Überwachung von Anwendungen unterscheiden wir zwischen zwei unterschiedlichen Konzepten, dem <code>health</code>-Endpoint sowie <em>Liveness</em> und <em>Readiness</em> einer Anwendung.</p>
+</div>
+<div class="paragraph">
+<p>Der <code>health</code>-Endpoint ist der ursprüngliche Status, über den der Zustand und die Erreichbarkeit einer Anwendung geprüft werden kann.</p>
+</div>
+<div class="paragraph">
+<p><em>Liveness</em> und <em>Readiness</em> sind zusätzliche Überwachungsmöglichkeiten.
+Durch die Unterscheidung in dies zwei Zuständen kann im Gegensatz zu dem <code>health</code>-Endpoint ein feingranulares Monitoring ermöglicht werden.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+In der IsyFact wird (Stand IsyFact 3.0) standardmäßig der <code>health</code>-Endpoint verwendet.
+Mit der IsyFact 3.0 werden <em>Liveness</em> und <em>Readiness</em> konzeptionell zur Verfügung gestellt.
+Diese Endpoints sind in den Bibliotheken nicht standardmäßig eingebaut und müssen individuell eingeschalten werden.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="health-endpoint"><a class="anchor" href="#health-endpoint"></a>3.1. <code>health</code>-Endpoint</h3>
+<div class="paragraph">
+<p>Über den <code>health</code>-Endpoint wird durch einen Health-Check der eigene Zustand sowie die Erreichbarkeit aller angebundener Nachbarsysteme dargestellt.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+Anders als von Spring vorgesehen entkoppelt die IsyFact den Health-Check vom Aufruf des Endpoints <code>health</code>.
+Durch diese Entkopplung wird die Systemstabilität durch häufige Aufrufe des Endpoints nicht beeinflusst.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Der Status der <code>health</code>-Endpoints wird maßgeblich von Nachbarsystemchecks bestimmt. Einzelheiten finden sich dazu in Kapitel <a href="#nachbarsystemcheck-health-endpoint">Nachbarsystemchecks über <code>health</code>-Endpoints</a>.</p>
+</div>
+<div class="paragraph">
+<p>Implementiert und konfiguriert wurde bzw. wird der Health-Check als <a href="../../isy-task/nutzungsvorgaben/master.html#erstellung-eines-tasks" class="xref page">Task</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_liveness_und_readiness"><a class="anchor" href="#_liveness_und_readiness"></a>3.2. Liveness und Readiness</h3>
+<div class="sect3">
+<h4 id="liveness"><a class="anchor" href="#liveness"></a>3.2.1. Liveness</h4>
+<div class="paragraph">
+<p>Eine Anwendung wird als "live" (lebendig) angesehen, wenn diese in einem korrekten inneren Zustand ist.
+Ist eine Anwendung nicht "live", ist ihr innerer Zustand defekt und kann nicht wiederhergestellt werden.
+Die Anwendung muss daher auf jeden Fall neu gestartet werden (vgl. <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-spring-api-liveness" class="xref page">Spring Boot <code>LivenessState</code></a>, <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-kubernetes-liveness-Readiness-probes" class="xref page">Kubernetes Liveness und Readiness Probes</a>).</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="micrometer"><a class="anchor" href="#micrometer"></a>3.1.1. Micrometer</h4>
+<h4 id="Readiness"><a class="anchor" href="#Readiness"></a>3.2.2. Readiness</h4>
+<div class="paragraph">
+<p>Eine Anwendung wird als "ready" (bereit) angesehen, wenn sie live ist und bereit für Anfragen ist.
+Ist eine Anwendung nicht "ready", kann sie temporär keine Anfragen bearbeiten.
+Ist eine Anwendung nicht "ready", darf die Infrastruktur keine weiteren Anfragen an sie senden (vgl. <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-spring-api-Readiness" class="xref page">Spring Boot <code>ReadinessState</code></a>, <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-kubernetes-liveness-Readiness-probes" class="xref page">Kubernetes Liveness und Readiness Probes</a>).</p>
+</div>
+<div class="paragraph">
+<p>Ein Service (d.h. eine Bündelung von Instanzen/Anwendungen, die denselben Service anbieten) wird als "ready" angesehen, wenn mindestens eine Instanz "ready" ist.
+Prüfungen der Readiness von Services müssen über die Infrastruktur erfolgen.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="liveness_Readiness_diskussion"><a class="anchor" href="#liveness_Readiness_diskussion"></a>3.2.3. Diskussion von Liveness &amp; Readiness</h4>
+<div class="paragraph">
+<p>Zur Verdeutlichung und Trennung der beiden Begriffe werden diese an dieser Stelle zusammen behandelt.
+Der Fall, dass eine Anwendung, die nicht "live", aber "ready" ist, ist rein akademisch.
+In dem Moment, in dem eine Anwendung nicht "live" ist, muss sie durch die Infrastruktur neu gestartet werden, da sie aufgrund des inkorrekten inneren Zustands keine Anfragen korrekt bearbeiten kann.
+Aus praktischer Sicht wird die <em>Liveness</em>-Abfrage zur Evaluierung, ob eine Anwendung neu zu starten ist, genutzt.
+Eine Anwendung, die "live", aber nicht "ready" ist, ist in einem korrekten Zustand, hat aber nicht alle notwendigen Abhängigkeiten oder Ressourcen zur Verfügung, um Anfragen anzunehmen.
+Aus praktischer Sicht ist diese nicht neu zu starten.</p>
+</div>
+<div class="paragraph">
+<p>Ist für eine Anwendung die Abfrage beider Zustande vorgesehen, ergeben sich folgende Zustände:</p>
+</div>
+<table id="table-LivenessReadinessState" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Unterscheidung zwischen <em>Liveness</em>- und <em>Readiness</em>-Zustand</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">korrekter innerer Zustand &amp; bereit für Anfragen</th>
+<th class="tableblock halign-left valign-top">korrekter innerer Zustand &amp; <span class="underline">nicht</span> bereit für Anfragen</th>
+<th class="tableblock halign-left valign-top">inkorrekter innerer Zustand &#8594; <span class="underline">nicht</span> bereit für Anfragen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Liveness</em>-Zustand</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">korrekt (up)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">korrekt (up)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">inkorrekt (down)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Readiness</em>-Zustand</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">korrekt (up)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">inkorrekt (down)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">inkorrekt (down)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="micrometer"><a class="anchor" href="#micrometer"></a>4. Bestimmung von Metriken (Micrometer)</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Die im Endpoint <code>metrics</code> bereitgestellten Metriken werden von Micrometer erfasst.
 Micrometer bietet eine einfache anbieterneutrale Fassade für die gängigsten Überwachungssysteme und ermöglicht es, Metriken im Anwendungscode ohne Herstellerbindung zu implementieren.
@@ -678,38 +794,105 @@ Für eine Liste der unterstützten Monitoring-Systeme siehe <a href="../../../..
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="health-checks"><a class="anchor" href="#health-checks"></a>3.1.2. Health Checks</h4>
-<div class="paragraph">
-<p>Jede Anwendung führt periodisch einen Health Check (ehemals: Selbsttest) durch, um den eigenen Zustand und die Erreichbarkeit aller angebundenen Nachbarsysteme zu prüfen.
-Das Ergebnis des Health Checks steht über den Endpoint <code>health</code> bereit.</p>
 </div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Wichtig"></i>
-</td>
-<td class="content">
-Anders als von Spring vorgesehen entkoppelt die IsyFact den Health Check vom Aufruf des Endpoints <code>health</code>.
-Durch diese Entkopplung wird die Systemstabilität durch häufige Aufrufe des Endpoints nicht beeinflusst.
-</td>
-</tr>
-</table>
+<div class="sect1">
+<h2 id="fachliche-moeglichkeiten"><a class="anchor" href="#fachliche-moeglichkeiten"></a>5. Fachliche Möglichkeiten im Zusammenhang mit Health-Checks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die Überwachung von Systemzuständen wird durch verschiedene fachliche Möglichkeiten aufgegriffen.
+Auf die Verwendung dieser und die Bereitstellung der Health-Checks wird in diesem Kapitel eingegangen.</p>
+</div>
+<div class="sect2">
+<h3 id="nachbarsystemcheck"><a class="anchor" href="#nachbarsystemcheck"></a>5.1. Nachbarsystemcheck</h3>
+<div class="paragraph">
+<p>Im Rahmen der periodischen Health-Checks wird die Erreichbarkeit aller angebundenen Nachbarsysteme geprüft (Nachbarsystemcheck).
+Jede Anwendung führt periodisch einen Health-Check durch, um den eigenen Zustand und die Erreichbarkeit aller angebundenen Nachbarsysteme zu prüfen.</p>
 </div>
 <div class="paragraph">
-<p>Schlägt der Health-Check fehl, führt dies zu einem Eintrag im technischen Log.
-In diesen Fall wird eine Warnung, bei nicht-essenziellen, oder ein Fehler, bei essenziellen Nachbarsystemen, geloggt.
-Implementiert und konfiguriert wurde bzw. wird der Health-Check als <a href="../../isy-task/nutzungsvorgaben/master.html#erstellung-eines-tasks" class="xref page">Task</a>.</p>
+<p>Bei der Prüfung von Nachbarsystemen muss unterschieden werden, ob ein Nachbarsystem essenziell, oder nicht-essenziell für die prüfende Anwendung ist.
+Ein Health-Check mit negativem Ergebnis eines essenziellen Nachbarsystems muss in der <code>health</code> der prüfenden Anwendung sichtbar sein.</p>
 </div>
 <div class="paragraph">
-<p>Es ist möglich, die Verfügbarkeit von Nachbarsystemen über die Konfiguration der Anwendung zu prüfen.
+<p>Die Nachbarsystemchecks können individuell konfiguriert werden.
+So kann z. B. konfiguriert werden, ob ein Nachbarsystem essenziell ist oder nicht.
 Details hierzu finden sich in den <a href="../nutzungsvorgaben/master.html#vorgaben-fuer-die-pruefung-der-verfuegbarkeit" class="xref page">Nutzungsvorgaben</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="nachbarsystemcheck-health-endpoint"><a class="anchor" href="#nachbarsystemcheck-health-endpoint"></a>5.1.1. Nachbarsystemchecks über <code>health</code>-Endpoints</h4>
+<div class="paragraph">
+<p>Die Nachbarsystemchecks werden über Health-Checks der Nachbarsysteme durchgeführt.</p>
+</div>
+<div class="paragraph">
+<p>Schlägt ein Health-Check eines Nachbarsystems fehl, führt dies zu einem Eintrag im technischen Log.
+Bei einem nicht essenziellen Nachbarsystem wird darauf eine Warnung geloggt.
+Bei einem essenziellen Nachbarsystem wird ein Fehler geloggt und die <code>health</code> des prüfenden Systems muss ebenso einen Fehler aufweisen.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="nachbarsystemcheck-liveness-Readiness"><a class="anchor" href="#nachbarsystemcheck-liveness-Readiness"></a>5.1.2. Nachbarsystemchecks über Liveness/Readiness Endpoints</h4>
+<div class="paragraph">
+<p>Im Rahmen von Nachbarsystemchecks kann (alternativ zum <code>health</code>-Endpoint) die <em>Liveness</em> und <em>Readiness</em> überprüft werden.
+Auch hier kann unterschieden und geloggt werden, ob ein essenzielles Nachbarsystem ausgefallen ist - oder ein nicht essenzielles.
+Ist ein essenzielles Nachbarsystem ausgefallen, dann hat dies Auswirkungen auf die <em>Readiness</em> des Systems.
+Nachbarsystemchecks von essenziellen Systemen sind damit essenziell für die <em>Readiness</em> eines Systems.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="festlegungen-und-ausgrenzungen"><a class="anchor" href="#festlegungen-und-ausgrenzungen"></a>3.2. Festlegungen und Ausgrenzungen</h3>
+<h3 id="availability"><a class="anchor" href="#availability"></a>5.2. Availability</h3>
+<div class="paragraph">
+<p>Availability (Verfügbarkeit) eines Systems oder einer individuellen Systemkomponente ist definiert als der Prozentsatz eines Zeitraums, in welcher es ordnungsgemäß nach gesetzten Performance-Kriterien läuft (vgl. <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-oracle-availability" class="xref page">Oracle: Definition von Availability</a>).
+<br>
+<br></p>
+</div>
+<math>
+  <mi>Availability</mi>
+  <mo>=</mo>
+  <mfrac displaystyle="true">
+    <mn>Erfüllungszeitraum der Performance-Kriterien</mn>
+    <mn>Definierter Zeitraum des System-/ Komponentenbetriebs</mn>
+  </mfrac>
+</math>
+<div class="paragraph">
+<p>Das grundlegende Performance-Kriterium einer Anwendung ist deren korrekter Zustand und deren Erreichbarkeit.
+Daher sind Health-Checks essenziell dafür die Availability zu berechnen.</p>
+</div>
+<div class="paragraph">
+<p>Diskussion und Anmerkung:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="underline">"Definierter Zeitraum"</span>:
+Eine Messung über einen Zeitraum von einer Woche, einem Monat oder bis zu mehreren Jahren kann bestimmt werden.
+Dieser kann gegliedert in abgetrennte Zeiträume erfolgen, oder jeweils den letzten zurückliegenden Zeitraum betreffen.
+Dieser ist wie die Performanz-Kriterien anwendungsspezifisch festzulegen.</p>
+</li>
+<li>
+<p><span class="underline">Availability in Spring Boot</span>:
+In Spring Boot ist keine Definition von Availability gegeben.
+<em>Liveness</em> und <em>Readiness</em> wird stattdessen unter Availability zusammengefasst (vgl. <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-spring-api-availability" class="xref page">Spring Boot AvailabilityState</a>).</p>
+</li>
+<li>
+<p><span class="underline">Bedeutung der Definition</span>:
+Es werden nicht-funktionale Anforderungen als Kriterien für Availability gesetzt.
+Diese stellen Anforderungen an die Anwendung, bzw. das System, auf welches diese verwendet wird, dar.
+Die nicht-funktionalen Anforderungen, aus deren Erfüllung sich die Availability ableitet, können nicht von den Standards vorgegeben werden.
+Sie müssen von der jeweiligen Anwendung gegeben werden, da für diese unterschiedliche Bedürfnisse an die Verfügbarkeit der jeweiligen Anwendung bestehen.
+Sind die nicht-funktionalen Kriterien erfüllt, dann ist die Anwendung/das System available. Availability als Messung des available Zustands über die Zeit stellt entsprechend dar, in welchem zeitlichen Umfang die nicht-funktionalen Kriterien erfüllt sind.</p>
+</li>
+<li>
+<p><span class="underline">Praktischer Nutzen der Messung</span>:
+Availability wird zur quantitativen Messung der Resilienz eines Systems und der Feststellung des Erreichungsgrads eines angestrebten Resilienz-Ziels genutzt (vgl. <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-aws-availability" class="xref page">aws: Berechnung von Availability</a>).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="festlegungen-und-ausgrenzungen"><a class="anchor" href="#festlegungen-und-ausgrenzungen"></a>6. Festlegungen und Ausgrenzungen</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Die Nutzungsvorgaben finden sich in den <a href="../nutzungsvorgaben/master.html" class="xref page">Nutzungsvorgaben Überwachung</a>.</p>
 </div>
@@ -736,7 +919,6 @@ Details hierzu finden sich in den <a href="../nutzungsvorgaben/master.html#vorga
 Es werden keine Vorgaben zur Verwendung eines bestimmten Systems gemacht.</p>
 </li>
 </ul>
-</div>
 </div>
 </div>
 </div>
