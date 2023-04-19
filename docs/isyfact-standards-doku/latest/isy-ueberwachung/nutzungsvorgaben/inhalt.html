@@ -1406,22 +1406,7 @@ Die Konfiguration für die unterstützten Monitoring-System ist in <a href="../.
 <p>Für die Durchführung von Updates beim Deployment ist es notwendig, einzelne Knoten eines Anwendungsclusters aus dem Loadbalancing herauszunehmen, sodass dieser Knoten keine Anfragen mehr vom Loadbalancer zugeteilt bekommt.</p>
 </div>
 <div class="sect3">
-<h4 id="beschreibung-des-loadbalancer-servlets"><a class="anchor" href="#beschreibung-des-loadbalancer-servlets"></a>1.3.1. Beschreibung des Loadbalancer-Servlets</h4>
-<div class="paragraph">
-<p>Zur Realisierung dieser Anforderung wird als Teil jeder Webanwendung ein sog. Loadbalancer-Servlet ausgeliefert.
-Das Servlet prüft beim Aufrufen seiner URL, ob eine IsAlive-Datei im Konfigurationsverzeichnis vorhanden ist.
-Ist eine solche Datei vorhanden, liefert das Servlet den HTTP-Statuscode HTTP OK (200) zurück.
-Falls keine IsAlive-Datei gefunden wird, liefert das Servlet den Code HTTP FORBIDDEN (403) zurück.</p>
-</div>
-<div class="paragraph">
-<p>Der Loadbalancer prüft in regelmäßigen Abständen die URL des Servlets und nimmt die entsprechende für die Anwendung den entsprechenden Server aus dem Loadbalancing heraus, falls kein HTTP OK gelesen wird.
-Zu beachten ist, dass auf einem Server prinzipiell mehrere verschiedene Anwendungen laufen können.
-Der Loadbalancer muss daher so konfiguriert werden, dass auf dem Server nur die betreffende Anwendung deaktiviert wird, zu der das Loadbalancer-Servlet gehört.
-Alle anderen Anwendungen auf dem entsprechenden Server müssen weiterhin bedient werden.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="integration-des-loadbalancer-servlets"><a class="anchor" href="#integration-des-loadbalancer-servlets"></a>1.3.2. Integration des Loadbalancer-Servlets</h4>
+<h4 id="integration-des-loadbalancer-servlets"><a class="anchor" href="#integration-des-loadbalancer-servlets"></a>1.3.1. Integration des Loadbalancer-Servlets</h4>
 <div class="paragraph">
 <p>Das Loadbalancing-Servlet ist als Teil der Bibliothek <code>isy-ueberwachung</code>.
 Es wird automatisch durch die Einbindung der Bibliothek als Servlet registriert.
@@ -1444,7 +1429,7 @@ Nach dem Deployment entspricht dies der Datei <code>/etc/&lt;anwendungsname&gt;/
 </div>
 </div>
 <div class="sect3">
-<h4 id="nutzung-des-loadbalancing-servlets"><a class="anchor" href="#nutzung-des-loadbalancing-servlets"></a>1.3.3. Nutzung des Loadbalancing-Servlets</h4>
+<h4 id="nutzung-des-loadbalancing-servlets"><a class="anchor" href="#nutzung-des-loadbalancing-servlets"></a>1.3.2. Nutzung des Loadbalancing-Servlets</h4>
 <div class="paragraph">
 <p>Durch die oben beschriebene Konfiguration kann die gewünschte Verfügbarkeit der Anwendung über die URL <code>http(s)://&lt;serverurl&gt;/&lt;anwendungsname&gt;/Loadbalancer abgefragt werden</code>.</p>
 </div>

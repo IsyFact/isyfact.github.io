@@ -704,7 +704,12 @@ Durch diese Entkopplung wird die Systemstabilität durch häufige Aufrufe des En
 </div>
 </div>
 <div class="sect2">
-<h3 id="_liveness_und_readiness"><a class="anchor" href="#_liveness_und_readiness"></a>3.2. Liveness und Readiness</h3>
+<h3 id="Liveness-und-Readiness"><a class="anchor" href="#Liveness-und-Readiness"></a>3.2. Liveness und Readiness</h3>
+<div class="paragraph">
+<p>In diesem Kapitel werden die Begriffe <em>Liveness</em> und <em>Readiness</em> definiert.
+Die Bedeutung von "live" und "ready" Zuständen von Anwendungen und Services wird beschrieben.
+Erläutert wird, wie diese mit der Hilfe von <em>Liveness</em>- und <em>Readiness</em>-Probes in Spring Boot überwacht werden können.</p>
+</div>
 <div class="sect3">
 <h4 id="liveness"><a class="anchor" href="#liveness"></a>3.2.1. Liveness</h4>
 <div class="paragraph">
@@ -722,7 +727,7 @@ Ist eine Anwendung nicht "ready", darf die Infrastruktur keine weiteren Anfragen
 </div>
 <div class="paragraph">
 <p>Ein Service (d.h. eine Bündelung von Instanzen/Anwendungen, die denselben Service anbieten) wird als "ready" angesehen, wenn mindestens eine Instanz "ready" ist.
-Prüfungen der Readiness von Services müssen über die Infrastruktur erfolgen.</p>
+Prüfungen der <em>Readiness</em> von Services müssen über die Infrastruktur erfolgen.</p>
 </div>
 </div>
 <div class="sect3">
@@ -839,7 +844,39 @@ Nachbarsystemchecks von essenziellen Systemen sind damit essenziell für die <em
 </div>
 </div>
 <div class="sect2">
-<h3 id="availability"><a class="anchor" href="#availability"></a>5.2. Availability</h3>
+<h3 id="Loadbalancer"><a class="anchor" href="#Loadbalancer"></a>5.2. Loadbalancer</h3>
+<div class="paragraph">
+<p>Ein Loadbalancer ist ein Netzwerkgerät, mit dem eingehende Anfragen auf mehrere Server verteilt werden.
+Durch dieses Loadbalancing wird die Ressourcenauslastung, die Reaktionszeit und die Ausfallsicherheit optimiert.
+Für Anwendungen nach der IsyFact-Architektur sollen einzelne Knoten eines Anwendungsclusters aus dem Loadbalancing herausnehmbar sein.
+Dies ist für das Durchführen von Updates erforderlich.
+Aus diesem Grund wird als Teil jeder Webanwendung ein sog. Loadbalancer-Servlet ausgeliefert.</p>
+</div>
+<div class="sect3">
+<h4 id="beschreibung-des-loadbalancer-servlets"><a class="anchor" href="#beschreibung-des-loadbalancer-servlets"></a>5.2.1. Beschreibung des Loadbalancer-Servlets</h4>
+<div class="paragraph">
+<p>Das Loadbalancer-Servlet prüft beim Aufrufen seiner URL, ob eine <code>IsAlive</code>-Datei im Konfigurationsverzeichnis vorhanden ist.
+Ist eine solche Datei vorhanden, liefert das Servlet den HTTP-Statuscode <code>HTTP OK</code> (<code>200</code>) zurück.
+Falls keine <code>IsAlive</code>-Datei gefunden wird, liefert das Servlet den Code <code>HTTP FORBIDDEN</code> (<code>403</code>) zurück.
+Der Loadbalancer prüft in regelmäßigen Abständen die URL des Servlets und nimmt für die Anwendung den entsprechenden Server aus dem Loadbalancing heraus, falls kein <code>HTTP OK</code> gelesen wird.
+Zu beachten ist, dass auf einem Server prinzipiell mehrere verschiedene Anwendungen laufen können.
+Der Loadbalancer muss daher so konfiguriert werden, dass auf dem Server nur die betreffende Anwendung deaktiviert wird, zu der das Loadbalancer-Servlet gehört.
+Alle anderen Anwendungen auf dem entsprechenden Server müssen weiterhin bedient werden.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="Loadbalancing-mit-Readiness-Metrik"><a class="anchor" href="#Loadbalancing-mit-Readiness-Metrik"></a>5.2.2. Loadbalancing mit Readiness-Metrik</h4>
+<div class="paragraph">
+<p>Sind <em>Liveness</em> und <em>Readiness</em> definiert, soll der Loadbalancer die <em>Readiness</em> eines Knotens prüfen.
+Ist die <em>Readiness</em> nicht gegeben, ist der Knoten aus dem Loadbalancing heraus zu nehmen.
+Je nach betrieblichen Bedingungen und den technischen Möglichkeiten des eingesetzten Loadbalancers ist die Abfrage der <em>Readiness</em> über den <em>Readiness</em> Endpoint oder eine <code>isAlive</code>-Datei festzustellen.
+Die betrieblich begründete, temporäre Nichtverfügbarkeit einer Anwendung, kann über die Löschung einer <code>isAlive</code>-Datei gesteuert werden (vgl. <a href="../nutzungsvorgaben/master.html#integration-des-loadbalancer-servlets" class="xref page">Nutzungsvorgaben</a>).
+Ist das Vorhandensein einer <code>isAlive</code>-Datei aus betrieblichen Anforderungen nicht notwendig ist die direkte Prüfung über den <em>Readiness</em> Endpoint vorzunehmen.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="availability"><a class="anchor" href="#availability"></a>5.3. Availability</h3>
 <div class="paragraph">
 <p>Availability (Verfügbarkeit) eines Systems oder einer individuellen Systemkomponente ist definiert als der Prozentsatz eines Zeitraums, in welcher es ordnungsgemäß nach gesetzten Performance-Kriterien läuft (vgl. <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-oracle-availability" class="xref page">Oracle: Definition von Availability</a>).
 <br>
