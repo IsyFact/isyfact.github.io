@@ -1374,6 +1374,51 @@ public class HealthConfiguration {
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="implementierung-von-liveness-und-readiness-health-checks"><a class="anchor" href="#implementierung-von-liveness-und-readiness-health-checks"></a>3.1.8. Implementierung von Liveness und Readiness Health-Checks</h4>
+<div class="paragraph">
+<p>Wie in <a href="../konzept/master.html#informationen-ueber-den-systemzustand" class="xref page">Informationen über den Systemzustand</a> beschrieben sind <em>Liveness</em> und <em>Readiness</em> optionale Zustände, die einem feingranularen Monitoring dienen.</p>
+</div>
+<div class="paragraph">
+<p>Diese sind mit der IsyFact 3.0 ausschließlich konzeptionell beschrieben und nicht in den Bibliotheken implementiert. Daher werden hier diesbezüglich ausschließlich grobe Implementierungsdetails gegeben, bzw. auf Literatur hingewiesen.</p>
+</div>
+<div class="sect4">
+<h5 id="auslesen-von-liveness-und-readiness-probes"><a class="anchor" href="#auslesen-von-liveness-und-readiness-probes"></a>3.1.8.1. Auslesen von Liveness und Readiness Probes</h5>
+<div class="paragraph">
+<p><em>Liveness</em> und <em>Readiness</em> Probes können aktiviert werden durch (vgl. <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-baeldung-spring-liveness-readiness-probes" class="xref page">Baeldung: Liveness und Readiness Probes in Spring Boot</a>):</p>
+</div>
+<div id="listing-enable-liveness-readiness-states" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">management.endpoint.health.probes.enabled=true
+management.health.livenessState.enabled=true
+management.health.readinessState.enabled=true</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="update-des-liveness-states"><a class="anchor" href="#update-des-liveness-states"></a>3.1.8.2. Update des Liveness States</h5>
+<div class="paragraph">
+<p><em>Liveness</em> soll nicht durch externe Checks wie Health-Checks gemessen werden.
+Andernfalls könnte es sein, dass einem Fehlschlagen eines externen Systems (database, Web API, externe cache, &#8230;&#8203;) ein Neustart des Systems folgt, welcher Fehlerkaskaden über die Plattform auslöst.</p>
+</div>
+<div class="paragraph">
+<p>Der innere Zustand einer Spring Boot Application wird hauptsächlich über Springs <code>ApplicationContext</code> dargestellt.
+Wenn der <code>ApplicationContext</code> erfolgreich gestartet ist, geht Spring Boot davon aus, dass die Anwendung in einem korrekten Zustand ist.
+Die Anwendung wird als alive betrachtet, sobald der <code>Context</code> aufgefrischt wird
+(vgl. <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-spring-liveness" class="xref page">Spring Boot Liveness</a>).</p>
+</div>
+<div class="paragraph">
+<p>Neben dem funktionierenden <code>ApplicationContext</code> ist der <em>Liveness</em>-Zustand von weiteren, anwendungsspezifische Komponenten abhängig und muss entsprechend aktualisiert werden (vgl. <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-baeldung-spring-liveness-readiness-probes" class="xref page">Baeldung: Liveness und Readiness Probes in Spring Boot</a>).</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="update-des-readiness-states"><a class="anchor" href="#update-des-readiness-states"></a>3.1.8.3. Update des Readiness States</h5>
+<div class="paragraph">
+<p>Für den <strong>Readiness State</strong> kann die Kommunikation durch Rest Aufrufe geprüft werden. D. h. <em>Readiness</em> wird durch von Spring Boot bereitgestellte <em>Readiness</em>-Probes sichergestellt. Das System ist z. B. bei einem http 200 Ergebnis ready. Die Probes können wiederum durch einen Task-Scheduler durchgeführt werden (vgl.
+<a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-medium-enable-liveness-readiness-probes" class="xref page">Medium: Liveness und Readiness Probes</a>).</p>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="anbindung-eines-monitoring-systems"><a class="anchor" href="#anbindung-eines-monitoring-systems"></a>3.2. Anbindung eines Monitoring-Systems</h3>
@@ -1403,22 +1448,7 @@ Die Konfiguration für die unterstützten Monitoring-System ist in <a href="../.
 <p>Für die Durchführung von Updates beim Deployment ist es notwendig, einzelne Knoten eines Anwendungsclusters aus dem Loadbalancing herauszunehmen, sodass dieser Knoten keine Anfragen mehr vom Loadbalancer zugeteilt bekommt.</p>
 </div>
 <div class="sect3">
-<h4 id="beschreibung-des-loadbalancer-servlets"><a class="anchor" href="#beschreibung-des-loadbalancer-servlets"></a>3.3.1. Beschreibung des Loadbalancer-Servlets</h4>
-<div class="paragraph">
-<p>Zur Realisierung dieser Anforderung wird als Teil jeder Webanwendung ein sog. Loadbalancer-Servlet ausgeliefert.
-Das Servlet prüft beim Aufrufen seiner URL, ob eine IsAlive-Datei im Konfigurationsverzeichnis vorhanden ist.
-Ist eine solche Datei vorhanden, liefert das Servlet den HTTP-Statuscode HTTP OK (200) zurück.
-Falls keine IsAlive-Datei gefunden wird, liefert das Servlet den Code HTTP FORBIDDEN (403) zurück.</p>
-</div>
-<div class="paragraph">
-<p>Der Loadbalancer prüft in regelmäßigen Abständen die URL des Servlets und nimmt die entsprechende für die Anwendung den entsprechenden Server aus dem Loadbalancing heraus, falls kein HTTP OK gelesen wird.
-Zu beachten ist, dass auf einem Server prinzipiell mehrere verschiedene Anwendungen laufen können.
-Der Loadbalancer muss daher so konfiguriert werden, dass auf dem Server nur die betreffende Anwendung deaktiviert wird, zu der das Loadbalancer-Servlet gehört.
-Alle anderen Anwendungen auf dem entsprechenden Server müssen weiterhin bedient werden.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="integration-des-loadbalancer-servlets"><a class="anchor" href="#integration-des-loadbalancer-servlets"></a>3.3.2. Integration des Loadbalancer-Servlets</h4>
+<h4 id="integration-des-loadbalancer-servlets"><a class="anchor" href="#integration-des-loadbalancer-servlets"></a>3.3.1. Integration des Loadbalancer-Servlets</h4>
 <div class="paragraph">
 <p>Das Loadbalancing-Servlet ist als Teil der Bibliothek <code>isy-ueberwachung</code>.
 Es wird automatisch durch die Einbindung der Bibliothek als Servlet registriert.
@@ -1441,7 +1471,7 @@ Nach dem Deployment entspricht dies der Datei <code>/etc/&lt;anwendungsname&gt;/
 </div>
 </div>
 <div class="sect3">
-<h4 id="nutzung-des-loadbalancing-servlets"><a class="anchor" href="#nutzung-des-loadbalancing-servlets"></a>3.3.3. Nutzung des Loadbalancing-Servlets</h4>
+<h4 id="nutzung-des-loadbalancing-servlets"><a class="anchor" href="#nutzung-des-loadbalancing-servlets"></a>3.3.2. Nutzung des Loadbalancing-Servlets</h4>
 <div class="paragraph">
 <p>Durch die oben beschriebene Konfiguration kann die gewünschte Verfügbarkeit der Anwendung über die URL <code>http(s)://&lt;serverurl&gt;/&lt;anwendungsname&gt;/Loadbalancer abgefragt werden</code>.</p>
 </div>
