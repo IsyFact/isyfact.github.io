@@ -641,6 +641,14 @@ Gibt es eine durch einen Standard vorgegebene Benennung, ist diese zu verwenden.
 </div>
 <div class="sidebarblock">
 <div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>Persistente Entitäten dürfen nicht über den Anwendungskern hinaus herausgegeben werden. Sie haben im Anwendungskern zu verbleiben.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
 <div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Verwendung von HTTP für Service-Aufrufe</div>
 <div class="paragraph">
 <p>Synchrone Service-Aufrufe finden über das Protokoll <strong>HTTP</strong> statt und werden sowohl zur internen als auch externen Servicekommunikation genutzt.
@@ -656,14 +664,6 @@ HTTP-Anfragen bzw. HTTP-Antworten (s. <a href="#image-http-messages">Abbildung 1
 <p>Header enthalten Metadaten.
 Der Body enthält Nutzdaten.
 Bei Anfragen mittels <code>GET</code> und <code>DELETE</code>, die keinen Body erwarten, enthalten URL-Parameter Nutzdaten.</p>
-</div>
-</div>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
-<div class="paragraph">
-<p>Persistente Entitäten dürfen nicht über den Anwendungskern hinaus herausgegeben werden. Sie haben im Anwendungskern zu verbleiben.</p>
 </div>
 </div>
 </div>
