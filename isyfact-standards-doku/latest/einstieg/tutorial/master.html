@@ -1034,6 +1034,25 @@ Rahmen der Batch-Verarbeitung.</p>
 </div>
 <div class="sect2">
 <h3 id="anbieten-von-service-schnittstellen"><a class="anchor" href="#anbieten-von-service-schnittstellen"></a>5.1. Anbieten von Service-Schnittstellen</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-ban"></i></span> Deprecation</div>
+<div class="paragraph">
+<p>Dieser Teil der Dokumentation ist veraltet und wird in einem zukünftigen Release entfernt.
+Die Inhalte sollten zur Entwicklung neuer Anwendungen nicht mehr berücksichtigt werden.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Anmerkung zur Deprecation</strong></p>
+</div>
+<div class="paragraph">
+<p>Der ab IF 3.0 eingesetzte neue Baustein <code>isy-security</code> wird keine HTTPInvoker Schnittstellen mehr nativ unterstützen und daher sollen diese ab IF 3.0 nicht mehr verwendet werden.</p>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>Dieser Abschnitt beschreibt die Realisierung von HTTP Invoker Schnittstellen (siehe <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-spring" class="xref page">Spring</a>).
 HTTP Invoker Schnittstellen sind interne Service-Schnittstellen, die innerhalb der Anwendungslandschaft durch andere Anwendungen genutzt werden dürfen.</p>
@@ -1049,6 +1068,9 @@ HTTP Invoker Schnittstellen sind interne Service-Schnittstellen, die innerhalb d
 <p>Ab IsyFact 2.0 ist die Verwendung von REST-Schnittstellen erlaubt.
 HTTP Invoker wird in folgenden Releases (IsyFact 2.x) als Schnittstellenformat abgelöst.
 Die Verwendung von REST-Schnittstellen wird einem gesonderten Konzept erläutert.</p>
+</div>
+<div class="paragraph">
+<p>Ab IsyFact 3.0 wird die Verwendung von HTTPInvoker Schnittstellen nicht mehr empfohlen und wird in zukünftigen Versionen nicht mehr unterstützt werden.</p>
 </div>
 </td>
 </tr>
@@ -1382,6 +1404,27 @@ public class ServiceConfiguration {
 </div>
 <div class="sect2">
 <h3 id="nutzen-von-service-schnittstellen"><a class="anchor" href="#nutzen-von-service-schnittstellen"></a>5.2. Nutzen von Service-Schnittstellen</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-ban"></i></span> Deprecation</div>
+<div class="paragraph">
+<p>Dieser Teil der Dokumentation ist veraltet und wird in einem zukünftigen Release entfernt.
+Die Inhalte sollten zur Entwicklung neuer Anwendungen nicht mehr berücksichtigt werden.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Anmerkung zur Deprecation</strong></p>
+</div>
+<div class="paragraph">
+<p>Ab der IF 3.0 ist der HTTP-Invoker deprecated und soll daher nicht mehr verwendet werden.
+Der Nutzung von Service-Schnittstellen soll über REST-Aufrufe erfolgen.
+Die Verwendung von REST-Schnittstellen wird einem gesonderten Konzept erläutert.</p>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>Dieser Abschnitt beschreibt, wie Service-Schnittstellen genutzt, d.h. aufgerufen werden können.</p>
 </div>
@@ -2054,6 +2097,28 @@ Vor dem Werfen der so erzeugten Exception über die Schnittstelle wird ein Log-E
 </div>
 <div class="sect2">
 <h3 id="aufrufkontextverwaltung"><a class="anchor" href="#aufrufkontextverwaltung"></a>6.4. Aufrufkontextverwaltung</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-ban"></i></span> Deprecation</div>
+<div class="paragraph">
+<p>Dieser Teil der Dokumentation ist veraltet und wird in einem zukünftigen Release entfernt.
+Die Inhalte sollten zur Entwicklung neuer Anwendungen nicht mehr berücksichtigt werden.
+Stattdessen wird empfohlen, <a href="../../isy-security/konzept/master.html" class="xref page">Konzept Security</a> zu verwenden.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Anmerkung zur Deprecation</strong></p>
+</div>
+<div class="paragraph">
+<p>Ab der IF 3.0 wird der Spring <code>SecurityContext</code> anstatt des <code>AufrufKontext</code> verwendet.
+Der <code>AufrufKontextVerwalter</code> kann somit auch nicht mehr verwendet werden.
+Die Verwendung des  <code>SecurityContext</code> anstelle des <code>AufrufKontext</code>-Objekts wird im Baustein <a href="../../isy-security/konzept/master.html" class="xref page"><code>isy-security</code></a> beschrieben.</p>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>Einige Komponenten der Anwendung, z.B. die Protokollierung oder die Autorisierung benötigen
 Kontextinformationen über den Aufrufer.
@@ -2142,6 +2207,27 @@ Die Konfiguration ist im Dokument <a href="../../isy-sicherheit/nutzungsvorgaben
 </div>
 <div class="sect2">
 <h3 id="authentifizierung-und-autorisierung"><a class="anchor" href="#authentifizierung-und-autorisierung"></a>6.5. Authentifizierung und Autorisierung</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-ban"></i></span> Deprecation</div>
+<div class="paragraph">
+<p>Dieser Teil der Dokumentation ist veraltet und wird in einem zukünftigen Release entfernt.
+Die Inhalte sollten zur Entwicklung neuer Anwendungen nicht mehr berücksichtigt werden.
+Stattdessen wird empfohlen, <a href="../../isy-security/konzept/master.html#oauth2.0-zur-autorisierung" class="xref page">OAuth 2.0 zur Autorisierung</a> zu verwenden.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Anmerkung zur Deprecation</strong></p>
+</div>
+<div class="paragraph">
+<p>Ab der IF 3.0 wird der <code>AufrufKontext</code> nicht mehr verwendet und als Autorisierungsprotokoll wird OAuth 2.0 eingesetzt.
+Die Autorisierung nach OAuth 2.0 wird im Baustein <a href="../../isy-security/konzept/master.html#oauth2.0-zur-autorisierung" class="xref page"><code>isy-security</code></a> beschrieben.</p>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>Dieses Kapitel beschreibt die Realisierung der Authentifizierung und Autorisierung von Anfragen.</p>
 </div>
