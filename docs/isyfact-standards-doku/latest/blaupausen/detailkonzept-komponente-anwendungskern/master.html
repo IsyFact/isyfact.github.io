@@ -658,11 +658,11 @@ Außerdem übernimmt der Anwendungskern die Transaktionssteuerung.
 In Richtung Nutzungsschicht bietet der Anwendungskern nur Funktionalitäten an, die allgemein verwendbar sind und die im Prinzip von mehreren Nutzern verwendet werden könnten.</p>
 </div>
 <div class="paragraph">
-<p>In <a href="#image-IFRefArcITSsys">Abbildung 1</a> ist die Referenzarchitektur eines IT-Systems noch einmal dargestellt, wobei die Anwendungskernschicht mit der Komponente Anwendungskern hervorgehoben ist.</p>
+<p>In folgender Abbildung ist die <a href="#referenzarchitektur-it-system">Referenzarchitektur eines IT-Systems</a> grafisch dargestellt, wobei die Anwendungskernschicht mit der Komponente Anwendungskern hervorgehoben ist.</p>
 </div>
-<div id="image-IFRefArcITSsys" class="imageblock text-center">
+<div id="referenzarchitektur-it-system" class="imageblock">
 <div class="content">
-<img src="../_images/detailkonzept-anwendungskern/IFRefArcITSsys.png" alt="IFRefArcITSsys" width="90%">
+<img src="../_images/detailkonzept-anwendungskern/IFRefArcITSsys.png" alt="IFRefArcITSsys">
 </div>
 <div class="title">Abbildung 1. Referenzarchitektur eines IT-Systems</div>
 </div>
@@ -684,14 +684,13 @@ Daher werden in diesem Dokument auch Aspekte des Spring-Frameworks behandelt, di
 Hier werden die fachlichen Funktionen der Anwendung realisiert.</p>
 </div>
 <div class="paragraph">
-<p>In <a href="#image-IFBestAWK">Abbildung 2</a> sind drei Aspekte des Anwendungskerns dargestellt.
-Er besteht aus zwei wesentlichen Bestandteilen: den Fachkomponenten und dem Anwendungskern-Framework.
+<p>Der <a href="#image-bestandteile-anwendungskern">Anwendungskern</a> besteht aus zwei wesentlichen Bestandteilen: den Fachkomponenten und dem Anwendungskern-Framework.
 Weiterhin ist dort dargestellt, dass externe Services als Komponente in den Anwendungskern integriert sind.
 Diese drei Aspekte werden im Folgenden im Detail beschrieben.</p>
 </div>
-<div id="image-IFBestAWK" class="imageblock text-center">
+<div id="image-bestandteile-anwendungskern" class="imageblock">
 <div class="content">
-<img src="../_images/detailkonzept-anwendungskern/IFBestAWK.png" alt="IFBestAWK" width="90%">
+<img src="../_images/detailkonzept-anwendungskern/IFBestAWK.png" alt="IFBestAWK">
 </div>
 <div class="title">Abbildung 2. Bestandteile des Anwendungskerns</div>
 </div>
@@ -834,9 +833,9 @@ Anwendungsfunktionen werden anhand des Namen der Anwendungsfunktion aus der Spez
 </tbody>
 </table>
 <div class="paragraph">
-<p>Die <a href="#aufbau-fachkomponente">folgende Abbildung</a> fasst den Aufbau einer Fachkomponente noch einmal grafisch zusammen.</p>
+<p>Die folgende Abbildung fasst den <a href="#image-aufbau-fachkomponente">Aufbau einer Fachkomponente</a> noch einmal grafisch zusammen.</p>
 </div>
-<div id="aufbau-fachkomponente" class="imageblock">
+<div id="image-aufbau-fachkomponente" class="imageblock">
 <div class="content">
 <img src="../_images/detailkonzept-anwendungskern/aufbau_fachkomponente_awk.dn.svg" alt="aufbau fachkomponente awk.dn">
 </div>
@@ -884,9 +883,9 @@ Das Ziel ist die fachliche Trennung und Minimierung inhaltlicher Abhängigkeiten
 Die Teilanwendungen sollen Fachlichkeit kapseln.</p>
 </div>
 <div class="paragraph">
-<p>Damit kann eine IT-Anwendung sowohl vertikal in Teilanwendungen (fachliche Sicht) und horizontal in Schichten (technische Sicht) strukturiert werden, wie in <a href="#image-SchichtTAnw">Abbildung 3</a> dargestellt.</p>
+<p>Damit kann eine IT-Anwendung sowohl vertikal in Teilanwendungen (fachliche Sicht) und horizontal in Schichten (technische Sicht) strukturiert werden, wie die <a href="#image-schichten-und-teilanwendungen">folgende Abbildung</a> verdeutlicht.</p>
 </div>
-<div id="image-SchichtTAnw" class="imageblock text-center">
+<div id="image-schichten-und-teilanwendungen" class="imageblock">
 <div class="content">
 <img src="../_images/detailkonzept-anwendungskern/SchichtTAnw.png" alt="SchichtTAnw">
 </div>
@@ -911,8 +910,8 @@ Um den Austausch von Objekten innerhalb einer Teilanwendung zwischen den Schicht
 Die hierfür bereitgestellte Schnittstelle der Schicht gehört damit aber zur Teilanwendung darf von einer anderen Teilanwendung nicht genutzt werden.</p>
 </div>
 <div class="paragraph">
-<p>In der einer allgemeinen Anwendung ist z.B. „Aspektanwendung“ eine Teilanwendung.
-Zu dieser Teilanwendung gehören in der Schicht Nutzung die Oberfläche <em>Aspektanwendung</em> und der Batch <code>AspektanwendungLoeschBatch</code>, in der Schicht Anwendungslogik die Fachkomponenten <em>Erstellen</em>, <em>Verwalten</em> und <em>Datenpflege</em> und der Schicht Datenhaltung die Entitäten <code>Aspektanwendung</code>, <code>Zeitpunkt</code>, <code>Nutzer</code>, <code>Intervall</code> und <code>Nutzerintervall</code>.</p>
+<p>In einer allgemeinen Anwendung ist z.B. „Aspektanwendung“ eine Teilanwendung.
+Zu dieser Teilanwendung gehören in der Schicht Nutzung die Oberfläche <em>Aspektanwendung</em> und der Batch <code>AspektanwendungLoeschBatch</code>, in der Schicht Anwendungslogik die Fachkomponenten <em>Erstellen</em>, <em>Verwalten</em> und <em>Datenpflege</em> und in der Schicht Datenhaltung die Entitäten <code>Aspektanwendung</code>, <code>Zeitpunkt</code>, <code>Nutzer</code>, <code>Intervall</code> und <code>Nutzerintervall</code>.</p>
 </div>
 </div>
 </div>
@@ -1008,18 +1007,18 @@ Für diese Klassen kann man benötigte andere Beans oder Konfigurationsparameter
 Diese werden beim Start des Applikations-Containers gescannt und ausgewertet (<em>Component Scan</em>).</p>
 </div>
 <div class="paragraph">
-<p>Die folgende Abbildung zeigt einen Ausschnitt der für eine allgemeine Anwendung erstellten Beans.
-Diese werden grün dargestellt und besitzen „referenzierte“ Abhängigkeiten zu benötigten anderen Beans.</p>
+<p>Ein <a href="#image-spring-beans-beispiel-allgemeine-anwendung">Spring-Beans Beispiel</a> zeigt einen Ausschnitt der für eine allgemeine Anwendung erstellten Beans.
+Beans werden grün dargestellt und besitzen „referenzierte“ Abhängigkeiten zu benötigten anderen Beans.</p>
 </div>
-<div id="image-SpringBeansBeispiel" class="imageblock text-center">
+<div id="image-spring-beans-beispiel-allgemeine-anwendung" class="imageblock">
 <div class="content">
-<img src="../_images/detailkonzept-anwendungskern/SpringBeansBeispiel.svg" alt="SpringBeansBeispiel" width="80%">
+<img src="../_images/detailkonzept-anwendungskern/SpringBeansBeispiel.dn.svg" alt="SpringBeansBeispiel.dn">
 </div>
-<div class="title">Abbildung 5. Spring-Beans einer allgemeinen Anwendung</div>
+<div class="title">Abbildung 5. Spring-Beans Beispiel einer allgemeinen Anwendung</div>
 </div>
 <div class="paragraph">
-<p><a href="#image-SpringBeansBeispiel">Abbildung 4</a> zeigt bereits, dass nicht alle Klassen der Anwendung als Beans konfiguriert werden: Für die Komponente
-<code>Verwaltung</code> wird eine Klasse als Bean konfiguriert, welche die Funktionalität der Komponente bereitstellt.
+<p>Das Beispiel zeigt bereits, dass nicht alle Klassen der Anwendung als Beans konfiguriert werden:
+Für die Komponente <code>Verwaltung</code> wird eine Klasse als Bean konfiguriert, welche die Funktionalität der Komponente bereitstellt.
 Generell gilt, dass jede zentrale und wichtige Klasse aber als Spring Bean konfiguriert werden sollte.</p>
 </div>
 <div class="paragraph">
@@ -1124,7 +1123,8 @@ public class CoreConfig {
 <div class="paragraph">
 <p>Die Konfiguration der Anwendung wird (wie im <a href="../../isy-konfiguration/konzept/master.html#einleitung" class="xref page">Konzept Konfiguration</a>  beschrieben) über die Datei <code>application.properties</code> durchgeführt.
 Diese Datei enthält sämtliche betrieblichen Konfigurationsparameter der Anwendung.
-Das Setzen einzelner Konfigurationsparameter über <code>set</code>-Methoden ist nur in Ausnahmefällen erlaubt.</p>
+Das Setzen einzelner Konfigurationsparameter über <code>set</code>-Methoden ist nur in Ausnahmefällen erlaubt.
+Eine beispielhafte Konfiguration hat folgenden Inhalt:</p>
 </div>
 <div id="listing-konfigurationsbean" class="listingblock">
 <div class="title">Listing 3. Beispiel für Konfiguration des Anwendungskerns mittels Konfigurations-Bean</div>
@@ -1389,34 +1389,18 @@ Dabei werden die Verantwortlichkeiten für den Aufbau des Abhängigkeitsnetzes z
 Anders als bei der herkömmlichen Vorgehensweise in der objektorientierten Programmierung ist bei der <em>Dependency Injection</em> nicht jedes Objekt selbst dafür zuständig, seine Abhängigkeiten (benötigte Objekte und Ressourcen) zu verwalten.</p>
 </div>
 <div class="paragraph">
-<p>In der folgenden Grafik ist das Entwurfsmuster der <em>Dependency Injection</em> exemplarisch visualisiert.</p>
+<p>In der <a href="#image-dependency-injection">folgenden Grafik</a> ist das Entwurfsmuster der <em>Dependency Injection</em> exemplarisch visualisiert.</p>
 </div>
-<div id="image-dependeny-injection" class="imageblock">
+<div id="image-dependency-injection" class="imageblock">
 <div class="content">
-<img src="../_images/detailkonzept-anwendungskern/DependencyInjection.svg" alt="DependencyInjection">
+<img src="../_images/detailkonzept-anwendungskern/DependencyInjection.dn.svg" alt="DependencyInjection.dn">
 </div>
 <div class="title">Abbildung 6. Dependency Injection</div>
 </div>
 <div class="paragraph">
-<p>Es existieren drei verschiedene Verfahren der <em>Dependency Injection</em>:</p>
+<p>Die <a href="#table-vergleich-verfahren-dependency-injection">drei verschiedene Verfahren der <em>Dependency Injection</em></a> sowie die Einsatzszenarien verdeutlicht folgende Übersicht:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Constructor Injection</p>
-</li>
-<li>
-<p>Field Injection</p>
-</li>
-<li>
-<p>Method Injection (Setter-Injection)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Da die <em>Constructor Injection</em> diverse Vorteile gegenüber den beiden anderen Techniken liefert, empfiehlt die IsyFact die Verwendung von  <em>Constructor Injection</em>.</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
+<table id="table-vergleich-verfahren-dependency-injection" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 4. Vergleich der Verfahren zur Dependency Injection</caption>
 <colgroup>
 <col style="width: 33.3333%;">
@@ -1432,6 +1416,11 @@ Anders als bei der herkömmlichen Vorgehensweise in der objektorientierten Progr
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Constructor-Injection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Für alle Beans, welche keine dynamische Anpassung zur Laufzeit benötigen.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kann in Produktiv-Code eingesetzt werden und ist der Standard von Spring.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Field-Injection</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vermeidung von Boilerplate-Code</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Darf nicht in Produktiv-Code verwendet werden.</p></td>
@@ -1441,13 +1430,22 @@ Anders als bei der herkömmlichen Vorgehensweise in der objektorientierten Progr
 <td class="tableblock halign-left valign-top"><p class="tableblock">Flexibles Austauschen von Beans zur Laufzeit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nicht immutable. Sollte nur eingesetzt werden, wenn diese Eigenschaft benötigt wird.</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Constructor-Injection</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Für alle Beans, welche keine dynamische Anpassung zur Laufzeit benötigen.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kann in Produktiv-Code eingesetzt werden und ist der Standard von Spring.</p></td>
-</tr>
 </tbody>
 </table>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Da die <em>Constructor Injection</em> diverse Vorteile gegenüber den beiden anderen Techniken liefert, empfiehlt die IsyFact die Verwendung von  <a href="#constructor-injection"><em>Constructor Injection</em></a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="sect3">
 <h4 id="constructor-injection"><a class="anchor" href="#constructor-injection"></a>4.6.1. Constructor Injection</h4>
 <div class="paragraph">
