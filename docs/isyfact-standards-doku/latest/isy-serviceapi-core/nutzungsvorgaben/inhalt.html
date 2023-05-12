@@ -1246,6 +1246,33 @@ public class ServiceConfiguration {
 <p>Die erweiterte FactoryBean erwartet nur einen zusätzlichen Parameter <code>remoteSystemName</code>.
 Dieser wird genutzt, um in allen Log-Ausgaben einen sprechenden Systemnamen zu setzen.</p>
 </div>
+<div class="sect2">
+<h3 id="kompatibilitaet_if1_2_3"><a class="anchor" href="#kompatibilitaet_if1_2_3"></a>5.1. Kompatibilität zu IF1/IF2/IF3</h3>
+<div class="sect3">
+<h4 id="if1_if2_client"><a class="anchor" href="#if1_if2_client"></a>5.1.1. IF1- und IF2-Client</h4>
+<div class="paragraph">
+<p>Anwendungen basierend auf der IF1 oder IF2 können HTTP-Invoker-Aufrufe wie gewohnt durchführen, da diese einen gefüllten <code>AufrufKontext</code> besitzen.
+Hier bleibt das Vorgehen wie bisher in der Anleitung  beschrieben.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="if3_client"><a class="anchor" href="#if3_client"></a>5.1.2. IF3-Client</h4>
+<div class="paragraph">
+<p>Im Zuge des Upgrades zu IF3 wird der <code>AufrufKontext</code> (deprecated)  nicht mehr verwendet und der von IF3-Anwendungen verwendete Sicherheitsbaustein <code>isy-security</code> wird nativ keine HTTP-Invoker Schnittstellen mehr unterstützen.
+Um weiterhin die Kompatibilität von HTTP-Invoker-Aufrufen gegenüber IF1-, IF2- und IF3-Anwendungen zu gewährleisten, muss bei einem HTTP-Invoker-Aufruf ein <code>AufrufKontext</code> als Transportobjekt ad hoc erzeugt werden.</p>
+</div>
+<div class="paragraph">
+<p>Das <code>AufrufKontextTo</code> wird dabei direkt aus dem Spring <code>SecurityContext</code> bzw. dem <code>AccessToken</code> erzeugt.
+Dazu wird der <code>Berechtigungsmanager</code> des Bausteins <code>isy-security</code> verwendet; <code>isy-security</code> ist als eine <code>provided</code>-Dependency im <code>isy-serviceapi-core</code>-Baustein eingebunden, d.h. für IF1 und IF2-Anwendungen wird diese Dependency nicht benötigt, da diese Anwendungen bereits einen gefüllten <code>AufrufKontext</code> vorhalten und für eine IF3-Anwendung muss diese Dependency zur Runtime zur Verfügung stehen, wenn ein Transportobjekt des <code>AufrufKontext</code> ad hoc erzeugt werden soll.
+In der IF3-Applikation muss somit isy-security eingebunden sein, um ein <code>AufrufKontextTo</code> zu erzeugen.</p>
+</div>
+<div class="paragraph">
+<p>Zur Erzeugung des <code>AufrufKontextTo</code> wird eine <code>RemoteInvocationFactory</code> verwendet, an die der Anwender als ersten Parameter null übergeben muss (der AufrufKontext kommt immer zuerst).
+Per Default wird die <code>RemoteInvocationFactory</code> nur in <code>IsyHttpInvokerProxyFactoryBean</code> verwendet.
+Falls die Spring-eigene Factory verwendet wird, muss die <code>RemoteInvocationFactory</code> explizit in einem Setter (<code>setRemoteInvocationFactory()</code>) gesetzt werden.</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1253,7 +1280,7 @@ Dieser wird genutzt, um in allen Log-Ausgaben einen sprechenden Systemnamen zu s
 <div class="sectionbody">
 <div class="paragraph">
 <p>Bei der Übertragung von Daten über eine HTTP-Invoker-Schnittstelle werden Java-Klassen serialisiert und deserialisiert.
-Wird bei der Deserialisierung die Integrität der Daten nicht sichergestellt, können Angreifer schadhaften Code über eine HttpInvoker Schnittstelle einschleusen (siehe <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cwe-502" class="xref page">CWE-502</a>).
+Wird bei der Deserialisierung die Integrität der Daten nicht sichergestellt, können Angreifer schadhaften Code über eine HTTP-Invoker-Schnittstelle einschleusen (siehe <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cwe-502" class="xref page">CWE-502</a>).
 Das Betrifft alle HTTP-Invoker-Schnittstellen, die direkt von außerhalb einer Anwendungslandschaft benutzt werden können.</p>
 </div>
 <div class="paragraph">
