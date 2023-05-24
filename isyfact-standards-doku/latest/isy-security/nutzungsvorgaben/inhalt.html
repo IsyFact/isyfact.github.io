@@ -962,7 +962,31 @@ Die Autorisierung erfolgt dementsprechend wenn der Nutzer mindestens eins der in
 </div>
 </div>
 <div class="sect1">
-<h2 id="testunterstuetzung"><a class="anchor" href="#testunterstuetzung"></a>3. Testunterstützung</h2>
+<h2 id="attr-token-abfragen"><a class="anchor" href="#attr-token-abfragen"></a>3. Attribute aus dem Bearer Token abfragen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Bei der Befüllung des Spring Security Context wird das zur Befüllung genutzte Bearer Token ebenfalls im Context abgelegt.
+Dadurch ist der Zugriff auf Attribute des Bearer Tokens über den Spring Security Context möglich.
+Der Zugriff kann über den Berechtigungsmanager oder direkt über den Spring Security Context erfolgen.</p>
+</div>
+<div class="paragraph">
+<p>Für Zugriff über den Berechtigungsmanager kann die Methode <code>getTokenAttribute(String key)</code> genutzt werden.
+Das Beispiel <a href="#listing-berechtigungsmanager-bhknz">Zugriff auf das Behördenkennzeichen</a> veranschaulicht den Zugriff auf das im Attribut <code>bhknz</code> gespeicherte Behördenkennzeichen.</p>
+</div>
+<div id="listing-berechtigungsmanager-bhknz" class="listingblock">
+<div class="title">Listing 7. Zugriff auf das Behördenkennzeichen</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">String bhknz = (String) this.berechtigungsmanager.getTokenAttribute(BEARER_TOKEN_ATTR_BHKNZ);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Für den direkten Zugriff per Security Context kann die <code>Authentication</code> abgefragt und per Cast als ein <code>AbstractOAuth2TokenAuthenticationToken</code> zugegriffen werden.
+Detaillierte Informationen hierzu können der Spring Dokumentation entnommen werden.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="testunterstuetzung"><a class="anchor" href="#testunterstuetzung"></a>4. Testunterstützung</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In diesem Abschnitt wird <strong>isy-security-test</strong> beschrieben, das zum Erstellen von (automatisierten) Tests einen OpenId Connect Provider Mock bereitstellt.
@@ -983,7 +1007,7 @@ Es werden die folgenden OAuth2 und OpenID Connect Verfahren unterstützt.</p>
 <p>Das folgende Beispiel zeigt die Initialisierung des EmbeddedOidcProviderMock mit einem Client mit genau einer Rolle und mit einem User mit derselben Rolle:</p>
 </div>
 <div id="listing-beispiel-oidc-mock" class="listingblock">
-<div class="title">Listing 7. Beispiel für die Erstellung des EmbeddedOidcProviderMock</div>
+<div class="title">Listing 8. Beispiel für die Erstellung des EmbeddedOidcProviderMock</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">EmbeddedOidcProviderMock embeddedOidcProvider = new EmbeddedOidcProviderMock("localhost", 9095, "/auth/realms/testrealm");
 
