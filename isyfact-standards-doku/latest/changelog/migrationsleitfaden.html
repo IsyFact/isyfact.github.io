@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
+<html lang="de"> <!-- Sets the language to German for correct hyphenation. -->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Migrationsleitfaden IsyFact 3.0 (DEV) :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/changelog/migrationsleitfaden.html">
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <link rel="stylesheet" href="../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../_/css/isyfact.css">
@@ -365,13 +365,10 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Styleguide</span>
+    <span class="nav-text">Bedienkonzept</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../isy-styleguide/styleguide.html">Styleguide</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../isy-bedienkonzept/bedienkonzept.html">Bedienkonzept</a>
   </li>
 </ul>
   </li>
@@ -435,20 +432,35 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
   </li>
-  <li class="nav-item" data-depth="3">
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Spezifikation</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
+    <a class="nav-link" href="../methodik/vorlage-systemspezifikation/master.html">Systemspezifikation</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
+    <a class="nav-link" href="../methodik/vorlage-schnittstellendokumentation/master.html">Schnittstellen­dokumentation</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+    <a class="nav-link" href="../methodik/anleitung-datenflussdiagramme/master.html">Anleitung für Datenflussdiagramme</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
   </li>
 </ul>
   </li>
@@ -594,7 +606,8 @@
     <li><a href="migrationsleitfaden.html">Migrationsleitfaden IsyFact 3.0 (DEV)</a></li>
   </ul>
 </nav>
-</div>
+  <div class="edit-this-page"><a href="https://github.com/IsyFact/isyfact-standards/edit/master/isyfact-standards-doc/src/docs/antora/modules/changelog/pages/migrationsleitfaden.adoc">Edit this Page</a></div>
+  </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Inhalt" data-levels="3">
   <div class="toc-menu"></div>
@@ -627,7 +640,80 @@ Die Nutzung ist unter den <a href="../../../glossary/latest/literaturextern/inha
 <div class="sect1">
 <h2 id="kapitel-geschaeftsanwendung"><a class="anchor" href="#kapitel-geschaeftsanwendung"></a>1. Geschäftsanwendung</h2>
 <div class="sectionbody">
-
+<div class="sect2">
+<h3 id="kapitel-bridge-module"><a class="anchor" href="#kapitel-bridge-module"></a>1.1. Bridge-Module</h3>
+<div class="paragraph">
+<p>Die drei in IsyFact 2 eingeführten Bridge-Module</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>isy-serviceapi-core-bridge</code></p>
+</li>
+<li>
+<p><code>isy-serviceapi-sst-bridge</code></p>
+</li>
+<li>
+<p><code>isy-exception-sst-bridge</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>entfallen in IsyFact 3.
+In einer Anwendung, die bisher Bridge-Module verwendet und auf IsyFact 3 umgestellt werden soll, müssen daher Anpassungen vorgenommen werden.
+Die Tabelle <a href="#table-bridge-module">Abhängigkeiten in IsyFact 2 vs. IsyFact 3</a> zeigt für jedes der drei Bridge-Module, durch welches Modul es ersetzt wird.
+Dabei ist zu beachten, dass zwei der Ersatzmodule eine Abhängigkeit zu IsyFact-1.x haben.</p>
+</div>
+<table id="table-bridge-module" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Abhängigkeiten in IsyFact 2 vs. IsyFact 3</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Abhängigkeit in IsyFact 2</th>
+<th class="tableblock halign-left valign-top">Abhängigkeit in IsyFact 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy-serviceapi-core-bridge</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy-serviceapi-core</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy-serviceapi-sst-bridge</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy-serviceapi-sst</code>, Version <code>1.11.1</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy-exception-sst-bridge</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy-exception-sst</code>, Version <code>1.11.1</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Zudem wird die Klasse</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">de.bund.bva.isyfact.exception.service.bridge.util.BridgeExceptionMapper</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>ersetzt durch:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">de.bund.bva.isyfact.serviceapi.common.exception.ExceptionMapper</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="kapitel-ueberwachung"><a class="anchor" href="#kapitel-ueberwachung"></a>1.2. Überwachung</h3>
+<div class="paragraph">
+<p>Es sind die <a href="../isy-ueberwachung/nutzungsvorgaben/master.html" class="xref page">Nutzungsvorgaben Überwachung</a> zu IsyFact 3 zu verwenden.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -635,18 +721,638 @@ Die Nutzung ist unter den <a href="../../../glossary/latest/literaturextern/inha
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="kapitel-batchrahmen"><a class="anchor" href="#kapitel-batchrahmen"></a>2.1. Batchrahmen</h3>
+<div class="paragraph">
+<p>In IsyFact 3.0 wurde mit der Umstellung auf <code>isy-security</code> das Detailkonzept zur <a href="../blaupausen/detailkonzept-komponente-batch/inhalt.html#authentifizierung-und-autorisierung" class="xref page">Authentifizierung und Autorisierung</a> aktualisiert.
+Statt Benutzer, Passwort und BHKNZ muss in der Batch-Konfiguration eine <code>oauth2ClientRegistrationId</code> konfiguriert werden (siehe <a href="../blaupausen/detailkonzept-komponente-batch/inhalt.html#table-CharBatUse" class="xref page">Eigenschaften eines Batchbenutzers</a>)</p>
+</div>
+<div id="batch-configuration-isy-sicherheit" class="listingblock">
+<div class="title">Listing 1. Batch-Konfiguration zur Verwendung von isy-sicherheit in IsyFact 2</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">batch.benutzer=TestUser
+batch.passwort=TestPasswort
+batch.bhknz=TestBHKNZ
 
+# [...]</code></pre>
+</div>
+</div>
+<div id="batch-configuration-isy-security" class="listingblock">
+<div class="title">Listing 2. Batch-Konfiguration zur Verwendung von isy-security in IsyFact 3</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">batch.oauth2ClientRegistrationId=TestClient
+
+# [...]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Eine entsprechende Spring Security ClientRegistration wird durch <code>isy-security</code> <a href="../isy-security/nutzungsvorgaben/master.html#konfigurationsparameter" class="xref page">Konfigurationsparameter</a> bereitgestellt.
+Die folgenden Beispiele zeigen wie Konfigurationen nach der Migration aussehen können.
+Für die Batch-Konfiguration ist nicht relevant, ob die ClientRegistration den Resource-Owner-Password-Credentials Flow (<code>authorization-grant-type: password</code>) oder nach der empfohlenen Migration von technischen Nutzern zu Confidential Clients den Client-Credentials Flow (<code>authorization-grant-type: client_credentials</code>) nutzt.</p>
+</div>
+<div class="listingblock">
+<div class="title">Listing 3. Batch-Konfiguration mit technischen Nutzer</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">batch.oauth2ClientRegistrationId=TestClient
+
+# [...]
+
+spring.security.oauth2.client.provider.TestRealm.issuer-uri=http://localhost:9095/auth/realms/testrealm
+spring.security.oauth2.client.registration.TestClient.client-id=test-client-id
+spring.security.oauth2.client.registration.TestClient.client-secret=test-client-secret
+spring.security.oauth2.client.registration.TestClient.authorization-grant-type=password
+spring.security.oauth2.client.registration.TestClient.provider=TestRealm
+
+# Benutzer, Passwort und BHKNZ werden auf die selbe registrationId abgebildet
+isy.security.oauth2.client.registration.TestClient.username=TestUser
+isy.security.oauth2.client.registration.TestClient.password=TestPasswort
+isy.security.oauth2.client.registration.TestClient.bhknz=TestBHKNZ</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Listing 4. Batch-Konfiguration nach Umstellung von <em>technischem Nutzer</em> auf <em>technischen Client</em></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">batch.oauth2ClientRegistrationId=TestClient
+
+# [...]
+
+spring.security.oauth2.client.provider.TestRealm.issuer-uri=http://localhost:9095/auth/realms/testrealm
+spring.security.oauth2.client.registration.TestClient.client-id=test-user-client-id
+spring.security.oauth2.client.registration.TestClient.client-secret=test-user-client-secret
+spring.security.oauth2.client.registration.TestClient.authorization-grant-type=client_credentials
+spring.security.oauth2.client.registration.TestClient.provider=TestRealm</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Die Bausteine <code>isy-sicherheit</code> und <code>isy-sicherheit-keycloak</code> werden durch <code>isy-security</code> abgelöst.</p>
+</div>
+<div class="sect3">
+<h4 id="sicherheit-konfiguration"><a class="anchor" href="#sicherheit-konfiguration"></a>2.1.1. Konfiguration</h4>
+<div class="paragraph">
+<p>Eine Beschreibung der Parameter findet sich in den <a href="../isy-security/nutzungsvorgaben/master.html#konfigurationsparameter" class="xref page">Nutzungsvorgaben Security</a> und der <a href="../../../glossary/latest/literaturextern/inhalt.html#litextern-spring-security-properties" class="xref page">Dokumentation von Spring Security</a>.</p>
+</div>
+<div class="paragraph">
+<p><a href="#table-sicherheit-konfiguration">Tabelle 1</a> gibt eine Übersicht über die zu ändernden Parameter.
+Die <code>instances[n]</code> Notation aus den isy-sicherheit-keycloak Properties wird in isy-security nicht länger unterstützt.
+Jede Instanz soll durch eine sprechende und eindeutige <code>registration-id</code> ersetzt werden.
+Falls mehrere Instanzen für das gleiche Realm konfiguriert wurden, kann der <code>provider-name</code> pro Realm einmalig konfiguriert und für mehrer OAuth 2.0 Client Registrations (<code>registration-id</code>) wiederverwendet werden.</p>
+</div>
+<div class="paragraph">
+<p>Aus Platzgründen wurde in der ersten Spalte auf das <code>isy.sicherheit.keycloak</code> Präfix verzichtet.
+Analog wurde bei allen Properties der zweiten Spalte, die mit einem Punkt beginnen, auf das Präfix <code>spring.security.oauth2.client</code> verzichtet.</p>
+</div>
+<table id="table-sicherheit-konfiguration" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 2. Änderung der Konfigurationsparameter</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">isy-sicherheit(-keycloak)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">isy-security</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bemerkung</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.auth-server-url</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>spring.security.resourceserver.jwt.issuer-uri</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issuer, gegen den einkommende Bearer Tokens validiert werden sollen. An den bisherigen Wert wird <code>/realms/&lt;realm-name&gt;</code> angehängt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.auth-server-url</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.provider.&lt;provider-name&gt;.issuer-uri</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Für die Verwendung in Kombination mit einer Spring Client Registration. An den bisherigen Wert wird <code>/realms/&lt;realm-name&gt;</code> angehängt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.realm</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entfällt, da Teil der <code>issuer-uri</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.registration.&lt;registration-id&gt;.provider</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Neu, verbindet die Spring Client Registration und Provider Definition.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.resource</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.registration.&lt;registration-id&gt;.client-id</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Neu, Authentifizierungsidentifier der <em>ConfidentialClient</em>-Applikation im Autorisierungsserver.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.credentials-secret</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.registration.&lt;registration-id&gt;.client-secret</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Neu, Authentifizierungs-Secret, das nur der ConfidentialClient-Anwendung und dem Autorisierungsserver bekannt ist.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.registration.&lt;registration-id&gt;.authorization-grant-type=password</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Neu, da ein zusätzlicher OAuth Flow unterstützt wird. Der Wert <code>password</code> entspricht dem bisherigen Flow in <code>isy-sicherheit-keycloak</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.bearer-only</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">entfällt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.standard-zertifikat-ou</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy.security.oauth2.client.default-certificate-ou</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.bhknz-header-name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy.security.oauth2.client.bhknz-header-name</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy.security.oauth2.registration.&lt;registration-id&gt;.username</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Neu, für <em>ConfidentialClient</em>-Konfiguration der geänderte Pfad für Property <code>username</code>, mit <em>isy-security</em> nun innerhalb einer <em>Spring konformen ClientRegistration</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy.security.oauth2.registration.&lt;registration-id&gt;.password</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Neu,  für <em>ConfidentialClient</em>-Konfiguration der geänderte Pfad für Property <code>password</code>, mit <em>isy-security</em> nun innerhalb einer <em>Spring konformen ClientRegistration</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy.security.oauth2.registration.&lt;registration-id&gt;.bhknz</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Neu, für <em>ConfidentialClient</em>-Konfiguration der geänderte Pfad für Property <code>bhknz</code>, mit <em>isy-security</em> nun innerhalb einer <em>Spring konformen ClientRegistration</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.default-instance</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">entfällt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.ext-auth-server-url</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">entfällt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.expected-realm-type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">entfällt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.expected-realm</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">entfällt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.cert-header-name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">entfällt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.cert-dn-header-name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">entfällt</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="sicherheit-annotation-gesichert"><a class="anchor" href="#sicherheit-annotation-gesichert"></a>2.1.2. @Gesichert</h4>
+<div class="paragraph">
+<p>Die Annotation <code>@Gesichert</code> wird ersetzt durch die Spring-Annotation <code>@Secured</code>.
+Analog wird die Klasse <code>GesichertInterceptor</code> abgelöst durch <code>SecuredInterceptor</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>@Secured</code> akzeptiert in <code>isy-security</code> nur Parameter, die mit <code>PRIV_</code> beginnen.
+Beim Abbilden von Rollen auf Rechte wird in <code>isy-security</code> das Präfix <code>PRIV_</code> automatisch gesetzt.
+Dies verdeutlicht die Abgrenzung zu Rollen, für die Spring das Präfix <code>ROLE_</code> verwendet.</p>
+</div>
+<div class="paragraph">
+<p><code>@Gesichert("RECHT_A")</code> muss daher geändert werden zu <code>@Secured("PRIV_Recht_A")</code>.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Werden mehrere Rechte an die Annotation übergeben, so sind sie bei <code>@Gesichert</code> konjunktiv verknüpft (= alle übergebenen Rechte müssen vorhanden sein).
+Bei der Verwendung von <code>@Secured</code> sind die übergebenen Rechte hingegen disjunktiv verknüpft (= es genügt, wenn eines der Rechte vorhanden ist).</p>
+</div>
+<div class="paragraph">
+<p>Um konjunktive Verknüpfungen auch weiterhin umzusetzen, sollte <code>@PreAuthorize</code>  verwendet werden.
+<code>@PreAuthorize</code> ist für die Prüfung eines einzigen Rechtes äquivalent zu <code>@Secured</code>, nutzt aber die Spring Expression Language.
+Daher sind Ausdrücke möglich wie</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">@PreAuthorize("hasAuthority('PRIV_Recht_A') and hasAuthority('PRIV_Recht_B')")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In <code>isy-security</code> ist die Verwendung von <code>@PreAuthorize</code> nicht aktiviert.
+Falls <code>@PreAuthorize</code> verwendet werden soll, muss die Verwendung im aufrufenden Projekt mit der Konfiguration <code>@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)</code> erlaubt werden.
+Alternativ kann in diesem Fall auch die neuere Annotation <code>@EnableMethodSecurity</code> verwendet werden, bei der <code>prePostEnabled = true</code> standardmäßig gesetzt ist.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sicherheit-berechtigungsmanager"><a class="anchor" href="#sicherheit-berechtigungsmanager"></a>2.1.3. Berechtigungsmanager</h4>
+<div class="paragraph">
+<p>Im Interface <code>Berechtigungsmanager</code> ändern sich die Rückgabewerte der Methoden <code>getRechte()</code> und <code>getRollen()</code> zu <code>Set&lt;String&gt;</code>.
+Grund dafür ist, dass die POJOs <code>Recht</code> und <code>Rolle</code> abgeschafft und durch <code>String</code>-Werte ersetzt wurden.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sicherheit-interface-sicherheit"><a class="anchor" href="#sicherheit-interface-sicherheit"></a>2.1.4. Interface Sicherheit</h4>
+<div class="paragraph">
+<p>Das Interface <code>Sicherheit</code> wird abgelöst durch das Interface <code>Security</code>.
+Folgende Änderungen sind dabei relevant:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Methode <code>getBerechtigungsManagerUndAuthentifiziere()</code> wird entfernt und durch zwei neue Methoden im Interface <code>Security</code> ersetzt. Die Aufgaben sind hierbei wie folgt verteilt:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Methode <code>getAuthentifizierungsmanager()</code> liefert das Interface <code>Authentifizierungsmanager</code> zurück, über dessen Implementierung dann eine Authentifizierung mit dem konfigurierten OpenID Connect Provider (bspw. Keycloak) durchgeführt werden kann.
+Nach erfolgreicher Authentifizierung wird das Bearer Token im Spring Security Context hinterlegt (siehe Nutzungsvorgaben zu <code>Authentifizierungsmanager</code>).</p>
+</li>
+<li>
+<p>Die Methode <code>getBerechtigungsmanager()</code> liefert das Interface <code>Berechtigungsmanager</code> zurück, über dessen Implementierung dann auf die im <em>Bearer Token</em> enthaltenen <em>Autorisierungsinformationen</em> zugegriffen werden kann.
+Konkret sind in dem Interface <code>Berechtigungsmanager</code> Methoden definiert, über dessen Implementierung Berechtigungen und Rollen abgefragt werden können (siehe <a href="../isy-security/nutzungsvorgaben/inhalt.html#attr-token-abfragen" class="xref page">Nutzungsvorgaben isy-security</a>).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Die Methode <code>leereCache()</code> entfällt.</p>
+</li>
+<li>
+<p>Wie in Abschnitt <a href="#sicherheit-berechtigungsmanager">Berechtigungsmanager</a> beschrieben, ändert sich der Rückgabewerte der Methode <code>Set&lt;Rolle&gt;</code> zu <code>Set&lt;String&gt;</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sicherheit-annotation-nutzerauth"><a class="anchor" href="#sicherheit-annotation-nutzerauth"></a>2.1.5. @NutzerAuthentifizierung</h4>
+<div class="paragraph">
+<p>Die Annotation <code>@NutzerAuthentifizierung</code> wird entfernt und durch eine neue Annotation <code>@Authenticate</code> ersetzt.</p>
+</div>
+<div class="paragraph">
+<p>Der Annotation <code>@Authenticate</code> wird die Client-Registration-ID eines OAuth2.0-Clients übergeben.
+Der entsprechende Client muss dafür gemäß den <a href="../isy-security/nutzungsvorgaben/master.html#konfigurationsparameter" class="xref page">Nutzungsvorgaben Security</a> konfiguriert sein.
+Hierfür werden die <code>OAuth2ClientProperties</code> verwendet, sodass bei der Nutzung von <code>@Authenticate</code> gegenüber <code>@NutzerAuthentifizierung</code> die Notwendigkeit für das
+Erstellen der <code>NutzerAuthentifizierungProperties</code> entfällt.
+Entsprechend muss allerdings die <code>spring-security-oauth2-client</code>-Dependency eingebunden sein.</p>
+</div>
+<div class="paragraph">
+<p>Zusätzliche für die Aktivierung der Annotation notwendige Beans müssen nicht mehr definiert werden,
+da diese durch die <code>IsyOAuth2ClientAutoConfiguration</code> erstellt werden, solange die Gegebenheiten für die Erstellung von ClientRegistrations vorhanden sind.</p>
+</div>
+<div class="paragraph">
+<p>Beispiel für die Konfiguration mit <code>@NutzerAuthentifizierung</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">@NutzerAuthentifizierung(benutzer = "test-benutzer")</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">&lt;property-prefix&gt;.benutzer.test-benutzer.kennung = benutzer-name
+&lt;property-prefix&gt;.benutzer.test-benutzer.passwort = super_secret_password
+&lt;property-prefix&gt;.benutzer.test-benutzer.bhknz = 123456</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Beispiel für die Konfiguration mit <code>@Authenticate</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">@Authenticate(oauth2ClientRegistrationId = "test-client") // fest</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>oder</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">@Authenticate(oauth2ClientRegistrationId = "${test-project.client-id}") // mit Property-Platzhalter</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Die Client-ID kann sowohl fest als auch in Form eines Property-Platzhalters an die Annotation gegeben werden.
+Beispiele für weitere Schreibweisen sind in den
+<a href="../isy-security/nutzungsvorgaben/master.html#annotation-method-auth" class="xref page">Nutzungsvorgaben Security</a>
+zu finden.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties"># Property-Platzhalter
+test-project.client-id = test-client
+
+spring.security.oauth2.client.provider.testrealm.issuer-uri = http://localhost:12345/auth/realms/testrealm
+
+spring.security.oauth2.client.registration.test-client.client-id = client-credentials-test-client
+spring.security.oauth2.client.registration.test-client.client-secret = super_secret_password
+spring.security.oauth2.client.registration.test-client.authorization-grant-type = client_credentials
+spring.security.oauth2.client.registration.test-client.provider = testrealm</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sicherheit-accessmanager"><a class="anchor" href="#sicherheit-accessmanager"></a>2.1.6. AccessManager und zugehörige Klassen</h4>
+<div class="paragraph">
+<p>Das Interface <code>AccessManager</code> sowie zugehörige Interfaces entfallen.
+Genauer wurden folgende Interfaces entfernt:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">de.bund.bva.isyfact.sicherheit.accessmgr.AccessManager
+de.bund.bva.isyfact.sicherheit.SicherheitAdmin
+de.bund.bva.isyfact.sicherheit.accessmgr.AuthentifizierungsErgebnis</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sicherheit-exceptions"><a class="anchor" href="#sicherheit-exceptions"></a>2.1.7. Exceptions</h4>
+<div class="paragraph">
+<p>Die Exceptions aus dem Paket <code>de.bund.bva.isyfact.sicherheit.common.exception</code> entfallen.
+Sie werden durch Exceptions aus <a href="../../../glossary/latest/literaturextern/inhalt.html#litextern-spring-security" class="xref page">Spring Security</a> ersetzt.</p>
+</div>
+<div class="paragraph">
+<p>Eine Ausnahme davon bildet die Exception</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">de.bund.bva.isyfact.sicherheit.common.exception.RollenRechteMappingException,</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>die ersetzt wird durch:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">de.bund.bva.isyfact.security.xmlparser.RolePrivilegesMappingException</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sicherheit-test-mock"><a class="anchor" href="#sicherheit-test-mock"></a>2.1.8. Mock für Testumgebungen</h4>
+<div class="paragraph">
+<p>Der Baustein <code>isy-security-test</code> stellt zum Erstellen von (automatisierten) Tests einen OpenId Connect Provider Mock bereit.
+Dieser löst den Keycloak Mock aus <code>isy-sicherheit-keycloak-test</code> ab.</p>
+</div>
+<div class="paragraph">
+<p>Die Klassen und Interfaces</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">de.bund.bva.isyfact.sicherheit.keycloak.test.EmbeddedKeycloakStub
+de.bund.bva.isyfact.sicherheit.keycloak.test.KeycloakMockBase
+de.bund.bva.isyfact.sicherheit.keycloak.test.EmbeddedKeycloakMock
+de.bund.bva.isyfact.sicherheit.keycloak.test.RemoteKeycloakMock
+de.bund.bva.isyfact.sicherheit.keycloak.test.RsaKeyGenerator</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>werden ersetzt durch:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">de.bund.bva.isyfact.security.test.oidcprovider.EmbeddedOidcProviderStub
+de.bund.bva.isyfact.security.test.oidcprovider.OidcProviderMockBase
+de.bund.bva.isyfact.security.test.oidcprovider.EmbeddedOidcProviderMock
+de.bund.bva.isyfact.security.test.oidcprovider.RemoteOidcProviderMock
+de.bund.bva.isyfact.security.test.RsaKeyGenerator</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dabei haben sich die Konstruktoren, Felder und Methodensignaturen leicht geändert.</p>
+</div>
+<div class="paragraph">
+<p><strong>Konstruktoren</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Konstruktoren haben keinen Parameter vom Typ <code>RsaKeyGenerator</code> mehr.
+Falls bisher ein Konstruktor verwendet wurde, der als einen der Parameter ein Objekt vom Typ <code>RsaKeyGenerator</code> empfängt, kann dieser Parameter bei der Umstellung gestrichen werden.</p>
+</li>
+<li>
+<p>Konstruktoren, die bisher zwei Objekte vom <code>java.security.PrivateKey</code> und <code>java.security.PublicKey</code> empfangen haben, wurden zusammengefasst in einem Objekt vom Typ <code>java.security.KeyPair</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Felder</strong></p>
+</div>
+<div class="paragraph">
+<p>Die Änderungen der Felder sind in den nachfolgenden Tabellen beschrieben.
+Die Namen der zugehörigen Getter-Methoden wurden angepasst.</p>
+</div>
+<table id="table-sicherheit-test-fields-EmbeddedKeycloakMock" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 3. Änderung der Felder in EmbeddedKeycloakMock</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">EmbeddedKeycloakMock (IFS 2)</th>
+<th class="tableblock halign-left valign-top">EmbeddedOidcProviderMock (IFS 3)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>WireMockServer keycloakServer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>WireMockServer oidcServerStub</code></p></td>
+</tr>
+</tbody>
+</table>
+<table id="table-sicherheit-test-fields-EmbeddedKeycloakStub" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 4. Änderung der Felder in EmbeddedKeycloakStub</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">EmbeddedKeycloakStub (IFS 2)</th>
+<th class="tableblock halign-left valign-top">EmbeddedOidcProviderStub (IFS 3)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String realm</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>URI issuer</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Methodensignaturen</strong></p>
+</div>
+<div class="paragraph">
+<p>Die Änderungen der Methodensignaturen sind in den nachfolgenden Tabellen beschrieben.</p>
+</div>
+<table id="table-sicherheit-test-methods-KeycloakMockBase" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 5. Änderung der Methodensignaturen in KeycloakMockBase</caption>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 40%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">KeycloakMockBase (IFS 2)</th>
+<th class="tableblock halign-left valign-top">OidcProviderMockBase (IFS 3)</th>
+<th class="tableblock halign-left valign-top">Änderung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addUser(String username, String password, String bhknz, Set&lt;String&gt; roles)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addUser(String clientId, String secret, String username, String password, Optional&lt;String&gt; bhknz, Set&lt;String&gt; roles)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">neue Parameter <code>String clientId</code> und <code>String secret</code></p></td>
+</tr>
+</tbody>
+</table>
+<table id="table-sicherheit-test-methods-EmbeddedKeycloakStub" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 6. Änderung der Methodensignaturen in EmbeddedKeycloakStub</caption>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 40%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">EmbeddedKeycloakStub (IFS 2)</th>
+<th class="tableblock halign-left valign-top">EmbeddedOidcProviderStub (IFS 3)</th>
+<th class="tableblock halign-left valign-top">Änderung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public JWK getJwk()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public JWKSet getJwkSet()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">geänderter Methodenname und Rückgabetyp</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public String getRealmKey()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public String getPublicKey()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">geänderter Methodenname</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public String getOIDCConfigResponse(String jwksEndpoint, String tokenEndpoint)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public String getOIDCConfigResponse(String jwksEndpoint, String authorizationEndpoint, String tokenEndpoint)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">zusätzlicher Parameter <code>String authorizationEndpoint</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public AccessToken getAccessToken(UUID userId, String userName, Optional&lt;String&gt; bhknz, Set&lt;String&gt; roles)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public JwtClaimsSet getAccessToken(UUID userId, String clientId, String userName, Optional&lt;String&gt; bhknz, Set&lt;String&gt; roles)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">zusätzlicher Parameter <code>String clientId</code>, geänderter Rückgabetyp</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public AccessToken getAccessToken(UUID userId, String userName, Optional&lt;String&gt; bhknz, Set&lt;String&gt; roles, int newTokenLifespan)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public JwtClaimsSet getAccessToken(UUID userId, String clientId, String userName, Optional&lt;String&gt; bhknz, Set&lt;String&gt; roles, int newTokenLifespan)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">zusätzlicher Parameter <code>String clientId</code>, geänderter Rückgabetyp</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public String getAccessTokenString(String userName, Optional&lt;String&gt; bhknz, Set&lt;String&gt; roles)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public String getAccessTokenString(String clientId, String userName, Optional&lt;String&gt; bhknz, Set&lt;String&gt; roles)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">zusätzlicher Parameter <code>String clientId</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public String getAccessTokenString(UUID userId, String userName, Optional&lt;String&gt; bhknz, Set&lt;String&gt; roles)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public String getAccessTokenString(UUID userId, String clientId, String userName, Optional&lt;String&gt; bhknz, Set&lt;String&gt; roles)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">zusätzlicher Parameter <code>String clientId</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public String getAccessTokenString(AccessToken token)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public String getAccessTokenString(JwtClaimsSet claims)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">geänderter Parametertyp</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public String getAccessTokenResponse(String userName, Optional&lt;String&gt; bhknz, Set&lt;String&gt; roles)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public String getAccessTokenResponse(String clientId, String userName, Optional&lt;String&gt; bhknz, Set&lt;String&gt; roles)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">zusätzlicher Parameter <code>String clientId</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public String getAccessTokenResponse(AccessToken accessToken)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>public String getAccessTokenResponse(JwtClaimsSet claims)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">geänderter Parametertyp</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="sect2">
-<h3 id="kapitel-sicherheit"><a class="anchor" href="#kapitel-sicherheit"></a>2.2. Sicherheit</h3>
+<h3 id="kapitel-task-scheduler"><a class="anchor" href="#kapitel-task-scheduler"></a>2.2. Task Scheduler</h3>
+<div class="paragraph">
+<p>In IsyFact 3.0 wurden mit der Umstellung auf <code>isy-security</code> die Nutzungsvorgaben zur <a href="../isy-task/nutzungsvorgaben/master.html#spring-konfiguration" class="xref page">Authentifizierung von Tasks</a> aktualisiert.
+Statt Benutzer, Passwort und BHKNZ (siehe <a href="#task-properties-isy-sicherheit">Properties mit isy-sicherheit in IsyFact 2</a>) muss in den Task Properties eine <code>oauth2ClientRegistrationId</code> konfiguriert werden (siehe <a href="#task-properties-isy-security">Properties mit isy-security in IsyFact 3</a>).</p>
+</div>
+<div id="task-properties-isy-sicherheit" class="listingblock">
+<div class="title">Listing 5. Properties mit isy-sicherheit in IsyFact 2</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.tasks.halloWeltTask.benutzer=TestUser
+isy.task.tasks.halloWeltTask.passwort=TestPasswort
+isy.task.tasks.halloWeltTask.bhkz=TestBHKNZ
 
+# [...]</code></pre>
+</div>
+</div>
+<div id="task-properties-isy-security" class="listingblock">
+<div class="title">Listing 6. Properties mit isy-security in IsyFact 3</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.tasks.halloWeltTask.oauth2ClientRegistrationId=TestClient
+
+# [...]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Eine entsprechende Spring Security ClientRegistration wird durch <code>isy-security</code> <a href="../isy-security/nutzungsvorgaben/master.html#konfigurationsparameter" class="xref page"> Konfigurationsparameter</a> bereitgestellt.
+Die folgenden Beispiele zeigen wie Konfigurationen nach der Migration aussehen können.
+Für die TaskScheduler-Konfiguration ist nicht relevant, ob die ClientRegistration den Resource-Owner-Password-Credentials Flow (<code>authorization-grant-type: password</code>) oder nach der empfohlenen User-Migration von einem <em>natürlichen User</em> auf ein <em>technischen Nutzer</em> den Client-Credentials Flow (<code>authorization-grant-type: client_credentials</code>) nutzt.</p>
+</div>
+<div class="listingblock">
+<div class="title">Listing 7. Properties mit technischem Nutzer</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.tasks.halloWeltTask.oauth2ClientRegistrationId=TestClient
+
+# [...]
+
+spring.security.oauth2.client.provider.TestRealm.issuer-uri=http://localhost:9095/auth/realms/testrealm
+spring.security.oauth2.client.registration.TestClient.client-id=test-client-id
+spring.security.oauth2.client.registration.TestClient.client-secret=test-client-secret
+spring.security.oauth2.client.registration.TestClient.authorization-grant-type=password
+spring.security.oauth2.client.registration.TestClient.provider=TestRealm
+
+# Benutzer, Passwort und BHKNZ werden auf die selbe oauth2ClientRegistrationId abgebildet
+
+isy.security.oauth2.client.registration.TestClient.username=TestUser
+isy.security.oauth2.client.registration.TestClient.password=TestPasswort
+isy.security.oauth2.client.registration.TestClient.bhknz=TestBHKNZ</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Listing 8. Properties nach Umstellung von <em>technischem Nutzer</em> auf <em>technischen Client</em></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.tasks.halloWeltTask.oauth2ClientRegistrationId=TestClient
+
+# [...]
+
+spring.security.oauth2.client.provider.TestRealm.issuer-uri=http://localhost:9095/auth/realms/testrealm
+spring.security.oauth2.client.registration.TestClient.client-id=test-user-client-id
+spring.security.oauth2.client.registration.TestClient.client-secret=test-user-client-secret
+spring.security.oauth2.client.registration.TestClient.authorization-grant-type=client_credentials
+spring.security.oauth2.client.registration.TestClient.provider=TestRealm</code></pre>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="kapitel-task-scheduler"><a class="anchor" href="#kapitel-task-scheduler"></a>2.3. Task Scheduler</h3>
-
-</div>
-<div class="sect2">
-<h3 id="kapitel-service"><a class="anchor" href="#kapitel-service"></a>2.4. Service</h3>
+<h3 id="kapitel-service"><a class="anchor" href="#kapitel-service"></a>2.3. Service</h3>
 <div class="admonitionblock warning">
 <table>
 <tr>
@@ -657,12 +1363,38 @@ Die Nutzung ist unter den <a href="../../../glossary/latest/literaturextern/inha
 <div class="paragraph">
 <p>Ab IsyFact 3 ist die <strong>Verwendung von REST-Schnittstellen</strong> für die Neuentwicklung verbindlich.
 Spring HTTP-Invoker ist deprecated und wird ab sofort als Schnittstellenformat durch REST abgelöst.
-Die Verwendung von REST-Schnittstellen wird im Baustein REST (siehe <a href="../isy-service-rest/konzept/master.html" class="xref page">Konzept REST</a> und <a href="../isy-service-rest/nutzungsvorgaben/master.html" class="xref page">Nutzungsvorgaben REST</a>) erläutert.</p>
+Die Verwendung von REST-Schnittstellen wird im Baustein REST (siehe <a href="../isy-service-rest/konzept/master.html" class="xref page">Konzept REST</a> und <a href="../isy-service-rest/nutzungsvorgaben/master.html" class="xref page">Nutzungsvorgaben REST</a>) erläutert.
+Desweiteren wurden die Bridge-Module <code>isy-serviceapi-core-bridge</code>, <code>isy-serviceapi-sst-bridge</code> und <code>isy-exception-sst-bridge</code> entfernt.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Mit der Verwendung von <code>isy-security</code> in der IsyFact 3 wird standardmäßig anstelle von IsyFacts <code>AufrufKontext</code> Springs <code>SecurityContext</code> verwendet.</p>
+</div>
+<div class="paragraph">
+<p>Damit dennoch alte HTTP-Invoker Schnittstellen aufgerufen werden können (welche einen gefüllten AufrufKontext benötigen), wird eine spezielle <code>RemoteInvocationFactory</code> eingesetzt, welche Springs <code>SecurityContext</code> in ein <code>AufrufKontextTo</code> ad hoc per Request umwandelt.</p>
+</div>
+<div class="paragraph">
+<p>Weitere Informationen können unter
+<a href="../isy-serviceapi-core/nutzungsvorgaben/inhalt.html#kompatibilitaet_if1_2_3" class="xref page">Nutzungsvorgaben HTTP-Invoker</a> nachgelesen werden.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="kapitel-sicherheit"><a class="anchor" href="#kapitel-sicherheit"></a>2.4. Sicherheit</h3>
+
 </div>
 </div>
 </div>

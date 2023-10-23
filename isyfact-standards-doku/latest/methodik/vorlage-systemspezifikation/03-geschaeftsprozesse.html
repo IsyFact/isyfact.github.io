@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="de"> <!-- Sets the language to German for correct hyphenation. -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Untitled :: IsyFact Dokumentation</title>
+    <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/methodik/vorlage-systemspezifikation/03-geschaeftsprozesse.html">
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../_/css/isyfact.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="isyfact-standards-doku" data-version="3.0.0-SNAPSHOT">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../einstieg/einstieg.html">IsyFact Standards</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../einstieg/einstieg.html">Einstieg</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../einstieg/vorstellung.html">Vorstellung der IsyFact</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/isyfact-standards.html">IsyFact-Standards</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/isyfact-erweiterungen.html">IsyFact-Erweiterungen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/rahmenbedingungen.html">Rahmenbedingungen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/erste-schritte.html">Erste Schritte</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../einstieg/produkte.html">Eingesetzte Produkte</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/produktkatalog/produktvorgabenAllgemein.html">Allgemeine Produktvorgaben</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/produktkatalog/technologiestackJavaSpring.html">Java/Spring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/produktkatalog/technologiestackTypescriptAngular.html">Typescript/Angular</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/produktkatalog/negativliste.html">Negativliste</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/produktkatalog/lebenszyklus.html">Lebenszyklus</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/produktkatalog/changelog.html">Changelog</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/tutorial/master.html">Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/whitepaper.html">Whitepaper</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../blaupausen/blaupausen.html">Blaupausen</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../blaupausen/referenzarchitektur/master.html">Referenzarchitektur</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../blaupausen/referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/einordnung-ziele.html">Datenzugriff</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/persistenzlogik.html">Konzeption der Persistenzlogik</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/versionierung.html">Versionierung von Datenbankschemas</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-service/master.html">Service</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-web-gui/master.html">Web GUI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-batch/master.html">Batch</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Vorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/vorgaben-architektur/summaryArchitectureRules.html">Architektur</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/vorgaben-it-sicherheit/summarySecurityRules.html">IT-Sicherheit</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../bausteine/bausteine.html">Bausteine</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Datum &amp; Zeit</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-datetime/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-datetime/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Fehlerbehandlung</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-exception-core/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-exception-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">HttpInvoker</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-serviceapi-core/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">JPA/Hibernate</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../isy-persistence/konzept.html">Konzept</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/vorgaben-konventionen.html">Vorgaben und Konventionen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung-mit-liquibase.html">Versionierung (Liquibase)</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nutzungsvorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/umsetzung-datenzugriff.html">Umsetzung des Datenzugriffs</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/konfiguration.html">Konfiguration des O/R-Mappings</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Konfiguration</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-konfiguration/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-konfiguration/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Logging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-logging/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-logging/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Polling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-polling/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-polling/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-service-rest/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-service-rest/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sicherheit</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sicherheit/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sicherheit/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sonderzeichen</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sonderzeichen/konzept/sonderzeichen.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sonderzeichen/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Task Scheduling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../isy-task/konzept.html">Konzept</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-task/konzept/erweiterung-spring.html">Task Scheduling mit Spring</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-task/konzept/integration-isyfact.html">Integration der IsyFact in das Task Scheduling</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-task/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Überwachung</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-ueberwachung/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-ueberwachung/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Util</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-util/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Bedienkonzept</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-bedienkonzept/bedienkonzept.html">Bedienkonzept</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">JSF</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../isyfact-jsf-doku/latest/isy-web/konzept/konzept.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../isyfact-jsf-doku/latest/isy-web/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../plattform/plattform.html">Plattform</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../methodik.html">Methodik</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../namenskonventionen/master.html">Namenskonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../versionierung/master.html">Versionierung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../typescript-programmierkonventionen/master.html">TypeScript Programmierkonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../diagrammerstellung/diagramsnet.html">diagrams.net</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../vorlagen.html">Vorlagen</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Spezifikation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="master.html">Systemspezifikation</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../vorlage-schnittstellendokumentation/master.html">Schnittstellen­dokumentation</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../anleitung-datenflussdiagramme/master.html">Anleitung für Datenflussdiagramme</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vorlage-systementwurf/antora-master.html">Systementwurf</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/werkzeuge.html">Werkzeuge</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Antora (empfohlen)</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/erstellung/erstellung-antora.html">Seiten anlegen</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/bearbeitung/bearbeitung-antora.html">Seiten bearbeiten</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/generierung/generierung-antora.html">Projektseite erzeugen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AsciidoctorJ</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/erstellung/erstellung-asciidoctorj.html">Neue Dokumente anlegen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/bearbeitung/bearbeitung-asciidoctorj.html">Dokumente bearbeiten</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/generierung/generierung-asciidoctorj.html">PDF- und HTML-Dokumente erzeugen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/changelog/changelog-doku.html">Zentralisiertes und automatisiertes Changelog</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/gui-tests/gui-tests-mit-selenium.html">GUI-Tests mit Selenium</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../changelog/aenderungen.html">Änderungen Version 3.0 (DEV)</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../changelog/releasenotes.html">Release Notes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../changelog/changelog.html">Changelog</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../changelog/migrationsleitfaden.html">Migrationsleitfaden IsyFact 3.0 (DEV)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">IsyFact Standards</span>
+    <span class="version">3.0 (DEV)</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../glossary/latest/glossary/master.html">Glossar</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../glossary/latest/glossary/master.html">1.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../einstieg/einstieg.html">IsyFact Standards</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../einstieg/einstieg.html">3.0 (DEV)</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../isyfact-jsf-doku/latest/isy-web/konzept/konzept.html">JavaServer Faces (JSF)</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../isyfact-jsf-doku/latest/isy-web/konzept/konzept.html">5.3</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../einstieg/einstieg.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/IsyFact/isyfact-standards/edit/master/isyfact-standards-doc/src/docs/antora/modules/methodik/pages/vorlage-systemspezifikation/03-geschaeftsprozesse.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Inhalt" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<div class="sect1">
+<h2 id="geschaeftsprozesse"><a class="anchor" href="#geschaeftsprozesse"></a>1. Geschäftsprozesse</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Die Spezifikation der Geschäftsprozesse beschreibt die fachlichen Abläufe, in die das zu erstellende Anwendungssystem eingebettet ist.
+Sie dienen dazu, die Systemgrenzen festzulegen, sowie den Kontext der Systembenutzung zu identifizieren und zu verstehen.
+Ein Geschäftsprozess wird oft nicht durch ein einzelnes Anwendungssystem, sondern erst durch das Zusammenspiel verschiedener Anwendungssysteme beim Kunden und den an seine Anwendungssysteme angeschlossenen externen Anwendungen umgesetzt.
+Entsprechend kann es sinnvoll sein, das Geschäftsprozessmodell als eigenes Dokument unabhängig von der restlichen Systemspezifikation zu notieren.</em></p>
+</div>
+<div class="paragraph">
+<p><em>Geschäftsprozessmodelle helfen dem Auftragnehmer, den geschäftlichen Kontext des Auftraggebers zu verstehen.
+Für den Auftraggeber sind sie eine gute Basis, um Chancen für Prozessoptimierungen zu erkennen.
+Dieses Verständnis ist besonders dann wichtig, wenn bei einem Ablauf Objekte (d.h. physische Dinge und Daten) zwischen Personen und Organisationseinheiten weitergegeben werden sollen und dieser Ablauf durch ein Anwendungssystem unterstützt wird.
+Ist das Verständnis über diesen Ablauf bisher nicht vorhanden (im Team des Auftragnehmers und beim Auftraggeber), dient die Geschäftsprozessmodellierung dem Erkenntnisgewinn.
+Sind die Geschäftsprozesse bereits an anderer Stelle modelliert und beschrieben, wird hier diese Stelle referenziert.</em></p>
+</div>
+<div class="paragraph">
+<p><em>Die wesentlichen Bestandteile der Spezifikation der Geschäftsprozesse sind Organigramm und Prozessbeschreibung.
+Ist- und Soll-Prozesse sollen getrennt beschrieben werden.</em></p>
+</div>
+<div class="paragraph">
+<p><em>Die folgenden Fehler beim Einsatz der Geschäftsprozessmodellierung müssen vermieden werden:</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Falscher Einsatzbereich<br>
+Für isolierte "Trivialanwendungen" (Datenpflege, Reporting) bringen Geschäftsprozessmodelle keine weiteren Erkenntnisse.
+Hier reicht es aus, die Schritte zu benennen und (später) als Anwendungsfälle kurz zu beschreiben.
+Eine grafische Darstellung des Ablaufes in Form von Geschäftsprozessmodellen ist überflüssig.</em></p>
+</li>
+<li>
+<p><em>Zu große Detaillierung<br>
+Die Abfolge von Eingaben und Masken an der Benutzeroberfläche sollte kein Inhalt des Geschäftsprozessmodells sein.
+Sie wird im Baustein Dialogspezifikation textuell oder als Interaktionsdiagramm beschrieben.</em></p>
+</li>
+<li>
+<p><em>Überspezifikation<br>
+Beschreibung von explizit modellierten Sachverhalten in Beschreibungstexten oder umgekehrt.
+Ein häufiges Beispiel für Überspezifikation (und Verletzung der Unabhängigkeit von der Implementierung) sind Bezeichner für Aktivitäten, die die assoziierten Anwendungssysteme enthalten.</em></p>
+</li>
+<li>
+<p><em>Mangelnde Fokussierung<br>
+Fachbereiche können den Anspruch haben, sämtliche Stützprozesse detailliert zu modellieren.
+Dies bringt aber für die Analyse der Kernprozesse häufig keinen Mehrwert, sondern im Gegenteil, die Stützprozesse machen das Prozessmodell unübersichtlicher.
+Zum Beispiel lohnt es sich nicht, die Aktivitäten für Posteingang, Hauspost und Aktenhaltung mit zu modellieren – es sein denn, es geht um die Einführung eines Dokumenten-Management-Systems.</em></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>Die Modellierung von Geschäftsprozessen verfolgt immer ein konkretes Ziel.
+Dies ist meist die Feststellung von Optimierungsbedarfen bzgl. der Organisation der Abläufe oder der IT-Unterstützung.
+Je nach Ziel des Projekts muss im Vorfeld festgelegt werden, welche Elemente im Modell enthalten sein müssen und welche nicht für die Erreichung des Ziels notwendig sind.
+So ist für die Feststellung eines IT-Optimierungspotenzials die Modellierung von Anwendungssystemen essentiell, weniger aber die Modellierung von Akteuren oder Wahrscheinlichkeiten für das Durchlaufen einzelner Zweige im Modell.</em></p>
+</div>
+<div class="paragraph">
+<p><em>Die Abläufe innerhalb eines Geschäftsprozesses unterteilen sich in Geschäftsvorfälle, die wiederum aus einzelnen Aktivitäten bestehen.
+Daraus ergibt sich für die Beschreibung die folgende Struktur des Dokuments.
+Auch hier muss bei der Festlegung der Ziele für die Prozessmodellierung festgelegt werden, bis zu welchem Detaillierungsgrad die Modellierung sinnvoll ist. Z.B. kann es genügen, die Geschäftsprozesse und –vorfälle textuell und grafisch zu beschreiben, die Aktivitäten hingegen nur textuell in der Beschreibung der Geschäftsvorfälle zu definieren.</em></p>
+</div>
+<div class="paragraph">
+<p><em>Die Geschäftsprozesse werden in der Masterspezifikation als eigenes Dokument gepflegt.
+Änderungen an den Geschäftsprozessen werden spätestens mit der Übernahme der Systemspezifikation in die Masterspezifikation nachgepflegt.</em></p>
+</div>
+<div class="sect2">
+<h3 id="gesamtverfahren-name-gesamtverfahrens"><a class="anchor" href="#gesamtverfahren-name-gesamtverfahrens"></a>1.1. Gesamtverfahren &lt;Name des Gesamtverfahrens&gt;</h3>
+<div class="paragraph">
+<p><em>Ein Kontextdiagramm zeigt alle Geschäftsprozesse mit beteiligten Organisationseinheiten und Anwendungssystemen (UML-Aktivitätendiagramm).</em></p>
+</div>
+<div id="beispiel-gesamtverfahren" class="imageblock">
+<div class="content">
+<img src="../_images/vorlage-systemspezifikation/beispiel-gesamtverfahren.png" alt="beispiel gesamtverfahren">
+</div>
+<div class="title">Abbildung 1. Gesamtverfahren &lt;Name des Gesamtverfahrens&gt;</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Erstellung des Diagramms im Enterprise Architect:</p>
+</div>
+<div class="paragraph">
+<p><em>Man zieht Organisationseinheiten aus dem UML-Profil „Organisation“ in ein Analysis-Diagramm und benennt sie mit Präfix „ORG_“.
+Dann zieht man den Ordner des Gesamtverfahrens in das Diagramm und blendet seine Inhalte aus.
+Man zieht neue Geschäftsprozesse und Anwendungssysteme aus dem UML-Profil „Prozesse“ in das Diagramm und benennt sie mit Präfix „GEP_“ bzw. „SYS_“.
+Schließlich nutzt man den Verbinder IstBeteiligtAn, um die Organisationseinheiten und die Systeme mit den Geschäftsprozessen zu verbinden.</em></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="geschaeftsprozess-gep-bezeichnung-geschaeftsprozesses"><a class="anchor" href="#geschaeftsprozess-gep-bezeichnung-geschaeftsprozesses"></a>1.1.1. Geschäftsprozess GEP_&lt;Bezeichnung des Geschäftsprozesses&gt;</h4>
+<div class="paragraph">
+<p><em>Ein Geschäftsprozess ist eine funktions- und stellenübergreifende Folge von Arbeitsschritten zur Erreichung eines geplanten Arbeitsergebnisses in einer Organisation (Unternehmen, Behörde, etc.).
+Er dient direkt oder indirekt zur Erzeugung einer Leistung für einen Kunden oder den Markt.
+Ein Geschäftsprozess kann sich aus Aufgaben im Sinn von elementaren Tätigkeiten (Aktivitäten) zusammensetzen.
+Diese Aktivitäten werden zu Geschäftsvorfällen zusammengefasst, welche die Bestandteile des Geschäftsprozesses bilden.</em></p>
+</div>
+<div class="paragraph">
+<p><em>Als zu verwendende Namenskonvention beginnen alle Geschäftsprozessnamen mit dem Präfix „GEP_“, gefolgt von einem Substantiv und ggf. einem Unterstrich und einem Verb.
+Bei der Wahl des Namens ist darauf zu achten, dass dieser kurz und prägnant ist.</em></p>
+</div>
+<div class="paragraph">
+<p><em>Der Geschäftsprozess wird textuell beschrieben, wobei das Ziel, die beteiligten Organisationseinheiten und der Ablauf benannt werden.
+Der Ablauf wird zusätzlich grafisch in einem Geschäftsprozessdiagramm (engl. Business Process Diagram - BPD) in der Geschäftsprozessmodellierungsnotation (engl. Business Process Modeling Notation - BPMN) dargestellt.</em></p>
+</div>
+<div id="gep-meldung" class="imageblock">
+<div class="content">
+<img src="../_images/vorlage-systemspezifikation/gepmeldung.png" alt="gepmeldung">
+</div>
+<div class="title">Abbildung 2. Geschäftsprozess: GEP_&lt;Bezeichnung des Geschäftsprozesses&gt;</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Erstellung des Diagramms im Enterprise Architect:</p>
+</div>
+<div class="paragraph">
+<p>Die am Geschäftsprozess beteiligten Organisationseinheiten zieht man als „Pools“ aus dem UML-Profil „Prozesse“.
+Die Geschäftsvorfälle, Start-, Ende- und Verzweigungselemente stammen aus demselben UML-Profil.
+Die Verbindung „Ablauf“ nutzt man zur Darstellung des Ablaufs der Geschäftsvorfälle je Organisationseinheit.
+Den Verbinder „Nachricht“ nutzt man, um zu zeigen, welche Nachrichten zwischen den Organisationseinheiten ausgetauscht werden.
+Falls ein Geschäftsvorfall nur unter bestimmten Bedingungen ausgeführt wird, zeigt man dies durch Auswahl von „Source Role &gt; Aggregation &gt; Shared“ und Angabe eines Namens in dessen Eigenschaften.
+Bei Bedarf kann man zusätzlich Verzweigungs-Elemente nutzen.</p>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="geschaeftsvorfall-gvf-bezeichnung-geschaeftsvorfalls"><a class="anchor" href="#geschaeftsvorfall-gvf-bezeichnung-geschaeftsvorfalls"></a>1.1.1.1. Geschäftsvorfall: GVF_&lt;Bezeichnung des Geschäftsvorfalls&gt;</h5>
+<div class="paragraph">
+<p><em>Ein Geschäftsvorfall ist die Bündelung elementarer Tätigkeiten (Aktivitäten) innerhalb eines Geschäftsprozesses, die durch ein Ereignis ausgelöst und dann lückenlos innerhalb einer Organisationseinheit bearbeitet werden.</em></p>
+</div>
+<div class="paragraph">
+<p><em>Als zu verwendende Namenskonvention beginnen alle Geschäftsvorfallnamen mit dem Präfix „GVF_“, gefolgt von einem Substantiv, einem Unterstrich und einem Verb.
+Bei der Wahl des Namens ist darauf zu achten, dass dieser kurz und prägnant ist.</em></p>
+</div>
+<div class="paragraph">
+<p><em>Der Geschäftsvorfall wird textuell beschrieben, wobei das Ziel, die beteiligten Organisationseinheiten und der Ablauf benannt werden.
+Der Ablauf wird zusätzlich grafisch in einem Geschäftsprozessdiagramm in der Geschäftsprozessmodellierungsnotation dargestellt.</em></p>
+</div>
+<div class="paragraph">
+<p><em>Es werden nur diejenigen Geschäftsvorfälle beschrieben, die mindestens teilweise vom Auftraggeber durchgeführt werden.</em></p>
+</div>
+<div id="gvf-meldung-durchfuehren" class="imageblock">
+<div class="content">
+<img src="../_images/vorlage-systemspezifikation/geschaeftsvorfall-gvfmeldungdurchfuehren.png" alt="geschaeftsvorfall gvfmeldungdurchfuehren">
+</div>
+<div class="title">Abbildung 3. Geschäftsvorfall GVF_Meldung_durchführen</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Erstellung des Diagramms im Enterprise Architect:</p>
+</div>
+<div class="paragraph">
+<p><em>Man baut das Diagramm analog zum Geschäftsprozess-Diagramm auf, fügt aber Aktivitäten statt Geschäftsvorfälle hinzu.
+Die Pools stellt man vertikal dar über ihr Kontextmenü mit „Advanced &gt; Vertical Partition“.
+Persistente Daten und Dokumente fügt man aus dem UML-Profil „Prozesse“ hinzu.</em></p>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Geschäftsvorfall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kurzbeschreibung</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Zwei bis drei Sätze zur Beschreibung des Ziels, des Ablaufs und der beteiligten Organisationseinheiten (Rolle) des Geschäftsvorfalls.</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Vorbedingungen/<br>
+auslösendes Ereignis</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>Die Vorbedingungen beschreiben den Zustand aller relevanten und nichttrivialen Voraussetzungen, die erfüllt sein müssen, damit der Geschäftsvorfall durchgeführt werden kann.
+Sie werden als Punkte-Liste beschrieben.
+Jeder Punkt beschreibt ein Set an Vorbedingungen, welche vollständig gelten müssen.</em></p>
+</div>
+<div class="paragraph">
+<p><em>Auslöser für den Geschäftsvorfall sind Ereignisse wie auslösende Handlungen anderer Akteure oder Zeitpunkte.</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nachbedingungen/<br>
+Ergebnisse</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Beschreibung des erwarteten Zustandes nach Ausführung des Geschäftsvorfalls.
+Es kann hier auch mehrere Nachbedingungen geben, wenn es alternative Zustände nach der Ausführung gibt, z.B. Erfolg oder Fehler.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect5">
+<h6 id="aktivitaet-aktbezeichung-aktivitaet"><a class="anchor" href="#aktivitaet-aktbezeichung-aktivitaet"></a>1.1.1.1.1. Aktivität AKT_&lt;Bezeichung der Aktivität&gt;</h6>
+<div class="paragraph">
+<p><em>Eine Aktivität ist eine Tätigkeit, die einen elementaren, logischen Schritt innerhalb eines Geschäftsvorfalls bildet.
+Sie wird unterbrechungsfrei von einem Akteur ausgeführt.
+Eine Aktivität kann sowohl manuell als auch teilweise oder vollständig automatisiert (Computer-unterstützt) ablaufen (z.B. „Meldung prüfen“).</em></p>
+</div>
+<div class="paragraph">
+<p><em>Als zu verwendende Namenskonvention beginnen alle Aktivitätennamen mit dem Präfix „AKT_“, gefolgt von einem Substantiv, einem Unterstrich und einem Verb.</em></p>
+</div>
+<div class="paragraph">
+<p><em>Die Aktivität wird gemäß der nachfolgenden Tabelle textuell beschrieben.</em></p>
+</div>
+<div class="paragraph">
+<p><em>Es werden nur diejenigen Aktivitäten beschrieben, die vom Auftraggeber durchgeführt werden.</em></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Aktivität</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Organisationseinheit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Beteiligte Organisationseinheit oder Rolle.</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kurzbeschreibung</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Zwei bis drei Sätze zur Beschreibung des Ziels und des Ablaufs der Aktivität.</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Vorbedingungen/<br>
+auslösendes Ereignis</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>Die Vorbedingungen beschreiben den Zustand aller relevanten und nichttrivialen Voraussetzungen, die erfüllt sein müssen, damit die Aktivität durchgeführt werden kann.
+Sie werden als Punkte-Liste beschrieben.
+Jeder Punkt beschreibt einen Satz an Vorbedingungen, der vollständig gelten muss.</em></p>
+</div>
+<div class="paragraph">
+<p><em>Auslöser für die Durchführung der Aktivität sind Ereignisse wie auslösende Handlungen anderer Akteure oder Zeitpunkte.</em></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nachbedingungen/<br>
+Ergebnisse</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Beschreibung des erwarteten Zustandes nach Ausführung der Aktivität.
+Wenn möglich Verweise auf erzeugte persistente Daten oder Dokumente.
+Es kann hier auch mehrere Nachbedingungen geben, wenn es alternative Zustände nach der Ausführung gibt, z.B. Erfolg oder Fehler.</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Automatisierungsgrad</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Inwieweit wird die Aktivität durch Anwendungssysteme unterstützt? Mögliche Ausprägungen sind „vollautomatisiert“, „teilautomatisiert“ und „manuell“.</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beteiligte Systeme</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Beteiligte Anwendungssysteme, wenn die Aktivität nicht manuell durchgeführt wird.</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Verwendete<br>
+Anwendungsfälle</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Hier werden alle Anwendungsfälle als Spiegelstrichaufzählung aufgelistet, die die Aktivität umsetzen.
+Bei Beteiligung mehrerer Anwendungssysteme werden die Anwendungsfälle den Systemen zugeordnet.</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect5">
+<h6 id="aktivitaet-aktbezeichnung-aktivitaet"><a class="anchor" href="#aktivitaet-aktbezeichnung-aktivitaet"></a>1.1.1.1.2. Aktivität AKT_&lt;Bezeichnung der Aktivität&gt;</h6>
+<div class="paragraph">
+<p><em>Dieser Abschnitt ist ein Platzhalter, um zu verdeutlichen, dass ab hier weitere Aktivitäten des Geschäftsvorfalls zu beschreiben sind.</em></p>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="geschaeftsvorfall-gvfbezeichnung-geschaeftsvorfalls"><a class="anchor" href="#geschaeftsvorfall-gvfbezeichnung-geschaeftsvorfalls"></a>1.1.1.2. Geschäftsvorfall GVF_&lt;Bezeichnung des Geschäftsvorfalls&gt;</h5>
+<div class="paragraph">
+<p><em>Dieser Abschnitt ist ein Platzhalter, um zu verdeutlichen, dass ab hier weitere Geschäftsvorfälle und dazu gehörende Aktivitäten des Geschäftsprozesses zu beschreiben sind.</em></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="geschaeftsprozess-gepbezeichnung-geschaeftsprozesses"><a class="anchor" href="#geschaeftsprozess-gepbezeichnung-geschaeftsprozesses"></a>1.1.2. Geschäftsprozess GEP_&lt;Bezeichnung des Geschäftsprozesses&gt;</h4>
+<div class="paragraph">
+<p><em>Dieser Abschnitt ist ein Platzhalter, um zu verdeutlichen, dass ab hier weitere Geschäftsprozesse und dazu gehörende Geschäftsvorfälle und Aktivitäten zu beschreiben sind.</em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="dokumente"><a class="anchor" href="#dokumente"></a>1.1.3. Dokumente</h4>
+<div class="paragraph">
+<p><em>Ein Dokument ist ein in Papierform oder elektronisch vorliegendes Schriftstück, das innerhalb der Geschäftsprozesse des Gesamtverfahrens genutzt oder erstellt wird.</em></p>
+</div>
+<div class="sect4">
+<h5 id="dokument-dokbezeichnung-dokuments"><a class="anchor" href="#dokument-dokbezeichnung-dokuments"></a>1.1.3.1. Dokument DOK_&lt;Bezeichnung des Dokuments&gt;</h5>
+<div class="paragraph">
+<p><em>In diesem Abschnitt wird ein Dokument des Gesamtverfahrens beschrieben.</em></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="dokument-dokbezeichnung-dokuments-1"><a class="anchor" href="#dokument-dokbezeichnung-dokuments-1"></a>1.1.3.2. Dokument DOK_&lt;Bezeichnung des Dokuments&gt;</h5>
+<div class="paragraph">
+<p><em>Dieser Abschnitt ist ein Platzhalter, um zu verdeutlichen, dass ab hier weitere Dokumente des Gesamtverfahrens zu beschreiben sind.</em></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="persistente-datenhaltung"><a class="anchor" href="#persistente-datenhaltung"></a>1.1.4. Persistente Datenhaltung</h4>
+<div class="paragraph">
+<p><em>Die verschiedenen Datenbestände des Gesamtverfahrens enthalten die Daten, die zur Ausführung der Geschäftsprozesse dauerhaft gespeichert werden.
+Eine Trennung der Daten in verschiedene Datenbestände kann durch die Aufteilung in verschiedene Organisationseinheiten oder unterschiedliche Zwecke der Datenhaltung begründet sein.
+Hier sollte neben der Beschreibung jedes Datenbestands auch eine grobe Mengenabschätzung der Größe des Datenbestands notiert werden.</em></p>
+</div>
+<div class="sect4">
+<h5 id="persistente-daten-datbezeichnung-datenbestands-1"><a class="anchor" href="#persistente-daten-datbezeichnung-datenbestands-1"></a>1.1.4.1. Persistente Daten DAT_&lt;Bezeichnung des Datenbestands&gt;</h5>
+<div class="paragraph">
+<p><em>In diesem Abschnitt wird ein Datenbestand des Gesamtverfahrens beschrieben.</em></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="persistente-daten-datbezeichnung-datenbestands-2"><a class="anchor" href="#persistente-daten-datbezeichnung-datenbestands-2"></a>1.1.4.2. Persistente Daten DAT_&lt;Bezeichnung des Datenbestands&gt;</h5>
+<div class="paragraph">
+<p><em>Dieser Abschnitt ist ein Platzhalter, um zu verdeutlichen, dass ab hier weitere Persistente Daten des Gesamtverfahrens zu beschreiben sind.</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="organisationseinheiten"><a class="anchor" href="#organisationseinheiten"></a>1.2. Organisationseinheiten</h3>
+<div class="paragraph">
+<p><em>Verschiedene Organisationseinheiten nehmen verschiedene Rollen im Ablauf eines Geschäftsprozesses wahr.
+Aktivitäten eines Geschäftsprozesses können von den beteiligten Organisationseinheiten manuell (d.h. durch Personen), automatisiert (d.h. im Auftrag der Organisationseinheiten durch Anwendungssysteme) oder teilautomatisiert durchgeführt werden.
+Dieselbe Organisationseinheit kann in verschiedenen Gesamtverfahren auftreten.
+Hier werden diese Organisationseinheiten mit ihren Aufgaben im Verfahren sowie ihrer Rolle im Geschäftsprozess beschrieben.</em></p>
+</div>
+<div class="paragraph">
+<p><em>Ein Organigramm (UML-Komponentendiagramm) und eine textuelle Beschreibung geben einen Überblick über die beteiligten Organisationseinheiten (Rollen).</em></p>
+</div>
+<div id="organigramm" class="imageblock">
+<div class="content">
+<img src="../_images/vorlage-systemspezifikation/organigramm.png" alt="organigramm">
+</div>
+<div class="title">Abbildung 4. Organigramm von &lt;abc&gt;</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Erstellung des Diagramms im Enterprise Architect:</p>
+</div>
+<div class="paragraph">
+<p><em>Man fügt alle Organisationseinheiten aus dem UML-Profil „Organisation“ in ein Use Case Diagramm ein und ordnet sie an.
+Zusammengehörige Organisationseinheiten erhalten eine gemeinsame Boundary mit passendem Namen und Schriftart Arial Bold 14.
+Man nutzt die Verbinder aus demselben UML-Profil, um Organisationsstrukturen darzustellen.</em></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="organisationseinheit-orgbezeichnung-organisationseinheit-1"><a class="anchor" href="#organisationseinheit-orgbezeichnung-organisationseinheit-1"></a>1.2.1. Organisationseinheit ORG_&lt;Bezeichnung der Organisationseinheit&gt;</h4>
+<div class="paragraph">
+<p><em>In diesem Abschnitt wird eine Organisationseinheit mit ihren Aufgaben im Verfahren sowie ihrer Rolle im Geschäftsprozess beschrieben.</em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="organisationseinheit-orgbezeichnung-organisationseinheit-2"><a class="anchor" href="#organisationseinheit-orgbezeichnung-organisationseinheit-2"></a>1.2.2. Organisationseinheit ORG_&lt;Bezeichnung der Organisationseinheit&gt;</h4>
+<div class="paragraph">
+<p><em>Dieser Abschnitt ist ein Platzhalter, um zu verdeutlichen, dass ab hier weitere Organisationseinheiten zu beschreiben sind.</em></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="anwendungssysteme"><a class="anchor" href="#anwendungssysteme"></a>1.3. Anwendungssysteme</h3>
+<div class="paragraph">
+<p><em>Anwendungssysteme unterstützen teilautomatisierte und automatisierte Aktivitäten. Anwendungssysteme werden in fachliche Anwendungsdomänen unterteilt, die z.B. nach den Zuständigkeiten der Fachbereiche geordnet sein können.
+In diesem Abschnitt werden die Domänen textuell erklärt und grafisch die Anwendungssysteme in die Domänen eingeordnet.</em></p>
+</div>
+<div id="anmeldungssysteme-domaenenzugehoerigkeit" class="imageblock">
+<div class="content">
+<img src="../_images/vorlage-systemspezifikation/anwendungssysteme-ihre-domaenenzugehoerigkeit.png" alt="anwendungssysteme ihre domaenenzugehoerigkeit">
+</div>
+<div class="title">Abbildung 5. Anwendungssysteme und Ihre Domänenzugehörigkeit</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Erstellung des Diagramms im Enterprise Architect:</p>
+</div>
+<div class="paragraph">
+<p><em>Man zieht alle Anwendungssysteme in ein Use Case Diagramm.
+Dann ordnet man sie nach Anwendungsdomänen und zeichnet jede Domäne als Boundary mit Namen ein.</em></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="anwendungssystem-sysbezeichnung-anwendungssystems-1"><a class="anchor" href="#anwendungssystem-sysbezeichnung-anwendungssystems-1"></a>1.3.1. Anwendungssystem SYS_&lt;Bezeichnung des Anwendungssystems&gt;</h4>
+<div class="paragraph">
+<p><em>In diesem Abschnitt wird ein Anwendungssystem beschrieben.
+Seine fachliche Zielsetzung wird beschrieben.</em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="anwendungssystem-sysbezeichnung-anwendungssystems-2"><a class="anchor" href="#anwendungssystem-sysbezeichnung-anwendungssystems-2"></a>1.3.2. Anwendungssystem SYS_&lt;Bezeichnung des Anwendungssystems&gt;</h4>
+<div class="paragraph">
+<p><em>Dieser Abschnitt ist ein Platzhalter, um zu verdeutlichen, dass ab hier weitere Anwendungssysteme zu beschreiben sind.</em></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<div class="divFooter"></div>
+
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+<script src="../../../../_/js/isyfact.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
+  </body>
+</html>

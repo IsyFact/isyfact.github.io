@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
+<html lang="de"> <!-- Sets the language to German for correct hyphenation. -->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>IsyFact Architekturregeln :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/blaupausen/vorgaben-architektur/summaryArchitectureRules.html">
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -365,13 +365,10 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Styleguide</span>
+    <span class="nav-text">Bedienkonzept</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-bedienkonzept/bedienkonzept.html">Bedienkonzept</a>
   </li>
 </ul>
   </li>
@@ -435,20 +432,35 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
   </li>
-  <li class="nav-item" data-depth="3">
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Spezifikation</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
+    <a class="nav-link" href="../../methodik/vorlage-systemspezifikation/master.html">Systemspezifikation</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
+    <a class="nav-link" href="../../methodik/vorlage-schnittstellendokumentation/master.html">Schnittstellen­dokumentation</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+    <a class="nav-link" href="../../methodik/anleitung-datenflussdiagramme/master.html">Anleitung für Datenflussdiagramme</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
   </li>
 </ul>
   </li>
@@ -595,7 +607,8 @@
     <li><a href="summaryArchitectureRules.html">Architektur</a></li>
   </ul>
 </nav>
-</div>
+  <div class="edit-this-page"><a href="https://github.com/IsyFact/isyfact-standards/edit/master/isyfact-standards-doc/src/docs/antora/modules/blaupausen/pages/vorgaben-architektur/summaryArchitectureRules.adoc">Edit this Page</a></div>
+  </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Inhalt" data-levels="3">
   <div class="toc-menu"></div>
@@ -630,6 +643,15 @@ Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/i
 <div class="sect1">
 <h2 id="architekturregeln"><a class="anchor" href="#architekturregeln"></a>2. Architekturregeln</h2>
 <div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Vererbungshierarchien im Persistenz-Klassenmodell</div>
+<div class="paragraph">
+<p>Vererbungshierarchien zur Abbildung in relationalen Datenbanken sollten nur verwendet werden, wenn das fachliche Datenmodell dadurch optimal wiedergegeben wird.
+Sie sollten nur eine Oberklasse mit einigen Subklassen und höchstens zwei Vererbungsebenen umfassen.</p>
+</div>
+</div>
+</div>
 <div class="sidebarblock">
 <div class="content">
 <div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Benennung von Metadaten</div>
@@ -684,6 +706,47 @@ Ebenso dürfen grundsätzlich keine sicherheitsrelevanten Daten (z.B. Passwörte
 <p>Logback wird durch eine Anwendung niemals direkt, sondern ausschließlich über die Bibliothek <code>isy-logging</code> aufgerufen.
 Dadurch wird die einheitliche Nutzung von <em>logback</em> sichergestellt.
 Ausnahmen sind hierbei externe Bibliotheken (siehe <a href="../../isy-logging/konzept/inhalt.html#logging-externer-bibliotheken" class="xref page">Logging externer Bibliotheken</a>).</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Verwendung von Hibernate Filtern</div>
+<div class="paragraph">
+<p>Wenn das fachliche Datenmodell variable Sichtbarkeitsregeln in größerem Umfang benötigt, sollten diese mit Hibernate Filtern umgesetzt werden.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>Die <strong>Single Table per Class Hierarchy</strong> Strategie sollte die Default-Strategie sein, weil sie performante Abfragen erlaubt.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>Wenn Not-Nullable-Constraints zwingend erforderlich sind und polymorphe Queries benötigt werden, ist die <strong>Joined Subclass</strong> Strategie eine gute Wahl.
+Ein weiteres Argument für diese Strategie sind Subklassen mit vielen Attributen.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>Die <strong>Table per Concrete Class</strong> Strategie sollte, wenn überhaupt, nur gewählt werden, wenn die anderen Strategien nicht passen und auf die Oberklasse keine oder nur wenig polymorphe Zugriffe zu erwarten sind.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>Diese Art der Vererbung von einer Java-Oberklasse auf Entitäten-Subklassen kann eingesetzt werden, wenn nur auf die Subklassen zugegriffen werden muss.</p>
 </div>
 </div>
 </div>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
+<html lang="de"> <!-- Sets the language to German for correct hyphenation. -->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>IsyFact Systementwurf &lt;System&gt; :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/methodik/vorlage-systementwurf/master.html">
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -365,13 +365,10 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Styleguide</span>
+    <span class="nav-text">Bedienkonzept</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-bedienkonzept/bedienkonzept.html">Bedienkonzept</a>
   </li>
 </ul>
   </li>
@@ -435,20 +432,35 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
   </li>
-  <li class="nav-item" data-depth="3">
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Spezifikation</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="antora-master.html">Systementwurf</a>
+    <a class="nav-link" href="../vorlage-systemspezifikation/master.html">Systemspezifikation</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
+    <a class="nav-link" href="../vorlage-schnittstellendokumentation/master.html">Schnittstellen­dokumentation</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+    <a class="nav-link" href="../anleitung-datenflussdiagramme/master.html">Anleitung für Datenflussdiagramme</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="antora-master.html">Systementwurf</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
   </li>
 </ul>
   </li>
@@ -593,7 +605,8 @@
     <li><a href="master.html">IsyFact Systementwurf &lt;System&gt;</a></li>
   </ul>
 </nav>
-</div>
+  <div class="edit-this-page"><a href="https://github.com/IsyFact/isyfact-standards/edit/master/isyfact-standards-doc/src/docs/antora/modules/methodik/pages/vorlage-systementwurf/master.adoc">Edit this Page</a></div>
+  </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Inhalt" data-levels="3">
   <div class="toc-menu"></div>
@@ -673,12 +686,12 @@ Die Hinweise und Beispiele sind mit einem Rahmen markiert und später zu entfern
 <div class="ulist">
 <ul>
 <li>
-<p><em>Zunächst wird gezeigt, wie sich das neue System in die gesamte technische Anwendungslandschaft einfügt.</em>
-siehe Kapitel: <a href="#einbettung-in-anwendungslandschaft">Systemüberblick/Einbettung in die Anwendungslandschaft</a></p>
+<p><em>Zunächst wird gezeigt, wie sich das neue System in die gesamte technische Anwendungslandschaft einfügt.
+Kapitel: <a href="#einbettung-in-anwendungslandschaft">Systemüberblick/Einbettung in die Anwendungslandschaft</a>.</em></p>
 </li>
 <li>
 <p><em>Danach wird das System detailliert, indem gezeigt wird, wie die Teilsysteme des neuen Systems zusammen arbeiten.
-siehe Kapitel: <a href="#gesamtsystem-systemueberblick">Systemarchitektur des Gesamtsystems/Systemüberblick</a></em></p>
+Kapitel: <a href="#gesamtsystem-systemueberblick">Systemarchitektur des Gesamtsystems/Systemüberblick</a>.</em></p>
 </li>
 <li>
 <p><em>Dann wird jedes Teilsystem einzeln beschrieben.
@@ -767,7 +780,7 @@ Welche Teile dies sind, wird im vorliegenden Dokument definiert.</em></p>
 <p><strong><em>Vorgaben für die Konstruktion</em></strong></p>
 </div>
 <div class="paragraph">
-<p><em>Systementwurf-Dokumente sollen Grundsätzlich mit der vorliegenden Vorlage und im Einklang zu den beschriebenen Vorgaben und Ausfüllhinweisen erstellt werden.</em></p>
+<p><em>Systementwurf-Dokumente sollen grundsätzlich mit der vorliegenden Vorlage und im Einklang zu den beschriebenen Vorgaben und Ausfüllhinweisen erstellt werden.</em></p>
 </div>
 <div class="paragraph">
 <p><strong><em>Modellierung im Enterprise Architect</em></strong></p>
@@ -914,12 +927,12 @@ In diesem Dokument wird beschrieben, wie diese Referenzarchitektur instanziiert 
 Sollte eine Verfeinerung oder spezifische Ergänzung der Referenzarchitektur notwendig sein, erfolgt dies im Kapitel <a href="#querschnittskonzepte">Querschnittskonzepte</a>.</p>
 </li>
 <li>
-<p>Die Schnittstellenübersicht des Systems erfolgt der Übersichtlichkeit halber auf zwei Abstraktionsebenen: Auf Ebene der Gesamtanwendungslandschaft erfolgt dies im Kapitel <a href="#einbettung-in-anwendungslandschaft">Systemüberblick/Einbettung in die Anwendungslandschaft</a> beschrieben.
+<p>Die Schnittstellenübersicht des Systems erfolgt der Übersichtlichkeit halber auf zwei Abstraktionsebenen: auf Ebene der Gesamtanwendungslandschaft erfolgt dies im Kapitel <a href="#einbettung-in-anwendungslandschaft">Systemüberblick/Einbettung in die Anwendungslandschaft</a>.
 Die konkreten Schnittstellen des Systems und ggf. von Teilsystemen sind im Kapitel <a href="#systemarchitektur-gesamtsystems">Systemarchitektur des Gesamtsystems/Systemüberblick</a> beschrieben.
 Die Details zur Implementierung und Dateninhalten der Schnittstellen finden sich in der Konstruktion der jeweiligen Services unter <a href="#service">Architektur des Teilsystems A/Service</a>.</p>
 </li>
 <li>
-<p>Die zu spezifizierenden Systemelemente sind der Gegenstand von Kapitel <a href="#systemarchitektur-gesamtsystems">Systemarchitektur des Gesamtsystems</a>, insbesondere in den Kapiteln <a href="#architektur-teilsystems-a">Architektur des Teilsystems (ff)</a>.</p>
+<p>Die zu spezifizierenden Systemelemente sind der Gegenstand von Kapitel <a href="#systemarchitektur-gesamtsystems">Systemarchitektur des Gesamtsystems</a>, insbesondere in den Kapiteln <a href="#architektur-teilsystems-a">Architektur des Teilsystems (ff.)</a>.</p>
 </li>
 </ul>
 </div>
@@ -938,7 +951,7 @@ Die konkrete HW-Architektur für das System befindet sich im Kapitel <a href="#t
 </li>
 <li>
 <p><strong>SW-Architektur:</strong> Die SW-Architektur ist in den Grundlagen durch die IsyFact Referenzarchitektur vorgegeben.
-Die Instanziierung dieser Architektur befindet sich in Abschnitt <a href="#architektur-teilsystems-a">Architektur des Teilsystems A (ff)</a>.</p>
+Die Instanziierung dieser Architektur befindet sich in Abschnitt <a href="#architektur-teilsystems-a">Architektur des Teilsystems A (ff.)</a>.</p>
 </li>
 <li>
 <p><strong>Datenbankentwurf</strong>: Der Datenbankentwurf findet sich unter <a href="#datenmodell">Datenmodell</a>.</p>
@@ -1040,13 +1053,13 @@ Eine Übersicht über die Software-Artefakte der IsyFact findet sich in <a href=
 Die durchzuführenden Erweiterungen sind in der darauffolgenden Tabelle zu begründen.</em></p>
 </div>
 <div class="paragraph">
-<p><em>Bei relevanten Elementen, die in einer anderen, als der in <a href="#table-verwendete-elemente-isyfact-standards-erweiterungen">Tabelle 1</a> angegebenen Version verwendet werden, wird in die Status-Spalte „<strong>abweichende Version</strong>“, in der Version-Spalte die Version des Elements und in der Referenz-Spalte die Referenz auf das Dokument ergänzt.
+<p><em>Bei relevanten Elementen, die in einer anderen als der in <a href="#table-verwendete-elemente-isyfact-standards-erweiterungen">Tabelle 1</a> angegebenen Version verwendet werden, wird in die Status-Spalte „<strong>abweichende Version</strong>“, in der Version-Spalte die Version des Elements und in der Referenz-Spalte die Referenz auf das Dokument ergänzt.
 Die Abweichungen sind ebenfalls in der darauffolgenden Tabelle zu begründen.</em></p>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>Das IT-System &lt;System&gt; wird konform zur Referenzarchitektur der IsyFact Version 1.0 umgesetzt.
+<p>Das IT-System &lt;System&gt; wird konform zur Referenzarchitektur der IsyFact umgesetzt.
 Die folgende Tabelle führt die vom IT-System verwendeten Elemente der IsyFact auf.</p>
 </div>
 <table id="table-verwendete-elemente-isyfact-standards-erweiterungen" class="tableblock frame-all grid-all stretch">
@@ -1127,7 +1140,7 @@ Die folgende Tabelle führt die vom IT-System verwendeten Elemente der IsyFact a
 <td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Logging</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">berücksichtigt</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><em>Standard</em></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><a href="../../isy-logging/konzept/master.html" class="xref page">Konzept Logging</a> <a href="../../isy-logging/nutzungsvorgaben/master.html" class="xref page">Nutzungsvorgaben Logging</a></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><a href="../../isy-logging/konzept/master.html" class="xref page">Konzept Logging</a>, <a href="../../isy-logging/nutzungsvorgaben/master.html" class="xref page">Nutzungsvorgaben Logging</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Sicherheitskomponente</p></td>
@@ -1229,7 +1242,7 @@ Die folgende Tabelle führt die vom IT-System verwendeten Elemente der IsyFact a
 <td class="tableblock halign-left valign-top" style="background-color: ;"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Styleguide</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">Bedienkonzept</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock">berücksichtigt</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: ;"><p class="tableblock"><em>Standard</em></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: ;"></td>
@@ -1489,7 +1502,7 @@ Eine weitere Skalierung ist durch Hinzufügen weiterer Systeme möglich.</em></p
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p><em>Zunächst erst mal ein Überblick: Kurze Beschreibung der wichtigsten Eckpunkte der TI-Architektur.</em></p>
+<p><em>Zunächst ein Überblick: Kurze Beschreibung der wichtigsten Eckpunkte der TI-Architektur.</em></p>
 </div>
 <div class="paragraph">
 <p><em>TI-Diagramme sind als Deployment Diagramme umzusetzen. Diese enthalten die Elemente:</em></p>
@@ -1526,22 +1539,22 @@ Eine weitere Skalierung ist durch Hinzufügen weiterer Systeme möglich.</em></p
 <div class="ulist">
 <ul>
 <li>
-<p><em>Zuordnung der Server bzw. Laufzeitumgebungen zu den Saga-Zonen</em></p>
+<p><em>Zuordnung der Server bzw. Laufzeitumgebungen zu den Saga-Zonen.</em></p>
 </li>
 <li>
-<p><em>Zuordnung der Deployment-Einheiten auf die Server/Laufzeitumgebungen</em></p>
+<p><em>Zuordnung der Deployment-Einheiten auf die Server/Laufzeitumgebungen.</em></p>
 </li>
 <li>
 <p><em>Kommunikationsbeziehungen werden zu den Loadbalancern bzw. Firewalls dargestellt.
-Es soll klarwerden über welche Zonengrenzen hinweg mit welchen Protokollen kommuniziert wird.</em></p>
+Es soll klar werden, über welche Zonengrenzen hinweg mit welchen Protokollen kommuniziert wird.</em></p>
 </li>
 <li>
 <p><em>Existierende Nachbarsysteme werden in der Regel nicht dargestellt.
 Ausnahmen sind aber möglich, wenn ein besonderer Aspekt dargestellt werden soll.
-Z.B. ein neuer Native-Client der an einen bestehenden Service angebunden wird.</em></p>
+Z.B. ein neuer Native-Client, der an einen bestehenden Service angebunden wird.</em></p>
 </li>
 <li>
-<p><em>Keine konkreten Adressen, Portnummern, Dimensionierungen, sondern eine logische Sicht</em></p>
+<p><em>Keine konkreten Adressen, Portnummern, Dimensionierungen, sondern eine logische Sicht.</em></p>
 </li>
 </ul>
 </div>
@@ -1552,12 +1565,12 @@ Z.B. ein neuer Native-Client der an einen bestehenden Service angebunden wird.</
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>_Liste der eingesetzten Produkte für die Laufzeitumgebung.
-Diese Umgebung ist für Anwendungen nach Referenzarchitektur vorgegeben, deshalb kann der Abschnitt unten in der Regel übernommen werden, gegebenenfalls ergänzt um das konkrete Linux-Betriebssystem.</p>
+<p><em>Liste der eingesetzten Produkte für die Laufzeitumgebung.
+Diese Umgebung ist für Anwendungen nach Referenzarchitektur vorgegeben, deshalb kann der Abschnitt unten in der Regel übernommen werden, gegebenenfalls ergänzt um das konkrete Linux-Betriebssystem.</em></p>
 </div>
 <div class="paragraph">
-<p>Die Versionen sind nach dem Produktkatalog zu überprüfen und mit dem Gesamtprojekt abzustimmen.
-Für die Laufzeitumgebung wird ein Default-Tomcat bereitgestellt._</p>
+<p><em>Die Versionen sind nach dem Produktkatalog zu überprüfen und mit dem Gesamtprojekt abzustimmen.
+Für die Laufzeitumgebung wird ein Default-Tomcat bereitgestellt.</em></p>
 </div>
 </div>
 </div>
@@ -1624,7 +1637,7 @@ Für die Laufzeitumgebung wird ein Default-Tomcat bereitgestellt._</p>
 <p>Mengengerüst für die Datenbank</p>
 </div>
 <div class="paragraph">
-<p>In der <a href="#table-mengengeruest-datenbank">Tabelle 4</a> ist eine Abschätzung für die Datenbankgröße enthalten.
+<p>In <a href="#table-mengengeruest-datenbank">Tabelle 4</a> ist eine Abschätzung für die Datenbankgröße enthalten.
 Hier ist allerdings nur die Größe der Rohdaten angegeben.
 Für eine Berechnung der Größe der Table-Spaces müssen noch Spezifika der konkret verwendeten Datenbank berücksichtigt werden.
 Die Berechnung der Größe der Table-Spaces erfolgt durch die Datenbank-Administration auf der Basis der hier genannten Zeilenanzahl je Tabelle.</p>
@@ -2444,7 +2457,7 @@ Die Optimierung des Diagramms in Hinblick auf den benötigten Platz ist nicht ge
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p><em>Analog zu oben, für jedes Teilsystem entsteht ein eigenes Unterkapitel 3.x</em></p>
+<p><em>Analog zu oben, für jedes Teilsystem entsteht ein eigenes Unterkapitel 3.x.</em></p>
 </div>
 </div>
 </div>
@@ -2454,7 +2467,7 @@ Die Optimierung des Diagramms in Hinblick auf den benötigten Platz ist nicht ge
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p><em>Analog zu oben, für jedes Teilsystem entsteht ein eigenes Unterkapitel 3.x</em></p>
+<p><em>Analog zu oben, für jedes Teilsystem entsteht ein eigenes Unterkapitel 3.x.</em></p>
 </div>
 </div>
 </div>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
+<html lang="de"> <!-- Sets the language to German for correct hyphenation. -->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Umsetzung des Datenzugriffs :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/isy-persistence/nutzungsvorgaben/umsetzung-datenzugriff.html">
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -365,13 +365,10 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Styleguide</span>
+    <span class="nav-text">Bedienkonzept</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-bedienkonzept/bedienkonzept.html">Bedienkonzept</a>
   </li>
 </ul>
   </li>
@@ -435,20 +432,35 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
   </li>
-  <li class="nav-item" data-depth="3">
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Spezifikation</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
+    <a class="nav-link" href="../../methodik/vorlage-systemspezifikation/master.html">Systemspezifikation</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
+    <a class="nav-link" href="../../methodik/vorlage-schnittstellendokumentation/master.html">Schnittstellen­dokumentation</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+    <a class="nav-link" href="../../methodik/anleitung-datenflussdiagramme/master.html">Anleitung für Datenflussdiagramme</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
   </li>
 </ul>
   </li>
@@ -596,7 +608,8 @@
     <li><a href="umsetzung-datenzugriff.html">Umsetzung des Datenzugriffs</a></li>
   </ul>
 </nav>
-</div>
+  <div class="edit-this-page"><a href="https://github.com/IsyFact/isyfact-standards/edit/master/isyfact-standards-doc/src/docs/antora/modules/isy-persistence/pages/nutzungsvorgaben/umsetzung-datenzugriff.adoc">Edit this Page</a></div>
+  </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Inhalt" data-levels="3">
   <div class="toc-menu"></div>
@@ -687,16 +700,12 @@ Falls die Datenhoheit keiner einzelnen Komponente zugewiesen werden kann, erhäl
 Die Repositories werden nur von Klassen der Fachkomponente mit Datenhoheit aufgerufen.</p>
 </div>
 <div class="paragraph">
-<p>Während über Repositories Entitäten aus der Datenbank gelesen und in die Datenbank eingefügt werden, können sie auch außerhalb dieser Klassen verändert bzw. befüllt werden.
-Dies darf jedoch gemäß der <a href="../../blaupausen/referenzarchitektur/master.html#einleitung" class="xref page">Referenzarchitektur</a> nur von Klassen innerhalb der gleichen Teilanwendung  erfolgen: Komponenten anderer Teilanwendungen dürfen sie nicht verändern oder befüllen.
-Sie erhalten daher lediglich Deep-Copies bzw. nicht änderbare Varianten der Entitäten.</p>
-</div>
-<div class="paragraph">
-<p>Eine Ausnahme hierzu bildet die Komponente Basisdaten: Sie gibt die Entitäten an andere Komponenten weiter, welche diese verändern und befüllen dürfen.</p>
+<p>Gemäß der <a href="../../blaupausen/referenzarchitektur-it-system/inhalt.html#datenzugriff" class="xref page">Referenzarchitektur</a> dürfen Entitäten nur von der Fachkomponente im Anwendungskern verändert werden, welche zur Fachkomponente im Datenzugriff gehört.
+Der Anwendungskern darf für andere Fachkomponenten nur Geschäftsobjekte an seiner Fachkomponentenschnittstelle anbieten.</p>
 </div>
 <div class="paragraph">
 <p>Für ein konkretes DAO ist ein eigenes Interface von der Basisschnittstelle <code>CrudRepository</code> abzuleiten.
-Die Benennung erfolgt gemäß der <a href="../../blaupausen/detailkonzept-komponente-datenzugriff/persistenzlogik.html#namenskonvention-spring-data-repository" class="xref page">Namenskonvention</a>.
+Die Benennung erfolgt gemäß der <a href="../konzept/vorgaben-konventionen.html#namenskonvention-spring-data-repository" class="xref page">Namenskonvention</a>.
 In der Dao-Klasse können weitere DAO-Operationen definiert werden, zum Beispiel zur Durchführung von Queries.
 Ein Beispiel hierfür ist in <a href="#listing-beispielrepository">Beispiel für ein eigenes Data Access Object</a> zu sehen.</p>
 </div>

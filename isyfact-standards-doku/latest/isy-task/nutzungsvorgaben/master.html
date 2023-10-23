@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
+<html lang="de"> <!-- Sets the language to German for correct hyphenation. -->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Nutzungsvorgaben Task Scheduling :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/isy-task/nutzungsvorgaben/master.html">
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -365,13 +365,10 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Styleguide</span>
+    <span class="nav-text">Bedienkonzept</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-bedienkonzept/bedienkonzept.html">Bedienkonzept</a>
   </li>
 </ul>
   </li>
@@ -435,20 +432,35 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
   </li>
-  <li class="nav-item" data-depth="3">
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Spezifikation</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
+    <a class="nav-link" href="../../methodik/vorlage-systemspezifikation/master.html">Systemspezifikation</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
+    <a class="nav-link" href="../../methodik/vorlage-schnittstellendokumentation/master.html">Schnittstellen­dokumentation</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+    <a class="nav-link" href="../../methodik/anleitung-datenflussdiagramme/master.html">Anleitung für Datenflussdiagramme</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
   </li>
 </ul>
   </li>
@@ -595,7 +607,8 @@
     <li><a href="master.html">Nutzungsvorgaben</a></li>
   </ul>
 </nav>
-</div>
+  <div class="edit-this-page"><a href="https://github.com/IsyFact/isyfact-standards/edit/master/isyfact-standards-doc/src/docs/antora/modules/isy-task/pages/nutzungsvorgaben/master.adoc">Edit this Page</a></div>
+  </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Inhalt" data-levels="3">
   <div class="toc-menu"></div>
@@ -685,11 +698,11 @@ Das Dokument richtet sich somit vorrangig an Entwickler, Konstrukteure und techn
 Sie sichert die Aufgaben selbst allerdings nicht gegen unerlaubte Ausführungen ab.
 Die Verantwortlichkeit dafür liegt bei den jeweiligen Fachkomponenten der Anwendungen, die sich gemäß den Sicherheitsrichtlinien der IsyFact und den Anforderungen an die Anwendung schützen müssen.
 Authentifizierung und Autorisierung finden nach den Vorgaben des Berechtigungskonzepts statt.
-Dazu wird die IsyFact-Bibliothek <code>isy-sicherheit</code> eingesetzt.
-Die Nutzung der Bibliothek wird im Dokument <a href="../../isy-sicherheit/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben Sicherheit</a> beschrieben.</p>
+Dazu wird die IsyFact-Bibliothek <code>isy-security</code> eingesetzt.
+Die Nutzung der Bibliothek wird im Dokument <a href="../../isy-security/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben Sicherheit</a> beschrieben.</p>
 </div>
 <div class="paragraph">
-<p>Um die Verwendung von <code>isy-sicherheit</code> für die Authentifizierung und Autorisierung zu konfigurieren, wird die Property <code>isy.task.authentication.enabled</code> in <code>application.properties</code> auf <code>true</code> oder <code>false</code> gesetzt.</p>
+<p>Um die Verwendung von <code>isy-security</code> für die Authentifizierung und Autorisierung zu konfigurieren, wird die Property <code>isy.task.authentication.enabled</code> in <code>application.properties</code> auf <code>true</code> oder <code>false</code> gesetzt.</p>
 </div>
 </div>
 <div class="sect2">
@@ -775,9 +788,7 @@ Das folgende Listing zeigt die Konfiguration für den <code>HalloWeltTask</code>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.tasks.halloWeltTask.benutzer=TestUser1
-isy.task.tasks.halloWeltTask.passwort=TestPasswort1
-isy.task.tasks.halloWeltTask.bhkz=BHKZ1
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.tasks.halloWeltTask.oauth2-client-registration-id=halloWelt-client-registration
 isy.task.tasks.halloWeltTask.ausfuehrung=ONCE
 isy.task.tasks.halloWeltTask.initial-delay=10s
 isy.task.tasks.halloWeltTask.host=ComputerName
@@ -917,13 +928,24 @@ taskScheduler.start();</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="konfigurationsschluessel"><a class="anchor" href="#konfigurationsschluessel"></a>5. Konfigurationsschlüssel</h2>
+<h2 id="absicherung-von-tasks"><a class="anchor" href="#absicherung-von-tasks"></a>5. Absicherung von Tasks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Für die Absicherung eines Tasks benötigt es lediglich eine OAuth 2.0 Client Registration ID, um die erforderlichen Sicherheitsmaßnahmen zu implementieren.
+Hierbei kann der Sicherheitsbaustein entweder Resource Owner Password Credentials (ROPC) oder Client Credentials verwenden.
+Die Verwendung von ROPC ermöglicht es, die Identität des Benutzers abzufragen und die Tasks sicher auszuführen, während der Client Credentials Flow die Authentifizierung und Autorisierung der Anwendung selbst ermöglicht, um auf geschützte Ressourcen zuzugreifen.
+Detaillierte Informationen zur Implementierung und Konfiguration dieser Sicherheitsbausteine finden sich in der Spring Boot Security Dokumentation, die eine umfassende Anleitung und Best Practices bereitstellt.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="konfigurationsschluessel"><a class="anchor" href="#konfigurationsschluessel"></a>6. Konfigurationsschlüssel</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Die folgenden Konfigurationsschlüssel werden von <code>isy-task</code> eingelesen und verwertet.</p>
 </div>
 <div class="sect2">
-<h3 id="allgemeine-konfiguration"><a class="anchor" href="#allgemeine-konfiguration"></a>5.1. Allgemeine Konfiguration</h3>
+<h3 id="allgemeine-konfiguration"><a class="anchor" href="#allgemeine-konfiguration"></a>6.1. Allgemeine Konfiguration</h3>
 <div class="paragraph">
 <p>Ob der TaskScheduler automatisch beim Anwendungsstart gestartet werden soll.
 (Standardwert <code>false</code>; setze auf <code>true</code> für Autostart)</p>
@@ -958,27 +980,12 @@ taskScheduler.start();</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Die Kennung die benutzt wird, wenn kein Task-spezifisches Kennwort konfiguriert wird:</p>
+<p>Die ID der Client Registration aus <code>isy-security</code> zur Authentifizierung, wenn keine Task-spezifische <code>oauth2-client-registration-id</code> konfiguriert wird.
+Hierüber wird der zu verwendende OAuth 2.0 Client und die Kennung, das Passwort und das BHKNZ des Nutzers aufgelöst:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.default.benutzer</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Das Passwort das benutzt wird, wenn kein Task-spezifisches Passwort konfiguriert wird:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.default.passwort</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Das Behördenkennzeichen, das benutzt wird, wenn kein Task-spezifisches konfiguriert wird:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.default.bhkz</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.default.oauth2-client-registration-id</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -991,29 +998,14 @@ taskScheduler.start();</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="aufgabenspezifische-konfiguration"><a class="anchor" href="#aufgabenspezifische-konfiguration"></a>5.2. Aufgabenspezifische Konfiguration</h3>
+<h3 id="aufgabenspezifische-konfiguration"><a class="anchor" href="#aufgabenspezifische-konfiguration"></a>6.2. Aufgabenspezifische Konfiguration</h3>
 <div class="paragraph">
-<p>Die Kennung des ausführenden Benutzers:</p>
+<p>Die ID der Client Registration aus <code>isy-security</code>, die zur Authentifizierung genutzt wird.
+Hierüber wird der zu verwendende OAuth 2.0 Client und die Kennung, das Passwort und das BHKNZ des Nutzers aufgelöst:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.tasks.&lt;Task&gt;.benutzer</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Das Passwort des ausführenden Benutzers:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.tasks.&lt;Task&gt;.passwort</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Behördenkennzeichen des ausführenden Benutzers:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.tasks.&lt;Task&gt;.bhkz</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">isy.task.tasks.&lt;Task&gt;.oauth2-client-registration-id</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1073,7 +1065,7 @@ Die Dauer muss die Form eines Zeitraums gemäß dem  <a href="../../isy-datetime
 </div>
 </div>
 <div class="sect1">
-<h2 id="ueberwachung-mit-jmx"><a class="anchor" href="#ueberwachung-mit-jmx"></a>6. Überwachung mit JMX</h2>
+<h2 id="ueberwachung-mit-jmx"><a class="anchor" href="#ueberwachung-mit-jmx"></a>7. Überwachung mit JMX</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Die Bibliothek <code>isy-task</code> sieht eine Überwachung über JMX vor.</p>
@@ -1108,14 +1100,14 @@ public class TaskConfiguration {
 </div>
 </div>
 <div class="sect1">
-<h2 id="hinweise-fuer-den-task-im-parallelbetrieb"><a class="anchor" href="#hinweise-fuer-den-task-im-parallelbetrieb"></a>7. Hinweise für den Task im Parallelbetrieb</h2>
+<h2 id="hinweise-fuer-den-task-im-parallelbetrieb"><a class="anchor" href="#hinweise-fuer-den-task-im-parallelbetrieb"></a>8. Hinweise für den Task im Parallelbetrieb</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Bei der Implementierung eines Tasks muss beachtet werden, dass ihn die Bibliothek im Parallelbetrieb betreiben wird.
 Werden hierbei die Besonderheiten der Java Multithreading API nicht berücksichtigt, kann dies zu einem fehlerhaften Verhalten in der <a href="../../../../glossary/latest/glossary/master.html#glossar-geschaeftsanwendung" class="xref page">Geschäftsanwendung</a> führen.</p>
 </div>
 <div class="sect2">
-<h3 id="threadsicherheit"><a class="anchor" href="#threadsicherheit"></a>7.1. Threadsicherheit</h3>
+<h3 id="threadsicherheit"><a class="anchor" href="#threadsicherheit"></a>8.1. Threadsicherheit</h3>
 <div class="paragraph">
 <p>Ein wichtiger Aspekt des Parallelbetriebs ist die Threadsicherheit.
 In diesem Abschnitt werden die Probleme bezüglich der Threadsicherheit verdeutlicht.
@@ -1138,7 +1130,7 @@ In diesen Fällen sollten die Objektvariablen in einem ThreadLocal-Objekt deklar
 </div>
 </div>
 <div class="sect2">
-<h3 id="status-des-threads-abfragen"><a class="anchor" href="#status-des-threads-abfragen"></a>7.2. Status des Threads abfragen</h3>
+<h3 id="status-des-threads-abfragen"><a class="anchor" href="#status-des-threads-abfragen"></a>8.2. Status des Threads abfragen</h3>
 <div class="paragraph">
 <p>Genau wie bei allen Multithreading Anwendungen, so kann es auch bei der Bibliothek <code>isy-task</code> nützlich sein, dass ein Thread einen Thread-State hat, der über die Methode <code>Thread.currentThread().getState()</code> abgefragt werden kann.
 Sobald die Bibliothek <code>isy-task</code> den Thread zum Laufen bringt, wechselt der <code>Thread.State</code> von <code>NEW</code> auf <code>RUNNABLE</code>.
@@ -1187,7 +1179,7 @@ Grundsätzlich kann der <code>Thread-State</code> folgende Werte einnehmen:</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="ausfuehrung-eines-tasks-vorzeitig-beenden"><a class="anchor" href="#ausfuehrung-eines-tasks-vorzeitig-beenden"></a>7.3. Ausführung eines Tasks vorzeitig beenden</h3>
+<h3 id="ausfuehrung-eines-tasks-vorzeitig-beenden"><a class="anchor" href="#ausfuehrung-eines-tasks-vorzeitig-beenden"></a>8.3. Ausführung eines Tasks vorzeitig beenden</h3>
 <div class="paragraph">
 <p>Bei einem Thread ist ein Abbruch-Mechanismus eingebaut.
 Der Mechanismus nutzt einen internen Flag, der sich interrupt status nennt und der mit einem Abbruchwunsch durch die Klassenmethode <code>Thread.interrupt()</code> auf den Status <code>interrupted</code> gesetzt werden kann.

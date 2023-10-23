@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
+<html lang="de"> <!-- Sets the language to German for correct hyphenation. -->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Nutzungsvorgaben Security :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/isy-security/nutzungsvorgaben/master.html">
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -365,13 +365,10 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Styleguide</span>
+    <span class="nav-text">Bedienkonzept</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-bedienkonzept/bedienkonzept.html">Bedienkonzept</a>
   </li>
 </ul>
   </li>
@@ -435,20 +432,35 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
   </li>
-  <li class="nav-item" data-depth="3">
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Spezifikation</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
+    <a class="nav-link" href="../../methodik/vorlage-systemspezifikation/master.html">Systemspezifikation</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
+    <a class="nav-link" href="../../methodik/vorlage-schnittstellendokumentation/master.html">Schnittstellen­dokumentation</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+    <a class="nav-link" href="../../methodik/anleitung-datenflussdiagramme/master.html">Anleitung für Datenflussdiagramme</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
   </li>
 </ul>
   </li>
@@ -595,7 +607,8 @@
     <li><a href="master.html">Nutzungsvorgaben</a></li>
   </ul>
 </nav>
-</div>
+  <div class="edit-this-page"><a href="https://github.com/IsyFact/isyfact-standards/edit/master/isyfact-standards-doc/src/docs/antora/modules/isy-security/pages/nutzungsvorgaben/master.adoc">Edit this Page</a></div>
+  </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Inhalt" data-levels="3">
   <div class="toc-menu"></div>
@@ -652,20 +665,29 @@ Es richtet sich an Entwickler, die ein IT-System gemäß den Vorgaben der IsyFac
 Der Baustein Security ist OAuth2.0 konform und greift hauptsächlich auf die Möglichkeiten von Spring Security zurück.</p>
 </div>
 <div class="paragraph">
-<p>In den folgenden Kapiteln wird die Einbindung und Konfiguration des Bausteins <strong>isy-security</strong> beschrieben, um</p>
+<p>Die folgenden Kapitel leiten durch die Funktionen des Bausteins <code>isy-security</code>.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Aufrufen von Nachbarsystemen</p>
+<p><a href="#software-architektur-security-baustein">Software-Architektur des Security Bausteins</a></p>
 </li>
 <li>
-<p>Absicherung von Service-Schnittstellen</p>
+<p><a href="#aufrufen-von-nachbarsystemen">Aufrufen von Nachbarsystemen</a></p>
+</li>
+<li>
+<p><a href="#auth_sgw">Authentifizierung über das SGW am IAM-Service</a></p>
+</li>
+<li>
+<p><a href="#absicherung_von_batches_tasks">Absicherung von Batches und Tasks</a></p>
+</li>
+<li>
+<p><a href="#absicherung_von_service_schnittstellen">Absicherung von Service-Schnittstellen</a></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>zu implementieren.</p>
+<p>Schließlich beschreibt das letzte Kapitel <a href="#testunterstuetzung">Testunterstützung</a>, welche Hilfen der Baustein <strong>isy-security</strong> zum Erstellen von (automatisierten) Tests bereitstellt.</p>
 </div>
 <div class="paragraph">
 <p>Die konzeptionellen Aspekte der Authentifizierung und Autorisierung werden im <a href="../konzept/master.html" class="xref page">Security - Konzept</a> beschrieben.</p>
@@ -673,23 +695,151 @@ Der Baustein Security ist OAuth2.0 konform und greift hauptsächlich auf die Mö
 </div>
 </div>
 <div class="sect1">
-<h2 id="aufrufen_von_nachbarsystemen"><a class="anchor" href="#aufrufen_von_nachbarsystemen"></a>2. Aufrufen von Nachbarsystemen</h2>
+<h2 id="software-architektur-security-baustein"><a class="anchor" href="#software-architektur-security-baustein"></a>2. Software-Architektur des Security Bausteins</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Der Aufruf von Nachbarsystemen erfolgt auf Basis des reaktiven <code>Spring WebClient</code>. Um Nachbarsysteme aufzurufen, die auf Basis von <code>OAuth 2.0</code> abgesichert sind, ist grundlegend die Authentifizierung bei einem <code>Identitiy Provider</code> mit gültiger <code>client_id</code>, <code>client_secret</code> sowie <code>grant_type</code> erforderlich.
+<p>Die Software-Architektur des Security-Bausteins bildet das Fundament für die Sicherheit von Anwendungen in modernen Softwarelösungen.
+Die korrekte Gestaltung und Implementierung dieser Architektur ist entscheidend, um Schutzmechanismen gegen potenzielle Sicherheitsbedrohungen zu etablieren.
+In diesem Kapitel wird detailliert auf die verschiedenen Aspekte der Software-Architektur des Security-Bausteins eingegangen und bewährte Methoden sowie bewährte Praktiken vorgestellt, um eine robuste und zuverlässige Sicherheitsinfrastruktur zu schaffen.</p>
+</div>
+<div class="paragraph">
+<p>Im Folgenden werden die <a href="#aussensicht-der-komponente-security">Interfaces des Bausteins Security</a> genauer erläutert.</p>
+</div>
+<div class="sect2">
+<h3 id="security-interface"><a class="anchor" href="#security-interface"></a>2.1. Security</h3>
+<div class="paragraph">
+<p>Das Interface <code>Security</code> stellt die zentrale Schnittstelle bereit, über die auf den Baustein zugegriffen wird.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+Es empfiehlt sich, die Beans direkt zu 'autowiren' und das Interface hauptsächlich für eine Migration vom alten Sicherheitsbaustein <code>isy-sicherheit</code> auf den neuen Baustein <code>isy-security</code> zu verwenden.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Die folgenden Methoden bieten Zugriff auf eine Liste von allen im System hinterlegten Rollen, den Berechtigungsmanager und den optionalen Authentifizierungsmanager:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>Set&lt;String&gt; getAlleRollen()</code></dt>
+<dd>
+<p>Liefert die Menge aller im System konfigurierten Rollen.</p>
+</dd>
+<dt class="hdlist1"><code>Berechtigungsmanager getBerechtigungsManager()</code></dt>
+<dd>
+<p>Stellt eine Referenz auf das <code>Berechtigungsmanager</code> Bean bereit.</p>
+</dd>
+<dt class="hdlist1"><code>Optional&lt;Authentifizierungsmanager&gt; getAuthentifizierungsManager()</code></dt>
+<dd>
+<p>Liefert ein <code>Optional</code>, das eine Referenz auf den <code>Authentifizierungsmanager</code> enthält, oder <code>null</code> falls die Anwendung als Resource-Server agiert und kein <code>Authentifizierungsmanager</code> benötigt wird.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="authentifizierungsmanager-interface"><a class="anchor" href="#authentifizierungsmanager-interface"></a>2.2. Authentifizierungsmanager</h3>
+<div class="paragraph">
+<p>Zur Authentifizierung von OAuth 2.0 Clients stehen folgende Methoden zur Verfügung:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>void authentifiziere(String oauth2ClientRegistrationId)</code></dt>
+<dd>
+<p>Authentifiziert einen OAuth 2.0 Client anhand seiner Client-Registration-ID. Unterstützt den <code>client_credentials</code> (<em>Client Credentials</em> Flow) und <code>password</code> (<em>Resource Owner Password Credentials</em> Flow) GrantType.
+Zusätzliche Authentifizierungsmerkmale werden aus den <a href="#isyfact-specific-client-registration">IsyFact spezifischen Konfigurationsparametern</a> mit der entsprechenden Client-Registration-ID abgefragt:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>bhknz</code>: Das BHKNZ kann als optionaler Parameter übergeben werden. Wird aktuell nur für den <em>Resource Owner-Password Credentials</em> Flow ausgewertet.</p>
+</li>
+<li>
+<p><code>username</code> und <code>password</code>: Die Zugangsdaten des technischen Nutzers (Resource Owner), welche für den <em>Resource Owner Password Credentials</em> Flow erforderlich sind.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1"><code>void authentifiziereClient(String issuerLocation, String clientId, String clientSecret)</code></dt>
+<dt class="hdlist1"><code>void authentifiziereClient(String issuerLocation, String clientId, String clientSecret, String bhknz)</code></dt>
+<dd>
+<p>Authentifiziert einen OAuth 2.0 Client gegen die angegebene <code>issuerLocation</code> anhand seiner <code>clientId</code> und <code>clientSecret</code>.
+Das <code>bhknz</code> kann als optionaler Parameter übergeben werden, wird aber für die Client-Authentifizierung noch nicht ausgewertet.</p>
+</dd>
+<dt class="hdlist1"><code>void authentifiziereSystem(String issuerLocation, String clientId, String clientSecret, String username, String password)</code></dt>
+<dt class="hdlist1"><code>void authentifiziereSystem(String issuerLocation, String clientId, String clientSecret, String username, String password, String bhknz)</code></dt>
+<dd>
+<p>Authentifiziert einen technischen Nutzer (Resource Owner) gegen die angegebene <code>issuerLocation</code> anhand der <code>clientId</code> und <code>clientSecret</code> des zu verwendenden OAuth 2.0 Clients und dem <code>username</code> und <code>password</code> des Resource Owners.
+Das <code>bhknz</code> kann als optionaler Parameter übergeben werden und wird in den <a href="#isyfact-specific-client-registration">konfigurierten Header</a> zur Zwei-Faktor-Authentifizierung gesetzt.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="berechtigungsmanager"><a class="anchor" href="#berechtigungsmanager"></a>2.3. Berechtigungsmanager</h3>
+<div class="paragraph">
+<p>Berechtigungsprüfungen können ebenso an beliebiger Stelle im Quellcode erfolgen.
+Dazu stellt der Baustein <code>isy-security</code> über die Schnittstelle Berechtigungsmanager entsprechende Funktionen bereit.
+Der Berechtigungsmanager ist ein Container für die Rechte und Rollen des aktuell authentifizierten Anwenders.</p>
+</div>
+<div class="paragraph">
+<p>Zur Formulierung von Berechtigungsprüfungen stehen folgende Methoden des Berechtigungsmanagers zur Verfügung:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>Set&lt;String&gt; getRollen()</code></dt>
+<dd>
+<p>Liefert die Menge aller Rollen des Anwenders.</p>
+</dd>
+<dt class="hdlist1"><code>Set&lt;String&gt; getRechte()</code></dt>
+<dd>
+<p>Liefert die Menge aller Rechte des Anwenders.</p>
+</dd>
+<dt class="hdlist1"><code>boolean hatRecht(String recht)</code></dt>
+<dd>
+<p>Ermittelt, ob der Anwender ein bestimmtes Recht besitzt.</p>
+</dd>
+<dt class="hdlist1"><code>void pruefeRecht(String recht)</code></dt>
+<dd>
+<p>Prüft, ob der Anwender das angegebene Recht besitzt und erzeugt einen Fehler vom Typ <code>AccessDeniedException</code>, wenn das nicht der Fall ist.</p>
+</dd>
+<dt class="hdlist1"><code>Object getTokenAttribute(String key)</code></dt>
+<dd>
+<p>Fragt einen Wert im Access Token des Security Contexts ab.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+Primär sollte die Berechtigungsprüfung über die Spring Annotation <code>@Secured</code> und nicht über die hier erwähnte Methode <code>pruefeRecht(String recht)</code> erfolgen.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="aufrufen_von_nachbarsystemen"><a class="anchor" href="#aufrufen_von_nachbarsystemen"></a>3. Aufrufen von Nachbarsystemen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Der Aufruf von Nachbarsystemen erfolgt auf Basis des reaktiven <code>Spring WebClient</code>.
+Um Nachbarsysteme aufzurufen, die auf Basis von <code>OAuth 2.0</code> abgesichert sind, ist grundlegend die Authentifizierung bei einem <code>IAM-Service</code> mit gültiger <code>client_id</code>, <code>client_secret</code> sowie <code>grant_type</code> erforderlich.
 Dieser liefert ein Bearer-Token zurück, in dem die Rollen und somit die Zugriffsmöglichkeiten der aufrufenden Anwendung definiert sind.</p>
 </div>
 <div class="sect2">
-<h3 id="authentifizierung_ccf"><a class="anchor" href="#authentifizierung_ccf"></a>2.1. Authentifizierung eines Clients mit Client Credentials</h3>
+<h3 id="maven-dependencies"><a class="anchor" href="#maven-dependencies"></a>3.1. Maven Dependencies</h3>
 <div class="paragraph">
-<p>Mit dem <code>OAuth 2.0</code>-Grant <code>client_credentials</code> steht eine vereinfachte Zugriffskontrolle für eine Client-Anwendung
-im Rahmen des <code>Client Credential Flow</code> zur Verfügung. Im Folgenden werden die notwendigen Schritte für die tokenbasierte Authentifizierung einer Anwendung als Client erläutert.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="maven-dependency"><a class="anchor" href="#maven-dependency"></a>2.2. Maven Dependency</h3>
-<div class="paragraph">
-<p>Hierzu sind zunächst die folgenden Abhängigkeiten erforderlich:</p>
+<p>Für die Authentifizierung mit einem <code>OAuth 2.0</code>-Client sind die folgenden Abhängigkeiten erforderlich:</p>
 </div>
 <div id="listing-maven-dep-client-cred" class="listingblock">
 <div class="title">Listing 1. Maven Dependencies für Client Credentials</div>
@@ -715,43 +865,92 @@ im Rahmen des <code>Client Credential Flow</code> zur Verfügung. Im Folgenden w
 </div>
 </div>
 <div class="sect2">
-<h3 id="_spring_konfiguration"><a class="anchor" href="#_spring_konfiguration"></a>2.3. Spring Konfiguration</h3>
+<h3 id="konfigurationsparameter"><a class="anchor" href="#konfigurationsparameter"></a>3.2. Konfigurationsparameter</h3>
 <div class="paragraph">
-<p>Spring Security bietet umfassenden Support für <code>OAuth 2.0</code> und unterstützt die Authentifizierung interner Systeme auf Basis des <code>Client Credential Flow</code>, wobei auf Spring interne Mechanismen zugegriffen wird.</p>
+<p>Konfigurationsparameter sind essenziell, um Bausteine in technischen Anwendungen anzupassen und zu steuern.
+Sie bieten die Möglichkeit, die Funktionalität und das Verhalten eines Bausteins entsprechend spezifischer Anforderungen anzupassen.
+In diesem Kapitel werden alle möglichen Optionen der Konfigurationsparameter vorgestellt, um einen umfassenden Überblick über deren Anwendungsmöglichkeiten zu geben.</p>
 </div>
+<div class="sect3">
+<h4 id="spring-oauth2-client-registration"><a class="anchor" href="#spring-oauth2-client-registration"></a>3.2.1. Spring OAuth2 Client Konfigurationsparameter</h4>
 <div class="paragraph">
-<p>Um clientseitig die automatische Konfiguration einer Anwendung zu ermöglichen, werden zunächst die oben aufgeführten Abhängigkeiten eingebunden.
-Um im Rahmen des Client Credential Flows HTTP-Anfragen an einen Ressourcenserver stellen zu können, ist zusätzlich die Konfiguration des reaktiven <code>WebClient</code> erforderlich.
-Hierzu wird die Standardimplementierung mit dem Zusatz eines OAuth2-Autorisierungsfilters verwendet:</p>
-</div>
-<div id="listing-spring-webclient-example" class="listingblock">
-<div class="title">Listing 2. Spring WebClient Beispiel</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Configuration
-public class OAuth2WebClientConfiguration {
-
-    @Bean("webclient")
-    WebClient webClient(ClientRegistrationRepository clientRegistrationRepository,
-        OAuth2AuthorizedClientService authorizedClientService) {
-        ServletOAuth2AuthorizedClientExchangeFilterFunction oauth2 =
-            new ServletOAuth2AuthorizedClientExchangeFilterFunction(
-                new AuthorizedClientServiceOAuth2AuthorizedClientManager(clientRegistrationRepository,
-                    authorizedClientService));
-        oauth.setDefaultClientRegistrationId("registrationId");
-        return WebClient.builder().apply(oauth2.oauth2Configuration()).build();
-    }
-
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="konfigurationsparameter"><a class="anchor" href="#konfigurationsparameter"></a>2.4. Konfigurationsparameter</h3>
-<div class="paragraph">
-<p>Für die korrekte Anbindung an den <code>Identity Provider</code> ist die Angabe einiger Konfigurationsparameter notwendig. Das Präfix sämtlicher Konfigurationsparameter <code>spring.security.oauth2</code> wird zur Vereinfachung in der Liste unten weggelassen.</p>
+<p>Für die korrekte Anbindung an den <code>IAM-Service</code> ist die Angabe einiger Konfigurationsparameter notwendig, welche in der Konfigurationsdatei der Anwendung eingetragen werden müssen.
+Das Präfix sämtlicher Konfigurationsparameter <code>spring.security.oauth2</code> wird zur Vereinfachung in der folgenden Liste weggelassen.</p>
 </div>
 <table id="table-parameter-client-cred" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 1. Konfigurationsparameter einer Client-Anwendung</caption>
+<colgroup>
+<col style="width: 23.0769%;">
+<col style="width: 15.3846%;">
+<col style="width: 61.5385%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Wertebereich</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.registration.<em>&lt;registrationId&gt;</em>.client-id</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier der Client-Applikation im Autorisierungsserver.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.registration.<em>&lt;registrationId&gt;</em>.client-secret</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Secret, das nur der Anwendung und dem Autorisierungsserver bekannt ist.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.registration.<em>&lt;registrationId&gt;</em>.authorization-grant-type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Methode, durch welche die Anwendung ein Bearer-Token erhält. Abhängig von dem zu verwendenden Flow auf <code>client_credentials</code> (Client Credentials Flow) oder <code>password</code> (Resource Owner Password Credentials Flow) zu setzen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.registration.<em>&lt;registrationId&gt;</em>.provider</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) ID des zu verwendenden Client-Providers, falls diese nicht mit der Registration-ID übereinstimmt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.provider.<em>&lt;providerId&gt;</em>.issuer-uri</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der OpenID Connect Issuer Identifier für die Konfiguration des Clients über den Discovery Endpoint, beispielsweise in der Form <code><a href="http://&lt;identity-provider&gt;/auth/realms/&lt;realm&gt" class="bare">http://&lt;identity-provider&gt;/auth/realms/&lt;realm&gt</a>;</code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="isyfact-specific-client-registration"><a class="anchor" href="#isyfact-specific-client-registration"></a>3.2.2. Isyfact spezifische Konfigurationsparameter</h4>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-ban"></i></span> Deprecation</div>
+<div class="paragraph">
+<p>Dieser Teil der Dokumentation ist veraltet und wird in einem zukünftigen Release entfernt.
+Die Inhalte sollten zur Entwicklung neuer Anwendungen nicht mehr berücksichtigt werden.
+Stattdessen wird empfohlen, <a href="#client-credential-flow">[client-credential-flow]</a> zu verwenden.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Anmerkung zur Deprecation</strong></p>
+</div>
+<div class="paragraph">
+<p>Dieser Flow soll gemäß OAuth2.0 Vorgaben nicht mehr verwendet werden und wird in zukünftigen Versionen aus dem OAuth-Standard entfernt.</p>
+</div>
+<div class="paragraph">
+<p>Die folgenden Konfigurationsparameter werden als Übergangslösung für technische Nutzer bereitgestellt.
+Der Client-Credentials Flow ist bevorzugt zu nutzen.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Zugangsdaten für technische Nutzer zur Authentifizierung von Tasks und Batches mit dem <em>Resource-Owner-Password-Credential</em> Flow können über die folgenden Parameter konfiguriert werden:</p>
+</div>
+<table id="table-isyfact-client-registration-extension" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 2. Isyfact spezifische Erweiterung der Spring ClientRegistration</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 13.3333%;">
@@ -768,53 +967,248 @@ public class OAuth2WebClientConfiguration {
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.registration.registrationId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy.security.oauth2.client.registration.<em>&lt;registrationId&gt;</em>.username</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><em>keiner</em></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier der <code>ClientRegistration</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benutzername für Grant-Type <code>password</code>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.registration.registrationId.client-id</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy.security.oauth2.client.registration.<em>&lt;registrationId&gt;</em>.password</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><em>keiner</em></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier der Client-Applikation im Autorisierungsserver</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benutzerpassword für Grant-Type <code>password</code>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.registration.registrationId.client-secret</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy.security.oauth2.client.registration.<em>&lt;registrationId&gt;</em>.bhknz</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><em>keiner</em></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Secret, das nur der Anwendung und dem Autorisierungsserver bekannt ist</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Behördenkennzeichen für Grant-Type <code>password</code>. (optional)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.registration.registrationId.authorization-grant-type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy.security.oauth2.client.bhknz-header-name</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><em>client_credentials</em></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Methode, durch welche die Anwendung ein Bearer-Token erhält (hier <em>client_credentials</em>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>x-client-cert-bhknz</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Konfigurierbarer Headername für Zwei-Faktor-Authentifizierung.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>client.provider.registrationId.issuer-uri</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy.security.oauth2.client.default-certificate-ou</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><em>keiner</em></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Auto-Konfiguration des Identity-Providers, beispielsweise in der Form "http://&lt;identity-provider&gt;/auth/realms/&lt;realm&gt;/.well-known/openid-configuration"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Organisational Unit, die in Verbindung mit bhknz verwendet wird, um den Wert für bhknz-header-name zu bilden.</p>
+<p class="tableblock">(Muss gesetzt werden, wenn eine <code>registration</code> mit <code>bhknz</code> konfiguriert ist)</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_tokenweitergabe_an_nachbarsysteme"><a class="anchor" href="#_tokenweitergabe_an_nachbarsysteme"></a>3.3. Tokenweitergabe an Nachbarsysteme</h3>
+<div class="paragraph">
+<p>Für authentifizierte Anwendungen besteht die Möglichkeit der Tokenweitergabe an Nachbarsysteme durch Erweiterung des <code>WebClient</code> um die <code>ServletBearerExchangeFilterFunction</code>.
+Diese liest die aktuelle Authentifizierung aus dem SecurityContext und fügt ausgehenden Requests das dort befindliche OAuth 2.0 Token dem Authorization Header hinzu.</p>
+</div>
+<div id="listing-spring-propagation-webclient-example" class="listingblock">
+<div class="title">Listing 2. Konfiguration des Spring WebClient zur Tokenweitergabe</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Configuration
+public class ExampleWebClientConfiguration {
+
+  @Bean
+  WebClient webClient() {
+      ServletBearerExchangeFilterFunction bearer = new ServletBearerExchangeFilterFunction();
+      return WebClient.builder()
+              .filter(bearer).build();
+  }
+
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tokenweitergabe_bei_generierten_clients"><a class="anchor" href="#_tokenweitergabe_bei_generierten_clients"></a>3.4. Tokenweitergabe bei generierten Clients</h3>
+<div class="paragraph">
+<p>Der von Open API Tools generierte <code>ApiClient</code> erlaubt die Initialisierung mit einem Spring <code>WebClient</code> im Konstruktor. Demzufolge kann die oben beschriebene Konfiguration zur Tokenweitergabe analog angewendet werden. Für das folgende Code-Beispiel wird somit unterstellt, dass ein <code>WebClient</code> vorliegt, der die <code>ServletBearerExchangeFunction</code> beinhaltet:</p>
+</div>
+<div id="listing-openapi-token-propagation-client-example" class="listingblock">
+<div class="title">Listing 3. Initialisierung des ApiClient mit WebClient im Konstruktor</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class ExampleClass {
+    // ...
+    ApiClient apiClient = new ApiClient(webClient);
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mögliche_fehler_bei_der_tokenweitergabe"><a class="anchor" href="#_mögliche_fehler_bei_der_tokenweitergabe"></a>3.5. Mögliche Fehler bei der Tokenweitergabe</h3>
+<div class="paragraph">
+<p>Bei der Tokenweitergabe können verschiedene Fehler auftreten. Im Folgenden werden diesbezüglich die naheliegendsten Fehler beschrieben.</p>
+</div>
+<div class="sect3">
+<h4 id="_ungültigkeit_des_tokens"><a class="anchor" href="#_ungültigkeit_des_tokens"></a>3.5.1. Ungültigkeit des Tokens</h4>
+<div class="paragraph">
+<p>Wenn das Token im SecurityContext ungültig ist, wird eine <code>InvalidBearerTokenException</code>  geworfen und der Fehlercode <code>401: Unauthorized</code> zurückgegeben. Die Ungültigkeit kann auf verschiedenste Gründe zurückzuführen sein, beispielsweise könnte das Token abgelaufen oder fehlerhaft sein. Eine detaillierte Beschreibung des jeweiligen Fehlers ist unter der <code>Error-URI</code> zu finden:</p>
+</div>
+<div id="listing-propagation-exception-response-invalid-token" class="listingblock">
+<div class="title">Listing 4. Beispielhafte Response bei ungültigem Token</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">HTTP/1.1 401 Unauthorized WWW-Authenticate: Bearer error_code="invalid_token", error_description="Unsupported algorithm of none", error_uri="https://tools.ietf.org/html/rfc6750#section-3.1"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_kein_token_im_security_context_hinterlegt"><a class="anchor" href="#_kein_token_im_security_context_hinterlegt"></a>3.5.2. Kein Token im Security Context hinterlegt</h4>
+<div class="paragraph">
+<p>Wenn im SecurityContext kein Token vorliegt, beispielsweise weil die Anwendung nicht authentifiziert ist, hat dies zur Folge, dass der ausgehende Request nicht um Authentifizierungsinformationen im Header ergänzt wird.
+Der aufgerufene Server liefert in diesem Fall außer dem Fehlercode <code>401: Unauthorized</code> keine tiefergehenden Fehlerinformationen zurück.</p>
+</div>
+<div id="listing-propagation-exception-response-no-token" class="listingblock">
+<div class="title">Listing 5. Beispielhafte Response ohne Token</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">HTTP/1.1 401 Unauthorized WWW-Authenticate: Bearer realm="example"</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="authentifizierungsmanager-authentication"><a class="anchor" href="#authentifizierungsmanager-authentication"></a>3.6. Authentifizierung eines OAuth 2.0 Clients mit dem Authentifizierungsmanager</h3>
+<div class="paragraph">
+<p>Ein OAuth 2.0 Client kann über den Authentifizierungsmanager authentifiziert werden, welcher entsprechende Methoden zur Verwendung mit und ohne zuvor konfigurierte <code>ClientRegistrations</code> bereitstellt.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Authentifizierung per <code>oauth2ClientRegistrationId</code>.
+Die Auswahl des Flows (<em>Client Credentials</em> oder <em>Resource Owner Password Credentials</em>) wird dabei über den <code>authorization-grant-type</code> der vollständig konfigurierten <code>ClientRegistration</code> getroffen (siehe <a href="#listing-client-registrations">Beispiel: Spring Security OAuth 2.0 Client-Registrations</a>).
+Diese Methode eignet sich in Anwendungen, wenn die Zugangsdaten für technische Nutzer zur Konfiguration bekannt sind.</p>
+</li>
+<li>
+<p>Authentifizierung per <code>issuerLocation</code>, <code>clientId</code> und <code>clientSecret</code>.
+Diese Methode nutzt den <em>Client Credentials</em> Flow und kann verwendet werden, wenn die Zugangsdaten des OAuth 2.0 Clients (<code>clientId</code> und <code>clientSecret</code>) erst zur Laufzeit bekannt sind.
+Die <code>issuerLocation</code> verweist auf den OpenID Connect Provider, in dem der für den <em>Client Credentials</em> Flow konfigurierte OAuth 2.0 Client hinterlegt ist und als IAM-Service die Authentifizierung mit den übergebenen <em>Authentifizierungsdaten</em> durchgeführt wird.</p>
+</li>
+<li>
+<p>Authentifizierung per <code>issuerLocation</code>, <code>clientId</code>, <code>clientSecret</code>, <code>username</code> und <code>password</code>.
+Diese Methode nutzt den <em>Resource Owner Password Credentials</em> Flow und kann verwendet werden, wenn die Zugangsdaten des technischen Nutzers (<code>username</code> und <code>password</code> des Resource Owners) erst zur Laufzeit bekannt sind.
+Die Zugangsdaten des Vermittlers (<code>clientId</code> und <code>clientSecret</code>) werden benötigt, um die Authentifizierungsabfrage selbst zu autorisieren.
+Die <code>issuerLocation</code> verweist auf den OpenID Connect Provider, gegen den die Authentifizierung mit dem dort für den <em>Resource Owner Password Credentials</em> Flow konfigurierten OAuth 2.0 Client durchgeführt werden soll.
+Die im <a href="#listing-client-registrations">Beispiel: Spring Security OAuth 2.0 Client-Registrations</a> konfigurierten IsyFact-spezifischen ClientRegistration-Properties werden nicht benötigt, da die Zugangsdaten der Methode direkt übergeben werden.</p>
+</li>
+</ol>
+</div>
+<div id="listing-client-registrations" class="listingblock">
+<div class="title">Listing 6. Beispiel: Spring Security OAuth 2.0 Client-Registrations</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">[...]
+spring.security.oauth2.client.provider.testrealm.issuer-uri=http://localhost:9095/auth/realms/testrealm
+
+### Beispiel: ClientRegistration für den Client Credentials Flow
+# Spring Security Konfiguration
+spring.security.oauth2.client.registration.client1.client-id=client-credentials-client
+spring.security.oauth2.client.registration.client1.client-secret=client-credentials-secret
+spring.security.oauth2.client.registration.client1.authorization-grant-type=client_credentials
+spring.security.oauth2.client.registration.client1.provider=testrealm
+
+### Beispiel: ClientRegistration für den Resource Owner Password Credentials Flow
+# Spring Security Konfiguration
+spring.security.oauth2.client.registration.client2.client-id=client-credentials-client
+spring.security.oauth2.client.registration.client2.client-secret=client-credentials-secret
+spring.security.oauth2.client.registration.client2.authorization-grant-type=password
+spring.security.oauth2.client.registration.client2.provider=testrealm
+# Isyfact spezifische ClientRegistration properties für den Resource Owner Password Credentials Flow
+isy.security.oauth2.client.registration.client2.username=testuser
+isy.security.oauth2.client.registration.client2.password=testpassword
+isy.security.oauth2.client.registration.client2.bhknz=123456
+# Organizational Unit zur Verwendung mit bhknz
+isy.security.oauth2.client.default-certificate-ou=TESTOU</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="webclient-authentication"><a class="anchor" href="#webclient-authentication"></a>3.7. Automatische Authentifizierung eines WebClient mit Client Credentials</h3>
+<div class="paragraph">
+<p>Mit dem <code>OAuth 2.0</code>-Grant <code>client_credentials</code> steht eine vereinfachte Zugriffskontrolle für eine Client-Anwendung im Rahmen des <em>Client Credentials</em> Flow zur Verfügung.</p>
+</div>
+<div class="paragraph">
+<p>Spring Security bietet umfassenden Support für <code>OAuth 2.0</code> und unterstützt die Authentifizierung interner Systeme auf Basis des <code>Client Credentials Flow</code>, wobei auf Spring interne Mechanismen zugegriffen wird.</p>
+</div>
+<div class="paragraph">
+<p>Um clientseitig die automatische Konfiguration einer Anwendung zu ermöglichen, werden zunächst die oben aufgeführten Abhängigkeiten eingebunden und eine Client-Registration für den <code>Client Credentials Flow</code> angelegt.
+Um im Rahmen des <code>Client Credentials Flows</code> HTTP-Anfragen an einen Ressourcenserver stellen zu können, ist zusätzlich die Konfiguration des reaktiven <code>WebClient</code> erforderlich.
+Hierzu wird die Standardimplementierung mit dem Zusatz eines OAuth2-Autorisierungsfilters verwendet.
+Die "registrationId" ist hierbei auf die ID der für den <code>Client Credentials Flow</code> konfigurierten Client-Registration zu setzen.</p>
+</div>
+<div id="listing-spring-webclient-example" class="listingblock">
+<div class="title">Listing 7. Spring WebClient Beispiel</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Configuration
+public class OAuth2WebClientConfiguration {
+
+    @Bean("webclient")
+    WebClient webClient(@Qualifier(ISY_AUTHORIZED_CLIENT_MANAGER_BEAN) OAuth2AuthorizedClientManager authorizedClientManager) {
+        ServletOAuth2AuthorizedClientExchangeFilterFunction oauth =
+            new ServletOAuth2AuthorizedClientExchangeFilterFunction(authorizedClientManager);
+        oauth.setDefaultClientRegistrationId("registrationId");
+        return WebClient.builder().filter(oauth).build();
+    }
+
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="sect1">
-<h2 id="absicherung_von_service_schnittstellen"><a class="anchor" href="#absicherung_von_service_schnittstellen"></a>3. Absicherung von Service-Schnittstellen</h2>
+<h2 id="auth_sgw"><a class="anchor" href="#auth_sgw"></a>4. Authentifizierung über das SGW am IAM-Service</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die Authentifizierung über das Service Gateway (SGW) stellt einen wichtigen Schritt in der Sicherung von Anwendungen dar.
+Um diesen Prozess effektiv umzusetzen, empfiehlt sich die Verwendung des neu entwickelten Authentifizierungsmanagers und dessen Methoden.</p>
+</div>
+<div class="paragraph">
+<p>Die Methoden erlauben es technische Nutzer zur Laufzeit mit ihren Zugangsdaten über den IAM-Service zu authentifizieren.
+Mit diesem Mechanismus wird sichergestellt, dass nur autorisierte Clients Zugriff auf die Ressourcen erhalten.
+Durch die Nutzung dieses speziellen Authentifizierungsmechanismus wird eine robuste und zuverlässige Sicherheitsschicht implementiert, um unautorisierten Zugriff und potenzielle Sicherheitslücken zu verhindern.</p>
+</div>
+<div class="paragraph">
+<p>Weitere Informationen und detaillierte Anleitungen zur Verwendung können im Abschnitt zum <a href="inhalt.html#authentifizierungsmanager-interface" class="xref page">Authentifizierungsmanager</a> gefunden werden.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="absicherung_von_batches_tasks"><a class="anchor" href="#absicherung_von_batches_tasks"></a>5. Absicherung von Batches und Tasks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Für detaillierte Informationen und Anleitung zur Absicherung von Batches und Tasks wird auf die Dokumentation unter</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../blaupausen/detailkonzept-komponente-batch/inhalt.html#authentifizierung-und-autorisierung" class="xref page">Authentifizierung und Autorisierung von Batches</a></p>
+</li>
+<li>
+<p>bzw. <a href="../../isy-task/nutzungsvorgaben/inhalt.html#absicherung-von-tasks" class="xref page">Absicherung von Tasks</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>verwiesen. Diese bieten praxisorientierte Richtlinien zur Gewährleistung der Sicherheit von Batches und Tasks.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="absicherung_von_service_schnittstellen"><a class="anchor" href="#absicherung_von_service_schnittstellen"></a>6. Absicherung von Service-Schnittstellen</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Spring Security unterstützt die automatische Absicherung von Endpunkten einer Anwendung und eine feingranulare Autorisierung im Rahmen von <code>OAuth 2.0</code>.</p>
 </div>
 <div class="sect2">
-<h3 id="_maven_dependency"><a class="anchor" href="#_maven_dependency"></a>3.1. Maven Dependency</h3>
+<h3 id="_maven_dependency"><a class="anchor" href="#_maven_dependency"></a>6.1. Maven Dependency</h3>
 <div class="paragraph">
 <p>Dazu ist die Einbindung der folgenden Abhängigkeiten notwendig:</p>
 </div>
 <div id="listing-maven-dep-sst" class="listingblock">
-<div class="title">Listing 3. Maven Dependencies für Client Credentials</div>
+<div class="title">Listing 8. Maven Dependencies für Client Credentials</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
   &lt;groupId&gt;de.bund.bva.isyfact&lt;/groupId&gt;
@@ -837,13 +1231,13 @@ public class OAuth2WebClientConfiguration {
 </div>
 </div>
 <div class="sect2">
-<h3 id="spring-konfiguration"><a class="anchor" href="#spring-konfiguration"></a>3.2. Spring Konfiguration</h3>
+<h3 id="spring-konfiguration"><a class="anchor" href="#spring-konfiguration"></a>6.2. Spring Konfiguration</h3>
 <div class="paragraph">
 <p>Um eine Anwendung auf Basis von <code>OAuth 2.0</code> und unter Verwendung von JWT-Bearer-Tokens zu sichern, werden die oben aufgeführten Abhängigkeiten eingebunden. Die Verwendung der Abhängigkeit <code>spring-security-oauth2-resource-server</code> führt dazu, dass die anwendungsspezifische <code>SecurityFilterChain</code> um den Filter <code>.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)</code> erweitert wird.
 Bietet die Applikation keine <code>SecurityFilterChain</code> an, wird durch Spring Boot automatisch die folgende Konfiguration eingebunden:</p>
 </div>
 <div id="listing-sst-security-config" class="listingblock">
-<div class="title">Listing 4. Beispiel für eine Security Konfiguration zur Absicherung einer Schnittstelle mit Spring Boot</div>
+<div class="title">Listing 9. Beispiel für eine Security Konfiguration zur Absicherung einer Schnittstelle mit Spring Boot</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Configuration
 @EnableWebSecurity
@@ -861,12 +1255,12 @@ public class OAuth2ServerSecurityConfig {
 </div>
 </div>
 <div class="sect2">
-<h3 id="konfigurationsparameterservice"><a class="anchor" href="#konfigurationsparameterservice"></a>3.3. Konfigurationsparameter</h3>
+<h3 id="konfigurationsparameterservice"><a class="anchor" href="#konfigurationsparameterservice"></a>6.3. Konfigurationsparameter</h3>
 <div class="paragraph">
-<p>Für die korrekte Anbindung an den <code>Identity Provider</code> ist die Angabe der folgenden Konfigurationsparameter notwendig. Das Präfix sämtlicher Konfigurationsparameter <code>spring.security.oauth2</code> wird zur Vereinfachung in der Liste unten weggelassen.</p>
+<p>Für die korrekte Anbindung an den <code>IAM-Service</code> ist die Angabe der folgenden Konfigurationsparameter notwendig. Das Präfix sämtlicher Konfigurationsparameter <code>spring.security.oauth2</code> wird zur Vereinfachung in der Liste unten weggelassen.</p>
 </div>
 <table id="table-parameter-service" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 2. Konfigurationsparameter einer Service-Schnittstelle</caption>
+<caption class="title">Tabelle 3. Konfigurationsparameter einer Service-Schnittstelle</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 13.3333%;">
@@ -886,7 +1280,7 @@ public class OAuth2ServerSecurityConfig {
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>resourceserver.jwt.issuer-uri</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code><em>keiner</em></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Auto-Konfiguration des Identity-Providers zur Validierung des Bearer Tokens, beispielsweise in der Form "http://&lt;identity-provider&gt;/auth/realms/&lt;realm&gt;/protocol/openid-connect/certs"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Auto-Konfiguration des IAM-Services zur Validierung des Bearer Tokens, beispielsweise in der Form "http://&lt;identity-provider&gt;/auth/realms/&lt;realm&gt;/protocol/openid-connect/certs"</p></td>
 </tr>
 </tbody>
 </table>
@@ -894,7 +1288,7 @@ public class OAuth2ServerSecurityConfig {
 <p>Zusätzlich sind folgende Isyfact-spezifischen Konfigurationsparameter notwendig.</p>
 </div>
 <table id="table-parameter-service-isyfact" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 3. Isyfact-spezifische Konfigurationsparameter einer Service-Schnittstelle</caption>
+<caption class="title">Tabelle 4. Isyfact-spezifische Konfigurationsparameter einer Service-Schnittstelle</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 13.3333%;">
@@ -920,12 +1314,55 @@ public class OAuth2ServerSecurityConfig {
 </table>
 </div>
 <div class="sect2">
-<h3 id="konfiguration-von-rollen-und-rechten"><a class="anchor" href="#konfiguration-von-rollen-und-rechten"></a>3.4. Konfiguration von Rollen und Rechten</h3>
+<h3 id="konfiguration-von-rollen-und-rechten"><a class="anchor" href="#konfiguration-von-rollen-und-rechten"></a>6.4. Konfiguration von Rollen und Rechten</h3>
 <div class="paragraph">
 <p>Jede Geschäftsanwendung spezifiziert im Rahmen ihrer Systemspezifikation Rechte und bildet diese auf fachliche und technische Rollen ab.
-Bei der technischen Umsetzung müssen alle spezifizierten Rollen und Rechte konfiguriert und korrekt zugeordnet werden.
-Dies geschieht in der statischen Konfiguration in der Datei <code>/resources/sicherheit/rollenrechte.xml</code>.
-Der Baustein liefert ein <a href="#anhang-rollen-rechte-schema">XML-Schema für den Aufbau der Konfigurationsdatei</a> mit.</p>
+Bei der technischen Umsetzung müssen alle spezifizierten Rollen und Rechte konfiguriert und korrekt zugeordnet werden.</p>
+</div>
+<div class="paragraph">
+<p>Der Pfad der Datei kann wie folgt angepasst werden:</p>
+</div>
+<table id="table-pfad-rollen-rechten" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 5. Konfiguration von Rollen und Rechten</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 13.3333%;">
+<col style="width: 13.3333%;">
+<col style="width: 53.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Wertebereich</th>
+<th class="tableblock halign-left valign-top">Default</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isy.security.role-privilege-mapping-file</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Resource</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>classpath:/resources/sicherheit/rollenrechte.xml</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pfad zu der XML-Datei, welche die Rollen-/Berechtigungszuordnungen enthält.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Der Baustein liefert ein <a href="#anhang-rollen-rechte-schema">XML-Schema für den Aufbau der Konfigurationsdatei</a> mit.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+Die Bereitstellung einer Datei mit den erforderlichen Rollen und Rechten erfolgt optional.
+Im Falle einer nicht vorhandenen Datei verbleibt die Liste der Rollen und Rechte leer, d. h. eine Absicherung der Anwendung findet nicht statt.
+Die Verantwortung zur korrekten Bereitstellung der erforderlichen Rollen und Rechten liegt bei der Anwendung.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Dieser Zusammenhang wird mit einem Beispiel verdeutlicht: Die Geschäftsanwendung X spezifiziert zwei Rechte, <code>DialogA.Aufrufen</code> und <code>DialogB.Aufrufen</code>.
@@ -945,7 +1382,7 @@ Aus diesen werden zwei fachliche Rollen gebildet:</p>
 <p>Dieses Beispiel führt zu folgender Konfigurationsdatei:</p>
 </div>
 <div id="listing-rollenrechte" class="listingblock">
-<div class="title">Listing 5. Beispielhafte Definition von Rollen und Rechten</div>
+<div class="title">Listing 10. Beispielhafte Definition von Rollen und Rechten</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;tns:Anwendung AnwendungsId="GeschäftsanwendungX"
     xmlns:tns="http://www.isyfact.de/RollenRechteSchema"
@@ -975,7 +1412,7 @@ Aus diesen werden zwei fachliche Rollen gebildet:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="zusammenhang-von-rechten-und-rollen"><a class="anchor" href="#zusammenhang-von-rechten-und-rollen"></a>3.5. Zusammenhang von Rechten und Rollen</h3>
+<h3 id="zusammenhang-von-rechten-und-rollen"><a class="anchor" href="#zusammenhang-von-rechten-und-rollen"></a>6.5. Zusammenhang von Rechten und Rollen</h3>
 <div class="paragraph">
 <p>Innerhalb jeder Rolle werden gemäß Spezifikation die zugeordneten Rechte festgelegt.
 Rollen können überlappende Teilmengen von Rechten enthalten.</p>
@@ -1004,7 +1441,7 @@ Werden im Lebenszyklus der Geschäftsanwendung weitere Rollen (z.B. für neu hin
 </div>
 </div>
 <div class="sect2">
-<h3 id="autorisierung_service_schnittstelle"><a class="anchor" href="#autorisierung_service_schnittstelle"></a>3.6. Autorisierung an einer Service-Schnittstelle</h3>
+<h3 id="autorisierung_service_schnittstelle"><a class="anchor" href="#autorisierung_service_schnittstelle"></a>6.6. Autorisierung an einer Service-Schnittstelle</h3>
 <div class="paragraph">
 <p>Zentral für die Autorisierung ist die von Spring bereitgestellte Annotation <code>@Secured</code>, die alle benötigten Rechte des Aufrufers überprüft.
 Eine Autorisierung direkt über die Rollen des Aufrufers ist nicht möglich.</p>
@@ -1017,7 +1454,7 @@ Sollten alle Methoden die gleiche Autorisierung erfordern, kann alternativ die A
 <p>Folgendes Beispiel (<a href="#listing-absichern-einer-service-methode">Absichern einer Service-Methode</a>) verdeutlicht die Implementierung einer abgesicherten Service-Methode.</p>
 </div>
 <div id="listing-absichern-einer-service-methode" class="listingblock">
-<div class="title">Listing 6. Absichern einer Service-Methode</div>
+<div class="title">Listing 11. Absichern einer Service-Methode</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Secured({ "PRIV_RechtA", "PRIV_RechtB" })
 public void abgesicherteMethode(...) {
@@ -1034,7 +1471,7 @@ Die Autorisierung erfolgt dementsprechend wenn der Nutzer mindestens eins der in
 </div>
 </div>
 <div class="sect1">
-<h2 id="attr-token-abfragen"><a class="anchor" href="#attr-token-abfragen"></a>4. Attribute aus dem Bearer Token abfragen</h2>
+<h2 id="attr-token-abfragen"><a class="anchor" href="#attr-token-abfragen"></a>7. Attribute aus dem Bearer Token abfragen</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Bei der Befüllung des Spring Security Context wird das zur Befüllung genutzte Bearer Token ebenfalls im Context abgelegt.
@@ -1046,7 +1483,7 @@ Der Zugriff kann über den Berechtigungsmanager oder direkt über den Spring Sec
 Das Beispiel <a href="#listing-berechtigungsmanager-bhknz">Zugriff auf das Behördenkennzeichen</a> veranschaulicht den Zugriff auf das im Attribut <code>bhknz</code> gespeicherte Behördenkennzeichen.</p>
 </div>
 <div id="listing-berechtigungsmanager-bhknz" class="listingblock">
-<div class="title">Listing 7. Zugriff auf das Behördenkennzeichen</div>
+<div class="title">Listing 12. Zugriff auf das Behördenkennzeichen</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">String bhknz = (String) this.berechtigungsmanager.getTokenAttribute(BEARER_TOKEN_ATTR_BHKNZ);</code></pre>
 </div>
@@ -1058,7 +1495,57 @@ Detaillierte Informationen hierzu können der Spring Dokumentation entnommen wer
 </div>
 </div>
 <div class="sect1">
-<h2 id="testunterstuetzung"><a class="anchor" href="#testunterstuetzung"></a>5. Testunterstützung</h2>
+<h2 id="annotation-method-auth"><a class="anchor" href="#annotation-method-auth"></a>8. Automatische Authentifizierung innerhalb von Methoden</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Wenn Client Registrations für OAuth 2.0 Clients in der Anwendung angelegt wurden (vgl. <a href="#konfigurationsparameter">Konfigurationsparameter</a>), kann die <code>@Authenticate</code>-Annotation verwendet werden, um anhand dieses Clients automatisch Aufrufe innerhalb der mit der Annotation versehenen Methode zu authentifizieren.
+Der dabei verwendete OAuth 2.0 Flow wird anhand der Konfiguration der Client Registration ausgewählt.</p>
+</div>
+<div class="paragraph">
+<p>Dafür muss in der Annotation die Client Registration ID des zu verwendenden OAuth 2.0 Clients angegeben werden.
+Dies kann entweder durch Hardcoden der ID oder über die dynamische Auflösung eines Property Placeholders erfolgen.
+Die Client Registration ID kann über verschiedene Attribute der Annotation (kein Attribut, <code>value</code>-Attribut, <code>oauth2ClientRegistrationId</code>-Attribut) angegeben werden, welche von der Funktionalität identisch sind.
+Die einzige Voraussetzung ist, dass die Client Registration ID in einem dieser Attribute angegeben wurde.</p>
+</div>
+<div id="annotation-method-auth-example" class="listingblock">
+<div class="title">Listing 13. Verwendung der Annotation</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Authenticate("my-auth-client") <i class="conum" data-value="1"></i><b>(1)</b>
+void methodThatNeedsAuthentication() {
+    ...
+}
+
+@Authenticate("${test.auth.client-id}") <i class="conum" data-value="2"></i><b>(2)</b>
+void methodThatNeedsAuthentication() {
+    ...
+}
+
+@Authenticate(oauth2ClientRegistrationId = "my-auth-client") <i class="conum" data-value="3"></i><b>(3)</b>
+void methodThatNeedsAuthentication() {
+    ...
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Angabe der Client Registration ID ohne Verwendung von Attributnamen</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Auflösung der Client Registration ID aus dem Wert der Property <code>test.auth.client-id</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Angabe der Client Registration ID mit dem Attributnamen <code>oauth2ClientRegistrationId</code></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="testunterstuetzung"><a class="anchor" href="#testunterstuetzung"></a>9. Testunterstützung</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In diesem Abschnitt wird <strong>isy-security-test</strong> beschrieben, das zum Erstellen von (automatisierten) Tests einen OpenId Connect Provider Mock bereitstellt.
@@ -1079,7 +1566,7 @@ Es werden die folgenden OAuth2 und OpenID Connect Verfahren unterstützt.</p>
 <p>Das folgende Beispiel zeigt die Initialisierung des EmbeddedOidcProviderMock mit einem Client mit genau einer Rolle und mit einem User mit derselben Rolle:</p>
 </div>
 <div id="listing-beispiel-oidc-mock" class="listingblock">
-<div class="title">Listing 8. Beispiel für die Erstellung des EmbeddedOidcProviderMock</div>
+<div class="title">Listing 14. Beispiel für die Erstellung des EmbeddedOidcProviderMock</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">EmbeddedOidcProviderMock embeddedOidcProvider = new EmbeddedOidcProviderMock("localhost", 9095, "/auth/realms/testrealm");
 
@@ -1093,10 +1580,10 @@ embeddedOidcProvider.addUser("ressource-owner-password-credentials-client", "hyp
 </div>
 </div>
 <div class="sect1">
-<h2 id="_anhang"><a class="anchor" href="#_anhang"></a>6. Anhang</h2>
+<h2 id="_anhang"><a class="anchor" href="#_anhang"></a>10. Anhang</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="anhang-rollen-rechte-schema"><a class="anchor" href="#anhang-rollen-rechte-schema"></a>6.1. Anhang A: Rollen-Rechte-Schema</h3>
+<h3 id="anhang-rollen-rechte-schema"><a class="anchor" href="#anhang-rollen-rechte-schema"></a>10.1. Anhang A: Rollen-Rechte-Schema</h3>
 <div class="paragraph">
 <p>Im Folgenden ist der Inhalt der Datei <code>RollenRechteSchema.xsd</code> wiedergegeben, die das Format der Konfigurationsdatei für Rollen und Rechte (<code>rollenrechte.xml</code>) festlegt.</p>
 </div>

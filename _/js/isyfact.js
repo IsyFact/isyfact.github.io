@@ -1,13 +1,16 @@
+/**
+ * Set links to XML, JSON and PDF files explicitly as download links.
+ */
 var links = document.querySelectorAll("a[href$='.xml'], a[href$='.json'], a[href$='.pdf']");
 for(var i= 0; i< links.length; i++)
     links[i].setAttribute('download','');
 
 
 /*
- * Scrollbar for tables with width too large.
- * Could happen if <code> is used in table cells.
- * Overflow-Scrollbar can only be introduced to parent node of table node therefore script is needed.
- * Only apply for tables created via markup (class: tableblock).
+ * Scrollbar for tables that don't fit horizontally.
+ * This can happen if <code> is used in table cells or if the table has too many columns.
+ * The overflow scrollbar can only be introduced to the parent of the table node; therefore this script is needed.
+ * This only applies for tables created via markup (class: tableblock), e.g. from CSV files.
  */
 {
     var tableNodes = document.getElementsByTagName("table");

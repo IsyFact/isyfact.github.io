@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
+<html lang="de"> <!-- Sets the language to German for correct hyphenation. -->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Detailkonzept Batch: Inhalt :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/blaupausen/detailkonzept-komponente-batch/inhalt.html">
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -365,13 +365,10 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Styleguide</span>
+    <span class="nav-text">Bedienkonzept</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-bedienkonzept/bedienkonzept.html">Bedienkonzept</a>
   </li>
 </ul>
   </li>
@@ -435,20 +432,35 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
   </li>
-  <li class="nav-item" data-depth="3">
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Spezifikation</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
+    <a class="nav-link" href="../../methodik/vorlage-systemspezifikation/master.html">Systemspezifikation</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
+    <a class="nav-link" href="../../methodik/vorlage-schnittstellendokumentation/master.html">Schnittstellen­dokumentation</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+    <a class="nav-link" href="../../methodik/anleitung-datenflussdiagramme/master.html">Anleitung für Datenflussdiagramme</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
   </li>
 </ul>
   </li>
@@ -593,7 +605,8 @@
     <li><a href="inhalt.html">Detailkonzept Batch: Inhalt</a></li>
   </ul>
 </nav>
-</div>
+  <div class="edit-this-page"><a href="https://github.com/IsyFact/isyfact-standards/edit/master/isyfact-standards-doc/src/docs/antora/modules/blaupausen/pages/detailkonzept-komponente-batch/inhalt.adoc">Edit this Page</a></div>
+  </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Inhalt" data-levels="3">
   <div class="toc-menu"></div>
@@ -786,7 +799,7 @@ Für eine Batch-Implementierung umfasst diese Querschnittsfunktionalität folgen
 <p>Bereitstellung von Überwachungsmöglichkeiten</p>
 </li>
 <li>
-<p>Authentifizierung und Autorisierung eines betrieblich konfigurierten Batchbenutzers über die T-Komponente Sicherheit</p>
+<p>Authentifizierung und Autorisierung eines betrieblich konfigurierten Batchbenutzers über den Baustein <code>isy-security</code></p>
 </li>
 <li>
 <p>Konfiguration, Instanziierung und Aufruf der eigentlichen Batchlogik</p>
@@ -1041,7 +1054,7 @@ Im Einzelnen werden die folgenden Aspekte beschrieben:</p>
 <p>Die im Batchrahmen enthaltenen Überwachungsmöglichkeiten.</p>
 </li>
 <li>
-<p>Die Authentifizierung und Autorisierung eines Batch-Benutzers.</p>
+<p>Die Authentifizierung und Autorisierung einer ClientRegistration.</p>
 </li>
 <li>
 <p>Das Deployment der Batches einer Geschäftsanwendung.</p>
@@ -1867,21 +1880,10 @@ Datei <code>JRE_HOME/lib/management/jmxremote.access</code> readwrite-Zugriff er
 Dazu verwendet der Batch die Benutzerkennung eines technischen Benutzers „internes System“, die in seiner Startkonfiguration (als Konfigurationsdatei) hinterlegt und im Benutzerverzeichnis vorhanden ist.</p>
 </div>
 <div class="paragraph">
-<p>Der Batchrahmen nutzt die T-Komponente Sicherheit (siehe <a href="../../isy-sicherheit/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben Sicherheit</a>), um den anfragenden Benutzer über den IAM-Service der Plattform zu authentifizieren.
-Das IAM-Service authentifiziert den Benutzer anhand der angegebenen Benutzerkennung und des Passwortes, registriert alle Informationen zum Benutzer in der T-Komponente AufrufKontextVerwalter und schließt die Session des Benutzers im IAM-System.</p>
+<p>Der Batchrahmen verwendet den Baustein <code>isy-security</code>, um den in der Batch-Konfiguration via <code>oauth2ClientRegistrationId</code> definierten Benutzer über einen der Authentifizierungswege <code>Client Credential</code> oder <code>Ressource Owner Password Credential</code> (deprecated) zu authentifizieren.</p>
 </div>
 <div class="paragraph">
-<p>Im Zuge des Batchlaufs können nun über die T-Komponente Sicherheit Berechtigungsprüfungen (z.B. im Anwendungskern) stattfinden.</p>
-</div>
-<div class="paragraph">
-<p>Der Batchrahmen fordert vom BatchAusführungsBean die Implementierung der Methode: getAuthenticationCredentials(), in der dem Batchrahmen bekannt gegeben wird, mit welchem Benutzer der Batch laufen soll.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-Java hljs" data-lang="Java">@Override
-public BatchAuthenticationCredentials getAuthenticationCredentials(
-                  BatchKonfiguration konfiguration);</code></pre>
-</div>
+<p>Im Zuge des Batchlaufs können nun über den Baustein <code>isy-security</code> Berechtigungsprüfungen (z.B. im Anwendungskern) stattfinden.</p>
 </div>
 <div class="paragraph">
 <p>Folgende Informationen zum Benutzer sind anzugeben</p>
@@ -1900,16 +1902,9 @@ public BatchAuthenticationCredentials getAuthenticationCredentials(
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Bhknz</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Das Behörden- oder Organisationskennzeichen, der Behörde oder Organisation, der der Benutzer angehört.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Benutzer</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Die Kennung des technischen Benutzers (internes System)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Passwort</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Das Kennwort des Benutzers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>oauth2ClientRegistrationId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die ID der OAuth 2.0 Client Registration aus <code>isy-security</code>, die zur Authentifizierung genutzt wird.
+Die notwendigen Properties die für eine gültige <code>ClientRegistration</code> definiert werden müssen, sind in den Nutzungsvorgaben der Komponente <code>isy-security</code> beschrieben.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1918,12 +1913,10 @@ public BatchAuthenticationCredentials getAuthenticationCredentials(
 </div>
 <div class="paragraph">
 <p>In Ausnahmefällen ist es auch möglich, einen Batch zu implementieren, der ohne Benutzer laufen soll.
-Dies ist nur möglich, wenn bei Aufrufen des Anwendungskerns keine Autorisierungsprüfungen stattfinden und auch keine Nachbarsystemschnittstellen aufgerufen werden.
-Soll der Batch ohne Benutzer laufen, so ist in der Methode <code>null</code> zurückzugeben.</p>
+Dies ist nur möglich, wenn bei Aufrufen des Anwendungskerns keine Autorisierungsprüfungen stattfinden und auch keine Nachbarsystemschnittstellen aufgerufen werden.</p>
 </div>
 <div class="paragraph">
-<p>Enthält eine Anwendung mehrere Batches, so enthält sie auch mehrere BatchAusführungsBeans und kann jeden Batch mit einem
-eigenen Benutzer ausstatten.</p>
+<p>Enthält eine Anwendung mehrere Batches, so enthält sie auch mehrere BatchKonfigurationen und kann jeden Batch mit einer eigenen <code>oauth2ClientRegistrationId</code> ausstatten.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2152,7 +2145,7 @@ zu aggregieren oder in einem bestimmten Format zu Weiterverarbeitung bereitzuste
 <p>Wenn die Verarbeitung erfolgreich beendet wurde, endet der Batchrahmen mit dem Return-Code 0. Er endet mit einem anderen
 Return-Code, falls der Batch mit einem Fehler beendet wurde oder gar nicht gestartet werden konnte.
 Bei Fehlern in den „Ausführungsbeans“ kann der zurückzugebende Return-Code über die aufgetretenen Exceptions bestimmt
-werden (siehe Kapitel <a href="#informationen-zum-batch-benutzer-bereitstellen">Informationen zum Batch-Benutzer bereitstellen</a>).</p>
+werden (siehe Kapitel <a href="#informationen-zum-batch-benutzer-bereitstellen">Informationen zur Authentifizierung bereitstellen</a>).</p>
 </div>
 <div class="paragraph">
 <p>Pro Batch müssen die möglichen Rückgabewerte definiert werden.
@@ -2449,11 +2442,10 @@ Falls (in einem ungewöhnlichen Sonderfall) mit <code>ResultSet</code>-Iteratore
 </div>
 </div>
 <div class="sect2">
-<h3 id="informationen-zum-batch-benutzer-bereitstellen"><a class="anchor" href="#informationen-zum-batch-benutzer-bereitstellen"></a>6.7. Informationen zum Batch-Benutzer bereitstellen</h3>
+<h3 id="informationen-zum-batch-benutzer-bereitstellen"><a class="anchor" href="#informationen-zum-batch-benutzer-bereitstellen"></a>6.7. Informationen zur Authentifizierung bereitstellen</h3>
 <div class="paragraph">
-<p>Batches müssen beim Start einen Benutzer authentifizieren und autorisieren, bevor der fachliche Teil der Batchverarbeitung starten kann.
-Der Batchrahmen fordert von der Ausführungsbean die Bereitstellung der Informationen zum Benutzer, um diesen über die T-Komponente Sicherheit zu authentifizieren.
-Dazu ist für das Ausführungsbean die Methode <code>getAuthenticationCredentials()</code> umzusetzen.</p>
+<p>Batches müssen beim Start authentifiziert und autorisiert werden, bevor der fachliche Teil der Batchverarbeitung starten kann.
+Der Batchrahmen fordert, dass in der BatchKonfiguration zur Batch spezifischen <code>Batch-ID</code> das neue Property <code>oauth2ClientRegistrationId</code> hinzugefügt wird, dessen Wert als Indirektion auf eine <code>ClientRegistration</code> führt, um den Batch über den Baustein <code>isy-security</code> zu authentifizieren.</p>
 </div>
 </div>
 <div class="sect2">

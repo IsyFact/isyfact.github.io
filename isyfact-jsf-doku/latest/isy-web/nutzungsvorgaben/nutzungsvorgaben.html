@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
+<html lang="de"> <!-- Sets the language to German for correct hyphenation. -->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Nutzungsvorgaben :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-jsf-doku/latest/isy-web/nutzungsvorgaben/nutzungsvorgaben.html">
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -101,7 +101,8 @@
     <li><a href="nutzungsvorgaben.html">Nutzungsvorgaben</a></li>
   </ul>
 </nav>
-</div>
+  <div class="edit-this-page"><a href="https://github.com/IsyFact/isy-web/edit/master/isy-web-doc/src/docs/antora/modules/isy-web/pages/nutzungsvorgaben/nutzungsvorgaben.adoc">Edit this Page</a></div>
+  </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Inhalt" data-levels="3">
   <div class="toc-menu"></div>
@@ -189,7 +190,7 @@ Diese Vorgaben umfassen sowohl Hinweise zur Programmierung als auch Konfiguratio
 Es folgt eine detaillierte Beschreibung der bereitgestellten Seiten- und Bedienelemente auf Basis von JSF.</p>
 </div>
 <div class="paragraph">
-<p>Allgemeine Angaben zur Gestaltung von Oberflächen finden sich im <a href="../../../../isyfact-standards-doku/latest/isy-styleguide/styleguide.html" class="xref page">Styleguide</a>.</p>
+<p>Allgemeine Angaben zur Gestaltung von Oberflächen finden sich im <a href="#isyfact-standards-doku:isy-styleguide:styleguide.adoc" class="xref unresolved">Styleguide</a>.</p>
 </div>
 </div>
 </div>
@@ -211,7 +212,7 @@ Bei Verwendung des IsyFact-BOMs wird die Version automatisch ermittelt.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Für die Erstellung von Web-GUIs existieren Vorgaben in Form eines <a href="../../../../isyfact-standards-doku/latest/isy-styleguide/styleguide.html" class="xref page">Styleguides</a>.
+<p>Für die Erstellung von Web-GUIs existieren Vorgaben in Form eines <a href="#isyfact-standards-doku:isy-styleguide:styleguide.adoc" class="xref unresolved">Styleguides</a>.
 Der Baustein Styleguide legt Anforderungen an die Gestaltung und Nutzbarkeit von Oberflächen fest.
 Die Bibliothek <code>isy-web</code> enthält die CSS-, JavaScript-, Bilddateien und  Schriftarten des Styleguides zur produktiven Nutzung aufbereitet.</p>
 </div>
@@ -1434,7 +1435,7 @@ Hierdurch werden alle Fehler, unabhängig von ihren JSF-IDs, in einer Liste darg
 </div>
 </div>
 <div class="paragraph">
-<p>Die Darstellung von Fehlern und Validierungsnachrichten wird auch im <a href="../../../../isyfact-standards-doku/latest/isy-styleguide/styleguide.html" class="xref page">Styleguide</a> beschrieben.</p>
+<p>Die Darstellung von Fehlern und Validierungsnachrichten wird auch im <a href="#isyfact-standards-doku:isy-styleguide:styleguide.adoc" class="xref unresolved">Styleguide</a> beschrieben.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1817,7 +1818,7 @@ Zum Beispiel sollten nicht benötigte Elemente ausgeblendet und Farben für den 
 angezeigt werden (z.B. bei Tabs alle Tabs anzeigen).</p>
 </div>
 <div class="paragraph">
-<p>Im <a href="../../../../isyfact-standards-doku/latest/isy-styleguide/styleguide.html" class="xref page">Styleguide</a> finden sich Beispiele für Druckansichten.</p>
+<p>Im <a href="#isyfact-standards-doku:isy-styleguide:styleguide.adoc" class="xref unresolved">Styleguide</a> finden sich Beispiele für Druckansichten.</p>
 </div>
 <div id="image-seitendruck1" class="imageblock text-center">
 <div class="content">
@@ -3334,7 +3335,7 @@ Mögliche Werte sind alle Werte für das Feld <code>type</code> des HTML-Tags <c
 </li>
 <li>
 <p><code>charpicker</code>: Gibt an, welche Eingabe für Sonderzeichen verwendet werden soll.
-Wird der Wert auf <code>dinSpec</code> gesetzt, wird der Character-Picker verwendet, welcher alle Zeichen der DIN SPEC 91379 unterstützt.
+Wird der Wert auf <code>dinNorm</code> gesetzt, wird der Character-Picker verwendet, welcher alle Zeichen der DIN NORM 91379 unterstützt. Für Rückwärtskompatibilität kann weiterhin der Wert <code>dinSpec</code> verwendet werden.
 Soll der alte Legacy-Character-Picker verwendet werden, muss der Wert auf <code>special</code> gesetzt werden.
 Standardmäßig wird kein Character-Picker verwendet.</p>
 </li>
@@ -3354,15 +3355,15 @@ Standardmäßig wird kein Character-Picker verwendet.</p>
 <h4 id="charpicker"><a class="anchor" href="#charpicker"></a>6.4.1. Character-Picker</h4>
 <div class="paragraph">
 <p>Eingabefelder besitzen die Möglichkeit einen Character-Picker (kurz: CharPicker) für die Eingabe von Sonderzeichen einzublenden.
-Dazu muss, wie im folgenden Beispiel (<a href="#listing-charpicker">Verwendung vom CharPicker</a>), der Parameter <code>charpicker</code> auf den Wert <code>dinSpec</code> gesetzt werden, um den CharPicker zu verwenden, welcher die Sonderzeichen der DIN SPEC 91379 unterstützt:</p>
+Dazu muss, wie im folgenden Beispiel (<a href="#listing-charpicker">Verwendung vom CharPicker</a>), der Parameter <code>charpicker</code> auf den Wert <code>dinNorm</code> gesetzt werden, um den CharPicker zu verwenden, welcher die Sonderzeichen der DIN NORM 91379 unterstützt:</p>
 </div>
 <div id="listing-charpicker" class="listingblock">
 <div class="title">Listing 49. Verwendung vom CharPicker</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;isy:formInput id="formInputSpecialCharDinSpec" type="text"
-    label="DIN SPEC 91379 CharPicker: "
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;isy:formInput id="formInputSpecialCharDinNorm" type="text"
+    label="DIN NORM 91379 CharPicker: "
     reference="formInputSpecialChar" value="Ein Special Char Textfeld"
-    charpicker="dinSpec" datentyp="DATENTYP_A"/&gt;</code></pre>
+    charpicker="dinNorm" datentyp="DATENTYP_A"/&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3401,7 +3402,7 @@ Ein Eingabefeld mit CharPicker besitzt, wie in <a href="#image-charpicker-button
 <div class="title">Abbildung 17. Eingabefeld mit CharPicker</div>
 </div>
 <div class="paragraph">
-<p>Der CharPicker (zu sehen in <a href="#image-charpicker-widget">CharPicker nach DIN SPEC 91379</a>) besteht aus folgenden Komponenten:</p>
+<p>Der CharPicker (zu sehen in <a href="#image-charpicker-widget">CharPicker nach DIN NORM 91379</a>) besteht aus folgenden Komponenten:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3423,7 +3424,7 @@ Mit dem Button <code>Einfügen</code> kann man bestätigen, dass das Symbol in d
 <div class="content">
 <img src="../_images/nutzungsvorgaben/charpicker-widget.png" alt="charpicker widget">
 </div>
-<div class="title">Abbildung 18. CharPicker nach DIN SPEC 91379</div>
+<div class="title">Abbildung 18. CharPicker nach DIN NORM 91379</div>
 </div>
 <div class="paragraph">
 <p>Alternativ kann der CharPicker auch mit den folgenden Eingaben mit der Tastatur bedient werden:</p>
@@ -3517,7 +3518,7 @@ Mögliche Werte sind alle Werte für das Feld <code>type</code> des HTML-Tags <c
 </li>
 <li>
 <p><code>charpicker</code>: Gibt an, welche Eingabe für Sonderzeichen verwendet werden soll.
-Wird der Wert auf <code>dinSpec</code> gesetzt, wird der neue Character-Picker verwendet, welcher alle Zeichen der DIN SPEC 91379 unterstützt.
+Wird der Wert auf <code>dinNorm</code> gesetzt, wird der neue Character-Picker verwendet, welcher alle Zeichen der DIN NORM 91379 unterstützt. Für Rückwärtskompatibilität kann weiterhin der Wert <code>dinSpec</code> verwendet werden.
 Soll der alte Legacy-Character-Picker verwendet werden, muss der Wert auf <code>special</code> gesetzt werden.
 Standardmäßig wird kein Character-Picker verwendet.</p>
 </li>
@@ -6947,7 +6948,7 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 <p><code>globalConfig</code>: Eine spezifische globale Konfiguration, falls benötigt. (Standard: <code>#{globalConfigurationModel}</code>)</p>
 </li>
 <li>
-<p><code>charpicker</code>: Gibt an, welche Eingabe für Sonderzeichen verwendet werden soll. Wird der Wert auf <code>dinSpec</code> gesetzt, wird der neue Character-Picker verwendet, welcher alle Zeichen der DIN SPEC 91379 unterstützt.
+<p><code>charpicker</code>: Gibt an, welche Eingabe für Sonderzeichen verwendet werden soll. Wird der Wert auf <code>dinNorm</code> gesetzt, wird der neue Character-Picker verwendet, welcher alle Zeichen der DIN NORM 91379 unterstützt. Für Rückwärtskompatibilität kann weiterhin der Wert <code>dinSpec</code> verwendet werden.
 Soll der alte Legacy-Character-Picker verwendet werden, muss der Wert auf <code>special</code> gesetzt werden.
 Standardmäßig wird kein Character-Picker verwendet.</p>
 </li>

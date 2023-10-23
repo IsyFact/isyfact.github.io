@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="de"> <!-- Sets the language to german for correct hyphenation-->
+<html lang="de"> <!-- Sets the language to German for correct hyphenation. -->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Vorgaben und Konventionen :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/isy-persistence/konzept/vorgaben-konventionen.html">
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../_/css/isyfact.css">
@@ -365,13 +365,10 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Styleguide</span>
+    <span class="nav-text">Bedienkonzept</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-styleguide/styleguide.html">Styleguide</a>
-  </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../isy-styleguide/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+    <a class="nav-link" href="../../isy-bedienkonzept/bedienkonzept.html">Bedienkonzept</a>
   </li>
 </ul>
   </li>
@@ -435,20 +432,35 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
   </li>
-  <li class="nav-item" data-depth="3">
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Spezifikation</span>
+<ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
+    <a class="nav-link" href="../../methodik/vorlage-systemspezifikation/master.html">Systemspezifikation</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
+    <a class="nav-link" href="../../methodik/vorlage-schnittstellendokumentation/master.html">Schnittstellen­dokumentation</a>
   </li>
   <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+    <a class="nav-link" href="../../methodik/anleitung-datenflussdiagramme/master.html">Anleitung für Datenflussdiagramme</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
   </li>
 </ul>
   </li>
@@ -596,7 +608,8 @@
     <li><a href="vorgaben-konventionen.html">Vorgaben und Konventionen</a></li>
   </ul>
 </nav>
-</div>
+  <div class="edit-this-page"><a href="https://github.com/IsyFact/isyfact-standards/edit/master/isyfact-standards-doc/src/docs/antora/modules/isy-persistence/pages/konzept/vorgaben-konventionen.adoc">Edit this Page</a></div>
+  </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Inhalt" data-levels="3">
   <div class="toc-menu"></div>
@@ -824,16 +837,124 @@ Dabei erfolgt der Zugriff auf die zweite Datenbank getrennt über einen weiteren
 <div class="sect2">
 <h3 id="verwendung-von-hibernate-filtern"><a class="anchor" href="#verwendung-von-hibernate-filtern"></a>2.8. Verwendung von Hibernate Filtern</h3>
 <div class="paragraph">
-<p>Parametrisierte Hibernate Filter bieten die Möglichkeit Daten zur Laufzeit mit Sichtbarkeitsregeln auszuwerten, ohne viele verschiedene Varianten von Abfragen schreiben zu müssen.
-Dabei können sie pro Session aktiviert oder deaktiviert werden, standardmäßig sind sie deaktiviert.
-Die Filter können auf Klassen- oder Collection-Ebene definiert werden und können bestehende „where“-Klauseln erweitern.</p>
+<p>Wenn in einer Anwendung viele wiederkehrende Abfragen auf Entitäten erfolgen, können Hibernate Filter eingesetzt werden, um die "WHERE-Klauseln" der Abfragen zu vereinfachen oder zu ersetzen.</p>
 </div>
 <div class="paragraph">
-<p>Wenn das fachliche Datenmodell variable Sichtbarkeitsregeln in größerem Umfang benötigt, sollten diese mit Hibernate Filtern umgesetzt werden.
-Das ersetzt eine Multiplizierung aller Abfragen.</p>
+<p>Hibernate Filter vereinfachen wiederkehrende Abfragen.
+Sie können dynamisch gesetzt sowie pro Hibernate Session aktiviert und deaktiviert werden.
+Sie können an Entitäten und durch Collections realisierten Assoziationen definiert werden.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Verwendung von Hibernate Filtern</div>
+<div class="paragraph">
+<p>Wenn das fachliche Datenmodell variable Sichtbarkeitsregeln in größerem Umfang benötigt, sollten diese mit Hibernate Filtern umgesetzt werden.</p>
+</div>
+</div>
 </div>
 <div class="paragraph">
-<p>Filter müssen als Annotationen mit <code>@FilterDef</code>, <code>@Filters</code> und <code>@Filter</code> umgesetzt werden.</p>
+<p>Außer der Annotation <code>@Filter</code> gibt es auch die Annotation <code>@Where</code>, die jedoch immer aktiv ist und eine statische Filterung durchführt.
+Im folgenden Beispiel würde ihr Einsatz dazu führen, dass die Anwendung generell keine gelöschten Items abfragen könnte.
+Deshalb wird Annotation <code>@Where</code> nur im Ausnahmefall empfohlen und hier nicht näher betrachtet.</p>
+</div>
+<div class="sect3">
+<h4 id="_beispiel_für_die_verwendung_von_hibernate_filtern"><a class="anchor" href="#_beispiel_für_die_verwendung_von_hibernate_filtern"></a>2.8.1. Beispiel für die Verwendung von Hibernate Filtern</h4>
+<div class="paragraph">
+<p>Zur Veranschaulichung wird ein Beispiel für die Verwendung von Hibernate Filtern aufgeführt.
+Es gibt eine Entität <code>User</code> und eine Entität <code>Item</code> sowie eine 1-zu-n-Assoziation zwischen <code>User</code> und <code>Item</code>.
+Die Entität Item hat ein Attribut <code>deleted</code>, das als Soft Delete verwendet wird.
+(Dies ist keine Empfehlung, Soft Deletes zu verwenden.)</p>
+</div>
+<div id="listing-beispiel-hibernate-filter" class="listingblock">
+<div class="title">Listing 1. Hibernate Filter auf Ebene von Klassen und Collections</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Entity
+//Definition Hibernate Filter
+@FilterDef(
+     name="aktuellesItem",
+     parameters = @ParamDef(
+         name="geloescht",
+         type="boolean"
+    )
+)
+//Beispiel für Hibernate Filter auf Klassen-Ebene
+@Filter(
+     name="aktuellesItem",
+     condition="item_geloescht = :geloescht"
+)
+public class Item {
+     @Id
+     private Long id;
+
+     @Column(name = "item_geloescht")
+     private boolean deleted;
+}
+
+@Entity
+public class User {
+    @Id
+    private Long id;
+
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    //Beispiel für Hibernate Filter auf Collection-Ebene
+    @Filter(
+        name="aktuellesItem",
+        condition="item_geloescht = :geloescht"
+    )
+    private Set&lt;Item&gt; items;
+    public Set&lt;Item&gt; getItems(){
+	    return items;
+    }
+}</code></pre>
+</div>
+</div>
+<div id="listing-zugriff-hibernate-filter" class="listingblock">
+<div class="title">Listing 2. Zugriff auf Klasse und Collection mit Hibernate Filter</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">//Zugriff per Spring Data Repository
+public class FilterExample {
+
+    @Autowired
+    private ItemRepository itemRepository;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    public void howToUseFilters() {
+
+        // Hibernate Filter sind standardmäßig deaktiviert.
+        List&lt;Item&gt; alleItems = itemRepository.findAll();
+        // alleItems.size() == 3
+        User user = userRepository.findById(1).orElse(null);
+        // user.getItems().size() == 3
+
+        // Hibernate Filter aktivieren
+        entityManager
+            .unwrap(Session.class)
+            .enableFilter("aktuellesItem")
+            .setParameter("geloescht", false);
+
+        // Mit aktiviertem Filter wird eine Entität gefiltert.
+        List&lt;Item&gt; aktuelleItems = itemRepository.findAll();
+        // aktuelleItems.size() == 2
+        // user.getItems().size() == 2
+    }
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Achtung"></i>
+</td>
+<td class="content">
+Das Suchen per Identifier (z.B. mittels <code>itemRepository.findById(1)</code>) wendet keine Filter an, siehe <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-hibernate-filter" class="xref page">filtering entities and associations</a>.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -900,14 +1021,7 @@ Es muss unbedingt darauf geachtet werden, das Inkrement (<code>INCREMENT BY</cod
 </div>
 </div>
 <div class="sect2">
-<h3 id="definition-von-1-zu-n-assoziationen"><a class="anchor" href="#definition-von-1-zu-n-assoziationen"></a>3.3. Definition von 1-zu-n-Assoziationen</h3>
-<div class="paragraph">
-<p>Eine 1-zu-n-Assoziation (siehe <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-collection-mapping" class="xref page">Collection Mapping</a>) ist in der Regel als unsortierte Menge (<code>Set</code>) zu definieren, da in dieser keine Reihenfolge definiert ist.
-Wird von der Anwendung eine Sortierung benötigt und sind alle für die Sortierung benötigten Attribute in der Entität enthalten, dann kann auch eine Liste (<code>List</code>) verwendet werden, da die Datenbank effizienter sortieren kann als eine Java-Implementierung.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="identifizierende-attribute-verwenden"><a class="anchor" href="#identifizierende-attribute-verwenden"></a>3.4. Identifizierende Attribute verwenden</h3>
+<h3 id="identifizierende-attribute-verwenden"><a class="anchor" href="#identifizierende-attribute-verwenden"></a>3.3. Identifizierende Attribute verwenden</h3>
 <div class="paragraph">
 <p>Falls für eine Entität genau ein identifizierendes Attribut existiert, ist dieses sowohl in der Datenbank als auch im Hibernate Mapping als Primärschlüssel zu verwenden.
 Künstliche ID-Spalten sind nur dann als Schlüssel zu verwenden, wenn kein identifizierendes Attribut für die Entität vorliegt oder nur mehrere Attribute zusammen die Entität eindeutig identifizieren.
@@ -915,6 +1029,13 @@ Zusammengesetzte Schlüssel dürfen nicht verwendet werden.</p>
 </div>
 <div class="paragraph">
 <p>Das identifizierende Attribut darf beliebige Typen besitzen: Es dürfen, neben numerischen Werten, auch Zeichenketten oder Datumsangaben sein.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="definition-von-1-zu-n-assoziationen"><a class="anchor" href="#definition-von-1-zu-n-assoziationen"></a>3.4. Definition von 1-zu-n-Assoziationen</h3>
+<div class="paragraph">
+<p>Eine 1-zu-n-Assoziation (siehe <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-collection-mapping" class="xref page">Collection Mapping</a>) ist in der Regel als unsortierte Menge (<code>Set</code>) zu definieren, da in dieser keine Reihenfolge definiert ist.
+Wird von der Anwendung eine Sortierung benötigt und sind alle für die Sortierung benötigten Attribute in der Entität enthalten, dann kann auch eine Liste (<code>List</code>) verwendet werden, da die Datenbank effizienter sortieren kann als eine Java-Implementierung.</p>
 </div>
 </div>
 <div class="sect2">
@@ -933,7 +1054,339 @@ Hierfür sind zwei 1-zu-n- (bzw. n-zu-1-) Assoziationen zu definieren.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="behandlung-von-zeitangaben"><a class="anchor" href="#behandlung-von-zeitangaben"></a>3.6. Behandlung von Datums- und Zeitangaben</h3>
+<h3 id="vererbungshierarchien"><a class="anchor" href="#vererbungshierarchien"></a>3.6. Vererbungshierarchien</h3>
+<div class="paragraph">
+<p>Die JPA-Spezifikation beschreibt mehrere Strategien des O/R-Mappings von Vererbungshierarchien, zu beachten ist auch <a href="../../blaupausen/detailkonzept-komponente-datenzugriff/persistenzlogik.html#vererbung-im-persistenz-klassenmodell" class="xref page">Vererbung im Persistenz-Klassenmodell</a>.</p>
+</div>
+<div class="paragraph">
+<p>Es werden zunächst die Architekturregeln der IsyFact für die vier O/R-Mapping-Strategien vorgestellt.</p>
+</div>
+<div class="sect3">
+<h4 id="single-table-per-class-hierarchy-rules"><a class="anchor" href="#single-table-per-class-hierarchy-rules"></a>3.6.1. Single Table per Class Hierarchy</h4>
+<div class="paragraph">
+<p>Mit der <strong>Single Table per Class Hierarchy</strong> Strategie wird eine Vererbungshierarchie auf eine einzelne Datenbanktabelle gemappt.
+Die Tabelle hat eine Diskriminatorspalte.
+Anhand des Wertes dieser Spalte wird die spezielle Subklasse bestimmt, auf die eine bestimmte Zeile der Datenbank gemappt wird.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>Die <strong>Single Table per Class Hierarchy</strong> Strategie sollte die Default-Strategie sein, weil sie performante Abfragen erlaubt.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Die Single Table per Class Hierarchy Strategie kann nicht angewandt werden, wenn für Spalten, die von Attributen der Subklassen gemappt wurden, Not-Nullable-Constraints zwingend erforderlich sind, s.a. <a href="#joined-subclass-rules">Joined Subclass</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="joined-subclass-rules"><a class="anchor" href="#joined-subclass-rules"></a>3.6.2. Joined Subclass</h4>
+<div class="paragraph">
+<p>Eine weitere Strategie des O/R-Mappings von Vererbungshierarchien ist die <strong>Joined Subclass</strong> Strategie.
+Jede Klasse wird auf eine eigene Tabelle abgebildet.</p>
+</div>
+<div class="paragraph">
+<p>Der Zugriff ist weniger performant als bei der Single Table per Class Hierarchy Strategie.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>Wenn Not-Nullable-Constraints zwingend erforderlich sind und polymorphe Queries benötigt werden, ist die <strong>Joined Subclass</strong> Strategie eine gute Wahl.
+Ein weiteres Argument für diese Strategie sind Subklassen mit vielen Attributen.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="table-per-concrete-class-rules"><a class="anchor" href="#table-per-concrete-class-rules"></a>3.6.3. Table per Concrete Class</h4>
+<div class="paragraph">
+<p>Bei der O/R-Mappingstrategie <strong>Table per Concrete Class</strong> wird jede nicht abstrakte Klasse auf eine Datenbanktabelle abgebildet.
+Alle Attribute der Oberklasse werden als Spalten an alle Tabellen für die Subklassen angefügt.</p>
+</div>
+<div class="paragraph">
+<p>Das Mapping zwischen Entitäten und Datenbanktabellen ist einfach, aber die Tabellen sind nicht normalisiert und der polymorphe Zugriff auf die Oberklasse ist kaum performant.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>Die <strong>Table per Concrete Class</strong> Strategie sollte, wenn überhaupt, nur gewählt werden, wenn die anderen Strategien nicht passen und auf die Oberklasse keine oder nur wenig polymorphe Zugriffe zu erwarten sind.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mapped-superclass-rules"><a class="anchor" href="#mapped-superclass-rules"></a>3.6.4. Mapped Superclass</h4>
+<div class="paragraph">
+<p>Es liegt bei der <strong>Mapped Superclass</strong> Strategie keine Vererbungshierarchie unter Entitäten vor, die Oberklasse ist keine Entität.
+Die Oberklasse dient nur der Strukturierung und Zusammenfassung von gemeinsamen Eigenschaften.
+Sie wird deshalb auch nicht auf eine Datenbanktabelle abgebildet.
+Ihre Attribute werden aber als Spalten an alle Tabellen der von ihr erbenden Entitäten angefügt.</p>
+</div>
+<div class="paragraph">
+<p>Polymorphe Queries auf die Oberklasse sind nicht möglich.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>Diese Art der Vererbung von einer Java-Oberklasse auf Entitäten-Subklassen kann eingesetzt werden, wenn nur auf die Subklassen zugegriffen werden muss.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Es erspart die Wiederholung von Attributen in den Entitäten, aber nicht in den Datenbanktabellen.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="vererbungshierarchien-details"><a class="anchor" href="#vererbungshierarchien-details"></a>3.6.5. Beispiele, Vor- und Nachteile</h4>
+<div class="paragraph">
+<p>Die vier O/R-Mapping-Strategien werden in den folgenden Abschnitten genauer betrachtet mit ihren Vor- und Nachteilen.</p>
+</div>
+<div class="sect4">
+<h5 id="single-table-per-class-hierarchy-details"><a class="anchor" href="#single-table-per-class-hierarchy-details"></a>3.6.5.1. Single Table per Class Hierarchy</h5>
+<div class="paragraph">
+<p>Für die Single Table per Class Hierarchy Strategie wird ein Beispiel gezeigt.
+Bei den anderen Strategien wird auf Teile davon verwiesen.</p>
+</div>
+<div id="listing-single-table-hierarchy-mapping" class="listingblock">
+<div class="title">Listing 3. Single Table per Class Hierarchy</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="personengruppe",
+  discriminatorType = DiscriminatorType.INTEGER)
+public class Person {
+	//…
+}
+
+@Entity
+@DiscriminatorValue("1")
+public class Schueler extends Person {
+    private Integer klassenstufe;
+    public Integer getKlassenstufe() {
+        return klassenstufe;
+    }
+	//…
+}
+
+@Entity
+@DiscriminatorValue("2")
+public class Lehrer extends Person {
+    private BigDecimal gehalt;
+    public BigDecimal getGehalt() {
+        return gehalt;
+    }
+	//…
+}</code></pre>
+</div>
+</div>
+<div id="listing-polymorphic-access-hierarchy-mapping" class="listingblock">
+<div class="title">Listing 4. Polymorpher Zugriff</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">List&lt;Person&gt; personen = entityManager
+    .createQuery("select p from Person p")
+    .getResultList();
+
+//oder per Spring Data Repository:
+@Autowired
+private PersonRepository personRepository;
+List&lt;Person&gt; personen = personRepository.findAll();
+
+//Zugriff auf Attribute Subklassen
+personen.forEach(person -&gt; {
+    if (person instanceof Schueler) {
+        ((Schueler) person).getKlassenstufe();
+    } else if (person instanceof Lehrer) {
+        ((Lehrer) person).getGehalt());
+    }
+});</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Vorteile</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Auf die Datenbanktabelle kann polymorph zugegriffen werden.</p>
+</li>
+<li>
+<p>Die Queries auf Ober- und Subklassen sind performant, da keine Joins erforderlich sind.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Nachteile</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Auf Attribute von Subklassen kann kein Not-Nullable-Constraint gesetzt werden.
+Im Beispiel kann <code>klassenstufe</code> nicht auf not nullable gesetzt werden, denn wenn die gespeicherte Person ein Lehrer ist, ist <code>klassenstufe</code> null.</p>
+</li>
+<li>
+<p>Falls Datenbankadministratoren z.B. bei Fehlern den Inhalt der Tabelle analysieren müssen, ist die Zugehörigkeit einzelner Spalten zu bestimmten Subklassen nicht allein aus der Datenbanktabelle ersichtlich.
+In diesem Fall ist es hilfreich, wenn für jede Klasse der Vererbungshierarchie ein View definiert wurde.
+Diese Views beeinflussen das O/R-Mapping nicht, denn sie werden dafür nicht verwendet.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="joined-subclass-details"><a class="anchor" href="#joined-subclass-details"></a>3.6.5.2. Joined Subclass</h5>
+<div class="paragraph">
+<p>Jede Klasse wird auf eine eigene Tabelle abgebildet, auch eine abstrakte Oberklasse, und enthält nur ihre eigenen Attribute als Spalten.
+Die Primärschlüssel-Ids  der Subklassen sind gleichzeitig Fremdschlüssel für die entsprechenden Primärschlüssel-Ids der Oberklasse.
+Dadurch werden beim <a href="#listing-polymorphic-access-hierarchy-mapping">polymorphen Zugriff</a> auf die Oberklasse die Sub-Entitäten per Join mit der Tabelle der Oberklasse gelesen (implizit per O/R-Mapper).</p>
+</div>
+<div class="paragraph">
+<p>Die Oberklasse wird folgendermaßen annotiert:</p>
+</div>
+<div id="listing-joined-subclass-mapping" class="listingblock">
+<div class="title">Listing 5. Joined Subclass</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+public class Oberklasse { }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Vorteile</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Datenbanktabellen sind normalisiert.</p>
+</li>
+<li>
+<p>Die Vererbungshierarchie ist ansatzweise erkennbar in den Datenbanktabellen.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Nachteile</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Je nach Vererbungshierarchie sind performanzkritische Joins erforderlich beim Zugriff sowohl polymorph auf Ober- als auch auf Subklassen.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="table-per-concrete-class-details"><a class="anchor" href="#table-per-concrete-class-details"></a>3.6.5.3. Table per Concrete Class</h5>
+<div class="paragraph">
+<p>Die Oberklasse wird folgendermaßen annotiert:</p>
+</div>
+<div id="listing-table-per-concrete-class" class="listingblock">
+<div class="title">Listing 6. Table per Concrete Class</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public class Oberklasse { }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Vorteile</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Vererbungshierarchie ist an der Datenbank ansatzweise nachvollziehbar, zumindest dann, wenn die Oberklasse nicht abstrakt ist und auch gemappt wird.</p>
+</li>
+<li>
+<p>Einfaches Mapping zwischen Entitäten und Datenbanktabellen.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Nachteile</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Datenbanktabellen sind nicht normalisiert.</p>
+</li>
+<li>
+<p>Beim <a href="#listing-polymorphic-access-hierarchy-mapping">polymorphen Zugriff</a> auf die Oberklasse muss dies (implizit per O/R-Mapper) über eine UNION-Query geschehen oder eine eigene Query für jede Subklasse.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="mapped-superclass-details"><a class="anchor" href="#mapped-superclass-details"></a>3.6.5.4. Mapped Superclass</h5>
+<div class="paragraph">
+<p>Die Oberklasse wird folgendermaßen annotiert:</p>
+</div>
+<div id="listing-mapped-superclass" class="listingblock">
+<div class="title">Listing 7. Mapped Superclass</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@MappedSuperclass
+public class Oberklasse { }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Vorteile</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Einfaches Mapping zwischen Entitäten und Datenbanktabellen.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Nachteile</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ein polymorpher Zugriff ist nicht möglich.</p>
+</li>
+<li>
+<p>Die Datenbanktabellen sind nicht normalisiert.</p>
+</li>
+<li>
+<p>Die Vererbungshierarchie ist in der Datenbank nicht nachvollziehbar.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Zur Vertiefung bieten sich die folgenden Quellen an:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-jakarta-persistence" class="xref page">Jakarta Persistence</a>,</p>
+</li>
+<li>
+<p><a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-hibernate-inheritance" class="xref page">Hibernate User Guide - Inheritance</a>,</p>
+</li>
+<li>
+<p><a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-jpa-hibernate" class="xref page">Java Persistence with Hibernate</a>.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="behandlung-von-zeitangaben"><a class="anchor" href="#behandlung-von-zeitangaben"></a>3.7. Behandlung von Datums- und Zeitangaben</h3>
 <div class="paragraph">
 <p>Es werden die Datums- und Zeitklassen aus der <em>Java 8 Date Time API</em> verwendet.
 Hinweise zu deren Verwendung finden sich im <a href="../../isy-datetime/konzept/master.html" class="xref page">Baustein Datum &amp; Zeit</a>.
@@ -985,14 +1438,14 @@ In diesem Fall wird im Anwendungskern temporär ein Objekt dieses Typs für das 
 </div>
 </div>
 <div class="sect2">
-<h3 id="boolesche-variablen"><a class="anchor" href="#boolesche-variablen"></a>3.7. Boolesche Variablen</h3>
+<h3 id="boolesche-variablen"><a class="anchor" href="#boolesche-variablen"></a>3.8. Boolesche Variablen</h3>
 <div class="paragraph">
 <p>Für die Ablage von booleschen Werten in der Datenbank ist stets ein numerisches Feld zu verwenden, kein Textfeld.
 Der Wert wird von Hibernate standardmäßig auf <code>1</code> für wahr und <code>0</code> für falsch abgebildet.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="enum-variablen"><a class="anchor" href="#enum-variablen"></a>3.8. Enum-Variablen</h3>
+<h3 id="enum-variablen"><a class="anchor" href="#enum-variablen"></a>3.9. Enum-Variablen</h3>
 <div class="paragraph">
 <p>Für die Ablage von Enum-Feldern persistenter Entitäten in der Datenbank sind in JPA zwei Modi vorgesehen, die jedoch beide mit Nachteilen verbunden sind:</p>
 </div>
@@ -1017,13 +1470,13 @@ Die Verwendung dieser User-Types beschreibt das <a href="../nutzungsvorgaben/ums
 </div>
 </div>
 <div class="sect2">
-<h3 id="datenbankschema-anfangs-ueber-hbm2ddl-erzeugen"><a class="anchor" href="#datenbankschema-anfangs-ueber-hbm2ddl-erzeugen"></a>3.9. Datenbankschema anfangs über <code>hbm2ddl</code> erzeugen</h3>
+<h3 id="datenbankschema-anfangs-ueber-hbm2ddl-erzeugen"><a class="anchor" href="#datenbankschema-anfangs-ueber-hbm2ddl-erzeugen"></a>3.10. Datenbankschema anfangs über <code>hbm2ddl</code> erzeugen</h3>
 <div class="paragraph">
 <p>Für die Erstellung des Datenbankschemas wird empfohlen, es initial über Hibernate zu erzeugen.
 Die <a href="#konfiguration-automatische-erzeugung-schema">Konfiguration</a> hierzu geschieht in der Datei <code>application.properties</code> der Anwendung.</p>
 </div>
 <div id="konfiguration-automatische-erzeugung-schema" class="listingblock">
-<div class="title">Listing 1. Konfiguration zur automatischen Erzeugung von Datenbankschemas</div>
+<div class="title">Listing 8. Konfiguration zur automatischen Erzeugung von Datenbankschemas</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.jpa.hibernate.ddl-auto=create</code></pre>
 </div>
@@ -1036,7 +1489,7 @@ Ob das Datenbankschema während der Entwicklung stets generiert wird oder es nac
 <p>Befindet sich die Anwendung in Produktion, dann muss die automatische Erzeugung von Datenbankschemas abgeschaltet sein.</p>
 </div>
 <div id="konfiguration-abschaltung-automatische-erzeugung-schema" class="listingblock">
-<div class="title">Listing 2. Konfiguration zur Abschaltung der automatischen Erzeugung</div>
+<div class="title">Listing 9. Konfiguration zur Abschaltung der automatischen Erzeugung</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">spring.jpa.hibernate.ddl-auto=none</code></pre>
 </div>
@@ -1047,7 +1500,7 @@ Stattdessen wird eine explizite <a href="versionierung.html" class="xref page">V
 </div>
 </div>
 <div class="sect2">
-<h3 id="vergabe-von-indizes"><a class="anchor" href="#vergabe-von-indizes"></a>3.10. Vergabe von Indizes</h3>
+<h3 id="vergabe-von-indizes"><a class="anchor" href="#vergabe-von-indizes"></a>3.11. Vergabe von Indizes</h3>
 <div class="paragraph">
 <p>Indizes sind ein wichtiges Element, um eine gute Performance des Datenbankzugriffs sicherzustellen.
 Indizes müssen dabei gezielt vergeben werden.
