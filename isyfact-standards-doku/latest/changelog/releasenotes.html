@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Release Notes Version 3.0 (DEV) :: IsyFact Dokumentation</title>
+    <title>Release Notes Version 3.0 :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/latest/changelog/releasenotes.html">
     <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
@@ -30,7 +30,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="isyfact-standards-doku" data-version="3.0.0-SNAPSHOT">
+<div class="nav-container" data-component="isyfact-standards-doku" data-version="3.0.0">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -539,7 +539,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="aenderungen.html">Änderungen Version 3.0 (DEV)</a>
+    <a class="nav-link" href="aenderungen.html">Änderungen Version 3.0</a>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="releasenotes.html">Release Notes</a>
@@ -548,7 +548,7 @@
     <a class="nav-link" href="changelog.html">Changelog</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="migrationsleitfaden.html">Migrationsleitfaden IsyFact 3.0 (DEV)</a>
+    <a class="nav-link" href="migrationsleitfaden.html">Migrationsleitfaden IsyFact 3.0</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../einstieg/migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
@@ -563,7 +563,7 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">IsyFact Standards</span>
-    <span class="version">3.0 (DEV)</span>
+    <span class="version">3.0</span>
   </div>
   <ul class="components">
     <li class="component">
@@ -578,7 +578,7 @@
       <a class="title" href="../einstieg/einstieg.html">IsyFact Standards</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../einstieg/einstieg.html">3.0 (DEV)</a>
+          <a href="../einstieg/einstieg.html">3.0</a>
         </li>
       </ul>
     </li>
@@ -586,7 +586,7 @@
       <a class="title" href="../../../isyfact-jsf-doku/latest/isy-web/konzept/konzept.html">JavaServer Faces (JSF)</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../../isyfact-jsf-doku/latest/isy-web/konzept/konzept.html">5.3</a>
+          <a href="../../../isyfact-jsf-doku/latest/isy-web/konzept/konzept.html">6.0</a>
         </li>
       </ul>
     </li>
@@ -602,7 +602,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../einstieg/einstieg.html">IsyFact Standards</a></li>
-    <li><a href="aenderungen.html">Änderungen Version 3.0 (DEV)</a></li>
+    <li><a href="aenderungen.html">Änderungen Version 3.0</a></li>
     <li><a href="releasenotes.html">Release Notes</a></li>
   </ul>
 </nav>
@@ -613,7 +613,7 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Release Notes Version 3.0 (DEV)</h1>
+<h1 class="page">Release Notes Version 3.0</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="exampleblock">
@@ -635,7 +635,7 @@ Die Nutzung ist unter den <a href="../../../glossary/latest/literaturextern/inha
 </div>
 </div>
 <div class="sect1">
-<h2 id="kapitel-aenderungen"><a class="anchor" href="#kapitel-aenderungen"></a>1. Änderungen</h2>
+<h2 id="kapitel-aenderungen"><a class="anchor" href="#kapitel-aenderungen"></a>1. Allgemeine Änderungen</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="kapitel-umstellung-dokumentation"><a class="anchor" href="#kapitel-umstellung-dokumentation"></a>1.1. Umstellung der Dokumentation</h3>
@@ -664,7 +664,9 @@ Darüber hinaus werden Abbildungen sukzessive in editierbare SVGs gewandelt und 
 </div>
 <div class="sect2">
 <h3 id="kapitel-spring-boot"><a class="anchor" href="#kapitel-spring-boot"></a>1.2. Spring Boot</h3>
-
+<div class="paragraph">
+<p>Spring Boot wurde auf Version 2.7.15 angehoben. Die Versionen sämtlicher Produkte werden ebenfalls von Spring verwaltet (s. <a href="https://docs.spring.io/spring-boot/docs/2.7.15/reference/html/dependency-versions.html" class="bare">https://docs.spring.io/spring-boot/docs/2.7.15/reference/html/dependency-versions.html</a>).</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="kapitel-java"><a class="anchor" href="#kapitel-java"></a>1.3. Java</h3>
@@ -673,7 +675,7 @@ Darüber hinaus werden Abbildungen sukzessive in editierbare SVGs gewandelt und 
 <dt class="hdlist1">Java Runtime</dt>
 <dd>
 <p>Die Java Runtime Environment wurde auf Version 17 gehoben.
-Es ist gegen Version 8 zu kompilieren.</p>
+Es ist aber weiterhin mit Version 8 zu kompilieren (Language Level).</p>
 </dd>
 <dt class="hdlist1">Java Vendor</dt>
 <dd>
@@ -707,13 +709,57 @@ Eine Verwendung von Metadaten über HTTPInvoker und Aufrufkontext gilt als depre
 </div>
 </div>
 <div class="sect2">
-<h3 id="kapitel-baustein-sicherheit-deprecated"><a class="anchor" href="#kapitel-baustein-sicherheit-deprecated"></a>1.5. Baustein Sicherheit deprecated <span class="icon"><i class="fa fa-ban" title="Deprecation"></i></span></h3>
+<h3 id="kapitel-sles"><a class="anchor" href="#kapitel-sles"></a>1.5. Suse Linux Enterprise Server (SLES)</h3>
+<div class="paragraph">
+<p>Der Standard schreibt nun statt eines Betriebssystems diejenigen Produkte vor, die zum Bau und zum Betrieb der Anwendungen nötig sind.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Suse Linux Enterprise Server (SLES) entfernt</dt>
+<dd>
+<p>Das Betriebssystem wurde aus dem Produktkatalog und der Dokumentation entfernt.</p>
+</dd>
+<dt class="hdlist1">Eclipse Temurin als JVM aufgenommen</dt>
+<dd>
+<p>siehe <a href="#kapitel-java">Java</a></p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="kapitel-liquibase"><a class="anchor" href="#kapitel-liquibase"></a>1.6. Liquibase</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Liquibase in Produktkatalog aufgenommen</dt>
+<dd>
+<p>Einführung und Umstellung auf Liquibase.</p>
+</dd>
+<dt class="hdlist1">Ausblick</dt>
+<dd>
+<p>Die konzeptionelle Integration erfolgt in einem nachfolgenden Release.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="kapitel-optimierung-dependeny-management"><a class="anchor" href="#kapitel-optimierung-dependeny-management"></a>1.7. Optimierung Dependency Management</h3>
+<div class="paragraph">
+<p>Abhängigkeiten wurden überprüft und reduziert.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="kapitel-aenderungen"><a class="anchor" href="#kapitel-aenderungen"></a>2. Isyfact Bausteine</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="kapitel-baustein-sicherheit-deprecated"><a class="anchor" href="#kapitel-baustein-sicherheit-deprecated"></a>2.1. Baustein Sicherheit deprecated <span class="icon"><i class="fa fa-ban" title="Deprecation"></i></span></h3>
 <div class="paragraph">
 <p>Der <a href="../isy-sicherheit/konzept/master.html" class="xref page">Baustein Sicherheit</a> und damit die Verwendung des Aufrufkontextes zur Authentifizierung ist ab IsyFact-Version 3.0 als deprecated markiert und wird mit einem folgenden Release entfernt. Als Nachfolger zum Thema Sicherheit gibt es mit IsyFact-Version 3.0 den <a href="../isy-security/konzept/master.html" class="xref page">Baustein Security</a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="kapitel-neuer-baustein-security"><a class="anchor" href="#kapitel-neuer-baustein-security"></a>1.6. Neuer Baustein Security</h3>
+<h3 id="kapitel-neuer-baustein-security"><a class="anchor" href="#kapitel-neuer-baustein-security"></a>2.2. Neuer Baustein Security</h3>
 <div class="paragraph">
 <p>Das Konzept zum Schutz der Daten und IT-Systeme vor unberechtigter Nutzung wurde überarbeitet und ist nun im neuen <a href="../isy-security/konzept/master.html" class="xref page">Baustein Security</a> beschrieben.
 Er ist der Nachfolger des <a href="../isy-sicherheit/konzept/master.html" class="xref page">Bausteins Sicherheit</a>, der mit IsyFact-Version 3.0 deprecated ist.</p>
@@ -748,11 +794,9 @@ Das neue Konzept des <a href="../isy-security/konzept/master.html#oauth2.0-und-o
 </div>
 </div>
 <div class="sect2">
-<h3 id="kapitel-keycloak"><a class="anchor" href="#kapitel-keycloak"></a>1.7. Keycloak 17-19</h3>
-
-</div>
-<div class="sect2">
-<h3 id="kapitel-neue-endpoints-ueberwachung"><a class="anchor" href="#kapitel-neue-endpoints-ueberwachung"></a>1.8. Neue Endpoints in Baustein Überwachung</h3>
+<h3 id="kapitel-neue-endpoints-ueberwachung"><a class="anchor" href="#kapitel-neue-endpoints-ueberwachung"></a>2.3. Baustein Überwachung</h3>
+<div class="sect3">
+<h4 id="_neue_endpoints_in_baustein_überwachung"><a class="anchor" href="#_neue_endpoints_in_baustein_überwachung"></a>2.3.1. Neue Endpoints in Baustein Überwachung</h4>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Liveness, Readiness und Availability zur Überwachung</dt>
@@ -771,22 +815,17 @@ Damit sind differenzierte Reaktionen auf Fehler in den Systemen möglich.</p>
 </dl>
 </div>
 </div>
-<div class="sect2">
-<h3 id="kapitel-neuer-baustein-angular"><a class="anchor" href="#kapitel-neuer-baustein-angular"></a>1.9. Neuer Baustein Angular</h3>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Versionshebung Node v18</dt>
-<dt class="hdlist1">Versionshebung Angular v13</dt>
-<dt class="hdlist1">Versionshebung PrimeNG v13</dt>
-<dt class="hdlist1">Baustein mit Angular PrimeNG und Bootstrap deprecated <span class="icon"><i class="fa fa-ban" title="Deprecation"></i></span></dt>
-<dd>
-<p>Der Baustein mit Angular PrimeNG und Bootstrap ist deprecated.</p>
-</dd>
-</dl>
+<div class="sect3">
+<h4 id="_refactoring_der_servicestatistik"><a class="anchor" href="#_refactoring_der_servicestatistik"></a>2.3.2. Refactoring der <code>ServiceStatistik</code></h4>
+<div class="paragraph">
+<p>Die Klasse <code>ServiceStatistik</code> ist nun ein Interface und ermöglicht es, Klassen zum Sammeln von Metriken zu erstellen.
+Alle <code>ServiceStatistik</code> implementierenden Beans werden automatisch der Micrometer-Registry hinzugefügt.
+Details finden sich in den <a href="../isy-ueberwachung/nutzungsvorgaben/master.html" class="xref page">Nutzungsvorgaben des Bausteins Überwachung</a>.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="kapitel-task-scheduling"><a class="anchor" href="#kapitel-task-scheduling"></a>1.10. Task Scheduling</h3>
+<h3 id="kapitel-task-scheduling"><a class="anchor" href="#kapitel-task-scheduling"></a>2.4. Baustein Task Scheduling</h3>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Umstellung auf Spring Boot</dt>
@@ -798,89 +837,132 @@ Damit sind differenzierte Reaktionen auf Fehler in den Systemen möglich.</p>
 <div class="paragraph">
 <p>Verwendung des Bausteins isy-security zur Authentifizierung:
 Für die Authentifizierung nutzt der Baustein Task Scheduling die <a href="../isy-security/konzept/master.html#aussensicht-der-komponente-security" class="xref page">Schnittstelle zur Authentifizierung</a> aus dem <a href="../isy-security/konzept/master.html#absicherung-task" class="xref page">Baustein Security</a>.
-Die bisherige Art der Authentifizierung des Tasks als 'technischer Nutzer' (mit Nutzername u. Passwort) wird perspektivisch durch eine Authentifizierung als 'Client' (mit Client-ID u. -Secret, vergeben vom IAM-System) abgelöst.
-Für eine weiche Migration bietet die Konfiguration von Batches dazu die Möglichkeit, alternativ die Authentifizierungs-Credentials Nutzername &amp; Passwort, analog zur IsyFact 2, bzw. Client-ID &amp; Client-Secret zu setzen.</p>
+Die bisherige Art der Authentifizierung des Tasks als 'technischer Nutzer' (mit Nutzername und Passwort) wird perspektivisch durch eine Authentifizierung als 'Client' (mit Client-ID und Client-Secret, vergeben vom IAM-System) abgelöst.
+Für eine weiche Migration bietet die Konfiguration von Tasks dazu die Möglichkeit, alternativ die Authentifizierungs-Credentials Nutzername und Passwort zusätzlich zu Client-ID und Client-Secret zu setzen um vorübergehend den Resource Owner Password Flow zu nutzen.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="kapitel-batchrahmen"><a class="anchor" href="#kapitel-batchrahmen"></a>1.11. Batchrahmen</h3>
+<h3 id="kapitel-batchrahmen"><a class="anchor" href="#kapitel-batchrahmen"></a>2.5. Baustein Batchrahmen</h3>
 <div class="paragraph">
 <p>Verwendung des Bausteins isy-security zur Authentifizierung:
 Für die Authentifizierung nutzt der Batchrahmen die <a href="../isy-security/konzept/master.html#aussensicht-der-komponente-security" class="xref page">Schnittstelle zur Authentifizierung</a> aus dem <a href="../isy-security/konzept/master.html#absicherung-task" class="xref page">Baustein Security</a>.
-Die bisherige Art der Authentifizierung des Tasks als 'technischer Nutzer' (mit Nutzername u. Passwort) wird perspektivisch durch eine Authentifizierung als 'Client' (mit Client-ID u. -Secret, vergeben vom IAM-System) abgelöst.
-Für eine weiche Migration bietet die Konfiguration von Batches dazu die Möglichkeit, alternativ die Authentifizierungs-Credentials Nutzername &amp; Passwort, analog zur IsyFact 2, bzw. Client-ID &amp; Client-Secret zu setzen.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="kapitel-sles"><a class="anchor" href="#kapitel-sles"></a>1.12. Suse Linux Enterprise Server (SLES)</h3>
-<div class="paragraph">
-<p>Der Standard schreibt nun statt eines Betriebssystems diejenigen Produkte vor, die zum Bau und zum Betrieb der Anwendungen nötig sind.</p>
+Die bisherige Art der Authentifizierung des Tasks als 'technischer Nutzer' (mit Nutzername und Passwort) wird perspektivisch durch eine Authentifizierung als 'Client' (mit Client-ID und Client-Secret, vergeben vom IAM-System) abgelöst.
+Für eine weiche Migration bietet die Konfiguration von Batches dazu die Möglichkeit, alternativ die Authentifizierungs-Credentials Nutzername und Passwort zusätzlich zu Client-ID und Client-Secret zu setzen um vorübergehend den Resource Owner Password Flow zu nutzen.</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Suse Linux Enterprise Server (SLES) entfernt</dt>
+<dt class="hdlist1">Breaking Change: Methode <code>getAuthenticationCredentials</code> entfernt</dt>
 <dd>
-<p>Das Betriebssystem wurde aus dem Produktkatalog und der Dokumentation entfernt.</p>
-</dd>
-<dt class="hdlist1">Eclipse Temurin als JVM aufgenommen</dt>
-<dd>
-<p>siehe <a href="#kapitel-java">Java</a></p>
+<p>Die Konfiguration von <code>benutzer</code>, <code>passwort</code> und <code>bhknz</code> erfolgt über isy-security ClientRegistrations. Batches müssen nur noch eine <code>oauth2ClientRegistrationId</code> zur Authentifizierung bereitstellen. Die Methode <code>getAuthenticationCredentials</code> der <code>BatchAusfuehrungsBean</code> wurde entfernt.</p>
 </dd>
 </dl>
 </div>
 </div>
 <div class="sect2">
-<h3 id="kapitel-liquibase"><a class="anchor" href="#kapitel-liquibase"></a>1.13. Liquibase</h3>
+<h3 id="kapitel-sonderzeichen"><a class="anchor" href="#kapitel-sonderzeichen"></a>2.6. Baustein Sonderzeichen</h3>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Liquibase in Produktkatalog aufgenommen</dt>
+<dt class="hdlist1">Sonderzeichen Transformator</dt>
 <dd>
-<p>Einführung und Umstellung auf Liquibase.</p>
+<p>Es wurde ein Sonderzeichen Transformator eingeführt um Zeichenketten, welche aus normativen Buchstaben (Datentyp C) der DIN SPEC 91379 bestehen, auf die Grundbuchstaben A-Z abzubilden.
+Für unterschiedliche Anwendungsfälle kann es erforderlich sein, die in Namen enthaltenden Buchstaben auf die Grundbuchstaben A-Z abzubilden.
+Dies ist bspw. der Fall in der maschinenlesbaren Zone (MRZ) amtlicher Reisedokumente, für die der Standard [ICAO 9303-3] einschlägig ist, da nur diese Grundbuchstaben für die Repräsentation von Namen zur Verfügung stehen.
+Wenn Datensätze und Suchanfragen unter Anwendung der Suchform normalisiert werden, ist es auch möglich, Namen trotz unterschiedlicher Schreibweisen zu identifizieren.</p>
 </dd>
-<dt class="hdlist1">Ausblick</dt>
+<dt class="hdlist1">String-Latin-1.1 Transformatoren sind nun deprecated <span class="icon"><i class="fa fa-ban" title="Deprecation"></i></span></dt>
 <dd>
-<p>Die konzeptionelle Integration erfolgt in einem nachfolgenden Release.</p>
+<p>Der Zeichensatz für String Latin 1.1 wurde korrigiert. Dies kann zu Kompatibilitätsproblemen in der Kommunikation
+mit Anwendungen führen, die den unkorrigierten Zeichensatz verwenden (IsyFact-Versionen kleiner als IF 3).</p>
+</dd>
+<dt class="hdlist1">Breaking Change: Getter eingeführt</dt>
+<dd>
+<p>Die Klassen <code>stringlatin1_1/core/transformation/ZeichenKategorie.java</code> und <code>dinspec91379/transformation/ZeichenKategorie.java</code> bieten für den Abruf aller Möglichkeiten nun einen <code>getter</code> anstelle einer <code>public static Variable</code> an.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Außerdem wurden die fehlenden Zeichen 0110 und 0111 zum Mapping hinzugefügt.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_baustein_persistence"><a class="anchor" href="#_baustein_persistence"></a>2.7. Baustein Persistence</h3>
+<div class="paragraph">
+<p>In <code>isy-persistence</code> gibt es nun eine Autokonfiguration mit initialisierbarer Datenbank.
+Für die Konfiguration der <code>DataSource</code> wurde zu den <code>DataSourceProperties</code> von Spring Boot gewechselt.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Breaking Change: Property <code>DataSource</code></dt>
+<dd>
+<p>Der Konfigurationsschlüssel für die <code>DataSource</code> heißt nun <code>isy.persistence.datasource</code> statt <code>isy.persistence.oracle.datasource</code>.</p>
 </dd>
 </dl>
 </div>
 </div>
 <div class="sect2">
-<h3 id="kapitel-optimierung-dependeny-management"><a class="anchor" href="#kapitel-optimierung-dependeny-management"></a>1.14. Optimierung Dependency Management</h3>
-<div class="paragraph">
-<p>Abhängigkeiten wurden überprüft und reduziert.</p>
+<h3 id="kapitel-restrukturierung-bedienkonzept"><a class="anchor" href="#kapitel-restrukturierung-bedienkonzept"></a>2.8. Styleguide</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Der Styleguide bzw. das Bedienkonzept ist deprecated <span class="icon"><i class="fa fa-ban" title="Deprecation"></i></span></dt>
+<dd>
+<p>Das bestehende Konzept soll bei der Entwicklung neuer Anwendungen nicht mehr berücksichtigt werden.
+Das neue, restrukturierte Bedienkonzept wird an anderer Stelle veröffentlicht.</p>
+</dd>
+</dl>
 </div>
-</div>
-<div class="sect2">
-<h3 id="kapitel-restrukturierung-bedienkonzept"><a class="anchor" href="#kapitel-restrukturierung-bedienkonzept"></a>1.15. Restrukturierung Bedienkonzept</h3>
-
-</div>
-<div class="sect2">
-<h3 id="_redis"><a class="anchor" href="#_redis"></a>1.16. Redis</h3>
-
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="kapitel-weitere-deprecations"><a class="anchor" href="#kapitel-weitere-deprecations"></a>2. Weitere Deprecations</h2>
+<h2 id="kapitel-weitere-deprecations"><a class="anchor" href="#kapitel-weitere-deprecations"></a>3. Weitere Deprecations</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="kapitel-session-management"><a class="anchor" href="#kapitel-session-management"></a>2.1. Session Management</h3>
-
-</div>
-<div class="sect2">
-<h3 id="kapitel-jsf"><a class="anchor" href="#kapitel-jsf"></a>2.2. JSF</h3>
-
+<div class="ulist">
+<ul>
+<li>
+<p>Session Management</p>
+</li>
+<li>
+<p>JSF</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="kapitel-entfernt"><a class="anchor" href="#kapitel-entfernt"></a>3. Entfernt</h2>
+<h2 id="kapitel-entfernt"><a class="anchor" href="#kapitel-entfernt"></a>4. Entfernt</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="kapitel-vorlageanwendungen"><a class="anchor" href="#kapitel-vorlageanwendungen"></a>3.1. Vorlageanwendungen</h3>
+<h3 id="kapitel-vorlageanwendungen"><a class="anchor" href="#kapitel-vorlageanwendungen"></a>4.1. Vorlageanwendungen</h3>
 <div class="paragraph">
 <p>Die Vorlageanwendungen wurden aus der Dokumentation entfernt.</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_bridge_module"><a class="anchor" href="#_bridge_module"></a>4.2. Bridge-Module</h3>
+<div class="paragraph">
+<p>Die Bridge zwischen Isyfact 1 und 2 ist obsolet weshalb folgende Module entfernt wurden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>isy-serviceapi-sst</p>
+</li>
+<li>
+<p>isy-exception-sst</p>
+</li>
+<li>
+<p>isy-sst-bridge</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="kapitel-produkte"><a class="anchor" href="#kapitel-produkte"></a>5. Produktkatalog</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Es gab einige Updates im Produktkatalog. Diese können der <a href="../einstieg/produktkatalog/changelog.html" class="xref page">Änderungshistorie</a> entnommen werden.</p>
 </div>
 </div>
 </div>
