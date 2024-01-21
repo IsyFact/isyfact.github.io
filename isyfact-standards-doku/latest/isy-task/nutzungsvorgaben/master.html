@@ -691,34 +691,27 @@ Das Dokument richtet sich somit vorrangig an Entwickler, Konstrukteure und techn
 <div class="sect2">
 <h3 id="spring-konfiguration"><a class="anchor" href="#spring-konfiguration"></a>3.2. Spring Konfiguration</h3>
 <div class="paragraph">
-<p>Als Nächstes wird der <code>TaskScheduler</code> über Spring eingebunden.</p>
-</div>
-<div class="paragraph">
-<p>Die Bibliothek authentifiziert Benutzer bei entsprechender Konfiguration und bindet sie in den Aufrufkontext der Aufgabe ein.
+<p>Als Nächstes wird der <code>TaskScheduler</code> über Spring eingebunden.
+Die Bibliothek authentifiziert Benutzer bei entsprechender Konfiguration und bindet sie in den Aufrufkontext der Aufgabe ein.
 Sie sichert die Aufgaben selbst allerdings nicht gegen unerlaubte Ausführungen ab.
 Die Verantwortlichkeit dafür liegt bei den jeweiligen Fachkomponenten der Anwendungen, die sich gemäß den Sicherheitsrichtlinien der IsyFact und den Anforderungen an die Anwendung schützen müssen.
 Authentifizierung und Autorisierung finden nach den Vorgaben des Berechtigungskonzepts statt.
 Dazu wird die IsyFact-Bibliothek <code>isy-security</code> eingesetzt.
-Die Nutzung der Bibliothek wird im Dokument <a href="../../isy-security/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben Sicherheit</a> beschrieben.</p>
-</div>
-<div class="paragraph">
-<p>Um die Verwendung von <code>isy-security</code> für die Authentifizierung und Autorisierung zu konfigurieren, wird die Property <code>isy.task.authentication.enabled</code> in <code>application.properties</code> auf <code>true</code> oder <code>false</code> gesetzt.</p>
+Die Nutzung der Bibliothek wird im Dokument <a href="../../isy-security/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben Sicherheit</a> beschrieben.
+Um die Verwendung von <code>isy-security</code> für die Authentifizierung und Autorisierung zu konfigurieren, wird die Property <code>isy.task.authentication.enabled</code> in <code>application.properties</code> auf <code>true</code> oder <code>false</code> gesetzt.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="erstellung-eines-tasks"><a class="anchor" href="#erstellung-eines-tasks"></a>3.3. Erstellung eines Tasks</h3>
 <div class="paragraph">
-<p>Technisch gesehen ist ein Task eine Java-Klasse, die vom Interface <code>de.bund.bva.isyfact.task.model.Task</code> abgeleitet ist.</p>
-</div>
-<div class="paragraph">
-<p>Ein Task kapselt die Tätigkeiten, die über <code>isy-task</code> zeitgesteuert ausgeführt werden sollen.
+<p>Technisch gesehen ist ein Task eine Java-Klasse, die vom Interface <code>de.bund.bva.isyfact.task.model.Task</code> abgeleitet ist.
+Ein Task kapselt die Tätigkeiten, die über <code>isy-task</code> zeitgesteuert ausgeführt werden sollen.
 Das Interface Task enthält hierfür die abstrakte Methode <code>execute()</code>.
 Im folgenden Listing sehen Sie die Methoden des Interfaces Task.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package de.bund.bva.isyfact.task.model;
-
 public interface Task {
 void execute();
     boolean isDeaktiviert();
@@ -732,45 +725,17 @@ void execute();
 <div class="paragraph">
 <p>Das direkte Ableiten vom Interface Task ist nicht empfohlen.
 Die Bibliothek bietet hierfür die abstrakte Klasse <code>AbstractTask</code> an.
-<code>AbstraktTask</code> ist eine abstrakte Basis-Klasse, die (bis auf die Methode <code>execute()</code>) bereits die folgende Standardimplementierung für jede abstrakte Task-Methode mitbringt:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>sie aktiviert bzw. deaktiviert</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Über die Methoden <code>aktivieren()</code> und <code>deaktivieren()</code> kann der Task manuell aktiviert bzw. deaktiviert werden.</p>
-</li>
-<li>
-<p>Ferner lässt sich der Status, ob der Task deaktiviert worden ist, über die Methode <code>isDeaktiviert()</code> abfragen.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>sie zeichnet Erfolg bzw. Misserfolg auf</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Wenn ein Task erfolgreich ausgeführt werden konnte, wird dies bei dem <code>TaskMonitor</code> mit dem genauen Zeitpunkt vermerkt.
-Hierfür wird die Methode <code>zeichneErfolgreicheAusfuehrungAuf()</code> des Monitors ausgeführt.</p>
-</li>
-<li>
-<p>Beim Misserfolg führt der Runner die Methode <code>zeichneFehlgeschlageneAusfuehrungAuf(Exception)</code> aus.
-Hierbei übergibt er ihm die geworfene Ausnahme.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Im <code>AbstractTask</code> ist also bereits die wesentliche Funktionalität für die Ausführung und Überwachung des Tasks implementiert worden.</p>
-</div>
-<div class="paragraph">
-<p>Das folgende Listing zeigt eine Fachkomponente, die zeitgesteuert "Hallo Welt" auf der Konsole ausgibt.</p>
+<code>AbstraktTask</code> ist eine abstrakte Basis-Klasse, die (bis auf die Methode <code>execute()</code>) bereits die folgende Standardimplementierung für jede abstrakte Task-Methode mitbringt:
+* <strong>sie aktiviert bzw. deaktiviert</strong>
+<strong> Über die Methoden <code>aktivieren()</code> und <code>deaktivieren()</code> kann der Task manuell aktiviert bzw. deaktiviert werden.
+</strong> Ferner lässt sich der Status, ob der Task deaktiviert worden ist, über die Methode <code>isDeaktiviert()</code> abfragen.
+* <strong>sie zeichnet Erfolg bzw. Misserfolg auf</strong>
+<strong> Wenn ein Task erfolgreich ausgeführt werden konnte, wird dies bei dem <code>TaskMonitor</code> mit dem genauen Zeitpunkt vermerkt.
+Hierfür wird die Methode <code>zeichneErfolgreicheAusfuehrungAuf()</code> des Monitors ausgeführt.
+</strong> Beim Misserfolg führt der Runner die Methode <code>zeichneFehlgeschlageneAusfuehrungAuf(Exception)</code> aus.
+Hierbei übergibt er ihm die geworfene Ausnahme.
+Im <code>AbstractTask</code> ist also bereits die wesentliche Funktionalität für die Ausführung und Überwachung des Tasks implementiert worden.
+Das folgende Listing zeigt eine Fachkomponente, die zeitgesteuert "Hallo Welt" auf der Konsole ausgibt.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -798,10 +763,8 @@ isy.logging.anwendung.version=0.0.1</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><code>ComputerName</code> ist der Name der Maschine, auf der der Task läuft.</p>
-</div>
-<div class="paragraph">
-<p>Ein Task wird grundsätzlich als Spring Bean konfiguriert.</p>
+<p><code>ComputerName</code> ist der Name der Maschine, auf der der Task läuft.
+Ein Task wird grundsätzlich als Spring Bean konfiguriert.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -823,10 +786,8 @@ public HalloWeltTask halloWeltTask() {
 <p>Dadurch wird der <code>TaskScheduler</code> beim Anwendungsstart gestartet.
 Dieser führt alle konfigurierten Tasks, deren konfigurierter Ausführungszeitpunkt überschritten ist, direkt aus.
 In der Zukunft liegende oder wiederholende Tasks werden auch dem Scheduler bekannt gemacht, sodass dieser sie zum entsprechenden Zeitpunkt ausführt.
-Zudem wird mit der Einstellung der <code>TaskScheduler</code> beim Beenden der Anwendung automatisch heruntergefahren.</p>
-</div>
-<div class="paragraph">
-<p>Wird kein Autostart konfiguriert, kann alternativ der <code>TaskScheduler</code> über die Methode <code>starteKonfigurierteTasks()</code> manuell gestartet werden.</p>
+Zudem wird mit der Einstellung der <code>TaskScheduler</code> beim Beenden der Anwendung automatisch heruntergefahren.
+Wird kein Autostart konfiguriert, kann alternativ der <code>TaskScheduler</code> über die Methode <code>starteKonfigurierteTasks()</code> manuell gestartet werden.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -846,24 +807,19 @@ Hierfür wird die Methode <code>shutdownMitTimeout()</code> aufgerufen, um die T
 <div class="sect2">
 <h3 id="verwendung-bereitgestellter-tasks"><a class="anchor" href="#verwendung-bereitgestellter-tasks"></a>3.4. Verwendung der bereitgestellten Tasks</h3>
 <div class="paragraph">
-<p>Die Bibliothek <code>isy-task</code> enthält nützliche Tasks für die <a href="../../../../glossary/latest/glossary/master.html#glossar-ifs" class="xref page">Bibliothek (IsyFact Standards)</a>.</p>
-</div>
-<div class="sect3">
-<h4 id="_automatische_aktualisierung_der_konfiguration"><a class="anchor" href="#_automatische_aktualisierung_der_konfiguration"></a>3.4.1. Automatische Aktualisierung der Konfiguration</h4>
-<div class="paragraph">
-<p>Dieser Task dient der periodischen Prüfung der Konfigurationsdateien auf Änderungen sowie der automatischen Aktualisierung der Konfiguration bei Änderungen.
+<p>Die Bibliothek <code>isy-task</code> enthält nützliche Tasks für die <a href="../../../../glossary/latest/glossary/master.html#glossar-ifs" class="xref page">Bibliothek (IsyFact Standards)</a>.
+==== Automatische Aktualisierung der Konfiguration
+Dieser Task dient der periodischen Prüfung der Konfigurationsdateien auf Änderungen sowie der automatischen Aktualisierung der Konfiguration bei Änderungen.
 Anwendungen können den Task einsetzen, in dem sie ihn als Spring Bean konfigurieren:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Configuration
 public class UpdateKonfigurationTaskConfiguration {
-
     @Bean
     public KonfigurationUpdateTask(@Qualifier("konfigurationUpdateTaskMonitor") TaskMonitor monitor, Konfiguration konfiguration) {
         return new KonfigurationUpdateTask(konfiguration, monitor);
     }
-
     @Bean
     public TaskMonitor konfigurationUpdateTaskMonitor() {
         return new TaskMonitor();
@@ -884,16 +840,13 @@ isy.task.tasks.konfigurationUpdateTask.fixed-delay=60s</code></pre>
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
 <h2 id="programmatisches-anlegen-von-aufgaben"><a class="anchor" href="#programmatisches-anlegen-von-aufgaben"></a>4. Programmatisches Anlegen von Aufgaben</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Eine weitere Möglichkeit, wie <code>isy-task</code> auf einfache Weise verwendet werden kann, ist das programmatische Anlegen von Aufgaben.
-Hierbei wird die Aufgabe nicht über eine Konfigurationsdatei geplant, sondern programmatisch.</p>
-</div>
-<div class="paragraph">
-<p>Für die programmatische Variante erstellen Sie eine <code>TaskKonfiguration</code>.
+Hierbei wird die Aufgabe nicht über eine Konfigurationsdatei geplant, sondern programmatisch.
+Für die programmatische Variante erstellen Sie eine <code>TaskKonfiguration</code>.
 Der <code>TaskKonfiguration</code> werden die Properties mithilfe von Setter-Methoden übergeben.
 Für die Properties in der TaskKonfiguration gelten dieselben Regeln wie für die Schlüssel in der Konfigurationsdatei.</p>
 </div>
@@ -912,10 +865,8 @@ taskKonfiguration.setInitialDelay(Duration.ofSeconds(1));</code></pre>
 <div class="paragraph">
 <p>Die Bibliothek <code>isy-task</code> sieht vor, dass jeder Task von einem <code>de.bund.bva.isyfact.task.model.TaskRunner</code> gesteuert wird.
 Ein <code>TaskRunner</code> übernimmt nicht nur die eigentliche Ausführung des Tasks, sondern enthält darüber hinaus auch die zur Ausführung benötigte Konfiguration.
-Um den Task auszuführen, wird er dem <code>TaskRunner</code> gemeinsam mit der <code>TaskKonfiguration</code> übergeben.</p>
-</div>
-<div class="paragraph">
-<p>Der <code>TaskRunner</code> wird dem <code>TaskScheduler</code> mithilfe der Methode <code>addTask()</code> übergeben.
+Um den Task auszuführen, wird er dem <code>TaskRunner</code> gemeinsam mit der <code>TaskKonfiguration</code> übergeben.
+Der <code>TaskRunner</code> wird dem <code>TaskScheduler</code> mithilfe der Methode <code>addTask()</code> übergeben.
 Während für den Start im oberen Abschnitt (mit der Spring-Konfiguration) beim <code>TaskScheduler</code> die Methode <code>starteKonfigurierteTasks()</code> ausgeführt wurde, ruft man bei dem manuellen Verfahren die Methode <code>start()</code> auf.</p>
 </div>
 <div class="listingblock">
@@ -931,10 +882,12 @@ taskScheduler.start();</code></pre>
 <h2 id="absicherung-von-tasks"><a class="anchor" href="#absicherung-von-tasks"></a>5. Absicherung von Tasks</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Für die Absicherung eines Tasks benötigt es lediglich eine OAuth 2.0 Client Registration ID, um die erforderlichen Sicherheitsmaßnahmen zu implementieren.
+<p>Für die Absicherung eines Tasks benötigt es in der Task-Konfiguration eine OAuth 2.0 Client Registration ID.
+Diese kann als Teil der <a href="#allgemeine-konfiguration">Allgemeinen Konfiguration</a> gültig für alle Tasks definiert werden oder in der <a href="#aufgabenspezifische-konfiguration">Aufgabenspezifischen Konfiguration</a> speziell für jeden einzelnen Task.
+Die Details einer <code>ClientRegistration</code>-Konfiguration sind in den <a href="../../isy-security/nutzungsvorgaben/master.html#authentifizierungsmanager-authentication" class="xref page">Nutzungsvorgaben Sicherheit und der Authentifizierung eines OAuth 2.0 Clients mit dem Authentifizierungsmanager</a> beschrieben
 Hierbei kann der Sicherheitsbaustein entweder Resource Owner Password Credentials (ROPC) oder Client Credentials verwenden.
 Die Verwendung von ROPC ermöglicht es, die Identität des Benutzers abzufragen und die Tasks sicher auszuführen, während der Client Credentials Flow die Authentifizierung und Autorisierung der Anwendung selbst ermöglicht, um auf geschützte Ressourcen zuzugreifen.
-Detaillierte Informationen zur Implementierung und Konfiguration dieser Sicherheitsbausteine finden sich in der Spring Boot Security Dokumentation, die eine umfassende Anleitung und Best Practices bereitstellt.</p>
+Weitere detaillierte Informationen zur Implementierung und Konfiguration dieser Sicherheitsbausteine finden sich in der Spring Boot Security Dokumentation, die eine umfassende Anleitung und Best Practices bereitstellt.</p>
 </div>
 </div>
 </div>
@@ -1068,25 +1021,19 @@ Die Dauer muss die Form eines Zeitraums gemäß dem  <a href="../../isy-datetime
 <h2 id="ueberwachung-mit-jmx"><a class="anchor" href="#ueberwachung-mit-jmx"></a>7. Überwachung mit JMX</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Die Bibliothek <code>isy-task</code> sieht eine Überwachung über JMX vor.</p>
-</div>
-<div class="paragraph">
-<p>Der Überwachungsmechanismus von <code>isy-task</code>, der über JMX abgefragt werden kann, benötigt den TaskMonitor, um sich beispielsweise Erfolg oder Misserfolg des Tasks zu merken.
-Wenn der Task vom AbstractTask abgeleitet ist, kann man dem Task einen TaskMonitor per Konstruktor übergeben.</p>
-</div>
-<div class="paragraph">
-<p>Soll der JMX-Monitor verwendet werden, so muss dieser genau wie der Task als Spring Bean konfiguriert werden.</p>
+<p>Die Bibliothek <code>isy-task</code> sieht eine Überwachung über JMX vor.
+Der Überwachungsmechanismus von <code>isy-task</code>, der über JMX abgefragt werden kann, benötigt den TaskMonitor, um sich beispielsweise Erfolg oder Misserfolg des Tasks zu merken.
+Wenn der Task vom AbstractTask abgeleitet ist, kann man dem Task einen TaskMonitor per Konstruktor übergeben.
+Soll der JMX-Monitor verwendet werden, so muss dieser genau wie der Task als Spring Bean konfiguriert werden.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Configuration
 public class TaskConfiguration {
-
     @Bean
     public TestTask testTask(TaskMonitor monitor) {
         return new TestTask(monitor);
     }
-
     @Bean
     public TaskMonitor taskMonitor() {
         return new TaskMonitor();

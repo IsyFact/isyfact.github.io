@@ -616,175 +616,81 @@
 </aside>
 <article class="doc">
 <h1 class="page">Integration der IsyFact in das Task Scheduling</h1>
-<div id="preamble">
-<div class="sectionbody">
-<div class="exampleblock">
-<div class="content">
 <div class="paragraph">
-<p><span class="image left"><img src="../../../../glossary/latest/licence/_images/IFS-Logo.png" alt="IFS-Logo" width="150"></span> Diese Seite ist ein Teil der IsyFact-Standards.
-Alle Inhalte der Seite, insbesondere Texte und Grafiken, sind urheberrechtlich geschützt.
+<p>Alle Inhalte der Seite, insbesondere Texte und Grafiken, sind urheberrechtlich geschützt.
 Alle urheberrechtlichen Nutzungs- und Verwertungsrechte liegen beim Bundesverwaltungsamt.</p>
 </div>
 <div class="paragraph">
 <p><span class="image right"><img src="../../../../glossary/latest/licence/_images/CC-BY.png" alt="Creative Commons Namensnennung" width="150"></span>
 Die Nutzung ist unter den <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-licence" class="xref page">Lizenzbedingungen</a> der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-cc-short" class="xref page">Creative Commons Namensnennung 4.0 International</a> gestattet.</p>
 </div>
-</div>
-</div>
+<div class="exampleblock">
+<div class="content">
 <div class="paragraph">
 <p>Die IsyFact stellt einige Anforderungen an die Ausführung fachlicher und technischer Operationen.
-Diese gelten auch für Tasks, die nicht direkt durch Anwender, sondern durch die Anwendung selbst eingeplant und ausgeführt werden.</p>
+Diese gelten auch für Tasks, die nicht direkt durch Anwender, sondern durch die Anwendung selbst eingeplant und ausgeführt werden.
+Die folgenden Kapitel beschreiben knapp die Anforderungen und konzentrieren sich dann auf die Umsetzung.</p>
 </div>
-<div class="paragraph">
-<p>Die folgenden Kapitel beschreiben knapp die Anforderungen und konzentrieren sich dann auf die Umsetzung.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="logging"><a class="anchor" href="#logging"></a>1. Logging</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Tasks müssen sich ins fachliche und technische Logging integrieren.</p>
-</div>
-<div class="paragraph">
-<p>Dazu bindet der Baustein Task Scheduling, vornehmlich im Around Advice und den damit zusammenhängenden Klassen,
-den <a href="../../isy-logging/konzept/master.html#isylogger" class="xref page">IsyFact-Logger</a> aus dem Baustein Logging ein.</p>
-</div>
-<div class="paragraph">
-<p>Der Baustein schreibt per Default folgende Informationen ins Log:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Start und Ende der Ausführung eines Tasks (Log-Level: <code>INFO</code>),</p>
-</li>
-<li>
-<p>Fehler in der Konfiguration eines Tasks (Log-Level: <code>ERROR</code>).</p>
-</li>
-</ul>
+<div id="logging" class="paragraph">
+<p>== Logging
+Tasks müssen sich ins fachliche und technische Logging integrieren.
+Dazu bindet der Baustein Task Scheduling, vornehmlich im Around Advice und den damit zusammenhängenden Klassen,
+den <a href="../../isy-logging/konzept/master.html#isylogger" class="xref page">IsyFact-Logger</a> aus dem Baustein Logging ein.
+Der Baustein schreibt per Default folgende Informationen ins Log:
+* Start und Ende der Ausführung eines Tasks (Log-Level: <code>INFO</code>),
+* Fehler in der Konfiguration eines Tasks (Log-Level: <code>ERROR</code>).
+.<span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Logging für Tasks</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
-<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Logging für Tasks</div>
 <div class="paragraph">
-<p>Der Anwendungscode für Tasks muss mindestens die folgenden Informationen ins Log schreiben:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Fachliche Fehlermeldungen (Log-Level: <code>INFO</code>),</p>
-</li>
-<li>
-<p>Technische Fehlermeldungen (Log-Level: <code>ERROR</code>).</p>
-</li>
-</ul>
+<p>Der Anwendungscode für Tasks muss mindestens die folgenden Informationen ins Log schreiben:
+* Fachliche Fehlermeldungen (Log-Level: <code>INFO</code>),
+* Technische Fehlermeldungen (Log-Level: <code>ERROR</code>).</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="nachvollziehbarkeit"><a class="anchor" href="#nachvollziehbarkeit"></a>2. Nachvollziehbarkeit</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Tasks müssen fachliche Operationen nachvollziehbar aufrufen.
-Das bedeutet, dass sich alle aufgerufenen fachlichen Operationen eindeutig einer bestimmten Ausführung eines Tasks zuordnen lassen.</p>
-</div>
-<div class="paragraph">
-<p>Dazu nutzt der Baustein Task Scheduling <a href="../../isy-logging/konzept/master.html#korrelations-id" class="xref page">Korrelations-IDs</a>.
+<div id="nachvollziehbarkeit" class="paragraph">
+<p>== Nachvollziehbarkeit
+Tasks müssen fachliche Operationen nachvollziehbar aufrufen.
+Das bedeutet, dass sich alle aufgerufenen fachlichen Operationen eindeutig einer bestimmten Ausführung eines Tasks zuordnen lassen.
+Dazu nutzt der Baustein Task Scheduling <a href="../../isy-logging/konzept/master.html#korrelations-id" class="xref page">Korrelations-IDs</a>.
 Der Around Advice generiert hierfür direkt nach seinem Aufruf eine neue Korrelations-ID und setzt diese im MDC (<em>Mapped Diagnostic Context</em>), bereitgestellt durch das Framework Logback.
-Direkt vor der Beendigung seines Aufrufs entfernt der Advice die Korrelations-ID wieder aus dem MDC.</p>
+Direkt vor der Beendigung seines Aufrufs entfernt der Advice die Korrelations-ID wieder aus dem MDC.
+Bei der Umsetzung von Tasks ist weiter nichts zu beachten.</p>
 </div>
-<div class="paragraph">
-<p>Bei der Umsetzung von Tasks ist weiter nichts zu beachten.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="authentifizierung"><a class="anchor" href="#authentifizierung"></a>3. Authentifizierung</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Wie bereits erwähnt, rufen Tasks fachliche Operationen auf.
+<div id="authentifizierung" class="paragraph">
+<p>== Authentifizierung
+Wie bereits erwähnt, rufen Tasks fachliche Operationen auf.
 Manche dieser Operationen sind abgesichert, d.h. sie erfordern bestimmte Rechte zum Aufruf.
-Diese Rechte sind authentifizierten Benutzern bzw. Clients zugeordnet.</p>
-</div>
-<div class="paragraph">
-<p>Der Baustein Task Scheduling nutzt hierfür den Baustein Security und dessen <a href="../../isy-security/konzept/master.html#aussensicht-der-komponente-security" class="xref page">Schnittstelle zur Authentifizierung</a>.
-Die Konfiguration von Tasks, sowie die globale Konfiguration aller Tasks, bietet dazu die Möglichkeit, Credentials (d.h. Benutzernamen &amp; Passwörter oder Client-IDs &amp; Client Secrets) sowie Behördenkennzeichen zu setzen.</p>
-</div>
-<div class="paragraph">
-<p>Bei der Umsetzung von Tasks muss die Konfiguration mit konkreten Werten belegt werden.
+Diese Rechte sind authentifizierten Benutzern bzw. Clients zugeordnet.
+Die Absicherung des Bausteins Task Scheduling basiert auf dem <em>Standard OAuth2.0</em> und nutzt hierfür den Baustein Security und dessen <a href="../../isy-security/konzept/master.html#aussensicht-der-komponente-security" class="xref page">Schnittstelle zur Authentifizierung</a>.
+Die Konfiguration von Tasks, sowie die globale Konfiguration aller Tasks, bietet dazu die Möglichkeit, Credentials (d.h. Benutzernamen &amp; Passwörter oder Client-IDs &amp; Client Secrets) sowie Behördenkennzeichen zu setzen.
+Bei der Umsetzung von Tasks muss die Konfiguration mit konkreten Werten belegt werden.
 Es kann aber auch global konfiguriert werden, dass keine Authentifizierung erforderlich ist.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="ueberwachung"><a class="anchor" href="#ueberwachung"></a>4. Überwachung</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Tasks müssen dem Monitoring Informationen über ihre Ausführungen bereitstellen.</p>
-</div>
-<div class="paragraph">
-<p>Der Baustein Task Scheduling nutzt hierzu die Möglichkeiten des Frameworks <a href="../../isy-ueberwachung/konzept/master.html#micrometer" class="xref page">Micrometer</a>, das der Baustein Überwachung nutzt, und definiert folgende Metriken:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Anzahl erfolgreicher Ausführungen pro Task,</p>
-</li>
-<li>
-<p>Anzahl nicht erfolgreicher Ausführungen pro Task,</p>
-</li>
-<li>
-<p>Fehler (d.h. Klasse der Exception) bei nicht erfolgreichen Ausführungen.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Die Metriken können bei Nutzung eines entsprechenden Monitoring-Produkts auch über die Zeit hinweg ausgewertet werden.</p>
-</div>
-<div class="paragraph">
-<p>Bei der Umsetzung von Tasks ist nichts weiter zu beachten.
+<div id="ueberwachung" class="paragraph">
+<p>== Überwachung
+Tasks müssen dem Monitoring Informationen über ihre Ausführungen bereitstellen.
+Der Baustein Task Scheduling nutzt hierzu die Möglichkeiten des Frameworks <a href="../../isy-ueberwachung/konzept/master.html#micrometer" class="xref page">Micrometer</a>, das der Baustein Überwachung nutzt, und definiert folgende Metriken:
+* Anzahl erfolgreicher Ausführungen pro Task,
+* Anzahl nicht erfolgreicher Ausführungen pro Task,
+* Fehler (d.h. Klasse der Exception) bei nicht erfolgreichen Ausführungen.
+Die Metriken können bei Nutzung eines entsprechenden Monitoring-Produkts auch über die Zeit hinweg ausgewertet werden.
+Bei der Umsetzung von Tasks ist nichts weiter zu beachten.
 Für die Erhebung detaillierter Statistiken zur Ausführungszeit eines Tasks ermöglicht der Baustein Task Scheduling die Verwendung der Annotation <code>@Timed</code> von Micrometer.
-Sie wird, wie <code>@Scheduled</code>, an der Methode des Tasks gesetzt.</p>
+Sie wird, wie <code>@Scheduled</code>, an der Methode des Tasks gesetzt.
+NOTE: Mehr zu der Annotation <code>@Timed</code> findet sich in der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-micrometer-timed-annotation" class="xref page">Dokumentation von Micrometer</a>.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Hinweis"></i>
-</td>
-<td class="content">
-Mehr zu der Annotation <code>@Timed</code> findet sich in der <a href="../../../../glossary/latest/literaturextern/inhalt.html#litextern-micrometer-timed-annotation" class="xref page">Dokumentation von Micrometer</a>.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="konfiguration"><a class="anchor" href="#konfiguration"></a>5. Konfiguration</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Tasks müssen über eine <a href="../../isy-konfiguration/konzept/master.html#table-typKonfZiel2" class="xref page">betriebliche Konfiguration</a> konfigurierbar sein.
+<div id="konfiguration" class="paragraph">
+<p>== Konfiguration
+Tasks müssen über eine <a href="../../isy-konfiguration/konzept/master.html#table-typKonfZiel2" class="xref page">betriebliche Konfiguration</a> konfigurierbar sein.
 Neben den bisher erwähnten Konfigurationsmöglichkeiten unterstützt der Baustein Task Scheduling noch das selektive Ausführen von Tasks.
-Dazu können Anwendungen Tasks über die Konfiguration:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>aktivieren und deaktivieren,</p>
-</li>
-<li>
-<p>nur auf bestimmten Maschinen ausführen.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Die Zuordnung von Tasks zu Maschinen geschieht über den Hostnamen.</p>
-</div>
-<div class="paragraph">
-<p>Bei der Umsetzung von Tasks muss die entsprechende Konfiguration mit konkreten Werten belegt werden.
+Dazu können Anwendungen Tasks über die Konfiguration:
+* aktivieren und deaktivieren,
+* nur auf bestimmten Maschinen ausführen.
+Die Zuordnung von Tasks zu Maschinen geschieht über den Hostnamen.
+Bei der Umsetzung von Tasks muss die entsprechende Konfiguration mit konkreten Werten belegt werden.
 Tasks sind per Default aktiviert, das muss nicht explizit konfiguriert werden.</p>
 </div>
 </div>

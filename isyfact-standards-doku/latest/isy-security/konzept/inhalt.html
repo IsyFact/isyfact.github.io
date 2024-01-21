@@ -1178,80 +1178,6 @@ So sind neben einer Gültigkeitsdauer auch die für den Benutzer autorisierten R
 <div class="title">Abbildung 8. Sequenzdiagramm Authentifizierung am Authentication-Gateway</div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="autorization-grant"><a class="anchor" href="#autorization-grant"></a>3.3.2.3. Autorisierungsverfahren</h5>
-<div class="paragraph">
-<p>Mit SpringSecurity(OAuth2.0) werden die vier Berechtigungszuteilungsverfahren <em>Authorization-Code-Credentials</em>, <em>Implicit-Credentials</em>, <em>Resource-Owner-Password-Credentials</em> und <em>Client-Credentials</em> spezifiziert.
-In IsyFact spielen davon bei den externen Anwendungsaufrufen über ein <em>Service-Gateway</em> die beiden Verfahren <em>Resource-Owner-Password-Credential</em> und <em>Client-Credential</em> ein Rolle, da es sich hierbei um die Berechtigungszuteilung für ausschließlich <em>Confidential-Clients</em> dreht.</p>
-</div>
-<div class="sect5">
-<h6 id="resource-owner-password-credential-flow"><a class="anchor" href="#resource-owner-password-credential-flow"></a>3.3.2.3.1. Resource-Owner-Password-Credential Flow</h6>
-<div class="sidebarblock">
-<div class="content">
-<div class="title"><span class="icon"><i class="fa fa-ban"></i></span> Deprecation</div>
-<div class="paragraph">
-<p>Dieser Teil der Dokumentation ist veraltet und wird in einem zukünftigen Release entfernt.
-Die Inhalte sollten zur Entwicklung neuer Anwendungen nicht mehr berücksichtigt werden.
-Stattdessen wird empfohlen, <a href="#client-credential-flow">Client-Credential Flow</a> zu verwenden.</p>
-</div>
-</div>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="paragraph">
-<p><strong>Anmerkung zur Deprecation</strong></p>
-</div>
-<div class="paragraph">
-<p>Dieser Flow soll gemäß OAuth2.0 Vorgaben nicht mehr verwendet werden und wird in zukünftigen Versionen aus dem OAuth-Standard entfernt.</p>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Der <em>Resource-Owner-Password-Credential</em>-Flow, der als Authentifizierungsdaten die Attribute <code>Username</code> und <code>Passwort</code> verwendet, sollte nur eingesetzt werden, wenn die involvierte Client-Anwendung ein hohes Vertrauen zur Wahrung der Authentifizierungsdaten sicherstellt oder wenn keine andere Art der Berechtigungszuteilung verfügbar ist.
-So wird die Authentifizierung für einen techn. Nutzer über diesen Authorization-Flow abgebildet.</p>
-</div>
-<div id="image-resourceowner-password-credential-flow" class="imageblock text-center">
-<div class="content">
-<img src="../_images/konzept/Resource-Owner-Passwort-Credential-Flow.dn.svg" alt="Resource Owner Passwort Credential Flow.dn">
-</div>
-<div class="title">Abbildung 9. OAuth2.0 Resource-Owner-Password-Credential Flow</div>
-</div>
-<div class="paragraph">
-<p>Im vorherigen Bild wird der logische Ablauf des <em>Resource-Owner-Password-Credential</em>-Flows dargestellt.
-Hierbei wird die Konfiguration des techn. Nutzers als der <em>Resource-Owner</em> dargestellt.</p>
-</div>
-<div class="paragraph">
-<p>Einem <em>Confidential Client</em> wird die Konfiguration (1.) eines techn. Nutzers mit den Authentifizierungsdaten <code>Username</code> und <code>Passwort</code> zugeordnet.
-Die so konfigurierte (Confidential-Client)-Anwendung schickt (2.) dann diese Authentifizierungsdaten an den IAM-Service.
-Im IAM erfolgt mit den so übergebenen Authentifizierungsdaten die Authentifizierung, die im Ergebnis ein gültiges Access-Token als Antwort (3.) zurückgeliefert.
-Die Client-Anwendung kann, mit dem so erhaltenen Access-Token, dann ihre Fachanwendungen aufrufen.
-Das Access-Token enthält alle notwendigen Daten, um zu verifizieren, ob die aufrufende Anwendung ordnungsgemäß authentifiziert und autorisiert ist.</p>
-</div>
-</div>
-<div class="sect5">
-<h6 id="client-credential-flow"><a class="anchor" href="#client-credential-flow"></a>3.3.2.3.2. Client-Credential Flow</h6>
-<div class="paragraph">
-<p>Der <em>Client-Credential</em>-Flow wird und darf nur zur Berechtigungszuteilung eingesetzt werden, wenn die Client-Anwendung selbst auch der Besitzer der Authentifizierungsdaten und damit als Confidential-Client-Anwendung eingestuft ist.
-Dieser Credential-Flow ist nach SpringSecurity OAuth2.0 auch die einzige Möglichkeit einen technischen Nutzer (Client) zu authentifizieren.
-Es erfolgt hierbei keine Interaktion durch einen Benutzer, der sein Passwort eingeben müsste, sondern die Schritte zur Authentifizierung und Autorisierung der Client-Anwendung laufen selbständig als Hintergrundprozess analog einer Batch-Anwendung ab.
-Die dabei verwendeten Authentifizierungsdaten <code>Client-ID</code> und <code>Client-Secret</code> müssen vor der Nutzung für die Client-Anwendung definiert und mit dem IAM-System abgestimmt sein.</p>
-</div>
-<div id="image-clientcredential-flow" class="imageblock text-center">
-<div class="content">
-<img src="../_images/konzept/Client-Credential-Flow.dn.svg" alt="Client Credential Flow.dn">
-</div>
-<div class="title">Abbildung 10. OAuth2.0 Client-Credential Flow</div>
-</div>
-<div class="paragraph">
-<p>Im vorherigen Bild wird der logische Ablauf des <em>Client-Credential</em>-Flows dargestellt.
-Hierbei kann die Client-Anwendung nach einem Access-Token beim IAM anfragen (1.), indem sie dabei ihre eigenen Client-Authentifizierungsdaten oder anderweitig unterstützte Authentifizierungskriterien verwendet.
-Die Authentifizierung mit diesen so übermittelten Authentifizierungsdaten erfolgt dann im IAM-Service.
-Bei erfolgreicher Authentifizierung wird (2.) ein gültiges Access-Token als Antwort zurückgeliefert.
-Mit dem so erhaltenen Access-Token kann die Client-Anwendung dann ihre Fachanwendungen aufrufen.
-Das Access-Token enthält alle notwendigen Daten, um zu verifizieren, ob die aufrufende Anwendung ordnungsgemäß authentifiziert und autorisiert ist.</p>
-</div>
-</div>
-</div>
 </div>
 <div class="sect3">
 <h4 id="ausfuehrung-batch-u-task"><a class="anchor" href="#ausfuehrung-batch-u-task"></a>3.3.3. Ausführung Batch &amp; Task</h4>
@@ -1265,7 +1191,7 @@ Da die Absicherung zur Ausführung eines Batches immer ohne User-Interaktionen s
 <div class="content">
 <img src="../_images/konzept/AnwLogBat.dn.svg" alt="AnwLogBat.dn">
 </div>
-<div class="title">Abbildung 11. Fachliche Architektur eines Batches in der Anwendungslandschaft</div>
+<div class="title">Abbildung 9. Fachliche Architektur eines Batches in der Anwendungslandschaft</div>
 </div>
 <div class="paragraph">
 <p>Ein Batch wird über ein Batch-Client oder Startprogramm – meist ein Shellscript, UC4, JobNetz, CronJob, o.ä. – initialisiert und gestartet.
@@ -1280,7 +1206,7 @@ Genau hier erfolgt frühzeitig die Unterscheidung welcher <em>Credential</em>-Fl
 <div class="content">
 <img src="../_images/konzept/Sequenzdiagramm_AbsicherungBatch.dn.svg" alt="Sequenzdiagramm AbsicherungBatch.dn">
 </div>
-<div class="title">Abbildung 12. Absicherung eines Batches</div>
+<div class="title">Abbildung 10. Absicherung eines Batches</div>
 </div>
 <div class="paragraph">
 <p>Über die Batch-Konfiguration wird gesteuert, ob der Batch mit einem <em>Technischen Nutzer</em> und den zugehörigen Authentifizierungsdaten <code>Benutzer</code> und <code>Passwort</code> über den <a href="#resource-owner-password-credential-flow">Resource-Owner-Password-Credential Flow</a> authentifiziert und autorisiert wird oder mit einem <em>Client</em> und den zugehörigen Authentifizierungsdaten <code>Client-ID</code> und <code>Client-Secret</code> über den <a href="#client-credential-flow">Client-Credential Flow</a>.</p>
@@ -1331,7 +1257,7 @@ In Abbildung <a href="#image-sequenzdiagramm-absicherung-task">Absicherung von A
 <div class="content">
 <img src="../_images/konzept/Sequenzdiagramm_AbsicherungTask.dn.svg" alt="Sequenzdiagramm AbsicherungTask.dn">
 </div>
-<div class="title">Abbildung 13. Absicherung von Aufgaben (Tasks)</div>
+<div class="title">Abbildung 11. Absicherung von Aufgaben (Tasks)</div>
 </div>
 <div class="paragraph">
 <p>Sobald eine Anwendungskomponente einen fachlichen Ablauf als abgekoppelten Hintergrundprozess und somit als <em>Aufgabe</em> ausführen möchte, startet diese eine Initialisierung der <em>Aufgabe</em> mit der <code>TaskID</code> als Parameter.
@@ -1348,17 +1274,13 @@ Der <em>Aufgaben</em>-Prozess erhält dann den initialisierten <code>SecurityCon
 </div>
 </div>
 <div class="sect3">
-<h4 id="verarbeitung-asynchroner-anfragen"><a class="anchor" href="#verarbeitung-asynchroner-anfragen"></a>3.3.4. Verarbeitung asynchroner Anfragen</h4>
-
-</div>
-<div class="sect3">
-<h4 id="autorization-grant"><a class="anchor" href="#autorization-grant"></a>3.3.5. Autorisierungsverfahren</h4>
+<h4 id="autorization-grant"><a class="anchor" href="#autorization-grant"></a>3.3.4. Autorisierungsverfahren</h4>
 <div class="paragraph">
 <p>Mit SpringSecurity (OAuth2.0) werden die vier Berechtigungszuteilungsverfahren (Credential Flows) <em>Authorization-Code-Credentials</em>, <em>Implicit-Credentials</em>, <em>Resource-Owner-Password-Credentials</em> und <em>Client-Credentials</em> spezifiziert.
 Innerhalb der IsyFact werden bei der Autorisierung von Anwendungsaufrufen (von intern oder extern) die beiden Verfahren <em>Resource-Owner-Password-Credential</em> und <em>Client-Credential</em> angewendet, da es sich hierbei ausschließlich um die Berechtigungszuteilung für <em>Confidential-Clients</em> dreht.</p>
 </div>
 <div class="sect4">
-<h5 id="resource-owner-password-credential-flow"><a class="anchor" href="#resource-owner-password-credential-flow"></a>3.3.5.1. Resource-Owner-Password-Credential Flow</h5>
+<h5 id="resource-owner-password-credential-flow"><a class="anchor" href="#resource-owner-password-credential-flow"></a>3.3.4.1. Resource-Owner-Password-Credential Flow</h5>
 <div class="sidebarblock">
 <div class="content">
 <div class="title"><span class="icon"><i class="fa fa-ban"></i></span> Deprecation</div>
@@ -1388,7 +1310,7 @@ So wird die Authentifizierung für einen techn. Benutzer über diesen Authorizat
 <div class="content">
 <img src="../_images/konzept/Resource-Owner-Passwort-Credential-Flow.dn.svg" alt="Resource Owner Passwort Credential Flow.dn">
 </div>
-<div class="title">Abbildung 14. OAuth2.0 Resource-Owner-Password-Credential Flow</div>
+<div class="title">Abbildung 12. OAuth2.0 Resource-Owner-Password-Credential Flow</div>
 </div>
 <div class="paragraph">
 <p>Im vorherigen Bild wird der logische Ablauf des <em>Resource-Owner-Password-Credential</em>-Flows dargestellt.
@@ -1410,7 +1332,7 @@ Das Access-Token enthält alle notwendigen Daten, um zu verifizieren, ob die auf
 </div>
 </div>
 <div class="sect4">
-<h5 id="client-credential-flow"><a class="anchor" href="#client-credential-flow"></a>3.3.5.2. Client-Credential Flow</h5>
+<h5 id="client-credential-flow"><a class="anchor" href="#client-credential-flow"></a>3.3.4.2. Client-Credential Flow</h5>
 <div class="paragraph">
 <p>Der <em>Client-Credential</em>-Flow wird und darf nur zur Berechtigungszuteilung eingesetzt werden, wenn die Client-Anwendung selbst auch der Besitzer der Authentifizierungsdaten und damit als Confidential-Client-Anwendung eingestuft ist.
 Dieser Credential-Flow ist nach SpringSecurity OAuth2.0 auch die einzige Möglichkeit einen technischen Nutzer (Client) zu authentifizieren.
@@ -1422,7 +1344,7 @@ Die Verwaltung des Clients mit dem ihm zugeordneten Rollen erfolgt im IAM-System
 <div class="content">
 <img src="../_images/konzept/Client-Credential-Flow.dn.svg" alt="Client Credential Flow.dn">
 </div>
-<div class="title">Abbildung 15. OAuth2.0 Client-Credential Flow</div>
+<div class="title">Abbildung 13. OAuth2.0 Client-Credential Flow</div>
 </div>
 <div class="paragraph">
 <p>Im vorherigen Bild wird der logische Ablauf des <em>Client-Credential</em>-Flows dargestellt.
@@ -1689,13 +1611,13 @@ Wichtig ist vor allem die Beziehung zwischen fachlichen und technischen Rollen.
 Des Weiteren sollte die Menge der Rollen so klein wie möglich gehalten werden.</p>
 </div>
 <div class="paragraph">
-<p>Die Abbildung <a href="#image-rollen-beziehungen">Abbildung 16</a> verdeutlicht den Inhalt der folgenden Abschnitte grafisch.</p>
+<p>Die Abbildung <a href="#image-rollen-beziehungen">Abbildung 14</a> verdeutlicht den Inhalt der folgenden Abschnitte grafisch.</p>
 </div>
 <div id="image-rollen-beziehungen" class="imageblock text-center">
 <div class="content">
 <img src="../_images/konzept/rollen-beziehungen.png" alt="rollen beziehungen" width="70%">
 </div>
-<div class="title">Abbildung 16. Beziehungen zwischen fachlichen und technischen Rollen</div>
+<div class="title">Abbildung 14. Beziehungen zwischen fachlichen und technischen Rollen</div>
 </div>
 <div class="sect3">
 <h4 id="technische-rollen"><a class="anchor" href="#technische-rollen"></a>4.3.1. Technische Rollen</h4>
@@ -1833,7 +1755,7 @@ Der folgende Prozess bietet eine grobe Richtlinie:</p>
 <div class="content">
 <img src="../_images/konzept/rollen-erstellung.png" alt="rollen erstellung" width="70%]">
 </div>
-<div class="title">Abbildung 17. Absicherung durch Rechte und Aggregation in Rollen</div>
+<div class="title">Abbildung 15. Absicherung durch Rechte und Aggregation in Rollen</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic" start="3">
