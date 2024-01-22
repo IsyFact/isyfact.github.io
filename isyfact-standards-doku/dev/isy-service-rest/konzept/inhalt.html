@@ -1,0 +1,1994 @@
+<!DOCTYPE html>
+<html lang="de"> <!-- Sets the language to German for correct hyphenation. -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Konzept REST-Services: Inhalt :: IsyFact Dokumentation</title>
+    <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/current/isy-service-rest/konzept/inhalt.html">
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../_/css/isyfact.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="isyfact-standards-doku" data-version="4.0.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../einstieg/einstieg.html">IsyFact Standards</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../einstieg/einstieg.html">Einstieg</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../einstieg/vorstellung.html">Vorstellung der IsyFact</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/isyfact-standards.html">IsyFact-Standards</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/isyfact-erweiterungen.html">IsyFact-Erweiterungen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/rahmenbedingungen.html">Rahmenbedingungen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/erste-schritte.html">Erste Schritte</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../einstieg/produkte.html">Eingesetzte Produkte</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/produktkatalog/produktvorgabenAllgemein.html">Allgemeine Produktvorgaben</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/produktkatalog/technologiestackJavaSpring.html">Java/Spring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/produktkatalog/technologiestackTypescriptAngular.html">Typescript/Angular</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/produktkatalog/negativliste.html">Negativliste</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/produktkatalog/lebenszyklus.html">Lebenszyklus</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/produktkatalog/changelog.html">Changelog</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/tutorial/master.html">Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/whitepaper.html">Whitepaper</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../blaupausen/blaupausen.html">Blaupausen</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../blaupausen/referenzarchitektur/master.html">Referenzarchitektur</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../blaupausen/referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/einordnung-ziele.html">Datenzugriff</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/persistenzlogik.html">Konzeption der Persistenzlogik</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/versionierung.html">Versionierung von Datenbankschemas</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-service/master.html">Service</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-web-gui/master.html">Web GUI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-batch/master.html">Batch</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Vorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/vorgaben-architektur/summaryArchitectureRules.html">Architektur</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/vorgaben-it-sicherheit/summarySecurityRules.html">IT-Sicherheit</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../bausteine/bausteine.html">Bausteine</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Datum &amp; Zeit</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-datetime/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-datetime/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Fehlerbehandlung</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-exception-core/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-exception-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">HttpInvoker</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-serviceapi-core/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">JPA/Hibernate</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../isy-persistence/konzept.html">Konzept</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/vorgaben-konventionen.html">Vorgaben und Konventionen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung-mit-liquibase.html">Versionierung (Liquibase)</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nutzungsvorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/umsetzung-datenzugriff.html">Umsetzung des Datenzugriffs</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/konfiguration.html">Konfiguration des O/R-Mappings</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Konfiguration</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-konfiguration/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-konfiguration/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Logging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-logging/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-logging/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Polling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-polling/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-polling/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sicherheit</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sicherheit/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sicherheit/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sonderzeichen</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sonderzeichen/konzept/sonderzeichen.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sonderzeichen/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Task Scheduling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../isy-task/konzept.html">Konzept</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-task/konzept/erweiterung-spring.html">Task Scheduling mit Spring</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-task/konzept/integration-isyfact.html">Integration der IsyFact in das Task Scheduling</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-task/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Überwachung</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-ueberwachung/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-ueberwachung/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Util</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-util/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Bedienkonzept</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-bedienkonzept/bedienkonzept.html">Bedienkonzept</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">JSF</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../isyfact-jsf-doku/current/isy-web/konzept/konzept.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../isyfact-jsf-doku/current/isy-web/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../plattform/plattform.html">Plattform</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/methodik.html">Methodik</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/namenskonventionen/master.html">Namenskonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/typescript-programmierkonventionen/master.html">TypeScript Programmierkonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Spezifikation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../methodik/vorlage-systemspezifikation/master.html">Systemspezifikation</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../methodik/vorlage-schnittstellendokumentation/master.html">Schnittstellen­dokumentation</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../methodik/anleitung-datenflussdiagramme/master.html">Anleitung für Datenflussdiagramme</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/werkzeuge.html">Werkzeuge</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Antora (empfohlen)</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/erstellung/erstellung-antora.html">Seiten anlegen</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/bearbeitung/bearbeitung-antora.html">Seiten bearbeiten</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/generierung/generierung-antora.html">Projektseite erzeugen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AsciidoctorJ</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/erstellung/erstellung-asciidoctorj.html">Neue Dokumente anlegen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/bearbeitung/bearbeitung-asciidoctorj.html">Dokumente bearbeiten</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/generierung/generierung-asciidoctorj.html">PDF- und HTML-Dokumente erzeugen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/changelog/changelog-doku.html">Zentralisiertes und automatisiertes Changelog</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/gui-tests/gui-tests-mit-selenium.html">GUI-Tests mit Selenium</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../release/releasenotes.html">Release Notes Version 4.0.x</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release/migrationsleitfaden.html">Migrationsleitfaden IsyFact 4.0.x</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">IsyFact Standards</span>
+    <span class="version">4.0 (DEV)</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../glossary/current/glossary/master.html">Glossar</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../glossary/current/glossary/master.html">1.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../../current/einstieg/einstieg.html">IsyFact Standards</a>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="../../einstieg/einstieg.html">4.0 (DEV)</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../current/einstieg/einstieg.html">3.0 (CURRENT)</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../isyfact-jsf-doku/current/isy-web/konzept/konzept.html">JavaServer Faces (JSF)</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../isyfact-jsf-doku/current/isy-web/konzept/konzept.html">6.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../current/einstieg/einstieg.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../einstieg/einstieg.html">IsyFact Standards</a></li>
+    <li><a href="inhalt.html">Konzept REST-Services: Inhalt</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">4.0 (DEV)</button>
+  <div class="version-menu">
+    <a class="version is-current" href="inhalt.html">4.0 (DEV)</a>
+    <a class="version" href="../../../current/isy-service-rest/konzept/inhalt.html">3.0 (CURRENT)</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/IsyFact/isyfact-standards/edit/master/isyfact-standards-doc/src/docs/antora/modules/isy-service-rest/pages/konzept/inhalt.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Inhalt" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Konzept REST-Services: Inhalt</h1>
+<div class="sect1">
+<h2 id="grundlagen"><a class="anchor" href="#grundlagen"></a>1. Grundlagen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>REST steht für Representational State Transfer und ist ein Paradigma für die Softwarearchitektur von verteilten Systemen, insbesondere für Webservices (Wikipedia).
+Roy Fielding hat in seiner Dissertation die Grundlagen von REST-Services definiert.
+Diese lauten wie folgt:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Client-Server</dt>
+<dd>
+<p>REST-Services besitzen die Eigenschaften einer Client-Server-Architektur und folgen diesem Architekturstil.</p>
+</dd>
+<dt class="hdlist1">Zustandslosigkeit</dt>
+<dd>
+<p>Ein REST-Service speichert zwischen zwei Anfragen keinerlei Zustandsinformationen.
+Jede Ressource muss alle Informationen enthalten, die für den Server bzw. Client notwendig sind, um sie verarbeiten zu können.</p>
+</dd>
+<dt class="hdlist1">Caching</dt>
+<dd>
+<p>REST-Nachrichten sollen, entweder explizit oder implizit, angeben, ob sie sich für einen Cache eignen oder nicht.</p>
+</dd>
+<dt class="hdlist1">Einheitliche Schnittstelle</dt>
+<dd>
+<p>REST-Schnittstellen besitzen vier Eigenschaften, um einheitlich beschaffen und leicht nutzbar zu sein.</p>
+<div class="paragraph">
+<p>Jede Ressource ist über einen URI <strong>eindeutig adressierbar</strong>.
+Damit geschieht der Zugriff für jeden Client eindeutig und für alle nachvollziehbar.</p>
+</div>
+<div class="paragraph">
+<p>REST-Services können an ihre Clients unterschiedliche <strong>Repräsentationen der Ressourcen</strong> ausliefern, z. B. in verschiedenen Sprachen oder Formaten.
+Die Veränderung einer Ressource erfolgt nur über eine dieser Repräsentationen.</p>
+</div>
+<div class="paragraph">
+<p>Jede Anfrage muss alle Informationen zu ihrer Verarbeitung mitliefern, also <strong>selbstbeschreibend</strong> sein.
+Beispiele dazu sind das explizite Kennzeichnen des übertragenen Formats oder die Verwendung von HTTP-Methoden.</p>
+</div>
+<div class="paragraph">
+<p><strong>Hypermedia as the Engine of Application State (HATEOAS)</strong>:
+REST-Services dürfen bei ihren Clients nur minimale Kenntnisse der Schnittstelle voraussetzen.
+Insbesondere das Navigieren zwischen Ressourcen sollte über Links geschehen, die Teil vorausgehender Ressourcen sind.
+Die Umsetzung von HATEOAS erzeugt so eine Navigation zwischen Ressourcen ähnlich zur Navigation zwischen Webseiten über Hyperlinks.</p>
+</div>
+</dd>
+<dt class="hdlist1">Mehrschichtige Systeme</dt>
+<dd>
+<p>Für Aufrufer von REST-Services muss es transparent sein, welche Systeme zwischen dem Client und dem Server oder hinter der Schnittstelle liegen.
+Aufrufe ändern sich nicht durch Änderungen an der Infrastruktur (z. B. durch Maßnahmen zur Skalierung) oder durch technische Änderungen, welche nicht den REST-Service selbst betreffen.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Einen guten Überblick und Verweise auf detailliertere Beschreibungen bietet die <a href="../../../../glossary/current/literaturextern/inhalt.html#litextern-wiki-rest" class="xref page">Wikipedia-Seite zu REST</a>.
+Für einen tiefen Einstieg in die Grundlagen bietet sich die <a href="../../../../glossary/current/literaturextern/inhalt.html#litextern-dissertation-roy-fielding" class="xref page">Dissertation von Roy Fielding</a> an.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Das Reifegradmodell von Leonard Richardson (<strong>Richardson Maturity Model</strong>, s. <a href="#image-richard-maturity-model">Abbildung 1</a>) ordnet diese Eigenschaften vier Reifegraden zu.</p>
+</div>
+<div id="image-richard-maturity-model" class="imageblock text-center">
+<div class="content">
+<img src="../_images/konzept/richard-maturity-model.dn.svg" alt="richard maturity model.dn">
+</div>
+<div class="title">Abbildung 1. Richardson Maturity Model</div>
+</div>
+<div class="paragraph">
+<p>Die IsyFact zielt auf eine möglichst vollständige Umsetzung der Eigenschaften und peilt daher einen hohen Reifegrad für ihre REST-Services an.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>Ein auf der IsyFact basierendes IT-System muss seine REST-Services mindestens anhand Stufe zwei des Richardson Maturity Models umsetzen.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Konkret stellt Stufe 2 des Richardson Maturity Models folgende Anforderungen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ressourcen werden über einen eindeutigen URI angesprochen.</p>
+</li>
+<li>
+<p>Ressourcen werden über HTTP-Methoden angesprochen und je nach HTTP-Methode abgefragt oder verändert.</p>
+</li>
+<li>
+<p>Ressourcen melden ihren Status durch eine Abfrage oder Veränderung über HTTP-Statuscodes zurück.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Stufe 3 des Richardson Maturity Models stellt darüber hinaus weitere Anforderungen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ressourcen enthalten Verweise auf URIs, mit denen weitere Anfragen im Kontext der Ressource möglich sind.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Diese grundlegende Festlegung hat große Auswirkungen auf die einzelnen Aspekte der Ausgestaltung der REST-Webservices.
+Diese werden in den folgenden Kapiteln beschrieben und konkretisiert.</p>
+</div>
+<div class="sect2">
+<h3 id="ausnahmen"><a class="anchor" href="#ausnahmen"></a>1.1. Ausnahmen (Erlaubte Abweichungen zum Reifegradmodell)</h3>
+<div class="paragraph">
+<p>In Ausnahmefällen kann auf die Einhaltung der Vorgabe zum Reifegrad (mindestens Level 2) verzichtet werden.</p>
+</div>
+<div id="prozessorientierte-aufrufe" class="paragraph">
+<p><strong>Prozessorientierte Aufrufe - Geschäftsvorfälle</strong></p>
+</div>
+<div class="paragraph">
+<p>Ein Ausnahmefall stellt die Abbildung von prozessorientierten Aufrufen dar, die häufig durch die Migration von bestehenden prozessorientierten Schnittstellen (z.B. RPC, httpInvoker) entstanden sind.
+Die Abbildung auf eine ressourcenorientierte REST-Schnittstelle ist i.d.R. mit einer Neukonzeption der Anwendung unter einer ressourcenorientierten Denkweise verbunden.
+Der Aufwand für die Neukonzeption steht oft nicht im Verhältnis zum tatsächlichen (fachlichen) Nutzen.
+Aus diesem Grund dürfen prozessorientierte Aufrufe über einfache http-Aufrufe realisiert werden, die bis auf die Ressourcenorientierung und Verwendung der http-Verben, den übrigen Vorgaben des REST-Konzepts folgen.
+Diese http-Aufrufe entsprechen zwar nicht dem Reifegradmodell (Level 2), sind aber in diesem Ausnahmefall IsyFact-konform.</p>
+</div>
+<div class="paragraph">
+<p>Wird über die Schnittstelle ein Geschäftsvorfall angestoßen, ist der Geschäftsvorfall in der URI zu adressieren:</p>
+</div>
+<table id="namenskonvention-prozessorientierte-uris" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Namenskonvention prozessorientierter URIs</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Prozessorientierte URIs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/{geschaeftsvorfall}/{geschaeftsprozess}</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiele</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/auskunft/personaliensuche</code></p>
+<p class="tableblock"><code>/auskunft/dokumentensuche</code></p>
+<p class="tableblock"><code>/auskunft/schluesselsuche</code></p>
+<p class="tableblock"><code>/meldung/erstmeldung</code></p>
+<p class="tableblock"><code>/meldung/aenderung</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="eigenschaften-rest-schnittstellen"><a class="anchor" href="#eigenschaften-rest-schnittstellen"></a>2. Eigenschaften von REST-Schnittstellen</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="aufbau-ressourcen-uris"><a class="anchor" href="#aufbau-ressourcen-uris"></a>2.1. Aufbau der Ressourcen-URIs</h3>
+<div class="paragraph">
+<p>Jede Ressource eines REST-Services ist über einen URI eindeutig adressierbar.
+Dieser Abschnitt legt Konventionen für den Aufbau der URIs fest.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Dieses Konzept empfiehlt die Nutzung von <a href="#hateoas">HATEOAS</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Ressourcen repräsentieren Objekte und werden deshalb als Substantiv beschrieben.
+Die Bezeichnung muss möglichst einfach gewählt werden (z. B. der Name der Entität oder die Aufgabe der Ressource).
+Repräsentiert die Ressource eine Menge von Objekten, wird der Plural verwendet.</p>
+</div>
+<div class="paragraph">
+<p>Der hierarchische Aufbau von Ressourcen ist explizit erwünscht:</p>
+</div>
+<table id="namenskonvention-ressourcen-uris" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 2. Namenskonvention Ressourcen-URIs</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Ressourcen-URIs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/{ressource}/{id}/{ressource}/{id}/{...}</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Regeln</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die Bezeichnung der Ressource beinhaltet ausschließlich Kleinbuchstaben.</p>
+<p class="tableblock">Zwischen Teilen zusammengesetzter Begriffe steht jeweils ein Bindestrich.</p>
+<p class="tableblock">Beinhaltet die Bezeichnung Sonderzeichen, müssen sie gemäß üblicher Transkriptionsregeln ersetzt werden (z. B. "ae" statt "ä").</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiele</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/kunden/12345/bestellungen/123/artikel</code></p>
+<p class="tableblock"><code>/nachrichten</code></p>
+<p class="tableblock">Beispiele für eine Menge von Objekten.</p>
+<p class="tableblock">Die Ressource liefert alle Objekte zurück.</p>
+<p class="tableblock"><code>/nachrichten/{id}</code></p>
+<p class="tableblock">Beispiel für ein einzelnes Objekt.
+Die Ressource liefert ein eindeutig identifizierbares Objekt zurück.</p>
+<p class="tableblock"><code>/eingehende-nachrichten/</code></p>
+<p class="tableblock">Beispiel für zusammengesetzte Begriffe.</p>
+<p class="tableblock"><code>/vertraege/</code></p>
+<p class="tableblock">Beispiel für die Ersetzung von Sonderzeichen.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="beziehungen-zwischen-ressourcen"><a class="anchor" href="#beziehungen-zwischen-ressourcen"></a>2.1.1. Beziehungen zwischen Ressourcen</h4>
+<div class="paragraph">
+<p>Beziehungen zwischen Ressourcen können entweder über <a href="#hateoas">HATEOAS</a> (vgl.
+Stufe 3 in <a href="#image-richard-maturity-model">Abbildung 1</a>) oder über die URI selber abgebildet werden.</p>
+</div>
+<table id="namenskonvention-beziehungen-zwischen-ressourcen" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 3. Namenskonvention Beziehungen zwischen Ressourcen</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Beziehungen zwischen Ressourcen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/{ressourcen A}/{id von einer Ressource A}/{ressource(n) B}/{...}</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Hinweis</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enthält eine Ressource wiederum mehrere Ressourcen, wird wieder der Plural verwendet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiele</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/nachrichten/{id}/absender</code></p>
+<p class="tableblock">adressiert den Absender einer bestimmten Nachricht.</p>
+<p class="tableblock"><code>/nachrichten/{id_n}/cc/{id_e}</code></p>
+<p class="tableblock">adressiert den bestimmten CC-Empfänger (mit der Id <code>id_e</code>) einer bestimmten Nachricht (mit der Id <code>id_n</code>).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="adressierung-mehrerer-ressourcen"><a class="anchor" href="#adressierung-mehrerer-ressourcen"></a>2.1.2. Adressierung von mehreren Ressourcen</h4>
+<div class="paragraph">
+<p>Der Zugriff auf mehrere Ressourcen aus einer Menge erfolgt über eine kommaseparierte Liste von IDs.</p>
+</div>
+<table id="namenskonvention-addressierung-mehrerer-ressourcen" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 4. Namenskonvention Adressierung von mehreren Ressourcen</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Adressierung von mehreren Ressourcen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/{ressourcen}/{id1},{id2}</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beispiele</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/nachrichten/{id1},{id2}</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="query-parameter"><a class="anchor" href="#query-parameter"></a>2.1.3. Query Parameter</h4>
+<div class="paragraph">
+<p>Query Parameter werden ausschließlich für das <strong>Sortieren</strong>, <strong>Paginierung</strong> und <strong>Filtern</strong> von Ressourcen verwendet.</p>
+</div>
+<div class="paragraph">
+<p><strong>Beispiel Sortierung:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>/nachrichten?sort=timestamp,ASC</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Beispiel Filter:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>/nachrichten?timestamp=2020-08-23&amp;land=deutschland</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Beispiel Paginierung:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>/nachrichten?page=5&amp;pageSize=15</pre>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>Es dürfen nur nicht datenschutzrelevante Informationen in Query Parametern verwendet werden, um das Loggen von datenschutzrelevanten Daten zu verhindern.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Für alle anderen Suchen sind POST-Requests zu verwenden, siehe <a href="#post-suche-filterung">Suche und Filterung mittels POST</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="http-methoden"><a class="anchor" href="#http-methoden"></a>2.2. Verwendung von HTTP-Methoden</h3>
+<div class="paragraph">
+<p>Die folgenden Kapitel beschreiben, welche HTTP-Methoden zu unterstützen sind und welche Funktion sie besitzen.
+Die übrigen HTTP-Methoden werden nicht verwendet.</p>
+</div>
+<div class="paragraph">
+<p><strong>GET</strong> wird verwendet, um eine Ressource zu lesen.
+Die Ressource wird dabei nicht verändert, wodurch diese Methode idempotent ist.</p>
+</div>
+<div class="paragraph">
+<p>Idempotenz beschreibt die Möglichkeit, den gleichen HTTP-Request mehrfach an die Schnittstelle senden zu können, ohne dass ein anderes Ergebnis erzielt wird als bei einem einzelnen Request.</p>
+</div>
+<div id="listing-get-anfrage-beispiele" class="listingblock">
+<div class="title">Listing 1. Beispiele für GET-Anfrage</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-http hljs" data-lang="http">GET /kunden/1234 HTTP/1.1
+accept: text/html, application/json, application/xhtml+xml, application/xml;q=0.9, */*;
+charset=utf-8
+HOST: xx.yy.zz
+ACCEPT-ENCODING: gzip, deflate, br</code></pre>
+</div>
+</div>
+<div id="listing-get-antwort-beispiele" class="listingblock">
+<div class="title">Listing 2. Beispiele für GET-Antwort</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+{
+    "id":1234,
+    "name":"Mustermensch",
+    "adresse":"Musterstraße 1",
+    "ort":"Musterstadt"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>POST</strong> wird verwendet, um eine neue Subressource innerhalb einer Ressource anzulegen.
+Es ist beim Erstellen von Datensätzen in den meisten Fällen das Mittel der Wahl, da das Backend hierbei die ID vergibt.
+Dadurch, dass die Datensätze mit neuen IDs angelegt werden, wird bei jedem weiteren senden des Requests ein neuer Datensatz angelegt und die Methode ist nicht idempotent.
+Des Weiteren muss POST für komplexe Suchen und Suchen mit datenschutzrelevanten Informationen verwendet werden, siehe <a href="#post-suche-filterung">Suche und Filterung mittels POST</a>.</p>
+</div>
+<div id="listing-post-anfrage-beispiele" class="listingblock">
+<div class="title">Listing 3. Beispiele für POST-Anfrage</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-http hljs" data-lang="http">POST /kunden HTTP/1.1
+HOST: xx.yy.zz
+Content-Type: application/json; charset=utf-8
+{
+    "name":"Mustermensch",
+    "adresse":"Musterstraße 1",
+    "ort":"Musterstadt"
+}</code></pre>
+</div>
+</div>
+<div id="listing-post-antwort-beispiele" class="listingblock">
+<div class="title">Listing 4. Beispiele für POST-Antwort</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-http hljs" data-lang="http">HTTP/1.1 201 Created
+Content-Type: application/json; charset=utf-8
+{
+    "id":1234,
+    "name":"Mustermensch",
+    "adresse":"Musterstraße 1",
+    "ort":"Musterstadt"
+}</code></pre>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>POST wird auch für fachliche Operationen genutzt, die keiner der anderen HTTP-Methoden zugeordnet werden können (z. B. Verifikation eines Antrags).</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>PUT</strong> wird verwendet, um eine Ressource zu ändern oder zu erstellen.
+Beim Ändern wird die gesamte Ressource mitgesendet und nicht nur der zu ändernde Teil wie bei PATCH.
+Ist die Ressource mit der gesendeten ID noch nicht vorhanden, wird diese durch PUT erstellt.
+Dies ist aber zu vermeiden, da der Client keine IDs vergeben soll.
+PUT ist, da immer die gesamte Ressource geändert wird, bzw. die ID beim Erstellen schon vorgegeben ist, idempotent.
+Deshalb ist PUT PATCH beim Aktualisieren vorzuziehen.
+In Abhängigkeit davon, ob eine Ressource geändert oder neu erstellt wurde, wird der entsprechende Response Code (200 OK bzw. 201 Created) zurückgegeben.</p>
+</div>
+<div id="listing-put-anfrage-beispiele" class="listingblock">
+<div class="title">Listing 5. Beispiele für PUT-Anfrage</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-http hljs" data-lang="http">PUT /kunden/1234 HTTP/1.1
+HOST: xx.yy.zz
+Content-Type: application/json; charset=utf-8
+{
+    "name":"Mustermensch",
+    "adresse":"Musterstraße 1",
+    "ort":"Beispielort"
+}</code></pre>
+</div>
+</div>
+<div id="listing-put-antwort-beispiele" class="listingblock">
+<div class="title">Listing 6. Beispiele für PUT-Antwort</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+{
+    "id":1234,
+    "name":"Mustermensch",
+    "adresse":"Musterstraße 1",
+    "ort":"Beispielort"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>PATCH</strong> wird verwendet, um eine Ressource mit einer bestimmten ID zu ändern.
+Hierbei werden nur die Felder gesendet, die geändert werden sollen und nicht die ganze Ressource.
+Das kann bei Ressourcen mit beispielsweise einem Auto-Increment Feld dazu führen, dass bei mehreren Patches unterschiedliche Ergebnisse erzielt werden.
+Deswegen kann Patch idempotent sein, muss aber nicht.</p>
+</div>
+<div id="listing-patch-anfrage-beispiele" class="listingblock">
+<div class="title">Listing 7. Beispiele für PATCH-Anfrage</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-http hljs" data-lang="http">PATCH /kunden/1234 HTTP/1.1
+HOST: xx.yy.zz
+Content-Type: application/json; charset=utf-8
+{
+    "adresse":"Neue Straße 2"
+}</code></pre>
+</div>
+</div>
+<div id="listing-patch-antwort-beispiele" class="listingblock">
+<div class="title">Listing 8. Beispiele für PATCH-Antwort</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+{
+    "id":1234,
+    "name":"Mustermensch",
+    "adresse":"Neue Straße 2",
+    "ort":"Beispielort"
+}</code></pre>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>PATCH ist nur zu verwenden, wenn PUT aus triftigen Gründen nicht funktioniert.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>DELETE</strong> wird verwendet zum Löschen einer Ressource.
+Da jede Ressource nur einmal gelöscht werden kann, ist diese Methode idempotent.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>DELETE /kunden/1234</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>HEAD</strong> wird verwendet, um Meta-Informationen einer Ressource zu erhalten.
+Es gibt die gleichen Daten zurück wie GET nur ohne Response-Body und ist damit idempotent.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>HEAD /kunden/1234</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>OPTIONS</strong> wird verwendet, um die von einer Ressource unterstützten Methoden anzuzeigen.
+Es ist idempotent, da nichts verändert wird.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>OPTIONS /kunden</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+Eine Übersicht über die HTTP-Methoden und ihre Eigenschaften findet sich in <a href="master.html#anhang-http-methoden" class="xref page">Anhang: http-Methoden</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="post-suche-filterung"><a class="anchor" href="#post-suche-filterung"></a>2.2.1. Suche und Filterung mittels POST</h4>
+<div class="paragraph">
+<p>Eine Filterung und Suche sollte im Regelfall über Query Parameter einer Anfrage mit dem HTTP-Methoden "GET" geschehen.
+Einige Abfragen sind jedoch zu komplex, um sie über HTTP GET abzubilden.
+Aspekte, die für eine Verwendung von POST statt GET sprechen sind folgende (ohne Anspruch auf Vollständigkeit):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Query Parameter sind zu lang und es besteht die Gefahr, dass so die gesamte URL zu lang ist und vom Provider nicht verarbeitet werden kann.</p>
+</li>
+<li>
+<p>Query Parameter enthalten datenschutzrelevante Informationen, die aufgrund der Aufzeichnung von URLs in Logs o. ä. nicht in der URL übertragen werden dürfen.</p>
+</li>
+<li>
+<p>Die Suche ist eine unscharfe Suche, bzw. sucht nicht nach Gleichheit, wie beispielsweise Timestamp größer als.</p>
+</li>
+<li>
+<p>Die Abfrageparameter sind nicht über ein logisches UND verknüpft, sondern z. B. über ein logisches ODER.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In diesen Fällen muss die HTTP-Methode "POST" verwendet werden.
+Die Filter- und Suchkriterien werden in den Body der Anfrage aufgenommen.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="verwendung-http-statuscodes"><a class="anchor" href="#verwendung-http-statuscodes"></a>2.3. Verwendung von HTTP-Statuscodes</h3>
+<div class="paragraph">
+<p>Im Folgenden werden die HTTP-Statuscodes dargestellt, die zu verwenden sind.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">HTTP-Statuscode</th>
+<th class="tableblock halign-left valign-top">Nachricht</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OK</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wird als Ergebnis eines erfolgreichen HTTP-Requests zurückgeliefert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">201</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Created</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wird als Ergebnis eines erfolgreichen HTTP-Requests zurückgeliefert, wenn eine neue Ressource angelegt wurde.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">204</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No Content</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wird als Ergebnis eines erfolgreichen HTTP-Requests zurückgeliefert, wenn der Request keinen Response-Body liefert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">304</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not Modified</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wird beim Caching eingesetzt und sagt dem Client, dass seine Ressource noch aktuell ist.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">400</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bad Request</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der HTTP-Request enthält fehlerhafte Daten, z. B. XML nicht Schema-konform, es wurde ein Virus gefunden, die Anfrage enthält fachliche Fehler, etc.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">401</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unauthorized</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Es ist ein Fehler bei der Authentifizierung aufgetreten, z. B. falscher Benutzername/Passwort.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">403</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Forbidden</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Benutzer hat nicht die erforderlichen Rechte.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">404</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not found</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die angeforderte Ressource existiert nicht.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">405</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Method not allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die aktuelle Operation ist auf der Ressource nicht erlaubt (beispielsweise PUT auf einer read-only Ressource).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">406</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not Acceptable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die Content Negotiation ist fehlgeschlagen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conflict</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die Ressource wurde zwischenzeitlich geändert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Internal Server Error</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Es ist ein interner Fehler bei der Bearbeitung der Anfrage aufgetreten.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Weitere Statuscodes sind in Abhängigkeit vom Fachverfahren möglich.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Für die Auswahl weiterer Statuscodes bietet die entsprechende <a href="../../../../glossary/current/literaturextern/inhalt.html#litextern-wikipedia-http-statuscode" class="xref page">Wikipedia-Seite zu HTTP-Statuscodes</a> einen guten Startpunkt.
+Empfehlenswert ist außerdem diese gut strukturierte Übersicht von <a href="../../../../glossary/current/literaturextern/inhalt.html#litextern-restapitutorial-uebersicht-http-statuscodes" class="xref page">openapi-generator.tech</a>, die Informationen von Wikipedia und des IETF übersichtlich aufbereitet.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="repraesentationen"><a class="anchor" href="#repraesentationen"></a>2.4. Repräsentationen</h3>
+<div class="paragraph">
+<p>REST-Services können verschiedene Repräsentationen derselben Ressource anbieten.
+Diese Repräsentationen sind entweder textbasiert oder binär.</p>
+</div>
+<div class="paragraph">
+<p>Liegt eine Ressource textbasiert vor, müssen ihre Repräsentationen, z. B. durch ein Schema, validierbar sein.
+Ebenso muss jede Repräsentation den gleichen, fachlichen Inhalt umfassen.</p>
+</div>
+<div class="paragraph">
+<p>Liegt eine Ressource binär vor, muss sie bei direkten Abfragen (über <code>GET</code>) binär ohne weitere Veränderungen (z. B. Einbettung in eine textbasierte Form oder zusätzliche Encodings) zurückgegeben werden.
+Nicht erlaubt ist eine Einbettung einer binären Ressource in eine textbasierte Repräsentation (z. B. ein BASE64-encodiertes Bild in einem dafür geschaffenen JSON- oder XML-Dokument).
+Ist eine binäre Ressource Teil einer textbasierten Ressource, so wird eine Einbettung ebenfalls nicht empfohlen.
+Stattdessen sollte der URI der binären Ressource in der textbasierten Ressource enthalten sein, um sie bei Bedarf direkt abzufragen.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>Alle REST-Services innerhalb einer Systemlandschaft nutzen eine einheitliche, textbasierte Repräsentationsform.
+Binäre Daten werden über direkte Anfragen binär ohne Transformation zurückgeliefert.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Diese Regel reduziert die Komplexität der internen Services und erhöht die Homogenität der Systemlandschaft.
+Ebenso fällt der Aufwand zur Pflege mehrerer, inhaltlich identischer Repräsentationsformen weg.</p>
+</div>
+<div class="paragraph">
+<p>Die Kommunikation mit IT-Systemen außerhalb der Systemlandschaft sollte ebenfalls über eine festgelegte textbasierte Repräsentation geschehen.
+Hier sind jedoch gesetzliche Vorgaben, Rahmenbedingungen und die Anforderungen der externen Kommunikationspartner zu berücksichtigen.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Ein typisches Beispiel ist eine Systemlandschaft, die intern JSON als Repräsentation nutzt, nach außen hin aber XÖV-konforme Nachrichten schicken muss und daher teilweise XML als Repräsentation nutzt.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="content-negotiation"><a class="anchor" href="#content-negotiation"></a>2.4.1. Content Negotiation</h4>
+<div class="paragraph">
+<p>Liegen Ressourcen in mehreren Repräsentationen vor (z. B. als JSON- und XML-Dokumente oder Medien in Form von komprimierten Daten oder Rohdaten), geschieht die Auslieferung einer konkreten Repräsentation über HTTP Content Negotiation.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Weitere Details zu Content Negotiation bietet die entsprechende <a href="../../../../glossary/current/literaturextern/inhalt.html#litextern-spring-content-negotiation" class="xref page">Spring Wikipedia-Seite</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>REST-Services setzen in ihren Antworten einen fest definierten Inhaltstyp pro Repräsentation.
+Wenn für eine Repräsentation mehr als ein Inhaltstyp üblich ist, reagiert ein REST-Service auf eine Anfrage tolerant. D. h. er liefert auch dann die gewünschte Ziel-Repräsentation der angeforderten Ressource aus, falls in der Anfrage ein anderer MIME-Type mit dem gleichen inhaltlichen Ziel-Format angefordert wurde.</p>
+</div>
+<div class="paragraph">
+<p>Anfragen geben ihre inhaltlichen Präferenzen im HTTP-Header <code>Accept</code> mit.
+Der REST-Service setzt den Inhaltstyp der Antworten im HTTP-Header <code>Content-Type</code>.
+Für die häufigsten Repräsentationen legt <a href="master.html#anhang-content-types" class="xref page">Anhang: Content types</a> die erwarteten und zurückgegebenen Inhaltstypen fest.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="metadaten"><a class="anchor" href="#metadaten"></a>2.5. Metadaten</h3>
+<div class="paragraph">
+<p>Der Bereich Metadaten kann optional implementiert werden.</p>
+</div>
+<div class="paragraph">
+<p>Zum Erhalten von Metadaten wird die HEAD-Methode verwendet.
+Die HEAD-Methode ist identisch zu GET, außer, dass sie keinen Response-Body zurückgibt.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="caching"><a class="anchor" href="#caching"></a>2.6. Caching</h3>
+<div class="paragraph">
+<p>Caching ist eine optionale Technik.</p>
+</div>
+<div class="paragraph">
+<p>Wenn Caching eingesetzt werden soll, ist der Einsatz von ETags das Mittel der Wahl.
+ETags beschreiben die Version der Ressource, die angefragt wird.
+Ist der ETag im Header der Anfrage der gleiche, wie der ETag der gespeicherten Ressource, wird als Statuscode 304 zurückgegeben.</p>
+</div>
+<div class="paragraph">
+<p>Zur Implementation wird in Spring der <code>ShallowEtagHeaderFilter</code> verwendet.
+Dieser reduziert allerdings nur die genutzte Netzwerk-Kommunikation, nicht aber die Rechenzeit im Server, da zum Vergleichen der ETags die Ressource geladen werden muss.</p>
+</div>
+<div class="paragraph">
+<p>Weitere Caching-Methoden, die auch die Serverlast reduzieren, sind möglich.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+Eine Übersicht, welche HTTP-Methoden Caching-Fähig sind, findet sich unter <a href="master.html#anhang-http-methoden" class="xref page">Anhang: http-Methoden</a>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="hateoas"><a class="anchor" href="#hateoas"></a>2.7. HATEOAS</h3>
+<div class="paragraph">
+<p>Nach dem HATEOAS-Paradigma soll eine zurückgelieferte Ressourcen weiterführende URLs (vergleichbar mit HTML-Links) zu verwandten Ressourcen enthalten, anstelle die verwandten Ressourcen mit der angefragten Ressource zusammengeführt zu übermitteln.</p>
+</div>
+<div id="listing-hateoas-beispiel" class="listingblock">
+<div class="title">Listing 9. Beispiel für eine HATEOAS-konforme Resource mit URIs zu weiterer Resource</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+    "kunde":"Alex Mustermensch",
+    "kontostand":30,
+    "vertrag":"https://base.url/kunde/1234/vertrag",
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Folgende Vorteile ergeben sich daraus:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Der Client benötigt nur minimales Wissen über die Struktur der Services und der Datenstrukturen: Änderungen können somit leichter realisiert werden.</p>
+</li>
+<li>
+<p>Der Server hat die Möglichkeit in Abhängigkeit vom Client Optionen auszublenden, indem z. B. einfach der Link nicht enthalten ist.</p>
+</li>
+<li>
+<p>Die Bearbeitung der Anfrage auf der Serverseite ist kostengünstiger und performanter zu realisieren, da Daten nicht "zusammengesucht und -gesetzt" werden müssen.</p>
+</li>
+<li>
+<p>Es muss in der Regel eine kleinere Nachricht übertragen werden.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Die letzten beiden Punkte führen direkt zu Fragestellungen des Schnittstellen- bzw. API-Designs:</p>
+</div>
+<div class="paragraph">
+<p>Die letzten zwei Vorteile ergeben sich vor allem aus der Voraussetzung, dass der Client in der Regel die "zusätzlichen Daten" nicht benötigt, die nur über die URI als Referenz übermittelt werden.
+Werden diese zusätzlichen Daten nach jedem Aufruf der übergeordneten Ressource angefordert, werden zusätzliche technische Verarbeitungsschritte nötig (Client: Request für die neuen Daten aufbauen, versenden. Server: Anfrage &amp; Berechtigung prüfen, Daten suchen, ggf. konvertieren, versenden,…).</p>
+</div>
+<div class="paragraph">
+<p>Bei häufigen, parallelen Anfragen würde dieses Szenario dann einen hohen Overhead generieren. Hier ist im Einzelfall die Schnittstelle entsprechend dem gewünschten Trade-Off zu modellieren.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="festlegung-umsetzung"><a class="anchor" href="#festlegung-umsetzung"></a>3. Festlegungen zur Umsetzung</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="technologieauswahl"><a class="anchor" href="#technologieauswahl"></a>3.1. Technologieauswahl</h3>
+<div class="paragraph">
+<p>Die IsyFact legt folgende Technologien für die Umsetzung von REST-Schnittstellen (vgl. <a href="#table-frameworks">Tabelle 1</a>) fest.</p>
+</div>
+<table id="table-frameworks" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 5. Frameworks für die Umsetzung</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Framework</th>
+<th class="tableblock halign-left valign-top">Technologie-Stack</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Webflux</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Java/Spring</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Umsetzung von REST-Clients</p>
+<p class="tableblock">(unter Nutzung von Apache HTTPComponents)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring MVC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Java/Spring</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Umsetzung von REST-Services</p>
+<p class="tableblock">(zur Nutzung mit Tomcat)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Angular Framework Modul: @angular/common/http</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TypeScript/Angular</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Umsetzung von REST-Clients</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenAPI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">technologie-unabhängig</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dokumentation der Service Schnittstelle und Erzeugung von Service und Client</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="spring-mvc-vergleich-webflux"><a class="anchor" href="#spring-mvc-vergleich-webflux"></a>3.2. Spring MVC im Vergleich zu Spring Webflux</h3>
+<div class="paragraph">
+<p>Das Spring Framework stellt seit Version 5 Spring Webflux als reaktive Alternative zu Spring MVC bereit.</p>
+</div>
+<div class="paragraph">
+<p>Mit Webflux ist es möglich, reaktive REST APIs zu implementieren.
+Beim reaktiven Programmierparadigma geht es um die Reaktion auf Veränderungen (Observer Pattern), im Fall von REST APIs um die Reaktion auf gesendete Daten.
+Das ist hilfreich, wenn man große Datenmengen (z. B. Mediendateien oder größere Ergebnismengen aus einer Datenbankabfrage) über das REST API übertragen möchte.
+Die Daten werden dann in mehreren Paketen gesendet, der Empfänger reagiert jeweils auf den Erhalt eines Pakets.</p>
+</div>
+<div class="paragraph">
+<p>Der Hauptvorteil von Webflux liegt aber im geringeren Ressourcenverbrauch auf der Server Seite.
+Webflux basiert auf einem Event-Loop Mechanismus, während Spring MVC auf Thread Pools basiert.
+Der Performance Vorteil von Webflux macht sich insbesondere bei vielen gleichzeiten Service-Aufrufen und/oder der Übertragung größerer Datenmengen bei einem Service-Aufruf bemerkbar.</p>
+</div>
+<div class="paragraph">
+<p>Trotzdem empfiehlt die IsyFact grundsätzlich, Spring MVC für die Umsetzung von REST-Services einzusetzen.
+Die Vorteile des reaktiven Programmierparadigmas erfüllen sich nur, wenn alle Teile der Umsetzung entsprechend gestaltet sind.
+Dies ist aktuell nicht der Fall.</p>
+</div>
+<div class="paragraph">
+<p>Für REST-Clients wiederum empfiehlt die IsyFact die Verwendung des <code>WebClient</code> anstatt des <code>RestTemplate</code>, da letzteres nicht mehr aktiv weiterentwickelt wird.</p>
+</div>
+<div class="paragraph">
+<p>Für die Anbindung von Angular-Clients enthält der Baustein Angular eine entsprechende Komponente.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="schnittstellendokumentation"><a class="anchor" href="#schnittstellendokumentation"></a>3.3. Schnittstellendokumentation</h3>
+<div class="paragraph">
+<p>Alle auf IsyFact basierten Anwendungen müssen ihre REST-Schnittstellen mit der <em>OpenAPI 3.0</em> Spezifikation beschreiben.
+Sowohl YAML als auch JSON sind als Format der Schnittstellendokumentation zulässig.
+Für die Erstellung der Schnittstellendokumentation ist grundsätzlich kein besonderes Tool erforderlich, ein Texteditor ist ausreichend.
+Das OpenAPI Format wird jedoch von diversen Entwicklungsumgebungen (z. B. IntelliJ) unterstützt, was die Bearbeitung erleichtert.</p>
+</div>
+<div class="sect3">
+<h4 id="code-generierung"><a class="anchor" href="#code-generierung"></a>3.3.1. Code-Generierung</h4>
+<div class="paragraph">
+<p>Bei der Erstellung von REST-APIs gibt es grundsätzlich 2 Ansätze: <em>Contract/API First</em> oder <em>Code First</em>.
+Bei <em>Contract/API First</em> wird zunächst die Schnittstellenbeschreibung erstellt und daraus der Code (Server und Client) generiert.
+Bei <em>Code First</em> wird zuerst die API implementiert und mit Annotationen für die Schnittstellenbeschreibung versehen.
+Aus den Annotationen wird dann die Schnittstellenbeschreibung generiert.</p>
+</div>
+<div class="paragraph">
+<p>Die IsyFact empfiehlt den <em>Contract/API First</em> Ansatz.</p>
+</div>
+<div class="paragraph">
+<p>Für die Generierung des Codes von Server und Client sind die Standards von OpenApi 3.x zu beachten.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="bereitstellen-generierte-clients"><a class="anchor" href="#bereitstellen-generierte-clients"></a>3.3.2. Bereitstellen von generierten Clients</h4>
+<div class="paragraph">
+<p>Wie beschrieben können aus der OpenAPI Schnittstellenbeschreibung Services und Clients für diverse Plattformen generiert werden.
+Aus Convenience-Gründen wird empfohlen, dass Anbieter von Schnittstellen fertig generierte Clients für die gängigen Plattformen zur Verfügung stellen.
+Gängige Clients im Kontext der IsyFact sind Java (Spring) und Javascript (Angular).</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="verwendung-transportobjekte"><a class="anchor" href="#verwendung-transportobjekte"></a>3.4. Verwendung von Transportobjekten</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="icon"><i class="fa fa-university" title="Architekturregel"></i></span> Architekturregel</div>
+<div class="paragraph">
+<p>REST-Schnittstellen verwenden ausschließlich Transferobjekte (Data Transfer Objects, DTOs).</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Die DTOs werden ebenfalls innerhalb der Schnittstellenbeschreibung schematisch beschrieben.</p>
+</div>
+<div class="paragraph">
+<p>Der Code für die DTOs wird daraus generiert.</p>
+</div>
+<div class="paragraph">
+<p>Innerhalb der Schnittstellenbeschreibung des Service werden die Schemata der DTOs üblicherweise als Referenz mittels <code>#ref</code> eingebunden.
+Die Referenz kann sich dabei auf eine Beschreibung innerhalb derselben Datei beziehen oder auch auf eine externe Datei.
+Die Datei kann dabei sowohl über einen Dateipfad als auch über eine URL adressiert werden.</p>
+</div>
+<div class="paragraph">
+<p>Beispiel aus Swagger Petstore:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>requestBody:
+   content:
+      application/json:
+         schema:
+            $ref: '#/components/schemas/Pet'
+
+...
+
+components:
+   schemas:
+      Pet:
+         name:
+            type: string
+            example: doggie</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="querschnittliche-konzepte"><a class="anchor" href="#querschnittliche-konzepte"></a>4. Querschnittliche Konzepte</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="validierung-von-anfragen"><a class="anchor" href="#validierung-von-anfragen"></a>4.1. Validierung von Anfragen</h3>
+<div class="paragraph">
+<p>Wie bereits gesagt muss die formale Validierung der Daten vor der inhaltlichen Validierung im Anwendungskern stattfinden.
+Genau genommen müssen die Daten formal korrekt sein, bevor sie überhaupt in irgendeiner Weise weiter verarbeitet werden können.
+Daher ist die formale Prüfung der erste Schritt in der Verarbeitung von Daten und komplett unabhängig von der weiteren Verarbeitung.</p>
+</div>
+<div class="paragraph">
+<p>Eine geeignete Methode zur Prüfung der Daten auf formale Korrektheit ist die Validierung gegen das vorhandene Schema der Schnittstellenbeschreibung.
+Atlassian bietet den Swagger Request Validator als freie Software an (Apache 2.0 Lizenz).
+Damit lassen sich HTTP Requests und Responses gegen eine OpenAPI bzw. Swagger Spezifikation prüfen, OpenAPI v3 wird dabei bereits unterstützt.
+Der <a href="../../../../glossary/current/literaturextern/inhalt.html#litextern-swagger-request-validator" class="xref page">Swagger Request Validator</a> hat keine weiteren Abhängigkeiten und kann somit unabhängig von HTTP APIs oder Frameworks verwendet werden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fehlerbehandlung"><a class="anchor" href="#fehlerbehandlung"></a>4.2. Fehlerbehandlung</h3>
+<div class="paragraph">
+<p>In diesem Abschnitt werden alle Aspekte zur Fehlerbehandlung in REST-Services beschrieben.</p>
+</div>
+<div class="paragraph">
+<p>Bei der Fehlerbehandlung müssen zwei Varianten unterschieden werden: technische Fehler und fachliche Fehler.</p>
+</div>
+<div class="paragraph">
+<p><strong>Definition von technischen Exceptions</strong>: Service-Methoden deklarieren keine oder eine technische Exception.
+Die technische Exception muss für alle Service-Methoden einer Service-Schnittstelle gleich sein.</p>
+</div>
+<div class="paragraph">
+<p><strong>Definition von fachlichen Exceptions</strong>: Service-Methoden können beliebig viele fachliche Exceptions deklarieren.
+Diese können spezifisch für jede Service-Methode sein.</p>
+</div>
+<div class="paragraph">
+<p><strong>Übermittlung von Daten</strong>: Die Felder Ausnahme-ID, UUID und Fehlernachricht, wie in den <a href="../../isy-exception-core/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben Fehlerbehandlung</a> beschrieben, müssen stets übertragen werden.
+Weiterhin darf kein Stack-Trace übertragen werden.</p>
+</div>
+<div class="paragraph">
+<p>Grundsätzlich sind die Vorgaben aus den <a href="../../isy-exception-core/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben Fehlerbehandlung</a> zu beachten.
+Im Anschluss folgen REST-Spezifische Regeln.</p>
+</div>
+<div class="paragraph">
+<p>Technische Fehler werden in der HTTP-Response immer mit dem HTTP-Code 500 gesendet.</p>
+</div>
+<div class="paragraph">
+<p>Fachlichen Fehlern muss ein entsprechend passender Fehlercode im Bereich 4xx zugeordnet werden.</p>
+</div>
+<div class="paragraph">
+<p><a href="#einheitliche-fehlermeldungen">Einheitliche Fehlermeldungen</a> beschreibt den Inhalt einer Fehlermeldung.</p>
+</div>
+<div class="sect3">
+<h4 id="entkopplung-von-fehlerbehandlung-und-service-logik"><a class="anchor" href="#entkopplung-von-fehlerbehandlung-und-service-logik"></a>4.2.1. Entkopplung von Fehlerbehandlung und Service-Logik</h4>
+<div class="paragraph">
+<p>Die Fehlerbehandlung erfolgt nicht in der REST-Schnittstelle, sondern in einem separaten <code>RestExceptionHandler</code>, welcher die Exception Fassade für REST-Schnittstellen repräsentiert (vgl. <a href="#image-fehlerbehandlung">Abbildung 2</a>).</p>
+</div>
+<div id="image-fehlerbehandlung" class="imageblock text-center">
+<div class="content">
+<img src="../_images/konzept/fehlerbehandlung.dn.svg" alt="fehlerbehandlung.dn">
+</div>
+<div class="title">Abbildung 2. Entkopplung Fehlerbehandlung und Service-Logik</div>
+</div>
+<div class="paragraph">
+<p>Spring Webflux unterstützt ebenso wie Spring MVC die Annotation @RestControllerAdvice.
+Die Implementierung des RestExceptionsHandler kann daher über die Annotation einer Klasse mit @RestControllerAdvice erfolgen.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Details zur Implementierung können der <a href="../../../../glossary/current/literaturextern/inhalt.html#litextern-spring-webflux" class="xref page">offiziellen Spring Dokumentation</a> entnommen werden.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="einheitliche-fehlermeldungen"><a class="anchor" href="#einheitliche-fehlermeldungen"></a>4.2.2. Einheitliche Fehlermeldungen</h4>
+<div class="paragraph">
+<p>Eine Fehlernachricht aus einer REST-Schnittstelle (egal, ob Client oder Server Error) muss mindestens folgende Informationen beinhalten.</p>
+</div>
+<table id="table-error-fields" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 6. Standardfelder für Fehlernachrichten</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feld</th>
+<th class="tableblock halign-left valign-top">Datentyp</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>timestamp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exakter Zeitpunkt an dem der Fehler aufgetreten ist.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>status</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP-Fehlercode</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>error</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kurzbeschreibung des Fehlers, z. B. <em>Entity not found</em>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>message</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Detailbeschreibung des Fehlers.
+Bei Client Errors sollte beschrieben werden wie der Client den Fehler beheben kann.
+Es sollen keine technischen/internen Details (z. B. Stacktrace) in der Beschreibung enthalten sein.
+Die message setzt sich, wie in den <a href="../../isy-exception-core/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben Fehlerbehandlung</a> beschrieben, folgendermaßen zusammen:</p>
+<p class="tableblock"><code>#AusnahmeId Fehlertext #UUID</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pfad der Ressource, die in der Anfrage adressiert wurde.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Fehler werden in einem Array zurückgegeben um auch das Senden mehrerer Fehler, beispielsweise bei der Validierung von Eingaben, zu ermöglichen.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">[
+    {
+     "timestamp": "2020-08-23T14:53:33.452+02:00",
+     "status": 404,
+     "error": "Not Found",
+     "message": "0001 Die Nachricht mit der ID=1 konnte nicht gefunden werden. 4321",
+     "path": "/ressource/1234"
+    }
+]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sollten bei der Verarbeitung mehrere Fehler auftreten, sind alle Fehler zurückzugeben.</p>
+</div>
+<div class="paragraph">
+<p>Exceptions werden im <code>RestExceptionHandler</code> auf den jeweiligen HTTP-Statuscode und die entsprechende Nachricht gemapped.
+Welche Informationen enthalten sein dürfen wird im <a href="../../isy-exception-core/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben Fehlerbehandlung</a> genauer beschrieben.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sicherheit"><a class="anchor" href="#sicherheit"></a>4.3. Sicherheit</h3>
+<div class="paragraph">
+<p>Die Authentifizierung wird nach OAuth2 sichergestellt.
+Hierfür muss der Client mit jeder Nachricht einen Bearer Token mitsenden.
+Dieser wird im Request-Header mit dem Tag "Authorization" versehen.
+Im Sicherheitsbaustein wird das Token an den <code>SecurityContextHolder</code> weitergegeben.
+Dort werden die Daten ausgelesen und der Token wird auf Echtheit überprüft.
+Bei einer reinen Weitergabe greift die Bearer Propagation.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Nähere Informationen zu OAuth2 gibt es auf der <a href="../../../../glossary/current/literaturextern/inhalt.html#litextern-oauth-homepage" class="xref page">OAuth Homepage</a>.</p>
+</div>
+<div class="paragraph">
+<p>Informationen zur Bearer Propagation gibt es in der <a href="../../../../glossary/current/literaturextern/inhalt.html#litextern-spring-oauth2-bearertoken-resolver" class="xref page">offiziellen Spring Dokumentation</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Um eine Klasse oder einzelne Methoden zu sichern, ist die <code>@Secured</code> Annotation des Bausteins Security zu verwendet.</p>
+</div>
+<div class="paragraph">
+<p>Generell ist das <a href="../../isy-security/konzept/master.html#prinzipien-der-sicherheitsarchitektur" class="xref page">Konzept der Sicherheitsarchitektur</a> zu beachten.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logging"><a class="anchor" href="#logging"></a>4.4. Logging</h3>
+<div class="paragraph">
+<p>Eingehende und ausgehende Nachrichten sind an der Systemgrenze zu loggen.
+Für die Erstellung der Log-Einträge ist der Baustein Isy-Logging zu verwenden. Abweichungen zum Konzept von Isy-Logging sind im Folgenden aufgeführt.</p>
+</div>
+<div class="sect3">
+<h4 id="server-service-provider"><a class="anchor" href="#server-service-provider"></a>4.4.1. Server / Service-Provider</h4>
+<div class="paragraph">
+<p>Der Baustein bietet mit <code>@Systemgrenze</code> eine Annotation, die einen Interceptor aufruft, der automatisch Aufrufe aller Methoden in der annotierten Klasse (z. B. Controller) fachlich loggt.
+(vgl. <a href="../../isy-logging/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben Logging</a> Kapitel 4.2.2.1)
+Für ein technisches Logging soll zusätzlich ein weiterer Interceptor verwendet werden.</p>
+</div>
+<div class="paragraph">
+<p>Dieser Interceptor soll folgende Nachrichten am Controller loggen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>eingehende Anfragen (eingehende Nachrichten),</p>
+</li>
+<li>
+<p>ausgehende Antworten (ausgehende Nachrichten).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="client-service-provider"><a class="anchor" href="#client-service-provider"></a>4.4.2. Client / Service-Consumer</h4>
+<div class="paragraph">
+<p>In der Klasse, welche die Aufrufe an den Service-Provider stellt, sollen</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ausgehende Anfragen (ausgehende Nachrichten),</p>
+</li>
+<li>
+<p>eingehende Antworten (eingehende Nachrichten),</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>geloggt werden.</p>
+</div>
+<div class="paragraph">
+<p>Wie auch serverseitig, sollen diese Log-Nachrichten möglichst automatisiert via AOP erstellt werden.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="inhalt-log-eintrag-nachricht"><a class="anchor" href="#inhalt-log-eintrag-nachricht"></a>4.4.3. Inhalt des Log-Eintrags für eine Nachricht</h4>
+<div class="paragraph">
+<p>Um die Nachrichten im Zuge der Log-Auswertung zu filtern, sind nachrichtenspezifische Ereignisschlüssel zu verwenden.</p>
+</div>
+<div class="paragraph">
+<p>Zusätzlich zu den Anforderungen an die Inhalte einer Log-Nachricht <a href="../../isy-logging/konzept/master.html#einleitung" class="xref page">Konzept Logging</a> Kapitel 4.1.1), sollen folgende Informationen als Marker in der Log-Nachricht enthalten sein:</p>
+</div>
+<table id="table-logging-data" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 7. Standard für zu erfassende Logging-Informationen</caption>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">Die zu protokollierende Information ist abhängig, ob es ein Request oder Response ist</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ein-/Ausgehende Nachricht</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">immer protokollieren</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Request-URL (Address + URI)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">immer protokollieren</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Query String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">immer protokollieren</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP-Methode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">immer protokollieren</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Protocol</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">immer protokollieren</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Connection- z. B. keep-alive, Transfer-Encoding</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">immer protokollieren</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Encoding</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">immer protokollieren</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accept</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">immer protokollieren</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Content-Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">immer protokollieren</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Content-Length</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">immer protokollieren</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aufgerufene Methode der Klasse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">immer protokollieren (REST-Controller-Methode)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zeitpunkt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bei ausgehend: Sende-Zeitpunkt<br>
+ bei eingehend: Empfangszeitpunkt-Zeitpunkt<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dauer der Verarbeitung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bei eingehend: Dauer vom Empfang des Requests bis zum Versand der Antwort<br>
+ bei ausgehend: Dauer vom Versand des Requests bis zum Empfang der Antwort</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aufgerufenes Nachbarsystem</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bei ausgehendenden Requests, sonst leer</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Konfigurationsparameter</strong></p>
+</div>
+<div class="paragraph">
+<p>Diese Konfigurationsparameter aus Kapitel 4.2.2.1 <a href="../../isy-logging/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben Logging</a> sollen für den neuen Interceptor ebenfalls existieren:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>loggeDauer</p>
+</li>
+<li>
+<p>loggeDaten</p>
+</li>
+<li>
+<p>loggeDatenBeiException</p>
+</li>
+<li>
+<p>loggeMaximaleParameterGroesse</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Nachrichten Logging</strong></p>
+</div>
+<div class="paragraph">
+<p>Zum Test und Debuggen einer Anwendung soll es möglich sein, dass komplette Nachrichten in ihrem Rohformat inkl. dem kompletten Header geloggt werden.
+Das Aktivieren dieses Loggings ist über einen Konfigurationsparameter steuerbar.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ueberwachung"><a class="anchor" href="#ueberwachung"></a>4.5. Überwachung</h3>
+<div class="paragraph">
+<p>Die IsyFact stellt zur Überwachung von Anwendungen den Baustein Überwachung bereit.</p>
+</div>
+<div class="paragraph">
+<p>Die Grundlagen der Überwachung von IsyFact basierten Anwendungen werden im <a href="../../isy-ueberwachung/konzept/master.html#einleitung" class="xref page">Konzept Überwachung</a> beschrieben.</p>
+</div>
+<div class="paragraph">
+<p>Detailliertere Informationen zur Konfiguration und zur Verwendung des Bausteins Überwachung findet man in den <a href="../../isy-ueberwachung/nutzungsvorgaben/master.html#einleitung" class="xref page">Nutzungsvorgaben Überwachung</a>.
+Dieses Dokument beinhaltet auch das Kapitel "Informationen von Services".
+Dieses Kapitel beinhaltet eine Liste der zu überwachenden bzw. anzubietenden Informationen für die Services von Anwendungen.
+Die dort aufgelisteten Informationen müssen für jeden Service einzeln angeboten werden.
+Die dort beschriebenen Informationen zur Überwachung gelten in gleichem Maße auch für REST Services.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="versionierung"><a class="anchor" href="#versionierung"></a>4.6. Versionierung</h3>
+<div class="paragraph">
+<p>Versionierung kann auf verschiedene Weisen stattfinden.</p>
+</div>
+<div class="paragraph">
+<p>Prinzipiell gilt es inkompatible API-Änderungen in einer REST-Schnittstelle zu vermeiden.
+Falls irgendwann eine inkompatible Änderung notwendig sein sollte, ist eine Versionierung in der URL zu verwenden.</p>
+</div>
+<div class="paragraph">
+<p>Die Version steht immer vor dem Pfad der Ressource und beinhaltet ausschließlich die Major Version.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>https://service.de/api/v1/messages/{id}
+https://service.de/api/v2/messages/{id}</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<div class="divFooter"></div>
+
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+<script src="../../../../_/js/isyfact.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
+  </body>
+</html>

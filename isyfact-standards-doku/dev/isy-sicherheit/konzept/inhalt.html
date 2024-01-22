@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="de"> <!-- Sets the language to German for correct hyphenation. -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Konzept Sicherheit: Inhalt :: IsyFact Dokumentation</title>
+    <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/current/isy-sicherheit/konzept/inhalt.html">
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../../_/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../../_/css/isyfact.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://isyfact.github.io">IsyFact Dokumentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="isyfact-standards-doku" data-version="4.0.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../einstieg/einstieg.html">IsyFact Standards</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../einstieg/einstieg.html">Einstieg</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../einstieg/vorstellung.html">Vorstellung der IsyFact</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/isyfact-standards.html">IsyFact-Standards</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/isyfact-erweiterungen.html">IsyFact-Erweiterungen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/vorstellung/rahmenbedingungen.html">Rahmenbedingungen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/erste-schritte.html">Erste Schritte</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../einstieg/produkte.html">Eingesetzte Produkte</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/produktkatalog/produktvorgabenAllgemein.html">Allgemeine Produktvorgaben</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/produktkatalog/technologiestackJavaSpring.html">Java/Spring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/produktkatalog/technologiestackTypescriptAngular.html">Typescript/Angular</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/produktkatalog/negativliste.html">Negativliste</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/produktkatalog/lebenszyklus.html">Lebenszyklus</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../einstieg/produktkatalog/changelog.html">Changelog</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/tutorial/master.html">Tutorial</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/whitepaper.html">Whitepaper</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../blaupausen/blaupausen.html">Blaupausen</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../blaupausen/referenzarchitektur/master.html">Referenzarchitektur</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../blaupausen/referenzarchitektur-it-system/master.html">Referenzarchitektur IT-System</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-anwendungskern/master.html">Anwendungskern</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/einordnung-ziele.html">Datenzugriff</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/persistenzlogik.html">Konzeption der Persistenzlogik</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-datenzugriff/versionierung.html">Versionierung von Datenbankschemas</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-service/master.html">Service</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-web-gui/master.html">Web GUI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/detailkonzept-komponente-batch/master.html">Batch</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Vorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/vorgaben-architektur/summaryArchitectureRules.html">Architektur</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../blaupausen/vorgaben-it-sicherheit/summarySecurityRules.html">IT-Sicherheit</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../bausteine/bausteine.html">Bausteine</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Datum &amp; Zeit</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-datetime/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-datetime/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Fehlerbehandlung</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-exception-core/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-exception-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">HttpInvoker</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-serviceapi-core/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-serviceapi-core/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">JPA/Hibernate</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../isy-persistence/konzept.html">Konzept</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/vorgaben-konventionen.html">Vorgaben und Konventionen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung-mit-liquibase.html">Versionierung (Liquibase)</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/konzept/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Nutzungsvorgaben</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/umsetzung-datenzugriff.html">Umsetzung des Datenzugriffs</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/konfiguration.html">Konfiguration des O/R-Mappings</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/historisierung.html">Historisierung</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-persistence/nutzungsvorgaben/versionierung.html">Versionierung (Eigenentwicklung)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Konfiguration</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-konfiguration/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-konfiguration/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Logging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-logging/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-logging/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Polling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-polling/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-polling/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-service-rest/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-service-rest/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-security/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sicherheit</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Sonderzeichen</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sonderzeichen/konzept/sonderzeichen.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-sonderzeichen/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Task Scheduling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../isy-task/konzept.html">Konzept</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-task/konzept/erweiterung-spring.html">Task Scheduling mit Spring</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../isy-task/konzept/integration-isyfact.html">Integration der IsyFact in das Task Scheduling</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-task/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Überwachung</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-ueberwachung/konzept/master.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-ueberwachung/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Util</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-util/nutzungsvorgaben/master.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Bedienkonzept</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../isy-bedienkonzept/bedienkonzept.html">Bedienkonzept</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">JSF</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../isyfact-jsf-doku/current/isy-web/konzept/konzept.html">Konzept</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../../isyfact-jsf-doku/current/isy-web/nutzungsvorgaben/nutzungsvorgaben.html">Nutzungsvorgaben</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../plattform/plattform.html">Plattform</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/methodik.html">Methodik</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/namenskonventionen/master.html">Namenskonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/versionierung/master.html">Versionierung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/java-programmierkonventionen/master.html">Java Programmierkonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../methodik/typescript-programmierkonventionen/master.html">TypeScript Programmierkonventionen</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation.html">Vorgaben Dokumentation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/diagrammerstellung.html">Diagrammerstellung und Modellierung</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../methodik/diagrammerstellung/diagramsnet.html">diagrams.net</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../methodik/diagrammerstellung/enterprise-architect.html">Enterprise Architect</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorgaben-dokumentation/dokumentationstypen.html">Dokumentationstypen der IsyFact</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../methodik/vorlagen.html">Vorlagen</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Spezifikation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../methodik/vorlage-systemspezifikation/master.html">Systemspezifikation</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../methodik/vorlage-schnittstellendokumentation/master.html">Schnittstellen­dokumentation</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../methodik/anleitung-datenflussdiagramme/master.html">Anleitung für Datenflussdiagramme</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlage-systementwurf/antora-master.html">Systementwurf</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlage-systemhandbuch/antora-master.html">Systemhandbuch</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../methodik/vorlagen/bearbeitung.html">Bearbeitung der AsciiDoc-Vorlagen</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/werkzeuge.html">Werkzeuge</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Antora (empfohlen)</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/erstellung/erstellung-antora.html">Seiten anlegen</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/bearbeitung/bearbeitung-antora.html">Seiten bearbeiten</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/generierung/generierung-antora.html">Projektseite erzeugen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">AsciidoctorJ</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/erstellung/erstellung-asciidoctorj.html">Neue Dokumente anlegen</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/bearbeitung/bearbeitung-asciidoctorj.html">Dokumente bearbeiten</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/generierung/generierung-asciidoctorj.html">PDF- und HTML-Dokumente erzeugen</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/changelog/changelog-doku.html">Zentralisiertes und automatisiertes Changelog</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/versionierungskontrolle/master.html">Versionierungskontrolle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/gui-tests/gui-tests-mit-selenium.html">GUI-Tests mit Selenium</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../release/releasenotes.html">Release Notes Version 4.0.x</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../release/migrationsleitfaden.html">Migrationsleitfaden IsyFact 4.0.x</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../einstieg/migrationsleitfaden-if2/master.html">Migrationsleitfaden IsyFact 2</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">IsyFact Standards</span>
+    <span class="version">4.0 (DEV)</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../glossary/current/glossary/master.html">Glossar</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../glossary/current/glossary/master.html">1.0</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../../current/einstieg/einstieg.html">IsyFact Standards</a>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="../../einstieg/einstieg.html">4.0 (DEV)</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../current/einstieg/einstieg.html">3.0 (CURRENT)</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../isyfact-jsf-doku/current/isy-web/konzept/konzept.html">JavaServer Faces (JSF)</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../isyfact-jsf-doku/current/isy-web/konzept/konzept.html">6.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../current/einstieg/einstieg.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../einstieg/einstieg.html">IsyFact Standards</a></li>
+    <li><a href="inhalt.html">Konzept Sicherheit: Inhalt</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">4.0 (DEV)</button>
+  <div class="version-menu">
+    <a class="version is-current" href="inhalt.html">4.0 (DEV)</a>
+    <a class="version" href="../../../current/isy-sicherheit/konzept/inhalt.html">3.0 (CURRENT)</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/IsyFact/isyfact-standards/edit/master/isyfact-standards-doc/src/docs/antora/modules/isy-sicherheit/pages/konzept/inhalt.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Inhalt" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Konzept Sicherheit: Inhalt</h1>
+<div class="sect1">
+<h2 id="prinzipien-der-sicherheitsarchitektur"><a class="anchor" href="#prinzipien-der-sicherheitsarchitektur"></a>1. Prinzipien der Sicherheitsarchitektur</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die IsyFact-Referenzarchitektur beinhaltet auf der technischen Ebene Vorgaben für die Sicherheitsarchitektur und für die Prinzipien, nach denen sie aufgebaut ist.</p>
+</div>
+<div class="paragraph">
+<p>Die konkrete Sicherheitsarchitektur einer <a href="../../../../glossary/current/glossary/master.html#glossar-systemlandschaft" class="xref page">Systemlandschaft</a> muss nach folgenden Prinzipien gestaltet sein:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>IsyFact-konforme IT-Systeme sind gegen nicht autorisierte Nutzung zu schützen.</p>
+</li>
+<li>
+<p>Die Authentifizierung und grobgranulare Autorisierung erfolgt an den Außenschnittstellen der Systemlandschaft (Portal, Service-Gateway).</p>
+</li>
+<li>
+<p>Liegt kein Aufruf über eine Außenschnittstelle vor (z.B. bei einem Batch-Aufruf), so geschieht die Authentifizierung und grobgranulare Autorisierung innerhalb der Nutzungsschicht (Batch) des konkreten IT-Systems.</p>
+</li>
+<li>
+<p>Die feingranulare Autorisierung geschieht in der Nutzungsschicht und im Anwendungskern der IT-Systeme über den IsyFact-Baustein Sicherheit.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Existiert keine Systemlandschaft (d.h. IT-Systeme stehen für sich allein), gilt grundsätzlich, dass die Authentifizierung und grobgranulare Autorisierung in der Nutzungsschicht (GUI, Service oder Batch) des IT-Systems geschehen muss.</p>
+</div>
+<div class="paragraph">
+<p>Darüber hinaus finden Authentifizierung und Autorisierung nach den Vorgaben des Berechtigungskonzepts statt.
+Dieses Dokument beschreibt wesentliche Aspekte der Sicherheitsarchitektur für eine konkrete Anwendungslandschaft.
+Da das Berechtigungskonzept individuell für jede Anwendungslandschaft erstellt wird und sich im einzelnen stark von Inhalt und Umfang her unterscheidet, ist es kein Bestandteil des Bausteins Sicherheit oder der IsyFact.</p>
+</div>
+<div class="sect2">
+<h3 id="authentifizierung"><a class="anchor" href="#authentifizierung"></a>1.1. Authentifizierung</h3>
+<div class="paragraph">
+<p>In der Regel erfolgt die Authentifizierung von <a href="../../../../glossary/current/glossary/master.html#glossar-anwender" class="xref page">Anwendern</a> über eine zentrale Komponente der Systemlandschaft, in welche das IT-System eingebettet ist.
+Die Authentifizierung darf auch lokal, d.h. vom IT-System selbst, durchgeführt werden, falls es beispielsweise nicht in eine Systemlandschaft eingebettet ist.</p>
+</div>
+<div class="paragraph">
+<p>Für die zentrale Authentifizierung wird üblicherweise ein IAM-System verwendet.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Hinweis"></i>
+</td>
+<td class="content">
+IAM steht für <a href="../../../../glossary/current/literaturextern/inhalt.html#litextern-identity_management" class="xref page">Identity and Access Management</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Das IAM-System verwaltet <strong>Anwender</strong> und ihre <strong>Rollen</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Die Authentifizierung und grobgranulare Autorisierung erfolgt, gemäß der siehe <a href="master.html#prinzipien-der-sicherheitsarchitektur" class="xref page">Prinzipien der Sicherheitsarchitektur</a>, an den Außenschnittstellen der Systemlandschaft.
+Hierbei wird eine Session aufgebaut und das IAM-System ermittelt nach erfolgreicher Authentifizierung die Rollen des Anwenders.
+Die Rollen allein sind jedoch noch nicht ausreichend, um Anwender vollständig zu autorisieren.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="autorisierung"><a class="anchor" href="#autorisierung"></a>1.2. Autorisierung</h3>
+<div class="paragraph">
+<p>Die Autorisierung geschieht in jedem Fall im jeweiligen IT-System.
+Nach der erfolgreichen Authentifizierung eines Anwenders leitet das IAM-System die Anfrage an das IT-System weiter.
+Hier wird die Anfrage – je nach Schutzbedarf und Funktionalität – autorisiert.
+Dazu weist das IT-System einem Anwender anhand seiner Rollen <strong>Rechte</strong> zu und prüft diese gegen die für die Anfrage benötigten Rechte.
+Wie genau Rollen und Rechte spezifiziert werden, beschreibt das Kapitel <a href="master.html#rollen-und-rechte" class="xref page">Rollen und Rechte</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sicherheitsarchitektur-eines-it-systems"><a class="anchor" href="#sicherheitsarchitektur-eines-it-systems"></a>2. Sicherheitsarchitektur eines IT-Systems</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Der Baustein Sicherheit bildet eine Komponente des Querschnitts der <a href="../../blaupausen/referenzarchitektur-it-system/master.html#einleitung" class="xref page">IsyFact Referenzarchitektur IT-Systeme</a>.
+Er ist von jedem IT-System zur Autorisierung von Zugriffen und Vorgängen zu verwenden.
+Für ein korrektes Funktionieren benötigt der Baustein die Komponente <code>AufrufKontextVerwalter</code>, deren Verwendung ebenfalls in diesem Kapitel erläutert wird.</p>
+</div>
+<div class="paragraph">
+<p>Die Mechanismen zur Absicherung IsyFact-konformer IT-Systeme haben zum Ziel, die Autorisierung von Zugriffen <em>systematisch</em>, <em>einheitlich</em> und <em>einfach</em> umzusetzen.</p>
+</div>
+<div class="paragraph">
+<p>Die <strong>Systematik</strong> und Vollständigkeit der Berechtigungsprüfungen wird dadurch erreicht, dass Berechtigungsprüfungen in den IT-Systemen andefinierten Stellen und auf identische Weise stattfinden.</p>
+</div>
+<div class="paragraph">
+<p>Die <strong>Einheitlichkeit</strong> wird durch Bereitstellung der Bibliothek <code>isy-sicherheit</code> und Nutzungsvorgaben gewährleistet, die von allen IT-Systemen zu verwenden sind.
+Berechtigungsprüfungen erfolgen innerhalb eines IT-Systems immer über die Bibliothek <code>isy-sicherheit</code>.</p>
+</div>
+<div class="paragraph">
+<p>Die <strong>Einfachheit</strong> der Nutzung der Bibliothek <code>isy-sicherheit</code> wird durch weitgehende Transparenz bei der Initialisierung, kompakte Schnittstellen und deklarative (z.B. per Annotation) statt programmatischer Implementierung erreicht.</p>
+</div>
+<div class="sect2">
+<h3 id="praemissen"><a class="anchor" href="#praemissen"></a>2.1. Prämissen</h3>
+<div class="paragraph">
+<p>Aus den <a href="master.html#prinzipien-der-sicherheitsarchitektur" class="xref page">Prinzipien der Sicherheitsarchitektur</a> leiten sich die folgenden Randbedingungen für die Umsetzung der Berechtigungsprüfung innerhalb eines IT-Systems ab:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Anfragen, die am Dialog eines IT-Systems eingehen, sind immer bereits durch das IAM-System bzw. die lokale Authentifizierung erfolgreich  authentifiziert.
+Sorgt ein IAM-System für die Authentifizierung, enthält der HTTP-Header der Anfrage die Identifikation des Anwenders und dessen Rollen.
+Die Informationen aus dem HTTP-Header werden als <code>AufrufKontext</code> in das IT-System übernommen.</p>
+</li>
+<li>
+<p>Anfragen, die an einer Service-Schnittstelle eines IT-Systems eingehen, sind ebenso bereits authentifiziert.
+Das mit der Anfrage an das IT-System als Parameter übergebene Transportobjekt <code>AufrufKontextTo</code> enthält die Identifikation des Anwenders und dessen Rollen und wird als <code>AufrufKontext</code> in das IT-System übernommen.</p>
+</li>
+<li>
+<p>Prozesse, die unabhängig von eingehenden Anfragen (über Dialog und Service) durch ein IT-System gestartet werden, müssen zunächst einen (meist technischen) Anwender gegen das IAM-System bzw. die lokale Authentifizierung erfolgreich authentifizieren, dessen Rollen ermitteln und diese Informationen als <code>AufrufKontext</code> im IT-System hinterlegen.</p>
+</li>
+<li>
+<p>Ein innerhalb der Logik- und Verarbeitungszone eines IT-Systems übergebener <code>AufrufKontext</code> ist vertrauenswürdig.
+Er kann ohne erneute Rückfrage an das IAM-System bzw. die lokale Authentifizierung verwendet werden.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="software-architektur"><a class="anchor" href="#software-architektur"></a>2.2. Software-Architektur</h3>
+<div class="paragraph">
+<p>Die folgende Abbildung zeigt den logischen Aufbau für die Authentifizierung und für die Bereitstellung von Berechtigungsinformationen an die Komponenten eines IT-Systems.</p>
+</div>
+<div id="image-Berechtigungspruefung" class="imageblock text-center">
+<div class="content">
+<img src="../_images/konzept/software-architektur-berechtigungspruefung.png" alt="software architektur berechtigungspruefung">
+</div>
+<div class="title">Abbildung 1. Software-Architektur der Berechtigungsprüfung</div>
+</div>
+<div class="paragraph">
+<p>Im Folgenden werden die Aufgaben und grobe Funktionsweise der Komponenten für die Autorisierung von Anfragen in einer <a href="../../../../glossary/current/glossary/master.html#glossar-geschaeftsanwendung" class="xref page">Geschäftsanwendung</a>  erläutert.</p>
+</div>
+<div class="paragraph">
+<p>Die Komponente <code>AufrufKontextVerwalter</code> stellt für eine laufende Anfrage Kontextinformationen zur Anfrage bereit, die in einem <code>AufrufKontext</code> hinterlegt werden.
+Das sind insbesondere die mit der Anfrage über die Außenschnittstelle eingehenden Informationen zum Anwender und dessen Rollen, die Korrelations-ID und anwendungsspezifisch ggf. weitere Informationen.
+Die Komponente bringt Hilfsmittel zur transparenten Nutzung des <code>AufrufKontextVerwalter</code> mit.
+So wird der <code>AufrufKontext</code> bei Serviceaufrufen transparent über Interceptoren via Spring AOP gesetzt.
+Weiterhin wird der Aufrufkontext im Rahmen der Authentifizierung automatisch befüllt.
+Nach Initialisierung des <code>AufrufKontextVerwalter</code> für eine laufende Anfrage kann das IT-System fortan transparent mit den im <code>AufrufKontextVerwalter</code> hinterlegten Anwenderinformationen arbeiten (ohne deren Herkunft zu kennen) und damit auch weitere Nachbarsysteme aufrufen.</p>
+</div>
+<div class="paragraph">
+<p>Der Baustein Sicherheit bietet folgende Funktionen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Für Service-Aufrufe werden Interceptoren angeboten, welche über Spring AOP eine deklarative Berechtigungsprüfung ermöglichen.</p>
+</li>
+<li>
+<p>Für den Kontext der Anfrage stellt der Baustein einen Berechtigungsmanager zur Verfügung, der die Rollen des anfragenden Anwenders kennt.
+Die Informationen zum anfragenden Anwender werden – falls vorhanden – aus dem <code>AufrufKontextVerwalter</code> entnommen.
+Die Fachkomponenten eines IT-Systems nutzen den Berechtigungsmanager für spezielle Berechtigungsprüfungen, die nicht deklarativ über Annotationen erfolgen können.</p>
+</li>
+<li>
+<p>Anwender können anhand der übergebenen Benutzerkennung (und Passwort) authentifiziert werden.
+Dazu wird das IAM-System bzw. die lokale Authentifizierung angesprochen.
+Die gewonnenen Informationen werden im <code>AufrufKontextVerwalter</code> hinterlegt.</p>
+</li>
+<li>
+<p>Das Interface <code>AccessManager</code> bietet eine Abstraktion für verschiedene Berechtigungsquellen an, indem der <code>AccessManager</code> von einem <code>Sicherheit-Adapter</code> implementiert wird.
+Für den <code>Sicherheit-Adapter</code> wird ein eigenes Modul/Artefakt empfohlen. Dieser <code>Sicherheit-Adapter</code> bildet anschließend die Verbindung zu dem IAM-System (Authentifizierungssystem in obiger Abbildung).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Die Authentifizierung und Autorisierung von Web-Zugriffen wird über Spring Security durchgeführt.
+Die Integration von Spring Security und des Bausteins Sicherheit wird im <a href="../../blaupausen/detailkonzept-komponente-web-gui/master.html" class="xref page">Detailkonzept Komponente WebGUI</a> beschrieben.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="aussensicht-der-komponente-sicherheit"><a class="anchor" href="#aussensicht-der-komponente-sicherheit"></a>2.3. Schnittstelle des Bausteins Sicherheit</h3>
+<div class="paragraph">
+<p>Im Folgenden wird die Schnittstelle des Bausteins Sicherheit beschrieben.</p>
+</div>
+<div id="image-schnittstelle-sicherheit" class="imageblock text-center">
+<div class="content">
+<img src="../_images/nutzungsvorgaben/sicherheit-schnittstellen.png" alt="sicherheit schnittstellen">
+</div>
+<div class="title">Abbildung 2. Schnittstelle des Bausteins Sicherheit</div>
+</div>
+<div class="paragraph">
+<p>Die zentrale Schnittstelle für den Zugriff auf Rollen und Rechte eines Anwenders ist <code>Berechtigungsmanager</code>.
+Instanzen des Berechtigungsmanagers zur Autorisierung einer Anfrage werden über die Schnittstelle <code>Sicherheit</code> erzeugt.</p>
+</div>
+<div class="paragraph">
+<p>Der Berechtigungsmanager verwendet die Schnittstellen <code>Rolle</code> und <code>Recht</code>.
+Rollen werden über die Benutzeradministration Anwendern zugewiesen.
+Rechte sind anwendungsspezifisch und an Rollen gebunden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="aufruf-von-nachbarsystemen"><a class="anchor" href="#aufruf-von-nachbarsystemen"></a>2.4. Aufruf von Nachbarsystemen</h3>
+<div class="paragraph">
+<p>So wie ein IT-System bei einem Aufruf erwartet, einen gültigen, vollständigen Aufrufkontext vorzufinden, erwartet dies auch ein Nachbarsystem, welches vom eigenen IT-System aufgerufen wird.
+Das aufrufende System muss daher einen Aufrufkontext mitliefern.
+Im Regelfall soll dabei der Aufrufkontext der originären Anfrage verwendet und unverändert weitergeleitet werden.</p>
+</div>
+<div class="paragraph">
+<p>Zum Aufruf von Nachbarsystemen sollen, falls vorhanden, dedizierte Client-Bibliotheken verwendet werden.
+Diese enthalten bereits die Logik zur Weiterleitung des Aufrufkontextes.</p>
+</div>
+<div class="paragraph">
+<p>Gibt es diese nicht, muss das Nachbarsystem direkt aufgerufen werden.
+Hierbei muss das aufrufende IT-System stets ein entsprechendes Transportobjekt befüllen und mit dem Aufruf an das Nachbarsystem übergeben.
+Für die Technologie Spring HTTP Invoker stellt die IsyFact passende Transportobjekte in der Bibliothek <code>isy-serviceapi-sst</code> bereit.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="rollen-und-rechte"><a class="anchor" href="#rollen-und-rechte"></a>3. Rollen &amp; Rechte</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die Vergabe von Rollen ist <em>das</em> Mittel der Benutzeradministration, um Anwender der <a href="../../../../glossary/current/glossary/master.html#glossar-anwendungslandschaft" class="xref page">Anwendungslandschaft</a> mit Berechtigungen auszustatten.
+Die Vergabe von Rollen an einen Anwender (menschlicher und technischer) erfolgt im Querschnitt:
+in der Querschnittsanwendung Benutzerverzeichnis.</p>
+</div>
+<div class="paragraph">
+<p>Es ist konzeptionell beabsichtigt, dass die Administration per Rollen recht grobgranular erfolgt.
+Eine administrative Vergabe feingranularer Rechte ist konzeptionell nicht erwünscht.
+Die individuelle Zuordnung von Rechten zu Anwendern ist daher prinzipiell nicht möglich.
+Rechte werden Anwendern ausschließlich indirekt über Rollen zugeordnet.
+Welche Rechte einer Rolle zugeordnet sind, wird innerhalb der statischen Konfiguration eines IT-Systems definiert und ist damit Teil der Software.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Die Geschäftsanwendung X bietet zwei Dialoge zur Administration von Anwendungseigenschaften.
+Die Dialoge sind über die Rolle <code>AnwendungX_Administrator</code> abgesichert.
+Innerhalb der Anwendung ist Dialog 1 mit dem Recht <code>AdministrierenDialog1</code> und Dialog 2 mit dem Recht <code>AdministrierenDialog2</code> abgesichert.
+Grobgranular wird die Rolle <code>AnwendungX_Administrator</code> einem Anwender zugeordnet.
+Innerhalb der Konfiguration des IT-Systems X sind beide Rechte konfiguriert und der Rolle <code>AnwendungX_Administrator</code> zugeordnet.
+Alle Anwender mit der Rolle <code>AnwendungX_Administrator</code> sind somit innerhalb der Anwendung autorisiert, die beiden Admin-Dialoge zu verwenden.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Der Vorteil an diesem Vorgehen ist, dass Änderungen an der Zuordnung von Anwendern zu Rollen oder von Rollen zu Rechten nur zu lokalen Änderungen führen.
+Soll eine Rolle andere Rechte in einer Geschäftsanwendung bekommen (z.B. durch das Hinzufügen neuer Dialoge), so kann dies für die Benutzeradministration transparent geschehen.
+Ebenso sind Änderungen an Anwendern oder ihren zugehörigen Rollen transparent für einzelne Geschäftsanwendungen.</p>
+</div>
+<div class="sect2">
+<h3 id="spezifikation-der-rollen"><a class="anchor" href="#spezifikation-der-rollen"></a>3.1. Spezifikation der Rollen</h3>
+<div class="paragraph">
+<p>Rollen werden bereits auf fachlicher Ebene als Teil der Systemspezifikation einer Geschäftsanwendung spezifiziert.
+Dazu werden zunächst in geeigneter Granularität Rechte definiert, die zur Benutzung bestimmter Funktionalität der Geschäftsanwendung berechtigen.
+Diese Rechte werden fachlichen Rollen zugeordnet, die dann wiederum den Anwendern der Anwendung zugeordnet werden können.
+Die fachlichen Rollen ermöglichen in der Regel pauschal den Zugriff auf die Geschäftsanwendung oder, im Sinne der Rolle eines fachlichen Sachbearbeiters, die Nutzung ausgewählter Anwendungsfälle.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="struktur-einer-rolle"><a class="anchor" href="#struktur-einer-rolle"></a>3.2. Struktur einer Rolle</h3>
+<div class="paragraph">
+<p>Alle Rollen besitzen die folgende Struktur:</p>
+</div>
+<div class="paragraph">
+<p><strong>Name:</strong> Interner Name der Rolle, wie er für die Autorisierung und innerhalb von Anwendungen zur Überprüfung bereitgestellt wird.</p>
+</div>
+<div class="paragraph">
+<p><strong>Label:</strong> Name der Rolle, wie sie in der Oberfläche der Benutzeradministration angezeigt wird.
+In der Regel ist dieser Name identisch mit dem technischen Namen der Rolle.
+Eine Abweichung ist nur dann sinnvoll, wenn die Vergabe der Rollen durch den Administrator dadurch intuitiver wird.</p>
+</div>
+<div class="paragraph">
+<p><strong>Beschreibung:</strong> Eine kurze Beschreibung der Rolle in einer fachlichen Sprache, die für die Benutzeradministration verständlich ist.</p>
+</div>
+<div class="paragraph">
+<p><strong>Typ:</strong> Eine Rolle kann fachlich oder technisch sein.
+Nur fachliche Rollen können über die Benutzeradministration verwaltet werden.
+Technische Rollen können fachlichen Rollen allerdings untergeordnet werden (siehe weiter unten: <strong>Untergeordnete Rollen</strong>).</p>
+</div>
+<div class="paragraph">
+<p><strong>Enthaltene Rechte:</strong> Die Ausstattung einer fachlichen Rolle mit Rechten beschreibt den Funktionsumfang, den diese Rolle bei Nutzung der Geschäftsanwendung ermöglicht.</p>
+</div>
+<div class="paragraph">
+<p><strong>Untergeordnete Rollen:</strong> Optional können fachliche Rollen untergeordnete technische Rollen besitzen.
+Dies ist z.B. immer dann notwendig, wenn ein Anwendungsfall die Services eines Nachbarsystems verwendet.
+Somit muss im Rahmen des Anwendungsfalls die Service-Schnittstelle des Nachbarsystems aufgerufen werden.
+Die dazu benötigte, technische Rolle muss der fachlichen Rolle untergeordnet werden, damit dies funktioniert.</p>
+</div>
+<div class="paragraph">
+<p><strong>Sichtbarkeit der Rolle:</strong> Die Sichtbarkeit der Rollen bei der Zuordnung an Anwender, externe Systeme und interne Systeme kann eingeschränkt werden, um die Administration zu vereinfachen.</p>
+</div>
+<div class="paragraph">
+<p>Die meisten Rollen sind fachlicher Natur.
+Technische Rollen treten oft im Rahmen von Service-Schnittstellen auf.
+Bietet eine Geschäftsanwendung Funktionalität über Service-Schnittstellen an, so ist die Nutzung jeder Service-Schnittstelle zumindest durch eine technische Rolle abzusichern.
+Diese Rollen werden nicht direkt an Anwender vergeben, sondern fachlichen Rollen anderer Geschäftsanwendungen untergeordnet.</p>
+</div>
+<div class="paragraph">
+<p>Wenn die Anwendung fachliche oder technische Batches enthält, dann müssen für diese Batches in der Spezifikation entsprechende „interne Systeme“ definiert werden.
+Die Systemnamen sollten dem folgenden Schema entsprechen: <code>&lt;Anwendungskürzel&gt;_BAT_&lt;Batchname&gt;</code>.
+Für jedes dieser internen System müssen eigene fachliche Rollen definiert werden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="richtlinien-zum-schnitt-der-rollen"><a class="anchor" href="#richtlinien-zum-schnitt-der-rollen"></a>3.3. Richtlinien zum Schnitt der Rollen</h3>
+<div class="paragraph">
+<p>Zum Schnitt von fachlichen und technischen Rollen gibt es Erfahrungswerte, welche das restliche Kapitel detailliert.
+Wichtig ist vor allem die Beziehung zwischen fachlichen und technischen Rollen.
+Des weiteren sollte die Menge der Rollen so klein wie möglich gehalten werden.</p>
+</div>
+<div class="paragraph">
+<p>Die Abbildung <a href="#image-rollen-beziehungen">Abbildung 3</a> verdeutlicht den Inhalt der folgenden Abschnitte grafisch.</p>
+</div>
+<div id="image-rollen-beziehungen" class="imageblock text-center">
+<div class="content">
+<img src="../_images/konzept/rollen-beziehungen.png" alt="rollen beziehungen" width="70%">
+</div>
+<div class="title">Abbildung 3. Beziehungen zwischen fachlichen und technischen Rollen</div>
+</div>
+<div class="sect3">
+<h4 id="technische-rollen"><a class="anchor" href="#technische-rollen"></a>3.3.1. Technische Rollen</h4>
+<div class="paragraph">
+<p>Technische Rollen sichern die Kommunikationswege innerhalb der Anwendungslandschaft ab.
+Sie werden für die Schnittstellen von Geschäftsanwendungen verwendet, welche nur von anderen Geschäftsanwendungen aufgerufen werden.
+Die einzelnen Schnittstellen werden durch Rechte abgesichert (siehe Dokument <a href="../nutzungsvorgaben/master.html#einleitung" class="xref page">Sicherheit - Nutzungsvorgaben</a> ).</p>
+</div>
+<div class="paragraph">
+<p>Technische Rollen berechtigen zur Ausführung der entsprechenden Services der Geschäftsanwendung selbst, sowie aller dadurch mittelbar ausgelösten Aktionen in nachgelagerten Anwendungen.
+Daher werden diesen technischen Rollen im Regelfall weitere technische Rollen untergeordnet sein, welche die nachgelagerten Anwendungen absichern.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="technische-zugangsrollen"><a class="anchor" href="#technische-zugangsrollen"></a>3.3.2. Technische Zugangsrollen</h4>
+<div class="paragraph">
+<p>Anwender gelangen in der Regel entweder über das <a href="../../../../glossary/current/glossary/master.html#glossar-portal" class="xref page">Portal</a> oder den <a href="../../../../glossary/current/glossary/master.html#glossar-service-gateway" class="xref page">Service-Gateway</a> in eine Anwendungslandschaft.
+Um den Zugriff über diese Schnittstellen zentral und einfach zu verwalten, können dafür entsprechende technische Rollen definiert werden (z.B. <code>Zugang_Portal</code> und <code>Zugang_Service_Gateway</code>).
+Diese Rollen können dann einfach fachlichen Rollen untergeordnet werden, um den jeweiligen Zugriff zu erlauben.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="technische-querschnitts-rolle"><a class="anchor" href="#technische-querschnitts-rolle"></a>3.3.3. Technische Querschnitts-Rolle</h4>
+<div class="paragraph">
+<p>Für <a href="../../../../glossary/current/glossary/master.html#glossar-service-fachlich" class="xref page">Services</a> des Querschnitts, die nahezu alle Aufrufe benötigen und die keine sicherheitskritischen Operationen anbieten, kann eine zentrale Rolle (z.B. <code>Querschnitt_Nutzer</code>) angelegt werden.
+Diese Rolle berechtigt zur Durchführung von unkritischen Operationen im Querschnitt, wie beispielsweise dem Auslesen von Schlüsselwerten.</p>
+</div>
+<div class="paragraph">
+<p>Wenn die Querschnitts-Rolle den Zugangsrollen untergeordnet ist, darf jeder Anwender mit Zugriff automatisch auch auf den Querschnitt zugreifen.
+Dies reduziert die Anzahl der Rollen, die einem Nutzer zugewiesen sind, in der Regel deutlich.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="fachliche-rollen"><a class="anchor" href="#fachliche-rollen"></a>3.3.4. Fachliche Rollen</h4>
+<div class="paragraph">
+<p>Fachliche Rollen werden für Schnittstellen von Geschäftsanwendungen vergeben, welche Zugänge zur Anwendungslandschaft geben.
+Dies beinhaltet neben den Dialogen (der grafischen Oberfläche) und Zugängen über den Service-Gateway auch interne Systeme wie beispielsweise Systemtasks oder Batches.
+Die einzelnen angebotenen Services werden über Rechte abgesichert (siehe Dokument <a href="../nutzungsvorgaben/master.html#einleitung" class="xref page">Sicherheit - Nutzungsvorgaben</a>).</p>
+</div>
+<div class="paragraph">
+<p>Fachliche Rollen berechtigen zur Ausführung der entsprechenden Aktion über den entsprechenden Zugangsweg, sowie aller dadurch mittelbar ausgelösten Aktionen in nachgelagerten Anwendungen.
+Daher werden diesen fachlichen Rollen im Regelfall weitere technische Rollen untergeordnet sein, welche die nachgelagerten Anwendungen absichern.</p>
+</div>
+<div class="paragraph">
+<p>Fachliche Rollen können über die Benutzeradministration verwaltet und Anwendern bzw. Systemen zugeordnet werden.
+Hierbei ist darauf zu achten, dass die Labels der Rollen sinnvoll genutzt werden.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="richtlinien-zur-benennung-der-rollen"><a class="anchor" href="#richtlinien-zur-benennung-der-rollen"></a>3.4. Richtlinien zur Benennung der Rollen</h3>
+<div class="paragraph">
+<p>Die Benennung von Rollen muss fachlich getrieben sein.
+Das bedeutet vor allem, dass Rollen für eine fachliche Operation, d.h. den Akteur, angelegt werden.
+Grundsätzlich gilt, dass die Namen der Rollen ausgeschrieben werden, sofern sie nicht zu lang werden.
+Ist dies der Fall, sollte der Namen abgekürzt und ein sprechendes Label für die Administration der Rollen vergeben werden.</p>
+</div>
+<div class="sect3">
+<h4 id="fachliche-rollen-schema"><a class="anchor" href="#fachliche-rollen-schema"></a>3.4.1. Fachliche Rollen</h4>
+<div class="paragraph">
+<p>Das Schema zur Benennung einer fachlichen Rolle für Anwender kann folgendermaßen aussehen:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>&lt;Fachlicher Systemname&gt;_&lt;Funktion&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der fachliche Systemname beschreibt die Geschäftsanwendung, bzw. die Anwendungsdomäne, in welcher die entsprechende Funktionalität bereitgestellt wird.
+Er entspricht prinzipiell dem Systemnamen der Systemspezifikation, abzüglich technischer Kürzel.
+Die Rolle zur Verwendung der Schnittstelle Auskunft der Geschäftsanwendung MeineAnwendung lautet nach diesem Schema: <code>MeineAnwendung_Auskunft</code>.</p>
+</div>
+<div class="paragraph">
+<p>Da die Rollen für fachliche Operationen angelegt werden, sollten sie unabhängig von technischen Aspekten gelten.
+So kann beispielsweise die Rolle <code>MeineAnwendung_Auskunft</code> unabhängig davon gelten, ob die Auskunft über ein Service Gateway oder das Portal durchgeführt wird.</p>
+</div>
+<div class="paragraph">
+<p>Dies kann durch die Verwendung spezieller technischer Rollen (s. <a href="master.html#technische-zugangsrollen" class="xref page">Technische Zugangsrollen</a>) erreicht werden.</p>
+</div>
+<div class="paragraph">
+<p><a href="../../../../glossary/current/glossary/master.html#glossar-it-system" class="xref page">IT-Systeme</a> werden intern in Form von Batches oder Timer-Tasks aktiv.
+Auch hier findet ein Zugang zur Anwendungslandschaft statt.
+Das Schema zur Benennung einer fachlichen Rolle für IT-Systeme kann folgendermaßen aussehen:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>&lt;Fachlicher Systemname&gt;_SYSTEM_&lt;Suffix&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Im Regelfall gibt es nur eine fachliche Rolle pro IT-System, die alle Batches und Tasks absichert (Beispiel analog zu oben: <code>MeineAnwendung_SYSTEM</code>).</p>
+</div>
+<div class="paragraph">
+<p>Gibt es beispielsweise mehrere Batches in einer Anwendung, so sollten die einzelnen Batches mit verschiedenen Rechten abgesichert werden, die alle derselben Rolle zugeordnet sind.
+Falls mehrere differenzierte Rollen fachlich erforderlich sind, werden die Rollen um ein entsprechendes Suffix ergänzt.
+Dies kann der Fall sein, wenn es fachlich unterschiedliche Nutzer von Tasks und Batches gibt.
+Zusätzlich dazu kann es erforderlich sein, einen (technischen) Anwender anzulegen, welchem die entsprechenden Rollen zugeordnet werden.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="technische-rollen-schema"><a class="anchor" href="#technische-rollen-schema"></a>3.4.2. Technische Rollen</h4>
+<div class="paragraph">
+<p>Das Schema zur Benennung einer technischen Rolle kann folgendermaßen aussehen:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>&lt;Technischer Systemname&gt;_&lt;Servicename&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Die Namen technischer Rollen enthalten keine festen Bestandteile wie z.B. <code>SYSTEM</code>, da es sich immer um Services handelt.
+Der Servicename muss eindeutig und sprechend sein; vor allem, wenn mehrere Services mit derselben Rolle gemeinsam abgesichert werden.
+Da die Rollen nur innerhalb der Anwendungslandschaft zum Einsatz kommen und nicht administriert werden müssen, wird der technische Systemname verwendet.
+Die Rolle zur Verwendung der Schnittstelle "Eintragen der Informationen" der Geschäftsanwendung MeineAnwendung lautet nach diesem Schema: <code>MeineAnwendung_InformationenEintragen</code>.
+Auch hier sollte auf die Länge des Namens geachtet werden und im entsprechenden Fall, wie bei fachlichen Rollen, eine Abkürzung des Namens mit sprechendem Label vorgenommen werden.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="entwurf-von-rollen"><a class="anchor" href="#entwurf-von-rollen"></a>3.5. Entwurf von Rollen</h3>
+<div class="paragraph">
+<p>Wird ein neues IT-System entwickelt, sind die oben genannten Richtlinien zum Schnitt und zur Benennung der Rollen stärkstens empfohlen.
+Hierfür ist eine enge Abstimmung mit der Benutzeradministration und den jeweiligen fachlichen Ansprechpartnern erforderlich.
+Alle Parteien verfügen über unterschiedliches, sich ergänzendes Fachwissen, das essenziell für die Erstellung von Rollen ist.</p>
+</div>
+<div class="paragraph">
+<p>Prinzipiell sollten so wenig Rollen wie möglich und so viele wie nötig vergeben werden.
+Der folgende Prozess bietet eine grobe Richtlinie:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Jede Schnittstelle wird mit einem Recht abgesichert.</p>
+</li>
+<li>
+<p>In Abstimmung mit den fachlichen Ansprechpartnern und der Benutzeradministration werden diese Rechte zu technischen bzw. fachlichen Rollen zusammengefasst.</p>
+</li>
+</ol>
+</div>
+<div id="image-rollen-erstellung" class="imageblock text-center">
+<div class="content">
+<img src="../_images/konzept/rollen-erstellung.png" alt="rollen erstellung" width="70%]">
+</div>
+<div class="title">Abbildung 4. Absicherung durch Rechte und Aggregation in Rollen</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="3">
+<li>
+<p>In Abstimmung mit den fachlichen Ansprechpartnern und der Benutzeradministration wird ermittelt, ob und welche zusätzlichen technischen Anwender benötigt werden.</p>
+</li>
+<li>
+<p>Vorbereitung der Einspielung der neuen, fachlichen Rollen in die Benutzeradministration.
+Über das jeweilige Format bestimmt der IsyFact-Baustein, der zur Benutzeradministration eingesetzt wird.</p>
+</li>
+<li>
+<p>Konfiguration des IT-Systems mit den erstellten technischen Rollen und Rechten (siehe Dokument <a href="../nutzungsvorgaben/master.html#einleitung" class="xref page">Sicherheit - Nutzungsvorgaben</a>).</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Die Rollen und Rechte sollten bereits während der Erstellung des Systementwurfs entworfen werden, soweit dies möglich ist.
+Sobald die angebotenen Schnittstellen bekannt sind, können die entsprechenden Rollen nach obigen Richtlinien erstellt werden.
+Die zugehörigen untergeordneten Rollen lassen sich durch die aufgerufenen Nachbarsystemschnittstellen ermitteln.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="tests-und-inbetriebnahmen"><a class="anchor" href="#tests-und-inbetriebnahmen"></a>3.6. Tests und Inbetriebnahmen</h3>
+<div class="paragraph">
+<p>Eine wesentliche Einschränkung der bisherigen Modellierung findet sich bei Tests und Inbetriebnahmen.
+Es gestaltet sich bislang schwer, dass vor der eigentlichen Inbetriebnahme nur eine kleine Menge von Anwendern auf eine neue Geschäftsanwendung zugreifen kann.
+So werden oft, auch bei der Ablösung einer Geschäftsanwendung durch eine neue Umsetzung, komplett neue Rollen für die neue Geschäftsanwendung vergeben, um die Absicherung beider Geschäftsanwendungen zu gewährleisten.
+Dies führt oft zu aufwendigen Migrationen und zu einer stark ansteigenden Menge von Rollen.</p>
+</div>
+<div class="paragraph">
+<p>Um dies zu vermeiden, kann eine neue fachliche Rolle für eine Art Testmodus eingeführt:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Tester_&lt;Vorhaben&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Geschäftsanwendungen, die bestehende Geschäftsanwendungen ablösen oder vor der offiziellen Inbetriebnahme einer kleinen Menge von Anwendern zur Verfügung stehen, müssen in ihrer betrieblichen Konfiguration einen Schalter besitzen, der einen Testmodus aktiviert.
+Ist der Schalter (und damit der Testmodus) aktiv, wird zusätzlich zur üblichen Autorisierung auf die zusätzliche, fachliche Rolle geprüft.
+Somit ist sichergestellt, dass beim Ablösen von alten Geschäftsanwendungen auch die neue Geschäftsanwendung mit denselben Rollen abgesichert und (falls nötig) parallel betrieben werden kann.
+Genauso funktioniert auch das Freischalten einer neuen Geschäftsanwendung für einen zunächst kleinen Kreis von Anwendern.
+In beiden Fällen muss zur eigentlichen Inbetriebnahme, anstatt einer aufwändigen Migration, nur ein Schalter in der betrieblichen Konfiguration umgelegt werden.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<div class="divFooter"></div>
+
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+<script src="../../../../_/js/isyfact.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/lunr-languages.js"></script>
+<script src="../../../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../../../.." data-snippet-length="100" data-stylesheet="../../../../_/css/search.css"></script>
+<script async src="../../../../search-index.js"></script>
+  </body>
+</html>
