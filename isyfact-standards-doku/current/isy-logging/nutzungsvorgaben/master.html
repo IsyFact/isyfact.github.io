@@ -1760,8 +1760,49 @@ Sollte dieses Attribut bereits gesetzt sein (bspw. mit der Korrelations-ID „Y�
 <div class="sect3">
 <h4 id="mcdfilter"><a class="anchor" href="#mcdfilter"></a>4.1.6. MDC-Filter</h4>
 <div class="paragraph">
-<p>Durch die Spring-Autokonfiguration in <code>isy-aufrufkontext</code> wird ein Servlet-Filter erstellt, welcher automatisch bei jedem Request die Korrelations-ID aus dem Http-Header ausliest und in den MDC setzt.
-Ist der Header nicht gesetzt, wird eine neue Korrelations-ID generiert.</p>
+<p>Durch die Spring-Autokonfiguration in <code>isy-logging</code> wird ein Servlet-Filter erstellt, welcher automatisch bei jedem Request die Korrelations-ID aus dem Http-Header ausliest und in den MDC setzt.
+Ist der Header nicht gesetzt, wird eine neue Korrelations-ID generiert, indem die autokonfigurierte Bean <a href="#listing-filterRegistrationBean-logging">FilterRegistrationBean&lt;HttpHeaderNestedDiagnosticContextFilter&gt; aus isy-logging</a> aufgerufen wird.
+Das URL-Pattern "/*" schließt dabei alle URLs ein.</p>
+</div>
+<div id="listing-filterRegistrationBean-logging" class="listingblock">
+<div class="title">Listing 3. FilterRegistrationBean&lt;HttpHeaderNestedDiagnosticContextFilter&gt; aus isy-logging</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Bean
+FilterRegistrationBean&lt;HttpHeaderNestedDiagnosticContextFilter&gt; httpHeaderNestedDiagnosticContextFilter() {
+    FilterRegistrationBean&lt;HttpHeaderNestedDiagnosticContextFilter&gt; registrationBean = new FilterRegistrationBean&lt;&gt;();
+    registrationBean.setFilter(new HttpHeaderNestedDiagnosticContextFilter());
+    registrationBean.addUrlPatterns("/*");
+    registrationBean.setOrder(Ordered.HIGHEST_PRECEDENCE);
+    return registrationBean;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Falls HttpInvoker-Schnittstellen verwendet werden, muss diese Bean im Anwendungssystem so überschrieben werden, dass sie für die HttpInvoker-Schnittstellen deaktiviert ist.
+Grund dafür ist, dass bei HttpInvoker-Schnittstellen durch den Aufruf der Klasse IsyHttpInvokerClientInterceptor bereits eine Korrelations-ID generiert wird.
+Ohne das Überschreiben dieser Bean werden beim Aufruf einer HttpInvoker-Schnittstelle beide Mechanismen aktiv, sodass zwei neue Korrelations-IDs für eine einzige Aktion neu erzeugt werden.
+Dies ist zu vermeiden.</p>
+</div>
+<div class="paragraph">
+<p>Beim Überschreiben der Bean müssen die URL-Patterns so angegeben werden, dass die HttpInvoker-URLs nicht enthalten sind.
+Die Verwendung des Asterisk-Platzhalters * ist dabei am Ende des URL-Patterns möglich.
+Stellt eine Anwendung beispielsweise HttpInvoker-Schnittstellen unter <code>"/httpinv-endpoint0"</code> sowie REST-Schnittstellen unter <code>"/rest-endpoint1"</code>, <code>"/api/rest/example/endpoint2"</code> und <code>"/api/rest/example/endpoint3"</code> bereit, muss die Bean im Anwendungssystem wie folgt überschrieben werden:</p>
+</div>
+<div id="listing-filterRegistrationBean-anwendungssystem" class="listingblock">
+<div class="title">Listing 4. Beispiel für Bean-Überschreibung im Anwendungssystem</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Bean
+FilterRegistrationBean&lt;HttpHeaderNestedDiagnosticContextFilter&gt; httpHeaderNestedDiagnosticContextFilter() {
+    FilterRegistrationBean&lt;HttpHeaderNestedDiagnosticContextFilter&gt; registrationBean = new FilterRegistrationBean&lt;&gt;();
+    registrationBean.setFilter(new HttpHeaderNestedDiagnosticContextFilter());
+    registrationBean.addUrlPatterns("/rest-endpoint1", "/api/rest/example/*");
+    registrationBean.setOrder(Ordered.HIGHEST_PRECEDENCE);
+    return registrationBean;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dadurch wird der <code>HttpHeaderNestedDiagnosticContextFilter</code> wie gewünscht nur für die REST-Schnittstellen aufgerufen.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1932,7 +1973,7 @@ Die Beschränkung der Länge gilt nur für Logeinträge der Levels <code>INFO</c
 Dies geschieht nach folgendem Schema:</p>
 </div>
 <div class="listingblock">
-<div class="title">Listing 3. logback.xml</div>
+<div class="title">Listing 5. logback.xml</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;configuration&gt;
     &lt;root&gt;
@@ -1946,7 +1987,7 @@ Dies geschieht nach folgendem Schema:</p>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Listing 4. application.properties</div>
+<div class="title">Listing 6. application.properties</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">logging.level.root=INFO
 logging.level.de.bund.bva.isyfact=DEBUG</code></pre>

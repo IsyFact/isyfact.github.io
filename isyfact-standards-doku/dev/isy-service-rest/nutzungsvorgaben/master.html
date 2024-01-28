@@ -1237,6 +1237,86 @@ Dazu wird ein eigener Endpunkt implementiert, der die im Ressourcen-Verzeichnis 
 </div>
 </div>
 <div class="sect1">
+<h2 id="rest-setzen-von-korrelations-id-in-header"><a class="anchor" href="#rest-setzen-von-korrelations-id-in-header"></a>5. Setzen der Korrelations-ID in den HTTP-Header</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Beim Versenden einer REST-Anfrage ist der Schlüssel "X-Correlation-Id" mit dem Wert der Korrelations-ID in den Header zu setzen.
+Die Anwendung, welche die REST-Anfragen stellt, muss dieses Verhalten implementieren.
+In diesem Abschnitt wird ein Beispiel für die Implementierung gegeben.</p>
+</div>
+<div class="paragraph">
+<p>Für das Setzen des korrekten Werts in den HTTP-Header sind folgende Schritte auszuführen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Die bestehende Korrelations-ID wird aus dem MdcHelper ausgelesen.</p>
+</li>
+<li>
+<p>Eine neue UUID wird erzeugt und</p>
+<div class="ulist">
+<ul>
+<li>
+<p>an die bestehende Korrelations-ID angehängt</p>
+</li>
+<li>
+<p>dem MdcHelper übergeben.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Die aktualisierte Korrelations-ID wird als Wert für den Schlüssel "X-Correlation-Id" im Header der REST-Anfrage gesetzt.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Für REST-Anfragen sieht die IsyFact Spring WebClient vor.
+Für die folgende Beispielimplementierung wird daher angenommen, dass eine Bean vom Typ <code>org.springframework.web.reactive.function.client.WebClient</code> existiert.</p>
+</div>
+<div class="paragraph">
+<p>Zunächst wird das Interface <code>ExchangeFilterFunction</code> implementiert:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">ExchangeFilterFunction correlationIdAddingFilter =
+        (clientRequest, nextFilter) -&gt; {
+
+    StringBuilder correlationIdBuilder = new StringBuilder();
+
+    String existingCorrelationId = MdcHelper.liesKorrelationsId();
+    if (existingCorrelationId != null &amp;&amp; !existingCorrelationId.isEmpty()) {
+        correlationIdBuilder.append(existingCorrelationId).append(";");
+    }
+
+    String newCorrelationId = UUID.randomUUID().toString();
+    correlationIdBuilder.append(newCorrelationId);
+
+    MdcHelper.pushKorrelationsId(newCorrelationId);
+
+    ClientRequest filteredRequest = ClientRequest.from(clientRequest)
+        .header("X-Correlation-Id", correlationIdBuilder.toString())
+        .build();
+    return nextFilter.exchange(filteredRequest);
+};</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Anschließend wird die zuvor definierte <code>ExchangeFilterFunction</code> zur <code>WebClient</code>-Bean hinzugefügt:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Bean
+public WebClient webClient() {
+    return WebClient.builder()
+        .filter(correlationIdAddingFilter)
+        .build();
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="anhang"><a class="anchor" href="#anhang"></a>Anhang</h2>
 <div class="sectionbody">
 <div class="sect2">
