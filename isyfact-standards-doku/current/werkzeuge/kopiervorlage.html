@@ -464,51 +464,30 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="dokumentation/einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a>
+    <a class="nav-link" href="dokumentation/einfuehrung.html">Online-Dokumentation mit AsciiDoc und Antora</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Antora (empfohlen)</span>
+    <a class="nav-link" href="dokumentation/erstellung-antora.html">Seiten anlegen</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="dokumentation/erstellung/erstellung-antora.html">Seiten anlegen</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="seitenvorlage.html">Seitenvorlage</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="5">
+  <li class="nav-item is-current-page" data-depth="4">
     <a class="nav-link" href="kopiervorlage.html">Kopiervorlage für neue Seiten</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dokumentation/bearbeitung/bearbeitung-antora.html">Seiten bearbeiten</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dokumentation/generierung/generierung-antora.html">Projektseite erzeugen</a>
-  </li>
-</ul>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="dokumentation/bearbeitung-antora.html">Seiten bearbeiten</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">AsciidoctorJ</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dokumentation/erstellung/erstellung-asciidoctorj.html">Neue Dokumente anlegen</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dokumentation/bearbeitung/bearbeitung-asciidoctorj.html">Dokumente bearbeiten</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="dokumentation/generierung/generierung-asciidoctorj.html">PDF- und HTML-Dokumente erzeugen</a>
+    <a class="nav-link" href="dokumentation/generierung-antora.html">Projektseite erzeugen</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="dokumentation/changelog/changelog-doku.html">Zentralisiertes und automatisiertes Changelog</a>
-  </li>
-</ul>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dokumentation/changelog-doku.html">Changelogs</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
@@ -594,9 +573,8 @@
   <ul>
     <li><a href="../einstieg/einstieg.html">IsyFact Standards</a></li>
     <li><a href="werkzeuge.html">Werkzeuge</a></li>
-    <li><a href="dokumentation/einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a></li>
-    <li>Antora (empfohlen)</li>
-    <li><a href="dokumentation/erstellung/erstellung-antora.html">Seiten anlegen</a></li>
+    <li><a href="dokumentation/einfuehrung.html">Online-Dokumentation mit AsciiDoc und Antora</a></li>
+    <li><a href="dokumentation/erstellung-antora.html">Seiten anlegen</a></li>
     <li><a href="kopiervorlage.html">Kopiervorlage für neue Seiten</a></li>
   </ul>
 </nav>
@@ -644,7 +622,7 @@ include::glossary:licence:partial$licence.adoc[]
 
 Der Quelltext einer Seite bricht gemäß der Regel _one sentence per line_ nach jedem Satz um.
 
-Mehr zu Zeilenumbrüchen xref:werkzeuge:dokumentation/bearbeitung/bearbeitung-antora.adoc#ein-satz-pro-zeile[hier].
+Mehr zu Zeilenumbrüchen xref:werkzeuge:dokumentation/bearbeitung-antora.adoc#ein-satz-pro-zeile[hier].
 
 [[formatierung-verweise]]
 === Verweise
@@ -674,7 +652,7 @@ Verweise auf das xref:glossary:glossary:master.adoc[Glossar] dürfen nur bei der
 Alle weitere Vorkommen eines Begriffs werden aus Gründen des Leseflusses nicht mit einem Verweis hinterlegt.
 Es folgt ein Beispiel für den Eintrag der xref:glossary:glossary:master.adoc#glossar-isyfact[IsyFact] im Glossar.
 
-Mehr zu Querverweisen xref:werkzeuge:dokumentation/bearbeitung/bearbeitung-antora.adoc#querverweise[hier].
+Mehr zu Querverweisen xref:werkzeuge:dokumentation/bearbeitung-antora.adoc#querverweise[hier].
 
 [[formatierung-abbildungen]]
 === Abbildungen
@@ -683,7 +661,7 @@ Mehr zu Querverweisen xref:werkzeuge:dokumentation/bearbeitung/bearbeitung-antor
 .Beispiel einer Abbildung
 image::einstieg:sf-saeulen.dn.svg[]
 
-Mehr zu Abbildungen xref:werkzeuge:dokumentation/bearbeitung/bearbeitung-antora.adoc#bilder[hier].
+Mehr zu Abbildungen xref:werkzeuge:dokumentation/bearbeitung-antora.adoc#bilder[hier].
 
 [[formatierung-tabellen]]
 === Tabellen
@@ -699,7 +677,7 @@ Mehr zu Abbildungen xref:werkzeuge:dokumentation/bearbeitung/bearbeitung-antora.
 |Zelle 31|Zelle 32|Zelle 33|Zelle 34
 |===
 
-Mehr zu Tabellen xref:werkzeuge:dokumentation/bearbeitung/bearbeitung-antora.adoc#tabellen[hier].
+Mehr zu Tabellen xref:werkzeuge:dokumentation/bearbeitung-antora.adoc#tabellen[hier].
 
 [[formatierung-listings]]
 === Listings
@@ -715,7 +693,7 @@ public class HalloWelt {
 }
 ----
 
-Mehr zu Listings xref:werkzeuge:dokumentation/bearbeitung/bearbeitung-antora.adoc#listings[hier].
+Mehr zu Listings xref:werkzeuge:dokumentation/bearbeitung-antora.adoc#listings[hier].
 
 [[formatierung-admonitions]]
 === Admonition Blocks
@@ -765,7 +743,7 @@ Regeln für die Sicherheit von IT-Systemen.
 Regeln zur Gestaltung von grafischen Oberflächen.
 ****
 
-Mehr zu Admonition Blocks xref:werkzeuge:dokumentation/bearbeitung/bearbeitung-antora.adoc#admonition-blocks[hier].
+Mehr zu Admonition Blocks xref:werkzeuge:dokumentation/bearbeitung-antora.adoc#admonition-blocks[hier].
 
 [[deprecations]]
 === Deprecations

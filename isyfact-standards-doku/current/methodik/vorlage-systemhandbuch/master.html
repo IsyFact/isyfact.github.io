@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>IsyFact Systemhandbuch &lt;System&gt; :: IsyFact Dokumentation</title>
+    <title>&lt;Beispielsystem&gt;: Systemhandbuch :: IsyFact Dokumentation</title>
     <link rel="canonical" href="https://isyfact.github.io/isyfact-standards-doku/current/methodik/vorlage-systemhandbuch/master.html">
     <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../../_/css/site.css">
@@ -464,51 +464,30 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../werkzeuge/dokumentation/einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/einfuehrung.html">Online-Dokumentation mit AsciiDoc und Antora</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Antora (empfohlen)</span>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/erstellung-antora.html">Seiten anlegen</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../werkzeuge/dokumentation/erstellung/erstellung-antora.html">Seiten anlegen</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../werkzeuge/dokumentation/bearbeitung/bearbeitung-antora.html">Seiten bearbeiten</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../werkzeuge/dokumentation/generierung/generierung-antora.html">Projektseite erzeugen</a>
-  </li>
-</ul>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/bearbeitung-antora.html">Seiten bearbeiten</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">AsciidoctorJ</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../werkzeuge/dokumentation/erstellung/erstellung-asciidoctorj.html">Neue Dokumente anlegen</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../werkzeuge/dokumentation/bearbeitung/bearbeitung-asciidoctorj.html">Dokumente bearbeiten</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../werkzeuge/dokumentation/generierung/generierung-asciidoctorj.html">PDF- und HTML-Dokumente erzeugen</a>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/generierung-antora.html">Projektseite erzeugen</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../werkzeuge/dokumentation/changelog/changelog-doku.html">Zentralisiertes und automatisiertes Changelog</a>
-  </li>
-</ul>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/changelog-doku.html">Changelogs</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../werkzeuge/entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
@@ -593,7 +572,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../../einstieg/einstieg.html">IsyFact Standards</a></li>
-    <li><a href="master.html">IsyFact Systemhandbuch &lt;System&gt;</a></li>
+    <li><a href="master.html">&lt;Beispielsystem&gt;: Systemhandbuch</a></li>
   </ul>
 </nav>
 <div class="page-versions">
@@ -610,13 +589,82 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">IsyFact Systemhandbuch &lt;System&gt;</h1>
+<h1 class="page">&lt;Beispielsystem&gt;: Systemhandbuch</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Inhaltsverzeichnis</div>
+<ul class="sectlevel1">
+<li><a href="#_allgemeine_hinweise_zur_dokumentvorlage">Allgemeine Hinweise zur Dokumentvorlage</a>
+<ul class="sectlevel2">
+<li><a href="#_zweck_dieses_dokuments">Zweck dieses Dokuments</a></li>
+<li><a href="#_verwendung_von_dokumentattributen">Verwendung von Dokumentattributen</a></li>
+<li><a href="#_verwendung_von_namenskonventionen">Verwendung von Namenskonventionen</a></li>
+</ul>
+</li>
+<li><a href="#einleitung">1. Einleitung</a></li>
+<li><a href="#ueberblick">2. Überblick</a>
+<ul class="sectlevel2">
+<li><a href="#fachliche-beschreibung">2.1. Fachliche Beschreibung</a></li>
+<li><a href="#technische-beschreibung">2.2. Technische Beschreibung</a></li>
+</ul>
+</li>
+<li><a href="#bau-anwendung">3. Bau der Anwendung</a>
+<ul class="sectlevel2">
+<li><a href="#bau-ga-batches-legacy">3.1. Bau der Beispielverzeichnis-GA und Beispielverzeichnis-Batch</a></li>
+<li><a href="#bau-ga-batches">3.2. Bau der Beispielverzeichnis-GA und Beispielverzeichnis-Batch</a></li>
+<li><a href="#bau-sgw">3.3. Bau des Beispielverzeichnis-SGW</a></li>
+</ul>
+</li>
+<li><a href="#vorbereitung-systemumgebung">4. Vorbereitung der Systemumgebung</a>
+<ul class="sectlevel2">
+<li><a href="#anlegen-betriebssystemnutzer-gruppen">4.1. Anlegen der Betriebssystemnutzer und -gruppen</a></li>
+<li><a href="#einrichten-datenbank">4.2. Einrichten der Datenbank</a></li>
+<li><a href="#konfiguration-benutzer-behoerdenverzeichnis">4.3. Konfiguration Benutzer- und Behördenverzeichnis</a></li>
+<li><a href="#schluesselverzeichnis">4.4. Schlüsselverzeichnis</a></li>
+<li><a href="#apache-konfiguration">4.5. Apache Konfiguration</a></li>
+<li><a href="#mail-server-konfiguration">4.6. Mail-Server Konfiguration</a></li>
+</ul>
+</li>
+<li><a href="#installation-anwendung">5. Installation der Anwendung</a>
+<ul class="sectlevel2">
+<li><a href="#installation-default-tomcat">5.1. Installation der Default-Tomcats</a></li>
+<li><a href="#installation-it-systeme">5.2. Installation der IT-Systeme</a></li>
+</ul>
+</li>
+<li><a href="#konfiguration-anwendung">6. Konfiguration der Anwendung</a>
+<ul class="sectlevel2">
+<li><a href="#konfiguration-ga">6.1. Konfiguration der Beispielverzeichnis-GA</a></li>
+<li><a href="#konfiguration-batch">6.2. Konfiguration der Beispielverzeichnis-Batch</a></li>
+<li><a href="#konfiguration-sgw">6.3. Konfiguration des Beispielverzeichnis-SGW</a></li>
+</ul>
+</li>
+<li><a href="#regulaerer-wirkbetrieb">7. Regulärer Wirkbetrieb</a>
+<ul class="sectlevel2">
+<li><a href="#log-konfigurationsdateien">7.1. Log- und Konfigurationsdateien</a></li>
+<li><a href="#datenbankschema">7.2. Datenbankschema</a></li>
+<li><a href="#start-stopp-statuspruefung-server-prozesse">7.3. Start, Stopp, Statusprüfung der Server-Prozesse</a></li>
+<li><a href="#batch-prozesse">7.4. Batch-Prozesse</a></li>
+<li><a href="#monitoring">7.5. Monitoring</a></li>
+<li><a href="#backup-recovery">7.6. Backup und Recovery</a></li>
+</ul>
+</li>
+<li><a href="#hinweise-stoerungsdiagnose-behandlung">8. Hinweise für Störungsdiagnose und -behandlung</a>
+<ul class="sectlevel2">
+<li><a href="#verfuegbare-hilfsmittel">8.1. Verfügbare Hilfsmittel</a></li>
+<li><a href="#fehler-fehlerbehebungsmassnahmen">8.2. Fehler und Fehlerbehebungsmaßnahmen</a></li>
+</ul>
+</li>
+<li><a href="#anhang">Anhang</a>
+<ul class="sectlevel2">
+<li><a href="#anhang-historie">Anhang A: Historie</a></li>
+<li><a href="#anhang-fachliches-glossar">Anhang B: Fachliches Glossar</a></li>
+<li><a href="#anhang-fehlercodes">Anhang C: Vollständige Liste der Fehlercodes</a></li>
+</ul>
+</li>
+</ul>
+</div>
 <div id="preamble">
 <div class="sectionbody">
 <!-- toc disabled -->
-<div class="paragraph">
-<p>colophon::[factory="IsyFact-Standards", open-source="true"]</p>
-</div>
 </div>
 </div>
 <div class="sect1">

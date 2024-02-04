@@ -476,51 +476,30 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../werkzeuge/dokumentation/einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/einfuehrung.html">Online-Dokumentation mit AsciiDoc und Antora</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Antora (empfohlen)</span>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/erstellung-antora.html">Seiten anlegen</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../werkzeuge/dokumentation/erstellung/erstellung-antora.html">Seiten anlegen</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../werkzeuge/dokumentation/bearbeitung/bearbeitung-antora.html">Seiten bearbeiten</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../werkzeuge/dokumentation/generierung/generierung-antora.html">Projektseite erzeugen</a>
-  </li>
-</ul>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/bearbeitung-antora.html">Seiten bearbeiten</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">AsciidoctorJ</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../werkzeuge/dokumentation/erstellung/erstellung-asciidoctorj.html">Neue Dokumente anlegen</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../werkzeuge/dokumentation/bearbeitung/bearbeitung-asciidoctorj.html">Dokumente bearbeiten</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../werkzeuge/dokumentation/generierung/generierung-asciidoctorj.html">PDF- und HTML-Dokumente erzeugen</a>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/generierung-antora.html">Projektseite erzeugen</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../werkzeuge/dokumentation/changelog/changelog-doku.html">Zentralisiertes und automatisiertes Changelog</a>
-  </li>
-</ul>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/changelog-doku.html">Changelogs</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../werkzeuge/entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
@@ -854,7 +833,7 @@ Der Aufbau des Verzeichnisses wird im <a href="../../blaupausen/detailkonzept-ko
 <div class="paragraph">
 <p>Batch-Projekte bestehen hauptsächlich aus Startskripten und Konfigurationsdateien, um die Batches aufzurufen.
 Die Implementierung der Batches geschieht in der Anwendung, welche die Batches bereitstellt.
-Daher enthalten Batch-Projekte weder Quellcode, noch Tests.</p>
+Daher enthalten Batch-Projekte weder Quellcode noch Tests.</p>
 </div>
 <div class="paragraph">
 <p>Batch-Projekte besitzen unter dem Wurzelverzeichnis (<code>project-root</code>) ein einzelnes Unterverzeichnis <code>src/main/resources</code>.
@@ -935,7 +914,7 @@ Beispiele dafür sind Dokumente übergreifender Natur aus architektonischer, tec
 <p>Dokumentationsprojekte besitzen unter dem Wurzelverzeichnis (<code>project-root</code>) ein einzelnes Unterverzeichnis <code>src/docs/asciidoc</code>.
 In diesem finden sich weitere Verzeichnisse, z. B. für Inhalte allgemeiner Natur, sowie für die Dokumente.
 Es empfiehlt sich, für jedes Dokument ein eigenes Verzeichnis zur Ablage spezifischer Inhalte (neben Texten z. B. auch Bilder und Diagramme) anzulegen.
-Vorgaben für die Struktur einzelner Dokumente finden sich in der <a href="../../werkzeuge/dokumentation/einleitung/einfuehrung.html" class="xref page">Dokumentation gemäß IsyFact</a>.</p>
+Vorgaben für die Struktur einzelner Dokumente finden sich in der <a href="../vorgaben-dokumentation.html" class="xref page">Vorgaben zur Dokumentation</a>.</p>
 </div>
 <div id="listing-Projektstruktur-Dokumentation" class="listingblock">
 <div class="title">Listing 5. Struktur eines Dokumentationsprojekts</div>
@@ -1711,11 +1690,11 @@ Es wird empfohlen, je Package eine Datei <code>package-info.java</code> zu erzeu
 <div class="ulist">
 <ul>
 <li>
-<p>Schlüsselworte und Bezeichner im beschreibenden Text werden mit dem HTML-Tag <strong>&lt;code&gt;&#8230;&#8203;&lt;/code&gt;</strong> formatiert.</p>
+<p>Schlüsselworte und Bezeichner im beschreibenden Text werden mit dem HTML-Tag <strong>&lt;code&gt; &#8230;&#8203; &lt;/code&gt;</strong> formatiert.</p>
 </li>
 <li>
-<p>Programmcode wird im beschreibenden Text mit dem HTML-Tag <strong>&lt;pre&gt;&#8230;&#8203;&lt;/pre&gt;</strong> formatiert.
-Damit wird gewährleistet, dass eine Darstellung des Codes in „dicktengleicher Schrift“ (Nichtproportionalschrift, Festbreitenschrift oder Monospaced Font) erfolgt und Einrückungen so wiedergegeben werden, wie sie beim Editieren eingegeben wurden.
+<p>Programmcode wird im beschreibenden Text mit dem HTML-Tag <strong>&lt;pre&gt; &#8230;&#8203; &lt;/pre&gt;</strong> formatiert.
+Damit wird gewährleistet, dass eine Darstellung des Codes in "dicktengleicher Schrift" (Nichtproportionalschrift, Festbreitenschrift oder Monospaced Font) erfolgt und Einrückungen so wiedergegeben werden, wie sie beim Editieren eingegeben wurden.
 Es ist darauf zu achten, dass alle Leerzeichen berücksichtigt werden und kein automatischer Zeilenumbruch erfolgt.</p>
 </li>
 <li>

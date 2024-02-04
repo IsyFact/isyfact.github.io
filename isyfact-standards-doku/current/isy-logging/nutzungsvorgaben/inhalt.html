@@ -464,51 +464,30 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../werkzeuge/dokumentation/einleitung/einfuehrung.html">Dokumentation gemäß IsyFact</a>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/einfuehrung.html">Online-Dokumentation mit AsciiDoc und Antora</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Antora (empfohlen)</span>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/erstellung-antora.html">Seiten anlegen</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../werkzeuge/dokumentation/erstellung/erstellung-antora.html">Seiten anlegen</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="5">
     <a class="nav-link" href="../../werkzeuge/seitenvorlage.html">Seitenvorlage</a>
   </li>
-  <li class="nav-item" data-depth="5">
+  <li class="nav-item" data-depth="4">
     <a class="nav-link" href="../../werkzeuge/kopiervorlage.html">Kopiervorlage für neue Seiten</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../werkzeuge/dokumentation/bearbeitung/bearbeitung-antora.html">Seiten bearbeiten</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../werkzeuge/dokumentation/generierung/generierung-antora.html">Projektseite erzeugen</a>
-  </li>
-</ul>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/bearbeitung-antora.html">Seiten bearbeiten</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">AsciidoctorJ</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../werkzeuge/dokumentation/erstellung/erstellung-asciidoctorj.html">Neue Dokumente anlegen</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../werkzeuge/dokumentation/bearbeitung/bearbeitung-asciidoctorj.html">Dokumente bearbeiten</a>
-  </li>
-  <li class="nav-item" data-depth="4">
-    <a class="nav-link" href="../../werkzeuge/dokumentation/generierung/generierung-asciidoctorj.html">PDF- und HTML-Dokumente erzeugen</a>
+    <a class="nav-link" href="../../werkzeuge/dokumentation/generierung-antora.html">Projektseite erzeugen</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../werkzeuge/dokumentation/changelog/changelog-doku.html">Zentralisiertes und automatisiertes Changelog</a>
-  </li>
-</ul>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../werkzeuge/dokumentation/changelog-doku.html">Changelogs</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../werkzeuge/entwicklungsumgebung/master.html">Entwicklungsumgebung</a>
@@ -1744,6 +1723,50 @@ Da der Client einem bestimmten Benutzer zugeordnet werden kann, wird hier kein M
 Somit müssen alle Klassen, die das Interface Runnable implementieren, eine Methode vorsehen, um den MDC von der Klasse zu bekommen, die den Thread startet.
 Ansonsten besitzt der gestartete Thread nicht den Kontext des aufrufenden Threads.
 Zusätzlich muss im Thread eine weitere Unique-ID an die Korrelations-ID im MDC angehängt werden, so dass auch die Logeinträge des Threads eindeutig identifiziert werden können.</p>
+</div>
+<div class="paragraph">
+<p><strong>Anmerkung zum Parallelbetrieb von AufrufKontextVerwalter und MdcHelper</strong></p>
+</div>
+<div class="paragraph">
+<p>Innerhalb der Anwendung wird die Korrelations-ID sowohl über das AufrufKontext-Objekt im AufrufKontextVerwalter
+als auch über den MdcHelper verwaltet und zur Verfügung gestellt.</p>
+</div>
+<div class="paragraph">
+<p>An der Service-Schnittstelle werden dazu die Annotationen @StelltLoggingKontextBereit und @StelltAufrufKontextBereit
+in Zusammenspiel verwendet.</p>
+</div>
+<div class="paragraph">
+<p>Die Annotation @StelltLoggingKontextBereit liest die Korrelations-ID aus einem AufrufKontextTo, welches der annotierten
+Methode als Parameter übergeben wird und befüllt den Logging-Kontext, indem die Korrelations-ID in den MdcHelper geschrieben wird.</p>
+</div>
+<div class="paragraph">
+<p>Enthält das AufrufKontextTo keine (null) oder eine leere ("") Korrelations-ID, so wird eine neue Korrelations-ID generiert.
+Die neu generierte Korrelations-ID wird in das AufrufKontextTo-Objekt zurückgeschrieben und ebenfalls
+an den MdcHelper weitergegeben.</p>
+</div>
+<div class="paragraph">
+<p>Die @StelltLoggingKontextBereit-Annotation kann auch ohne vorhandenes AufrufKontextTo-Objekt verwendet werden.
+Dazu muss nutzeAufrufKontext auf false gesetzt werden.
+In diesem Fall wird eine neue Korrelations-ID generiert und in den MdcHelper geschrieben.</p>
+</div>
+<div class="paragraph">
+<p>Nach Aufruf des StelltLoggingKontextBereitInterceptors über die @StelltLoggingKontextBereit-Annotation
+ist die Korrelations-ID sowohl im MDC also auch im AufrufKontextTo vorhanden.</p>
+</div>
+<div class="paragraph">
+<p>Um die Daten des AufrufKontextTo in den AufrufKontextVerwalter zu schreiben, wird die Annotation @StelltAufrufKontextBereit
+verwendet.
+Im StelltAufrufKontextBereitInterceptor wird hierfür ein neues AufrufKontext-Objekt erstellt.
+Nach der Erstellung werden die Daten aus dem AufrufKontextTo in das AufrufKontext-Objekt übertragen und der AufrufKontext
+in den AufrufKontextVerwalter gesetzt.
+Der vorherige AufrufKontext wird hierbei zwischengespeichert und nach Aufruf der mit @StelltAufrufKontextBereit
+annotierten Methode wiederhergestellt.
+Entsprechend stehen die Daten aus dem AufrufKontextTo innerhalb des Methodenaufrufs in Form eines AufrufKontext-Objekts
+über den AufrufKontextVerwalter zur Verfügung.</p>
+</div>
+<div class="paragraph">
+<p>Nach dem Durchlaufen beider Interceptoren steht die Korrelations-ID sowohl im AufrufKontext(Verwalter) als auch über den
+MdcHelper zur Verfügung.</p>
 </div>
 </div>
 </div>
