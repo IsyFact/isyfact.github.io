@@ -13,7 +13,7 @@ jobs:
       - name: Checkout antora-playbook
         uses: actions/checkout@v4
 
-      - name: Checkout isyfact-standards
+      - name: Checkout isyfact-standards (master)
         uses: actions/checkout@v4
         with:
           repository: IsyFact/isyfact-standards
@@ -21,7 +21,7 @@ jobs:
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards
-      - name: Checkout isyfact-standards
+      - name: Checkout isyfact-standards (release/3.x)
         uses: actions/checkout@v4
         with:
           repository: IsyFact/isyfact-standards
@@ -29,14 +29,7 @@ jobs:
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-3.x
-      - name: Checkout isyfact-standards
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isyfact-standards
-          ref: master
-          lfs: true
-          sparse-checkout: isyfact-standards-doc/src/docs/antora
-          path: isyfact-standards
+
       - name: Checkout isy-documentation
         uses: actions/checkout@v4
         with:
@@ -45,22 +38,24 @@ jobs:
           lfs: true
           sparse-checkout: src/docs/antora
           path:  isy-documentation
+
       - name: Checkout isy-web
         uses: actions/checkout@v4
         with:
           repository: IsyFact/isy-web
-          ref: master
+          ref: release/6.x
           lfs: true
           sparse-checkout: isy-web-doc/src/docs/antora
           path: isy-web
 
       - name: Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'npm'
-      # @setup-node@v3 does not provide node_modules in cache
-      - uses: actions/cache@v3
+          cache: npm
+      # @setup-node does not provide node_modules in cache
+      - name: Cache node modules
+        uses: actions/cache@v4
         with:
           key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
           restore-keys: ${{ runner.os }}-npm-
@@ -69,33 +64,28 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Build Documentation
-        run: npx antora antora-playbook.yml --to-dir=target/docs
+        run: npm run build
 
-      - name: Upload Documentation
-        uses: actions/upload-artifact@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: Documentation
-          path: target/docs
+          path: docs
 
   Deploy:
     runs-on: ubuntu-latest
     needs: [Build]
-    if: github.event_name != 'push'
-    # run one job instance at a time to prevent conflicts while pushing build result
-    concurrency: ci-pages-update
+    concurrency:
+      group: gh-pages
+      cancel-in-progress: false
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout isyfact.github.io
-        uses: actions/checkout@v4
-      - name: Download documentation
-        uses: actions/download-artifact@v3
-        with:
-          name: Documentation
-          path: docs
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: docs
-          token: ${{ secrets.ANTORA_TOKEN  }}
-          repository-name: IsyFact/isyfact.github.io
-
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
