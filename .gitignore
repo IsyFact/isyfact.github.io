@@ -1,0 +1,27 @@
+# Ignore Eclipse project and build files
+.project
+.classpath
+.metadata
+bin/
+.settings/
+
+# Ignore IntelliJ project and build files
+*.iml
+.idea/
+
+# Ignore VS Code files
+.vscode
+
+# Ignore Asciidoctor extensions
+.asciidoctor
+
+# Ignore index files
+.directory
+
+# Ignore node installation
+node
+node_modules
+
+# Ignore locally generated files
+public
+docs

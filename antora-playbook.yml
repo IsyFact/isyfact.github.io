@@ -1,0 +1,82 @@
+site:
+  title: IsyFact Dokumentation
+  url: https://isyfact.github.io/
+  start_page: isyfact-standards-doku:einstieg:einstieg.adoc
+urls:
+  latest_version_segment: current
+  latest_prerelease_version_segment: dev
+content:
+  # Comment: Ideal configuration when Antora supports Git LFS (see README for details)
+  #sources:
+    #- url: https://github.com/IsyFact/isy-documentation.git
+    #  branches: HEAD
+    #  start_path: src/docs/antora
+    #- url: https://github.com/IsyFact/isyfact-standards.git
+    #  branches: [release/3.x,master]
+    #  start_path: isyfact-standards-doc/src/docs/antora
+    #- url: https://github.com/IsyFact/isy-web.git
+    #  branches: HEAD
+    #  start_path: isy-web-doc/src/docs/antora
+
+  # Comment: Configuration for CI/CD-Pipeline (using the Git LFS workaround as described in the README)
+  sources:
+    - url: ./isy-documentation
+      branches: HEAD
+      start_path: src/docs/antora
+    - url: ./isyfact-standards
+      branches: HEAD
+      start_path: isyfact-standards-doc/src/docs/antora
+    - url: ./isyfact-standards-3.x
+      branches: HEAD
+      start_path: isyfact-standards-doc/src/docs/antora
+    - url: ./isy-web
+      branches: HEAD
+      start_path: isy-web-doc/src/docs/antora
+
+  # Comment: Configuration for development (e.g. with feature branches that aren't pushed yet)
+  # Convention: All git repositories are cloned in the same parent directory.
+  #sources:
+  #  - url: ../isy-documentation
+  #    branches: HEAD
+  #    start_path: src/docs/antora
+  #  - url: ../isyfact-standards
+  #    branches: [release/3.x,master]
+  #    start_path: isyfact-standards-doc/src/docs/antora
+  #  - url: ../isy-web
+  #    branches: HEAD
+  #    start_path: isy-web-doc/src/docs/antora
+
+runtime:
+  fetch: true
+  log:
+    level: info
+asciidoc:
+  attributes:
+    page-toctitle: Inhalt
+    sectnums: true
+    sectnumlevels: 5
+    caution-caption: Achtung
+    important-caption: Wichtig
+    note-caption: Hinweis
+    tip-caption: Tipp
+    warning-caption: Warnung
+    appendix-caption: Anhang
+    example-caption: Beispiel
+    figure-caption: Abbildung
+    table-caption: Tabelle
+    listing-caption: Listing
+ui:
+  bundle:
+    url: ./antora-ui/ui-bundle.zip
+    snapshot: false
+  supplemental_files: ./antora-ui/supplemental-ui
+antora:
+  extensions:
+    - require: '@antora/lunr-extension'
+      languages: [en, de]
+    - require: ./lib/antora-extension-rules.js
+      excludefiles:
+        - kopiervorlage
+        - bearbeitung-antora
+output:
+  dir: ./docs
