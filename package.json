@@ -14,14 +14,12 @@
   "homepage": "https://isyfact.github.io",
 
   "devDependencies": {
-    "@antora/cli": "^3.1.4",
+    "@antora/cli": "^3.1.7",
     "@antora/lunr-extension": "^1.0.0-alpha.8",
-    "@antora/site-generator-default": "^3.1.4",
+    "@antora/site-generator-default": "^3.1.7",
     "font-awesome": "^4.7.0"
   },
   "overrides": {
-    "simple-get": "4.0.1",
-    "glob-parent": "5.1.2",
-    "convict": "6.2.4"
+    "glob-parent": "5.1.2"
   }
 }
