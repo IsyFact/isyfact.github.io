@@ -834,34 +834,12 @@ Spezielle Renderer oder Java-Klassen werden nicht benötigt.</p>
 <div class="sect3">
 <h4 id="absicherung-von-jsf-guis"><a class="anchor" href="#absicherung-von-jsf-guis"></a>3.2.2. Absicherung von JSF-GUIs</h4>
 <div class="paragraph">
-<p>Die Absicherung von Masken erfolgt auf Ebene des Dialogablaufs, also von Spring Web Flow.
-Die Berechtigungsprüfung verwendet den Baustein Sicherheit der IsyFact.</p>
+<p>Die Absicherung von Masken erfolgt auf Ebene des Dialogablaufs über Spring Web Flow.
+Die Berechtigungsprüfung verwendet dabei den in <a href="#KonzeptSecurity">[KonzeptSecurity]</a> beschriebenen Baustein Security der IsyFact.</p>
 </div>
 <div class="paragraph">
-<p>Für die Anbindung des dort definierten <code>Berechtigungsmanager</code> an Spring Security findet die Möglichkeit zur Erstellung eines "Custom Authentication Providers" in Form des <code>WebFlowAuthenticationProvider</code> Anwendung.
-Der <code>WebFlowAuthenticationProvider</code> prüft bei Bedarf, ob der Anwender die notwendigen Berechtigungen besitzt, bzw. es wird für die weitere Verarbeitung in Spring Security der notwendige Kontext aufgebaut.
-<a href="#image-integration-baustein-sicherheit-klassendiagramm">Integration des Bausteins Sicherheit in Spring Security</a> zeigt die Integration des Bausteins Sicherheit in Spring Security.</p>
-</div>
-<div id="image-integration-baustein-sicherheit-klassendiagramm" class="imageblock text-center">
-<div class="content">
-<img src="../_images/konzept/integration-baustein-sicherheit-klassendiagramm.png" alt="integration baustein sicherheit klassendiagramm">
-</div>
-<div class="title">Abbildung 6. Integration des Bausteins Sicherheit in Spring Security</div>
-</div>
-<div class="paragraph">
-<p><a href="#image-integration-baustein-sicherheit-sequenzdiagramm">Sequenzdiagramm Zugriff auf Sicherheitskomponente</a> stellt den Zugriff des <code>WebFlowAuthenticationProvider</code> auf den Baustein Sicherheit dar.
-Hierbei werden die Rollen eines Benutzers über den Berechtigungsmanager gelesen und in einen Spring Security konformen
-Token geschrieben.
-Dieser Token findet dann bei der Autorisierung einzelner Benutzerinteraktion durch Spring Security Verwendung.</p>
-</div>
-<div id="image-integration-baustein-sicherheit-sequenzdiagramm" class="imageblock text-center">
-<div class="content">
-<img src="../_images/konzept/integration-baustein-sicherheit-sequenzdiagramm.png" alt="integration baustein sicherheit sequenzdiagramm">
-</div>
-<div class="title">Abbildung 7. Sequenzdiagramm Zugriff auf Sicherheitskomponente</div>
-</div>
-<div class="paragraph">
-<p>Mehr Details hierzu sind in der Bausteindokumentation (<a href="../../../../isyfact-standards-doku/current/isy-sicherheit/konzept/master.html" class="xref page">Konzept Sicherheit</a> und <a href="../../../../isyfact-standards-doku/current/isy-sicherheit/nutzungsvorgaben/master.html" class="xref page">Nutzungsvorgaben Sicherheit</a>) sowie in den <a href="../nutzungsvorgaben/nutzungsvorgaben.html" class="xref page">Nutzungsvorgaben JSF</a> zu finden.</p>
+<p>Für die Anbindung von Spring Web Flow an den Baustein Security wird das Spring Security-Interface <code>AccessDecisionManager</code> durch die Klasse <code>WebDelegatingAccessDecisionManager</code> implementiert.
+In der Implementierung wird mittels einer Abfrage an <code>Berechtigungsmanager</code> aus dem Security-Baustein geprüft, ob ein Anwender die notwendigen Berechtigungen besitzt (siehe dazu <a href="#NutzungsvorgabenSecurity">[NutzungsvorgabenSecurity]</a>).</p>
 </div>
 </div>
 <div class="sect3">

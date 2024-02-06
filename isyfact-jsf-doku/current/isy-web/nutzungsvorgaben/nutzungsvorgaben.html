@@ -1585,18 +1585,13 @@ Auftretende Fehler (z.B. Server nicht erreichbar, Serverfehler) werden daher nic
 <div class="sect2">
 <h3 id="sicherheit"><a class="anchor" href="#sicherheit"></a>4.3. Sicherheit</h3>
 <div class="paragraph">
-<p>Die Absicherung von Masken erfolgt auf Dialogablauf-Ebene.
-Die Berechtigungsprüfung verwendet die Sicherheits-Komponente.</p>
-</div>
-<div class="paragraph">
-<p>Gekapselt werden die Bestandteile der Sicherheits-Komponente hinter Spring Security.
-Durch den Einsatz von Spring Security ist es einfacher eine Integration der Berechtigungen in die Spring Umgebung, insbesondere Spring Web Flow, zu erreichen.</p>
+<p>Die Absicherung von Masken erfolgt auf Dialogablauf-Ebene mittels Spring Web Flow. Die Berechtigungsprüfung verwendet den Security-Baustein.</p>
 </div>
 <div class="sect3">
 <h4 id="autorisierung"><a class="anchor" href="#autorisierung"></a>4.3.1. Autorisierung</h4>
 <div class="paragraph">
-<p>Für die Absicherung von Dialogabläufen wird innerhalb der Spring Web Flow Konfiguration auf dem <code>&lt;view-state&gt;</code> ein <code>&lt;secured&gt;</code> Tag mit dem geforderten Recht gesetzt.
-Die verwendeten Rechte müssen durch die Rollenrechte-Konfiguration (siehe <a href="../../../../isyfact-standards-doku/current/isy-sicherheit/nutzungsvorgaben/master.html" class="xref page">Nutzungsvorgaben Sicherheit</a>) für den eingeloggten Benutzer entsprechend gesetzt werden.
+<p>Für die Absicherung von Dialogabläufen wird innerhalb der Spring Web Flow-Konfiguration auf dem <code>&lt;view-state&gt;</code> ein <code>&lt;secured&gt;</code> Tag mit dem geforderten Recht gesetzt.
+Die verwendeten Rechte müssen durch die Rollenrechte-Konfiguration (siehe <a href="../../../../isyfact-standards-doku/current/isy-security/nutzungsvorgaben/master.html" class="xref page">Nutzungsvorgaben Security</a>) für den eingeloggten Benutzer entsprechend gesetzt werden.
 Durch die Verwendung des Tags wird vor dem Anzeigen des <code>&lt;view-state&gt;</code> eine Überprüfung der Berechtigung des anfragenden Benutzers durchgeführt.
 Fehlt dem Benutzer diese, wird die Fehlerseite angezeigt.</p>
 </div>
@@ -1627,7 +1622,7 @@ Fehlt dem Benutzer diese, wird die Fehlerseite angezeigt.</p>
 <h4 id="berechtigungsabhaengige-darstellung-in-masken"><a class="anchor" href="#berechtigungsabhaengige-darstellung-in-masken"></a>4.3.2. Berechtigungsabhängige Darstellung in Masken</h4>
 <div class="paragraph">
 <p>Um eine berechtigungsabhängige Darstellung von Maskenelementen zu realisieren, muss die Anwendung einen Controller bereitstellen, mit dessen Hilfe über nicht parametrisierte Methoden Anfragen nach den benötigten Rechten gestellt werden können.
-Dieser Controller ist dafür zuständig, den Rechte-Schlüssel aufzulösen und die Anfrage an die Komponente Sicherheit zu delegieren.
+Dieser Controller ist dafür zuständig, den Rechte-Schlüssel aufzulösen und die Anfrage an die Komponente Security zu delegieren.
 Beantwortet werden die Anfragen stets mit einem einfachen Booleschen Wert.</p>
 </div>
 <div class="paragraph">
@@ -1687,68 +1682,12 @@ Somit wird verhindert, dass ein Angreifer ein ungewünschtes Script-Tag übergib
 </ul>
 </div>
 <div class="sect4">
-<h5 id="konfiguration-sicherheitskomponente"><a class="anchor" href="#konfiguration-sicherheitskomponente"></a>4.3.3.1. Konfiguration Sicherheitskomponente</h5>
+<h5 id="konfiguration-securitykomponente"><a class="anchor" href="#konfiguration-securitykomponente"></a>4.3.3.1. Konfiguration Security-Komponente</h5>
 <div class="paragraph">
-<p>Die Konfiguration der Sicherheitskomponente ist im Konzept <a href="../../../../isyfact-standards-doku/current/isy-sicherheit/nutzungsvorgaben/master.html" class="xref page">Nutzungsvorgaben Sicherheit</a> beschrieben.</p>
+<p>Die Konfiguration der Security-Komponente ist in den <a href="../../../../isyfact-standards-doku/current/isy-security/nutzungsvorgaben/master.html" class="xref page">Nutzungsvorgaben Security</a> beschrieben.</p>
 </div>
 <div class="paragraph">
 <p>Die zur Integration mit Spring Webflow benötigten Listener liefert <code>isy-web</code> in der Autokonfiguration mit.</p>
-</div>
-<div class="paragraph">
-<p>In der Regel müssen zusätzlich folgende Beans definiert werden:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>aus isy-sicherheit: <code>Sicherheit</code> und <code>AccessManager</code>,</p>
-</li>
-<li>
-<p>aus isy-aufrufkontext: <code>AufrufKontextVerwalter</code> und <code>AufrufKontextFactory</code>,</p>
-</li>
-<li>
-<p>aus spring-security: <code>AccessDecisionManager</code>, der auf die Bean <code>Sicherheit</code> delegiert.</p>
-</li>
-</ul>
-</div>
-<div id="listing-sec" class="listingblock">
-<div class="title">Listing 29. Konfiguration Sicherheitskomponente</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Configuration
-public class SecurityConfiguration {
-
-    @Bean
-    Sicherheit&lt;AufrufKontext&gt; sicherheit(AufrufKontextVerwalter&lt;AufrufKontext&gt; aufrufKontextVerwalter,
-        AufrufKontextFactory&lt;AufrufKontext&gt; aufrufKontextFactory, AccessManager accessManager,
-        IsySicherheitConfigurationProperties properties) {
-        return new SicherheitImpl&lt;AufrufKontext, AuthentifizierungErgebnis&gt;(
-            "/resources/sicherheit/rollenrechte.xml", aufrufKontextVerwalter, aufrufKontextFactory,
-            accessManager, properties);
-    }
-
-    @Bean
-    @ConditionalOnMissingBean(AufrufKontextFactory.class)
-    public AufrufKontextFactory&lt;AufrufKontext&gt; aufrufKontextFactory() {
-        AufrufKontextFactoryImpl&lt;AufrufKontext&gt; aufrufKontextFactory = new AufrufKontextFactoryImpl&lt;&gt;();
-        aufrufKontextFactory.setAufrufKontextKlasse(AufrufKontextImpl.class);
-        return aufrufKontextFactory;
-    }
-
-    @Bean
-    public AufrufKontextVerwalter&lt;AufrufKontext&gt; aufrufKontextVerwalter() {
-        return new AufrufKontextVerwalterImpl&lt;&gt;();
-    }
-
-    @Bean
-    public AccessDecisionManager accessDecisionManager(Sicherheit&lt;AufrufKontext&gt; sicherheit) {
-        return new DelegatingAccessDecisionManager(sicherheit);
-    }
-
-    @Bean
-    AccessManager accessManager() {
-        // der entsprechende AccessManager
-    }
-}</code></pre>
-</div>
 </div>
 </div>
 </div>
@@ -1765,7 +1704,7 @@ Für den Schutzbedarf <strong>mittel</strong> und <strong>hoch</strong> reicht d
 Dafür wird typischerweise das versteckte Element <code>&lt;h:inputHidden&gt;</code> verwendet.</p>
 </div>
 <div id="listing-hiddenInput" class="listingblock">
-<div class="title">Listing 30. Verwendung eines hiddenInput Elements für die CSRF-Token Übertragung</div>
+<div class="title">Listing 29. Verwendung eines hiddenInput Elements für die CSRF-Token Übertragung</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;!-- [...] --&gt;
 &lt;h:form&gt;
@@ -1792,7 +1731,7 @@ Auch bei dieser Variante muss das von Spring bereitgestellte CSRF-Token über di
 Da die Tokens immer nur für einen Request gültig sind, muss sichergestellt werden, dass vor jedem Request ein neues CSRF-Token vom Server abgeholt wird.</p>
 </div>
 <div id="listing-isySicherheitWeb" class="listingblock">
-<div class="title">Listing 31. Ausschnitt aus isy-sicherheit-web.xml: Verwendung eines eigenen CsrfTokenRepositories</div>
+<div class="title">Listing 30. Ausschnitt aus isy-sicherheit-web.xml: Verwendung eines eigenen CsrfTokenRepositories</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;!-- [...] --&gt;
 &lt;security:http auto-config="true"&gt;
@@ -1837,7 +1776,7 @@ Durch Aufruf des <code>BasisController</code> s wird sie aktiviert oder deaktivi
 <p>Beispiel:</p>
 </div>
 <div id="listing-druckAnsichtGenerisch" class="listingblock">
-<div class="title">Listing 32. Generische Druckansicht anzeigen</div>
+<div class="title">Listing 31. Generische Druckansicht anzeigen</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;view-state id="auskunftAnzeigenDruckansichtViewState" model="auskunftAnzeigenModel"&gt;
     &lt;on-entry&gt;
@@ -1903,7 +1842,7 @@ Diese Funktionalität wird in der Bibliothek <code>isy-web</code> durch die Klas
 Unterstützt wird der Download einzelner Dateien (<a href="#listing-dynamischerDownload">Download von dynamische generierten Dateien</a>) und der Download mehrerer Dateien, die in einer ZIP-Datei zusammengefasst werden (<a href="#listing-dynamischerDownloadZip">Download von dynamische generierten Dateien als ZIP-Datei</a>).</p>
 </div>
 <div id="listing-dynamischerDownload" class="listingblock">
-<div class="title">Listing 33. Download von dynamische generierten Dateien</div>
+<div class="title">Listing 32. Download von dynamische generierten Dateien</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Controller
 public class DownloadController {
@@ -1922,7 +1861,7 @@ public class DownloadController {
 </div>
 </div>
 <div id="listing-dynamischerDownloadZip" class="listingblock">
-<div class="title">Listing 34. Download von dynamische generierten Dateien als ZIP-Datei</div>
+<div class="title">Listing 33. Download von dynamische generierten Dateien als ZIP-Datei</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Controller
 public class DownloadController {
@@ -1950,7 +1889,7 @@ public class DownloadController {
 Die Einbindung erfolgt dann per Dependency Injection z.B. in einem Controller.</p>
 </div>
 <div id="listing-downloadHelperBean" class="listingblock">
-<div class="title">Listing 35. Konfiguration DownloadHelper als Bean</div>
+<div class="title">Listing 34. Konfiguration DownloadHelper als Bean</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;bean id="zipHelper" class="de.bund.bva.isyfact.common.web.filetransfer.ZipHelper"/&gt;
 
@@ -2070,7 +2009,7 @@ Um das Verhalten zu überschreiben, kann die Property <code>gui.logout.url</code
 <p>Um hiervon Gebrauch zu machen, muss eine entsprechende Konfigurationsdatei über die Bean-Definition eingebunden werden:</p>
 </div>
 <div id="listing-anpassung-rahmen-config" class="listingblock">
-<div class="title">Listing 36. Konfigurationsdatei zur Anpassung des Seitenrahmens einbinden</div>
+<div class="title">Listing 35. Konfigurationsdatei zur Anpassung des Seitenrahmens einbinden</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;beans&gt;
     ...
@@ -2154,7 +2093,7 @@ Setzt die Anwendungen einzelne Werte für bestimmte Anwendungsgruppen nicht, wer
 <p>Das folgende Beispiel zeigt eine vollständige Konfiguration.</p>
 </div>
 <div id="listing-AnpassungSeitenrahmen" class="listingblock">
-<div class="title">Listing 37. Konfiguration zur Anpassung des Seitenrahmens</div>
+<div class="title">Listing 36. Konfiguration zur Anpassung des Seitenrahmens</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-none hljs"># Globale Standardwerte
 gui.header.logo.links.pfad = /javax.faces.resource/img/isyfactschriftzug.jpeg
@@ -2249,7 +2188,7 @@ Weiterhin kann mit <code>MAS_Global_Title_Prefix</code> ein globaler Präfix fü
 Im Folgenden ein Beispiel:</p>
 </div>
 <div id="listing-zusatzmaskentitel" class="listingblock">
-<div class="title">Listing 38. Zusatz-Maskentitel im Header-Bereich</div>
+<div class="title">Listing 37. Zusatz-Maskentitel im Header-Bereich</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;ui:define name="titel"&gt;
    &lt;h:outputText value="zusätzlicher Text" /&gt;
@@ -2265,7 +2204,7 @@ Im Folgenden ein Beispiel:</p>
 Im Folgenden ein Beispiel:</p>
 </div>
 <div id="listing-titelzeileninfo" class="listingblock">
-<div class="title">Listing 39. Titelzeileninfo</div>
+<div class="title">Listing 38. Titelzeileninfo</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;ui:define name="titelzeileInfoLinks"&gt;
    &lt;h:outputText value="zusätzlicher Text" /&gt;
@@ -2297,7 +2236,7 @@ Standardmäßig wird die <code>portalColor</code> auch als Fokusfarbe der Bedien
 </ol>
 </div>
 <div id="listing-gruntPortalfarbe" class="listingblock">
-<div class="title">Listing 40. Portalfarbe konfigurieren</div>
+<div class="title">Listing 39. Portalfarbe konfigurieren</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">@portal-color: #004179;
 @focus-color: @portal-color;
@@ -2364,7 +2303,7 @@ Beim Eintreten in den Flow wird das modale Fenster über einen Aufruf des BasisC
 Beim Verlassen des View-States wird dieser wieder geschlossen.</p>
 </div>
 <div id="listing-jsfModalerDialog" class="listingblock">
-<div class="title">Listing 41. Modaler Dialog</div>
+<div class="title">Listing 40. Modaler Dialog</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;ui:define name="modalDialog"&gt;
    &lt;isy:modalDialogContent&gt;
@@ -2387,7 +2326,7 @@ Beim Verlassen des View-States wird dieser wieder geschlossen.</p>
 <p>Um im Hintergrund weiterhin das aktuelle Fenster anzuzeigen, genügt es den bisherigen View-State entsprechend zu vererben.</p>
 </div>
 <div id="listing-openCloseModaleDialog" class="listingblock">
-<div class="title">Listing 42. Öffnen und Schließen von modalen Dialogen</div>
+<div class="title">Listing 41. Öffnen und Schließen von modalen Dialogen</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;view-state id="lichtbildAnzeigenViewState" model="maskenModel"&gt;
    &lt;on-entry&gt;
@@ -2431,7 +2370,7 @@ Die anzuzeigenden Texte aus einer weiteren Ressource werden dem Flow als neuer P
 <p>Falls der anzuzeigende Text für den Abbrechen-Button nicht dem Flow übergeben wurde, wird der Default-Text zu "MEL_Button_Abbrechen" aus den <code>maskentexte.properties</code> geladen.</p>
 </div>
 <div id="listing-Bestaetigungsdialog" class="listingblock">
-<div class="title">Listing 43. Bestätigungsdialog - subflow mit Parametern</div>
+<div class="title">Listing 42. Bestätigungsdialog - subflow mit Parametern</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;flow xmlns="http://www.springframework.org/schema/webflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -2520,7 +2459,7 @@ Die anzuzeigenden Texte aus einer weiteren Ressource werden dem Flow als neuer P
 </ul>
 </div>
 <div id="listing-wirardModaleDialog" class="listingblock">
-<div class="title">Listing 44. Modaler Wizard</div>
+<div class="title">Listing 43. Modaler Wizard</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;isy:wizard wizardDialogModel="#{wdm}"&gt;
    &lt;f:facet name="wizardHeader"&gt;Testheader&lt;/f:facet&gt;
@@ -2802,7 +2741,7 @@ Andernfalls wird immer ein Full-Page-Reload ausgeführt.</p>
 <p>Einen Button, bei dem die Oberfläche während der Ajax-Aktion blockiert ist, würde man Einbindung über <code>&lt;isy:button&gt;</code> mit dem <code>block="true"</code> einbinden.</p>
 </div>
 <div id="listing-button" class="listingblock">
-<div class="title">Listing 45. Codebeispiel für <code>&lt;isy:button&gt;</code></div>
+<div class="title">Listing 44. Codebeispiel für <code>&lt;isy:button&gt;</code></div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;isy:button
   id="buttonBlockTest"
@@ -2836,7 +2775,7 @@ Andernfalls wird immer ein Full-Page-Reload ausgeführt.</p>
 </ul>
 </div>
 <div id="listing-buttonRow" class="listingblock">
-<div class="title">Listing 46. Codebeispiel für <code>&lt;isy:buttonRow&gt;</code></div>
+<div class="title">Listing 45. Codebeispiel für <code>&lt;isy:buttonRow&gt;</code></div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;isy:buttonRow&gt;
 	&lt;isy:buttonToolbar
@@ -2871,7 +2810,7 @@ Der Hauptanwendungszweck dieses Tags ist die gemeinsame Ausrichtung der Buttons 
 </ul>
 </div>
 <div id="listing-buttonGroup" class="listingblock">
-<div class="title">Listing 47. Codebeispiel für <code>&lt;isy:buttonGroup&gt;</code></div>
+<div class="title">Listing 46. Codebeispiel für <code>&lt;isy:buttonGroup&gt;</code></div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;f:facet name="tableToolbar"&gt;
     &lt;isy:buttonGroup&gt;
@@ -2980,7 +2919,7 @@ Andernfalls wird immer ein Full-Page-Reload durchgeführt.</p>
 </ul>
 </div>
 <div id="listing-buttonToolbar" class="listingblock">
-<div class="title">Listing 48. Codebeispiel für <code>&lt;isy:buttonToolbar&gt;</code>, vertikale Darstellung</div>
+<div class="title">Listing 47. Codebeispiel für <code>&lt;isy:buttonToolbar&gt;</code>, vertikale Darstellung</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;f:facet name="panelHeader"&gt;Toolbar Buttons&lt;/f:facet&gt;
 
@@ -3361,7 +3300,7 @@ Standardmäßig wird kein Character-Picker verwendet.</p>
 Dazu muss, wie im folgenden Beispiel (<a href="#listing-charpicker">Verwendung vom CharPicker</a>), der Parameter <code>charpicker</code> auf den Wert <code>dinNorm</code> gesetzt werden, um den CharPicker zu verwenden, welcher die Sonderzeichen der DIN NORM 91379 unterstützt:</p>
 </div>
 <div id="listing-charpicker" class="listingblock">
-<div class="title">Listing 49. Verwendung vom CharPicker</div>
+<div class="title">Listing 48. Verwendung vom CharPicker</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;isy:formInput id="formInputSpecialCharDinNorm" type="text"
     label="DIN NORM 91379 CharPicker: "
@@ -4066,7 +4005,7 @@ Tabs werden häufig dazu verwendet, um Eigenschaften eines Objekts in inhaltlich
 Im Folgenden ein Beispiel:</p>
 </div>
 <div id="listing-tabgroup" class="listingblock">
-<div class="title">Listing 50. Beispiel für Tabs</div>
+<div class="title">Listing 49. Beispiel für Tabs</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;isy:tabGroup tabGroupId="testTab" globalTabContentRefs="A P S" globalTab="A" defaultTab="A"
   tabGroupModel="#{jsfSteuerelementeModel.tabGroupModel}"&gt;
@@ -4407,7 +4346,7 @@ Für eine Liste mit Mehrfachauswahl stehen die Tags <code>&lt;isy:selectManyList
 <p>Beispiel für die Integration eines List-Pickers (ohne Ajax):</p>
 </div>
 <div id="listing-listpickerOhneAjax" class="listingblock">
-<div class="title">Listing 51. Listpicker ohne Ajax</div>
+<div class="title">Listing 50. Listpicker ohne Ajax</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;isy:formListpicker
   reference="anfrageIdentifikation.gruppe"
@@ -4428,7 +4367,7 @@ Dazu können die Attribute <code>ajaxLoading="true"</code> und <code>ajaxForm="g
 Zusätzlich muss im View State das entsprechende Form-Element ergänzt werden:</p>
 </div>
 <div id="listing-listpickerAjaxForm" class="listingblock">
-<div class="title">Listing 52. ListpickerAjaxForm</div>
+<div class="title">Listing 51. ListpickerAjaxForm</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;ui:define name="form"&gt;
    &lt;h:form id="gruppeListpickerAjaxForm"&gt;
@@ -4465,7 +4404,7 @@ Ansonsten steht die Funktionalität nicht zur Verfügung.
 Im Folgenden wird beschrieben, welche Schritte durchzuführen sind, damit ein Listpicker über ein Servlet gefiltert werden kann.</p>
 </div>
 <div id="listing-listpickerMitServlet" class="listingblock">
-<div class="title">Listing 53. Listpicker mit Servlet-Filterung</div>
+<div class="title">Listing 52. Listpicker mit Servlet-Filterung</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;isy:formListpicker
   reference="anfrageIdentifikation.gruppe"
@@ -4485,7 +4424,7 @@ Erstens wird anhand des Vorhandenseins des Parameters erkannt, dass ein Servlet 
 Zweitens muss der Wert des Parameters sich in der Konfiguration des HandlerServlets wiederfinden.</p>
 </div>
 <div id="listing-beispielEinbindungServlet" class="listingblock">
-<div class="title">Listing 54. Beispielhafte HandlerServlet-Konfiguration</div>
+<div class="title">Listing 53. Beispielhafte HandlerServlet-Konfiguration</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Bean, die AbstractListpickerProviderRequestHandler implementiert
 @Bean
@@ -4532,7 +4471,7 @@ Zusätzlich benötigte Parameter können frei gewählt werden und müssen einfac
 Ein Beispiel:</p>
 </div>
 <div id="listing-listpickerMitServletWeitererPara" class="listingblock">
-<div class="title">Listing 55. Servlet-URL mit weiteren Filter-Parametern</div>
+<div class="title">Listing 54. Servlet-URL mit weiteren Filter-Parametern</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;isy:formListpicker
   servletUrl="/app/listpicker?weitererFilterParameter1={#eingabeModel.weitererFilterParameter1}&amp;weitererFilterParameter2={#eingabeModel.weitererFilterParameter2}" /&gt;</code></pre>
@@ -4600,7 +4539,7 @@ Dafür ist jedoch auch ein größerer Implementierungsaufwand erforderlich.</p>
 <p>Beispiel für die Definition einer <code>&lt;isy:dataTable&gt;</code>:</p>
 </div>
 <div id="listing-dataTable" class="listingblock">
-<div class="title">Listing 56. Beispiel für <code>&lt;isy:dataTable&gt;</code> Verwendung</div>
+<div class="title">Listing 55. Beispiel für <code>&lt;isy:dataTable&gt;</code> Verwendung</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;isy:dataTable
   dataTableModel="#{...}"
@@ -4785,7 +4724,7 @@ Dieses Tag sollte nach den Headern in den Body der Datatable geschrieben werden.
 </ul>
 </div>
 <div id="listing-rowdefinition" class="listingblock">
-<div class="title">Listing 57. Beispiel einer Row-Definition</div>
+<div class="title">Listing 56. Beispiel einer Row-Definition</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;ui:composition&gt;
 
@@ -4842,7 +4781,7 @@ Dieses Tag rendert einen Button und öffnet die Detailansicht eines Treffers.
 Die Detailansicht eines Treffers befindet sich an der im Tag <code>&lt;isy:dataTableRows&gt;</code> angegebenen Stelle.</p>
 </div>
 <div id="listing-detaildefinition" class="listingblock">
-<div class="title">Listing 58. Beispiel einer Detail-Definition</div>
+<div class="title">Listing 57. Beispiel einer Detail-Definition</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;ui:composition&gt;
   &lt;td colspan="2"&gt;
@@ -4902,7 +4841,7 @@ Spalten, die nicht gefiltert werden sollen (bzw. können), werden mittels des Ta
 </table>
 </div>
 <div id="listing-bspTableFilter" class="listingblock">
-<div class="title">Listing 59. Beispiel für die Filterung einer Tabelle</div>
+<div class="title">Listing 58. Beispiel für die Filterung einer Tabelle</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;f:facet name="tableFilter"&gt;
   &lt;!-- Platzhalter für eine Spalte, die z.B. Checkboxen enthält --&gt;
@@ -4987,7 +4926,7 @@ Im Modus <code>CLIENT</code> erfolgt die Sortierung automatisch per JavaScript.
 Im Modus <code>SERVER</code> wird die Methode <code>DataTableController.updateDisplayItems(&#8230;&#8203;)</code> aufgerufen, welche die Tabelleneinträge filtert, sortiert und anschließend seitenweise anzeigt.</p>
 </div>
 <div id="listing-dataTableHeader2" class="listingblock">
-<div class="title">Listing 60. Beispiel für dataTableHeader</div>
+<div class="title">Listing 59. Beispiel für dataTableHeader</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;isy:dataTableHeader name="#{...}" sortable="true" sortProperty="vorname"/&gt;</code></pre>
 </div>
@@ -5005,7 +4944,7 @@ Im Modus <code>SERVER</code> wird die Methode <code>DataTableController.updateDi
 <p><strong>Header-Definition:</strong> In der Header-Definition muss ein <code>&lt;isy:dataTableHeader&gt;</code> Tag an erster Stelle mit folgender Definition aufgenommen werden:</p>
 </div>
 <div id="listing-zeilenselektion1" class="listingblock">
-<div class="title">Listing 61. Zeilenselektion Schritt 1</div>
+<div class="title">Listing 60. Zeilenselektion Schritt 1</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;isy:dataTableHeader&gt;
   &lt;isy:dataTableRowAllSelection /&gt;
@@ -5016,7 +4955,7 @@ Im Modus <code>SERVER</code> wird die Methode <code>DataTableController.updateDi
 <p><strong>Row-Definition:</strong> In der Row-Definition muss ein <code>&lt;isy:dataTableCell&gt;</code> Tag an erster Stelle mit folgender Definition aufgenommen werden:</p>
 </div>
 <div id="listing-zeilenselektion2" class="listingblock">
-<div class="title">Listing 62. Zeilenselektion Schritt 2</div>
+<div class="title">Listing 61. Zeilenselektion Schritt 2</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;isy:dataTableCell&gt;
   &lt;isy:dataTableRowSelection /&gt;
@@ -5060,7 +4999,7 @@ Um dem Benutzer den Umgang mit solchen Tabellen zu vereinfachen, werden zunächs
 Die Paginierung wird beim Initialisieren des <code>DataTableModel</code> im Controller konfiguriert:</p>
 </div>
 <div id="listing-implPaginierung" class="listingblock">
-<div class="title">Listing 63. Implementierung Paginierung</div>
+<div class="title">Listing 62. Implementierung Paginierung</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public void initialisiereModel(DataTableModel model) {
    model.getPaginationModel().setPageSize(3);
@@ -5073,7 +5012,7 @@ Die Paginierung wird beim Initialisieren des <code>DataTableModel</code> im Cont
 <p>In der View setzt folgendes Facet die Paginierung um:</p>
 </div>
 <div id="listing-implPaginierungView" class="listingblock">
-<div class="title">Listing 64. Implementierung Paginierung in der View</div>
+<div class="title">Listing 63. Implementierung Paginierung in der View</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;f:facet name="tablePagination"&gt;
   &lt;isy:dataTablePaginator /&gt;
@@ -5422,23 +5361,24 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 <h4 id="horizontale-navigation"><a class="anchor" href="#horizontale-navigation"></a>6.11.1. Horizontale Navigation</h4>
 <div class="paragraph">
 <p>Die Navigationsleiste im Header-Bereich lässt sich konfigurierbar gestalten.
-Hierzu muss jede Anwendung zunächst eine Instanz von <code>NavigationMenuGenerierenAusKonfiguration</code> im Application-Context zur Verfügung stellen und korrekt konfigurieren.
-Die Bean benötigt lediglich einen <code>AufrufkontextVerwalter</code> und eine <code>Konfiguration</code>, um korrekt zu funktionieren.</p>
+Hierzu muss jede Anwendung zunächst eine Instanz von <code>de.bund.bva.isyfact.common.web.jsf.components.navigationmenu.generieren.impl.NavigationMenuGenerierenAusKonfiguration</code> im Application-Context zur Verfügung stellen und korrekt konfigurieren.
+Die Bean benötigt lediglich einen <code>de.bund.bva.isyfact.security.core.Berechtigungsmanager</code> und eine <code>de.bund.bva.isyfact.konfiguration.common.Konfiguration</code>, um korrekt zu funktionieren.</p>
 </div>
 <div id="listing-bspBeanHauptnavigation" class="listingblock">
-<div class="title">Listing 65. Beispiel für die Deklaration der Bean</div>
+<div class="title">Listing 64. Beispiel für die Deklaration der Bean</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;bean id="navigationMenuGenerierenStrategie" class="de.bund.bva.isyfact.common.web.jsf.components.navigationmenu.generieren.impl.NavigationMenuGenerierenAusKonfiguration"&gt;
-	&lt;property name="konfiguration" ref="konfiguration"/&gt;
-	&lt;property name="aufrufKontextVerwalter" ref="aufrufKontextVerwalter"/&gt;
-&lt;/bean&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">@Bean
+public NavigationMenuGenerierenAusKonfiguration navigationMenuGenerierenStrategie(
+        Konfiguration konfiguration, Berechtigungsmanager berechtigungsmanager) {
+    return new NavigationMenuGenerierenAusKonfiguration(konfiguration, berechtigungsmanager);
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Ein einzelner Eintrag in der Navigation lässt sich nach folgendem Schema konfigurieren:</p>
 </div>
 <div id="listing-beispielHorizontaleNavigation" class="listingblock">
-<div class="title">Listing 66. Beispiel zur Konfiguration der horizontalen Navigation</div>
+<div class="title">Listing 65. Beispiel zur Konfiguration der horizontalen Navigation</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">gui.navbar.applikationsgruppe.1.wert = JSF-Vorlagen
 gui.navbar.applikationsgruppe.1.link = /isy-webgui/app/index.html
@@ -5535,7 +5475,7 @@ Ein Anwender sieht den jeweiligen Eintrag, sobald er mindestens eine der benöti
 <p>Das folgende Beispiel zeigt, wie die Navigationsleiste um einen weiteren Eintrag samt Flyout Menü erweitert werden könnte:</p>
 </div>
 <div id="listing-beispielHorizontaleNavigationErweitert" class="listingblock">
-<div class="title">Listing 67. Erweiterung der Konfiguration der horizontalen Navigation</div>
+<div class="title">Listing 66. Erweiterung der Konfiguration der horizontalen Navigation</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">gui.navbar.applikationsgruppe.2.wert = Layouts
 gui.navbar.applikationsgruppe.2.link = /isy-webgui/app/page-details.html
@@ -5571,7 +5511,7 @@ Die Konfiguration muss in der Konfigurations-Bean <code>konfiguration</code> ein
 Für jede ID wird anschließend die Linksnavigation konfiguriert.</p>
 </div>
 <div id="listing-beispielLinksnavigation" class="listingblock">
-<div class="title">Listing 68. Beispiel zur Konfiguration der Linksnavigation</div>
+<div class="title">Listing 67. Beispiel zur Konfiguration der Linksnavigation</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">gui.linksnavigation.ids=linksnavigationbeispiel,jsfSteuerelemente
 
@@ -5698,7 +5638,7 @@ Unterstützt wird die Anzeige von Hierarchieebene über die Methoden <code>pushH
 Mit dem in <a href="#listing-breadcrumbmodel">Verwendung des Breadcrumb-Models</a> gezeigten Code wird der in <a href="#image-breadcrumb">Breadcrumb in der Titelzeile der Detailseite der Applikation</a> gezeigte Breadcrumb realisiert.</p>
 </div>
 <div id="listing-breadcrumbmodel" class="listingblock">
-<div class="title">Listing 69. Verwendung des Breadcrumb-Models</div>
+<div class="title">Listing 68. Verwendung des Breadcrumb-Models</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public void initialisiereBreadcrumbModel(LocationBreadcrumbModel model) {
     model.setObjektname("Testobjekt / ID-1234");
@@ -5739,7 +5679,7 @@ Konkrete Seiten können dadurch Einfluss auf das Aussehen der Seitentoolbar nehm
 Zur Konfiguration des Buttons muss eine URL zu einer Hilfeseite hinterlegt werden.</p>
 </div>
 <div id="listing-hilfe-konfig" class="listingblock">
-<div class="title">Listing 70. Konfiguration des Hilfe-Buttons</div>
+<div class="title">Listing 69. Konfiguration des Hilfe-Buttons</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">portalhilfe.url=https://example.com/hilfeanwendung</code></pre>
 </div>
@@ -5752,7 +5692,7 @@ Zur Konfiguration des Buttons muss eine URL zu einer Hilfeseite hinterlegt werde
 Soll der Hilfe-Button standardmäßig ausgeschaltet bleiben, kann dies über den Parameter <code>hilfe.default.aktiv</code> in der Konfiguration der Anwendung erfolgen.</p>
 </div>
 <div id="listing-hilfe-deaktivieren" class="listingblock">
-<div class="title">Listing 71. Ausschalten des Hilfe-Buttons</div>
+<div class="title">Listing 70. Ausschalten des Hilfe-Buttons</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">hilfe.default.aktiv=false</code></pre>
 </div>
@@ -5762,7 +5702,7 @@ Soll der Hilfe-Button standardmäßig ausgeschaltet bleiben, kann dies über den
 Das <a href="#listing-hilfe-flow">Ausschalten des Hilfe-Buttons in einem Flow</a> zeigt das Ausschalten des Hilfe-Buttons in der XML-Datei eines Flows.</p>
 </div>
 <div id="listing-hilfe-flow" class="listingblock">
-<div class="title">Listing 72. Ausschalten des Hilfe-Buttons in einem Flow</div>
+<div class="title">Listing 71. Ausschalten des Hilfe-Buttons in einem Flow</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;on-start&gt;
     &lt;!-- ... andere Initialisierungen des Flows ... --&gt;
@@ -5996,7 +5936,7 @@ Falls ja, werden entsprechende CSS-Klassen für das Layouting eingebunden. (Stan
 Um ein einfaches Suchformular umzusetzen, genügt z.B. folgender Code:</p>
 </div>
 <div id="listing-bspFormularumsetzung" class="listingblock">
-<div class="title">Listing 73. Beispiel für Formularumsetzung</div>
+<div class="title">Listing 72. Beispiel für Formularumsetzung</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;div&gt;
     &lt;div class="form-horizontal"&gt;
@@ -6378,7 +6318,7 @@ Da der Grundgedanke der 4-Augen-Komponenten darin besteht, dass Eingaben erst vo
 <p>Die folgenden beiden Listings zeigen entsprechende Codebeispiele für die Umsetzung dieses Grundgedankens im Maskenflow und -controller.</p>
 </div>
 <div id="listing-vierAugenFlow" class="listingblock">
-<div class="title">Listing 74. 4-Augen-Komponente Flow: Initialisierung und Action-State (speichern)</div>
+<div class="title">Listing 73. 4-Augen-Komponente Flow: Initialisierung und Action-State (speichern)</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;flow&gt;
    &lt;var name="maskenModel" class="de.bund.bva... .VieraugenMaskeModel"/&gt;
@@ -6402,7 +6342,7 @@ Da der Grundgedanke der 4-Augen-Komponenten darin besteht, dass Eingaben erst vo
 <p>Der Wert einer 4-Augen-Komponente kann zum Beispiel in der Model-Initialisierungsmethode gesetzt werden.</p>
 </div>
 <div id="listing-VieraugenMaskeController" class="listingblock">
-<div class="title">Listing 75. 4-Augen-Komponente Controller: Initialisierung und Action-State (speichern)</div>
+<div class="title">Listing 74. 4-Augen-Komponente Controller: Initialisierung und Action-State (speichern)</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6604,7 +6544,7 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 </ul>
 </div>
 <div id="listing-codeFormCheckbox4" class="listingblock">
-<div class="title">Listing 76. Codebeispiel für formCheckboxWithFourEyes JSP-Komponente</div>
+<div class="title">Listing 75. Codebeispiel für formCheckboxWithFourEyes JSP-Komponente</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;!-- formCheckbox with FourEyes --&gt;
 
@@ -6729,7 +6669,7 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 </ul>
 </div>
 <div id="listing-codeFormCurrencyWith4Eyes" class="listingblock">
-<div class="title">Listing 77. Codebeispiel für formCurrencyInputWithFourEyes JSP-Komponente</div>
+<div class="title">Listing 76. Codebeispiel für formCurrencyInputWithFourEyes JSP-Komponente</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;!-- formCurrencyInputWithFourEyes --&gt;
 
@@ -6837,7 +6777,7 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 </ul>
 </div>
 <div id="listing-codeFormDate4" class="listingblock">
-<div class="title">Listing 78. Codebeispiel für formDateWithFourEyes JSP-Komponente</div>
+<div class="title">Listing 77. Codebeispiel für formDateWithFourEyes JSP-Komponente</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;div class="row"&gt;
 	&lt;h2&gt;isy:formDateWithFourEyes&lt;/h2&gt;
@@ -6971,7 +6911,7 @@ Mögliche Werte alle Werte für das Feld type des HTML Input Felds. (Standard: <
 <p>Codebeispiel:</p>
 </div>
 <div id="listing-codeFormInputWithFourEyes" class="listingblock">
-<div class="title">Listing 79. Codebeispiel für formInputWithFourEyes JSP-Komponente</div>
+<div class="title">Listing 78. Codebeispiel für formInputWithFourEyes JSP-Komponente</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;div class="row"&gt;
 	&lt;h2&gt;isy:formInputWithFourEyes&lt;/h2&gt;
@@ -7079,7 +7019,7 @@ Mögliche Werte alle Werte für das Feld type des HTML Input Felds. (Standard: <
 <p>Codebeispiel:</p>
 </div>
 <div id="listing-codeFormNumericInputWithFourEyes" class="listingblock">
-<div class="title">Listing 80. Codebeispiel für formNumericInputWithFourEyes JSP-Komponente</div>
+<div class="title">Listing 79. Codebeispiel für formNumericInputWithFourEyes JSP-Komponente</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;div class="row"&gt;
 	&lt;h2&gt;isy:formNumericInputWithFourEyes&lt;/h2&gt;
@@ -7284,7 +7224,7 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 </ul>
 </div>
 <div id="listing-codeFormTextAreaWithFourEyes" class="listingblock">
-<div class="title">Listing 81. Codebeispiel für formTextAreaWithFourEyes JSP-Komponente</div>
+<div class="title">Listing 80. Codebeispiel für formTextAreaWithFourEyes JSP-Komponente</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;div class="row"&gt;
 	&lt;h2&gt;isy:formTextareaWithFourEyes&lt;/h2&gt;
@@ -7398,7 +7338,7 @@ Diese wird im Attribut data-isy-custom-id eingetragen.</p>
 </ul>
 </div>
 <div id="listing-codeSelectOneDropdownWithfourEyes" class="listingblock">
-<div class="title">Listing 82. Codebeispiel für selectOneDropdownWithFourEyes JSP-Komponente</div>
+<div class="title">Listing 81. Codebeispiel für selectOneDropdownWithFourEyes JSP-Komponente</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;div class="row"&gt;
 	&lt;h2&gt;isy:selectOneDropdownWithFourEyes&lt;/h2&gt;
