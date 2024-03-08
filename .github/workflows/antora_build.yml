@@ -13,14 +13,16 @@ jobs:
       MAVEN_CLI_OPTS: '--batch-mode --errors --fail-at-end -T 1C'
 
     steps:
-      - name: Checkout antora-playbook
+      - name: Checkout isyfact.github.io
         uses: actions/checkout@v4
+        with:
+          ref: feature/ISY-998-Analyse_Sichtbarkeit_der_Doku_Warnungen
 
       - name: Checkout isyfact-standards (master)
         uses: actions/checkout@v4
         with:
           repository: IsyFact/isyfact-standards
-          ref: master
+          ref: feature/ISY-998-Analyse_Sichtbarkeit_der_Doku_Warnungen
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards
@@ -138,7 +140,14 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Build Documentation
-        run: npm run build
+        run: |
+          npm run build
+          exit_code=$?
+          # Check exit code of antora build command
+          if [ $exit_code -ne 0 ]; then
+            echo "Antora build failed with exit code $exit_code. Exiting workflow."
+            exit $exit_code
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
