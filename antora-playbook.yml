@@ -52,7 +52,8 @@ content:
 runtime:
   fetch: true
   log:
-    level: info
+    level: debug
+    failure_level: warn
 asciidoc:
   attributes:
     page-toctitle: Inhalt
