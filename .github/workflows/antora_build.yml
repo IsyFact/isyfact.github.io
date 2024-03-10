@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: '0 0 * * 0'
   workflow_dispatch:
+    inputs:
+      distinct_id:
+        description: 'The distinct id of the workflow run'
 
 jobs:
   Build:
@@ -13,10 +16,11 @@ jobs:
       MAVEN_CLI_OPTS: '--batch-mode --errors --fail-at-end -T 1C'
 
     steps:
-      - name: Checkout isyfact.github.io
+      - name: echo distinct ID ${{ github.event.inputs.distinct_id }}
+        run: echo ${{ github.event.inputs.distinct_id }}
+
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          ref: feature/ISY-998-Analyse_Sichtbarkeit_der_Doku_Warnungen
 
       - name: Checkout isyfact-standards (master)
         uses: actions/checkout@v4
