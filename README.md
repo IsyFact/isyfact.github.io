@@ -1,4 +1,4 @@
-# IsyFact Online Docs: 
+# IsyFact Online Docs
 
 ## Publishing
 This repository contains GitHub actions to build and publish the online docs at https://isyfact.github.io via GitHub Pages.
