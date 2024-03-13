@@ -5,17 +5,43 @@ This repository contains GitHub actions to build and publish the online docs at 
 
 You don't need to clone this repository for your daily technical writing. 🙂
 
-## Antora playbook and customization
+## Antora Playbooks and Customization
 
-Additionally, this repository contains the Antora playbook, Antora extensions and a customized UI for the IsyFact online docs.
+Additionally, this repository contains the Antora playbooks, Antora extensions and a customized UI for the IsyFact online docs.
+
+There are 2 playbooks:
+- `antora-playbook.yml`: For CI/CD-based builds in GitHub Actions.
+- `antora-playbook-local.yml`: For local builds. Useful for testing and development.
 
 ## Prerequisites
 The documentation is written in [AsciiDoc](https://docs.asciidoctor.org/asciidoc/latest/) and uses [Antora](https://antora.org/) to build a static HTML site for easy browsing.
 
 To build the online docs, you need the following prerequisites.
+- **Git LFS**: For repositories that use Git Large File Storage. [Installation Guide](https://git-lfs.com/).
+- **Maven**: For generating templates if project uses Maven for build processes. [Installation Guide](https://maven.apache.org/install.html).
+- **Node.js & npm**: For running Antora and managing JavaScript dependencies. You should use a version manager (i.e. [nvm for Windows](https://github.com/coreybutler/nvm-windows) or [nvm for Linux/macOS](https://github.com/nvm-sh/nvm)), or you can install both manually for your OS. Please use at least the latest LTS version.
 
-**node.js & npm**: You should use a version manager (i.e. [nvm for Windows](https://github.com/coreybutler/nvm-windows) or [nvm for Linux/macOS](https://github.com/nvm-sh/nvm)), or you can install both manually for your OS.
-Please use at least the latest LTS version.
+## Local Testing and Development
+The `antora_build.sh` script automates the setup and build process for testing and developing Antora documentation. Key steps include: 
+- Cloning repositories and specific branches
+- Setting up Git LFS
+- Template generation with Maven
+- Dependency installation
+- Running the Antora build locally
+
+Steps to run `antora_build.sh`:
+- Make the script executable:
+    ```shell
+    chmod +x antora_build.sh
+    ```
+- Run the script:
+    ```shell
+    ./antora_build.sh
+    ```
+- After the initial successful run, you can use the following command to rebuild the documentation after changes to the AsciiDoc files to save time by skipping the initial setup steps:
+    ```shell
+    npm run build:local
+    ```
 
 ## Known Bugs & Limitations
 
