@@ -3,6 +3,12 @@
 # Exit immediately if a command exits with a non-zero status.
 set -e
 
+# Define color variables
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
 # Function to clone a repository if it doesn't already exist
 clone_repo() {
   local url=$1
@@ -40,7 +46,7 @@ generate_templates() {
 
 # Function to install npm dependencies if they are not already installed
 install_npm_dependencies() {
-  echo "Checking for npm dependencies..."
+  echo -e "${BLUE}Checking for npm dependencies...${NC}"
   if [ ! -d "node_modules" ]; then
     echo "Installing npm dependencies..."
     npm install
@@ -51,27 +57,27 @@ install_npm_dependencies() {
 
 # Function to handle Antora build and capture its exit status explicitly
 run_antora_build() {
-    echo "Running the Antora build..."
+    echo -e "${BLUE}Running the Antora build...${NC}"
     if ! npm run build:local; then
         exit_code=$?
-        echo "Antora documentation build failed with exit code $exit_code."
+        echo -e "${RED}Antora documentation build failed with exit code $exit_code.${NC}"
         exit $exit_code
     else
-        echo "Antora documentation build completed successfully."
+        echo -e "${GREEN}Antora documentation build completed successfully.${NC}"
     fi
 }
 
 # Main Script Execution
 
 # Clone the repositories
-echo "Cloning repositories..."
+echo -e "${BLUE}Cloning repositories...${NC}"
 clone_repo https://github.com/IsyFact/isy-documentation.git ../isy-documentation master
 clone_repo https://github.com/IsyFact/isyfact-standards.git ../isyfact-standards master
 clone_repo https://github.com/IsyFact/isyfact-standards.git ../isyfact-standards-3.x release/3.x
 clone_repo https://github.com/IsyFact/isy-web.git ../isy-web master
 
 # Set up Git LFS
-echo "Setting up Git LFS..."
+echo -e "${BLUE}Setting up Git LFS...${NC}"
 setup_git_lfs ../isyfact-standards
 setup_git_lfs ../isyfact-standards-3.x
 setup_git_lfs ../isy-web

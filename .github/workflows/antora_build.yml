@@ -7,13 +7,19 @@ on:
   workflow_dispatch:
     inputs:
       distinct_id:
-        description: 'The distinct id of the workflow run'
+        # Used by codex-/return-dispatch action from another workflow to keep track of the run. Manual runs using the UI do not require this input.
+        description: 'The distinct id of the workflow run (optional)'
 
 jobs:
   Build:
     runs-on: ubuntu-latest
     env:
       MAVEN_CLI_OPTS: '--batch-mode --errors --fail-at-end -T 1C'
+
+      # Define color variables
+      RED: '\033[0;31m'
+      GREEN: '\033[0;32m'
+      NC: '\033[0m' # No Color
 
     steps:
       - name: Get distinct ID ${{ github.event.inputs.distinct_id }}
@@ -149,10 +155,10 @@ jobs:
           
           # Check exit code of antora build command
           if [ "$BUILD_FAILED" = true ]; then
-              echo "Antora documentation build failed with exit code $exit_code."
+              echo -e "${RED}Antora documentation build failed with exit code $exit_code.${NC}"
               exit $exit_code
           else
-            echo "Antora documentation build completed successfully."
+            echo -e "${GREEN}Antora documentation build completed successfully.${NC}"
           fi
 
       - name: Upload artifact
