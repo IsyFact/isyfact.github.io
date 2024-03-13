@@ -10,8 +10,8 @@ You don't need to clone this repository for your daily technical writing. 🙂
 Additionally, this repository contains the Antora playbooks, Antora extensions and a customized UI for the IsyFact online docs.
 
 There are 2 playbooks:
-- `antora-playbook.yml`: Playbook for CI/CD-based builds in GitHub Actions.
-- `antora-playbook-local.yml`: Playbook for local testing and development.
+- `antora-playbook.yml`: For CI/CD-based builds in GitHub Actions.
+- `antora-playbook-local.yml`: For local builds. Useful for testing and development.
 
 ## Prerequisites
 The documentation is written in [AsciiDoc](https://docs.asciidoctor.org/asciidoc/latest/) and uses [Antora](https://antora.org/) to build a static HTML site for easy browsing.
