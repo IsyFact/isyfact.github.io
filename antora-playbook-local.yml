@@ -6,30 +6,19 @@ urls:
   latest_version_segment: current
   latest_prerelease_version_segment: dev
 content:
-  # Comment: Ideal configuration when Antora supports Git LFS (see README for details)
-#  sources:
-#    - url: https://github.com/IsyFact/isy-documentation.git
-#      branches: HEAD
-#      start_path: src/docs/antora
-#    - url: https://github.com/IsyFact/isyfact-standards.git
-#      branches: [release/3.x,master]
-#      start_path: isyfact-standards-doc/src/docs/antora
-#    - url: https://github.com/IsyFact/isy-web.git
-#      branches: HEAD
-#      start_path: isy-web-doc/src/docs/antora
-
-  # Comment: Configuration for CI/CD-Pipeline (using the Git LFS workaround as described in the README)
+  # Comment: Configuration for development (e.g. with feature branches that aren't pushed yet)
+  # Convention: All git repositories are cloned in the same parent directory.
   sources:
-    - url: ./isy-documentation
+    - url: ../isy-documentation
       branches: HEAD
       start_path: src/docs/antora
-    - url: ./isyfact-standards
+    - url: ../isyfact-standards
       branches: HEAD
       start_path: isyfact-standards-doc/src/docs/antora
-    - url: ./isyfact-standards-3.x
+    - url: ../isyfact-standards-3.x
       branches: HEAD
       start_path: isyfact-standards-doc/src/docs/antora
-    - url: ./isy-web
+    - url: ../isy-web
       branches: HEAD
       start_path: isy-web-doc/src/docs/antora
 

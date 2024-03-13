@@ -16,7 +16,7 @@ jobs:
       MAVEN_CLI_OPTS: '--batch-mode --errors --fail-at-end -T 1C'
 
     steps:
-      - name: echo distinct ID ${{ github.event.inputs.distinct_id }}
+      - name: Get distinct ID ${{ github.event.inputs.distinct_id }}
         run: echo ${{ github.event.inputs.distinct_id }}
 
       - name: Checkout
