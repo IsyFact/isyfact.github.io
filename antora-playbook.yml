@@ -9,8 +9,8 @@ content:
   # Comment: Ideal configuration when Antora supports Git LFS (see README for details)
   #sources:
     #- url: https://github.com/IsyFact/isy-documentation.git
-    #  branches: HEAD
-    #  start_path: src/docs/antora
+    #  branches: [master]
+    #  start_paths: documentation-guide,glossary
     #- url: https://github.com/IsyFact/isyfact-standards.git
     #  branches: [release/3.x,master]
     #  start_path: isyfact-standards-doc/src/docs/antora
@@ -22,7 +22,7 @@ content:
   sources:
     - url: ./isy-documentation
       branches: HEAD
-      start_path: src/docs/antora
+      start_paths: documentation-guide,glossary
     - url: ./isyfact-standards
       branches: HEAD
       start_path: isyfact-standards-doc/src/docs/antora
@@ -37,8 +37,8 @@ content:
   # Convention: All git repositories are cloned in the same parent directory.
   #sources:
   #  - url: ../isy-documentation
-  #    branches: HEAD
-  #    start_path: src/docs/antora
+  #    branches: [master]
+  #    start_paths: documentation-guide, glossary
   #  - url: ../isyfact-standards
   #    branches: [release/3.x,master]
   #    start_path: isyfact-standards-doc/src/docs/antora
