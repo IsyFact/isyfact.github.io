@@ -39,7 +39,6 @@ jobs:
           repository: IsyFact/isy-documentation
           ref: master
           lfs: true
-          sparse-checkout: src/docs/antora
           path:  isy-documentation
 
       - name: Checkout isy-web
