@@ -32,6 +32,14 @@ jobs:
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-3.x
+      - name: Checkout isyfact-standards (release/3.0.x)
+        uses: actions/checkout@v4
+        with:
+          repository: IsyFact/isyfact-standards
+          ref: release/3.0.1
+          lfs: true
+          sparse-checkout: isyfact-standards-doc/src/docs/antora
+          path: isyfact-standards-3.0.x
 
       - name: Checkout isy-documentation
         uses: actions/checkout@v4

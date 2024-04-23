@@ -12,7 +12,7 @@ content:
     #  branches: [master]
     #  start_paths: [documentation-guide,glossary]
     #- url: https://github.com/IsyFact/isyfact-standards.git
-    #  branches: [release/3.x,master]
+    #  branches: [master,release/3.x,release/3.0.1]
     #  start_path: isyfact-standards-doc/src/docs/antora
     #- url: https://github.com/IsyFact/isy-web.git
     #  branches: HEAD
@@ -29,6 +29,9 @@ content:
     - url: ./isyfact-standards-3.x
       branches: HEAD
       start_path: isyfact-standards-doc/src/docs/antora
+    - url: ./isyfact-standards-3.0.x
+      branches: HEAD
+      start_path: isyfact-standards-doc/src/docs/antora
     - url: ./isy-web
       branches: HEAD
       start_path: isy-web-doc/src/docs/antora
@@ -40,7 +43,7 @@ content:
   #    branches: [master]
   #    start_paths: [documentation-guide,glossary]
   #  - url: ../isyfact-standards
-  #    branches: [release/3.x,master]
+  #    branches: [master,release/3.x,release/3.0.1]
   #    start_path: isyfact-standards-doc/src/docs/antora
   #  - url: ../isy-web
   #    branches: HEAD
