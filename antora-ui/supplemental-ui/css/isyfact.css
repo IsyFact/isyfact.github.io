@@ -59,3 +59,39 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #edf2f2; }
 .fa-ban{
     color: #ff0000;
 }
+
+.glossary-deprecated {
+    background-color: darkred;
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.glossary-new {
+    background-color: #336699;
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.glossary-changed {
+    background-color: #ff9900;
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.glossary-release {
+    background-color: #A6A6A6;
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    text-align: center;
+    border-radius: 5px;
+}
