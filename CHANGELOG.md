@@ -1,9 +1,19 @@
 # Changelog
 
-## IsyFact 3.0
+---
+> Please note: This changelog doesn't contain content source updates. 
+It focuses on changes to the UI, extensions and site-wide configuration options in the playbook.
 
-- provide an Antora playbook, based on GitHub, for the online documentation.
-- new Antora extensions for automatically creating summary pages for rules and conventions regarding:
-    - software architecture,
-    - IT security.
+## 2024
+
+- [2024-04-26] [UI] `IFS-2816`: add CSS styles to show new, replaced and outdated terms in the glossary
+- [2024-03-12] [UI] `IFS-2812`: use official Antora Default UI bundle
+- [2024-02-28] [lib] `IFS-2978`: rules extension can handle multiple releases of an Antora component
+
+## 2023
+
+First release of the online documentation as part of the IsyFact 3.0 major release:
+
+- provide an Antora playbook, based on GitHub, for the online documentation,
+- new Antora extension for automatically creating summary pages for rules and conventions regarding software architecture & IT security.
 
