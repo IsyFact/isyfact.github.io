@@ -35,6 +35,9 @@ content:
     - url: ./isy-web
       branches: HEAD
       start_path: isy-web-doc/src/docs/antora
+    - url: ./isy-angular-widgets
+      branches: HEAD
+      start_path: isy-angular-widgets-doc
 
   # Comment: Configuration for development (e.g. with feature branches that aren't pushed yet)
   # Convention: All git repositories are cloned in the same parent directory.
