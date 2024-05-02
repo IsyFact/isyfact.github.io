@@ -58,6 +58,15 @@ jobs:
           sparse-checkout: isy-web-doc/src/docs/antora
           path: isy-web
 
+      - name: Checkout isy-angular-widgets
+        uses: actions/checkout@v4
+        with:
+          repository: IsyFact/isy-angular-widgets
+          ref: master
+          lfs: true
+          sparse-checkout: isy-angular-widgets-doc
+          path: isy-angular-widgets
+
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
