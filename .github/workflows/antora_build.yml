@@ -62,7 +62,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: IsyFact/isy-angular-widgets
-          ref: master
+          ref: main
           lfs: true
           sparse-checkout: isy-angular-widgets-doc
           path: isy-angular-widgets
