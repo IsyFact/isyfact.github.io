@@ -77,6 +77,8 @@ jobs:
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards/isyfact-standards-doc package
       - name: Generate Templates (release/3.x)
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-3.x/isyfact-standards-doc package
+      - name: Generate Templates (release/3.0.x)
+        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-3.0.x/isyfact-standards-doc package
 
       - name: Setup node
         uses: actions/setup-node@v4
