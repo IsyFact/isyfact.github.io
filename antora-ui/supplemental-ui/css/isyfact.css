@@ -57,7 +57,11 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #edf2f2; }
 }
 
 .fa-ban{
-    color: #ff0000;
+    color: red;
+}
+
+.fa-puzzle-piece, .fa-wrench {
+    color: #ff9900;
 }
 
 .glossary-deprecated {
