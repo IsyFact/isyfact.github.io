@@ -12,7 +12,7 @@ content:
     #  branches: [master]
     #  start_paths: [documentation-guide,glossary]
     #- url: https://github.com/IsyFact/isyfact-standards.git
-    #  branches: [master,release/3.x,release/3.0.1]
+    #  branches: [master, release/3.x, release/3.0.1]
     #  start_path: isyfact-standards-doc/src/docs/antora
     #- url: https://github.com/IsyFact/isy-web.git
     #  branches: HEAD
@@ -22,7 +22,7 @@ content:
   sources:
     - url: ./isy-documentation
       branches: HEAD
-      start_paths: [documentation-guide,glossary]
+      start_paths: [documentation-guide, glossary]
     - url: ./isyfact-standards
       branches: HEAD
       start_path: isyfact-standards-doc/src/docs/antora
@@ -35,6 +35,10 @@ content:
     - url: ./isy-web
       branches: HEAD
       start_path: isy-web-doc/src/docs/antora
+    - url: ./isy-angular-widgets
+      branches: HEAD
+      start_path: isy-angular-widgets-doc
+
 
   # Comment: Configuration for development (e.g. with feature branches that aren't pushed yet)
   # Convention: All git repositories are cloned in the same parent directory.
