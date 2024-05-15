@@ -59,29 +59,43 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #edf2f2; }
 .fa-ban{
     color: #ff0000;
 }
-
+/* veraltet, anpassungsbedarf */
 .glossary-deprecated {
     background-color: darkred;
     color: white;
     font-weight: bold;
+    font-size: .65rem;
     padding: 4px 8px;
     text-align: center;
     border-radius: 5px;
 }
-
+/* dieser Status sollte gestrichen werden */
 .glossary-new {
     background-color: #336699;
     color: white;
     font-weight: bold;
+    font-size: .65rem;
+    padding: 4px 8px;
+    text-align: center;
+    border-radius: 5px;
+}
+/* vorgeschlagen */
+.glossary-proposed {
+    background-color: #336699;
+    color: white;
+    font-weight: bold;
+    font-size: .65rem;
     padding: 4px 8px;
     text-align: center;
     border-radius: 5px;
 }
 
+/* abgelöst */
 .glossary-changed {
-    background-color: #ff9900;
+    background-color: #444;
     color: white;
     font-weight: bold;
+    font-size: .65rem;
     padding: 4px 8px;
     text-align: center;
     border-radius: 5px;
@@ -91,7 +105,12 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #edf2f2; }
     background-color: #A6A6A6;
     color: white;
     font-weight: bold;
+    font-size: .65rem;
     padding: 4px 8px;
     text-align: center;
     border-radius: 5px;
 }
+
+.glossary-proposed a, .glossary-new a, .glossary-changed a, .glossary-deprecated a, .glossary-release a {
+    color: white;
+  }
