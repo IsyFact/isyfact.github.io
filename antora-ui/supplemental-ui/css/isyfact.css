@@ -99,3 +99,12 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #edf2f2; }
     text-align: center;
     border-radius: 5px;
 }
+
+.navbar-item img {
+    width: 40px;
+}
+
+.nav-panel-explore .component .is-latest a {
+    background: #ff9900;
+    color: #f0f0f0;
+}
