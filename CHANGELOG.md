@@ -6,6 +6,8 @@ It focuses on changes to the UI, extensions and site-wide configuration options 
 
 ## 2024
 
+- [2024-05-17] [UI] `IFS-3748`: add IsyFact logo and top menu entries (links to isyfact.de and GitHub)
+- [2024-05-17] [UI] `IFS-3748`: mark latest stable versions in the component selector yellow
 - [2024-05-08] [UI] `IFS-2593`: icons which represent content changes (Fontawesome 4: puzzle-piece, wrench) are orange
 - [2024-04-26] [UI] `IFS-2816`: add CSS styles to show new, replaced and outdated terms in the glossary
 - [2024-03-12] [UI] `IFS-2812`: use official Antora Default UI bundle
