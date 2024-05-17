@@ -1,11 +1,16 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="{{{or site.url siteRootPath}}}">{{site.title}}</a>
+      <div class="navbar-item">
+        <img src="{{{uiRootPath}}}/img/if-logo.dn.svg" alt="IsyFact-Logo" />
+        <a href="http://isyfact.de" target="_blank">{{site.title}}</a>
+        <span>//</span>
+        <a href="{{{or site.url siteRootPath}}}">Online-Dokumentation</a>
+      </div>
       {{#if env.SITE_SEARCH_PROVIDER}}
       <div class="navbar-item search hide-for-print">
         <div id="search-field" class="field">
-          <input id="search-input" type="text" placeholder="Search the docs"{{#if page.home}} autofocus{{/if}}>
+          <input id="search-input" type="text" placeholder="Doku durchsuchen"{{#if page.home}} autofocus{{/if}}>
         </div>
       </div>
       {{/if}}
@@ -14,6 +19,26 @@
         <span></span>
         <span></span>
       </button>
+    </div>
+
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="https://github.com/IsyFact" target="_blank">GitHub</a>
+          <div class="navbar-dropdown is-right">
+            <div class="navbar-item"><strong>Kern</strong></div>
+            <a class="navbar-item has-label" href="https://github.com/IsyFact/isyfact-standards" target="_blank">IsyFact-Standards<small>isyfact-standards</small></a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Bausteine</strong></div>
+            <a class="navbar-item has-label" href="https://github.com/IsyFact/isy-angular-widgets" target="_blank">Angular<small>isy-angular-widgets</small></a>
+            <a class="navbar-item has-label" href="https://github.com/IsyFact/isy-web" target="_blank">JSF<small>isy-web</small></a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Meta</strong></div>
+            <a class="navbar-item has-label" href="https://github.com/IsyFact/isy-documentation" target="_blank">Übergreifende Inhalte<small>isy-documentation</small></a>
+            <a class="navbar-item has-label" href="https://github.com/IsyFact/isyfact.github.io" target="_blank">Antora Playbook & Anpassungen<small>isyfact.github.io</small></a>
+          </div>
+        </div>
+      </div>
     </div>
   </nav>
 </header>
