@@ -59,58 +59,37 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #edf2f2; }
 .fa-ban{
     color: #ff0000;
 }
-/* veraltet, anpassungsbedarf */
-.glossary-deprecated {
+
+.glossary dt span {
+    color: white;
+    font-size: .7rem;
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+
+.glossary dt span a, .glossary dt span a:hover {
+    color: white;
+}
+
+/* veraltet (deprecated) */
+/* anpassungsbedarf (dated?) */
+.glossary dt span.deprecated {
     background-color: darkred;
-    color: white;
-    font-weight: bold;
-    font-size: .65rem;
-    padding: 4px 8px;
-    text-align: center;
-    border-radius: 5px;
-}
-/* dieser Status sollte gestrichen werden */
-.glossary-new {
-    background-color: #336699;
-    color: white;
-    font-weight: bold;
-    font-size: .65rem;
-    padding: 4px 8px;
-    text-align: center;
-    border-radius: 5px;
-}
-/* vorgeschlagen */
-.glossary-proposed {
-    background-color: #336699;
-    color: white;
-    font-weight: bold;
-    font-size: .65rem;
-    padding: 4px 8px;
-    text-align: center;
-    border-radius: 5px;
 }
 
-/* abgelöst */
-.glossary-changed {
+/* vorgeschlagen (proposed) */
+.glossary dt span.proposed {
+    background-color: #336699;
+}
+
+/* abgelöst (superseded) */
+.glossary dt span.changed {
     background-color: #444;
-    color: white;
-    font-weight: bold;
-    font-size: .65rem;
-    padding: 4px 8px;
-    text-align: center;
-    border-radius: 5px;
 }
 
-.glossary-release {
+/* NEU: überarbeitet (revised/changed?) */
+/* Oder besser im Text entsprechend markieren? */
+
+.glossary dt span.release {
     background-color: #A6A6A6;
-    color: white;
-    font-weight: bold;
-    font-size: .65rem;
-    padding: 4px 8px;
-    text-align: center;
-    border-radius: 5px;
 }
-
-.glossary-proposed a, .glossary-new a, .glossary-changed a, .glossary-deprecated a, .glossary-release a {
-    color: white;
-  }
