@@ -60,6 +60,8 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #edf2f2; }
     color: #ff0000;
 }
 
+/* IFS-3672 */
+
 .glossary dt span {
     color: white;
     font-size: .7rem;
@@ -72,7 +74,6 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #edf2f2; }
 }
 
 /* veraltet (deprecated) */
-/* anpassungsbedarf (dated?) */
 .glossary dt span.deprecated {
     background-color: darkred;
 }
@@ -83,12 +84,9 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #edf2f2; }
 }
 
 /* abgelöst (superseded) */
-.glossary dt span.changed {
+.glossary dt span.superseded {
     background-color: #444;
 }
-
-/* NEU: überarbeitet (revised/changed?) */
-/* Oder besser im Text entsprechend markieren? */
 
 .glossary dt span.release {
     background-color: #A6A6A6;
