@@ -108,3 +108,7 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #edf2f2; }
     background: #ff9900;
     color: #f0f0f0;
 }
+
+.glossary th a, .glossary th a:hover {
+    color: #f0f0f0;
+}
