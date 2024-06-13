@@ -64,35 +64,41 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #edf2f2; }
     color: #ff9900;
 }
 
-/* IFS-3672 */
+/* glossary styles */
 
-.glossary dt span {
+.glossary .status {
+    margin: -1.7rem 0 0;
+    float: right;
+}
+
+.glossary .status span {
     color: white;
     font-size: .7rem;
     padding: 4px 8px;
     border-radius: 5px;
 }
 
-.glossary dt span a, .glossary dt span a:hover {
+.glossary .status span a,
+.glossary .status span a:hover {
     color: white;
 }
 
 /* veraltet (deprecated) */
-.glossary dt span.deprecated {
+.glossary .status .deprecated {
     background-color: darkred;
 }
 
 /* vorgeschlagen (proposed) */
-.glossary dt span.proposed {
+.glossary .status .proposed {
     background-color: #336699;
 }
 
 /* abgelöst (superseded) */
-.glossary dt span.superseded {
+.glossary .status .superseded {
     background-color: #444;
 }
 
-.glossary dt span.release {
+.glossary .status .release {
     background-color: #A6A6A6;
 }
 
@@ -104,11 +110,6 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #edf2f2; }
     background: #ff9900;
     color: #f0f0f0;
 }
-
-
-.glossary-proposed a, .glossary-new a, .glossary-changed a, .glossary-deprecated a, .glossary-release a {
-    color: white;
-  }
 
 .glossary th a, .glossary th a:hover {
     color: #f0f0f0;
