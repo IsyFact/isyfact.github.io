@@ -89,7 +89,9 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #edf2f2; }
 }
 
 /* vorgeschlagen (proposed) */
-.glossary .status .proposed {
+/* überarbeitet (revised) */
+.glossary .status .proposed,
+.glossary .status .revised {
     background-color: #336699;
 }
 
