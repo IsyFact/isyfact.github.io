@@ -38,6 +38,11 @@ content:
     - url: ./isy-angular-widgets
       branches: HEAD
       start_path: isy-angular-widgets-doc
+      
+    - url: ./isy-datetime
+      branches: HEAD
+      start_path: isy-datetime-doc
+      
 
   # Comment: Configuration for development (e.g. with feature branches that aren't pushed yet)
   # Convention: All git repositories are cloned in the same parent directory.
