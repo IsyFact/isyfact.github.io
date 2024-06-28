@@ -67,6 +67,15 @@ jobs:
           sparse-checkout: isy-angular-widgets-doc
           path: isy-angular-widgets
 
+      - name: Checkout isy-datetime
+        uses: actions/checkout@v4
+        with:
+          repository: IsyFact/isy-datetime
+          ref: develop
+          lfs: true
+          sparse-checkout: isy-datetime-doc
+          path: isy-datetime
+
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
