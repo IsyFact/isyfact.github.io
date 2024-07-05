@@ -42,6 +42,9 @@ content:
     - url: ./isy-datetime
       branches: HEAD
       start_path: isy-datetime-doc
+    - url: ./isy-sonderzeichen
+      branches: HEAD
+      start_path: isy-sonderzeichen-doc
       
 
   # Comment: Configuration for development (e.g. with feature branches that aren't pushed yet)

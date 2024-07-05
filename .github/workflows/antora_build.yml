@@ -75,6 +75,14 @@ jobs:
           lfs: true
           sparse-checkout: isy-datetime-doc
           path: isy-datetime
+      - name: Checkout isy-sonderzeichen
+        uses: actions/checkout@v4
+        with:
+          repository: IsyFact/isy-sonderzeichen
+          ref: develop
+          lfs: true
+          sparse-checkout: isy-sonderzeichen-doc
+          path: isy-sonderzeichen
 
       - name: Set up JDK
         uses: actions/setup-java@v4
