@@ -49,16 +49,25 @@ content:
 
   # Comment: Configuration for development (e.g. with feature branches that aren't pushed yet)
   # Convention: All git repositories are cloned in the same parent directory.
-  #sources:
-  #  - url: ../isy-documentation
-  #    branches: [master]
-  #    start_paths: [documentation-guide,glossary]
-  #  - url: ../isyfact-standards
-  #    branches: [master,release/3.x,release/3.0.1]
-  #    start_path: isyfact-standards-doc/src/docs/antora
-  #  - url: ../isy-web
-  #    branches: HEAD
-  #    start_path: isy-web-doc/src/docs/antora
+  #  sources:
+  #    - url: ../isy-documentation
+  #      branches: [master]
+  #      start_paths: [documentation-guide,glossary]
+  #    - url: ../isyfact-standards
+  #      branches: [HEAD,release/3.x,release/3.0.1]
+  #      start_path: isyfact-standards-doc/src/docs/antora
+  #    - url: ../isy-web
+  #      branches: HEAD
+  #      start_path: isy-web-doc/src/docs/antora
+  #    - url: ../isy-angular-widgets
+  #      branches: HEAD
+  #      start_path: isy-angular-widgets-doc
+  #    - url: ../isy-datetime
+  #      branches: HEAD
+  #      start_path: isy-datetime-doc
+  #    - url: ../isy-sonderzeichen
+  #      branches: HEAD
+  #      start_path: isy-sonderzeichen-doc
 
 runtime:
   fetch: true
