@@ -40,7 +40,7 @@ content:
       start_path: isy-angular-widgets-doc
       
     - url: ./isy-datetime
-      branches: HEAD
+      branches: refs/tags/latest-tag
       start_path: isy-datetime-doc
     - url: ./isy-sonderzeichen
       branches: HEAD
