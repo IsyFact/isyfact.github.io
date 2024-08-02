@@ -3,7 +3,8 @@
   "version": "4.0.0",
 
   "scripts": {
-    "build": "antora antora-playbook.yml"
+    "build": "antora antora-playbook.yml",
+    "build:local": "antora antora-playbook-local.yml"
   },
 
   "repository": {
