@@ -32,20 +32,20 @@ jobs:
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-3.x
-      - name: Checkout isyfact-standards (release/3.0.x)
+      - name: Checkout isyfact-standards (feature/IFS-3938_Release_IsyFact-3.1.0)
         uses: actions/checkout@v4
         with:
           repository: IsyFact/isyfact-standards
-          ref: release/3.0.1
+          ref: feature/IFS-3938_Release_IsyFact-3.1.0
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
-          path: isyfact-standards-3.0.x
+          path: isyfact-standards-3.1.x
 
       - name: Checkout isy-documentation
         uses: actions/checkout@v4
         with:
           repository: IsyFact/isy-documentation
-          ref: master
+          ref: feature/IFS-3938_Release_isy-documentation_3.1.0_for_IFE_3_1_0
           lfs: true
           path:  isy-documentation
 
@@ -53,7 +53,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: IsyFact/isy-web
-          ref: master
+          ref: feature/IFS-3938_Release_isy-web_6.1.0_for_IFE_3_1_0
           lfs: true
           sparse-checkout: isy-web-doc/src/docs/antora
           path: isy-web
