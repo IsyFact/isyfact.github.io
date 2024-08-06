@@ -38,7 +38,9 @@ content:
     - url: ./isy-angular-widgets
       branches: HEAD
       start_path: isy-angular-widgets-doc
-      
+    - url: ./isy-bedienkonzept
+      branches: HEAD
+      start_path: isy-bedienkonzept-doc
     - url: ./isy-datetime
       branches: HEAD
       start_path: isy-datetime-doc
