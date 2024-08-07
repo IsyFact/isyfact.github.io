@@ -67,11 +67,26 @@ jobs:
           sparse-checkout: isy-angular-widgets-doc
           path: isy-angular-widgets
 
+      - name: Fetch latest tags
+        id: fetch-latest-tags
+        run: |
+          repos=("isy-datetime" "isy-sonderzeichen")
+          for repo in "${repos[@]}"; do
+            latest_tag=$(git ls-remote --tags https://github.com/IsyFact/$repo.git | grep -o 'refs/tags/[0-9]*\.[0-9]*\.[0-9]*$' | sort -V | tail -n1 | awk -F'/' '{print $3}')
+            if [ -z "$latest_tag" ]; then
+              latest_tag="develop"
+            fi
+            echo "$repo:$latest_tag" >> tags.txt
+            echo "LATEST_TAG_$repo=$latest_tag" >> $GITHUB_ENV
+            echo "$repo=$latest_tag" >> $GITHUB_OUTPUT
+          done
+        shell: bash
+
       - name: Checkout isy-datetime
         uses: actions/checkout@v4
         with:
           repository: IsyFact/isy-datetime
-          ref: develop
+          ref: ${{ steps.fetch-latest-tags.outputs.isy-datetime }}
           lfs: true
           sparse-checkout: isy-datetime-doc
           path: isy-datetime
@@ -80,7 +95,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: IsyFact/isy-sonderzeichen
-          ref: develop
+          ref: ${{ steps.fetch-latest-tags.outputs.isy-sonderzeichen }}
           lfs: true
           sparse-checkout: isy-sonderzeichen-doc
           path: isy-sonderzeichen
