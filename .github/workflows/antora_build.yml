@@ -163,6 +163,13 @@ jobs:
             echo -e "${GREEN}Antora documentation build completed successfully.${NC}"
           fi
 
+      # Upload logs as an artifact
+      - name: Upload Antora build logs
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-logs-${{ github.event.inputs.run_id }}
+          path: build_output.log
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
