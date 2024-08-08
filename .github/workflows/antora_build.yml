@@ -151,10 +151,11 @@ jobs:
         run: npm ci
       - name: Build Documentation
         run: |
-          npm run build || BUILD_FAILED=true
+          npm run build
+          exit_code=$? 
           
           # Check exit code of antora build command
-          if [ "$BUILD_FAILED" = true ]; then
+          if [ "$exit_code" -ne 0 ]; then
               echo -e "${RED}Antora documentation build failed with exit code $exit_code.${NC}"
               exit $exit_code
           else
