@@ -151,10 +151,7 @@ jobs:
         run: npm ci
       - name: Build Documentation
         run: |
-          npm run build > doc_build_output.log 2>&1 || BUILD_FAILED=true
-          
-          # Print logs to console for visibility
-          cat doc_build_output.log
+          npm run build > doc_build_output.json 2>&1 || BUILD_FAILED=true
           
           # Check exit code of antora build command
           if [ "$BUILD_FAILED" = true ]; then
@@ -163,17 +160,16 @@ jobs:
             echo -e "${GREEN}Antora documentation build completed successfully.${NC}"
           fi
 
-      # Upload logs as an artifact
-      - name: Upload Antora build logs
-        uses: actions/upload-artifact@v4
-        with:
-          name: doc-build-logs
-          path: doc_build_output.log
+      - name: Process Documentation Logs
+        run: |
+          # Use jq to prettify or transform the JSON logs
+          jq '.' doc_build_output.json > doc_build_output_pretty.json
 
-      - name: Upload artifact
+      - name: Upload formatted logs
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs
+          name: doc-build-logs
+          path: doc_build_output_pretty.json
 
 #  Deploy:
 #    runs-on: ubuntu-latest
