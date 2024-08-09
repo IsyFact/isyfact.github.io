@@ -174,7 +174,7 @@ jobs:
             . |
             "\(.level): \(.msg)
             \(.source.worktree) (branch: \(.source.refname))
-            File: \(.file.path | sub("^/home/runner/work/isyfact.github.io/isyfact.github.io/"; "")):\(.file.line // "")\n"' > doc_build_output_pretty.txt
+            File: \(.file.path):\(.file.line)\n"' > doc_build_output_pretty.txt
 
       - name: Upload unformatted Logs
         uses: actions/upload-artifact@v4
