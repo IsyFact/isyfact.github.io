@@ -151,7 +151,7 @@ jobs:
         run: npm ci
       - name: Build Documentation
         run: |
-          npm run build > doc_build_output.json 2>&1 || BUILD_FAILED=true
+          antora --log-format=json antora-playbook.yml > doc_build_output.json 2>&1 || BUILD_FAILED=true
           
           # Check exit code of antora build command
           if [ "$BUILD_FAILED" = true ]; then
@@ -159,9 +159,7 @@ jobs:
           else
             echo -e "${GREEN}Antora documentation build completed successfully.${NC}"
           fi
-
-      - name: Process Documentation Logs
-        run: |
+          
           # Use jq to prettify or transform the JSON logs
           jq '.' doc_build_output.json > doc_build_output_pretty.json
 

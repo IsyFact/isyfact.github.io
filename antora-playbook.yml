@@ -56,7 +56,6 @@ content:
 runtime:
   fetch: true
   log:
-    format: json
     level: debug
     failure_level: warn
 asciidoc:
