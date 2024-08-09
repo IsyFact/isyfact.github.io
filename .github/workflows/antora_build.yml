@@ -166,13 +166,17 @@ jobs:
           
           # Filter out non-JSON lines and process with jq
           echo "Filtering JSON lines and processing..."
-          grep '^{.*}$' doc_build_output.json | jq '.' > doc_build_output_pretty.json
+          grep '^{.*}$' doc_build_output.json | jq -r '
+            . |
+            "\(ascii_upcase(.level)) : \(.msg)
+            \(.source.worktree) (branch: \(.source.refname))
+            File: \(.file.path | sub("^/home/runner/work/isyfact.github.io/isyfact.github.io/"; "")):\(.file.line // "")\n"' > doc_build_output_pretty.txt
 
       - name: Upload formatted logs
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: doc-build-logs
-          path: doc_build_output_pretty.json
+          path: doc_build_output_pretty.txt
 
 #  Deploy:
 #    runs-on: ubuntu-latest
