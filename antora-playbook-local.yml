@@ -33,6 +33,10 @@ content:
     - url: ../isy-sonderzeichen
       branches: HEAD
       start_path: isy-sonderzeichen-doc
+    - url: ./cve-reports
+      branches: HEAD
+      start_path: isy-github-actions-templates-doc
+
 
 runtime:
   fetch: true
