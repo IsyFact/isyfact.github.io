@@ -11,10 +11,20 @@ YELLOW='\033[0;33m'      # Yellow for warnings
 BLUE='\033[0;34m'        # Blue for debug
 TURQUOISE='\033[0;36m'   # Turquoise for messages
 
-echo "Filtering JSON lines and processing..."
+# Filter JSON lines from the input file
+echo "Filtering JSON lines..."
+grep '^{.*}$' "$INPUT_FILE" > filtered_logs.json
 
 # Process the JSON file
-grep '^{.*}$' "$INPUT_FILE" | jq -r --arg RESET "$RESET" --arg RED "$RED" --arg GREEN "$GREEN" --arg YELLOW "$YELLOW" --arg BLUE "$BLUE" --arg TURQUOISE "$TURQUOISE" '
+echo "Processing JSON logs..."
+jq -r \
+  --arg RESET "$RESET" \
+  --arg RED "$RED" \
+  --arg GREEN "$GREEN" \
+  --arg YELLOW "$YELLOW" \
+  --arg BLUE "$BLUE" \
+  --arg TURQUOISE "$TURQUOISE" '
+  # Filter entries with a valid source and worktree
   select(.source.worktree != null) |
   "\(.level | ascii_upcase |
     if . == "DEBUG" then $BLUE
@@ -24,7 +34,8 @@ grep '^{.*}$' "$INPUT_FILE" | jq -r --arg RESET "$RESET" --arg RED "$RED" --arg 
     else $RESET end
   )\(.level | ascii_upcase)\($RESET): \($TURQUOISE)\(.msg)\($RESET)
   Source: \(.source.worktree | sub("^/home/runner/work/isyfact.github.io/isyfact.github.io/"; "")) (branch: \(.source.refname))
-  File: \(.file.path | sub("^/home/runner/work/isyfact.github.io/isyfact.github.io/"; "")):\(.file.line // "N/A")\n"' > "$OUTPUT_FILE"
+  File: \(.file.path | sub("^/home/runner/work/isyfact.github.io/isyfact.github.io/"; "")):\(.file.line // "N/A")\n"
+  ' filtered_logs.json > "$OUTPUT_FILE"
 
 # Echo each line with color
 while IFS= read -r line; do

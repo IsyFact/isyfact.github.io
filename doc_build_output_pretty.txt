@@ -1,22 +1,18 @@
-\033[0;31mERROR\033[0m: \033[0;36mtarget of xref not found: isy-datetime-doc:ROOT:konzept/master.adoc#einleitung\033[0m
-  Source: isyfact-standards (branch: master)
-  File: isyfact-standards/isyfact-standards-doc/src/docs/antora/modules/einstieg/pages/vorstellung/isyfact-standards.adoc:N/A
+Source: isyfact-standards (branch: master)
+  \033[0;31mERROR\033[0m: \033[0;36mtarget of xref not found: isy-datetime-doc:ROOT:konzept/master.adoc#einleitung\033[0m
+    File: isyfact-standards/isyfact-standards-doc/src/docs/antora/modules/einstieg/pages/vorstellung/isyfact-standards.adoc:N/A
 
-\033[0;31mERROR\033[0m: \033[0;36mtarget of xref not found: isy-datetime-doc:ROOT:nutzungsvorgaben/master.adoc#einleitung\033[0m
-  Source: isyfact-standards (branch: master)
-  File: isyfact-standards/isyfact-standards-doc/src/docs/antora/modules/einstieg/pages/vorstellung/isyfact-standards.adoc:N/A
+  \033[0;31mERROR\033[0m: \033[0;36mtarget of xref not found: isy-datetime-doc:ROOT:nutzungsvorgaben/master.adoc#einleitung\033[0m
+    File: isyfact-standards/isyfact-standards-doc/src/docs/antora/modules/einstieg/pages/vorstellung/isyfact-standards.adoc:N/A
 
-\033[0;34mDEBUG\033[0m: \033[0;36munknown name for block macro: tag\033[0m
-  Source: isyfact-standards (branch: master)
-  File: isyfact-standards/isyfact-standards-doc/src/docs/antora/modules/isy-logging/pages/konzept/changelog.adoc:6
+  \033[0;34mDEBUG\033[0m: \033[0;36munknown name for block macro: tag\033[0m
+    File: isyfact-standards/isyfact-standards-doc/src/docs/antora/modules/isy-logging/pages/konzept/changelog.adoc:6
 
-\033[0;31mERROR\033[0m: \033[0;36mtarget of xref not found: isy-datetime-doc:ROOT:konzept/master.adoc\033[0m
-  Source: isyfact-standards (branch: master)
-  File: isyfact-standards/isyfact-standards-doc/src/docs/antora/modules/isy-persistence/pages/konzept/vorgaben-konventionen.adoc:N/A
+  \033[0;31mERROR\033[0m: \033[0;36mtarget of xref not found: isy-datetime-doc:ROOT:konzept/master.adoc\033[0m
+    File: isyfact-standards/isyfact-standards-doc/src/docs/antora/modules/isy-persistence/pages/konzept/vorgaben-konventionen.adoc:N/A
 
-\033[0;34mDEBUG\033[0m: \033[0;36munknown style for example block: INFO\033[0m
-  Source: isyfact-standards (branch: master)
-  File: isyfact-standards/isyfact-standards-doc/src/docs/antora/modules/isy-security/pages/nutzungsvorgaben/inhalt.adoc:403
+  \033[0;34mDEBUG\033[0m: \033[0;36munknown style for example block: INFO\033[0m
+    File: isyfact-standards/isyfact-standards-doc/src/docs/antora/modules/isy-security/pages/nutzungsvorgaben/inhalt.adoc:403
 
 \033[0;34mDEBUG\033[0m: \033[0;36munknown style for example block: INFO\033[0m
   Source: isyfact-standards (branch: master)
