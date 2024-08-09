@@ -168,11 +168,9 @@ jobs:
           echo "Filtering JSON lines and processing..."
           grep '^{.*}$' doc_build_output.json | jq -r '
             . |
-            "Level: \(.level) | Time: \(.time) | Component: \(.name) | Message: \(.msg) | File: \(.file.path // "N/A"):\(.file.line // "N/A")"' > doc_build_output_pretty.txt
-
-          # Debug: Verify content is written to the pretty log file
-          echo "Preview of pretty log file:"
-          cat doc_build_output_pretty.txt
+            "\(ascii_upcase(.level)) : \(.msg)
+            \(.source.worktree) (branch: \(.source.refname))
+            File: \(.file.path | sub("^/home/runner/work/isyfact.github.io/isyfact.github.io/"; "")):\(.file.line // "")\n"' > doc_build_output_pretty.txt
 
       - name: Upload formatted logs
         uses: actions/upload-artifact@v4
