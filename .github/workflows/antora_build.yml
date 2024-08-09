@@ -171,19 +171,10 @@ jobs:
           # Filter out non-JSON lines and process with jq
           echo "Filtering JSON lines and processing..."
           grep '^{.*}$' doc_build_output.json | jq -r '
-            # Define a function to convert strings to uppercase
-            def to_uppercase:
-              explode | map(if . >= 97 and . <= 122 then . - 32 else . end) | implode;
-          
             . |
-            (if .level == "debug" then "\u001b[34mDEBUG"
-            elif .level == "info" then "\u001b[32mINFO"
-            elif .level == "error" then "\u001b[31mERROR"
-            elif .level == "warn" then "\u001b[33mWARN"
-            else "\u001b[0mUNKNOWN"
-            end) + ":\u001b[0m \u001b[36m\(.msg)\u001b[0m\n" +
-            "Source: \(.source.worktree) (branch: \(.source.refname))\n" +
-            "File: \(.file.path | sub("^/home/runner/work/isyfact.github.io/isyfact.github.io/"; "")):\(.file.line // "N/A")\n"' > doc_build_output_pretty.txt
+            "\(.level): \(.msg)
+            \(.source.worktree) (branch: \(.source.refname))
+            File: \(.file.path | sub("^/home/runner/work/isyfact.github.io/isyfact.github.io/"; "")):\(.file.line // "")\n"' > doc_build_output_pretty.txt
 
       - name: Upload unformatted Logs
         uses: actions/upload-artifact@v4
