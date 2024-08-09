@@ -151,7 +151,7 @@ jobs:
         run: npm ci
       - name: Build Documentation
         run: |
-          antora --log-format=json antora-playbook.yml > doc_build_output.json 2>&1 || BUILD_FAILED=true
+          npx antora --log-format=json antora-playbook.yml > doc_build_output.json 2>&1 || BUILD_FAILED=true
           
           # Check exit code of antora build command
           if [ "$BUILD_FAILED" = true ]; then
