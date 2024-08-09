@@ -151,20 +151,28 @@ jobs:
         run: npm ci
       - name: Build Documentation
         run: |
-          npm run build || BUILD_FAILED=true
+          npx antora --log-format=json antora-playbook.yml > doc_build_output.json 2>&1 || BUILD_FAILED=true
           
           # Check exit code of antora build command
           if [ "$BUILD_FAILED" = true ]; then
-              echo -e "${RED}Antora documentation build failed with exit code $exit_code.${NC}"
-              exit $exit_code
+            echo -e "${RED}Antora documentation build failed.${NC}"
           else
             echo -e "${GREEN}Antora documentation build completed successfully.${NC}"
           fi
+          
+          # Debug: Print the first few lines of the log file to inspect
+          echo "Preview of raw log file:"
+          head -n 10 doc_build_output.json
+          
+          # Filter out non-JSON lines and process with jq
+          echo "Filtering JSON lines and processing..."
+          grep '^{.*}$' doc_build_output.json | jq '.' > doc_build_output_pretty.json
 
-      - name: Upload artifact
+      - name: Upload formatted logs
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs
+          name: doc-build-logs
+          path: doc_build_output_pretty.json
 
 #  Deploy:
 #    runs-on: ubuntu-latest
