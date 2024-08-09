@@ -170,16 +170,6 @@ jobs:
           name: doc-build-logs
           path: doc_build_output.log
 
-      # Send logs to triggering repository
-      - name: Dispatch Logs
-        if: always()
-        uses: peter-evans/repository-dispatch@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          repository: isy-datetime
-          event-type: antora-build-logs
-          client-payload: '{"logs": "'"$(head -c 10000 doc_build_output.log)"'", "run_id": "${{ github.run_id }}"}'
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
