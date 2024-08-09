@@ -160,8 +160,13 @@ jobs:
             echo -e "${GREEN}Antora documentation build completed successfully.${NC}"
           fi
           
-          # Use jq to prettify or transform the JSON logs
-          jq '.' doc_build_output.json > doc_build_output_pretty.json
+          # Debug: Print the first few lines of the log file to inspect
+          echo "Preview of raw log file:"
+          head -n 10 doc_build_output.json
+          
+          # Filter out non-JSON lines and process with jq
+          echo "Filtering JSON lines and processing..."
+          grep '^{.*}$' doc_build_output.json | jq '.' > doc_build_output_pretty.json
 
       - name: Upload formatted logs
         uses: actions/upload-pages-artifact@v3
