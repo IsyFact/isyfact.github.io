@@ -47,6 +47,9 @@ content:
     - url: ./isy-sonderzeichen
       branches: HEAD
       start_path: isy-sonderzeichen-doc
+    - url: ./cve-reports
+      branches: HEAD
+      start_path: isy-github-actions-templates-doc
       
 
   # Comment: Configuration for development (e.g. with feature branches that aren't pushed yet)
