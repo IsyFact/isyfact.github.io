@@ -9,6 +9,10 @@ on:
       distinct_id:
         # Used by codex-/return-dispatch action from another workflow to keep track of the run. Manual runs using the UI do not require this input.
         description: 'The distinct id of the workflow run (optional)'
+      log_level:
+        description: 'Log level for the Antora build (debug, info, warn, error)'
+      failure_level:
+        description: 'Log failure level for the Antora build (fatal, error, warn, none)'
 
 jobs:
   Build:
@@ -27,11 +31,6 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Display current working directory
-        run: |
-          pwd
-          ls -la
 
       - name: Checkout isyfact-standards (master)
         uses: actions/checkout@v4
@@ -156,7 +155,11 @@ jobs:
         run: npm ci
       - name: Build Documentation
         run: |
-          npx antora --log-format=json antora-playbook.yml > doc_build_output_raw.json 2>&1 || BUILD_FAILED=true
+          npx antora \
+            --log-format=json \
+            --log-level=${{ github.event.inputs.log_level || 'debug' }} \
+            --log-failure-level=${{ github.event.inputs.failure_level || 'fatal' }} \
+            antora-playbook.yml > doc_build_output_raw.json 2>&1 || BUILD_FAILED=true
           
           # Check exit code of antora build command
           if [ "$BUILD_FAILED" = true ]; then
