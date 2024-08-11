@@ -161,31 +161,20 @@ jobs:
             --log-failure-level=${{ github.event.inputs.failure_level || 'fatal' }} \
             antora-playbook.yml > doc_build_output_raw.json 2>&1 || BUILD_FAILED=true
           
-          # Check exit code of antora build command
-          if [ "$BUILD_FAILED" = true ]; then
-            echo -e "${RED}Antora documentation build failed.${NC}"
-          else
-            echo -e "${GREEN}Antora documentation build completed successfully.${NC}"
-          fi
-          
           # Run the log processing script
           echo "Running log processing script..."
           chmod +x process_logs.sh
           bash process_logs.sh
+          
+          # Check exit code of Antora build command
+          if [ "$BUILD_FAILED" = true ]; then
+            echo -e "${RED}Antora documentation build failed.${NC}"
+            exit 1
+          else
+            echo -e "${GREEN}Antora documentation build completed successfully.${NC}"
+          fi
         env:
           ACTIONS_STEP_DEBUG: true
-
-      - name: Upload unformatted Logs
-        uses: actions/upload-artifact@v4
-        with:
-          name: doc-build-logs-raw
-          path: doc_build_output_raw.json
-
-      - name: Upload formatted logs
-        uses: actions/upload-artifact@v4
-        with:
-          name: doc-build-logs-pretty
-          path: doc_build_output_pretty.txt
 
 #  Deploy:
 #    runs-on: ubuntu-latest
