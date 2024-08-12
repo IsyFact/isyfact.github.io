@@ -39,7 +39,7 @@ runtime:
   fetch: true
   log:
     level: debug
-    failure_level: warn
+    failure_level: fatal
 asciidoc:
   attributes:
     page-component-order: 'isyfact-standards-doku, *, glossary, documentation-guide'

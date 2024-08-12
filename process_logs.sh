@@ -2,10 +2,6 @@
 
 set -e # Exit immediately if a command exits with a non-zero status
 
-# Set input and output files
-INPUT_FILE="doc_build_output_raw.json"
-OUTPUT_FILE="doc_build_output_pretty.txt"
-
 # Define ANSI color codes
 RESET='\033[0m'          # Reset color
 RED='\033[0;31m'         # Red for errors
@@ -15,21 +11,14 @@ BLUE='\033[0;34m'        # Blue for debug
 TURQUOISE='\033[0;36m'   # Turquoise for messages
 PURPLE='\033[0;35m'      # Purple for source header
 
-# Filter JSON lines from the input file
-echo "Filtering JSON lines..."
-grep '^{.*}$' "$INPUT_FILE" > filtered_logs.json
-
 # Initialize variables to keep track of the current source and branch
 current_source=""
 current_branch=""
 
-# Clear the output file before writing
-: > "$OUTPUT_FILE"
-
-# Process the JSON file
+# Process the JSON logs from standard input
 echo "Processing JSON logs..."
 # Read each line from the filtered logs
-jq -c '. | select(.source.worktree != null)' filtered_logs.json | while IFS= read -r line; do
+grep '^{.*}$' | jq -c '. | select(.source.worktree != null)' | while IFS= read -r line; do
   # Extract the source and branch information
   source=$(echo "$line" | jq -r '.source.url' | awk -F'/' '{print $NF}')
   branch=$(echo "$line" | jq -r '.source.refname')
@@ -45,13 +34,13 @@ jq -c '. | select(.source.worktree != null)' filtered_logs.json | while IFS= rea
     current_source="$source"
     current_branch="$branch"
 
-    # Add a newline before the new source header, but skip the first entry
+    # Add a newline before the new source header
     if [[ -n "$current_source" || -n "$current_branch" ]]; then
-      echo >> "$OUTPUT_FILE" # Add a new line for separation
+      echo
     fi
 
     # Print the source header
-    echo -e "${PURPLE}Source: $current_source (branch: $current_branch)$RESET" >> "$OUTPUT_FILE"
+    echo -e "${PURPLE}Source: $current_source (branch: $current_branch)$RESET"
   fi
 
   # Extract the log entry and format it with colors
@@ -72,12 +61,8 @@ jq -c '. | select(.source.worktree != null)' filtered_logs.json | while IFS= rea
   File: \(.file.path | sub("^/home/runner/work/isyfact.github.io/isyfact.github.io/"; "")):\(.file.line // "N/A")\n"
   ')
 
-  # Append the formatted log entry to the output file
-  echo -e "$log_entry\n" >> "$OUTPUT_FILE"
+  # Print the formatted log entry
+  echo -e "$log_entry\n"
 done
 
-# Echo each line with color
-while IFS= read -r line; do
-  # Use echo to interpret escape sequences
-  echo -e "$line"
-done < "$OUTPUT_FILE"
+

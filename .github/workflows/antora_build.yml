@@ -155,16 +155,14 @@ jobs:
         run: npm ci
       - name: Build Documentation
         run: |
+          # Run Antora with JSON logging, pipe output to process_logs.sh
+          chmod +x process_logs.sh
+          
           npx antora \
             --log-format=json \
             --log-level=${{ github.event.inputs.log_level || 'debug' }} \
             --log-failure-level=${{ github.event.inputs.failure_level || 'fatal' }} \
-            antora-playbook.yml > doc_build_output_raw.json 2>&1 || BUILD_FAILED=true
-          
-          # Run the log processing script
-          echo "Running log processing script..."
-          chmod +x process_logs.sh
-          bash process_logs.sh
+            antora-playbook.yml 2>&1 | bash process_logs.sh || BUILD_FAILED=true
           
           # Check exit code of Antora build command
           if [ "$BUILD_FAILED" = true ]; then
