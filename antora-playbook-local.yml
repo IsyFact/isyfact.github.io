@@ -33,9 +33,9 @@ content:
     - url: ../isy-sonderzeichen
       branches: HEAD
       start_path: isy-sonderzeichen-doc
-    - url: ./cve-reports
+    - url: ../isy-github-actions-templates
       branches: HEAD
-      start_path: isy-github-actions-templates-doc
+      start_path: ORT Reports
 
 
 runtime:
@@ -60,7 +60,8 @@ asciidoc:
     listing-caption: Listing
 ui:
   bundle:
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+#    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    url: 'C:\Users\arltm\Documents\Aufgaben\Isyfact_BVA\LTS\IFS-3956_Analyse Veröffentlichung von mit OSS Review Toolkit erzeugten Reports\ui-bundle'
     snapshot: true
   supplemental_files: ./antora-ui/supplemental-ui
 antora:

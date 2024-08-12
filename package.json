@@ -1,19 +1,16 @@
 {
   "name": "isyfact-online-documentation",
   "version": "4.0.0",
-
   "scripts": {
     "build": "antora antora-playbook.yml",
     "build:local": "antora antora-playbook-local.yml"
   },
-
   "repository": {
     "type": "git",
     "url": "https://github.com/IsyFact/isyfact.github.io.git"
   },
   "license": "(Apache-2.0 OR CC-BY-4.0)",
   "homepage": "https://isyfact.github.io",
-
   "devDependencies": {
     "@antora/cli": "^3.1.7",
     "@antora/lunr-extension": "^1.0.0-alpha.8",
@@ -22,5 +19,8 @@
   },
   "overrides": {
     "glob-parent": "5.1.2"
+  },
+  "dependencies": {
+    "antora": "^3.1.9"
   }
 }
