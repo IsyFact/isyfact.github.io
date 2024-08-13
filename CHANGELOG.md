@@ -6,6 +6,7 @@ It focuses on changes to the UI, extensions and site-wide configuration options 
 
 ## 2024
 
+- [2024-08-13] [UI] `IFS-4020`: add custom ordering of Antora components in the component selector (playbook property: `asciidoc.attributes.page-component-order`)
 - [2024-06-19] [UI] `IFS-3823`: add CSS styles for the glossary's status model
 - [2024-05-17] [UI] `IFS-3748`: add IsyFact logo and top menu entries (links to isyfact.de and GitHub)
 - [2024-05-17] [UI] `IFS-3748`: mark latest stable versions in the component selector yellow
