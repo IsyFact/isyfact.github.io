@@ -4,7 +4,6 @@
 set -e
 
 # Define color variables
-RED='\033[0;31m'
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
@@ -55,17 +54,16 @@ install_npm_dependencies() {
   fi
 }
 
-# Function to handle Antora build and capture its exit status explicitly
-run_antora_build() {
-    echo -e "${BLUE}Running the Antora build...${NC}"
-    if ! npm run build:local; then
-        exit_code=$?
-        echo -e "${RED}Antora documentation build failed with exit code $exit_code.${NC}"
-        exit $exit_code
-    else
-        echo -e "${GREEN}Antora documentation build completed successfully.${NC}"
-    fi
+# Function to print build instructions
+print_build_instructions() {
+  echo -e "${GREEN}To build the Antora documentation locally, use the following commands:${NC}"
+  echo -e "${BLUE}For a standard local build:${NC}"
+  echo "  npm run build:local"
+  echo -e "${BLUE}For a local build with JSON logs:${NC}"
+  echo "  npm run build:local-json"
 }
+
+# Function
 
 # Main Script Execution
 
@@ -76,13 +74,22 @@ clone_repo https://github.com/IsyFact/isyfact-standards.git ../isyfact-standards
 clone_repo https://github.com/IsyFact/isyfact-standards.git ../isyfact-standards-3.x release/3.x
 clone_repo https://github.com/IsyFact/isyfact-standards.git ../isyfact-standards-3.0.x release/3.0.1
 clone_repo https://github.com/IsyFact/isy-web.git ../isy-web master
+clone_repo https://github.com/IsyFact/isy-angular-widgets.git ../isy-angular-widgets main
+clone_repo https://github.com/IsyFact/isy-bedienkonzept.git ../isy-bedienkonzept main
+clone_repo https://github.com/IsyFact/isy-datetime.git ../isy-datetime develop
+clone_repo https://github.com/IsyFact/isy-sonderzeichen.git ../isy-sonderzeichen develop
 
 # Set up Git LFS
 echo -e "${BLUE}Setting up Git LFS...${NC}"
 setup_git_lfs ../isyfact-standards
 setup_git_lfs ../isyfact-standards-3.x
 setup_git_lfs ../isyfact-standards-3.0.x
+setup_git_lfs ../isy-documentation
 setup_git_lfs ../isy-web
+setup_git_lfs ../isy-angular-widgets
+setup_git_lfs ../isy-bedienkonzept
+setup_git_lfs ../isy-datetime
+setup_git_lfs ../isy-sonderzeichen
 
 # Generate templates
 generate_templates ../isyfact-standards/isyfact-standards-doc
@@ -92,5 +99,5 @@ generate_templates ../isyfact-standards-3.0.x/isyfact-standards-doc
 # Install npm dependencies
 install_npm_dependencies
 
-# Run the Antora build
-run_antora_build
+# Print Antora build instructions
+print_build_instructions

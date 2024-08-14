@@ -63,7 +63,7 @@ jobs:
           repository: IsyFact/isy-documentation
           ref: master
           lfs: true
-          path:  isy-documentation
+          path: isy-documentation
 
       - name: Checkout isy-web
         uses: actions/checkout@v4
@@ -155,14 +155,14 @@ jobs:
         run: npm ci
       - name: Build Documentation
         run: |
-          # Run Antora with JSON logging, pipe output to process_logs.sh
-          chmod +x process_logs.sh
+          # Run Antora with JSON logging, pipe output to process-logs.sh
+          chmod +x process-logs.sh
           
           npx antora \
             --log-format=json \
             --log-level=${{ github.event.inputs.log_level || 'debug' }} \
             --log-failure-level=${{ github.event.inputs.failure_level || 'fatal' }} \
-            antora-playbook.yml 2>&1 | bash process_logs.sh || BUILD_FAILED=true
+            antora-playbook.yml 2>&1 | bash process-logs.sh || BUILD_FAILED=true
           
           # Check exit code of Antora build command
           if [ "$BUILD_FAILED" = true ]; then

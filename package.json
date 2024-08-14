@@ -5,7 +5,7 @@
   "scripts": {
     "build": "antora antora-playbook.yml",
     "build:local": "antora antora-playbook-local.yml",
-    "build:local-json": "antora --log-format=json antora-playbook-local.yml 2>&1 | bash process_logs.sh && echo 'Site generation complete!\nOpen file:///Users/huy/repos/isyfact.github.io/docs/index.html in a browser to view your site.'"
+    "build:local-json": "antora --log-format=json antora-playbook-local.yml 2>&1 | bash process-logs.sh && echo 'Site generation complete!\\nOpen file:///Users/huy/repos/isyfact.github.io/docs/index.html in a browser to view your site.'"
   },
 
   "repository": {

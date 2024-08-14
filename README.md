@@ -22,21 +22,21 @@ To build the online docs, you need the following prerequisites.
 - **Node.js & npm**: For running Antora and managing JavaScript dependencies. You should use a version manager (i.e. [nvm for Windows](https://github.com/coreybutler/nvm-windows) or [nvm for Linux/macOS](https://github.com/nvm-sh/nvm)), or you can install both manually for your OS. Please use at least the latest LTS version.
 
 ## Local Testing and Development
-The `antora_build.sh` script automates the setup and build process for testing and developing Antora documentation. Key steps include: 
+The `setup-project-environment.sh` script automates the setup and build process for testing and developing Antora documentation. Key steps include: 
 - Cloning repositories and specific branches
 - Setting up Git LFS
 - Template generation with Maven
 - Dependency installation
 - Running the Antora build locally
 
-Steps to run `antora_build.sh`:
+Steps to run `setup-project-environment.sh`:
 - Make the script executable:
     ```shell
-    chmod +x antora_build.sh
+    chmod +x setup-project-environment.sh
     ```
 - Run the script:
     ```shell
-    ./antora_build.sh
+    ./setup-project-environment.sh
     ```
 - After the initial successful run, you can use the following command to rebuild the documentation after changes to the AsciiDoc files to save time by skipping the initial setup steps:
     ```shell
