@@ -25,7 +25,3 @@ node_modules
 # Ignore locally generated files
 public
 docs
-
-# Ignore local Antora testing files
-doc_build_output_raw.json
-doc_build_output_pretty.txt

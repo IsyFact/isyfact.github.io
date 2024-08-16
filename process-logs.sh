@@ -1,4 +1,5 @@
 #!/bin/bash
+# This script processes the JSON logs from Antora documentation build and formats them for easier reading.
 
 set -e # Exit immediately if a command exits with a non-zero status
 

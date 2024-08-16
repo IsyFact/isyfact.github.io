@@ -1,4 +1,5 @@
 #!/bin/bash
+# This script sets up the project environment for local testing and development of the Antora documentation.
 
 # Exit immediately if a command exits with a non-zero status.
 set -e

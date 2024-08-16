@@ -11,7 +11,7 @@ Additionally, this repository contains the Antora playbooks, Antora extensions a
 
 There are 2 playbooks:
 - `antora-playbook.yml`: For CI/CD-based builds in GitHub Actions.
-- `antora-playbook-local.yml`: For local builds. Useful for testing and development.
+- `antora-playbook-local.yml`: For local builds. Useful for local testing and development.
 
 ## Prerequisites
 The documentation is written in [AsciiDoc](https://docs.asciidoctor.org/asciidoc/latest/) and uses [Antora](https://antora.org/) to build a static HTML site for easy browsing.
@@ -42,6 +42,11 @@ Steps to run `setup-project-environment.sh`:
     ```shell
     npm run build:local
     ```
+  
+  - Or this command for cleaner logs which makes debugging Antora documentation errors and warnings easier:
+      ```shell
+      npm run build:local-json
+      ```
 
 ## Known Bugs & Limitations
 
