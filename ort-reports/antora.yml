@@ -1,0 +1,7 @@
+name: ORT Reports Test
+title: ORT Reports Test
+version: '4.0.0 SNAPSHOT'
+display_version: '4.0.0 SNAPSHOT'
+start_page: ROOT:isy-github-actions-templates/reports.adoc
+nav:
+  - modules/ROOT/nav.adoc

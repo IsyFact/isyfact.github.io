@@ -35,6 +35,9 @@ content:
     - url: ./isy-sonderzeichen
       branches: HEAD
       start_path: isy-sonderzeichen-doc
+    - url: ../isyfact.github.io
+      branches: HEAD
+      start_paths: ort-reports
 runtime:
   fetch: true
   log:
@@ -55,6 +58,8 @@ asciidoc:
     figure-caption: Abbildung
     table-caption: Tabelle
     listing-caption: Listing
+  extensions:
+    - ./lib/remote-include-processor
 ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable

@@ -1,0 +1,7 @@
+Der aktuelle ORT-Report
+
+Der aktuelle ORT-Report
+
+++++
+include::https://raw.githubusercontent.com/IsyFact/isyfact-standards/fix/master_delete_ORT_files/ort-reports/AsciiDoc_cve_summary_report_template.html[]
+++++
