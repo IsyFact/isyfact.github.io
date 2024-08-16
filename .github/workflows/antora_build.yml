@@ -113,7 +113,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: IsyFact/isy-github-actions-templates
-          ref: mariusarltmsg-patch-1
+          ref: feature/main_OSS_Review_Toolkit
           lfs: true
           sparse-checkout: isy-github-actions-templates-doc
           path: isy-github-actions-templates

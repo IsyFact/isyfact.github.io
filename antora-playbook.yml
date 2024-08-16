@@ -47,9 +47,9 @@ content:
     - url: ./isy-sonderzeichen
       branches: HEAD
       start_path: isy-sonderzeichen-doc
-    - url: ./cve-reports
+    - url: ../isyfact.github.io
       branches: HEAD
-      start_path: isy-github-actions-templates-doc
+      start_paths: ort-reports
       
 
   # Comment: Configuration for development (e.g. with feature branches that aren't pushed yet)
@@ -93,6 +93,8 @@ asciidoc:
     figure-caption: Abbildung
     table-caption: Tabelle
     listing-caption: Listing
+  extensions:
+    - ./lib/remote-include-processor
 ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable

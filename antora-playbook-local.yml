@@ -2,6 +2,7 @@ site:
   title: IsyFact Dokumentation (Local)
   url: https://isyfact.github.io/
   start_page: isyfact-standards-doku:einstieg:einstieg.adoc
+
 urls:
   latest_version_segment: current
   latest_prerelease_version_segment: dev
@@ -33,9 +34,9 @@ content:
     - url: ../isy-sonderzeichen
       branches: HEAD
       start_path: isy-sonderzeichen-doc
-    - url: ../isy-github-actions-templates
+    - url: ../isyfact.github.io
       branches: HEAD
-      start_path: ORT Reports
+      start_paths: ort-reports
 
 
 runtime:
@@ -58,6 +59,8 @@ asciidoc:
     figure-caption: Abbildung
     table-caption: Tabelle
     listing-caption: Listing
+  extensions:
+    - ./lib/remote-include-processor
 ui:
   bundle:
 #    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable

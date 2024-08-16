@@ -1,0 +1,2 @@
+*** xref:isy-github-actions-templates/reports.adoc[isy-github-actions-templates]
+*** xref:isyfact-standards/reports.adoc[isyfact-standards]
