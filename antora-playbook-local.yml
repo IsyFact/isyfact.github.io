@@ -1,5 +1,5 @@
 site:
-  title: IsyFact Dokumentation (Local)
+  title: IsyFact (Local)
   url: https://isyfact.github.io/
   start_page: isyfact-standards-doku:einstieg:einstieg.adoc
 
@@ -12,15 +12,9 @@ content:
   sources:
     - url: ../isy-documentation
       branches: HEAD
-      start_paths: [documentation-guide, glossary]
+      start_paths: [documentation-guide,glossary]
     - url: ../isyfact-standards
-      branches: HEAD
-      start_path: isyfact-standards-doc/src/docs/antora
-    - url: ../isyfact-standards-3.x
-      branches: HEAD
-      start_path: isyfact-standards-doc/src/docs/antora
-    - url: ../isyfact-standards-3.0.x
-      branches: HEAD
+      branches: [HEAD,release/3.x,release/3.0.1]
       start_path: isyfact-standards-doc/src/docs/antora
     - url: ../isy-web
       branches: HEAD
@@ -28,6 +22,9 @@ content:
     - url: ../isy-angular-widgets
       branches: HEAD
       start_path: isy-angular-widgets-doc
+    - url: ../isy-bedienkonzept
+      branches: HEAD
+      start_path: isy-bedienkonzept-doc
     - url: ../isy-datetime
       branches: HEAD
       start_path: isy-datetime-doc
@@ -37,15 +34,13 @@ content:
     - url: ../isyfact.github.io
       branches: HEAD
       start_paths: ort-reports
-
-
 runtime:
   fetch: true
   log:
-    level: debug
-    failure_level: warn
+    level: info
 asciidoc:
   attributes:
+    page-component-order: 'isyfact-standards-doku, *, glossary, documentation-guide'
     page-toctitle: Inhalt
     sectnums: true
     sectnumlevels: 5
