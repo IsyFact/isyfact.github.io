@@ -1,7 +1,6 @@
 name: cve-reports
 title: CVE Reports
-version: '4.0.0 SNAPSHOT'
-display_version: '4.0.0 SNAPSHOT'
-start_page: ROOT:isy-github-actions-templates/reports.adoc
+start_page: ROOT:index.adoc
 nav:
   - modules/ROOT/nav.adoc
+version: ~
