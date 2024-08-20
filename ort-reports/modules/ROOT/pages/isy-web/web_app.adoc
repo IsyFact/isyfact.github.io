@@ -1,0 +1,7 @@
+Die aktuelle Web App
+
+Die aktuelle Web App
+
+++++
+include::https://raw.githubusercontent.com/IsyFact/isy-web/master/ort-reports/scan-report-web-app.html[]
+++++

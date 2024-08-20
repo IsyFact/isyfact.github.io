@@ -1,2 +1,27 @@
-*** xref:isy-github-actions-templates/reports.adoc[isy-github-actions-templates]
-*** xref:isyfact-standards/reports.adoc[isyfact-standards]
+.isyfact-standards
+* xref:isyfact-standards/cve_report.adoc[CVE Report]
+* xref:isyfact-standards/web_app.adoc[Web App]
+
+.isyfact-standards/3.x
+* xref:isyfact-standards_3x/cve_report.adoc[CVE Report]
+* xref:isyfact-standards_3x/web_app.adoc[Web App]
+
+.isyfact-standards/2.x
+* xref:isyfact-standards_2x/cve_report.adoc[CVE Report]
+* xref:isyfact-standards_2x/web_app.adoc[Web App]
+
+.isy-datetime
+* xref:isy-datetime/cve_report.adoc[CVE Report]
+* xref:isy-datetime/web_app.adoc[Web App]
+
+.isy-security
+* xref:isy-security/cve_report.adoc[CVE Report]
+* xref:isy-security/web_app.adoc[Web App]
+
+.isy-sonderzeichen
+* xref:isy-sonderzeichen/cve_report.adoc[CVE Report]
+* xref:isy-sonderzeichen/web_app.adoc[Web App]
+
+.isy-web
+* xref:isy-web/cve_report.adoc[CVE Report]
+* xref:isy-web/web_app.adoc[Web App]

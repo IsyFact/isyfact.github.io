@@ -1,0 +1,44 @@
+= Die CVE-Reports des OSS Review Toolkit
+
+Diese werden einmal wöchentlich in jedem Repository generiert und auf dieser Seite veröffentlicht.
+In den *CVE Reports* werden ausschließlich CVE (Common Vulnerabilities and Exposures) und die betroffenen Repositories aufgelistet. Die *Web App* stellt eine Zusammenfassung aller Scan-Ergebnisse dar, inklusive Lizenz-Management.
+
+== isyfact-standards
+
+xref:isyfact-standards/cve_report.adoc[CVE Report]
+
+xref:isyfact-standards/web_app.adoc[Web App]
+
+=== isyfact-standards release 3.x
+xref:isyfact-standards_3x/cve_report.adoc[CVE Report]
+
+xref:isyfact-standards_3x/web_app.adoc[Web App]
+
+=== isyfact-standards release 2.x
+xref:isyfact-standards_2x/cve_report.adoc[CVE Report]
+
+xref:isyfact-standards_2x/web_app.adoc[Web App]
+
+== isy-datetime
+
+xref:isy-datetime/cve_report.adoc[CVE Report]
+
+xref:isy-datetime/web_app.adoc[Web App]
+
+== isy-security
+
+xref:isy-security/cve_report.adoc[CVE Report]
+
+xref:isy-security/web_app.adoc[Web App]
+
+== isy-sonderzeichen
+
+xref:isy-sonderzeichen/cve_report.adoc[CVE Report]
+
+xref:isy-sonderzeichen/web_app.adoc[Web App]
+
+== isy-web
+
+xref:isy-web/cve_report.adoc[CVE Report]
+
+xref:isy-web/web_app.adoc[Web App]

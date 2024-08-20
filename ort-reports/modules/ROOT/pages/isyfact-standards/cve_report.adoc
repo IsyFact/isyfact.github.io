@@ -1,0 +1,7 @@
+Der aktuelle CVE Report
+
+Der aktuelle CVE Report
+
+++++
+include::https://raw.githubusercontent.com/IsyFact/isyfact-standards/master/ort-reports/AsciiDoc_cve_summary_report_template.html[]
+++++
