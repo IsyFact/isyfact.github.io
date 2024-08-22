@@ -109,15 +109,6 @@ jobs:
           sparse-checkout: isy-bedienkonzept-doc
           path: isy-bedienkonzept
 
-      - name: Checkout isy-github-actions-templates
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-github-actions-templates
-          ref: feature/main_OSS_Review_Toolkit
-          lfs: true
-          sparse-checkout: isy-github-actions-templates-doc
-          path: isy-github-actions-templates
-
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
