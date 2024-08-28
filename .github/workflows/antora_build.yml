@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-#      - feature/IFS-3651_web_link_checker_for_docu
+      - feature/IFS-3651_web_link_checker_for_docu
   schedule:
     - cron: '0 0 * * 0'
   workflow_dispatch:
@@ -142,8 +142,8 @@ jobs:
       - name: Build Documentation
         run: npm run build
 
-      - name: Upload docs artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload docs folder as artifact
+        uses: actions/upload-artifact@v3
         with:
           name: docs
           path: docs
