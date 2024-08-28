@@ -1,0 +1,34 @@
+name: Link Checker
+
+on:
+  push:
+    branches:
+      - main
+      - feature/IFS-3651_web_link_checker_for_docu
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  LinkChecker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download docs folder artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: docs
+          path: docs
+
+      - name: Run Lychee Link Checker on docs Folder
+        uses: lycheeverse/lychee-action@v1.10.0
+        with:
+          args: --no-progress --format markdown --output link_checker_report.md "./docs/**/*.html"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload link checker report
+        uses: actions/upload-artifact@v3
+        with:
+          name: lychee-report
+          path: link_checker_report.md

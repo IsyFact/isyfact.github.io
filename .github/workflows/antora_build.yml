@@ -1,7 +1,9 @@
 name: Build Documentation
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+#      - feature/IFS-3651_web_link_checker_for_docu
   schedule:
     - cron: '0 0 * * 0'
   workflow_dispatch:
@@ -140,26 +142,29 @@ jobs:
       - name: Build Documentation
         run: npm run build
 
-      - name: Upload artifact
+      - name: Upload docs artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          name: docs
           path: docs
 
-  Deploy:
-    runs-on: ubuntu-latest
-    needs: [Build]
-    concurrency:
-      group: gh-pages
-      cancel-in-progress: false
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Setup GitHub Pages
-        uses: actions/configure-pages@v4
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+#  Deploy:
+#    runs-on: ubuntu-latest
+#    needs: [Build]
+#    concurrency:
+#      group: gh-pages
+#      cancel-in-progress: false
+#    permissions:
+#      pages: write
+#      id-token: write
+#    environment:
+#      name: github-pages
+#      url: ${{ steps.deployment.outputs.page_url }}
+#    steps:
+#      - name: Setup GitHub Pages
+#        uses: actions/configure-pages@v4
+#      - name: Deploy to GitHub Pages
+#        id: deployment
+#        uses: actions/deploy-pages@v4
+#        with:
+#          artifact-name: docs
