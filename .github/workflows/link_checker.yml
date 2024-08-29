@@ -20,14 +20,17 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: antora_build.yml  # Name of the workflow that uploads the artifact
           name: docs
-          path: ./docs
+          path: docs
           workflow_conclusion: success
           branch: feature/IFS-3651_web_link_checker_for_docu
 
       - name: Run Lychee Link Checker on docs folder
         uses: lycheeverse/lychee-action@v1.10.0
         with:
-          args: --no-progress --format markdown --output link_checker_report.md "./docs/**/*.html"
+          args: "./docs/**/*.html"
+          format: markdown
+          output: link_checker_report.md
+          fail: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
