@@ -6,7 +6,7 @@ on:
       - main
 #      - feature/IFS-3651_web_link_checker_for_docu
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * 0' # every Sunday at 00:00 (midnight)
   workflow_dispatch:
 
 jobs:
