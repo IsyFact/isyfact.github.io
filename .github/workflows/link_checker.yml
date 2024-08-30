@@ -54,12 +54,6 @@ jobs:
             './docs/**/*.html'
           format: markdown
           output: link_checker_report.md
-          fail: false
+          fail: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Upload link checker report
-        uses: actions/upload-artifact@v3
-        with:
-          name: lychee-report
-          path: link_checker_report.md
