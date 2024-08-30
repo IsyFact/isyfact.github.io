@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-#      - feature/IFS-3651_web_link_checker_for_docu
   schedule:
     - cron: '0 0 * * 0' # every Sunday at 00:00 (midnight)
   workflow_dispatch:
@@ -17,17 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up cache for docs artifact
-        id: cache-docs
-        uses: actions/cache@v4
-        with:
-          path: docs
-          key: ${{ runner.os }}-docs-${{ hashFiles('docs/**/*.html') }}
-          restore-keys: |
-            ${{ runner.os }}-docs-
-
       - name: Download docs artifact from the last successful workflow
-        if: steps.cache-docs.outputs.cache-hit != 'true'
         uses: dawidd6/action-download-artifact@v6
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -35,7 +24,7 @@ jobs:
           name: docs
           path: docs
           workflow_conclusion: success
-          branch: feature/IFS-3651_web_link_checker_for_docu
+          branch: main
 
       - name: Restore Lychee cache
         uses: actions/cache@v3
@@ -44,7 +33,7 @@ jobs:
           key: cache-lychee-${{ github.sha }}
           restore-keys: cache-lychee-
 
-      - name: Run Lychee Link Checker on docs folder
+      - name: Run Lychee on docs folder
         uses: lycheeverse/lychee-action@v1.10.0
         with:
           args: |
