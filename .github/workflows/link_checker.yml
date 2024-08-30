@@ -37,11 +37,19 @@ jobs:
           workflow_conclusion: success
           branch: feature/IFS-3651_web_link_checker_for_docu
 
+      - name: Restore Lychee cache
+        uses: actions/cache@v3
+        with:
+          path: .lycheecache
+          key: cache-lychee-${{ github.sha }}
+          restore-keys: cache-lychee-
+
       - name: Run Lychee Link Checker on docs folder
         uses: lycheeverse/lychee-action@v1.10.0
         with:
           args: |
             --no-progress 
+            --cache --max-cache-age 1d
             --max-redirects 5
             './docs/**/*.html'
           format: markdown
