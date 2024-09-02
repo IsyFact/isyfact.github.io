@@ -1,6 +1,9 @@
 name: Link Checker
 
 on:
+  push:
+    branches:
+      - feature/IFS-3651_web_link_checker_stats
   workflow_run:
     workflows: [Build Documentation]
     types: [completed]
@@ -15,7 +18,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set up cache for docs artifact
+        id: cache-docs
+        uses: actions/cache@v4
+        with:
+          path: docs
+          key: ${{ runner.os }}-docs-${{ hashFiles('docs/**/*.html') }}
+          restore-keys: |
+            ${{ runner.os }}-docs-
+
       - name: Download docs artifact from the last successful workflow
+        if: steps.cache-docs.outputs.cache-hit != 'true'
         uses: dawidd6/action-download-artifact@v6
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -23,7 +36,7 @@ jobs:
           name: docs
           path: docs
           workflow_conclusion: success
-          branch: main
+          branch: feature/IFS-3651_web_link_checker_stats
 
       - name: Restore Lychee cache
         uses: actions/cache@v4
@@ -42,6 +55,12 @@ jobs:
             './docs/**/*.html'
           format: markdown
           output: link_checker_report.md
-          fail: true
+          fail: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload link checker report
+        uses: actions/upload-artifact@v4
+        with:
+          path: link_checker_report.md
+          name: link_checker_report
