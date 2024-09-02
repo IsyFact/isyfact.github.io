@@ -59,8 +59,27 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload link checker report
-        uses: actions/upload-artifact@v4
-        with:
-          path: link_checker_report.md
-          name: link_checker_report
+      - name: Calculate correct links percentage
+        id: calculate_percentage
+        run: |
+          # Extract values from the link checker report                    
+          report_file="link_checker_report.md"
+
+          total=$(grep '🔍 Total' "$report_file" | awk -F'|' '{print $3}' | xargs)
+          successful=$(grep '✅ Successful' "$report_file" | awk -F'|' '{print $3}' | xargs)
+          excluded=$(grep '👻 Excluded' "$report_file" | awk -F'|' '{print $3}' | xargs)
+          
+          # Calculate the total incorrect links (errors + timeouts)
+          correct=$((successful + excluded))
+          
+          # Calculate the percentage of correct links
+          if [ "$total" -gt 0 ]; then
+            percentage=$(echo "scale=0; $correct * 100 / $total" | bc)
+          else
+            percentage=100
+          fi
+          
+          echo "Percentage of correct links: $percentage%"
+          
+          # Save the percentage to the environment
+          echo "CORRECT_LINKS_PERCENTAGE=$percentage" >> $GITHUB_ENV
