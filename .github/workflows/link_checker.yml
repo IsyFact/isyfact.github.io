@@ -1,0 +1,48 @@
+name: Link Checker
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 1 * * 0' # every Sunday at 01:00
+  workflow_dispatch:
+
+jobs:
+  LinkChecker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download docs artifact from the last successful workflow
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: antora_build.yml  # Name of the workflow that uploads the artifact
+          name: docs
+          path: docs
+          workflow_conclusion: success
+          branch: main
+
+      - name: Restore Lychee cache
+        uses: actions/cache@v4
+        with:
+          path: .lycheecache
+          key: cache-lychee-${{ github.sha }}
+          restore-keys: cache-lychee-
+
+      - name: Run Lychee on docs folder
+        uses: lycheeverse/lychee-action@v1.10.0
+        with:
+          args: |
+            --no-progress 
+            --cache --max-cache-age 1d
+            --max-redirects 5
+            './docs/**/*.html'
+          format: markdown
+          output: link_checker_report.md
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

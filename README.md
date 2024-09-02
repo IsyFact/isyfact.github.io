@@ -1,3 +1,5 @@
+[![Check Links](https://github.com/IsyFact/isyfact.github.io/actions/workflows/link_checker.yml/badge.svg)](https://github.com/IsyFact/isyfact.github.io/actions/workflows/link_checker.yml)
+
 # IsyFact Online Docs
 
 ## Publishing
