@@ -69,17 +69,36 @@ jobs:
           successful=$(grep '✅ Successful' "$report_file" | awk -F'|' '{print $3}' | xargs)
           excluded=$(grep '👻 Excluded' "$report_file" | awk -F'|' '{print $3}' | xargs)
           
-          # Calculate the total incorrect links (errors + timeouts)
+          # Calculate the total correct, incorrect links (errors + timeouts)
           correct=$((successful + excluded))
+          incorrect=$((total - correct))
           
           # Calculate the percentage of correct links
           if [ "$total" -gt 0 ]; then
-            percentage=$(echo "scale=0; $correct * 100 / $total" | bc)
+            percentage=$(echo "scale=2; $correct * 100 / $total" | bc)
           else
             percentage=100
           fi
           
-          echo "Percentage of correct links: $percentage%"
+          echo "Links: $percentage% correct (Correct: $correct, Incorrect: $incorrect)"
           
-          # Save the percentage to the environment
+          # Save the percentage and totals to the environment
           echo "CORRECT_LINKS_PERCENTAGE=$percentage" >> $GITHUB_ENV
+          echo "CORRECT=$correct" >> $GITHUB_ENV
+          echo "INCORRECT=$incorrect" >> $GITHUB_ENV
+
+      - name: Update dynamic badge for correct links percentage
+        if: ${{ env.GIST_AUTH != '' && env.GIST_ID != '' }}
+        env:
+          GIST_AUTH: ${{ secrets.GIST_AUTH }}
+          GIST_ID: ${{ vars.GIST_ID }}
+        uses: schneegans/dynamic-badges-action@v1.7.0
+        with:
+          auth: ${{ env.GIST_AUTH }}
+          gistID: ${{ env.GIST_ID }}
+          filename: link_check_percentage.json
+          label: "Links"
+          message: "${{ env.CORRECT_LINKS_PERCENTAGE }}% correct (Correct: ${{ env.CORRECT }}, Incorrect: ${{ env.INCORRECT }})"
+          valColorRange: ${{ env.CORRECT_LINKS_PERCENTAGE }}
+          minColorRange: 0
+          maxColorRange: 100
