@@ -1,11 +1,10 @@
 name: Link Checker
 
 on:
-  push:
-    branches:
-      - main
-  schedule:
-    - cron: '0 1 * * 0' # every Sunday at 01:00
+  workflow_run:
+    workflows: [Build Documentation]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
