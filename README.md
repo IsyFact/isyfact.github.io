@@ -1,6 +1,4 @@
-[![Check Links](https://github.com/IsyFact/isyfact.github.io/actions/workflows/link_checker.yml/badge.svg)](https://github.com/IsyFact/isyfact.github.io/actions/workflows/link_checker.yml)
-
-![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/huy-tran-msg/cd34647bc4a492cb10e296417a0c612c/raw/link_check_percentage.json)
+[![Links](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/huy-tran-msg/cd34647bc4a492cb10e296417a0c612c/raw/link_check_percentage.json)](https://github.com/IsyFact/isyfact.github.io/actions/workflows/link_checker.yml)
 
 # IsyFact Online Docs
 

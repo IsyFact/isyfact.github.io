@@ -1,9 +1,6 @@
 name: Link Checker
 
 on:
-  push:
-    branches:
-      - feature/IFS-3651_web_link_checker_stats
   workflow_run:
     workflows: [Build Documentation]
     types: [completed]
@@ -18,15 +15,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up cache for docs artifact
-        id: cache-docs
-        uses: actions/cache@v4
-        with:
-          path: docs
-          key: ${{ runner.os }}-docs-${{ hashFiles('docs/**/*.html') }}
-          restore-keys: |
-            ${{ runner.os }}-docs-
-
       - name: Download docs artifact from the last successful workflow
         if: steps.cache-docs.outputs.cache-hit != 'true'
         uses: dawidd6/action-download-artifact@v6
@@ -36,7 +24,7 @@ jobs:
           name: docs
           path: docs
           workflow_conclusion: success
-          branch: feature/IFS-3651_web_link_checker_stats
+          branch: main
 
       - name: Restore Lychee cache
         uses: actions/cache@v4
@@ -97,7 +85,7 @@ jobs:
           auth: ${{ env.GIST_AUTH }}
           gistID: ${{ env.GIST_ID }}
           filename: link_check_percentage.json
-          label: "Links"
+          label: "🔗 Links"
           message: "${{ env.CORRECT_LINKS_PERCENTAGE }}% correct (Correct: ${{ env.CORRECT }}, Incorrect: ${{ env.INCORRECT }})"
           valColorRange: ${{ env.CORRECT_LINKS_PERCENTAGE }}
           minColorRange: 0
