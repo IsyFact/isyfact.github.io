@@ -38,7 +38,7 @@ content:
 runtime:
   fetch: true
   log:
-    level: debug
+    level: info
     failure_level: fatal
 asciidoc:
   attributes:
