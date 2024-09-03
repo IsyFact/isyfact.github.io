@@ -54,3 +54,55 @@ content:
 If you are behind a company firewall, you may need to set additional root CAs to make secure connections work.
 
 Setting additional root CAs can be done [by setting the environment variable `NODE_EXTRA_CA_CERTS`](https://nodejs.org/api/cli.html#node_extra_ca_certsfile), e.g. in your IDE.
+
+## Setting Up the Dynamic Badge for Link Checker
+
+The Link Checker workflow now calculates the percentage of correct links and generates a dynamic badge. This badge shows the percentage of correct links along with the number of correct and incorrect links.
+
+### Configuring the Badge with Gist
+
+To enable the dynamic badge, follow these steps:
+
+1. **Create a Gist:**
+    - Go to [gist.github.com](https://gist.github.com/).
+    - Create a new Gist named `link_check_percentage.json` (the name and content can be anything initially).
+    - Note the Gist ID, which is the long alphanumeric part of the Gist URL.
+
+2. **Set Up Repository Variables and Secrets:**
+    - **GIST_ID (Repository Variable):**  
+      Add the Gist ID (e.g., `8f6459c2417de7534f64d98360dde866`) as a variable named `GIST_ID` in the repository settings.
+
+    - **GIST_AUTH (Repository Secret):**  
+      Create a personal access token with the `gist` scope. Add this token as a secret in the repository settings with the name `GIST_AUTH`.
+
+3. **Usage in Workflow:**
+    - The workflow uses these variables to update the dynamic badge with the percentage of correct links:
+      ```yaml
+      - name: Update dynamic badge for correct links percentage
+        if: ${{ env.GIST_AUTH != '' && env.GIST_ID != '' }}
+        env:
+          GIST_AUTH: ${{ secrets.GIST_AUTH }}
+          GIST_ID: ${{ vars.GIST_ID }}
+        uses: schneegans/dynamic-badges-action@v1.7.0
+        with:
+          auth: ${{ env.GIST_AUTH }}
+          gistID: ${{ env.GIST_ID }}
+          filename: link_check_percentage.json
+          label: "🔗 Links"
+          message: "${{ env.CORRECT_LINKS_PERCENTAGE }}% correct (Correct: ${{ env.CORRECT }}, Incorrect: ${{ env.INCORRECT }})"
+          valColorRange: ${{ env.CORRECT_LINKS_PERCENTAGE }}
+          minColorRange: 0
+          maxColorRange: 100
+      ```
+
+4. **Add the Badge to README:**
+    - Include the badge in your `README.md`:
+      ```markdown
+      [![Links](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/<your-username>/<gist-ID>/raw/link_check_percentage.json)](https://github.com/IsyFact/isyfact.github.io/actions/workflows/link_checker.yml)
+      ```
+    - For example:
+      ```markdown
+      [![Links](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/huy-tran-msg/cd34647bc4a492cb10e296417a0c612c/raw/link_check_percentage.json)](https://github.com/IsyFact/isyfact.github.io/actions/workflows/link_checker.yml)
+      ```
+      
+This setup will display a real-time percentage of correct links in your README, keeping the health of your documentation links visible.
