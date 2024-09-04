@@ -6,6 +6,14 @@ on:
   schedule:
     - cron: '0 0 * * 0' # every Sunday at 00:00
   workflow_dispatch:
+    inputs:
+      distinct_id:
+        # Used by codex-/return-dispatch action from another workflow to keep track of the run. Manual runs using the UI do not require this input.
+        description: 'The distinct id of the workflow run (optional)'
+      log_level:
+        description: 'Log level for the Antora build (debug, info, warn, error)'
+      failure_level:
+        description: 'Log failure level for the Antora build (fatal, error, warn, none)'
 
 jobs:
   Build:
@@ -13,8 +21,16 @@ jobs:
     env:
       MAVEN_CLI_OPTS: '--batch-mode --errors --fail-at-end -T 1C'
 
+      # Define color variables
+      RED: '\033[0;31m'
+      GREEN: '\033[0;32m'
+      NC: '\033[0m' # No Color
+
     steps:
-      - name: Checkout antora-playbook
+      - name: Get distinct ID ${{ github.event.inputs.distinct_id }}
+        run: echo ${{ github.event.inputs.distinct_id }}
+
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Checkout isyfact-standards (master)
@@ -48,7 +64,7 @@ jobs:
           repository: IsyFact/isy-documentation
           ref: master
           lfs: true
-          path:  isy-documentation
+          path: isy-documentation
 
       - name: Checkout isy-web
         uses: actions/checkout@v4
@@ -139,7 +155,26 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Build Documentation
-        run: npm run build
+        run: |
+          # Run Antora with JSON logging, pipe output to process-logs.sh
+          chmod +x process-logs.sh
+          
+          npx antora \
+            --log-format=json \
+            --log-level=${{ github.event.inputs.log_level || 'info' }} \
+            --log-failure-level=${{ github.event.inputs.failure_level || 'fatal' }} \
+            antora-playbook.yml > antora_output.log || BUILD_FAILED=true
+          
+          # Pipe the output to process-logs.sh
+          cat antora_output.log | bash process-logs.sh
+          
+          # Check exit code of Antora build command
+          if [ "$BUILD_FAILED" = true ]; then
+            echo -e "${RED}Antora documentation build failed.${NC}"
+            exit 1
+          else
+            echo -e "${GREEN}Antora documentation build completed successfully.${NC}"
+          fi
 
       - name: Upload docs folder as pages artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3

@@ -10,7 +10,7 @@ content:
   sources:
     - url: ./isy-documentation
       branches: HEAD
-      start_paths: [documentation-guide,glossary]
+      start_paths: [documentation-guide, glossary]
     - url: ./isyfact-standards
       branches: HEAD
       start_path: isyfact-standards-doc/src/docs/antora
@@ -42,6 +42,7 @@ runtime:
   fetch: true
   log:
     level: info
+    failure_level: fatal
 asciidoc:
   attributes:
     page-component-order: 'isyfact-standards-doku, *, glossary, documentation-guide'

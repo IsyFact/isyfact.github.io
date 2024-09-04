@@ -14,7 +14,13 @@ content:
       branches: HEAD
       start_paths: [documentation-guide,glossary]
     - url: ../isyfact-standards
-      branches: [HEAD,release/3.x,release/3.0.1]
+      branches: HEAD
+      start_path: isyfact-standards-doc/src/docs/antora
+    - url: ../isyfact-standards-3.x
+      branches: HEAD
+      start_path: isyfact-standards-doc/src/docs/antora
+    - url: ../isyfact-standards-3.0.x
+      branches: HEAD
       start_path: isyfact-standards-doc/src/docs/antora
     - url: ../isy-web
       branches: HEAD
@@ -38,6 +44,7 @@ runtime:
   fetch: true
   log:
     level: info
+    failure_level: fatal
 asciidoc:
   attributes:
     page-component-order: 'isyfact-standards-doku, *, glossary, documentation-guide'
