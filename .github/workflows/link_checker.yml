@@ -1,11 +1,10 @@
 name: Link Checker
 
 on:
-  push:
-    branches:
-      - main
-  schedule:
-    - cron: '0 1 * * 0' # every Sunday at 01:00
+  workflow_run:
+    workflows: [Build Documentation]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -17,6 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Download docs artifact from the last successful workflow
+        if: steps.cache-docs.outputs.cache-hit != 'true'
         uses: dawidd6/action-download-artifact@v6
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -43,6 +43,50 @@ jobs:
             './docs/**/*.html'
           format: markdown
           output: link_checker_report.md
-          fail: true
+          fail: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Calculate correct links percentage
+        id: calculate_percentage
+        run: |
+          # Extract values from the link checker report                    
+          report_file="link_checker_report.md"
+
+          total=$(grep '🔍 Total' "$report_file" | awk -F'|' '{print $3}' | xargs)
+          successful=$(grep '✅ Successful' "$report_file" | awk -F'|' '{print $3}' | xargs)
+          excluded=$(grep '👻 Excluded' "$report_file" | awk -F'|' '{print $3}' | xargs)
+          
+          # Calculate the total correct, incorrect links (errors + timeouts)
+          correct=$((successful + excluded))
+          incorrect=$((total - correct))
+          
+          # Calculate the percentage of correct links
+          if [ "$total" -gt 0 ]; then
+            percentage=$(echo "scale=2; $correct * 100 / $total" | bc)
+          else
+            percentage=100
+          fi
+          
+          echo "Links: $percentage% correct (Correct: $correct, Incorrect: $incorrect)"
+          
+          # Save the percentage and totals to the environment
+          echo "CORRECT_LINKS_PERCENTAGE=$percentage" >> $GITHUB_ENV
+          echo "CORRECT=$correct" >> $GITHUB_ENV
+          echo "INCORRECT=$incorrect" >> $GITHUB_ENV
+
+      - name: Update dynamic badge for correct links percentage
+        if: ${{ env.GIST_AUTH != '' && env.GIST_ID != '' }}
+        env:
+          GIST_AUTH: ${{ secrets.GIST_AUTH }}
+          GIST_ID: ${{ vars.GIST_ID }}
+        uses: schneegans/dynamic-badges-action@v1.7.0
+        with:
+          auth: ${{ env.GIST_AUTH }}
+          gistID: ${{ env.GIST_ID }}
+          filename: link_check_percentage.json
+          label: "🔗 Links"
+          message: "${{ env.CORRECT_LINKS_PERCENTAGE }}% correct (Correct: ${{ env.CORRECT }}, Incorrect: ${{ env.INCORRECT }})"
+          valColorRange: ${{ env.CORRECT_LINKS_PERCENTAGE }}
+          minColorRange: 0
+          maxColorRange: 100
