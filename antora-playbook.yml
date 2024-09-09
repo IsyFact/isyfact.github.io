@@ -32,7 +32,10 @@ content:
     - url: ./isy-datetime
       branches: HEAD
       start_path: isy-datetime-doc
-    - url: ./isy-sonderzeichen
+    - url: ./isy-security
+      branches: HEAD
+      start_path: doc
+     - url: ./isy-sonderzeichen
       branches: HEAD
       start_path: isy-sonderzeichen-doc
     - url: ../isyfact.github.io
