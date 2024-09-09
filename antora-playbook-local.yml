@@ -34,6 +34,9 @@ content:
     - url: ../isy-datetime
       branches: HEAD
       start_path: isy-datetime-doc
+    - url: ../isy-security
+      branches: HEAD
+      start_path: doc
     - url: ../isy-sonderzeichen
       branches: HEAD
       start_path: isy-sonderzeichen-doc
