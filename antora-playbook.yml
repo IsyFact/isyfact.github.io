@@ -35,7 +35,7 @@ content:
     - url: ./isy-security
       branches: HEAD
       start_path: doc
-     - url: ./isy-sonderzeichen
+    - url: ./isy-sonderzeichen
       branches: HEAD
       start_path: isy-sonderzeichen-doc
     - url: ../isyfact.github.io
