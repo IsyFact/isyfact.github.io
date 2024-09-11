@@ -52,7 +52,7 @@ jobs:
       - name: Checkout isyfact-standards (3.2.x)
         uses: actions/checkout@v4
         with:
-          repository: IsyFact/isyfact-standards (release/3.x)
+          repository: IsyFact/isyfact-standards
           ref: release/3.x
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
