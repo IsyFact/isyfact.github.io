@@ -1,4 +1,4 @@
-[![Links](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/IsyFactTeam/3a204eb8dda02ce05271d355aa4db40a/raw/4a31eacf30b510eb6625d7457334db2ed3d54783/link_check_percentage.json)](https://github.com/IsyFact/isyfact.github.io/actions/workflows/link_checker.yml)
+[![Links](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/IsyFactTeam/3a204eb8dda02ce05271d355aa4db40a/raw/link_check_percentage.json)](https://github.com/IsyFact/isyfact.github.io/actions/workflows/link_checker.yml)
 
 # IsyFact Online Docs
 
