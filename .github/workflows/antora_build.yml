@@ -175,13 +175,22 @@ jobs:
             antora-playbook.yml > antora_output.log || BUILD_FAILED=true
           
           # Pipe the output to process-logs.sh
-          cat antora_output.log | bash process-logs.sh
+          echo "Processing JSON logs..."
+          # Capture the output of the log processing into a variable
+          PROCESSED_LOGS=$(cat antora_output.log | bash process-logs.sh)
           
-          # Check exit code of Antora build command
-          if [ "$BUILD_FAILED" = true ]; then
+          # If the build failed and process-logs.sh produces no output, fallback to default logs
+          if [ "$BUILD_FAILED" = true ] && [ -z "$PROCESSED_LOGS" ]; then
+            echo "Displaying default logs:"
+            cat antora_output.log
+            echo -e "${RED}Antora documentation build failed.${NC}"
+            exit 1
+          elif [ "$BUILD_FAILED" = true ]; then
+            echo "$PROCESSED_LOGS"
             echo -e "${RED}Antora documentation build failed.${NC}"
             exit 1
           else
+            echo "$PROCESSED_LOGS"
             echo -e "${GREEN}Antora documentation build completed successfully.${NC}"
           fi
 

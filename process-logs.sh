@@ -16,8 +16,6 @@ PURPLE='\033[0;35m'      # Purple for source header
 current_source=""
 current_branch=""
 
-# Process the JSON logs from standard input
-echo "Processing JSON logs..."
 # Read each line from the filtered logs
 grep '^{.*}$' | jq -c '. | select(.source.worktree != null)' | while IFS= read -r line; do
   # Extract the source and branch information
