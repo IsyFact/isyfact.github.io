@@ -14,10 +14,10 @@ content:
     - url: ./isyfact-standards
       branches: HEAD
       start_path: isyfact-standards-doc/src/docs/antora
-    - url: ./isyfact-standards-3.1.0
+    - url: ./isyfact-standards-3.2.0
       branches: HEAD
       start_path: isyfact-standards-doc/src/docs/antora
-    - url: ./isyfact-standards-3.2.x
+    - url: ./isyfact-standards-3.3.x
       branches: HEAD
       start_path: isyfact-standards-doc/src/docs/antora
     - url: ./isy-web

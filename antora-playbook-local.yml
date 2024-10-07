@@ -15,7 +15,7 @@ content:
       start_paths: [documentation-guide,glossary]
     - url: ../isyfact-standards
       tags:
-        - 3.1.0
+        - 3.2.0
       branches: [HEAD,release/3.x]
       start_path: isyfact-standards-doc/src/docs/antora
     - url: ../isy-web
