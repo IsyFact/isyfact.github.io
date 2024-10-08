@@ -29,13 +29,13 @@ content:
       start_path: isy-bedienkonzept-doc
     - url: ../isy-datetime
       branches: HEAD
-      start_path: isy-datetime-doc
+      start_path: docs
     - url: ../isy-security
       branches: HEAD
-      start_path: doc
+      start_path: docs
     - url: ../isy-sonderzeichen
       branches: HEAD
-      start_path: isy-sonderzeichen-doc
+      start_path: docs
     - url: ../isyfact.github.io
       branches: HEAD
       start_paths: ort-reports
