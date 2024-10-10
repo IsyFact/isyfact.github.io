@@ -105,7 +105,7 @@ jobs:
           repository: IsyFact/isy-datetime
           ref: ${{ steps.fetch-latest-tags.outputs.isy-datetime }}
           lfs: true
-          sparse-checkout: isy-datetime-doc
+          sparse-checkout: docs
           path: isy-datetime
 
       - name: Checkout isy-sonderzeichen
@@ -114,7 +114,7 @@ jobs:
           repository: IsyFact/isy-sonderzeichen
           ref: ${{ steps.fetch-latest-tags.outputs.isy-sonderzeichen }}
           lfs: true
-          sparse-checkout: isy-sonderzeichen-doc
+          sparse-checkout: docs
           path: isy-sonderzeichen
 
       - name: Checkout isy-security
@@ -123,7 +123,7 @@ jobs:
           repository: IsyFact/isy-security
           ref: ${{ steps.fetch-latest-tags.outputs.isy-security }}
           lfs: true
-          sparse-checkout: doc
+          sparse-checkout: docs
           path: isy-security
 
       - name: Checkout isy-bedienkonzept
