@@ -37,10 +37,10 @@ content:
       start_path: doc
     - url: ./isy-security
       branches: HEAD
-      start_path: doc
+      start_path: docs
     - url: ./isy-sonderzeichen
       branches: HEAD
-      start_path: isy-sonderzeichen-doc
+      start_path: docs
     - url: ../isyfact.github.io
       branches: HEAD
       start_paths: ort-reports
