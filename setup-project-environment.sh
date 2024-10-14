@@ -78,6 +78,7 @@ clone_repo https://github.com/IsyFact/isy-web.git ../isy-web master
 clone_repo https://github.com/IsyFact/isy-angular-widgets.git ../isy-angular-widgets main
 clone_repo https://github.com/IsyFact/isy-bedienkonzept.git ../isy-bedienkonzept main
 clone_repo https://github.com/IsyFact/isy-datetime.git ../isy-datetime develop
+clone_repo https://github.com/IsyFact/isy-datetime.git ../isy-datetime-persistence develop
 clone_repo https://github.com/IsyFact/isy-sonderzeichen.git ../isy-sonderzeichen develop
 
 # Set up Git LFS
@@ -90,6 +91,7 @@ setup_git_lfs ../isy-web
 setup_git_lfs ../isy-angular-widgets
 setup_git_lfs ../isy-bedienkonzept
 setup_git_lfs ../isy-datetime
+setup_git_lfs ../isy-datetime-persistence
 setup_git_lfs ../isy-sonderzeichen
 
 # Generate templates
