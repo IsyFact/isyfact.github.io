@@ -5,8 +5,7 @@
 It focuses on changes to the UI, extensions and site-wide configuration options in the playbook.
 
 ## 2024
-
-- [2024-08-13] [UI] `IFS-3938`: adjust build and playbook for IF 3.1.0 release
+- [2024-10-13] [UI] `IFS-4177`: added entries for new separated modules
 - [2024-08-13] [UI] `IFS-4020`: add custom ordering of Antora components in the component selector (playbook property: `asciidoc.attributes.page-component-order`)
 - [2024-06-19] [UI] `IFS-3823`: add CSS styles for the glossary's status model
 - [2024-05-17] [UI] `IFS-3748`: add IsyFact logo and top menu entries (links to isyfact.de and GitHub)
