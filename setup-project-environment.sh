@@ -78,8 +78,10 @@ clone_repo https://github.com/IsyFact/isy-web.git ../isy-web master
 clone_repo https://github.com/IsyFact/isy-angular-widgets.git ../isy-angular-widgets main
 clone_repo https://github.com/IsyFact/isy-bedienkonzept.git ../isy-bedienkonzept main
 clone_repo https://github.com/IsyFact/isy-datetime.git ../isy-datetime develop
-clone_repo https://github.com/IsyFact/isy-datetime.git ../isy-datetime-persistence develop
+clone_repo https://github.com/IsyFact/isy-datetime-persistence.git ../isy-datetime-persistence develop
+clone_repo https://github.com/IsyFact/isy-security.git ../isy-security develop
 clone_repo https://github.com/IsyFact/isy-sonderzeichen.git ../isy-sonderzeichen develop
+clone_repo https://github.com/IsyFact/isy-util.git ../isy-util develop
 
 # Set up Git LFS
 echo -e "${BLUE}Setting up Git LFS...${NC}"
@@ -92,7 +94,9 @@ setup_git_lfs ../isy-angular-widgets
 setup_git_lfs ../isy-bedienkonzept
 setup_git_lfs ../isy-datetime
 setup_git_lfs ../isy-datetime-persistence
+setup_git_lfs ../isy-security
 setup_git_lfs ../isy-sonderzeichen
+setup_git_lfs ../isy-util
 
 # Generate templates
 generate_templates ../isyfact-standards/isyfact-standards-doc
