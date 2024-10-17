@@ -140,7 +140,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: IsyFact/isy-util
-          ref: ${{ steps.fetch-latest-tags.outputs.isy-util }}
+          ref: feature/IFS-4183-Antora-Dokumentation-fuer-neue-Services
           lfs: true
           sparse-checkout: docs
           path: isy-util
