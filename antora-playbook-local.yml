@@ -39,6 +39,9 @@ content:
     - url: ../isy-sonderzeichen
       branches: HEAD
       start_path: docs
+    - url: ../isy-util
+      branches: HEAD
+      start_path: docs
     - url: ../isyfact.github.io
       branches: HEAD
       start_paths: ort-reports
