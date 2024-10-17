@@ -41,22 +41,22 @@ jobs:
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards
-      - name: Checkout isyfact-standards (release/3.1.0)
+      - name: Checkout isyfact-standards (release/3.2.0)
         uses: actions/checkout@v4
         with:
           repository: IsyFact/isyfact-standards
-          ref: 3.1.0
+          ref: 3.2.0
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
-          path: isyfact-standards-3.1.0
-      - name: Checkout isyfact-standards (3.2.x)
+          path: isyfact-standards-3.2.0
+      - name: Checkout isyfact-standards (3.3.x)
         uses: actions/checkout@v4
         with:
           repository: IsyFact/isyfact-standards
           ref: release/3.x
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
-          path: isyfact-standards-3.2.x
+          path: isyfact-standards-3.3.x
 
       - name: Checkout isy-documentation
         uses: actions/checkout@v4
@@ -161,10 +161,10 @@ jobs:
           cache: maven
       - name: Generate Templates (master)
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards/isyfact-standards-doc package
-      - name: Generate Templates (release/3.1.0)
-        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-3.1.0/isyfact-standards-doc package
-      - name: Generate Templates (release/3.2.x)
-        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-3.2.x/isyfact-standards-doc package
+      - name: Generate Templates (release/3.2.0)
+        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-3.2.0/isyfact-standards-doc package
+      - name: Generate Templates (release/3.3.x)
+        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-3.3.x/isyfact-standards-doc package
 
       - name: Setup node
         uses: actions/setup-node@v4
