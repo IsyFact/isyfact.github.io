@@ -41,7 +41,7 @@ content:
     - url: ./isy-sonderzeichen
       branches: HEAD
       start_path: docs
-    - url: ../isy-util
+    - url: ./isy-util
       branches: HEAD
       start_path: docs
     - url: ../isyfact.github.io

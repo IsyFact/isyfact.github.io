@@ -154,15 +154,6 @@ jobs:
           sparse-checkout: isy-bedienkonzept-doc
           path: isy-bedienkonzept
 
-      - name: Checkout isy-util
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-util
-          ref: ${{ steps.fetch-latest-tags.outputs.isy-util }}
-          lfs: true
-          sparse-checkout: docs
-          path: isy-util
-
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
