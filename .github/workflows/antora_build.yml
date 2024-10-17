@@ -135,15 +135,6 @@ jobs:
           sparse-checkout: docs
           path: isy-security
 
-      - name: Checkout isy-bedienkonzept
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-bedienkonzept
-          ref: main
-          lfs: true
-          sparse-checkout: isy-bedienkonzept-doc
-          path: isy-bedienkonzept
-
       - name: Checkout isy-util
         uses: actions/checkout@v4
         with:
@@ -152,6 +143,15 @@ jobs:
           lfs: true
           sparse-checkout: docs
           path: isy-util
+
+      - name: Checkout isy-bedienkonzept
+        uses: actions/checkout@v4
+        with:
+          repository: IsyFact/isy-bedienkonzept
+          ref: main
+          lfs: true
+          sparse-checkout: isy-bedienkonzept-doc
+          path: isy-bedienkonzept
 
       - name: Set up JDK
         uses: actions/setup-java@v4
