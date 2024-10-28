@@ -79,6 +79,7 @@ clone_repo https://github.com/IsyFact/isy-angular-widgets.git ../isy-angular-wid
 clone_repo https://github.com/IsyFact/isy-bedienkonzept.git ../isy-bedienkonzept main
 clone_repo https://github.com/IsyFact/isy-datetime.git ../isy-datetime develop
 clone_repo https://github.com/IsyFact/isy-datetime-persistence.git ../isy-datetime-persistence develop
+clone_repo https://github.com/IsyFact/isy-polling.git ../isy-polling develop
 clone_repo https://github.com/IsyFact/isy-security.git ../isy-security develop
 clone_repo https://github.com/IsyFact/isy-sonderzeichen.git ../isy-sonderzeichen develop
 clone_repo https://github.com/IsyFact/isy-util.git ../isy-util develop
