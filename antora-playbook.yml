@@ -35,6 +35,9 @@ content:
     - url: ./isy-datetime-persistence
       branches: HEAD
       start_path: docs
+    - url: ./isy-polling
+      branches: HEAD
+      start_path: docs
     - url: ./isy-security
       branches: HEAD
       start_path: docs
