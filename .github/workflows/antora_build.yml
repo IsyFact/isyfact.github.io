@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      - "feature/**"
+      - 'feature/**'
   schedule:
     - cron: '0 0 * * 0' # every Sunday at 00:00
   workflow_dispatch:
