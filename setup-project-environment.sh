@@ -82,6 +82,7 @@ clone_repo https://github.com/IsyFact/isy-datetime-persistence.git ../isy-dateti
 clone_repo https://github.com/IsyFact/isy-polling.git ../isy-polling develop
 clone_repo https://github.com/IsyFact/isy-security.git ../isy-security develop
 clone_repo https://github.com/IsyFact/isy-sonderzeichen.git ../isy-sonderzeichen develop
+clone_repo https://github.com/IsyFact/isy-task.git ../isy-task develop
 clone_repo https://github.com/IsyFact/isy-util.git ../isy-util develop
 
 # Set up Git LFS
