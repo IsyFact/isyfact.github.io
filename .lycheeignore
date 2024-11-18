@@ -1,3 +1,6 @@
 # GitHub edit links
 https://github.com/.*/edit/.*\.adoc
 https?://isyfact.de
+
+# Example links
+https://www.beispielbehoerde.de
