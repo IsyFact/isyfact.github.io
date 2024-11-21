@@ -84,6 +84,8 @@ clone_repo https://github.com/IsyFact/isy-security.git ../isy-security develop
 clone_repo https://github.com/IsyFact/isy-sonderzeichen.git ../isy-sonderzeichen develop
 clone_repo https://github.com/IsyFact/isy-task.git ../isy-task develop
 clone_repo https://github.com/IsyFact/isy-util.git ../isy-util develop
+clone_repo https://github.com/IsyFact/isyfact-standards-referenzimplementierung.git ../isyfact-standards-referenzimplementierung main
+
 
 # Set up Git LFS
 echo -e "${BLUE}Setting up Git LFS...${NC}"
@@ -99,6 +101,7 @@ setup_git_lfs ../isy-datetime-persistence
 setup_git_lfs ../isy-security
 setup_git_lfs ../isy-sonderzeichen
 setup_git_lfs ../isy-util
+setup_git_lfs ../isyfact-standards-referenzimplementierung
 
 # Generate templates
 generate_templates ../isyfact-standards/isyfact-standards-doc

@@ -20,6 +20,9 @@ content:
     - url: ./isyfact-standards-3.3.x
       branches: HEAD
       start_path: isyfact-standards-doc/src/docs/antora
+    - url: ./isyfact-standards-referenzimplementierung
+      branches: HEAD
+      start_path: isyfact-standards-referenzimplementierung-doc
     - url: ./isy-web
       branches: HEAD
       start_path: isy-web-doc/src/docs/antora
