@@ -171,6 +171,15 @@ jobs:
           sparse-checkout: isy-bedienkonzept-doc
           path: isy-bedienkonzept
 
+      - name: Checkout isyfact-standards-referenzimplementierung
+        uses: actions/checkout@v4
+        with:
+          repository: IsyFact/isyfact-standards-referenzimplementierung
+          ref: main
+          lfs: true
+          sparse-checkout: isyfact-standards-referenzimplementierung-doc
+          path: isyfact-standards-referenzimplementierung
+          
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
