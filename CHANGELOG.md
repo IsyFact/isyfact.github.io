@@ -5,6 +5,7 @@
 It focuses on changes to the UI, extensions and site-wide configuration options in the playbook.
 
 ## 2024
+- [2024-12-04] [UI] `IFS-4318`: added checkbox to search field to filter by Antora component
 - [2024-10-13] [UI] `IFS-4177`: added entries for new separated modules
 - [2024-10-07] [UI] `IFS-4006`: adjust build and playbook for IF 3.2.0 release
 - [2024-08-13] [UI] `IFS-3938`: adjust build and playbook for IF 3.1.0 release

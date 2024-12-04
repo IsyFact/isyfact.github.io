@@ -11,6 +11,10 @@
       <div class="navbar-item search hide-for-print">
         <div id="search-field" class="field">
           <input id="search-input" type="text" placeholder="Doku durchsuchen"{{#if page.home}} autofocus{{/if}}>
+          <label class="filter checkbox">
+            <input type="checkbox" data-facet-filter="component:{{page.component.name}}"> aktuelle Doku
+          </label>
+
         </div>
       </div>
       {{/if}}
