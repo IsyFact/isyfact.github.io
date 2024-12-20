@@ -34,7 +34,7 @@ jobs:
           restore-keys: cache-lychee-
 
       - name: Run Lychee on docs folder
-        uses: lycheeverse/lychee-action@v1.10.0
+        uses: lycheeverse/lychee-action@v2.2.0
         with:
           args: |
             --no-progress 
