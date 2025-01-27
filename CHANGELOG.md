@@ -4,7 +4,7 @@
 > Please note: This changelog doesn't contain content source updates. 
 It focuses on changes to the UI, extensions and site-wide configuration options in the playbook.
 
-## 2024
+## 2025
 - [2025-01-27] [UI] `IFS-4412`: improved responsive design for the IsyFact online documentation
 
 ## 2024
