@@ -5,6 +5,9 @@
 It focuses on changes to the UI, extensions and site-wide configuration options in the playbook.
 
 ## 2024
+- [2025-01-27] [UI] `IFS-4412`: improved responsive design for the IsyFact online documentation
+
+## 2024
 - [2024-12-04] [UI] `IFS-4318`: added checkbox to search field to filter by Antora component
 - [2024-12-05] [UI] `IFS-4421`: removed entries for several separated modules
 - [2024-10-13] [UI] `IFS-4177`: added entries for new separated modules

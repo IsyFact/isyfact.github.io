@@ -1,10 +1,16 @@
 
+/* print styles */
 @media print {
     div.divFooter {
         position: fixed;
         bottom: 0;
         text-align: center;
     }
+}
+
+/* headings */
+h1, h2, h3, h4, h5, h6 {
+    border-bottom: 1px solid #ddd; 
 }
 
 h1 { font-size: 2.125em; }
@@ -14,61 +20,87 @@ h4 { font-size: 1.125em; }
 h5 { font-size: 1.125em; }
 h6 { font-size: 1em; }
 
-@media only screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
     h1 { font-size: 2.75em; }
     h2 { font-size: 2.3125em; }
     h3 { font-size: 1.6875em; }
     h4 { font-size: 1.4375em; }
 }
 
-/* Underline beneath titles */
-h1, h2, h3, h4, h5, h6 { border-bottom: 1px solid #dddddd; }
-
+/* listings */
 div.listingblock pre {
     white-space: pre-wrap;
-    font-size: .75rem;
+    font-size: 0.75rem;
 }
 
-/* nicer table header */
-table thead, table tfoot { background: #00417a linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0)); font-weight: bold; }
-table thead tr th, table thead tr td, table tfoot tr th, table tfoot tr td { padding: 0.5em 0.625em 0.625em; font-size: inherit; color: white; text-align: left; }
+/* table styles */
+table thead,
+table tfoot { 
+    background: #00417a linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    font-weight: bold;
+}
+
+table thead tr th,
+table thead tr td,
+table tfoot tr th,
+table tfoot tr td {
+    padding: 0.5em 0.625em 0.625em;
+    font-size: inherit;
+    color: white;
+    text-align: left;
+}
 
 /* more readable table rows */
-table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #edf2f2; }
+table tr.even,
+table tr.alt,
+table tr:nth-of-type(even) {
+    background: #edf2f2;
+}
 
-.table_head_sticky thead{
+.table_head_sticky thead {
     position: sticky;
     inset-block-start: 0;
     top: 105px;
 }
 
-/* center images */
-.imageblock.text-center {
-    text-align: center;
-}
-
-.scrollbar-table{
+/* scrollbar settings */
+.scrollbar-table {
     overflow-x: auto;
 }
 
 /* no scrollbar for Produktkatalog */
-.table_head_sticky .scrollbar-table{
+.table_head_sticky .scrollbar-table {
     overflow-x: revert;
 }
 
-.fa-ban{
-    color: red;
+/* icon colors */
+.fa-ban {
+    color: red; 
 }
 
-.fa-puzzle-piece, .fa-wrench {
-    color: #ff9900;
+.fa-puzzle-piece,
+.fa-wrench { 
+    color: #ff9900; 
 }
 
 /* glossary styles */
+.glossary .sect2 {
+    display: flex;
+    flex-wrap: wrap;
+}
 
-.glossary .status {
-    margin: -1.7rem 0 0;
-    float: right;
+.glossary .sect2 h3:first-child {
+    flex: 6;
+}
+
+.glossary .paragraph.status {
+    flex: 4;
+    text-align: right;
+    border-bottom: 1px solid #ddd;
+}
+
+.glossary .sect2:not(:has(.paragraph.status)) > * {
+    flex: 1 1 100%;
 }
 
 .glossary .status span {
@@ -83,19 +115,18 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #edf2f2; }
     color: white;
 }
 
-/* veraltet (deprecated) */
+/* deprecated */
 .glossary .status .deprecated {
     background-color: darkred;
 }
 
-/* vorgeschlagen (proposed) */
-/* überarbeitet (revised) */
+/* proposed and revised */
 .glossary .status .proposed,
 .glossary .status .revised {
     background-color: #336699;
 }
 
-/* abgelöst (superseded) */
+/* superseded */
 .glossary .status .superseded {
     background-color: #444;
 }
@@ -104,6 +135,11 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #edf2f2; }
     background-color: #A6A6A6;
 }
 
+.glossary th a, .glossary th a:hover {
+    color: #f0f0f0;
+}
+
+/* navigation */
 .navbar-item img {
     width: 40px;
 }
@@ -113,6 +149,33 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #edf2f2; }
     color: #f0f0f0;
 }
 
-.glossary th a, .glossary th a:hover {
-    color: #f0f0f0;
+/* image alignment */
+.imageblock.text-center {
+    text-align: center;
+}
+
+/* layout for navigation and content areas */
+@media screen and (min-width: 768px) {
+    .nav-container {
+        width: 15rem;
+    }
+    .doc {
+        margin: 0 1rem;
+        max-width: 60rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .nav-container {
+        width: 20rem;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .nav-container {
+        width: 25rem;
+    }
+    .doc {
+        max-width: 70rem;
+    }
 }
