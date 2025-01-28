@@ -154,6 +154,11 @@ table tr:nth-of-type(even) {
     text-align: center;
 }
 
+/* Content width adjustment */
+main .content .doc {
+    max-width: fit-content;
+}
+
 /* layout for navigation and content areas */
 @media screen and (min-width: 768px) {
     .nav-container {
@@ -161,7 +166,6 @@ table tr:nth-of-type(even) {
     }
     .doc {
         margin: 0 1rem;
-        max-width: 60rem;
     }
 }
 
@@ -171,11 +175,11 @@ table tr:nth-of-type(even) {
     }
 }
 
-@media screen and (min-width: 1280px) {
-    .nav-container {
-        width: 25rem;
+@media screen and (min-width: 1920px) {
+    aside.toc.sidebar {
+        flex-basis: 20rem;
     }
     .doc {
-        max-width: 70rem;
+        margin: 0 2rem;
     }
 }
