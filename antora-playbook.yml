@@ -35,6 +35,9 @@ content:
     - url: ./isy-datetime
       branches: HEAD
       start_path: docs
+    - url: ./isy-datetime-persistence
+      branches: HEAD
+      start_path: docs
     - url: ./isy-sonderzeichen
       branches: HEAD
       start_path: docs

@@ -87,7 +87,7 @@ jobs:
       - name: Fetch latest tags
         id: fetch-latest-tags
         run: |
-          repos=("isy-datetime" "isy-datetime-persistence" "isy-polling" "isy-sonderzeichen" "isy-security" "isy-task" "isy-util")          
+          repos=("isy-datetime" "isy-datetime-persistence" "isy-sonderzeichen")          
           
           for repo in "${repos[@]}"; do
             latest_tag=$(git ls-remote --tags https://github.com/IsyFact/$repo.git | grep -o 'refs/tags/[0-9]*\.[0-9]*\.[0-9]*$' | sort -V | tail -n1 | awk -F'/' '{print $3}')
@@ -117,15 +117,6 @@ jobs:
           sparse-checkout: docs
           path: isy-datetime-persistence
 
-      - name: Checkout isy-polling
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-polling
-          ref: ${{ steps.fetch-latest-tags.outputs.isy-polling }}
-          lfs: true
-          sparse-checkout: docs
-          path: isy-polling
-
       - name: Checkout isy-sonderzeichen
         uses: actions/checkout@v4
         with:
@@ -134,33 +125,6 @@ jobs:
           lfs: true
           sparse-checkout: docs
           path: isy-sonderzeichen
-
-      - name: Checkout isy-security
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-security
-          ref: ${{ steps.fetch-latest-tags.outputs.isy-security }}
-          lfs: true
-          sparse-checkout: docs
-          path: isy-security
-
-      - name: Checkout isy-task
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-task
-          ref: ${{ steps.fetch-latest-tags.outputs.isy-task }}
-          lfs: true
-          sparse-checkout: docs
-          path: isy-task
-
-      - name: Checkout isy-util
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-util
-          ref: ${{ steps.fetch-latest-tags.outputs.isy-util }}
-          lfs: true
-          sparse-checkout: docs
-          path: isy-util
 
       - name: Checkout isy-bedienkonzept
         uses: actions/checkout@v4
