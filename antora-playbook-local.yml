@@ -15,30 +15,27 @@ content:
       start_paths: [documentation-guide,glossary]
       version:
         'feature/(*)': $1
-        'master': 'next'
+        'master': 'latest'
     - url: ../isyfact-standards
       branches: master, feature/IFS-4549*, release/4*, release/3.x*, release/3.2.1
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'feature/(*)': $1
         'release/(*)': $1
-        'master': '4.x'
-    - url: ../isyfact-standards-4.0.0
-      branches: HEAD
-      start_path: isyfact-standards-doc/src/docs/antora
-    - url: ../isyfact-standards-4.x
-      branches: HEAD
-      start_path: isyfact-standards-doc/src/docs/antora
-    - url: ../isyfact-standards-3.2.1
-      branches: HEAD
-      start_path: isyfact-standards-doc/src/docs/antora
-    - url: ../isyfact-standards-3.x
-      branches: master, feature/IFS-4549*, release/4*, release/3.x*, release/3.2.1
-      start_path: isyfact-standards-doc/src/docs/antora
-      version:
-        'feature/(*)': $1
-        'release/(*)': $1
-        'master': '4.x'
+        'master': '5.x'
+        '(*)': $1
+#    - url: ../isyfact-standards-4.0.0
+#      branches: HEAD
+#      start_path: isyfact-standards-doc/src/docs/antora
+#    - url: ../isyfact-standards-4.x
+#      branches: HEAD
+#      start_path: isyfact-standards-doc/src/docs/antora
+#    - url: ../isyfact-standards-3.2.1
+#      branches: HEAD
+#      start_path: isyfact-standards-doc/src/docs/antora
+#    - url: ../isyfact-standards-3.x
+#      branches: HEAD
+#      start_path: isyfact-standards-doc/src/docs/antora
     - url: ../isyfact-standards-referenzimplementierung
       branches: HEAD
       start_path: isyfact-standards-referenzimplementierung-doc
@@ -49,6 +46,7 @@ content:
         'feature/(*)': $1
         'release/(*)': $1
         'main': '18.x'
+        '(*)': $1
     - url: ../isy-bedienkonzept
       branches: main, feature/*, release/*
       start_path: isy-bedienkonzept-doc
@@ -56,6 +54,7 @@ content:
         'feature/(*)': $1
         'release/(*)': $1
         'main': '1.x'
+        '(*)': $1
     - url: ../isy-datetime
       branches: HEAD
       start_path: isy-datetime-doc
