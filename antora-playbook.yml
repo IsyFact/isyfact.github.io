@@ -21,7 +21,7 @@ content:
         'master': '5.x'
         '(*)': $1
     - url: ./isyfact-standards-4.0.0
-      branches: HEAD
+      tags: [4.0.0]
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'release/(*)': $1
