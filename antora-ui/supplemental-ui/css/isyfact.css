@@ -10,6 +10,9 @@
 
 /* headings */
 h1, h2, h3, h4, h5, h6 {
+    display: block;
+    align-self: stretch;
+    width: 100%;
     border-bottom: 1px solid #ddd; 
 }
 
@@ -21,7 +24,7 @@ h5 { font-size: 1.125em; }
 h6 { font-size: 1em; }
 
 @media screen and (min-width: 768px) {
-    h1 { font-size: 4.75rem; }
+    h1 { font-size: 2.75rem; }
     h2 { font-size: 2.3125em; }
     h3 { font-size: 1.6875em; }
     h4 { font-size: 1.4375em; }
@@ -162,19 +165,13 @@ main .content .doc {
     max-width: 1200px; /*Upper Bound*/
     width: 100%;
     /*margin: 0 auto; !*Center it*!*/
-    padding: 0 1rem; /*Spacing at the edges*/
+    padding: 0 1rem;
 }
 
 /* Styling for the Table of Content (TOC) the ride side one */
 aside.toc.sidebar{
-    flex-direction: row;
     flex-basis: 15rem;
-    max-width: 15rem;
-    position: sticky;
-    top: 0;
-    height: 100vh; /*Show on full height*/
-    overflow-y: auto;
-    order: 1;
+    padding-left: 1rem;
     box-shadow: -2px 0 4px rgba(0,0,0,0.1); /*optional but gives a cleaner look*/
 }
 
@@ -189,19 +186,23 @@ aside.toc.sidebar{
     }
 }
 
+@media screen and (min-width: 1024px) {
+    .nav-container {
+        width: 20rem;
+    }
+}
+
 @media screen and (min-width: 1920px) {
     .nav-container{
         width: 20rem;
     }
     main .content .doc{
         max-width: 1400px;
-        left: auto;
-        right: auto;
+        /*left: auto;*/
+        /*right: auto;*/
     }
 
     aside.toc.sidebar {
-        position: sticky;
-        top: 0;
         padding: 1rem;
         max-width: 20rem;
     }
