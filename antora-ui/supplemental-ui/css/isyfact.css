@@ -156,14 +156,23 @@ table tr:nth-of-type(even) {
 
 /* Content width adjustment */
 main .content .doc {
-    max-width: fit-content;
+    max-width: 1200px; /*Upper Bound*/
+    padding: 0 1rem;
+}
+
+/* Styling for the Table of Content (TOC) the ride side one */
+aside.toc.sidebar {
+    flex-basis: 15rem;
+    padding-left: 2rem;
+    box-shadow: 1px 0 4px #e1e1e1; /*optional but gives a cleaner look*/
 }
 
 /* layout for navigation and content areas */
+.nav-container {
+    width: 15rem;
+}
+
 @media screen and (min-width: 768px) {
-    .nav-container {
-        width: 15rem;
-    }
     .doc {
         margin: 0 1rem;
     }
@@ -176,10 +185,14 @@ main .content .doc {
 }
 
 @media screen and (min-width: 1920px) {
+    .nav-container{
+        width: 20rem;
+    }
+    main .content .doc{
+        max-width: 1400px;
+    }
+
     aside.toc.sidebar {
         flex-basis: 20rem;
-    }
-    .doc {
-        margin: 0 2rem;
     }
 }
