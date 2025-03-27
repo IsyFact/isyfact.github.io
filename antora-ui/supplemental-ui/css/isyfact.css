@@ -156,12 +156,7 @@ table tr:nth-of-type(even) {
 
 /* Content width adjustment */
 main .content .doc {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     max-width: 1200px; /*Upper Bound*/
-    width: 100%;
-    /*margin: 0 auto; !*Center it*!*/
     padding: 0 1rem;
 }
 
