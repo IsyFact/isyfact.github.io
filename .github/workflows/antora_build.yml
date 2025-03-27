@@ -41,14 +41,30 @@ jobs:
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards
+      - name: Checkout isyfact-standards (4.0.0)
+        uses: actions/checkout@v4
+        with:
+          repository: IsyFact/isyfact-standards
+          ref: 4.0.0
+          lfs: true
+          sparse-checkout: isyfact-standards-doc/src/docs/antora
+          path: isyfact-standards-4.0.0
+      - name: Checkout isyfact-standards (4.x)
+        uses: actions/checkout@v4
+        with:
+          repository: IsyFact/isyfact-standards
+          ref: release/4.x
+          lfs: true
+          sparse-checkout: isyfact-standards-doc/src/docs/antora
+          path: isyfact-standards-4.x
       - name: Checkout isyfact-standards (release/3.2.0)
         uses: actions/checkout@v4
         with:
           repository: IsyFact/isyfact-standards
-          ref: 3.2.0
+          ref: 3.2.1
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
-          path: isyfact-standards-3.2.0
+          path: isyfact-standards-3.2.1
       - name: Checkout isyfact-standards (3.3.x)
         uses: actions/checkout@v4
         with:
@@ -65,15 +81,6 @@ jobs:
           ref: master
           lfs: true
           path: isy-documentation
-
-      - name: Checkout isy-web
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-web
-          ref: master
-          lfs: true
-          sparse-checkout: isy-web-doc/src/docs/antora
-          path: isy-web
 
       - name: Checkout isy-angular-widgets
         uses: actions/checkout@v4
@@ -152,8 +159,12 @@ jobs:
           cache: maven
       - name: Generate Templates (master)
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards/isyfact-standards-doc package
-      - name: Generate Templates (release/3.2.0)
-        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-3.2.0/isyfact-standards-doc package
+      - name: Generate Templates (release/4.0.0)
+        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-4.0.0/isyfact-standards-doc package
+      - name: Generate Templates (release/4.x)
+        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-4.x/isyfact-standards-doc package
+      - name: Generate Templates (release/3.2.1)
+        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-3.2.1/isyfact-standards-doc package
       - name: Generate Templates (release/3.3.x)
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-3.3.x/isyfact-standards-doc package
 
