@@ -193,7 +193,6 @@ aside.toc.sidebar {
     }
 
     aside.toc.sidebar {
-        padding: 1rem;
-        max-width: 20rem;
+        flex-basis: 20rem;
     }
 }
