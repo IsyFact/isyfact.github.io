@@ -161,10 +161,10 @@ main .content .doc {
 }
 
 /* Styling for the Table of Content (TOC) the ride side one */
-aside.toc.sidebar{
+aside.toc.sidebar {
     flex-basis: 15rem;
-    padding-left: 1rem;
-    box-shadow: -2px 0 4px rgba(0,0,0,0.1); /*optional but gives a cleaner look*/
+    padding-left: 2rem;
+    box-shadow: 1px 0 4px #e1e1e1; /*optional but gives a cleaner look*/
 }
 
 /* layout for navigation and content areas */
