@@ -173,9 +173,6 @@ aside.toc.sidebar {
 }
 
 @media screen and (min-width: 768px) {
-    .nav-container{
-        width: 15rem;
-    }
     .doc {
         margin: 0 1rem;
     }
