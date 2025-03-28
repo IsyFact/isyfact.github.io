@@ -11,7 +11,7 @@ content:
   # Convention: All git repositories are cloned in the same parent directory.
   sources:
     - url: ../isy-documentation
-      branches: master, feature/IFS-4549*
+      branches: master, HEAD
       start_paths: [documentation-guide,glossary]
       version:
         'feature/(*)': $1
@@ -41,7 +41,7 @@ content:
       branches: HEAD
       start_path: isyfact-standards-referenzimplementierung-doc
     - url: ../isy-web
-      branches: master, feature/IFS-4549*, release/5.x isy-web-doc/src/docs/antora
+      branches: master, HEAD, release/5.x isy-web-doc/src/docs/antora
       start_path: isy-web-doc/src/docs/antora
       version:
         'feature/(*)': $1
