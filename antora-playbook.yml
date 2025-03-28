@@ -9,32 +9,62 @@ content:
   # Comment: Configuration for CI/CD-Pipeline (using the Git LFS workaround as described in the README)
   sources:
     - url: ./isy-documentation
-      branches: HEAD
+      branches: master
       start_paths: [documentation-guide, glossary]
+      version:
+        'master': 'latest'
     - url: ./isyfact-standards
-      branches: HEAD
+      branches: master
       start_path: isyfact-standards-doc/src/docs/antora
+      version:
+        'release/(*)': $1
+        'master': '5.x'
+        '(*)': $1
     - url: ./isyfact-standards-4.0.0
-      branches: HEAD
+      tags: [4.0.0]
       start_path: isyfact-standards-doc/src/docs/antora
+      version:
+        'release/(*)': $1
+        'master': '5.x'
+        '(*)': $1
     - url: ./isyfact-standards-4.x
-      branches: HEAD
+      branches: release/4.x
       start_path: isyfact-standards-doc/src/docs/antora
+      version:
+        'release/(*)': $1
+        'master': '5.x'
+        '(*)': $1
     - url: ./isyfact-standards-3.2.1
       branches: HEAD
       start_path: isyfact-standards-doc/src/docs/antora
+      version:
+        'release/(*)': $1
+        'master': '5.x'
+        '(*)': $1
     - url: ./isyfact-standards-3.3.x
-      branches: HEAD
+      branches: release/3.x
       start_path: isyfact-standards-doc/src/docs/antora
+      version:
+        'release/(*)': $1
+        'master': '5.x'
+        '(*)': $1
     - url: ./isyfact-standards-referenzimplementierung
       branches: HEAD
       start_path: isyfact-standards-referenzimplementierung-doc
     - url: ./isy-angular-widgets
-      branches: HEAD
+      branches: main, release/*
       start_path: isy-angular-widgets-doc
+      version:
+        'release/(*)': $1
+        'main': '18.x'
+        '(*)': $1
     - url: ./isy-bedienkonzept
-      branches: HEAD
+      branches: main, release/*
       start_path: isy-bedienkonzept-doc
+      version:
+        'release/(*)': $1
+        'main': '1.x'
+        '(*)': $1
     - url: ./isy-datetime
       branches: HEAD
       start_path: isy-datetime-doc

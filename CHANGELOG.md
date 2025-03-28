@@ -6,6 +6,7 @@ It focuses on changes to the UI, extensions and site-wide configuration options 
 
 ## 2025
 - [2025-03-27] [UI] `IFS-4538`: limits online documentation width and improves readability
+- [2025-03-20] [UI] `IFS-4549`: centralize version mapping 
 - [2025-03-20] [UI] `IFS-4524`: adjust build and playbook for IF 4.0.0 release
 - [2025-02-03] [UI] `IFS-4512`: adjust scope of the online documentation
 - [2025-01-27] [UI] `IFS-4412`: improved responsive design for the IsyFact online documentation
