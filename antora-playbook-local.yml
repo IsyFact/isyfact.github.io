@@ -11,32 +11,59 @@ content:
   # Convention: All git repositories are cloned in the same parent directory.
   sources:
     - url: ../isy-documentation
-      branches: HEAD
+      branches: master, HEAD
       start_paths: [documentation-guide,glossary]
+      version:
+        'feature/(*)': $1
+        'master': 'latest'
     - url: ../isyfact-standards
-      branches: HEAD
+      branches: master, HEAD, release/4*, release/3.x*, release/3.2.1
+      tags: [4.0.0]
       start_path: isyfact-standards-doc/src/docs/antora
-    - url: ../isyfact-standards-4.0.0
-      branches: HEAD
-      start_path: isyfact-standards-doc/src/docs/antora
-    - url: ../isyfact-standards-4.x
-      branches: HEAD
-      start_path: isyfact-standards-doc/src/docs/antora
-    - url: ../isyfact-standards-3.2.1
-      branches: HEAD
-      start_path: isyfact-standards-doc/src/docs/antora
-    - url: ../isyfact-standards-3.x
-      branches: HEAD
-      start_path: isyfact-standards-doc/src/docs/antora
+      version:
+        'feature/(*)': $1
+        'release/(*)': $1
+        'master': '5.x'
+        '(*)': $1
+#    - url: ../isyfact-standards-4.0.0
+#      branches: HEAD
+#      start_path: isyfact-standards-doc/src/docs/antora
+#    - url: ../isyfact-standards-4.x
+#      branches: HEAD
+#      start_path: isyfact-standards-doc/src/docs/antora
+#    - url: ../isyfact-standards-3.2.1
+#      branches: HEAD
+#      start_path: isyfact-standards-doc/src/docs/antora
+#    - url: ../isyfact-standards-3.x
+#      branches: HEAD
+#      start_path: isyfact-standards-doc/src/docs/antora
     - url: ../isyfact-standards-referenzimplementierung
       branches: HEAD
       start_path: isyfact-standards-referenzimplementierung-doc
+    - url: ../isy-web
+      branches: master, HEAD, release/5.x isy-web-doc/src/docs/antora
+      start_path: isy-web-doc/src/docs/antora
+      version:
+        'feature/(*)': $1
+        'release/(*)': $1
+        'master': '6.x'
+        '(*)': $1
     - url: ../isy-angular-widgets
-      branches: HEAD
+      branches: main, feature/*, release/*
       start_path: isy-angular-widgets-doc
+      version:
+        'feature/(*)': $1
+        'release/(*)': $1
+        'main': '18.x'
+        '(*)': $1
     - url: ../isy-bedienkonzept
-      branches: HEAD
+      branches: main, feature/*, release/*
       start_path: isy-bedienkonzept-doc
+      version:
+        'feature/(*)': $1
+        'release/(*)': $1
+        'main': '1.x'
+        '(*)': $1
     - url: ../isy-datetime
       branches: HEAD
       start_path: isy-datetime-doc
