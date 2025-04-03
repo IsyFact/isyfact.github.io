@@ -25,18 +25,6 @@ content:
         'release/(*)': $1
         'master': '5.x'
         '(*)': $1
-#    - url: ../isyfact-standards-4.0.0
-#      branches: HEAD
-#      start_path: isyfact-standards-doc/src/docs/antora
-#    - url: ../isyfact-standards-4.x
-#      branches: HEAD
-#      start_path: isyfact-standards-doc/src/docs/antora
-#    - url: ../isyfact-standards-3.2.1
-#      branches: HEAD
-#      start_path: isyfact-standards-doc/src/docs/antora
-#    - url: ../isyfact-standards-3.x
-#      branches: HEAD
-#      start_path: isyfact-standards-doc/src/docs/antora
     - url: ../isyfact-standards-referenzimplementierung
       branches: HEAD
       start_path: isyfact-standards-referenzimplementierung-doc

@@ -21,7 +21,8 @@ content:
         'master': '5.x'
         '(*)': $1
     - url: ./isyfact-standards-4.0.0
-      tags: [4.0.0]
+      # building from tags need HEAD (Git LFS workaround)
+      branches: HEAD
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'release/(*)': $1
@@ -35,6 +36,7 @@ content:
         'master': '5.x'
         '(*)': $1
     - url: ./isyfact-standards-3.2.1
+      # building from tags need HEAD (Git LFS workaround)
       branches: HEAD
       start_path: isyfact-standards-doc/src/docs/antora
       version:
@@ -52,14 +54,14 @@ content:
       branches: HEAD
       start_path: isyfact-standards-referenzimplementierung-doc
     - url: ./isy-angular-widgets
-      branches: main, release/*
+      branches: main
       start_path: isy-angular-widgets-doc
       version:
         'release/(*)': $1
         'main': '18.x'
         '(*)': $1
     - url: ./isy-bedienkonzept
-      branches: main, release/*
+      branches: main
       start_path: isy-bedienkonzept-doc
       version:
         'release/(*)': $1
@@ -68,9 +70,6 @@ content:
     - url: ./isy-datetime
       branches: HEAD
       start_path: isy-datetime-doc
-    - url: ./isy-datetime-persistence
-      branches: HEAD
-      start_path: docs
     - url: ./isy-sonderzeichen
       branches: HEAD
       start_path: isy-sonderzeichen-doc
