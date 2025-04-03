@@ -7,18 +7,19 @@ urls:
   latest_version_segment: current
   latest_prerelease_version_segment: dev
 content:
+  branches: []
   # Comment: Configuration for development (e.g. with feature branches that aren't pushed yet)
   # Convention: All git repositories are cloned in the same parent directory.
   sources:
     - url: ../isy-documentation
-      branches: master, HEAD
+      branches: master
       start_paths: [documentation-guide,glossary]
       version:
         'feature/(*)': $1
         'master': 'latest'
     - url: ../isyfact-standards
-      branches: master, HEAD, release/4*, release/3.x*, release/3.2.1
-      tags: [4.0.0]
+      branches: master, release/4.x, release/3.x
+      tags: [3.2.1, 4.0.0]
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'feature/(*)': $1
@@ -26,18 +27,18 @@ content:
         'master': '5.x'
         '(*)': $1
     - url: ../isyfact-standards-referenzimplementierung
-      branches: HEAD
+      branches: main
       start_path: isyfact-standards-referenzimplementierung-doc
     - url: ../isy-web
-      branches: master, HEAD, release/5.x isy-web-doc/src/docs/antora
+      branches: master
       start_path: isy-web-doc/src/docs/antora
       version:
         'feature/(*)': $1
         'release/(*)': $1
-        'master': '6.x'
+        'master': '6.2.0'
         '(*)': $1
     - url: ../isy-angular-widgets
-      branches: main, feature/*, release/*
+      branches: main
       start_path: isy-angular-widgets-doc
       version:
         'feature/(*)': $1
@@ -45,7 +46,7 @@ content:
         'main': '18.x'
         '(*)': $1
     - url: ../isy-bedienkonzept
-      branches: main, feature/*, release/*
+      branches: main
       start_path: isy-bedienkonzept-doc
       version:
         'feature/(*)': $1
@@ -53,16 +54,13 @@ content:
         'main': '1.x'
         '(*)': $1
     - url: ../isy-datetime
-      branches: HEAD
+      tags: [4.0.0]
       start_path: isy-datetime-doc
-    - url: ../isy-datetime-persistence
-      branches: HEAD
-      start_path: docs
     - url: ../isy-sonderzeichen
-      branches: HEAD
+      tags: [4.0.0]
       start_path: isy-sonderzeichen-doc
     - url: ../isyfact.github.io
-      branches: HEAD
+      branches: main
       start_paths: ort-reports
 runtime:
   fetch: true
