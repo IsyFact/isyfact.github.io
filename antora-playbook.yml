@@ -53,6 +53,10 @@ content:
     - url: ./isyfact-standards-referenzimplementierung
       branches: HEAD
       start_path: isyfact-standards-referenzimplementierung-doc
+    - url: ./isy-web # still needed as long as IsyFact 3 is published!
+      branches: HEAD
+      start_path: isy-web-doc/src/docs/antora
+      version: '6.2.0'
     - url: ./isy-angular-widgets
       branches: main
       start_path: isy-angular-widgets-doc

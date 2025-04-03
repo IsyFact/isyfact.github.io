@@ -82,6 +82,15 @@ jobs:
           lfs: true
           path: isy-documentation
 
+      - name: Checkout isy-web # still needed as long as IsyFact 3 is published!
+        uses: actions/checkout@v4
+        with:
+          repository: IsyFact/isy-web
+          ref: master
+          lfs: true
+          sparse-checkout: isy-web-doc/src/docs/antora
+          path: isy-web
+
       - name: Checkout isy-angular-widgets
         uses: actions/checkout@v4
         with:
