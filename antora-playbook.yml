@@ -6,6 +6,7 @@ urls:
   latest_version_segment: current
   latest_prerelease_version_segment: dev
 content:
+  branches: []
   # Comment: Configuration for CI/CD-Pipeline (using the Git LFS workaround as described in the README)
   sources:
     - url: ./isy-documentation
@@ -21,7 +22,8 @@ content:
         'master': '5.x'
         '(*)': $1
     - url: ./isyfact-standards-4.0.0
-      tags: [4.0.0]
+      # building from tags need HEAD (Git LFS workaround)
+      tags: 4.0.0
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'release/(*)': $1
@@ -35,7 +37,8 @@ content:
         'master': '5.x'
         '(*)': $1
     - url: ./isyfact-standards-3.2.1
-      branches: HEAD
+      # building from tags need HEAD (Git LFS workaround)
+      tags: 3.2.1
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'release/(*)': $1
@@ -51,15 +54,19 @@ content:
     - url: ./isyfact-standards-referenzimplementierung
       branches: HEAD
       start_path: isyfact-standards-referenzimplementierung-doc
+    - url: ./isy-web # still needed as long as IsyFact 3 is published!
+      branches: HEAD
+      start_path: isy-web-doc/src/docs/antora
+      version: '6.2.0'
     - url: ./isy-angular-widgets
-      branches: main, release/*
+      branches: main
       start_path: isy-angular-widgets-doc
       version:
         'release/(*)': $1
         'main': '18.x'
         '(*)': $1
     - url: ./isy-bedienkonzept
-      branches: main, release/*
+      branches: main
       start_path: isy-bedienkonzept-doc
       version:
         'release/(*)': $1
@@ -68,9 +75,6 @@ content:
     - url: ./isy-datetime
       branches: HEAD
       start_path: isy-datetime-doc
-    - url: ./isy-datetime-persistence
-      branches: HEAD
-      start_path: docs
     - url: ./isy-sonderzeichen
       branches: HEAD
       start_path: isy-sonderzeichen-doc
