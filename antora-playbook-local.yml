@@ -18,7 +18,7 @@ content:
         'feature/(*)': $1
         'master': 'latest'
     - url: ../isyfact-standards
-      branches: HEAD, master, release/4.x, release/3.x
+      branches: [HEAD, master, release/4.x, release/3.x]
       tags: [3.2.1, 4.0.0]
       start_path: isyfact-standards-doc/src/docs/antora
       version:
@@ -27,7 +27,7 @@ content:
         'master': '5.x'
         '(*)': $1
     - url: ../isyfact-standards-referenzimplementierung
-      branches: HEAD, main
+      branches: [HEAD, main]
       start_path: isyfact-standards-referenzimplementierung-doc
     - url: ../isy-web
       branches: master
@@ -38,7 +38,7 @@ content:
         'master': '6.2.0'
         '(*)': $1
     - url: ../isy-angular-widgets
-      branches: HEAD, main
+      branches: [HEAD, main]
       start_path: isy-angular-widgets-doc
       version:
         'feature/(*)': $1
@@ -46,7 +46,7 @@ content:
         'main': '18.x'
         '(*)': $1
     - url: ../isy-bedienkonzept
-      branches: HEAD, main
+      branches: [HEAD, main]
       start_path: isy-bedienkonzept-doc
       version:
         'feature/(*)': $1
@@ -54,10 +54,10 @@ content:
         'main': '1.x'
         '(*)': $1
     - url: ../isy-datetime
-      tags: [4.0.0]
+      tags: 4.0.0
       start_path: isy-datetime-doc
     - url: ../isy-sonderzeichen
-      tags: [4.0.0]
+      tags: 4.0.0
       start_path: isy-sonderzeichen-doc
     - url: ../isyfact.github.io
       branches: main
