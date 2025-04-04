@@ -23,7 +23,7 @@ content:
         '(*)': $1
     - url: ./isyfact-standards-4.0.0
       # building from tags need HEAD (Git LFS workaround)
-      tags: 4.0.0
+      branches: HEAD
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'release/(*)': $1
@@ -38,7 +38,7 @@ content:
         '(*)': $1
     - url: ./isyfact-standards-3.2.1
       # building from tags need HEAD (Git LFS workaround)
-      tags: 3.2.1
+      branches: HEAD
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'release/(*)': $1
