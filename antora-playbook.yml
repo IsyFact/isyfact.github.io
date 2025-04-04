@@ -6,6 +6,7 @@ urls:
   latest_version_segment: current
   latest_prerelease_version_segment: dev
 content:
+  branches: []
   # Comment: Configuration for CI/CD-Pipeline (using the Git LFS workaround as described in the README)
   sources:
     - url: ./isy-documentation
@@ -22,7 +23,7 @@ content:
         '(*)': $1
     - url: ./isyfact-standards-4.0.0
       # building from tags need HEAD (Git LFS workaround)
-      branches: HEAD
+      tags: 4.0.0
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'release/(*)': $1
@@ -37,7 +38,7 @@ content:
         '(*)': $1
     - url: ./isyfact-standards-3.2.1
       # building from tags need HEAD (Git LFS workaround)
-      branches: HEAD
+      tags: 3.2.1
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'release/(*)': $1
