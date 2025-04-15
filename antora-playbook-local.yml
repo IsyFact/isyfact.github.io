@@ -59,9 +59,6 @@ content:
     - url: ../isy-sonderzeichen
       tags: 4.0.0
       start_path: isy-sonderzeichen-doc
-    - url: ../isyfact.github.io
-      branches: main
-      start_paths: ort-reports
 runtime:
   fetch: true
   log:

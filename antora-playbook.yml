@@ -76,9 +76,6 @@ content:
     - url: ./isy-sonderzeichen
       branches: HEAD
       start_path: isy-sonderzeichen-doc
-    - url: ../isyfact.github.io
-      branches: HEAD
-      start_paths: ort-reports
 runtime:
   fetch: true
   log:
