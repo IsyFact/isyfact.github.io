@@ -18,12 +18,13 @@ content:
         'feature/(*)': $1
         'master': 'latest'
     - url: ../isyfact-standards
-      branches: [HEAD, master, release/4.x, release/3.x]
-      tags: [3.2.1, 4.0.0]
+      branches: [HEAD, master, release/4.x, release/3.x, doku/3.2.1, doku/3.1.1, doku/3.0.2]
+      tags: [4.0.0]
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'feature/(*)': $1
         'release/(*)': $1
+        'doku/(*)': $1
         'master': '5.x'
         '(*)': $1
     - url: ../isyfact-standards-referenzimplementierung
