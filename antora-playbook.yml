@@ -17,10 +17,7 @@ content:
     - url: ./isyfact-standards
       branches: master
       start_path: isyfact-standards-doc/src/docs/antora
-      version:
-        'release/(*)': $1
-        'master': '5.x'
-        '(*)': $1
+      version: '5.x'
     - url: ./isyfact-standards-4.0.0
       # building from tags need HEAD (Git LFS workaround)
       branches: HEAD
@@ -32,28 +29,32 @@ content:
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'release/(*)': $1
-        'master': '5.x'
-        '(*)': $1
-    - url: ./isyfact-standards-3.2.1
-      # building from tags need HEAD (Git LFS workaround)
-      branches: HEAD
-      start_path: isyfact-standards-doc/src/docs/antora
-      version:
-        'release/(*)': $1
-        'master': '5.x'
-        '(*)': $1
-    - url: ./isyfact-standards-3.3.x
+    - url: ./isyfact-standards-3.x
       branches: release/3.x
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'release/(*)': $1
-        'master': '5.x'
-        '(*)': $1
+    - url: ./isyfact-standards-3.2.1
+      branches: doku/3.2.1
+      start_path: isyfact-standards-doc/src/docs/antora
+      version:
+        'doku/(*)': $1
+    - url: ./isyfact-standards-3.1.1
+      branches: doku/3.1.1
+      start_path: isyfact-standards-doc/src/docs/antora
+      version:
+        'doku/(*)': $1
+    - url: ./isyfact-standards-3.0.2
+      branches: doku/3.0.2
+      start_path: isyfact-standards-doc/src/docs/antora
+      version:
+        'doku/(*)': $1
+
     - url: ./isyfact-standards-referenzimplementierung
-      branches: HEAD
+      branches: main
       start_path: isyfact-standards-referenzimplementierung-doc
     - url: ./isy-web # still needed as long as IsyFact 3 is published!
-      branches: HEAD
+      branches: master
       start_path: isy-web-doc/src/docs/antora
       version: '6.2.0'
     - url: ./isy-angular-widgets
