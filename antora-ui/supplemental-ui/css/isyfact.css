@@ -1,10 +1,9 @@
 
 /* print styles */
 @media print {
-    div.divFooter {
+    div.footer {
         position: fixed;
         bottom: 0;
-        text-align: center;
     }
 }
 
@@ -135,10 +134,6 @@ table tr:nth-of-type(even) {
     background-color: #A6A6A6;
 }
 
-.glossary th a, .glossary th a:hover {
-    color: #f0f0f0;
-}
-
 /* navigation */
 .navbar-item img {
     width: 40px;
@@ -170,6 +165,19 @@ aside.toc.sidebar {
 /* layout for navigation and content areas */
 .nav-container {
     width: 15rem;
+}
+
+/* layout for footer */
+div.footer {
+    padding: 1.5rem;
+    border-top: 1px solid #ddd;
+    font-size: 0.8em;
+    background-color: #fafafa;
+}
+
+div.footer a:hover {
+    color: #336699;
+    text-decoration: #336699 underline;
 }
 
 @media screen and (min-width: 768px) {
