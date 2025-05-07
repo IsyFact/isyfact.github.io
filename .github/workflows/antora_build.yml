@@ -60,11 +60,11 @@ jobs:
           path: isyfact-standards-3.x
 
       # isyfact-standards: stable versions
-      - name: Checkout isyfact-standards (4.0.0)
+      - name: Checkout isyfact-standards (doku/4.0.0)
         uses: actions/checkout@v4
         with:
           repository: IsyFact/isyfact-standards
-          ref: 4.0.0
+          ref: doku/4.0.0
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-4.0.0
@@ -182,7 +182,7 @@ jobs:
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-4.x/isyfact-standards-doc package
       - name: Generate Templates (release/3.x)
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-3.x/isyfact-standards-doc package
-      - name: Generate Templates (4.0.0)
+      - name: Generate Templates (doku/4.0.0)
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-4.0.0/isyfact-standards-doc package
       - name: Generate Templates (doku/3.2.1)
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-3.2.1/isyfact-standards-doc package
