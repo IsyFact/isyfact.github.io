@@ -8,7 +8,8 @@
 > - the content sources **(src)**.
 
 ## 2025
-- [2025-05-06] (src) `IFS-4674`: add minor releases 3.0.2, 3.1.1 and fix display version for release 3.2.1
+- [2025-05-07] (src) `IFS-4648`: fix display version and prerelease status for release IF 4.0.0
+- [2025-05-06] (src) `IFS-4674`: add minor releases IF 3.0.2, IF 3.1.1 and fix display version for release IF 3.2.1
 - [2025-03-27] (UI) `IFS-4538`: limits online documentation width and improves readability
 - [2025-03-20] (conf) `IFS-4549`: centralize version mapping 
 - [2025-03-20] (src) `IFS-4524`: adjust build and playbook for IF 4.0.0 release

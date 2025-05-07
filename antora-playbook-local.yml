@@ -18,8 +18,7 @@ content:
         'feature/(*)': $1
         'master': 'latest'
     - url: ../isyfact-standards
-      branches: [HEAD, master, release/4.x, release/3.x, doku/3.2.1, doku/3.1.1, doku/3.0.2]
-      tags: [4.0.0]
+      branches: [HEAD, master, release/4.x, release/3.x, doku/4.0.0, doku/3.2.1, doku/3.1.1, doku/3.0.2]
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'feature/(*)': $1
@@ -55,11 +54,23 @@ content:
         'main': '1.x'
         '(*)': $1
     - url: ../isy-datetime
+      branches: [HEAD] ##, develop]
       tags: 4.0.0
       start_path: isy-datetime-doc
+      version:
+        'feature/(*)': $1
+        'release/(*)': $1
+        'develop': 'next'
+        '(*)': $1
     - url: ../isy-sonderzeichen
+      branches: [HEAD] ##, develop]
       tags: 4.0.0
       start_path: isy-sonderzeichen-doc
+      version:
+        'feature/(*)': $1
+        'release/(*)': $1
+        'develop': 'next'
+        '(*)': $1
 runtime:
   fetch: true
   log:

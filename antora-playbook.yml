@@ -18,12 +18,6 @@ content:
       branches: master
       start_path: isyfact-standards-doc/src/docs/antora
       version: '5.x'
-    - url: ./isyfact-standards-4.0.0
-      # building from tags need HEAD (Git LFS workaround)
-      branches: HEAD
-      start_path: isyfact-standards-doc/src/docs/antora
-      # workaround for setting the correct version when using tags
-      version: '4.0.0'
     - url: ./isyfact-standards-4.x
       branches: release/4.x
       start_path: isyfact-standards-doc/src/docs/antora
@@ -34,6 +28,11 @@ content:
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'release/(*)': $1
+    - url: ./isyfact-standards-4.0.0
+      branches: doku/4.0.0
+      start_path: isyfact-standards-doc/src/docs/antora
+      version:
+        'doku/(*)': $1
     - url: ./isyfact-standards-3.2.1
       branches: doku/3.2.1
       start_path: isyfact-standards-doc/src/docs/antora
