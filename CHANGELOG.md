@@ -8,6 +8,8 @@
 > - the content sources **(src)**.
 
 ## 2025
+
+- [2025-05-08] (UI) `IFS-4537`: move license declaration to footer
 - [2025-05-07] (src) `IFS-4648`: fix display version and prerelease status for release IF 4.0.0
 - [2025-05-06] (src) `IFS-4674`: add minor releases IF 3.0.2, IF 3.1.1 and fix display version for release IF 3.2.1
 - [2025-03-27] (UI) `IFS-4538`: limits online documentation width and improves readability
@@ -17,6 +19,7 @@
 - [2025-01-27] (UI) `IFS-4412`: improved responsive design for the IsyFact online documentation
 
 ## 2024
+
 - [2024-12-04] (UI) `IFS-4318`: added checkbox to search field to filter by Antora component
 - [2024-12-05] (src) `IFS-4421`: removed entries for several separated modules
 - [2024-10-13] (src) `IFS-4177`: added entries for new separated modules
