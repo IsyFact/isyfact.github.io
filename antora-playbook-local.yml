@@ -42,8 +42,7 @@ content:
       start_path: isy-angular-widgets-doc
       version:
         'feature/(*)': $1
-        'release/(*)': $1
-        'main': '18.x'
+        'main': '19.x'
         '(*)': $1
     - url: ../isy-bedienkonzept
       branches: [HEAD, main]
