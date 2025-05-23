@@ -61,6 +61,14 @@ content:
         'release/(*)': $1
         'develop': 'next'
         '(*)': $1
+    - url: ../isy-datetime-persistence
+      branches: [HEAD, develop]
+      start_path: docs
+      version:
+        'feature/(*)': $1
+        'release/(*)': $1
+        'develop': 'next'
+        '(*)': $1
     - url: ../isy-sonderzeichen
       branches: [HEAD, develop]
       tags: 4.0.0
