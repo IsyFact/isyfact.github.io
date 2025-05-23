@@ -78,6 +78,14 @@ content:
         'release/(*)': $1
         'develop': 'next'
         '(*)': $1
+    - url: ../isy-task
+      branches: [HEAD, develop]
+      start_path: docs
+      version:
+        'feature/(*)': $1
+        'release/(*)': $1
+        'develop': 'next'
+        '(*)': $1
     - url: ../isy-util
       branches: [HEAD, develop]
       start_path: docs
