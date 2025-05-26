@@ -136,6 +136,11 @@ table tr:nth-of-type(even) {
     color: #f0f0f0;
 }
 
+.nav-text span.separator {
+    font-weight: bold;
+    color: #A6A6A6;
+}
+
 /* image alignment */
 .imageblock.text-center {
     text-align: center;
