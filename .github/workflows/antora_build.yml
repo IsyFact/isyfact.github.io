@@ -119,10 +119,12 @@ jobs:
           sparse-checkout: isy-angular-widgets-doc
           path: isy-angular-widgets
 
+      # fetch decoupled components
       - name: Fetch latest tags
+        # fetch latest tags per component (fetch branch 'develop' if there are no tags)
         id: fetch-latest-tags
         run: |
-          repos=("isy-datetime" "isy-sonderzeichen")          
+          repos=("isy-datetime" "isy-datetime-persistence" "isy-polling" "isy-security" "isy-sonderzeichen" "isy-task" "isy-util")          
           
           for repo in "${repos[@]}"; do
             latest_tag=$(git ls-remote --tags https://github.com/IsyFact/$repo.git | grep -o 'refs/tags/[0-9]*\.[0-9]*\.[0-9]*$' | sort -V | tail -n1 | awk -F'/' '{print $3}')
@@ -143,6 +145,33 @@ jobs:
           sparse-checkout: isy-datetime-doc
           path: isy-datetime
 
+      - name: Checkout isy-datetime-persistence
+        uses: actions/checkout@v4
+        with:
+          repository: IsyFact/isy-datetime-persistence
+          ref: ${{ steps.fetch-latest-tags.outputs.isy-datetime-persistence }}
+          lfs: true
+          sparse-checkout: docs
+          path: isy-datetime-persistence
+
+      - name: Checkout isy-polling
+        uses: actions/checkout@v4
+        with:
+          repository: IsyFact/isy-polling
+          ref: ${{ steps.fetch-latest-tags.outputs.isy-polling }}
+          lfs: true
+          sparse-checkout: docs
+          path: isy-polling
+
+      - name: Checkout isy-security
+        uses: actions/checkout@v4
+        with:
+          repository: IsyFact/isy-security
+          ref: ${{ steps.fetch-latest-tags.outputs.isy-security }}
+          lfs: true
+          sparse-checkout: docs
+          path: isy-security
+
       - name: Checkout isy-sonderzeichen
         uses: actions/checkout@v4
         with:
@@ -152,6 +181,25 @@ jobs:
           sparse-checkout: isy-sonderzeichen-doc
           path: isy-sonderzeichen
 
+      - name: Checkout isy-task
+        uses: actions/checkout@v4
+        with:
+          repository: IsyFact/isy-task
+          ref: ${{ steps.fetch-latest-tags.outputs.isy-task }}
+          lfs: true
+          sparse-checkout: docs
+          path: isy-task
+
+      - name: Checkout isy-util
+        uses: actions/checkout@v4
+        with:
+          repository: IsyFact/isy-util
+          ref: ${{ steps.fetch-latest-tags.outputs.isy-util }}
+          lfs: true
+          sparse-checkout: docs
+          path: isy-util
+
+      # fetch "wip" components (i.e. without an official release)
       - name: Checkout isy-bedienkonzept
         uses: actions/checkout@v4
         with:

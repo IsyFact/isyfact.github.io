@@ -69,12 +69,44 @@ content:
         'release/(*)': $1
         'main': '1.x'
         '(*)': $1
+
+    # decoupled components
     - url: ./isy-datetime
       branches: HEAD
       start_path: isy-datetime-doc
+    - url: ./isy-datetime-persistence
+      branches: HEAD
+      start_path: docs
+      version:
+        'develop': '5.0.0'
+        '(*)': $1
+    - url: ./isy-polling
+      branches: HEAD
+      start_path: docs
+      version:
+        'develop': '5.0.0'
+        '(*)': $1
+    - url: ./isy-security
+      branches: HEAD
+      start_path: docs
+      version:
+        'develop': '5.0.0'
+        '(*)': $1
     - url: ./isy-sonderzeichen
       branches: HEAD
       start_path: isy-sonderzeichen-doc
+    - url: ./isy-task
+      branches: HEAD
+      start_path: docs
+      version:
+        'develop': '5.0.0'
+        '(*)': $1
+    - url: ./isy-util
+      branches: HEAD
+      start_path: docs
+      version:
+        'develop': '5.0.0'
+        '(*)': $1
 runtime:
   fetch: true
   log:
