@@ -67,7 +67,7 @@ content:
       version:
         'feature/(*)': $1
         'release/(*)': $1
-        'develop': 'next'
+        'develop': '5.0.0'
         '(*)': $1
     - url: ../isy-polling
       branches: [HEAD, develop]
@@ -75,7 +75,7 @@ content:
       version:
         'feature/(*)': $1
         'release/(*)': $1
-        'develop': 'next'
+        'develop': '5.0.0'
         '(*)': $1
     - url: ../isy-security
       branches: [HEAD, develop]
@@ -83,7 +83,7 @@ content:
       version:
         'feature/(*)': $1
         'release/(*)': $1
-        'develop': 'next'
+        'develop': '5.0.0'
         '(*)': $1
     - url: ../isy-sonderzeichen
       branches: [HEAD, develop]
@@ -100,7 +100,7 @@ content:
       version:
         'feature/(*)': $1
         'release/(*)': $1
-        'develop': 'next'
+        'develop': '5.0.0'
         '(*)': $1
     - url: ../isy-util
       branches: [HEAD, develop]
@@ -108,7 +108,7 @@ content:
       version:
         'feature/(*)': $1
         'release/(*)': $1
-        'develop': 'next'
+        'develop': '5.0.0'
         '(*)': $1
 runtime:
   fetch: true
