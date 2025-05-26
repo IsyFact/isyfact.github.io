@@ -9,6 +9,8 @@
 
 ## 2025
 
+- [2025-05-26] (UI) `IFS-4713`: add styling for "separators" in nav lists
+- [2025-05-26] (src) `IFS-4713`: adjust build and playbook in preparation of IF 5.0.0 release
 - [2025-05-08] (UI) `IFS-4537`: move license declaration to footer
 - [2025-05-07] (src) `IFS-4648`: fix display version and prerelease status for release IF 4.0.0
 - [2025-05-06] (src) `IFS-4674`: add minor releases IF 3.0.2, IF 3.1.1 and fix display version for release IF 3.2.1
