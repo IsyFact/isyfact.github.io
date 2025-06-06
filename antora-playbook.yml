@@ -58,7 +58,7 @@ content:
       version: '6.2.0'
     - url: ./isy-angular-widgets
       branches: main
-      start_path: isy-angular-widgets-doc
+      start_path: docs
       version:
         'main': '19.x'
         '(*)': $1

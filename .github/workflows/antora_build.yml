@@ -116,7 +116,7 @@ jobs:
           repository: IsyFact/isy-angular-widgets
           ref: main
           lfs: true
-          sparse-checkout: isy-angular-widgets-doc
+          sparse-checkout: docs
           path: isy-angular-widgets
 
       # fetch decoupled components

@@ -39,7 +39,7 @@ content:
         '(*)': $1
     - url: ../isy-angular-widgets
       branches: [HEAD, main]
-      start_path: isy-angular-widgets-doc
+      start_path: docs
       version:
         'feature/(*)': $1
         'main': '19.x'
