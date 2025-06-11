@@ -80,7 +80,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: IsyFact/isyfact-standards
-          ref: release/3.1.2
+          ref: 3.1.2
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-3.1.2
