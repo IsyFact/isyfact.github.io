@@ -75,7 +75,13 @@ clone_repo https://github.com/IsyFact/isyfact-standards.git ../isyfact-standards
 clone_repo https://github.com/IsyFact/isyfact-standards.git ../isyfact-standards-4.x release/4.x
 clone_repo https://github.com/IsyFact/isyfact-standards.git ../isyfact-standards-4.0.0 4.0.0
 clone_repo https://github.com/IsyFact/isyfact-standards.git ../isyfact-standards-3.x release/3.x
-clone_repo https://github.com/IsyFact/isyfact-standards.git ../isyfact-standards-3.2.1 release/3.2.1
+clone_repo https://github.com/IsyFact/isyfact-standards.git ../isyfact-standards-3.1.x release/3.1.x
+clone_repo https://github.com/IsyFact/isyfact-standards.git ../isyfact-standards-3.2.x release/3.2.x
+clone_repo https://github.com/IsyFact/isy-web.git ../isy-web master
+clone_repo https://github.com/IsyFact/isy-polling.git ../isy-polling develop
+clone_repo https://github.com/IsyFact/isy-security.git ../isy-security develop
+clone_repo https://github.com/IsyFact/isy-task.git ../isy-task develop
+clone_repo https://github.com/IsyFact/isy-util.git ../isy-util develop
 clone_repo https://github.com/IsyFact/isy-angular-widgets.git ../isy-angular-widgets main
 clone_repo https://github.com/IsyFact/isy-bedienkonzept.git ../isy-bedienkonzept main
 clone_repo https://github.com/IsyFact/isy-datetime.git ../isy-datetime develop
@@ -90,7 +96,13 @@ setup_git_lfs ../isyfact-standards
 setup_git_lfs ../isyfact-standards-4.x
 setup_git_lfs ../isyfact-standards-4.0.0
 setup_git_lfs ../isyfact-standards-3.x
-setup_git_lfs ../isyfact-standards-3.2.1
+setup_git_lfs ../isyfact-standards-3.1.x
+setup_git_lfs ../isyfact-standards-3.2.x
+setup_git_lfs ../isy-web
+setup_git_lfs ../isy-polling
+setup_git_lfs ../isy-security
+setup_git_lfs ../isy-task
+setup_git_lfs ../isy-util
 setup_git_lfs ../isy-documentation
 setup_git_lfs ../isy-angular-widgets
 setup_git_lfs ../isy-bedienkonzept
@@ -104,7 +116,8 @@ generate_templates ../isyfact-standards/isyfact-standards-doc
 generate_templates ../isyfact-standards-4.x/isyfact-standards-doc
 generate_templates ../isyfact-standards-4.0.0/isyfact-standards-doc
 generate_templates ../isyfact-standards-3.x/isyfact-standards-doc
-generate_templates ../isyfact-standards-3.2.1/isyfact-standards-doc
+generate_templates ../isyfact-standards-3.1.x/isyfact-standards-doc
+generate_templates ../isyfact-standards-3.2.x/isyfact-standards-doc
 
 # Install npm dependencies
 install_npm_dependencies

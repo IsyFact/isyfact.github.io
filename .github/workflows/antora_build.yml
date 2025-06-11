@@ -68,22 +68,22 @@ jobs:
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-4.0.0
-      - name: Checkout isyfact-standards (doku/3.2.1)
+      - name: Checkout isyfact-standards (release/3.2.2)
         uses: actions/checkout@v4
         with:
           repository: IsyFact/isyfact-standards
-          ref: doku/3.2.1
+          ref: 3.2.2
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
-          path: isyfact-standards-3.2.1
-      - name: Checkout isyfact-standards (doku/3.1.1)
+          path: isyfact-standards-3.2.2
+      - name: Checkout isyfact-standards (release/3.1.2)
         uses: actions/checkout@v4
         with:
           repository: IsyFact/isyfact-standards
-          ref: doku/3.1.1
+          ref: release/3.1.2
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
-          path: isyfact-standards-3.1.1
+          path: isyfact-standards-3.1.2
       - name: Checkout isyfact-standards (doku/3.0.2)
         uses: actions/checkout@v4
         with:
