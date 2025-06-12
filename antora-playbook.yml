@@ -34,15 +34,15 @@ content:
       version:
         'doku/(*)': $1
     - url: ./isyfact-standards-3.2.2
-      tags: 3.2.2
+      branches: doku/3.2.2
       start_path: isyfact-standards-doc/src/docs/antora
       version:
-        '(*)': $1
+        'doku/(*)': $1
     - url: ./isyfact-standards-3.1.2
-      tags: 3.1.2
+      branches: doku/3.1.2
       start_path: isyfact-standards-doc/src/docs/antora
       version:
-        '(*)': $1
+        'doku/(*)': $1
     - url: ./isyfact-standards-3.0.2
       branches: doku/3.0.2
       start_path: isyfact-standards-doc/src/docs/antora
