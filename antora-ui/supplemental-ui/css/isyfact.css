@@ -1,21 +1,14 @@
 /* headings */
 h1, h2, h3, h4, h5, h6 {
-    border-bottom: 1px solid #ddd; 
+    border-bottom: 1px solid #ddd;
 }
 
-h1 { font-size: 2.125em; }
-h2 { font-size: 1.6875em; }
-h3 { font-size: 1.375em; }
-h4 { font-size: 1.125em; }
+h1 { font-size: 2em; }
+h2 { font-size: 1.75em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
 h5 { font-size: 1.125em; }
 h6 { font-size: 1em; }
-
-@media screen and (min-width: 768px) {
-    h1 { font-size: 2.75em; }
-    h2 { font-size: 2.3125em; }
-    h3 { font-size: 1.6875em; }
-    h4 { font-size: 1.4375em; }
-}
 
 /* listings */
 div.listingblock pre {
