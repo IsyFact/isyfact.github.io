@@ -18,7 +18,7 @@ content:
         'feature/(*)': $1
         'master': 'latest'
     - url: ../isyfact-standards
-      branches: [HEAD, master, release/4.x, release/3.x, doku/4.0.0, release/3.1.x, release/3.2.x, doku/3.0.2]
+      branches: [HEAD, master, release/4.x, release/3.x, doku/4.0.0, doku/3.1.2, doku/3.2.2, doku/3.0.2]
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'feature/(*)': $1
