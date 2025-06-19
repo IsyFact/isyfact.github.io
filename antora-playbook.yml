@@ -33,6 +33,11 @@ content:
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'doku/(*)': $1
+    - url: ./isyfact-standards-3.3.0
+      tags: 3.3.0
+      start_path: isyfact-standards-doc/src/docs/antora
+      version:
+        '(*)': $1
     - url: ./isyfact-standards-3.2.2
       branches: doku/3.2.2
       start_path: isyfact-standards-doc/src/docs/antora
@@ -55,7 +60,7 @@ content:
     - url: ./isy-web # still needed as long as IsyFact 3 is published!
       branches: master
       start_path: isy-web-doc/src/docs/antora
-      version: '6.2.0'
+      version: '6.3.0'
     - url: ./isy-angular-widgets
       branches: main
       start_path: docs
