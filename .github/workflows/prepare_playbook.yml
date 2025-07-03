@@ -5,24 +5,21 @@ on:
     inputs:
       pr_repo:
         description: 'If called by a pull request: repository the pull request belongs to'
-        default: ${{ github.repository }}
       pr_branch:
         description: 'If called by a pull request: branch which should be merged'
-        default: ${{ github.ref }}
       pr_target:
         description: 'If called by a pull request: branch which should be merged into'
-        default: ${{ github.base_ref }}
 
 jobs:
   Build:
     runs-on: ubuntu-latest
-    env:
-      called_by_pr: ${{ (github.event.inputs.pr_repo != '') && (github.event.inputs.pr_branch != '') && (github.event.inputs.pr_target != '') }}
 
     steps:
       - name: Setup
-        if: env.called_by_pr
-        run: echo "Called by pull request from ${{github.event.inputs.pr_repo}} (${{github.event.inputs.pr_branch}} -> ${{github.event.inputs.pr_target}})"
+        run: |
+          echo "github.repository = ${{ github.repository }}"
+          echo "github.ref = ${{ github.ref }}"
+          echo "github.base_ref = ${{ github.base_ref }}"
 
       - name: Checkout playbook
         uses: actions/checkout@v4
