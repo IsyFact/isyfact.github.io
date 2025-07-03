@@ -20,6 +20,9 @@ jobs:
           echo "github.repository = ${{ github.repository }}"
           echo "github.ref = ${{ github.ref }}"
           echo "github.base_ref = ${{ github.base_ref }}"
+          repo_name="${{ github.repository }}"
+          repo_name="${repo_name#*/}"  
+          echo "CONTENT_SOURCE=${repo_name}-doc/antora.yml" >> $GITHUB_ENV
 
       - name: Checkout playbook
         uses: actions/checkout@v4
@@ -27,4 +30,4 @@ jobs:
       - name: Prepare playbook
         uses: mikefarah/yq@master
         with:
-          cmd: yq '.content.sources[]' 'antora-playbook.yml'
+          cmd: yq '.content.sources[] | select(.url == "./isyfact-standards*")' 'antora-playbook.yml'
