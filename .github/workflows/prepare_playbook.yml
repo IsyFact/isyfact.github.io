@@ -44,7 +44,7 @@ jobs:
         with:
           cmd: yq -i '.content.sources[] | select(.url == "./pull-request") .branches = "${{ env.CONTENT_SOURCE_NAME }}"' 'antora-playbook.yml'
 
-      - name: Show updated content sources
+      - name: Show updated playbook
         uses: mikefarah/yq@master
         with:
-          cmd: yq '.content.sources[]' 'antora-playbook.yml'
+          cmd: yq 'antora-playbook.yml'
