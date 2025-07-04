@@ -47,4 +47,4 @@ jobs:
       - name: Show updated playbook
         uses: mikefarah/yq@master
         with:
-          cmd: yq 'antora-playbook.yml'
+          cmd: yq eval 'antora-playbook.yml'
