@@ -22,7 +22,7 @@ jobs:
           echo "github.base_ref = ${{ github.base_ref }}"
           
           repo_name="${{ github.repository }}"
-          echo "CONTENT_SOURCE_NAME=isy-bedienkonzept-uiuiui" >> $GITHUB_ENV
+          echo "CONTENT_SOURCE_NAME=isy-bedienkonzept" >> $GITHUB_ENV
           echo "CONTENT_SOURCE_BRANCH=main" >> $GITHUB_ENV
           echo "PR_REF=${{ github.ref }}" >> $GITHUB_ENV
 
@@ -39,10 +39,10 @@ jobs:
         if: ${{ steps.pr-search-content-source.outputs.result != ''}}
         uses: mikefarah/yq@master
         with:
-          cmd: yq -i '(.content.sources[] | select(.url == "./${{ env.CONTENT_SOURCE_NAME }}*" and .branches == "${{ env.CONTENT_SOURCE_BRANCH }}")).url = "./pull-request"' antora-playbook.yml
+          cmd: yq -i 'with(.content.sources[] | select(.url == "./${{ env.CONTENT_SOURCE_NAME }}*" and .branches == "${{ env.CONTENT_SOURCE_BRANCH }}"); .url = "./pull-request" | .branches = "${{ env.PR_REF }}")' antora-playbook.yml
 
       - name: Prepare playbook (content source branch)
-        if: ${{ steps.pr-search-content-source.outputs.result != ''}}
+        if: false
         uses: mikefarah/yq@master
         with:
           cmd: yq -i '(.content.sources[] | select(.url == "./pull-request")).branches = "${{ env.PR_REF }}"' antora-playbook.yml
