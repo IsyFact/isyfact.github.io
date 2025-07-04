@@ -29,15 +29,16 @@ jobs:
       - name: Checkout playbook
         uses: actions/checkout@v4
 
-      - name: Search entry to replace in playbook
-        if: false
-        id: pr-search-content-source
+      - name: Check if PR target branch is part of the online documentation
+        id: search-pr-target-branch
+        # if this command returns an empty result (outputs.result), the PRs target branch isn't part of the online documentation.
         uses: mikefarah/yq@master
         with:
           cmd: yq '(.content.sources[] | select(.url == "./${{ env.CONTENT_SOURCE_NAME }}*" and .branches == "${{ env.CONTENT_SOURCE_BRANCH }}"))' 'antora-playbook.yml'
 
-      - name: Prepare playbook (content source url)
-        if: true # ${{ steps.pr-search-content-source.outputs.result != ''}}
+      - name: Replace PR target branch with the PR branch
+        id: replace-pr-target-branch
+        if: ${{ steps.search-pr-target-branch.outputs.result != ''}} # only run if the step before found anything
         uses: mikefarah/yq@master
         with:
           cmd: yq -i 'with(.content.sources[] | select(.url == "./${{ env.CONTENT_SOURCE_NAME }}*" and .branches == "${{ env.CONTENT_SOURCE_BRANCH }}"); .url = "./pull-request" | .branches = "${{ env.PR_REF }}")' antora-playbook.yml
