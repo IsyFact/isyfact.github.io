@@ -22,8 +22,8 @@ jobs:
           echo "github.base_ref = ${{ github.base_ref }}"
           
           repo_name="${{ github.repository }}"
-          echo "CONTENT_SOURCE_NAME=${repo_name#*/}" >> $GITHUB_ENV
-          echo "CONTENT_SOURCE_BRANCH=${{ github.base_ref }}" >> $GITHUB_ENV
+          echo "CONTENT_SOURCE_NAME=isyfact-standards" >> $GITHUB_ENV
+          echo "CONTENT_SOURCE_BRANCH=release/4.x" >> $GITHUB_ENV
           echo "PR_REF=${{ github.ref }}" >> $GITHUB_ENV
 
       - name: Checkout playbook
@@ -32,4 +32,4 @@ jobs:
       - name: Prepare playbook
         uses: mikefarah/yq@master
         with:
-          cmd: yq '.content.sources[] | select(.url == "${{ env.CONTENT_SOURCE_NAME }}*" and .branches == "${{ env.CONTENT_SOURCE_BRANCH }}*")' 'antora-playbook.yml'
+          cmd: yq '.content.sources[] | select(.url == "${{ env.CONTENT_SOURCE_NAME }}*" and .branches == "${{ env.CONTENT_SOURCE_BRANCH }}")' 'antora-playbook.yml'
