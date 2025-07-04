@@ -32,4 +32,4 @@ jobs:
       - name: Prepare playbook
         uses: mikefarah/yq@master
         with:
-          cmd: yq '.content.sources[] | select(.url == "${{ env.CONTENT_SOURCE_NAME }}*" and .branches == "${{ env.CONTENT_SOURCE_BRANCH }}")' 'antora-playbook.yml'
+          cmd: yq '.content.sources[] | select(.url == "./${{ env.CONTENT_SOURCE_NAME }}*" and .branches == "${{ env.CONTENT_SOURCE_BRANCH }}")' 'antora-playbook.yml'
