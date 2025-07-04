@@ -37,12 +37,12 @@ jobs:
       - name: Prepare playbook (content source url)
         uses: mikefarah/yq@master
         with:
-          cmd: yq -i '.content.sources[] | select(.url == "./${{ env.CONTENT_SOURCE_NAME }}*" and .branches == "${{ env.CONTENT_SOURCE_BRANCH }}") .url = "./pull-request"' 'antora-playbook.yml'
+          cmd: yq -i '.content.sources[] | select(.url == "./${{ env.CONTENT_SOURCE_NAME }}*" and .branches == "${{ env.CONTENT_SOURCE_BRANCH }}") | .url = "./pull-request"' 'antora-playbook.yml'
 
       - name: Prepare playbook (content source branch)
         uses: mikefarah/yq@master
         with:
-          cmd: yq -i '.content.sources[] | select(.url == "./pull-request") .branches = "${{ env.CONTENT_SOURCE_NAME }}"' 'antora-playbook.yml'
+          cmd: yq -i '.content.sources[] | select(.url == "./pull-request") | .branches = "${{ env.CONTENT_SOURCE_NAME }}"' 'antora-playbook.yml'
 
       - name: Show updated playbook
         uses: mikefarah/yq@master
