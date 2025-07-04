@@ -39,6 +39,11 @@ jobs:
         with:
           cmd: yq '.content.sources[] | select(.url == "./${{ env.CONTENT_SOURCE_NAME }}*" and .branches == "${{ env.CONTENT_SOURCE_BRANCH }}").url' 'antora-playbook.yml'
 
+      - name: Search entry to replace in playbook
+        uses: mikefarah/yq@master
+        with:
+          cmd: yq '.content.sources[] | select(.url == "./${{ env.CONTENT_SOURCE_NAME }}*" and .branches == "${{ env.CONTENT_SOURCE_BRANCH }}").branches' 'antora-playbook.yml'
+
       - name: Show playbook
         run: |
           cat antora-playbook.yml
