@@ -34,6 +34,10 @@ jobs:
         with:
           cmd: yq '.content.sources[] | select(.url == "./${{ env.CONTENT_SOURCE_NAME }}*" and .branches == "${{ env.CONTENT_SOURCE_BRANCH }}")' 'antora-playbook.yml'
 
+      - name: Show playbook
+        run: |
+          cat antora-playbook.yml
+
       - name: Prepare playbook (content source url)
         uses: mikefarah/yq@master
         with:
