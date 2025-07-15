@@ -19,6 +19,7 @@ content:
         'master': 'latest'
     - url: ../isyfact-standards
       branches: [HEAD, master, release/4.x, release/3.x, doku/4.0.0, doku/3.1.2, doku/3.2.2, doku/3.0.2]
+      tags: [3.3.0]
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'feature/(*)': $1
@@ -35,7 +36,7 @@ content:
       version:
         'feature/(*)': $1
         'release/(*)': $1
-        'master': '6.2.0'
+        'master': '6.3.0'
         '(*)': $1
     - url: ../isy-angular-widgets
       branches: [HEAD, main]
