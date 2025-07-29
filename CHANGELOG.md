@@ -9,6 +9,7 @@
 
 ## 2025
 
+- [2025-07-29] (src) `IFS-4764`: update content sources due to clearing technical debt from `isy-datetime` and `isy-sonderzeichen`
 - [2025-06-11] (UI) `IFS-4743`: rename "IsyFact-Standards" to IsyFact in footer, update footer image, reduce heading size & add favicons
 - [2025-05-26] (UI) `IFS-4713`: add styling for "separators" in nav lists
 - [2025-05-26] (src) `IFS-4713`: adjust build and playbook in preparation of IF 5.0.0 release

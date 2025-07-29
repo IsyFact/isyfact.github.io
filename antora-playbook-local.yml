@@ -55,14 +55,16 @@ content:
         '(*)': $1
     - url: ../isy-datetime
       branches: [HEAD, develop]
-      # tags: 4.0.0
       start_path: docs
-      # start_path: isy-datetime-doc
       version:
         'feature/(*)': $1
         'release/(*)': $1
         'develop': 'next'
         '(*)': $1
+    - url: ../isy-datetime
+      tags: 4.0.0
+      start_path: isy-datetime-doc
+      version: 4.0.0
     - url: ../isy-datetime-persistence
       branches: [HEAD, develop]
       start_path: docs
@@ -89,14 +91,16 @@ content:
         '(*)': $1
     - url: ../isy-sonderzeichen
       branches: [HEAD, develop]
-      # tags: 4.0.0
       start_path: docs
-      # start_path: isy-sonderzeichen-doc
       version:
         'feature/(*)': $1
         'release/(*)': $1
         'develop': 'next'
         '(*)': $1
+    - url: ../isy-sonderzeichen
+      tags: 4.0.0
+      start_path: isy-sonderzeichen-doc
+      version: 4.0.0
     - url: ../isy-task
       branches: [HEAD, develop]
       start_path: docs
