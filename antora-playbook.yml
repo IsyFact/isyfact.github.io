@@ -23,16 +23,20 @@ content:
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'release/(*)': $1
-    - url: ./isyfact-standards-3.x
-      branches: release/3.x
+    - url: ./isyfact-standards-4.1.0
+      branches: HEAD
       start_path: isyfact-standards-doc/src/docs/antora
-      version:
-        'release/(*)': $1
+      version: 4.1.0
     - url: ./isyfact-standards-4.0.0
       branches: doku/4.0.0
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'doku/(*)': $1
+    - url: ./isyfact-standards-3.x
+      branches: release/3.x
+      start_path: isyfact-standards-doc/src/docs/antora
+      version:
+        'release/(*)': $1
     - url: ./isyfact-standards-3.3.0
       branches: HEAD
       start_path: isyfact-standards-doc/src/docs/antora
