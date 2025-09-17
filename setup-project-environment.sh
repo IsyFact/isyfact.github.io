@@ -73,8 +73,9 @@ echo -e "${BLUE}Cloning repositories...${NC}"
 clone_repo https://github.com/IsyFact/isy-documentation.git ../isy-documentation master
 clone_repo https://github.com/IsyFact/isyfact-standards.git ../isyfact-standards master
 clone_repo https://github.com/IsyFact/isyfact-standards.git ../isyfact-standards-4.x release/4.x
-clone_repo https://github.com/IsyFact/isyfact-standards.git ../isyfact-standards-3.x release/3.x
+clone_repo https://github.com/IsyFact/isyfact-standards.git ../isyfact-standards-4.1.0 4.1.0
 clone_repo https://github.com/IsyFact/isyfact-standards.git ../isyfact-standards-4.0.0 doku/4.0.0
+clone_repo https://github.com/IsyFact/isyfact-standards.git ../isyfact-standards-3.x release/3.x
 clone_repo https://github.com/IsyFact/isyfact-standards.git ../isyfact-standards-3.3.0 3.3.0
 clone_repo https://github.com/IsyFact/isyfact-standards.git ../isyfact-standards-3.2.2 doku/3.2.2
 clone_repo https://github.com/IsyFact/isyfact-standards.git ../isyfact-standards-3.1.2 doku/3.1.2
@@ -96,8 +97,9 @@ clone_repo https://github.com/IsyFact/isyfact-standards-referenzimplementierung.
 echo -e "${BLUE}Setting up Git LFS...${NC}"
 setup_git_lfs ../isyfact-standards
 setup_git_lfs ../isyfact-standards-4.x
-setup_git_lfs ../isyfact-standards-3.x
+setup_git_lfs ../isyfact-standards-4.1.0
 setup_git_lfs ../isyfact-standards-4.0.0
+setup_git_lfs ../isyfact-standards-3.x
 setup_git_lfs ../isyfact-standards-3.3.0
 setup_git_lfs ../isyfact-standards-3.2.2
 setup_git_lfs ../isyfact-standards-3.1.2
@@ -118,8 +120,9 @@ setup_git_lfs ../isyfact-standards-referenzimplementierung
 # Generate templates
 generate_templates ../isyfact-standards/isyfact-standards-doc
 generate_templates ../isyfact-standards-4.x/isyfact-standards-doc
-generate_templates ../isyfact-standards-3.x/isyfact-standards-doc
+generate_templates ../isyfact-standards-4.1.0/isyfact-standards-doc
 generate_templates ../isyfact-standards-4.0.0/isyfact-standards-doc
+generate_templates ../isyfact-standards-3.x/isyfact-standards-doc
 generate_templates ../isyfact-standards-3.3.0/isyfact-standards-doc
 generate_templates ../isyfact-standards-3.2.2/isyfact-standards-doc
 generate_templates ../isyfact-standards-3.1.2/isyfact-standards-doc
