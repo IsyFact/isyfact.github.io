@@ -15,7 +15,7 @@
   "devDependencies": {
     "@antora/cli": "^3.1.10",
     "@antora/lunr-extension": "^1.0.0-alpha.10",
-    "@antora/site-generator-default": "^3.1.10",
+    "@antora/site-generator-default": "^3.1.14",
     "font-awesome": "^4.7.0"
   },
   "overrides": {
