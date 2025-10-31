@@ -14,17 +14,19 @@ on:
         description: 'Log level for the Antora build (debug, info, warn, error)'
       failure_level:
         description: 'Log failure level for the Antora build (fatal, error, warn, none)'
+      pr_repo:
+        description: 'If called by a pull request: repository the pull request belongs to'
+      pr_branch:
+        description: 'If called by a pull request: branch which should be merged'
+      pr_target:
+        description: 'If called by a pull request: branch which should be merged into'
 
 jobs:
   Build:
     runs-on: ubuntu-latest
     env:
       MAVEN_CLI_OPTS: '--batch-mode --errors --fail-at-end -T 1C'
-
-      # Define color variables
-      RED: '\033[0;31m'
-      GREEN: '\033[0;32m'
-      NC: '\033[0m' # No Color
+      called_by_pr: ${{ (github.event.inputs.pr_repo != '') && (github.event.inputs.pr_branch != '') && (github.event.inputs.pr_target != '') }}
 
     steps:
       - name: Get distinct ID ${{ github.event.inputs.distinct_id }}
@@ -32,6 +34,57 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Check if called by a PR
+        if: env.called_by_pr
+        run: |
+          echo "::notice title=Initiating pull request build::${{github.event.inputs.pr_repo}} (${{github.event.inputs.pr_branch}} -> ${{github.event.inputs.pr_target}})"
+          pr_content_source_name="${{ github.event.inputs.pr_repo }}"
+          pr_content_source_name="${pr_content_source_name#*/}"  
+          echo "pr_content_source=${pr_content_source_name}" >> $GITHUB_ENV
+
+      - name: Check if PR target branch is part of the online documentation
+        id: search-pr-target-branch
+        if: env.called_by_pr
+        uses: mikefarah/yq@master
+        with:
+          # if this command returns an empty result (outputs.result), the PRs target branch isn't part of the online documentation.
+          cmd: yq '(.content.sources[] | select(.url == "./${{ env.pr_content_source }}*" and .branches == "${{ github.event.inputs.pr_target }}"))' 'antora-playbook.yml'
+      - name: Check if PR content source is part of the online documentation
+        # we need this for decoupled components (they only publish the latest tag, not the development branch)
+        id: search-pr-content-source
+        if: env.called_by_pr && steps.search-pr-target-branch.outputs.result == ''
+        uses: mikefarah/yq@master
+        with:
+          # if this command returns an empty result (outputs.result), the PRs content source isn't part of the online documentation.
+          cmd: yq '(.content.sources[] | select(.url == "./${{ env.pr_content_source }}"))' 'antora-playbook.yml'
+      - name: Stop execution if PR target branch isn't part of the online documentation
+        if: env.called_by_pr && steps.search-pr-target-branch.outputs.result == '' && steps.search-pr-content-source.outputs.result == ''
+        run: |
+          echo "::error file=antora-playbook.yml::PR target branch (${{ github.event.inputs.pr_target }}) and content source (${{ env.pr_content_source }}) aren't part of the online documentation"
+          exit 1
+
+      - name: Replace PR target branch with the PR branch
+        id: replace-pr-target-branch
+        if: env.called_by_pr && steps.search-pr-target-branch.outputs.result != ''
+        uses: mikefarah/yq@master
+        with:
+          cmd: yq -i 'with(.content.sources[] | select(.url == "./${{ env.pr_content_source }}*" and .branches == "${{ github.event.inputs.pr_target }}"); .url = "./pull-request" | .branches = "HEAD" | .version = "PR" )' antora-playbook.yml
+      - name: Replace PR content source with the PR branch
+        id: replace-pr-content-source
+        if: env.called_by_pr && steps.search-pr-content-source.outputs.result != ''
+        uses: mikefarah/yq@master
+        with:
+          cmd: yq -i 'with(.content.sources[] | select(.url == "./${{ env.pr_content_source }}"); .url = "./pull-request" | .branches = "HEAD" | .version = "PR" )' antora-playbook.yml
+
+      - name: Checkout PR source branch
+        uses: actions/checkout@v4
+        if: env.called_by_pr
+        with:
+          repository: ${{ github.event.inputs.pr_repo }}
+          ref: ${{ github.event.inputs.pr_branch }}
+          lfs: true
+          path: pull-request
 
       # isyfact-standards: dev versions
       - name: Checkout isyfact-standards (master)
@@ -258,6 +311,9 @@ jobs:
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-3.1.2/isyfact-standards-doc package
       - name: Generate Templates (doku/3.0.2)
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-3.0.2/isyfact-standards-doc package
+      - name: Generate Templates (pull request)
+        if: ${{ env.called_by_pr && github.event.inputs.pr_repo == 'IsyFact/isyfact-standards' }}
+        run: mvn $MAVEN_CLI_OPTS -f ./pull-request/isyfact-standards-doc package
 
       - name: Setup node
         uses: actions/setup-node@v4
@@ -275,50 +331,37 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Build Documentation
-        run: |
-          # Run Antora with JSON logging, pipe output to process-logs.sh
-          chmod +x process-logs.sh
-          
-          npx antora \
-            --log-format=json \
-            --log-level=${{ github.event.inputs.log_level || 'info' }} \
-            --log-failure-level=${{ github.event.inputs.failure_level || 'fatal' }} \
-            antora-playbook.yml > antora_output.log || BUILD_FAILED=true
-          
-          # Pipe the output to process-logs.sh
-          echo "Processing JSON logs..."
-          # Capture the output of the log processing into a variable
-          PROCESSED_LOGS=$(cat antora_output.log | bash process-logs.sh)
-          
-          # If the build failed and process-logs.sh produces no output, fallback to default logs
-          if [ "$BUILD_FAILED" = true ] && [ -z "$PROCESSED_LOGS" ]; then
-            echo "Displaying default logs:"
-            cat antora_output.log
-            echo -e "${RED}Antora documentation build failed.${NC}"
-            exit 1
-          elif [ "$BUILD_FAILED" = true ]; then
-            echo "$PROCESSED_LOGS"
-            echo -e "${RED}Antora documentation build failed.${NC}"
-            exit 1
-          else
-            echo "$PROCESSED_LOGS"
-            echo -e "${GREEN}Antora documentation build completed successfully.${NC}"
-          fi
+        env:
+          antora_build_failed: false
+        run: npx antora --log-format=json --log-level=${{ github.event.inputs.log_level || 'info' }} --log-failure-level=${{ github.event.inputs.failure_level || 'fatal' }} antora-playbook.yml > antora_output.log || echo "antora_build_failed=true" >> $GITHUB_ENV
 
       - name: Upload docs folder as pages artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
+        if: ${{ !env.called_by_pr && !env.antora_build_failed }}
         with:
           path: docs
-
       - name: Upload docs folder as artifact for Link Checker
         uses: actions/upload-artifact@v4
+        if: ${{ !env.antora_build_failed }}
         with:
           name: docs
           path: docs
+      - name: Upload Antora log for manual reviews and further analysis
+        uses: actions/upload-artifact@v4
+        with:
+          name: antora-log
+          path: antora_output.log
+      - name: Mark workflow as failed if the Antora build failed
+        if: env.antora_build_failed
+        run: |
+          echo "::error title=Antora build failed!
+          cat antora-output.log
+          exit 1
 
   Deploy:
     runs-on: ubuntu-latest
     needs: [Build]
+    if: ${{ (github.event.inputs.pr_repo == '') || (github.event.inputs.pr_branch == '') || (github.event.inputs.pr_target == '') }}
     concurrency:
       group: gh-pages
       cancel-in-progress: false
