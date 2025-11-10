@@ -306,7 +306,7 @@ jobs:
           fi
 
       - name: Upload docs folder as pages artifact for GitHub Pages
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: docs
 
