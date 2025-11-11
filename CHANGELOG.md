@@ -6,7 +6,7 @@
 > - the bundled extensions or their configuration **(ext)**,
 > - site-wide configuration options in the playbooks **(conf)**,
 > - the content sources **(src)**,
-> - th bundled GitHub Actions workflows and jobs **(ci)**.
+> - the bundled GitHub Actions workflows and jobs **(ci)**.
 
 ## 2025
 
