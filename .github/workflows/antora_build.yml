@@ -49,7 +49,7 @@ jobs:
         uses: mikefarah/yq@master
         with:
           # if this command returns an empty result (outputs.result), the PRs target branch isn't part of the online documentation.
-          cmd: yq '(.content.sources[] | select(.url == "./${{ env.pr_content_source }}*" and .branches == "${{ github.event.inputs.pr_target }}"))' 'antora-playbook.yml'
+          cmd: yq '(.content.sources[] | select(.url | startswith("./${{ env.pr_content_source }}") and .branches == "${{ github.event.inputs.pr_target }}"))' 'antora-playbook.yml'
       - name: Check if PR content source is part of the online documentation
         # we need this for decoupled components (they only publish the latest tag, not the development branch)
         id: search-pr-content-source
