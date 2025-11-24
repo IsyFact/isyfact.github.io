@@ -331,18 +331,17 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Build Documentation
-        env:
-          antora_build_failed: 'false'
-        run: npx antora --log-format=json --log-level=${{ github.event.inputs.log_level || 'info' }} --log-failure-level=${{ github.event.inputs.failure_level || 'fatal' }} antora-playbook.yml > antora_output.log || echo "antora_build_failed=true" >> $GITHUB_ENV
+        id: antora-build
+        run: npx antora --log-format=json --log-level=${{ github.event.inputs.log_level || 'info' }} --log-failure-level=${{ github.event.inputs.failure_level || 'fatal' }} antora-playbook.yml > antora_output.log || echo "failed=true" >> $GITHUB_OUTPUT
 
       - name: Upload docs folder as pages artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
-        if: env.called_by_pr == 'false' && env.antora_build_failed == 'false'
+        if: env.called_by_pr == 'false' && !steps.antora-build.outputs.failed
         with:
           path: docs
       - name: Upload docs folder as artifact for Link Checker
         uses: actions/upload-artifact@v4
-        if: env.antora_build_failed == 'false'
+        if: ${{ !steps.antora-build.outputs.failed }}
         with:
           name: docs
           path: docs
@@ -352,7 +351,7 @@ jobs:
           name: antora-log
           path: antora_output.log
       - name: Mark workflow as failed if the Antora build failed
-        if: env.antora_build_failed == 'false'
+        if: ${{ !steps.antora-build.outputs.failed }}
         run: |
           echo "::error title=Antora build failed!
           cat antora-output.log
