@@ -36,9 +36,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Check if called by a PR
-        if: env.called_by_pr
+        if: env.called_by_pr == 'true'
         run: |
-          echo "::notice title=called_by_pr::"${{env.called_by_pr}}"
           echo "::notice title=Initiating pull request build::${{github.event.inputs.pr_repo}} (${{github.event.inputs.pr_branch}} -> ${{github.event.inputs.pr_target}})"
           pr_content_source_name="${{ github.event.inputs.pr_repo }}"
           pr_content_source_name="${pr_content_source_name#*/}"  
@@ -46,7 +45,7 @@ jobs:
 
       - name: Check if PR target branch is part of the online documentation
         id: search-pr-target-branch
-        if: env.called_by_pr
+        if: env.called_by_pr == 'true'
         uses: mikefarah/yq@master
         with:
           # if this command returns an empty result (outputs.result), the PRs target branch isn't part of the online documentation.
@@ -54,33 +53,33 @@ jobs:
       - name: Check if PR content source is part of the online documentation
         # we need this for decoupled components (they only publish the latest tag, not the development branch)
         id: search-pr-content-source
-        if: env.called_by_pr && steps.search-pr-target-branch.outputs.result == ''
+        if: env.called_by_pr == 'true' && steps.search-pr-target-branch.outputs.result == ''
         uses: mikefarah/yq@master
         with:
           # if this command returns an empty result (outputs.result), the PRs content source isn't part of the online documentation.
           cmd: yq '(.content.sources[] | select(.url == "./${{ env.pr_content_source }}"))' 'antora-playbook.yml'
       - name: Stop execution if PR target branch isn't part of the online documentation
-        if: env.called_by_pr && steps.search-pr-target-branch.outputs.result == '' && steps.search-pr-content-source.outputs.result == ''
+        if: env.called_by_pr == 'true' && steps.search-pr-target-branch.outputs.result == '' && steps.search-pr-content-source.outputs.result == ''
         run: |
           echo "::error file=antora-playbook.yml::PR target branch (${{ github.event.inputs.pr_target }}) and content source (${{ env.pr_content_source }}) aren't part of the online documentation"
           exit 1
 
       - name: Replace PR target branch with the PR branch
         id: replace-pr-target-branch
-        if: env.called_by_pr && steps.search-pr-target-branch.outputs.result != ''
+        if: env.called_by_pr == 'true' && steps.search-pr-target-branch.outputs.result != ''
         uses: mikefarah/yq@master
         with:
           cmd: yq -i 'with(.content.sources[] | select(.url == "./${{ env.pr_content_source }}*" and .branches == "${{ github.event.inputs.pr_target }}"); .url = "./pull-request" | .branches = "HEAD" | .version = "PR" )' antora-playbook.yml
       - name: Replace PR content source with the PR branch
         id: replace-pr-content-source
-        if: env.called_by_pr && steps.search-pr-content-source.outputs.result != ''
+        if: env.called_by_pr == 'true' && steps.search-pr-content-source.outputs.result != ''
         uses: mikefarah/yq@master
         with:
           cmd: yq -i 'with(.content.sources[] | select(.url == "./${{ env.pr_content_source }}"); .url = "./pull-request" | .branches = "HEAD" | .version = "PR" )' antora-playbook.yml
 
       - name: Checkout PR source branch
         uses: actions/checkout@v4
-        if: env.called_by_pr
+        if: env.called_by_pr == 'true'
         with:
           repository: ${{ github.event.inputs.pr_repo }}
           ref: ${{ github.event.inputs.pr_branch }}
