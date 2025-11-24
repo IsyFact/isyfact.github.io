@@ -332,7 +332,7 @@ jobs:
         run: npm ci
       - name: Build Documentation
         env:
-          antora_build_failed: false
+          antora_build_failed: 'false'
         run: npx antora --log-format=json --log-level=${{ github.event.inputs.log_level || 'info' }} --log-failure-level=${{ github.event.inputs.failure_level || 'fatal' }} antora-playbook.yml > antora_output.log || echo "antora_build_failed=true" >> $GITHUB_ENV
 
       - name: Upload docs folder as pages artifact for GitHub Pages
