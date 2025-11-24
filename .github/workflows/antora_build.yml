@@ -312,7 +312,7 @@ jobs:
       - name: Generate Templates (doku/3.0.2)
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-3.0.2/isyfact-standards-doc package
       - name: Generate Templates (pull request)
-        if: ${{ env.called_by_pr && github.event.inputs.pr_repo == 'IsyFact/isyfact-standards' }}
+        if: env.called_by_pr == 'true' && github.event.inputs.pr_repo == 'IsyFact/isyfact-standards'
         run: mvn $MAVEN_CLI_OPTS -f ./pull-request/isyfact-standards-doc package
 
       - name: Setup node
@@ -337,12 +337,12 @@ jobs:
 
       - name: Upload docs folder as pages artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
-        if: ${{ !env.called_by_pr && !env.antora_build_failed }}
+        if: env.called_by_pr == 'false' && env.antora_build_failed == 'false'
         with:
           path: docs
       - name: Upload docs folder as artifact for Link Checker
         uses: actions/upload-artifact@v4
-        if: ${{ !env.antora_build_failed }}
+        if: env.antora_build_failed == 'false'
         with:
           name: docs
           path: docs
@@ -352,7 +352,7 @@ jobs:
           name: antora-log
           path: antora_output.log
       - name: Mark workflow as failed if the Antora build failed
-        if: env.antora_build_failed
+        if: env.antora_build_failed == 'false'
         run: |
           echo "::error title=Antora build failed!
           cat antora-output.log
