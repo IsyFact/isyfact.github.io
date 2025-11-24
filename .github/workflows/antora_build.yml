@@ -38,6 +38,7 @@ jobs:
       - name: Check if called by a PR
         if: env.called_by_pr
         run: |
+          echo "::notice title=called_by_pr::"${{env.called_by_pr}}"
           echo "::notice title=Initiating pull request build::${{github.event.inputs.pr_repo}} (${{github.event.inputs.pr_branch}} -> ${{github.event.inputs.pr_target}})"
           pr_content_source_name="${{ github.event.inputs.pr_repo }}"
           pr_content_source_name="${pr_content_source_name#*/}"  
