@@ -78,12 +78,6 @@ content:
       start_path: isy-datetime-doc
       lfs: true
       version: '4.0.0'
-    - url: https://github.com/IsyFact/isy-datetime-persistence.git
-      branches: develop
-      start_path: docs
-      lfs: true
-      version:
-        'develop': '5.0.0'
     - url: https://github.com/IsyFact/isy-polling.git
       branches: develop
       start_path: docs
