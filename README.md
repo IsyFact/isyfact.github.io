@@ -17,7 +17,7 @@ To build the online docs yourself, you need the following prerequisites:
 - **Node.js & npm**: For running Antora and managing JavaScript dependencies. You should use a version manager (i.e. [nvm for Windows](https://github.com/coreybutler/nvm-windows) or [nvm for Linux/macOS](https://github.com/nvm-sh/nvm)), or you can install both manually for your OS. Please use at least the latest LTS version.
 
 ## Local Testing and Development
-The playbook at `antora-playbook-local.yml` provides an environment to test your feature branches against the online documentation. 
+The playbook at `antora-playbook-local.yml` provides a local environment to test your feature branches against the online documentation. 
 It features all active development branches and the latest release tags of all repositories which contain documentation.
 
 All you have to do is add your feature branches to the playbook, run `npm install`, followed by `npm run build:local`.
@@ -37,24 +37,35 @@ To add your feature branches, simply add a content source like this to `antora-p
 > The build will contain errors at this point, because the template documents aren't built properly. They still require a Maven build which doesn't happen inside Antora. 
 > The errors look like this and can be safely ignored for now:
 > ```
-> ERROR (asciidoctor): target of xref not found: methodik:attachment$vorlage-generated/IsyFact-Vorlage-Systementwurf.zip
-> ERROR (asciidoctor): target of xref not found: methodik:attachment$vorlage-generated/IsyFact-Vorlage-Systementwurf.pdf
-> ERROR (asciidoctor): target of xref not found: methodik:attachment$vorlage-generated/IsyFact-Vorlage-Systemhandbuch.zip
-> ERROR (asciidoctor): target of xref not found: methodik:attachment$vorlage-generated/IsyFact-Vorlage-Systemhandbuch.pdf
+> ERROR (asciidoctor): target of xref not found: methodik:attachment$vorlage-generated/
+>                          IsyFact-Vorlage-Systementwurf.zip
+> ERROR (asciidoctor): target of xref not found: methodik:attachment$vorlage-generated/
+>                          IsyFact-Vorlage-Systementwurf.pdf
+> ERROR (asciidoctor): target of xref not found: methodik:attachment$vorlage-generated/
+>                          IsyFact-Vorlage-Systemhandbuch.zip
+> ERROR (asciidoctor): target of xref not found: methodik:attachment$vorlage-generated/
+>                          IsyFact-Vorlage-Systemhandbuch.pdf
 > ```
 
 ## Known Bugs & Limitations
 
 ### Workaround: Building with Git LFS
 
-> [!IMPORTANT]
-> This issue is solved for [dev builds](#local-testing-and-development)!
-> It is only relevant for production builds. 
-
 Due to limitations in Antora, building the online docs isn't as simple as it should be.
 This is due to the usage of Git LFS.
 Using the repository URLs in the playbook causes images and binary files to not being part of the build result.
 This issue is currently being worked on (see [issue #185](https://gitlab.com/antora/antora/-/issues/185)) and should be resolved in Antora 3.x.
+
+#### Local Testing and Development
+The local build uses the [Antora Git Large File Storage (LFS) Extension](https://gitlab.com/opendevise/oss/antora-binary-files-extension-suite/-/tree/main/packages/git-lfs-extension?ref_type=heads) by OpenDevise.
+The extension is able to resolve Git LFS objects by using the `git` executable of the environment instead of `isomorphic-git` which is packaged inside Antora.
+However, it is currently limited to one branch or commit (tags won't work!) per content source.
+This is reflected in the playbook `antora-playbook-local.yml`.
+
+> [!NOTE]
+> It is planned to use this approach for the production build as well.
+
+#### Production Build
 
 In order to build the online docs, you need to clone all content sources yourself in a way that supports Git LFS.
 Also, you need to change the content sources in the playbook.
