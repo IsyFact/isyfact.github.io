@@ -34,7 +34,7 @@ To add your feature branches, simply add a content source like this to `antora-p
 ```
 
 > [!IMPORTANT]
-> The build will contain errors at this point, because the template documents aren't properly built. They still require a Maven build which doesn't happen inside Antora. 
+> The build will contain errors at this point, because the template documents aren't built properly. They still require a Maven build which doesn't happen inside Antora. 
 > The errors look like this and can be safely ignored for now:
 > ```
 > ERROR (asciidoctor): target of xref not found: methodik:attachment$vorlage-generated/IsyFact-Vorlage-Systementwurf.zip
