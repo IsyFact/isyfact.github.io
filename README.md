@@ -24,35 +24,40 @@ To build the online docs, you need the following prerequisites.
 - **Node.js & npm**: For running Antora and managing JavaScript dependencies. You should use a version manager (i.e. [nvm for Windows](https://github.com/coreybutler/nvm-windows) or [nvm for Linux/macOS](https://github.com/nvm-sh/nvm)), or you can install both manually for your OS. Please use at least the latest LTS version.
 
 ## Local Testing and Development
-The `setup-project-environment.sh` script automates the setup and build process for testing and developing Antora documentation. Key steps include: 
-- Cloning repositories and specific branches
-- Setting up Git LFS
-- Template generation with Maven
-- Dependency installation
-- Running the Antora build locally
+The playbook at `antora-playbook-local.yml` provides an environment to test your feature branches against the online documentation. 
+It features all active development branches and the latest release tags of all repositories which contain documentation.
 
-Steps to run `setup-project-environment.sh`:
-- Make the script executable:
-    ```shell
-    chmod +x setup-project-environment.sh
-    ```
-- Run the script:
-    ```shell
-    ./setup-project-environment.sh
-    ```
-- After the initial successful run, you can use the following command to rebuild the documentation after changes to the AsciiDoc files to save time by skipping the initial setup steps:
-    ```shell
-    npm run build:local
-    ```
-  
-  - Or this command for cleaner logs which makes debugging Antora documentation errors and warnings easier:
-      ```shell
-      npm run build:local-json
-      ```
+All you have to do is add your feature branches to the playbook, run `npm install`, followed by `npm run build:local`.
+
+> [!TIP]
+> Recommendation: Check out this repository side-by-side with the repositories you're working on!
+
+To add your feature branches, simply add a content source like this to `antora-playbook-local.yml`:
+```yaml
+- url: ../{path-to-your-repo}
+  branches: HEAD
+  version:
+    'feature/(*)': $1 
+```
+
+> [!IMPORTANT]
+> The build will contain errors at this point, because the template documents aren't properly built. They still require a Maven build which doesn't happen inside Antora. 
+> The errors look like this and can be safely ignored for now:
+> ```
+> ERROR (asciidoctor): target of xref not found: methodik:attachment$vorlage-generated/IsyFact-Vorlage-Systementwurf.zip
+> ERROR (asciidoctor): target of xref not found: methodik:attachment$vorlage-generated/IsyFact-Vorlage-Systementwurf.pdf
+> ERROR (asciidoctor): target of xref not found: methodik:attachment$vorlage-generated/IsyFact-Vorlage-Systemhandbuch.zip
+> ERROR (asciidoctor): target of xref not found: methodik:attachment$vorlage-generated/IsyFact-Vorlage-Systemhandbuch.pdf
+> ```
 
 ## Known Bugs & Limitations
 
 ### Workaround: Building with Git LFS
+
+> [!IMPORTANT]
+> This issue is solved for [dev builds](#local-testing-and-development)!
+> It is only relevant for production builds. 
+
 Due to limitations in Antora, building the online docs isn't as simple as it should be.
 This is due to the usage of Git LFS.
 Using the repository URLs in the playbook causes images and binary files to not being part of the build result.

@@ -8,111 +8,117 @@ urls:
   latest_prerelease_version_segment: dev
 content:
   branches: []
-  # Comment: Configuration for development (e.g. with feature branches that aren't pushed yet)
-  # Convention: All git repositories are cloned in the same parent directory.
   sources:
-    - url: ../isy-documentation
-      branches: [HEAD, master]
+    # Please add your dev branches here.
+    # Recommendation: Check out this repository side-by-side with the repositories you're working on.
+    # Then, uncomment the part below and replace the URL with the (relative) path to your repository.
+    #- url: ../{path-to-your-repo}
+    #  branches: HEAD
+    #  version:
+    #    'feature/(*)': $1
+    - url: https://github.com/IsyFact/isy-documentation.git
+      branches: master
       start_paths: [documentation-guide,glossary]
+      lfs: true
       version:
-        'feature/(*)': $1
         'master': 'latest'
-    - url: ../isyfact-standards
-      branches: [HEAD, master, release/4.x, release/3.x, doku/4.0.0, doku/3.1.2, doku/3.2.2, doku/3.0.2]
-      tags: [3.3.0, 4.1.0]
+      # Contains only active branches and latest versions
+    - url: https://github.com/IsyFact/isyfact-standards.git
+      branches: master
       start_path: isyfact-standards-doc/src/docs/antora
+      lfs: true
       version:
-        'feature/(*)': $1
-        'release/(*)': $1
-        'doku/(*)': $1
         'master': '5.x'
-        '(*)': $1
-    - url: ../isyfact-standards-referenzimplementierung
-      branches: [HEAD, main]
+    - url: https://github.com/IsyFact/isyfact-standards.git
+      branches: release/4.x
+      start_path: isyfact-standards-doc/src/docs/antora
+      lfs: true
+      version:
+        'release/(*)': $1
+    - url: https://github.com/IsyFact/isyfact-standards.git
+      commits: be566931bbf712f568aab822816126b7585e28c2
+      start_path: isyfact-standards-doc/src/docs/antora
+      lfs: true
+      version: '4.1.0'
+    - url: https://github.com/IsyFact/isyfact-standards.git
+      commits: ad257897ec0f4f31761430eb4b9b583f74455088
+      start_path: isyfact-standards-doc/src/docs/antora
+      lfs: true
+      version: '3.3.0'
+    - url: https://github.com/IsyFact/isyfact-standards-referenzimplementierung.git
+      branches: main
       start_path: isyfact-standards-referenzimplementierung-doc
-    - url: ../isy-web
-      branches: [HEAD, master]
+      lfs: true
+    - url: https://github.com/IsyFact/isy-web.git
+      branches: master
       start_path: isy-web-doc/src/docs/antora
+      lfs: true
       version:
-        'feature/(*)': $1
-        'release/(*)': $1
         'master': '6.3.0'
-        '(*)': $1
-    - url: ../isy-angular-widgets
-      branches: [HEAD, main]
+    - url: https://github.com/IsyFact/isy-angular-widgets.git
+      branches: main
       start_path: docs
+      lfs: true
       version:
-        'feature/(*)': $1
         'main': '19.x'
-        '(*)': $1
-    - url: ../isy-bedienkonzept
-      branches: [HEAD, main]
+    - url: https://github.com/IsyFact/isy-bedienkonzept.git
+      branches: main
       start_path: isy-bedienkonzept-doc
+      lfs: true
       version:
-        'feature/(*)': $1
-        'release/(*)': $1
         'main': '1.x'
-        '(*)': $1
-    - url: ../isy-datetime
-      branches: [HEAD, develop]
+    - url: https://github.com/IsyFact/isy-datetime.git
+      branches: develop
+      start_path: docs
+      lfs: true
+      version:
+        'develop': 'next'
+    - url: https://github.com/IsyFact/isy-datetime.git
+      commits: f6a22a9b55524456df69514d41f836164622f147
       start_path: isy-datetime-doc
+      lfs: true
+      version: '4.0.0'
+    - url: https://github.com/IsyFact/isy-datetime-persistence.git
+      branches: develop
+      start_path: docs
+      lfs: true
       version:
-        'feature/(*)': $1
-        'release/(*)': $1
+        'develop': '5.0.0'
+    - url: https://github.com/IsyFact/isy-polling.git
+      branches: develop
+      start_path: docs
+      lfs: true
+      version:
+        'develop': '5.0.0'
+    - url: https://github.com/IsyFact/isy-security.git
+      branches: develop
+      start_path: docs
+      lfs: true
+      version:
+        'develop': '5.0.0'
+    - url: https://github.com/IsyFact/isy-sonderzeichen.git
+      branches: develop
+      start_path: docs
+      lfs: true
+      version:
         'develop': 'next'
-        '(*)': $1
-    - url: ../isy-datetime-persistence
-      branches: [HEAD, develop]
-      start_path: docs
-      version:
-        'feature/(*)': $1
-        'release/(*)': $1
-        'develop': '5.0.0'
-        '(*)': $1
-    - url: ../isy-polling
-      branches: [HEAD, develop]
-      start_path: docs
-      version:
-        'feature/(*)': $1
-        'release/(*)': $1
-        'develop': '5.0.0'
-        '(*)': $1
-    - url: ../isy-security
-      branches: [HEAD, develop]
-      start_path: docs
-      version:
-        'feature/(*)': $1
-        'release/(*)': $1
-        'develop': '5.0.0'
-        '(*)': $1
-    - url: ../isy-sonderzeichen
-      branches: [HEAD, develop]
+    - url: https://github.com/IsyFact/isy-sonderzeichen.git
+      commits: 013d697c4af90f01af21834b1f1cdfc2dc24a809
       start_path: isy-sonderzeichen-doc
-      version:
-        'feature/(*)': $1
-        'release/(*)': $1
-        'develop': 'next'
-        '(*)': $1
-    - url: ../isy-sonderzeichen
-      tags: 4.0.0
-      start_path: isy-sonderzeichen-doc
-      version: 4.0.0
-    - url: ../isy-task
-      branches: [HEAD, develop]
+      lfs: true
+      version: '4.0.0'
+    - url: https://github.com/IsyFact/isy-task.git
+      branches: develop
       start_path: docs
+      lfs: true
       version:
-        'feature/(*)': $1
-        'release/(*)': $1
         'develop': '5.0.0'
-        '(*)': $1
-    - url: ../isy-util
-      branches: [HEAD, develop]
+    - url: https://github.com/IsyFact/isy-util.git
+      branches: develop
       start_path: docs
+      lfs: true
       version:
-        'feature/(*)': $1
-        'release/(*)': $1
         'develop': '5.0.0'
-        '(*)': $1
 runtime:
   fetch: true
   log:
@@ -143,6 +149,7 @@ ui:
   supplemental_files: ./antora-ui/supplemental-ui
 antora:
   extensions:
+    - require: '@opendevise/antora-git-lfs-extension'
     - require: '@antora/lunr-extension'
       languages: [en, de]
     - require: ./lib/antora-extension-rules.js
