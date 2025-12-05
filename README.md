@@ -2,25 +2,18 @@
 
 # IsyFact Online Docs
 
-## Publishing
 This repository contains GitHub actions to build and publish the online docs at https://isyfact.github.io via GitHub Pages.
 
-You don't need to clone this repository for your daily technical writing. 🙂
-
-## Antora Playbooks and Customization
-
 Additionally, this repository contains the Antora playbooks, Antora extensions and a customized UI for the IsyFact online docs.
-
-There are 2 playbooks:
+There are two playbooks:
 - `antora-playbook.yml`: For CI/CD-based builds in GitHub Actions.
-- `antora-playbook-local.yml`: For local builds. Useful for local testing and development.
+- `antora-playbook-local.yml`: For [local testing and development](#local-testing-and-development).
 
 ## Prerequisites
 The documentation is written in [AsciiDoc](https://docs.asciidoctor.org/asciidoc/latest/) and uses [Antora](https://antora.org/) to build a static HTML site for easy browsing.
 
-To build the online docs, you need the following prerequisites.
+To build the online docs yourself, you need the following prerequisites:
 - **Git LFS**: For repositories that use Git Large File Storage. [Installation Guide](https://git-lfs.com/).
-- **Maven**: For generating templates if project uses Maven for build processes. [Installation Guide](https://maven.apache.org/install.html).
 - **Node.js & npm**: For running Antora and managing JavaScript dependencies. You should use a version manager (i.e. [nvm for Windows](https://github.com/coreybutler/nvm-windows) or [nvm for Linux/macOS](https://github.com/nvm-sh/nvm)), or you can install both manually for your OS. Please use at least the latest LTS version.
 
 ## Local Testing and Development
