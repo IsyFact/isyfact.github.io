@@ -11,6 +11,7 @@
 ## 2025
 
 - [2025-12-10] (ext,cs) `IFS-5010`: use extension for handling Git LFS in dev build
+- [2025-12-09] (ci) `IFS-4849`: removes `isy-datetime-persistence` out of build
 - [2025-11-11] (ci) `IFS-4801`: allow Antora build to handle pull requests
 - [2025-09-11] (src) `IFS-4762`: adjust build and playbook for IF 4.1.0 release
 - [2025-07-29] (src) `IFS-4764`: update content sources due to clearing technical debt from `isy-datetime` and `isy-sonderzeichen`
