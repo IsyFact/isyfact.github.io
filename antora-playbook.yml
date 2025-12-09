@@ -82,12 +82,6 @@ content:
     - url: ./isy-datetime
       branches: HEAD
       start_path: isy-datetime-doc
-    - url: ./isy-datetime-persistence
-      branches: HEAD
-      start_path: docs
-      version:
-        'develop': '5.0.0'
-        '(*)': $1
     - url: ./isy-polling
       branches: HEAD
       start_path: docs
