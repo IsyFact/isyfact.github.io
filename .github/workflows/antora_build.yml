@@ -193,7 +193,7 @@ jobs:
         # fetch latest tags per component (fetch branch 'develop' if there are no tags)
         id: fetch-latest-tags
         run: |
-          repos=("isy-datetime" "isy-datetime-persistence" "isy-polling" "isy-security" "isy-sonderzeichen" "isy-task" "isy-util")          
+          repos=("isy-datetime" "isy-polling" "isy-security" "isy-sonderzeichen" "isy-task" "isy-util")          
           
           for repo in "${repos[@]}"; do
             latest_tag=$(git ls-remote --tags https://github.com/IsyFact/$repo.git | grep -o 'refs/tags/[0-9]*\.[0-9]*\.[0-9]*$' | sort -V | tail -n1 | awk -F'/' '{print $3}')
@@ -213,15 +213,6 @@ jobs:
           lfs: true
           sparse-checkout: isy-datetime-doc
           path: isy-datetime
-
-      - name: Checkout isy-datetime-persistence
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-datetime-persistence
-          ref: ${{ steps.fetch-latest-tags.outputs.isy-datetime-persistence }}
-          lfs: true
-          sparse-checkout: docs
-          path: isy-datetime-persistence
 
       - name: Checkout isy-polling
         uses: actions/checkout@v4
