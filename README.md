@@ -20,15 +20,15 @@ To build the online docs yourself, you need the following prerequisites:
 The playbook at `antora-playbook-local.yml` provides a local environment to test your feature branches against the online documentation. 
 It features all active development branches and the latest release tags of all repositories which contain documentation.
 
-All you have to do is add your feature branches to the playbook, run `npm install`, followed by `npm run build:local`.
-
 > [!TIP]
-> Recommendation: Check out this repository side-by-side with the repositories you're working on!
+> Recommendation: Check out this repository side-by-side with the repositories you're working on.
 
+All you have to do is add your feature branches to the playbook, run `npm install`, followed by `npm run build:local`.
 To add your feature branches, simply add a content source like this to `antora-playbook-local.yml`:
 ```yaml
 - url: ../{path-to-your-repo}
   branches: HEAD
+  start_path: {path-to-antora-yml-in-your-repo}
   version:
     'feature/(*)': $1 
 ```
