@@ -24,7 +24,7 @@ It features all active development branches and the latest release tags of all r
 > Recommendation: Check out this repository side-by-side with the repositories you're working on.
 
 All you have to do is add your feature branches to the playbook, run `npm install`, followed by `npm run build:local`.
-To add your feature branches, simply add a content source like this to `antora-playbook-local.yml`:
+To add your feature branches, simply add a content source like this to `antora-playbook-local.yml` and set your paths accordingly:
 ```yaml
 - url: ../{path-to-your-repo}
   branches: HEAD
