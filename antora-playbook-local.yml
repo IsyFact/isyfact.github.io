@@ -10,7 +10,7 @@ content:
   branches: []
   sources:
     # Please add your feature branches here.
-    # Uncomment and duplicate the part below and replace the paths accordingly.
+    # Uncomment and duplicate the part below and set the paths accordingly.
     #- url: ../{path-to-your-repo}
     #  branches: HEAD
     #  start_path: {path-to-antora-yml-in-your-repo}
