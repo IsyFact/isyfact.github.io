@@ -9,11 +9,11 @@ urls:
 content:
   branches: []
   sources:
-    # Please add your dev branches here.
-    # Recommendation: Check out this repository side-by-side with the repositories you're working on.
-    # Then, uncomment the part below and replace the URL with the (relative) path to your repository.
+    # Please add your feature branches here.
+    # Uncomment and duplicate the part below and replace the paths accordingly.
     #- url: ../{path-to-your-repo}
     #  branches: HEAD
+    #  start_path: {path-to-antora-yml-in-your-repo}
     #  version:
     #    'feature/(*)': $1
     - url: https://github.com/IsyFact/isy-documentation.git
