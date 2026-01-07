@@ -16,7 +16,7 @@ content:
         'master': 'latest'
     - url: ./isyfact-standards
       branches: master
-      start_path: isyfact-standards-doc/src/docs/antora
+      start_path: isyfact-standards-doc/src/docs/antorax
       version: '5.x'
     - url: ./isyfact-standards-4.x
       branches: release/4.x
