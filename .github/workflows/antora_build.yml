@@ -359,7 +359,7 @@ jobs:
   Deploy:
     runs-on: ubuntu-latest
     needs: [Build]
-    if: env.called_by_pr == 'false'
+    if: ${{ (github.event.inputs.pr_repo == '') || (github.event.inputs.pr_branch == '') || (github.event.inputs.pr_target == '') }}
     concurrency:
       group: gh-pages
       cancel-in-progress: false
