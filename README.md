@@ -47,6 +47,29 @@ To add your feature branches, simply add a content source like this to `antora-p
 >                          IsyFact-Vorlage-Systemhandbuch.pdf
 > ```
 
+## PR builds for the website repository
+
+The Antora PR build now also supports pull requests that target the **website repository**
+`IsyFact/isyfact.github.io`.
+
+### Behavior
+
+- If the workflow detects that a PR originates from this repository it will:
+  - check out the PR feature branch
+  - run the Antora build using the `antora-playbook.yml` contained in that branch.
+
+- In this case, no content source replacement is performed.
+  The entire online documentation is built according to the modified playbook in that branch.
+
+### Scope
+
+- PRs from other repositories (for example documentation components) continue to use the existing PR build logic:
+  - validation that the content source is part of the online documentation
+  - temporary replacement of the content source with the PR branch
+  - build of a dedicated `PR` documentation version
+
+This allows changes to the website playbook itself to be safely validated via PR builds.
+
 ## Known Bugs & Limitations
 
 ### Workaround: Building with Git LFS
