@@ -36,10 +36,10 @@ content:
       version:
         'release/(*)': $1
     - url: https://github.com/IsyFact/isyfact-standards.git
-      commits: be566931bbf712f568aab822816126b7585e28c2
+      commits: 2d4fe269849d3be6f8c4196452c252108713fda0
       start_path: isyfact-standards-doc/src/docs/antora
       lfs: true
-      version: '4.1.0'
+      version: '4.2.0'
     - url: https://github.com/IsyFact/isyfact-standards.git
       commits: ad257897ec0f4f31761430eb4b9b583f74455088
       start_path: isyfact-standards-doc/src/docs/antora
