@@ -120,7 +120,8 @@ runtime:
     failure_level: fatal
 asciidoc:
   attributes:
-    page-component-order: 'isyfact-standards-doku, *, glossary, documentation-guide'
+    # 1. isyfact-standards. 2. all building blocks, 3. deprecated content, 4. meta content
+    page-component-order: 'isyfact-standards-doku, *, isyfact-jsf-doku, glossary, documentation-guide'
     page-toctitle: Inhalt
     sectnums: true
     sectnumlevels: 5
