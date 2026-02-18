@@ -72,7 +72,7 @@ content:
       branches: main
       start_path: docs
       version:
-        'main': '19.x'
+        'main': '21.x'
         '(*)': $1
     - url: ./isy-bedienkonzept
       branches: main

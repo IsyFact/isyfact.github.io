@@ -60,7 +60,7 @@ content:
       start_path: docs
       lfs: true
       version:
-        'main': '19.x'
+        'main': '21.x'
     - url: https://github.com/IsyFact/isy-bedienkonzept.git
       branches: main
       start_path: isy-bedienkonzept-doc
