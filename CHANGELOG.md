@@ -8,6 +8,13 @@
 > - the content sources **(src)**,
 > - the bundled GitHub Actions workflows and jobs **(ci)**.
 
+## 2026
+ 
+- [2026-02-18] (conf) `IFS-5224`: mark JSF as deprecated and move it down in the component selector
+- [2026-02-13] (conf) `IFS-4925`: allow override of admonition captions
+- [2026-02-12] (src): `IFS-5096`: adjust build and playbook for IF 4.2.0 release
+- [2026-01-07] (ci): `IFS-4802`: allow Antora build to handle changes to `isyfact.github.io`
+
 ## 2025
 
 - [2025-12-10] (ext,cs) `IFS-5010`: use extension for handling Git LFS in dev build
