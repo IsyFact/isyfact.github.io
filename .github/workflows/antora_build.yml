@@ -181,51 +181,6 @@ jobs:
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-3.0.2
 
-      - name: Checkout isy-documentation
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-documentation
-          ref: master
-          lfs: true
-          path: isy-documentation
-
-      - name: Checkout isy-web # still needed as long as IsyFact 3 is published!
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-web
-          ref: master
-          lfs: true
-          sparse-checkout: isy-web-doc/src/docs/antora
-          path: isy-web
-
-      - name: Checkout isy-angular-widgets
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-angular-widgets
-          ref: main
-          lfs: true
-          sparse-checkout: docs
-          path: isy-angular-widgets
-
-      # fetch "wip" components (i.e. without an official release)
-      - name: Checkout isy-bedienkonzept
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-bedienkonzept
-          ref: main
-          lfs: true
-          sparse-checkout: isy-bedienkonzept-doc
-          path: isy-bedienkonzept
-
-      - name: Checkout isyfact-standards-referenzimplementierung
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isyfact-standards-referenzimplementierung
-          ref: main
-          lfs: true
-          sparse-checkout: isyfact-standards-referenzimplementierung-doc
-          path: isyfact-standards-referenzimplementierung
-          
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:

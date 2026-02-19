@@ -9,11 +9,14 @@ content:
   branches: []
   # Comment: Configuration for CI/CD-Pipeline (using the Git LFS workaround as described in the README)
   sources:
-    - url: ./isy-documentation
+    - url: https://github.com/IsyFact/isy-documentation.git
       branches: master
-      start_paths: [documentation-guide, glossary]
+      start_paths: [documentation-guide,glossary]
+      lfs: true
       version:
         'master': 'latest'
+
+    # isyfact-standards (manual checkout because of the Maven build)
     - url: ./isyfact-standards
       branches: master
       start_path: isyfact-standards-doc/src/docs/antora
@@ -61,28 +64,25 @@ content:
       version:
         'doku/(*)': $1
 
-    - url: ./isyfact-standards-referenzimplementierung
+    # reference implementation
+    - url: https://github.com/IsyFact/isyfact-standards-referenzimplementierung.git
       branches: main
       start_path: isyfact-standards-referenzimplementierung-doc
-    - url: ./isy-web # still needed as long as IsyFact 3 is published!
-      branches: master
-      start_path: isy-web-doc/src/docs/antora
-      version: '6.3.0'
-    - url: ./isy-angular-widgets
-      branches: main
-      start_path: docs
-      version:
-        'main': '19.x'
-        '(*)': $1
-    - url: ./isy-bedienkonzept
-      branches: main
-      start_path: isy-bedienkonzept-doc
-      version:
-        'release/(*)': $1
-        'main': '1.x'
-        '(*)': $1
+      lfs: true
 
     # decoupled components
+    - url: https://github.com/IsyFact/isy-angular-widgets.git
+      branches: main
+      start_path: docs
+      lfs: true
+      version:
+        'main': '19.x'
+    - url: https://github.com/IsyFact/isy-bedienkonzept.git
+      branches: main
+      start_path: isy-bedienkonzept-doc
+      lfs: true
+      version:
+        'main': '1.x'
     - url: https://github.com/IsyFact/isy-datetime.git
       commits: f6a22a9b55524456df69514d41f836164622f147
       start_path: isy-datetime-doc
@@ -117,6 +117,13 @@ content:
       lfs: true
       version:
         'develop': '5.0.0'
+    - url: https://github.com/IsyFact/isy-web.git # still needed as long as IsyFact 3 is published!
+      branches: master
+      start_path: isy-web-doc/src/docs/antora
+      lfs: true
+      version:
+        'master': '6.3.0'
+
 runtime:
   fetch: true
   log:
