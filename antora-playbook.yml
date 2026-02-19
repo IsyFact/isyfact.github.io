@@ -83,36 +83,40 @@ content:
         '(*)': $1
 
     # decoupled components
-    - url: ./isy-datetime
-      branches: HEAD
+    - url: https://github.com/IsyFact/isy-datetime.git
+      commits: f6a22a9b55524456df69514d41f836164622f147
       start_path: isy-datetime-doc
-    - url: ./isy-polling
-      branches: HEAD
+      lfs: true
+      version: '4.0.0'
+    - url: https://github.com/IsyFact/isy-polling.git
+      branches: develop
       start_path: docs
+      lfs: true
       version:
         'develop': '5.0.0'
-        '(*)': $1
-    - url: ./isy-security
-      branches: HEAD
+    - url: https://github.com/IsyFact/isy-security.git
+      branches: develop
       start_path: docs
+      lfs: true
       version:
         'develop': '5.0.0'
-        '(*)': $1
-    - url: ./isy-sonderzeichen
-      branches: HEAD
+    - url: https://github.com/IsyFact/isy-sonderzeichen.git
+      commits: 013d697c4af90f01af21834b1f1cdfc2dc24a809
       start_path: isy-sonderzeichen-doc
-    - url: ./isy-task
-      branches: HEAD
+      lfs: true
+      version: '4.0.0'
+    - url: https://github.com/IsyFact/isy-task.git
+      branches: develop
       start_path: docs
+      lfs: true
       version:
         'develop': '5.0.0'
-        '(*)': $1
-    - url: ./isy-util
-      branches: HEAD
+    - url: https://github.com/IsyFact/isy-util.git
+      branches: develop
       start_path: docs
+      lfs: true
       version:
         'develop': '5.0.0'
-        '(*)': $1
 runtime:
   fetch: true
   log:
@@ -143,6 +147,7 @@ ui:
   supplemental_files: ./antora-ui/supplemental-ui
 antora:
   extensions:
+    - require: '@opendevise/antora-git-lfs-extension'
     - require: '@antora/lunr-extension'
       languages: [en, de]
     - require: ./lib/antora-extension-rules.js
