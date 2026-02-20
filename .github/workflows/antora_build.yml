@@ -52,53 +52,57 @@ jobs:
           pr_content_source_name="${pr_content_source_name#*/}"  
           echo "pr_content_source=${pr_content_source_name}" >> $GITHUB_ENV
 
-      # as of IFS-5030, this only works for isyfact-standards. other repos must be matched with their full URL
-      # either: "https://github.com/IsyFact/${{ env.pr_content_source }}.git"
-      # or: "https://github.com/${{ github.event.inputs.pr_repo }}.git"
       - name: Check if PR target branch is part of the online documentation (isyfact-standards)
+        # we need this special case for "isyfact-standards", which must be checked out explicitly so that the template documents can be built via Maven
         id: search-pr-target-branch-ifs
         if: env.called_by_pr == 'true' && env.pr_changes_ifs == 'true'
         uses: mikefarah/yq@master
         with:
           # if this command returns an empty result (outputs.result), the PRs target branch isn't part of the online documentation.
-          cmd: yq '(.content.sources[] | select(.url == "./${{ env.pr_content_source }}*" and .branches == "${{ github.event.inputs.pr_target }}"))' 'antora-playbook.yml'
+          cmd: yq '(.content.sources[] | select(.url == "./isyfact-standards*" and .branches == "${{ github.event.inputs.pr_target }}"))' 'antora-playbook.yml'
       - name: Check if PR target branch is part of the online documentation (others)
+        # we need this for most decoupled components (they publish the development branch)
         id: search-pr-target-branch-others
         if: env.called_by_pr == 'true' && env.pr_changes_ifs == 'false' && env.pr_changes_site == 'false'
         uses: mikefarah/yq@master
         with:
           # if this command returns an empty result (outputs.result), the PRs target branch isn't part of the online documentation.
           cmd: yq '(.content.sources[] | select(.url == "https://github.com/${{ github.event.inputs.pr_repo }}.git" and .branches == "${{ github.event.inputs.pr_target }}"))' 'antora-playbook.yml'
-      - name: Collect results
-        id: search-pr-target-branch
-        if: env.called_by_pr == 'true' && env.pr_changes_site == 'false' && (steps.search-pr-target-branch-ifs.outputs.result != '' || steps.search-pr-target-branch-others.outputs.result != '' )
-        run: echo "result=OK" >> $GITHUB_OUTPUT
       - name: Check if PR content source is part of the online documentation
         # we need this for some decoupled components (they only publish the latest tag, not the development branch)
         id: search-pr-content-source
-        if: env.called_by_pr == 'true' && env.pr_changes_site == 'false' && steps.search-pr-target-branch.outputs.result == ''
+        if: env.called_by_pr == 'true' && env.pr_changes_site == 'false' && steps.search-pr-target-branch-ifs.outputs.result == '' && steps.search-pr-target-branch-others.outputs.result == ''
         uses: mikefarah/yq@master
         with:
           # if this command returns an empty result (outputs.result), the PRs content source isn't part of the online documentation.
           cmd: yq '(.content.sources[] | select(.url == "https://github.com/${{ github.event.inputs.pr_repo }}.git"))' 'antora-playbook.yml'
       - name: Stop execution if PR target branch isn't part of the online documentation
-        if: env.called_by_pr == 'true' && env.pr_changes_site == 'false' && steps.search-pr-target-branch.outputs.result == '' && steps.search-pr-content-source.outputs.result == ''
+        if: env.called_by_pr == 'true' && env.pr_changes_site == 'false' && steps.search-pr-target-branch-ifs.outputs.result == '' && steps.search-pr-target-branch-others.outputs.result == '' && steps.search-pr-content-source.outputs.result == ''
         run: |
           echo "::error file=antora-playbook.yml::PR target branch (${{ github.event.inputs.pr_target }}) and content source (${{ env.pr_content_source }}) aren't part of the online documentation"
           exit 1
 
-      - name: Replace PR target branch with the PR branch
-        id: replace-pr-target-branch
-        if: env.called_by_pr == 'true' && env.pr_changes_site == 'false' && steps.search-pr-target-branch.outputs.result != ''
+      - name: Replace PR target branch with the PR branch (isyfact-standards)
+        # we need this special case for "isyfact-standards", which must be checked out explicitly so that the template documents can be built via Maven
+        id: replace-pr-target-branch-ifs
+        if: env.called_by_pr == 'true' && env.pr_changes_ifs == 'true' && steps.search-pr-target-branch-ifs.outputs.result != ''
         uses: mikefarah/yq@master
         with:
-          cmd: yq -i 'with(.content.sources[] | select(.url == "./${{ env.pr_content_source }}*" and .branches == "${{ github.event.inputs.pr_target }}"); .url = "./pull-request" | .branches = "HEAD" | .version = "PR" )' antora-playbook.yml
+          cmd: yq -i 'with(.content.sources[] | select(.url == "./isyfact-standards*" and .branches == "${{ github.event.inputs.pr_target }}"); .url = "./pull-request" | .branches = "HEAD" | .version = "PR" )' antora-playbook.yml
+      - name: Replace PR target branch with the PR branch (others)
+        # we need this for most decoupled components (they publish the development branch)
+        id: replace-pr-target-branch-others
+        if: env.called_by_pr == 'true' && env.pr_changes_ifs == 'false' && env.pr_changes_site == 'false' && steps.search-pr-target-branch-others.outputs.result != ''
+        uses: mikefarah/yq@master
+        with:
+          cmd: yq -i 'with(.content.sources[] | select(.url == "https://github.com/${{ github.event.inputs.pr_repo }}.git" and .branches == "${{ github.event.inputs.pr_target }}"); .url = "./pull-request" | .branches = "HEAD" | .version = "PR" )' antora-playbook.yml
       - name: Replace PR content source with the PR branch
+        # we need this for some decoupled components (they only publish the latest tag, not the development branch)
         id: replace-pr-content-source
         if: env.called_by_pr == 'true' && env.pr_changes_site == 'false' && steps.search-pr-content-source.outputs.result != ''
         uses: mikefarah/yq@master
         with:
-          cmd: yq -i 'with(.content.sources[] | select(.url == "./${{ env.pr_content_source }}"); .url = "./pull-request" | .branches = "HEAD" | .version = "PR" )' antora-playbook.yml
+          cmd: yq -i 'with(.content.sources[] | select(.url == "https://github.com/${{ github.event.inputs.pr_repo }}.git"); .url = "./pull-request" | .branches = "HEAD" | .version = "PR" )' antora-playbook.yml
 
       - name: Checkout PR source branch
         uses: actions/checkout@v4
