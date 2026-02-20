@@ -71,14 +71,8 @@ jobs:
           cmd: yq '(.content.sources[] | select(.url == "https://github.com/${{ github.event.inputs.pr_repo }}.git" and .branches == "${{ github.event.inputs.pr_target }}"))' 'antora-playbook.yml'
       - name: Collect results
         id: search-pr-target-branch
-        if: env.called_by_pr == 'true' && env.pr_changes_site == 'false'
-        run: |
-          if [[ "${{ steps.search-pr-target-branch-ifs.outputs.result }}" != "" ]]; then
-            echo "result=${{ steps.search-pr-target-branch-ifs.outputs.result }}" >> $GITHUB_OUTPUT
-          fi
-          if [[ "${{ steps.search-pr-target-branch-others.outputs.result }}" != "" ]]; then
-            echo "result=${{ steps.search-pr-target-branch-others.outputs.result }}" >> $GITHUB_OUTPUT
-          fi
+        if: env.called_by_pr == 'true' && env.pr_changes_site == 'false' && (steps.search-pr-target-branch-ifs.outputs.result != '' || steps.search-pr-target-branch-others.outputs.result != '' )
+        run: echo "result=OK" >> $GITHUB_OUTPUT
       - name: Check if PR content source is part of the online documentation
         # we need this for some decoupled components (they only publish the latest tag, not the development branch)
         id: search-pr-content-source
