@@ -28,6 +28,7 @@ jobs:
       MAVEN_CLI_OPTS: '--batch-mode --errors --fail-at-end -T 1C'
       called_by_pr: ${{ (github.event.inputs.pr_repo != '') && (github.event.inputs.pr_branch != '') && (github.event.inputs.pr_target != '') }}
       pr_changes_site: ${{ github.event.inputs.pr_repo == 'IsyFact/isyfact.github.io' }}
+      pr_changes_ifs: ${{ github.event.inputs.pr_repo == 'IsyFact/isyfact-standards' }}
 
     steps:
       - name: Get distinct ID ${{ github.event.inputs.distinct_id }}
@@ -51,39 +52,57 @@ jobs:
           pr_content_source_name="${pr_content_source_name#*/}"  
           echo "pr_content_source=${pr_content_source_name}" >> $GITHUB_ENV
 
-      - name: Check if PR target branch is part of the online documentation
-        id: search-pr-target-branch
-        if: env.called_by_pr == 'true' && env.pr_changes_site == 'false'
+      - name: Check if PR target branch is part of the online documentation (isyfact-standards)
+        # we need this special case for "isyfact-standards", which must be checked out explicitly so that the template documents can be built via Maven
+        id: search-pr-target-branch-ifs
+        if: env.called_by_pr == 'true' && env.pr_changes_ifs == 'true'
         uses: mikefarah/yq@master
         with:
           # if this command returns an empty result (outputs.result), the PRs target branch isn't part of the online documentation.
-          cmd: yq '(.content.sources[] | select(.url == "./${{ env.pr_content_source }}*" and .branches == "${{ github.event.inputs.pr_target }}"))' 'antora-playbook.yml'
+          cmd: yq '(.content.sources[] | select(.url == "./isyfact-standards*" and .branches == "${{ github.event.inputs.pr_target }}"))' 'antora-playbook.yml'
+      - name: Check if PR target branch is part of the online documentation (others)
+        # we need this for most decoupled components (they publish the development branch)
+        id: search-pr-target-branch-others
+        if: env.called_by_pr == 'true' && env.pr_changes_ifs == 'false' && env.pr_changes_site == 'false'
+        uses: mikefarah/yq@master
+        with:
+          # if this command returns an empty result (outputs.result), the PRs target branch isn't part of the online documentation.
+          cmd: yq '(.content.sources[] | select(.url == "https://github.com/${{ github.event.inputs.pr_repo }}.git" and .branches == "${{ github.event.inputs.pr_target }}"))' 'antora-playbook.yml'
       - name: Check if PR content source is part of the online documentation
-        # we need this for decoupled components (they only publish the latest tag, not the development branch)
+        # we need this for some decoupled components (they only publish the latest tag, not the development branch)
         id: search-pr-content-source
-        if: env.called_by_pr == 'true' && env.pr_changes_site == 'false' && steps.search-pr-target-branch.outputs.result == ''
+        if: env.called_by_pr == 'true' && env.pr_changes_site == 'false' && steps.search-pr-target-branch-ifs.outputs.result == '' && steps.search-pr-target-branch-others.outputs.result == ''
         uses: mikefarah/yq@master
         with:
           # if this command returns an empty result (outputs.result), the PRs content source isn't part of the online documentation.
-          cmd: yq '(.content.sources[] | select(.url == "./${{ env.pr_content_source }}"))' 'antora-playbook.yml'
+          cmd: yq '(.content.sources[] | select(.url == "https://github.com/${{ github.event.inputs.pr_repo }}.git"))' 'antora-playbook.yml'
       - name: Stop execution if PR target branch isn't part of the online documentation
-        if: env.called_by_pr == 'true' && env.pr_changes_site == 'false' && steps.search-pr-target-branch.outputs.result == '' && steps.search-pr-content-source.outputs.result == ''
+        if: env.called_by_pr == 'true' && env.pr_changes_site == 'false' && steps.search-pr-target-branch-ifs.outputs.result == '' && steps.search-pr-target-branch-others.outputs.result == '' && steps.search-pr-content-source.outputs.result == ''
         run: |
           echo "::error file=antora-playbook.yml::PR target branch (${{ github.event.inputs.pr_target }}) and content source (${{ env.pr_content_source }}) aren't part of the online documentation"
           exit 1
 
-      - name: Replace PR target branch with the PR branch
-        id: replace-pr-target-branch
-        if: env.called_by_pr == 'true' && env.pr_changes_site == 'false' && steps.search-pr-target-branch.outputs.result != ''
+      - name: Replace PR target branch with the PR branch (isyfact-standards)
+        # we need this special case for "isyfact-standards", which must be checked out explicitly so that the template documents can be built via Maven
+        id: replace-pr-target-branch-ifs
+        if: env.called_by_pr == 'true' && env.pr_changes_ifs == 'true' && steps.search-pr-target-branch-ifs.outputs.result != ''
         uses: mikefarah/yq@master
         with:
-          cmd: yq -i 'with(.content.sources[] | select(.url == "./${{ env.pr_content_source }}*" and .branches == "${{ github.event.inputs.pr_target }}"); .url = "./pull-request" | .branches = "HEAD" | .version = "PR" )' antora-playbook.yml
+          cmd: yq -i 'with(.content.sources[] | select(.url == "./isyfact-standards*" and .branches == "${{ github.event.inputs.pr_target }}"); .url = "./pull-request" | .branches = "HEAD" | .version = "PR" )' antora-playbook.yml
+      - name: Replace PR target branch with the PR branch (others)
+        # we need this for most decoupled components (they publish the development branch)
+        id: replace-pr-target-branch-others
+        if: env.called_by_pr == 'true' && env.pr_changes_ifs == 'false' && env.pr_changes_site == 'false' && steps.search-pr-target-branch-others.outputs.result != ''
+        uses: mikefarah/yq@master
+        with:
+          cmd: yq -i 'with(.content.sources[] | select(.url == "https://github.com/${{ github.event.inputs.pr_repo }}.git" and .branches == "${{ github.event.inputs.pr_target }}"); .url = "./pull-request" | .branches = "HEAD" | .version = "PR" )' antora-playbook.yml
       - name: Replace PR content source with the PR branch
+        # we need this for some decoupled components (they only publish the latest tag, not the development branch)
         id: replace-pr-content-source
         if: env.called_by_pr == 'true' && env.pr_changes_site == 'false' && steps.search-pr-content-source.outputs.result != ''
         uses: mikefarah/yq@master
         with:
-          cmd: yq -i 'with(.content.sources[] | select(.url == "./${{ env.pr_content_source }}"); .url = "./pull-request" | .branches = "HEAD" | .version = "PR" )' antora-playbook.yml
+          cmd: yq -i 'with(.content.sources[] | select(.url == "https://github.com/${{ github.event.inputs.pr_repo }}.git"); .url = "./pull-request" | .branches = "HEAD" | .version = "PR" )' antora-playbook.yml
 
       - name: Checkout PR source branch
         uses: actions/checkout@v4
@@ -178,122 +197,6 @@ jobs:
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-3.0.2
 
-      - name: Checkout isy-documentation
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-documentation
-          ref: master
-          lfs: true
-          path: isy-documentation
-
-      - name: Checkout isy-web # still needed as long as IsyFact 3 is published!
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-web
-          ref: master
-          lfs: true
-          sparse-checkout: isy-web-doc/src/docs/antora
-          path: isy-web
-
-      - name: Checkout isy-angular-widgets
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-angular-widgets
-          ref: main
-          lfs: true
-          sparse-checkout: docs
-          path: isy-angular-widgets
-
-      # fetch decoupled components
-      - name: Fetch latest tags
-        # fetch latest tags per component (fetch branch 'develop' if there are no tags)
-        id: fetch-latest-tags
-        run: |
-          repos=("isy-datetime" "isy-polling" "isy-security" "isy-sonderzeichen" "isy-task" "isy-util")          
-          
-          for repo in "${repos[@]}"; do
-            latest_tag=$(git ls-remote --tags https://github.com/IsyFact/$repo.git | grep -o 'refs/tags/[0-9]*\.[0-9]*\.[0-9]*$' | sort -V | tail -n1 | awk -F'/' '{print $3}')
-          
-            if [ -z "$latest_tag" ]; then
-              latest_tag="develop"
-            fi
-          
-            echo "$repo=$latest_tag" >> $GITHUB_OUTPUT
-          done
-
-      - name: Checkout isy-datetime
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-datetime
-          ref: ${{ steps.fetch-latest-tags.outputs.isy-datetime }}
-          lfs: true
-          sparse-checkout: isy-datetime-doc
-          path: isy-datetime
-
-      - name: Checkout isy-polling
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-polling
-          ref: ${{ steps.fetch-latest-tags.outputs.isy-polling }}
-          lfs: true
-          sparse-checkout: docs
-          path: isy-polling
-
-      - name: Checkout isy-security
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-security
-          ref: ${{ steps.fetch-latest-tags.outputs.isy-security }}
-          lfs: true
-          sparse-checkout: docs
-          path: isy-security
-
-      - name: Checkout isy-sonderzeichen
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-sonderzeichen
-          ref: ${{ steps.fetch-latest-tags.outputs.isy-sonderzeichen }}
-          lfs: true
-          sparse-checkout: isy-sonderzeichen-doc
-          path: isy-sonderzeichen
-
-      - name: Checkout isy-task
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-task
-          ref: ${{ steps.fetch-latest-tags.outputs.isy-task }}
-          lfs: true
-          sparse-checkout: docs
-          path: isy-task
-
-      - name: Checkout isy-util
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-util
-          ref: ${{ steps.fetch-latest-tags.outputs.isy-util }}
-          lfs: true
-          sparse-checkout: docs
-          path: isy-util
-
-      # fetch "wip" components (i.e. without an official release)
-      - name: Checkout isy-bedienkonzept
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isy-bedienkonzept
-          ref: main
-          lfs: true
-          sparse-checkout: isy-bedienkonzept-doc
-          path: isy-bedienkonzept
-
-      - name: Checkout isyfact-standards-referenzimplementierung
-        uses: actions/checkout@v4
-        with:
-          repository: IsyFact/isyfact-standards-referenzimplementierung
-          ref: main
-          lfs: true
-          sparse-checkout: isyfact-standards-referenzimplementierung-doc
-          path: isyfact-standards-referenzimplementierung
-          
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
