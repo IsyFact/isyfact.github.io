@@ -73,10 +73,10 @@ jobs:
         id: search-pr-target-branch
         if: env.called_by_pr == 'true' && env.pr_changes_site == 'false'
         run: |
-          if [[ ${{ steps.search-pr-target-branch-ifs.outputs.result }} != '' ]]; then
+          if [[ "${{ steps.search-pr-target-branch-ifs.outputs.result }}" != "" ]]; then
             echo "result=${{ steps.search-pr-target-branch-ifs.outputs.result }}" >> $GITHUB_OUTPUT
           fi
-          if [[ ${{ steps.search-pr-target-branch-others.outputs.result }} != '' ]]; then
+          if [[ "${{ steps.search-pr-target-branch-others.outputs.result }}" != "" ]]; then
             echo "result=${{ steps.search-pr-target-branch-others.outputs.result }}" >> $GITHUB_OUTPUT
           fi
       - name: Check if PR content source is part of the online documentation
