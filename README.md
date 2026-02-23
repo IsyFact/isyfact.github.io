@@ -58,9 +58,9 @@ This allows changes to the online docs to be safely validated before merging a P
 ### Behavior
 
 PRs from repositories which contain documentation components use the following build logic:
-- validate that the content source of the PR is part of the online documentation,
-- temporarily replace the target content source (i.e. the development branch) with the PR branch,
-- build a dedicated `PR` documentation version.
+- verify that the target branch of the PR is part of the online documentation,
+- temporarily replace the target with the PR branch (version: `PR`) in the playbook,
+- run the Antora build.
 
 If the workflow detects that a PR originates from this repository it will:
 - check out the PR feature branch,
@@ -133,7 +133,7 @@ The Link Checker workflow now calculates the percentage of correct links and gen
 To enable the dynamic badge, follow these steps:
 
 1. **Create a Gist:**
-    - Go to [gist.github.com](https://gist.github.com/).
+    - Go to [GitHub Gist](https://gist.github.com/).
     - Create a new Gist named `link_check_percentage.json` (the name and content can be anything initially).
     - Note the Gist ID, which is the long alphanumeric part of the Gist URL.
 
@@ -168,10 +168,6 @@ To enable the dynamic badge, follow these steps:
     - Include the badge in your `README.md`:
       ```markdown
       [![Links](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/<your-username>/<gist-ID>/raw/link_check_percentage.json)](https://github.com/IsyFact/isyfact.github.io/actions/workflows/link_checker.yml)
-      ```
-    - For example:
-      ```markdown
-      [![Links](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/huy-tran-msg/cd34647bc4a492cb10e296417a0c612c/raw/link_check_percentage.json)](https://github.com/IsyFact/isyfact.github.io/actions/workflows/link_checker.yml)
       ```
       
 This setup will display a real-time percentage of correct links in your README, keeping the health of your documentation links visible.
