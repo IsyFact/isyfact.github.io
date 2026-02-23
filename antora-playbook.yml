@@ -11,7 +11,7 @@ content:
   sources:
     - url: https://github.com/IsyFact/isy-documentation.git
       branches: master
-      start_paths: [documentation-guide,glossary]
+      start_paths: [documentation-guide, glossary]
       lfs: true
       version:
         'master': 'latest'
