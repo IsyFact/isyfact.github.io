@@ -8,9 +8,16 @@
 > - the content sources **(src)**,
 > - the bundled GitHub Actions workflows and jobs **(ci)**.
 
+## 2026
+
+- [2026-02-23] (ext,ci) `IFS-5030`: use extension for handling Git LFS in production build
+- [2026-02-13] (conf) `IFS-4925`: allow override of admonition captions
+- [2026-02-12] (src): `IFS-5096`: adjust build and playbook for IF 4.2.0 release
+- [2026-01-07] (ci): `IFS-4802`: allow Antora build to handle changes to `isyfact.github.io`
+
 ## 2025
 
-- [2025-12-10] (ext,cs) `IFS-5010`: use extension for handling Git LFS in dev build
+- [2025-12-10] (ext,ci) `IFS-5010`: use extension for handling Git LFS in dev build
 - [2025-12-09] (ci) `IFS-4849`: removes `isy-datetime-persistence` out of build
 - [2025-11-11] (ci) `IFS-4801`: allow Antora build to handle pull requests
 - [2025-09-11] (src) `IFS-4762`: adjust build and playbook for IF 4.1.0 release
