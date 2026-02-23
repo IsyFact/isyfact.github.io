@@ -2,21 +2,20 @@
 
 # IsyFact Online Docs
 
-This repository contains GitHub actions to build and publish the online docs at https://isyfact.github.io via GitHub Pages.
+This repository contains GitHub Actions to build and publish the online docs at https://isyfact.github.io via GitHub Pages.
+The online docs are written in [AsciiDoc](https://docs.asciidoctor.org/asciidoc/latest/) and use [Antora](https://antora.org/) to build a static HTML site for easy browsing.
 
-Additionally, this repository contains the Antora playbooks, Antora extensions and a customized UI for the IsyFact online docs.
+This repository contains the Antora playbooks, Antora extensions and a customized UI for the IsyFact online docs.
 There are two playbooks:
-- `antora-playbook.yml`: For CI/CD-based builds in GitHub Actions.
-- `antora-playbook-local.yml`: For [local testing and development](#local-testing-and-development).
+- `antora-playbook.yml`: for production and [PR](#pr-builds) builds via GitHub Actions,
+- `antora-playbook-local.yml`: for [local testing and development](#local-testing-and-development).
 
-## Prerequisites
-The documentation is written in [AsciiDoc](https://docs.asciidoctor.org/asciidoc/latest/) and uses [Antora](https://antora.org/) to build a static HTML site for easy browsing.
+## Local Testing and Development
 
 To build the online docs yourself, you need the following prerequisites:
 - **Git LFS**: For repositories that use Git Large File Storage. [Installation Guide](https://git-lfs.com/).
 - **Node.js & npm**: For running Antora and managing JavaScript dependencies. You should use a version manager (i.e. [nvm for Windows](https://github.com/coreybutler/nvm-windows) or [nvm for Linux/macOS](https://github.com/nvm-sh/nvm)), or you can install both manually for your OS. Please use at least the latest LTS version.
 
-## Local Testing and Development
 The playbook at `antora-playbook-local.yml` provides a local environment to test your feature branches against the online documentation. 
 It features all active development branches and the latest release tags of all repositories which contain documentation.
 
@@ -34,7 +33,8 @@ To add your feature branches, simply add a content source like this to `antora-p
 ```
 
 > [!IMPORTANT]
-> The build will contain errors at this point, because the template documents aren't built properly. They still require a Maven build which doesn't happen inside Antora. 
+> The build will contain errors at this point, because the template documents aren't built properly. 
+> They still require a Maven build which doesn't happen inside Antora. 
 > The errors look like this and can be safely ignored for now:
 > ```
 > ERROR (asciidoctor): target of xref not found: methodik:attachment$vorlage-generated/
@@ -47,28 +47,26 @@ To add your feature branches, simply add a content source like this to `antora-p
 >                          IsyFact-Vorlage-Systemhandbuch.pdf
 > ```
 
-## PR builds for the website repository
+## PR Builds
 
-The Antora PR build now also supports pull requests that target the **website repository**
-`IsyFact/isyfact.github.io`.
+The online docs build supports building pull requests (PRs).
+It supports changes to this repository as well as all repos which contain documentation components.
+The build result is attached to the PR as a comment that shows build warnings and errors.
+
+This allows changes to the online docs to be safely validated before merging a PR.
 
 ### Behavior
 
-- If the workflow detects that a PR originates from this repository it will:
-  - check out the PR feature branch
-  - run the Antora build using the `antora-playbook.yml` contained in that branch.
+PRs from repositories which contain documentation components use the following build logic:
+- validate that the content source of the PR is part of the online documentation,
+- temporarily replace the target content source (i.e. the development branch) with the PR branch,
+- build a dedicated `PR` documentation version.
 
-- In this case, no content source replacement is performed.
-  The entire online documentation is built according to the modified playbook in that branch.
+If the workflow detects that a PR originates from this repository it will:
+- check out the PR feature branch,
+- run the Antora build using the `antora-playbook.yml` contained in that branch.
 
-### Scope
-
-- PRs from other repositories (for example documentation components) continue to use the existing PR build logic:
-  - validation that the content source is part of the online documentation
-  - temporary replacement of the content source with the PR branch
-  - build of a dedicated `PR` documentation version
-
-This allows changes to the website playbook itself to be safely validated via PR builds.
+In this case, no content source replacement is performed.
 
 ## Known Bugs & Limitations
 
@@ -79,39 +77,47 @@ This is due to the usage of Git LFS.
 Using the repository URLs in the playbook causes images and binary files to not being part of the build result.
 This issue is currently being worked on (see [issue #185](https://gitlab.com/antora/antora/-/issues/185)) and should be resolved in Antora 3.x.
 
-#### Local Testing and Development
-The local build uses the [Antora Git Large File Storage (LFS) Extension](https://gitlab.com/opendevise/oss/antora-binary-files-extension-suite/-/tree/main/packages/git-lfs-extension?ref_type=heads) by OpenDevise.
+Both playbooks use the [Antora Git Large File Storage (LFS) Extension](https://gitlab.com/opendevise/oss/antora-binary-files-extension-suite/-/tree/main/packages/git-lfs-extension?ref_type=heads) by OpenDevise.
 The extension is able to resolve Git LFS objects by using the `git` executable of the environment instead of `isomorphic-git` which is packaged inside Antora.
 However, it is currently limited to one branch or commit (tags won't work!) per content source.
-This is reflected in the playbook `antora-playbook-local.yml`.
+This is reflected in the playbooks.
 
-> [!NOTE]
-> It is planned to use this approach for the production build as well.
+#### isyfact-standards
 
-#### Production Build
+The workaround works for all documentation components except `isyfact-standards`.
+This is due to the template documents which still require a separate Maven build.
+The build procedure for `isyfact-standards` is roughly the following:
 
-In order to build the online docs, you need to clone all content sources yourself in a way that supports Git LFS.
-Also, you need to change the content sources in the playbook.
-Your build script should look similar to this:
+```yaml
+- name: Checkout isyfact-standards (<branch>)
+  uses: actions/checkout@v4
+  with:
+    repository: IsyFact/isyfact-standards
+    ref: <branch>
+    lfs: true
+    sparse-checkout: isyfact-standards-doc/src/docs/antora
+    path: isyfact-standards-<branch>
 
-```shell
-git clone -b <branch> https://github.com/IsyFact/isy-documentation.git
-# ...
-
-npm install
-npm run build
+- name: Set up JDK
+  uses: actions/setup-java@v4
+  
+- name: Generate Templates (<branch>)
+  run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-<branch>/isyfact-standards-doc package
 ```
 
-Similarly, your playbook has to include the local content sources instead of the remote ones:
+After that, the documentation component is ready to be processed by Antora without errors.
+Because of this, the content source for `isyfact-standards` looks like the following:
 
 ```yaml
 content:
   sources:
-    - url: ./isy-documentation
-      branches: HEAD # branch already selected in the build script
-      start_path: src/docs/antora
-    # ...
+    - url: ./isyfact-standards-<branch>
+      branches: <branch>
 ```
+
+> [!NOTE]
+> You can have a closer look at the workaround in the [production playbook](https://github.com/IsyFact/isyfact.github.io/blob/main/antora-playbook.yml) and the [CI build](https://github.com/IsyFact/isyfact.github.io/blob/main/.github/workflows/antora_build.yml).
+
 
 ### Workaround: Building behind a company firewall
 If you are behind a company firewall, you may need to set additional root CAs to make secure connections work.
