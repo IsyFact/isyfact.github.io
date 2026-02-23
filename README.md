@@ -116,7 +116,7 @@ content:
 ```
 
 > [!NOTE]
-> You can have a closer look at the workaround in the [production playbook](https://github.com/IsyFact/isyfact.github.io/blob/main/antora-playbook.yml) and the [CI build](https://github.com/IsyFact/isyfact.github.io/blob/main/.github/workflows/antora_build.yml).
+> You can have a closer look at the workaround in the [production playbook](antora-playbook.yml) and the [CI build](.github/workflows/antora_build.yml).
 
 
 ### Workaround: Building behind a company firewall
