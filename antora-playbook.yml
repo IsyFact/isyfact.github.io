@@ -84,6 +84,12 @@ content:
       version:
         'main': '1.x'
     - url: https://github.com/IsyFact/isy-datetime.git
+      branches: develop
+      start_path: docs
+      lfs: true
+      version:
+        'develop': '5.x'
+    - url: https://github.com/IsyFact/isy-datetime.git
       commits: f6a22a9b55524456df69514d41f836164622f147
       start_path: isy-datetime-doc
       lfs: true
@@ -100,6 +106,12 @@ content:
       lfs: true
       version:
         'develop': '5.0.0'
+    - url: https://github.com/IsyFact/isy-sonderzeichen.git
+      branches: develop
+      start_path: docs
+      lfs: true
+      version:
+        'develop': '5.x'
     - url: https://github.com/IsyFact/isy-sonderzeichen.git
       commits: 013d697c4af90f01af21834b1f1cdfc2dc24a809
       start_path: isy-sonderzeichen-doc
