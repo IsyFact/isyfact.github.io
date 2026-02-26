@@ -138,9 +138,8 @@ asciidoc:
     - ./lib/remote-include-processor
 ui:
   bundle:
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
-    snapshot: true
-  supplemental_files: ./antora-ui/supplemental-ui
+    url: ./antora-ui/ui-bundle.zip
+
 antora:
   extensions:
     - require: '@opendevise/antora-git-lfs-extension'
