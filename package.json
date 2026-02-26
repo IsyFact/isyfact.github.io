@@ -4,7 +4,14 @@
   "scripts": {
     "build": "antora antora-playbook.yml",
     "build:local": "antora antora-playbook-local.yml",
-    "build:local-json": "antora --log-format=json antora-playbook-local.yml"
+    "build:local-json": "antora --log-format=json antora-playbook-local.yml",
+
+    "build:release": "antora --fetch antora-release-local.yml",
+    "build:dev": "antora --fetch antora-dev-local.yml",
+
+    "build:static": "powershell -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\build-static.ps1",
+    "build:static:current5x": "powershell -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\build-static.ps1 -CurrentTarget 5.x",
+    "build:static:current500": "powershell -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\build-static.ps1 -CurrentTarget 5.0.0"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,41 @@
+site:
+  title: IsyFact (Dev)
+  url: https://isyfact.github.io/isyfact-standards-doku/dev
+  start_page: isyfact-standards-doku:einstieg:einstieg.adoc
+
+# mtl. kein latest_version_segment nötig,
+urls: {}
+
+content:
+  branches: []
+  sources:
+    - url: https://github.com/IsyFact/isyfact-standards.git
+      branches: [release/4.x, master]   # master = 5.x DEV
+      start_path: isyfact-standards-doc/src/docs/antora
+      lfs: true
+      version:
+        'release/4.x': '4.x'
+        'master': '5.x'
+
+    # alle “develop/next/…” Module, die man im Dev zeigen will:
+    - url: https://github.com/IsyFact/isy-datetime.git
+      branches: [develop]
+      start_path: docs
+      lfs: true
+      version:
+        'develop': 'next'
+
+    - url: https://github.com/IsyFact/isy-polling.git
+      branches: [develop]
+      start_path: docs
+      lfs: true
+      version:
+        'develop': '5.0.0'
+
+    # weitere.
+ui:
+  bundle:
+    url: ./antora-ui/ui-bundle.zip
+
+output:
+  dir: ./docs/dev

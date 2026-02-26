@@ -1,0 +1,90 @@
+site:
+  title: IsyFact
+  url: https://isyfact.github.io/isyfact-standards-doku
+  start_page: isyfact-standards-doku:einstieg:einstieg.adoc
+
+urls:
+  latest_version_segment: current
+  # prerelease ist im Dev-Build
+  # latest_prerelease_version_segment: dev
+
+content:
+  branches: []
+  sources:
+    - url: https://github.com/IsyFact/isy-documentation.git
+      branches: [master]
+      start_paths: [documentation-guide, glossary]
+      lfs: true
+      version:
+        'master': 'latest'
+
+    # isyfact-standards releases 5.x und 4.x
+    - url: https://github.com/IsyFact/isyfact-standards.git
+      branches: [release/5.x, release/4.x]
+      start_path: isyfact-standards-doc/src/docs/antora
+      lfs: true
+      version:
+        'release/(*)': $1
+
+    # Fixierte historische Releases (commits/tags)
+    - url: https://github.com/IsyFact/isyfact-standards.git
+      commits: 2d4fe269849d3be6f8c4196452c252108713fda0
+      start_path: isyfact-standards-doc/src/docs/antora
+      lfs: true
+      version: '4.2.0'
+
+    - url: https://github.com/IsyFact/isyfact-standards.git
+      commits: ad257897ec0f4f31761430eb4b9b583f74455088
+      start_path: isyfact-standards-doc/src/docs/antora
+      lfs: true
+      version: '3.3.0'
+
+    # weitere Komponenten wie gehabt, aber “release” vs “develop” sauber trennen,
+    # je nachdem ob das in Releases oder Dev angezeigt werden soll:
+    - url: https://github.com/IsyFact/isy-datetime.git
+      commits: f6a22a9b55524456df69514d41f836164622f147
+      start_path: isy-datetime-doc
+      lfs: true
+      version: '4.0.0'
+
+runtime:
+  fetch: true
+  log:
+    level: info
+    failure_level: fatal
+
+asciidoc:
+  attributes:
+    page-component-order: 'isyfact-standards-doku, *, glossary, documentation-guide'
+    page-toctitle: Inhalt
+    sectnums: true
+    sectnumlevels: 5
+    caution-caption: Achtung@
+    important-caption: Wichtig@
+    note-caption: Hinweis@
+    tip-caption: Tipp@
+    warning-caption: Warnung@
+    appendix-caption: Anhang
+    example-caption: Beispiel
+    figure-caption: Abbildung
+    table-caption: Tabelle
+    listing-caption: Listing
+  extensions:
+    - ./lib/remote-include-processor
+
+ui:
+  bundle:
+    url: ./antora-ui/ui-bundle.zip
+
+antora:
+  extensions:
+    - require: '@opendevise/antora-git-lfs-extension'
+    - require: '@antora/lunr-extension'
+      languages: [en, de]
+    - require: ./lib/antora-extension-rules.js
+      excludefiles:
+        - kopiervorlage
+        - bearbeitung-antora
+
+output:
+  dir: ./docs
