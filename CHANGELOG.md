@@ -9,7 +9,8 @@
 > - the bundled GitHub Actions workflows and jobs **(ci)**.
 
 ## 2026
- 
+- [2026-02-25] (src): `IFS-5083`: add development versions of `isy-datetime` and `isy-sonderzeichen`
+- [2026-02-23] (ext,ci) `IFS-5030`: use extension for handling Git LFS in production build
 - [2026-02-18] (conf) `IFS-5224`: mark JSF as deprecated and move it down in the component selector
 - [2026-02-13] (conf) `IFS-4925`: allow override of admonition captions
 - [2026-02-12] (src): `IFS-5096`: adjust build and playbook for IF 4.2.0 release
@@ -17,7 +18,7 @@
 
 ## 2025
 
-- [2025-12-10] (ext,cs) `IFS-5010`: use extension for handling Git LFS in dev build
+- [2025-12-10] (ext,ci) `IFS-5010`: use extension for handling Git LFS in dev build
 - [2025-12-09] (ci) `IFS-4849`: removes `isy-datetime-persistence` out of build
 - [2025-11-11] (ci) `IFS-4801`: allow Antora build to handle pull requests
 - [2025-09-11] (src) `IFS-4762`: adjust build and playbook for IF 4.1.0 release
