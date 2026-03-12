@@ -12,6 +12,15 @@ There are two playbooks:
 
 ## Local Testing and Development
 
+### Test-Setup: Dev-Aliases
+Tested Dev-Aliases with:
+```Powershell
+npm ci
+npx antora antora-playbook.yml
+powershell -ExecutionPolicy Bypass -File .\scripts\create-dev-aliases.ps1
+npx http-server .\docs
+```
+
 To build the online docs yourself, you need the following prerequisites:
 - **Git LFS**: For repositories that use Git Large File Storage. [Installation Guide](https://git-lfs.com/).
 - **Node.js & npm**: For running Antora and managing JavaScript dependencies. You should use a version manager (i.e. [nvm for Windows](https://github.com/coreybutler/nvm-windows) or [nvm for Linux/macOS](https://github.com/nvm-sh/nvm)), or you can install both manually for your OS. Please use at least the latest LTS version.

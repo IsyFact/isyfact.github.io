@@ -246,6 +246,13 @@ jobs:
         id: antora-build
         run: npx antora --log-format=json --log-level=${{ github.event.inputs.log_level || 'info' }} --log-failure-level=${{ github.event.inputs.failure_level || 'fatal' }} antora-playbook.yml > antora_output.log || echo "failed=true" >> $GITHUB_OUTPUT
 
+      - name: Create dev aliases
+        if: env.called_by_pr == 'false' && !steps.antora-build.outputs.failed
+        run: |
+          mkdir -p docs/dev
+          [ -d docs/4.x ] && mkdir -p docs/dev && cp -R docs/4.x docs/dev/4.x
+          [ -d docs/5.x ] && mkdir -p docs/dev && cp -R docs/5.x docs/dev/5.x
+
       - name: Upload docs folder as pages artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
         if: env.called_by_pr == 'false' && !steps.antora-build.outputs.failed

@@ -5,7 +5,7 @@ site:
 
 urls:
   latest_version_segment: current
-  latest_prerelease_version_segment: dev
+  redirect_facility: static
 content:
   branches: []
   sources:
@@ -24,7 +24,7 @@ content:
         'master': 'latest'
       # Contains only active branches and latest versions
     - url: https://github.com/IsyFact/isyfact-standards.git
-      branches: HEAD
+      branches: master
       start_path: isyfact-standards-doc/src/docs/antora
       lfs: true
       version:
