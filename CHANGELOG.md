@@ -9,6 +9,7 @@
 > - the bundled GitHub Actions workflows and jobs **(ci)**.
 
 ## 2026
+- [2026-03-16] (src): `IFS-5215`: add decoupled isy-ueberwachung to build
 - [2026-02-25] (src): `IFS-5083`: add development versions of `isy-datetime` and `isy-sonderzeichen`
 - [2026-02-23] (ext,ci) `IFS-5030`: use extension for handling Git LFS in production build
 - [2026-02-18] (conf) `IFS-5224`: mark JSF as deprecated and move it down in the component selector
