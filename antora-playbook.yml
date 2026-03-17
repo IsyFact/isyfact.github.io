@@ -65,7 +65,7 @@ content:
         'doku/(*)': $1
 
     # reference implementation
-    - url: https://github.com/IsyFact/isyfact-standards-referenzimplementierung.git
+    - url: https://github.com/IsyFact/isyfact-standards-referenzimplementierung-123.git
       branches: main
       start_path: isyfact-standards-referenzimplementierung-doc
       lfs: true
