@@ -113,6 +113,12 @@ content:
       lfs: true
       version:
         'develop': '5.0.0'
+    - url: https://github.com/IsyFact/isy-ueberwachung.git
+      branches: develop
+      start_path: docs
+      lfs: true
+      version:
+        'develop': '5.0.0'
 runtime:
   fetch: true
   log:
