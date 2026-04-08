@@ -262,6 +262,48 @@ jobs:
         with:
           name: antora-log
           path: antora_output.log
+
+      - name: Check diagrams for using adaptive colors
+        id: check-diagrams
+        run: |
+          output_file="diagrams_with_enabled_adaptive_colors.log"
+
+          # folders that contain diagrams which should be checked for adaptive colors support
+          diagram_folders=("$HOME/.cache/antora/content" "$HOME/.cache/antora/content-with-lfs")
+          diagram_folders+=("./isyfact-standards")
+          diagram_folders+=("./isyfact-standards-4.x")
+          diagram_folders+=("./isyfact-standards-4.2.0")
+          diagram_folders+=("./isyfact-standards-4.1.0")
+          diagram_folders+=("./isyfact-standards-4.0.0")
+          diagram_folders+=("./isyfact-standards-3.x")
+          diagram_folders+=("./isyfact-standards-3.3.0")
+          diagram_folders+=("./isyfact-standards-3.2.2")
+          diagram_folders+=("./isyfact-standards-3.1.2")
+          diagram_folders+=("./isyfact-standards-3.0.2")
+
+          # debug
+          echo $diagram_folders
+
+          # check which diagrams use adaptive colors (using the light-dark CSS syntax).
+          diagrams_with_adaptive_colors=()
+          for folder in "${diagram_folders[@]}"; do
+            found_files=( $(grep -RPl --include='*.svg' '(?s)<svg\b.*\blight-dark' "$folder") )
+            diagrams_with_adaptive_colors+=("${found_files[@]}")
+          done
+
+          # check which diagrams with adaptive colors have the support for adaptive colors turned on.
+          # this is an error, because the Antora UI doesn't support dark mode, while the diagram does.
+          for file in "${diagrams_with_adaptive_colors[@]}"; do
+            if ! grep -P '(?s)<svg\b[^>]*\bstyle="[^"]*color-scheme:\s*light;[^"]*"[^>]*\bcontent="[^"]*adaptiveColors=&quot;none&quot;' "$file"; then
+              "$file" >> "$output_file"
+            fi
+          done
+      - name: Upload diagram check log for manual reviews and further analysis
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagram-log
+          path: diagrams_with_enabled_adaptive_colors.log
+
       - name: Mark workflow as failed if the Antora build failed
         if: steps.antora-build.outputs.failed == 'true'
         run: |
