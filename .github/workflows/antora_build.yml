@@ -36,11 +36,11 @@ jobs:
 
       - name: Checkout
         if: env.pr_changes_site == 'false'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Checkout PR
         if: env.pr_changes_site == 'true'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: ${{github.event.inputs.pr_branch}}
 
@@ -105,7 +105,7 @@ jobs:
           cmd: yq -i 'with(.content.sources[] | select(.url == "https://github.com/${{ github.event.inputs.pr_repo }}.git"); .url = "./pull-request" | .branches = "HEAD" | .version = "PR" )' antora-playbook.yml
 
       - name: Checkout PR source branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         if: env.called_by_pr == 'true' && env.pr_changes_site == 'false'
         with:
           repository: ${{ github.event.inputs.pr_repo }}
@@ -115,7 +115,7 @@ jobs:
 
       # isyfact-standards: dev versions
       - name: Checkout isyfact-standards (master)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: IsyFact/isyfact-standards
           ref: master
@@ -123,7 +123,7 @@ jobs:
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards
       - name: Checkout isyfact-standards (release/4.x)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: IsyFact/isyfact-standards
           ref: release/4.x
@@ -131,7 +131,7 @@ jobs:
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-4.x
       - name: Checkout isyfact-standards (release/3.x)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: IsyFact/isyfact-standards
           ref: release/3.x
@@ -141,7 +141,7 @@ jobs:
 
       # isyfact-standards: stable versions
       - name: Checkout isyfact-standards (Tag 4.2.0)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: IsyFact/isyfact-standards
           ref: 4.2.0
@@ -149,7 +149,7 @@ jobs:
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-4.2.0
       - name: Checkout isyfact-standards (Tag 4.1.0)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: IsyFact/isyfact-standards
           ref: 4.1.0
@@ -157,7 +157,7 @@ jobs:
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-4.1.0
       - name: Checkout isyfact-standards (doku/4.0.0)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: IsyFact/isyfact-standards
           ref: doku/4.0.0
@@ -165,7 +165,7 @@ jobs:
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-4.0.0
       - name: Checkout isyfact-standards (Tag 3.3.0)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: IsyFact/isyfact-standards
           ref: 3.3.0
@@ -173,7 +173,7 @@ jobs:
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-3.3.0
       - name: Checkout isyfact-standards (release/3.2.2)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: IsyFact/isyfact-standards
           ref: doku/3.2.2
@@ -181,7 +181,7 @@ jobs:
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-3.2.2
       - name: Checkout isyfact-standards (release/3.1.2)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: IsyFact/isyfact-standards
           ref: doku/3.1.2
@@ -189,7 +189,7 @@ jobs:
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-3.1.2
       - name: Checkout isyfact-standards (doku/3.0.2)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: IsyFact/isyfact-standards
           ref: doku/3.0.2
@@ -198,7 +198,7 @@ jobs:
           path: isyfact-standards-3.0.2
 
       - name: Set up JDK
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: 17
           distribution: temurin
@@ -230,7 +230,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 24
           cache: npm
       # @setup-node does not provide node_modules in cache
       - name: Cache node modules
@@ -247,7 +247,7 @@ jobs:
         run: npx antora --log-format=json --log-level=${{ github.event.inputs.log_level || 'info' }} --log-failure-level=${{ github.event.inputs.failure_level || 'fatal' }} antora-playbook.yml > antora_output.log || echo "failed=true" >> $GITHUB_OUTPUT
 
       - name: Upload docs folder as pages artifact for GitHub Pages
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         if: env.called_by_pr == 'false' && !steps.antora-build.outputs.failed
         with:
           path: docs
