@@ -255,7 +255,7 @@ jobs:
         run: npx antora --log-format=json --log-level=${{ github.event.inputs.log_level || 'info' }} --log-failure-level=${{ github.event.inputs.failure_level || 'fatal' }} antora-playbook.yml > antora_output.log || echo "failed=true" >> $GITHUB_OUTPUT
 
       - name: Upload docs folder as pages artifact for GitHub Pages
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         if: env.called_by_pr == 'false' && !steps.antora-build.outputs.failed
         with:
           path: docs
