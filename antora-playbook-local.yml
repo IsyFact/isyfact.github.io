@@ -41,6 +41,11 @@ content:
       lfs: true
       version: '4.2.0'
     - url: https://github.com/IsyFact/isyfact-standards.git
+      tags: 4.2.1
+      start_path: isyfact-standards-doc/src/docs/antora
+      lfs: true
+      version: '4.2.1'
+    - url: https://github.com/IsyFact/isyfact-standards.git
       commits: ad257897ec0f4f31761430eb4b9b583f74455088
       start_path: isyfact-standards-doc/src/docs/antora
       lfs: true

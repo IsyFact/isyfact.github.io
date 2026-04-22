@@ -140,6 +140,14 @@ jobs:
           path: isyfact-standards-3.x
 
       # isyfact-standards: stable versions
+      - name: Checkout isyfact-standards (Tag 4.2.1)
+        uses: actions/checkout@v6
+        with:
+          repository: IsyFact/isyfact-standards
+          ref: 4.2.1
+          lfs: true
+          sparse-checkout: isyfact-standards-doc/src/docs/antora
+          path: isyfact-standards-4.2.1
       - name: Checkout isyfact-standards (Tag 4.2.0)
         uses: actions/checkout@v6
         with:
