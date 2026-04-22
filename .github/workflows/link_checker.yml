@@ -79,7 +79,7 @@ jobs:
         env:
           GIST_AUTH: ${{ secrets.GIST_AUTH }}
           GIST_ID: ${{ vars.GIST_ID }}
-        uses: schneegans/dynamic-badges-action@v1.7.0
+        uses: schneegans/dynamic-badges-action@v1.8.0
         with:
           auth: ${{ env.GIST_AUTH }}
           gistID: ${{ env.GIST_ID }}
