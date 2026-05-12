@@ -22,7 +22,7 @@ content:
       lfs: true
       version:
         'master': 'latest'
-      # Contains only active branches and latest versions
+      # Contains only active development branches and latest versions
     - url: https://github.com/IsyFact/isyfact-standards.git
       branches: master
       start_path: isyfact-standards-doc/src/docs/antora
@@ -36,17 +36,7 @@ content:
       version:
         'release/(*)': $1
     - url: https://github.com/IsyFact/isyfact-standards.git
-      commits: 2d4fe269849d3be6f8c4196452c252108713fda0
-      start_path: isyfact-standards-doc/src/docs/antora
-      lfs: true
-      version: '4.2.0'
-    - url: https://github.com/IsyFact/isyfact-standards.git
-      tags: 4.2.1
-      start_path: isyfact-standards-doc/src/docs/antora
-      lfs: true
-      version: '4.2.1'
-    - url: https://github.com/IsyFact/isyfact-standards.git
-      tags: 4.2.2
+      commits: b3b8b634b12fc07d70f1329374ebcb4fb02691d3
       start_path: isyfact-standards-doc/src/docs/antora
       lfs: true
       version: '4.2.2'
