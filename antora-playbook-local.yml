@@ -140,6 +140,7 @@ asciidoc:
     example-caption: Beispiel
     figure-caption: Abbildung
     table-caption: Tabelle
+    table-stripes: even
     listing-caption: Listing
   extensions:
     - ./lib/remote-include-processor
