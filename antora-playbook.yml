@@ -172,6 +172,7 @@ asciidoc:
     figure-caption: Abbildung
     table-caption: Tabelle
     listing-caption: Listing
+    demo-app-url: https://isyfact.github.io
   extensions:
     - ./lib/remote-include-processor
 ui:
