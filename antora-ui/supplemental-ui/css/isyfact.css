@@ -33,11 +33,12 @@ table tfoot tr td {
     text-align: left;
 }
 
-/* more readable table rows */
-table tr.even,
-table tr.alt,
-table tr:nth-of-type(even) {
-    background: #edf2f2;
+/* copied from site.css */
+.doc table.stripes-all>tbody>tr,
+.doc table.stripes-even>tbody>tr:nth-of-type(2n),
+.doc table.stripes-hover>tbody>tr:hover,
+.doc table.stripes-odd>tbody>tr:nth-of-type(odd) {
+    background:#edf2f2 !important;
 }
 
 .table_head_sticky thead {
