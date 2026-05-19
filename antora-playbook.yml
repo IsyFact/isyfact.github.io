@@ -171,6 +171,7 @@ asciidoc:
     example-caption: Beispiel
     figure-caption: Abbildung
     table-caption: Tabelle
+    table-stripes: even
     listing-caption: Listing
     demo-app-url: https://isyfact.github.io
   extensions:
