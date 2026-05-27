@@ -22,7 +22,7 @@
     "js-yaml": "4.1.1"
   },
   "dependencies": {
-    "antora": "^3.1.14",
+    "antora": "^3.1.15",
     "@antora/lunr-extension": "^1.0.0-alpha.12"
   }
 }
