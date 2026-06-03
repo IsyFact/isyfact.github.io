@@ -99,8 +99,9 @@ table tfoot tr td {
     color: white;
 }
 
-/* deprecated */
-.glossary .status .deprecated {
+/* deprecated and superseded */
+.glossary .status .deprecated,
+.glossary .status .superseded {
     background-color: darkred;
 }
 
@@ -108,11 +109,6 @@ table tfoot tr td {
 .glossary .status .proposed,
 .glossary .status .revised {
     background-color: #336699;
-}
-
-/* superseded */
-.glossary .status .superseded {
-    background-color: #444;
 }
 
 .glossary .status .release {
