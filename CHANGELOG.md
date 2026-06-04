@@ -10,6 +10,7 @@
 
 ## 2026
 
+- [2026-06-03] (UI): `IFS-5380`: match color of superseded entries in the glossary with deprecated entries
 - [2026-05-27] (UI): `IFS-5370`: fix striped table styling
 - [2026-05-07] (UI): `IFS-5382`: add decoupled components to top-level menu
 - [2026-04-09] (ci): `IFS-5226`: extend Antora build for checking draw.io diagrams for using adaptive colors
