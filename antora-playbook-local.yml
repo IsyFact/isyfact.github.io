@@ -72,12 +72,12 @@ content:
       lfs: true
       version:
         'main': '1.x'
-    - url: https://github.com/IsyFact/isy-datetime.git
-      branches: develop
-      start_path: docs
-      lfs: true
-      version:
-        'develop': '5.x'
+#    - url: https://github.com/IsyFact/isy-datetime.git
+#      branches: develop
+#      start_path: docs
+#      lfs: true
+#      version:
+#        'develop': '5.x'
     - url: https://github.com/IsyFact/isy-datetime.git
       tags: 5.0.0
       start_path: docs
@@ -136,12 +136,12 @@ content:
       lfs: true
       version:
         'develop': '5.x'
-    - url: https://github.com/IsyFact/isy-util.git
-      branches: develop
-      start_path: docs
-      lfs: true
-      version:
-        'develop': '5.x'
+#    - url: https://github.com/IsyFact/isy-util.git
+#      branches: develop
+#      start_path: docs
+#      lfs: true
+#      version:
+#        'develop': '5.x'
     - url: https://github.com/IsyFact/isy-util.git
       tags: 5.0.0
       start_path: docs
