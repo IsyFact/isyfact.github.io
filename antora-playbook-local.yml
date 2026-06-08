@@ -30,6 +30,11 @@ content:
       version:
         'master': '5.x'
     - url: https://github.com/IsyFact/isyfact-standards.git
+      tags: 5.0.2
+      start_path: isyfact-standards-doc/src/docs/antora
+      lfs: true
+      version: '5.0.2'
+    - url: https://github.com/IsyFact/isyfact-standards.git
       branches: release/4.x
       start_path: isyfact-standards-doc/src/docs/antora
       lfs: true
@@ -67,58 +72,92 @@ content:
       lfs: true
       version:
         'main': '1.x'
+#    - url: https://github.com/IsyFact/isy-datetime.git
+#      branches: develop
+#      start_path: docs
+#      lfs: true
+#      version:
+#        'develop': '5.x'
     - url: https://github.com/IsyFact/isy-datetime.git
-      branches: develop
+      tags: 5.0.0
       start_path: docs
       lfs: true
-      version:
-        'develop': 'next'
+      version: '5.0.0'
     - url: https://github.com/IsyFact/isy-datetime.git
-      commits: f6a22a9b55524456df69514d41f836164622f147
+      tags: 4.0.0
       start_path: isy-datetime-doc
       lfs: true
-      version: '4.0.0'
+    - url: https://github.com/IsyFact/isy-polling.git
+      tags: 5.0.0
+      start_path: docs
+      lfs: true
+      version: '5.0.0'
     - url: https://github.com/IsyFact/isy-polling.git
       branches: develop
       start_path: docs
       lfs: true
       version:
-        'develop': '5.0.0'
+        'develop': '5.x'
+    - url: https://github.com/IsyFact/isy-security.git
+      tags: 5.0.1
+      start_path: docs
+      lfs: true
+      version: '5.0.1'
     - url: https://github.com/IsyFact/isy-security.git
       branches: develop
       start_path: docs
       lfs: true
       version:
-        'develop': '5.0.0'
+        'develop': '5.x'
+    - url: https://github.com/IsyFact/isy-sonderzeichen.git
+      tags: 5.0.0
+      start_path: docs
+      lfs: true
+      version: '5.0.0'
     - url: https://github.com/IsyFact/isy-sonderzeichen.git
       branches: develop
       start_path: docs
       lfs: true
       version:
-        'develop': 'next'
+        'develop': '5.x'
     - url: https://github.com/IsyFact/isy-sonderzeichen.git
       commits: 013d697c4af90f01af21834b1f1cdfc2dc24a809
       start_path: isy-sonderzeichen-doc
       lfs: true
       version: '4.0.0'
     - url: https://github.com/IsyFact/isy-task.git
+      tags: 5.0.0
+      start_path: docs
+      lfs: true
+      version: '5.0.0'
+    - url: https://github.com/IsyFact/isy-task.git
       branches: develop
       start_path: docs
       lfs: true
       version:
-        'develop': '5.0.0'
+        'develop': '5.x'
+#    - url: https://github.com/IsyFact/isy-util.git
+#      branches: develop
+#      start_path: docs
+#      lfs: true
+#      version:
+#        'develop': '5.x'
     - url: https://github.com/IsyFact/isy-util.git
-      branches: develop
+      tags: 5.0.0
       start_path: docs
       lfs: true
-      version:
-        'develop': '5.0.0'
+      version: '5.0.0'
+    - url: https://github.com/IsyFact/isy-ueberwachung.git
+      tags: 5.0.0
+      start_path: docs
+      lfs: true
+      version: '5.0.0'
     - url: https://github.com/IsyFact/isy-ueberwachung.git
       branches: develop
       start_path: docs
       lfs: true
       version:
-        'develop': '5.0.0'
+        'develop': '5.x'
 runtime:
   fetch: true
   log:
