@@ -34,14 +34,6 @@ content:
       branches: HEAD
       start_path: isyfact-standards-doc/src/docs/antora
       version: 4.2.2
-    - url: ./isyfact-standards-4.2.1
-      branches: HEAD
-      start_path: isyfact-standards-doc/src/docs/antora
-      version: 4.2.1
-    - url: ./isyfact-standards-4.2.0
-      branches: HEAD
-      start_path: isyfact-standards-doc/src/docs/antora
-      version: 4.2.0
     - url: ./isyfact-standards-4.1.0
       branches: HEAD
       start_path: isyfact-standards-doc/src/docs/antora
@@ -106,11 +98,6 @@ content:
       lfs: true
       version:
         'develop': '5.x'
-    - url: https://github.com/IsyFact/isy-datetime.git
-      commits: f6a22a9b55524456df69514d41f836164622f147
-      start_path: isy-datetime-doc
-      lfs: true
-      version: '4.0.0'
     - url: https://github.com/IsyFact/isy-polling.git
       tags: 5.0.0
       start_path: docs
@@ -144,11 +131,6 @@ content:
       lfs: true
       version:
         'develop': '5.x'
-    - url: https://github.com/IsyFact/isy-sonderzeichen.git
-      commits: 013d697c4af90f01af21834b1f1cdfc2dc24a809
-      start_path: isy-sonderzeichen-doc
-      lfs: true
-      version: '4.0.0'
     - url: https://github.com/IsyFact/isy-task.git
       tags: 5.0.0
       start_path: docs
