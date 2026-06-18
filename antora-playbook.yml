@@ -27,9 +27,10 @@ content:
       version:
         'release/(*)': $1
     - url: ./isyfact-standards-5.0.2
-      branches: HEAD
+      branches: doku/5.0.2
       start_path: isyfact-standards-doc/src/docs/antora
-      version: 5.0.2
+      version:
+        'doku/(*)': $1
     - url: ./isyfact-standards-4.2.2
       branches: doku/4.2.2
       start_path: isyfact-standards-doc/src/docs/antora
