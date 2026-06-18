@@ -41,15 +41,11 @@ content:
       version:
         'release/(*)': $1
     - url: https://github.com/IsyFact/isyfact-standards.git
-      commits: b3b8b634b12fc07d70f1329374ebcb4fb02691d3
+      branches: doku/4.2.2
       start_path: isyfact-standards-doc/src/docs/antora
       lfs: true
-      version: '4.2.2'
-    - url: https://github.com/IsyFact/isyfact-standards.git
-      commits: ad257897ec0f4f31761430eb4b9b583f74455088
-      start_path: isyfact-standards-doc/src/docs/antora
-      lfs: true
-      version: '3.3.0'
+      version:
+        'doku/(*)': $1
     - url: https://github.com/IsyFact/isyfact-standards-referenzimplementierung.git
       branches: main
       start_path: isyfact-standards-referenzimplementierung-doc
@@ -83,10 +79,6 @@ content:
       start_path: docs
       lfs: true
       version: '5.0.0'
-    - url: https://github.com/IsyFact/isy-datetime.git
-      tags: 4.0.0
-      start_path: isy-datetime-doc
-      lfs: true
     - url: https://github.com/IsyFact/isy-polling.git
       tags: 5.0.0
       start_path: docs
@@ -120,11 +112,6 @@ content:
       lfs: true
       version:
         'develop': '5.x'
-    - url: https://github.com/IsyFact/isy-sonderzeichen.git
-      commits: 013d697c4af90f01af21834b1f1cdfc2dc24a809
-      start_path: isy-sonderzeichen-doc
-      lfs: true
-      version: '4.0.0'
     - url: https://github.com/IsyFact/isy-task.git
       tags: 5.0.0
       start_path: docs
