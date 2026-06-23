@@ -144,7 +144,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           repository: IsyFact/isyfact-standards
-          ref: 5.0.2
+          ref: doku/5.0.2
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-5.0.2
@@ -152,31 +152,15 @@ jobs:
         uses: actions/checkout@v6
         with:
           repository: IsyFact/isyfact-standards
-          ref: 4.2.2
+          ref: doku/4.2.2
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-4.2.2
-      - name: Checkout isyfact-standards (Tag 4.2.1)
-        uses: actions/checkout@v6
-        with:
-          repository: IsyFact/isyfact-standards
-          ref: 4.2.1
-          lfs: true
-          sparse-checkout: isyfact-standards-doc/src/docs/antora
-          path: isyfact-standards-4.2.1
-      - name: Checkout isyfact-standards (Tag 4.2.0)
-        uses: actions/checkout@v6
-        with:
-          repository: IsyFact/isyfact-standards
-          ref: 4.2.0
-          lfs: true
-          sparse-checkout: isyfact-standards-doc/src/docs/antora
-          path: isyfact-standards-4.2.0
       - name: Checkout isyfact-standards (Tag 4.1.0)
         uses: actions/checkout@v6
         with:
           repository: IsyFact/isyfact-standards
-          ref: 4.1.0
+          ref: doku/4.1.0
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-4.1.0
@@ -229,16 +213,12 @@ jobs:
           cache: maven
       - name: Generate Templates (master)
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards/isyfact-standards-doc package
-      - name: Generate Templates (release/4.x)
-        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-4.x/isyfact-standards-doc package
       - name: Generate Templates (Tag 5.0.2)
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-5.0.2/isyfact-standards-doc package
+      - name: Generate Templates (release/4.x)
+        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-4.x/isyfact-standards-doc package
       - name: Generate Templates (Tag 4.2.2)
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-4.2.2/isyfact-standards-doc package
-      - name: Generate Templates (Tag 4.2.1)
-        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-4.2.1/isyfact-standards-doc package
-      - name: Generate Templates (Tag 4.2.0)
-        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-4.2.0/isyfact-standards-doc package
       - name: Generate Templates (Tag 4.1.0)
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-4.1.0/isyfact-standards-doc package
       - name: Generate Templates (doku/4.0.0)
@@ -277,7 +257,7 @@ jobs:
         run: npx antora --log-format=json --log-level=${{ github.event.inputs.log_level || 'info' }} --log-failure-level=${{ github.event.inputs.failure_level || 'fatal' }} antora-playbook.yml > antora_output.log || echo "failed=true" >> $GITHUB_OUTPUT
 
       - name: Upload docs folder as pages artifact for GitHub Pages
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         if: env.called_by_pr == 'false' && !steps.antora-build.outputs.failed
         with:
           path: docs
@@ -301,9 +281,9 @@ jobs:
           # folders that contain diagrams which should be checked for adaptive colors support
           diagram_folders=("$HOME/.cache/antora/content" "$HOME/.cache/antora/content-with-lfs")
           diagram_folders+=("./isyfact-standards")
-          diagram_folders+=("./isyfact-standards-4.x")
           diagram_folders+=("./isyfact-standards-5.0.2")
-          diagram_folders+=("./isyfact-standards-4.2.0")
+          diagram_folders+=("./isyfact-standards-4.x")
+          diagram_folders+=("./isyfact-standards-4.2.2")
           diagram_folders+=("./isyfact-standards-4.1.0")
           diagram_folders+=("./isyfact-standards-4.0.0")
           diagram_folders+=("./isyfact-standards-3.x")
@@ -357,7 +337,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Setup GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
