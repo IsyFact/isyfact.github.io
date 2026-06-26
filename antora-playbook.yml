@@ -36,16 +36,6 @@ content:
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'doku/(*)': $1
-    - url: ./isyfact-standards-4.1.0
-      branches: doku/4.1.0
-      start_path: isyfact-standards-doc/src/docs/antora
-      version:
-        'doku/(*)': $1
-    - url: ./isyfact-standards-4.0.0
-      branches: doku/4.0.0
-      start_path: isyfact-standards-doc/src/docs/antora
-      version:
-        'doku/(*)': $1
     - url: ./isyfact-standards-3.x
       branches: release/3.x
       start_path: isyfact-standards-doc/src/docs/antora
@@ -55,21 +45,6 @@ content:
       branches: HEAD
       start_path: isyfact-standards-doc/src/docs/antora
       version: 3.3.0
-    - url: ./isyfact-standards-3.2.2
-      branches: doku/3.2.2
-      start_path: isyfact-standards-doc/src/docs/antora
-      version:
-        'doku/(*)': $1
-    - url: ./isyfact-standards-3.1.2
-      branches: doku/3.1.2
-      start_path: isyfact-standards-doc/src/docs/antora
-      version:
-        'doku/(*)': $1
-    - url: ./isyfact-standards-3.0.2
-      branches: doku/3.0.2
-      start_path: isyfact-standards-doc/src/docs/antora
-      version:
-        'doku/(*)': $1
 
     # reference implementation
     - url: https://github.com/IsyFact/isyfact-standards-referenzimplementierung.git
