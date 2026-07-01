@@ -20,7 +20,7 @@ content:
     - url: ./isyfact-standards
       branches: master
       start_path: isyfact-standards-doc/src/docs/antora
-      version: '5.x'
+      version: '5.1'
     - url: ./isyfact-standards-4.x
       branches: release/4.x
       start_path: isyfact-standards-doc/src/docs/antora
@@ -100,7 +100,7 @@ content:
       start_path: docs
       lfs: true
       version:
-        'develop': '5.x'
+        'develop': '5.1'
     - url: https://github.com/IsyFact/isy-polling.git
       tags: 5.0.0
       start_path: docs
@@ -111,7 +111,7 @@ content:
       start_path: docs
       lfs: true
       version:
-        'develop': '5.x'
+        'develop': '5.1'
     - url: https://github.com/IsyFact/isy-security.git
       tags: 5.0.1
       start_path: docs
@@ -122,7 +122,7 @@ content:
       start_path: docs
       lfs: true
       version:
-        'develop': '5.x'
+        'develop': '5.1'
     - url: https://github.com/IsyFact/isy-sonderzeichen.git
       tags: 5.0.0
       start_path: docs
@@ -133,7 +133,7 @@ content:
       start_path: docs
       lfs: true
       version:
-        'develop': '5.x'
+        'develop': '5.1'
     - url: https://github.com/IsyFact/isy-task.git
       tags: 5.0.0
       start_path: docs
@@ -144,7 +144,7 @@ content:
       start_path: docs
       lfs: true
       version:
-        'develop': '5.x'
+        'develop': '5.1'
     - url: https://github.com/IsyFact/isy-util.git
       tags: 5.0.0
       start_path: docs
@@ -155,7 +155,7 @@ content:
       start_path: docs
       lfs: true
       version:
-        'develop': '5.x'
+        'develop': '5.1'
     - url: https://github.com/IsyFact/isy-web.git # still needed as long as IsyFact 3 is published!
       branches: master
       start_path: isy-web-doc/src/docs/antora
@@ -172,7 +172,7 @@ content:
       start_path: docs
       lfs: true
       version:
-        'develop': '5.x'
+        'develop': '5.1'
 
 runtime:
   fetch: true

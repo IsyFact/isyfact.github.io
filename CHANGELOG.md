@@ -10,6 +10,7 @@
 
 ## 2026
 
+- [2026-07-01] (src): `IFS-5579`: switch latest dev versions from 5.x to 5.1 so that the URL segment `dev` works as expected
 - [2026-06-03] (UI): `IFS-5380`: match color of superseded entries in the glossary with deprecated entries
 - [2026-05-27] (UI): `IFS-5370`: fix striped table styling
 - [2026-05-07] (UI): `IFS-5382`: add decoupled components to top-level menu
