@@ -293,6 +293,7 @@ jobs:
           diagram_folders+=("./isyfact-standards")
           diagram_folders+=("./isyfact-standards-5.0.2")
           diagram_folders+=("./isyfact-standards-4.x")
+          diagram_folders+=("./isyfact-standards-4.3.0")
           diagram_folders+=("./isyfact-standards-4.2.2")
           diagram_folders+=("./isyfact-standards-4.1.0")
           diagram_folders+=("./isyfact-standards-4.0.0")
