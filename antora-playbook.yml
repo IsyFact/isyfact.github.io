@@ -31,6 +31,11 @@ content:
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'doku/(*)': $1
+    - url: ./isyfact-standards-4.3.0
+      branches: doku/4.3.0
+      start_path: isyfact-standards-doc/src/docs/antora
+      version:
+        'doku/(*)': $1
     - url: ./isyfact-standards-4.2.2
       branches: doku/4.2.2
       start_path: isyfact-standards-doc/src/docs/antora
