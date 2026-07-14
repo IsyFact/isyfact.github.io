@@ -56,10 +56,6 @@ content:
       start_path: isyfact-standards-doc/src/docs/antora
       version:
         'support/(*)': $1
-    - url: ./isyfact-standards-3.3.0
-      branches: HEAD
-      start_path: isyfact-standards-doc/src/docs/antora
-      version: 3.3.0
     - url: ./isyfact-standards-3.2.2
       branches: doku/3.2.2
       start_path: isyfact-standards-doc/src/docs/antora
