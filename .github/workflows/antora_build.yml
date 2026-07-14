@@ -329,8 +329,8 @@ jobs:
       - name: Mark workflow as failed if the Antora build failed
         if: steps.antora-build.outputs.failed == 'true'
         run: |
-          echo "::error title=Antora build failed!
-          cat antora-output.log
+          echo "::error title=Antora build failed::See antora_output.log artifact"
+          cat antora_output.log
           exit 1
 
   Deploy:
