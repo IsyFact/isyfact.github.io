@@ -36,11 +36,11 @@ jobs:
 
       - name: Checkout
         if: env.pr_changes_site == 'false'
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Checkout PR
         if: env.pr_changes_site == 'true'
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: ${{github.event.inputs.pr_branch}}
 
@@ -105,7 +105,7 @@ jobs:
           cmd: yq -i 'with(.content.sources[] | select(.url == "https://github.com/${{ github.event.inputs.pr_repo }}.git"); .url = "./pull-request" | .branches = "HEAD" | .version = "PR" )' antora-playbook.yml
 
       - name: Checkout PR source branch
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         if: env.called_by_pr == 'true' && env.pr_changes_site == 'false'
         with:
           repository: ${{ github.event.inputs.pr_repo }}
@@ -114,34 +114,34 @@ jobs:
           path: pull-request
 
       # isyfact-standards: dev versions
-      - name: Checkout isyfact-standards (master)
-        uses: actions/checkout@v6
+      - name: Checkout isyfact-standards (develop)
+        uses: actions/checkout@v7
         with:
           repository: IsyFact/isyfact-standards
-          ref: master
+          ref: develop
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards
-      - name: Checkout isyfact-standards (release/4.x)
-        uses: actions/checkout@v6
+      - name: Checkout isyfact-standards (support/4.x)
+        uses: actions/checkout@v7
         with:
           repository: IsyFact/isyfact-standards
-          ref: release/4.x
+          ref: support/4.x
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-4.x
-      - name: Checkout isyfact-standards (release/3.x)
-        uses: actions/checkout@v6
+      - name: Checkout isyfact-standards (support/3.x)
+        uses: actions/checkout@v7
         with:
           repository: IsyFact/isyfact-standards
-          ref: release/3.x
+          ref: support/3.x
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-3.x
 
       # isyfact-standards: stable versions
       - name: Checkout isyfact-standards (Tag 5.0.2)
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: IsyFact/isyfact-standards
           ref: doku/5.0.2
@@ -149,7 +149,7 @@ jobs:
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-5.0.2
       - name: Checkout isyfact-standards (Tag 4.3.0)
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: IsyFact/isyfact-standards
           ref: doku/4.3.0
@@ -157,7 +157,7 @@ jobs:
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-4.3.0
       - name: Checkout isyfact-standards (Tag 4.2.2)
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: IsyFact/isyfact-standards
           ref: doku/4.2.2
@@ -165,7 +165,7 @@ jobs:
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-4.2.2
       - name: Checkout isyfact-standards (Tag 4.1.0)
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: IsyFact/isyfact-standards
           ref: doku/4.1.0
@@ -173,7 +173,7 @@ jobs:
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-4.1.0
       - name: Checkout isyfact-standards (doku/4.0.0)
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: IsyFact/isyfact-standards
           ref: doku/4.0.0
@@ -181,7 +181,7 @@ jobs:
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-4.0.0
       - name: Checkout isyfact-standards (Tag 3.3.0)
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: IsyFact/isyfact-standards
           ref: 3.3.0
@@ -189,7 +189,7 @@ jobs:
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-3.3.0
       - name: Checkout isyfact-standards (release/3.2.2)
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: IsyFact/isyfact-standards
           ref: doku/3.2.2
@@ -197,7 +197,7 @@ jobs:
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-3.2.2
       - name: Checkout isyfact-standards (release/3.1.2)
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: IsyFact/isyfact-standards
           ref: doku/3.1.2
@@ -205,7 +205,7 @@ jobs:
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-3.1.2
       - name: Checkout isyfact-standards (doku/3.0.2)
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: IsyFact/isyfact-standards
           ref: doku/3.0.2
@@ -248,13 +248,13 @@ jobs:
         run: mvn $MAVEN_CLI_OPTS -f ./pull-request/isyfact-standards-doc package
 
       - name: Setup node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: npm
       # @setup-node does not provide node_modules in cache
       - name: Cache node modules
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
           restore-keys: ${{ runner.os }}-npm-

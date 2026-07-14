@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Download docs artifact from the last successful workflow
         uses: dawidd6/action-download-artifact@v21
@@ -26,7 +26,7 @@ jobs:
           branch: main
 
       - name: Restore Lychee cache
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: .lycheecache
           key: cache-lychee-${{ github.sha }}
@@ -79,7 +79,7 @@ jobs:
         env:
           GIST_AUTH: ${{ secrets.GIST_AUTH }}
           GIST_ID: ${{ vars.GIST_ID }}
-        uses: schneegans/dynamic-badges-action@v1.8.0
+        uses: schneegans/dynamic-badges-action@v1.9.0
         with:
           auth: ${{ env.GIST_AUTH }}
           gistID: ${{ env.GIST_ID }}
