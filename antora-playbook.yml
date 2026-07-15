@@ -78,23 +78,23 @@ content:
 
     # reference implementation
     - url: https://github.com/IsyFact/isyfact-standards-referenzimplementierung.git
-      branches: main
+      branches: develop
       start_path: isyfact-standards-referenzimplementierung-doc
       lfs: true
 
     # decoupled components
     - url: https://github.com/IsyFact/isy-angular-widgets.git
-      branches: main
+      branches: develop
       start_path: docs
       lfs: true
       version:
-        'main': '21.x'
+        'develop': '21.x'
     - url: https://github.com/IsyFact/isy-bedienkonzept.git
-      branches: main
+      branches: develop
       start_path: isy-bedienkonzept-doc
       lfs: true
       version:
-        'main': '1.x'
+        'develop': '1.x'
     - url: https://github.com/IsyFact/isy-datetime.git
       tags: 5.0.0
       start_path: docs
@@ -162,11 +162,11 @@ content:
       version:
         'develop': '5.1'
     - url: https://github.com/IsyFact/isy-web.git # still needed as long as IsyFact 3 is published!
-      branches: master
+      branches: develop
       start_path: isy-web-doc/src/docs/antora
       lfs: true
       version:
-        'master': '6.3.0'
+        'develop': '6.3.0'
     - url: https://github.com/IsyFact/isy-ueberwachung.git
       tags: 5.0.0
       start_path: docs
