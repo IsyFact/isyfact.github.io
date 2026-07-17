@@ -35,11 +35,11 @@ content:
       lfs: true
       version: '5.0.2'
     - url: https://github.com/IsyFact/isyfact-standards.git
-      branches: support/4.x
+      branches: develop/4.x
       start_path: isyfact-standards-doc/src/docs/antora
       lfs: true
       version:
-        'support/(*)': $1
+        'develop/(*)': $1
     - url: https://github.com/IsyFact/isyfact-standards.git
       tags: 4.3.0
       start_path: isyfact-standards-doc/src/docs/antora
