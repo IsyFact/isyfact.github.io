@@ -122,19 +122,19 @@ jobs:
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards
-      - name: Checkout isyfact-standards (develop/4.x)
+      - name: Checkout isyfact-standards (develop-4.x)
         uses: actions/checkout@v7
         with:
           repository: IsyFact/isyfact-standards
-          ref: develop/4.x
+          ref: develop-4.x
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-4.x
-      - name: Checkout isyfact-standards (develop/3.x)
+      - name: Checkout isyfact-standards (develop-3.x)
         uses: actions/checkout@v7
         with:
           repository: IsyFact/isyfact-standards
-          ref: develop/3.x
+          ref: develop-3.x
           lfs: true
           sparse-checkout: isyfact-standards-doc/src/docs/antora
           path: isyfact-standards-3.x
@@ -223,7 +223,7 @@ jobs:
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards/isyfact-standards-doc package
       - name: Generate Templates (Tag 5.0.2)
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-5.0.2/isyfact-standards-doc package
-      - name: Generate Templates (develop/4.x)
+      - name: Generate Templates (develop-4.x)
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-4.x/isyfact-standards-doc package
       - name: Generate Templates (Tag 4.3.0)
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-4.3.0/isyfact-standards-doc package
@@ -233,7 +233,7 @@ jobs:
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-4.1.0/isyfact-standards-doc package
       - name: Generate Templates (doku/4.0.0)
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-4.0.0/isyfact-standards-doc package
-      - name: Generate Templates (develop/3.x)
+      - name: Generate Templates (develop-3.x)
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-3.x/isyfact-standards-doc package
       - name: Generate Templates (Tag 3.3.0)
         run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-3.3.0/isyfact-standards-doc package
