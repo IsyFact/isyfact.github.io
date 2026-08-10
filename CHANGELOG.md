@@ -4,6 +4,9 @@
 > Please note: This changelog doesn't contain content source updates. 
 It focuses on changes to the UI, extensions and site-wide configuration options in the playbook.
 
+## 2026
+- [2026-08-10] [UI] `IFS-4409`: remove checkbox filter from search field in favor of the dynamic component/version filter
+
 ## 2025
 - [2025-01-27] [UI] `IFS-4412`: improved responsive design for the IsyFact online documentation
 
