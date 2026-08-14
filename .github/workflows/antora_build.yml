@@ -104,114 +104,115 @@ jobs:
         with:
           cmd: yq -i 'with(.content.sources[] | select(.url == "https://github.com/${{ github.event.inputs.pr_repo }}.git"); .url = "./pull-request" | .branches = "HEAD" | .version = "PR" )' antora-playbook.yml
 
-      - name: Checkout PR source branch
-        uses: actions/checkout@v7
-        if: env.called_by_pr == 'true' && env.pr_changes_site == 'false'
-        with:
-          repository: ${{ github.event.inputs.pr_repo }}
-          ref: ${{ github.event.inputs.pr_branch }}
-          lfs: true
-          path: pull-request
+      # checkout isyfact-standards git references in parallel
+      - parallel:
+        - name: Checkout PR source branch
+          uses: actions/checkout@v7
+          if: env.called_by_pr == 'true' && env.pr_changes_site == 'false'
+          with:
+            repository: ${{ github.event.inputs.pr_repo }}
+            ref: ${{ github.event.inputs.pr_branch }}
+            lfs: true
+            path: pull-request
+        # isyfact-standards: dev versions
+        - name: Checkout isyfact-standards (develop)
+          uses: actions/checkout@v7
+          with:
+            repository: IsyFact/isyfact-standards
+            ref: develop
+            lfs: true
+            sparse-checkout: isyfact-standards-doc/src/docs/antora
+            path: isyfact-standards
+        - name: Checkout isyfact-standards (develop-4.x)
+          uses: actions/checkout@v7
+          with:
+            repository: IsyFact/isyfact-standards
+            ref: develop-4.x
+            lfs: true
+            sparse-checkout: isyfact-standards-doc/src/docs/antora
+            path: isyfact-standards-4.x
+        - name: Checkout isyfact-standards (develop-3.x)
+          uses: actions/checkout@v7
+          with:
+            repository: IsyFact/isyfact-standards
+            ref: develop-3.x
+            lfs: true
+            sparse-checkout: isyfact-standards-doc/src/docs/antora
+            path: isyfact-standards-3.x
 
-      # isyfact-standards: dev versions
-      - name: Checkout isyfact-standards (develop)
-        uses: actions/checkout@v7
-        with:
-          repository: IsyFact/isyfact-standards
-          ref: develop
-          lfs: true
-          sparse-checkout: isyfact-standards-doc/src/docs/antora
-          path: isyfact-standards
-      - name: Checkout isyfact-standards (develop-4.x)
-        uses: actions/checkout@v7
-        with:
-          repository: IsyFact/isyfact-standards
-          ref: develop-4.x
-          lfs: true
-          sparse-checkout: isyfact-standards-doc/src/docs/antora
-          path: isyfact-standards-4.x
-      - name: Checkout isyfact-standards (develop-3.x)
-        uses: actions/checkout@v7
-        with:
-          repository: IsyFact/isyfact-standards
-          ref: develop-3.x
-          lfs: true
-          sparse-checkout: isyfact-standards-doc/src/docs/antora
-          path: isyfact-standards-3.x
-
-      # isyfact-standards: stable versions
-      - name: Checkout isyfact-standards (Tag 5.0.2)
-        uses: actions/checkout@v7
-        with:
-          repository: IsyFact/isyfact-standards
-          ref: doku/5.0.2
-          lfs: true
-          sparse-checkout: isyfact-standards-doc/src/docs/antora
-          path: isyfact-standards-5.0.2
-      - name: Checkout isyfact-standards (Tag 4.3.0)
-        uses: actions/checkout@v7
-        with:
-          repository: IsyFact/isyfact-standards
-          ref: doku/4.3.0
-          lfs: true
-          sparse-checkout: isyfact-standards-doc/src/docs/antora
-          path: isyfact-standards-4.3.0
-      - name: Checkout isyfact-standards (Tag 4.2.2)
-        uses: actions/checkout@v7
-        with:
-          repository: IsyFact/isyfact-standards
-          ref: doku/4.2.2
-          lfs: true
-          sparse-checkout: isyfact-standards-doc/src/docs/antora
-          path: isyfact-standards-4.2.2
-      - name: Checkout isyfact-standards (Tag 4.1.0)
-        uses: actions/checkout@v7
-        with:
-          repository: IsyFact/isyfact-standards
-          ref: doku/4.1.0
-          lfs: true
-          sparse-checkout: isyfact-standards-doc/src/docs/antora
-          path: isyfact-standards-4.1.0
-      - name: Checkout isyfact-standards (doku/4.0.0)
-        uses: actions/checkout@v7
-        with:
-          repository: IsyFact/isyfact-standards
-          ref: doku/4.0.0
-          lfs: true
-          sparse-checkout: isyfact-standards-doc/src/docs/antora
-          path: isyfact-standards-4.0.0
-      - name: Checkout isyfact-standards (Tag 3.3.0)
-        uses: actions/checkout@v7
-        with:
-          repository: IsyFact/isyfact-standards
-          ref: 3.3.0
-          lfs: true
-          sparse-checkout: isyfact-standards-doc/src/docs/antora
-          path: isyfact-standards-3.3.0
-      - name: Checkout isyfact-standards (release/3.2.2)
-        uses: actions/checkout@v7
-        with:
-          repository: IsyFact/isyfact-standards
-          ref: doku/3.2.2
-          lfs: true
-          sparse-checkout: isyfact-standards-doc/src/docs/antora
-          path: isyfact-standards-3.2.2
-      - name: Checkout isyfact-standards (release/3.1.2)
-        uses: actions/checkout@v7
-        with:
-          repository: IsyFact/isyfact-standards
-          ref: doku/3.1.2
-          lfs: true
-          sparse-checkout: isyfact-standards-doc/src/docs/antora
-          path: isyfact-standards-3.1.2
-      - name: Checkout isyfact-standards (doku/3.0.2)
-        uses: actions/checkout@v7
-        with:
-          repository: IsyFact/isyfact-standards
-          ref: doku/3.0.2
-          lfs: true
-          sparse-checkout: isyfact-standards-doc/src/docs/antora
-          path: isyfact-standards-3.0.2
+        # isyfact-standards: stable versions
+        - name: Checkout isyfact-standards (Tag 5.0.2)
+          uses: actions/checkout@v7
+          with:
+            repository: IsyFact/isyfact-standards
+            ref: doku/5.0.2
+            lfs: true
+            sparse-checkout: isyfact-standards-doc/src/docs/antora
+            path: isyfact-standards-5.0.2
+        - name: Checkout isyfact-standards (Tag 4.3.0)
+          uses: actions/checkout@v7
+          with:
+            repository: IsyFact/isyfact-standards
+            ref: doku/4.3.0
+            lfs: true
+            sparse-checkout: isyfact-standards-doc/src/docs/antora
+            path: isyfact-standards-4.3.0
+        - name: Checkout isyfact-standards (Tag 4.2.2)
+          uses: actions/checkout@v7
+          with:
+            repository: IsyFact/isyfact-standards
+            ref: doku/4.2.2
+            lfs: true
+            sparse-checkout: isyfact-standards-doc/src/docs/antora
+            path: isyfact-standards-4.2.2
+        - name: Checkout isyfact-standards (Tag 4.1.0)
+          uses: actions/checkout@v7
+          with:
+            repository: IsyFact/isyfact-standards
+            ref: doku/4.1.0
+            lfs: true
+            sparse-checkout: isyfact-standards-doc/src/docs/antora
+            path: isyfact-standards-4.1.0
+        - name: Checkout isyfact-standards (doku/4.0.0)
+          uses: actions/checkout@v7
+          with:
+            repository: IsyFact/isyfact-standards
+            ref: doku/4.0.0
+            lfs: true
+            sparse-checkout: isyfact-standards-doc/src/docs/antora
+            path: isyfact-standards-4.0.0
+        - name: Checkout isyfact-standards (Tag 3.3.0)
+          uses: actions/checkout@v7
+          with:
+            repository: IsyFact/isyfact-standards
+            ref: 3.3.0
+            lfs: true
+            sparse-checkout: isyfact-standards-doc/src/docs/antora
+            path: isyfact-standards-3.3.0
+        - name: Checkout isyfact-standards (release/3.2.2)
+          uses: actions/checkout@v7
+          with:
+            repository: IsyFact/isyfact-standards
+            ref: doku/3.2.2
+            lfs: true
+            sparse-checkout: isyfact-standards-doc/src/docs/antora
+            path: isyfact-standards-3.2.2
+        - name: Checkout isyfact-standards (release/3.1.2)
+          uses: actions/checkout@v7
+          with:
+            repository: IsyFact/isyfact-standards
+            ref: doku/3.1.2
+            lfs: true
+            sparse-checkout: isyfact-standards-doc/src/docs/antora
+            path: isyfact-standards-3.1.2
+        - name: Checkout isyfact-standards (doku/3.0.2)
+          uses: actions/checkout@v7
+          with:
+            repository: IsyFact/isyfact-standards
+            ref: doku/3.0.2
+            lfs: true
+            sparse-checkout: isyfact-standards-doc/src/docs/antora
+            path: isyfact-standards-3.0.2
 
       - name: Set up JDK
         uses: actions/setup-java@v5
@@ -219,34 +220,61 @@ jobs:
           java-version: 17
           distribution: temurin
           cache: maven
+      # Generate Templates steps use all caching, except for PR Build
       - name: Generate Templates (develop)
-        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards/isyfact-standards-doc package
+        uses: ./.github/actions/generate-templates
+        with:
+          version_build_dir: isyfact-standards
       - name: Generate Templates (Tag 5.0.2)
-        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-5.0.2/isyfact-standards-doc package
+        uses: ./.github/actions/generate-templates
+        with:
+          version_build_dir: isyfact-standards-5.0.2
       - name: Generate Templates (develop-4.x)
-        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-4.x/isyfact-standards-doc package
+        uses: ./.github/actions/generate-templates
+        with:
+          version_build_dir: isyfact-standards-4.x
       - name: Generate Templates (Tag 4.3.0)
-        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-4.3.0/isyfact-standards-doc package
+        uses: ./.github/actions/generate-templates
+        with:
+          version_build_dir: isyfact-standards-4.3.0
       - name: Generate Templates (Tag 4.2.2)
-        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-4.2.2/isyfact-standards-doc package
+        uses: ./.github/actions/generate-templates
+        with:
+          version_build_dir: isyfact-standards-4.2.2
       - name: Generate Templates (Tag 4.1.0)
-        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-4.1.0/isyfact-standards-doc package
+        uses: ./.github/actions/generate-templates
+        with:
+          version_build_dir: isyfact-standards-4.1.0
       - name: Generate Templates (doku/4.0.0)
-        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-4.0.0/isyfact-standards-doc package
+        uses: ./.github/actions/generate-templates
+        with:
+          version_build_dir: isyfact-standards-4.0.0
       - name: Generate Templates (develop-3.x)
-        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-3.x/isyfact-standards-doc package
+        uses: ./.github/actions/generate-templates
+        with:
+          version_build_dir: isyfact-standards-3.x
       - name: Generate Templates (Tag 3.3.0)
-        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-3.3.0/isyfact-standards-doc package
+        uses: ./.github/actions/generate-templates
+        with:
+          version_build_dir: isyfact-standards-3.3.0
       - name: Generate Templates (doku/3.2.2)
-        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-3.2.2/isyfact-standards-doc package
+        uses: ./.github/actions/generate-templates
+        with:
+          version_build_dir: isyfact-standards-3.2.2
       - name: Generate Templates (doku/3.1.2)
-        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-3.1.2/isyfact-standards-doc package
+        uses: ./.github/actions/generate-templates
+        with:
+          version_build_dir: isyfact-standards-3.1.2
       - name: Generate Templates (doku/3.0.2)
-        run: mvn $MAVEN_CLI_OPTS -f ./isyfact-standards-3.0.2/isyfact-standards-doc package
+        uses: ./.github/actions/generate-templates
+        with:
+          version_build_dir: isyfact-standards-3.0.2
       - name: Generate Templates (pull request)
         if: env.called_by_pr == 'true' && github.event.inputs.pr_repo == 'IsyFact/isyfact-standards'
-        run: mvn $MAVEN_CLI_OPTS -f ./pull-request/isyfact-standards-doc package
-
+        uses: ./.github/actions/generate-templates
+        with:
+          version_build_dir: pull-request
+          disable_cache: false # do not cache templates for PRs, so template generation is checked regularly
       - name: Setup node
         uses: actions/setup-node@v7
         with:
@@ -265,23 +293,24 @@ jobs:
       - name: Build Documentation
         id: antora-build
         run: npx antora --log-format=json --log-level=${{ github.event.inputs.log_level || 'info' }} --log-failure-level=${{ github.event.inputs.failure_level || 'fatal' }} antora-playbook.yml > antora_output.log || echo "failed=true" >> $GITHUB_OUTPUT
-
-      - name: Upload docs folder as pages artifact for GitHub Pages
-        uses: actions/upload-pages-artifact@v5
-        if: env.called_by_pr == 'false' && !steps.antora-build.outputs.failed
-        with:
-          path: docs
-      - name: Upload docs folder as artifact for Link Checker
-        uses: actions/upload-artifact@v7
-        if: ${{ !steps.antora-build.outputs.failed }}
-        with:
-          name: docs
-          path: docs
-      - name: Upload Antora log for manual reviews and further analysis
-        uses: actions/upload-artifact@v7
-        with:
-          name: antora-log
-          path: antora_output.log
+      # upload artifacts in parallel
+      - parallel:
+        - name: Upload docs folder as pages artifact for GitHub Pages
+          uses: actions/upload-pages-artifact@v5
+          if: env.called_by_pr == 'false' && !steps.antora-build.outputs.failed
+          with:
+            path: docs
+        - name: Upload docs folder as artifact for Link Checker
+          uses: actions/upload-artifact@v7
+          if: ${{ !steps.antora-build.outputs.failed }}
+          with:
+            name: docs
+            path: docs
+        - name: Upload Antora log for manual reviews and further analysis
+          uses: actions/upload-artifact@v7
+          with:
+            name: antora-log
+            path: antora_output.log
 
       - name: Check diagrams for using adaptive colors
         id: check-diagrams
@@ -336,7 +365,9 @@ jobs:
   Deploy:
     runs-on: ubuntu-latest
     needs: [Build]
-    if: ${{ (github.event.inputs.pr_repo == '') || (github.event.inputs.pr_branch == '') || (github.event.inputs.pr_target == '') }}
+    # do not deploy since testing
+    if: false
+    # if: ${{ (github.event.inputs.pr_repo == '') || (github.event.inputs.pr_branch == '') || (github.event.inputs.pr_target == '') }}
     concurrency:
       group: gh-pages
       cancel-in-progress: false
