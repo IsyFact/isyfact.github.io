@@ -171,3 +171,22 @@ To enable the dynamic badge, follow these steps:
       ```
       
 This setup will display a real-time percentage of correct links in your README, keeping the health of your documentation links visible.
+
+## Caching Templates
+
+Generating templates for the component `isyfact-standards` for every version build turned out to be a bottleneck in the workflow.
+In order to handle this issue a custom composite action named `actions/generate-templates` is introduced.
+Using `actions/generate-templates` ensures to generate templates only if the related source files (`.adoc`) or assets (images like `.svg`, `.png` etc.) are changed, otherwise templates are loaded from the cache into the directory `isyfact-standards-<version>/isyfact-standards-doc/src/docs/antora/modules/methodik/attachments/vorlage-generated` for further processing.
+
+Actually changes within the directories `vorlage-systementwurf` and `vorlage-systemhandbuch` are detected, but other can be added easily by editing file `.github/actions/generate-templates/action.yml`.
+
+Following is a sample usage of action `generate-templates`:
+
+```yaml
+- name: Generate Templates (Tag 5.0.2)
+  uses: ./.github/actions/generate-templates
+  with:
+    version_build_dir: isyfact-standards-5.0.2
+```
+
+All parameters except `version_build_dir` are optional. For further details please consult the [README.md](.github/actions/generate-templates/README.md).
