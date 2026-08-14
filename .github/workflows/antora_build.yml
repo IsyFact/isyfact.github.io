@@ -274,7 +274,7 @@ jobs:
         uses: ./.github/actions/generate-templates
         with:
           version_build_dir: pull-request
-          disable_cache: false # do not cache templates for PRs, so template generation is checked regularly
+          disable_cache: true # disable cache for PRs, so template generation is checked regularly
       - name: Setup node
         uses: actions/setup-node@v7
         with:
@@ -365,9 +365,7 @@ jobs:
   Deploy:
     runs-on: ubuntu-latest
     needs: [Build]
-    # do not deploy since testing
-    if: false
-    # if: ${{ (github.event.inputs.pr_repo == '') || (github.event.inputs.pr_branch == '') || (github.event.inputs.pr_target == '') }}
+    if: ${{ (github.event.inputs.pr_repo == '') || (github.event.inputs.pr_branch == '') || (github.event.inputs.pr_target == '') }}
     concurrency:
       group: gh-pages
       cancel-in-progress: false
