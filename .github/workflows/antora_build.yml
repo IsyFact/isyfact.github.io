@@ -149,6 +149,14 @@ jobs:
             lfs: true
             sparse-checkout: isyfact-standards-doc/src/docs/antora
             path: isyfact-standards-5.0.2
+        - name: Checkout isyfact-standards (Tag 4.3.1)
+          uses: actions/checkout@v7
+          with:
+            repository: IsyFact/isyfact-standards
+            ref: doku/4.3.1
+            lfs: true
+            sparse-checkout: isyfact-standards-doc/src/docs/antora
+            path: isyfact-standards-4.3.1
         - name: Checkout isyfact-standards (Tag 4.3.0)
           uses: actions/checkout@v7
           with:
@@ -233,6 +241,10 @@ jobs:
         uses: ./.github/actions/generate-templates
         with:
           version_build_dir: isyfact-standards-4.x
+      - name: Generate Templates (Tag 4.3.1)
+        uses: ./.github/actions/generate-templates
+        with:
+          version_build_dir: isyfact-standards-4.3.1
       - name: Generate Templates (Tag 4.3.0)
         uses: ./.github/actions/generate-templates
         with:

@@ -41,6 +41,12 @@ content:
       version:
         'develop-(*)': $1
     - url: https://github.com/IsyFact/isyfact-standards.git
+      tags: 4.3.1
+      start_path: isyfact-standards-doc/src/docs/antora
+      lfs: true
+      version:
+        'doku/(*)': $1
+    - url: https://github.com/IsyFact/isyfact-standards.git
       tags: 4.3.0
       start_path: isyfact-standards-doc/src/docs/antora
       lfs: true
