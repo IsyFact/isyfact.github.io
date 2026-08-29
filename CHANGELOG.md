@@ -25,6 +25,9 @@
 - [2026-02-12] (src): `IFS-5096`: adjust build and playbook for IF 4.2.0 release
 - [2026-01-07] (ci): `IFS-4802`: allow Antora build to handle changes to `isyfact.github.io`
 
+## 2026
+- [2026-08-10] [UI] `IFS-4409`: remove checkbox filter from search field in favor of the dynamic component/version filter
+
 ## 2025
 
 - [2025-12-10] (ext,ci) `IFS-5010`: use extension for handling Git LFS in dev build
