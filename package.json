@@ -19,7 +19,7 @@
     "@opendevise/antora-git-lfs-extension": "^1.0.9"
   },
   "dependencies": {
-    "antora": "^3.1.15",
+    "antora": "^3.2.0",
     "@antora/lunr-extension": "^1.0.0-alpha.13"
   }
 }
