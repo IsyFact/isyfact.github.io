@@ -1,16 +1,24 @@
 # Generate Templates Action
 
-This Composite Action is designed to automate the generation of documentation templates using Maven. It is optimized for high-performance CI/CD pipelines by utilizing intelligent caching to minimize build times.
+This Composite Action is designed to automate the generation of documentation templates using Maven.
+It is optimized for high-performance CI/CD pipelines by utilizing intelligent caching to minimize build times.
 
 ## Overview
 
-The action executes a `mvn package` command within a specific Maven module. To avoid redundant and time-consuming Maven executions, it implements a **smart caching strategy**.
+The action executes a `mvn package` command within a specific Maven module.
+Source files for template generation are placed within project `IsyFact/isyfact-standards` in the doc-module, which is `isyfact-standards-doc` by default.
+To avoid redundant and time-consuming Maven executions, it implements a **smart caching strategy**.
 
 A rebuild is only triggered if:
-1. The `pom.xml` of the module has changed.
-2. Files within the `vorlage-systementwurf` or `vorlage-systemhandbuch` directories have been modified.
+1. The `pom.xml` of the doc-module has changed.
+2. Files in any of following directories have been modified:
+    - `vorlage-systementwurf`
+    - `vorlage-systemhandbuch`
+    - `vorlage-systemspezifikation`
 
 This ensures that changes to other parts of the documentation (e.g., standard `.adoc` files) do not trigger a full template regeneration, saving significant time in the build process.
+
+**NOTE:** By convention, files used for template generation (.adoc, images etc.) are placed in directories named `vorlage-<template name>`.
 
 ## Inputs
 
@@ -31,3 +39,4 @@ To use this action in a standard workflow (e.g., during a release or a scheduled
   uses: ./.github/actions/generate-templates
   with:
     version_build_dir: isyfact-standards-5.0.2
+```

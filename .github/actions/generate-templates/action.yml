@@ -32,7 +32,8 @@ runs:
             hashFiles(
               format('{0}/pom.xml', env.DOC_MODULE_PATH),
               format('{0}/**/vorlage-systementwurf/**/*', env.DOC_MODULE_PATH),
-              format('{0}/**/vorlage-systemhandbuch/**/*', env.DOC_MODULE_PATH))
+              format('{0}/**/vorlage-systemhandbuch/**/*', env.DOC_MODULE_PATH),
+              format('{0}/**/vorlage-systemspezifikation/**/*', env.DOC_MODULE_PATH))
           }}
         restore-keys: templates-
     - name: Generate Templates
