@@ -93,6 +93,12 @@ content:
       start_path: docs
       lfs: true
       version:
+        'develop': '22.x'
+    - url: https://github.com/IsyFact/isy-angular-widgets.git
+      branches: develop-21
+      start_path: docs
+      lfs: true
+      version:
         'develop': '21.x'
     - url: https://github.com/IsyFact/isy-bedienkonzept.git
       branches: develop
