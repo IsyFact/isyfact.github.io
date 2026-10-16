@@ -66,8 +66,12 @@ content:
       branches: main
       start_path: docs
       lfs: true
-      version:
-        'main': '21.x'
+      version: '22.x'
+    - url: https://github.com/IsyFact/isy-angular-widgets.git
+      branches: support/21
+      start_path: docs
+      lfs: true
+      version: '21.x'
     - url: https://github.com/IsyFact/isy-bedienkonzept.git
       branches: main
       start_path: isy-bedienkonzept-doc
