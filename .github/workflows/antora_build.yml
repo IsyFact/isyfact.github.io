@@ -140,6 +140,14 @@ jobs:
           path: isyfact-standards-3.x
 
       # isyfact-standards: stable versions
+      - name: Checkout isyfact-standards (Tag 5.1.0)
+        uses: actions/checkout@v7
+        with:
+          repository: IsyFact/isyfact-standards
+          ref: doku/5.1.0
+          lfs: true
+          sparse-checkout: isyfact-standards-doc/src/docs/antora
+          path: isyfact-standards-5.1.0
       - name: Checkout isyfact-standards (Tag 5.0.2)
         uses: actions/checkout@v7
         with:
@@ -232,6 +240,10 @@ jobs:
         uses: ./.github/actions/generate-templates
         with:
           version_build_dir: isyfact-standards
+      - name: Generate Templates (Tag 5.1.0)
+        uses: ./.github/actions/generate-templates
+        with:
+          version_build_dir: isyfact-standards-5.1.0
       - name: Generate Templates (Tag 5.0.2)
         uses: ./.github/actions/generate-templates
         with:
@@ -331,6 +343,7 @@ jobs:
           # folders that contain diagrams which should be checked for adaptive colors support
           diagram_folders=("$HOME/.cache/antora/content" "$HOME/.cache/antora/content-with-lfs")
           diagram_folders+=("./isyfact-standards")
+          diagram_folders+=("./isyfact-standards-5.1.0")
           diagram_folders+=("./isyfact-standards-5.0.2")
           diagram_folders+=("./isyfact-standards-4.x")
           diagram_folders+=("./isyfact-standards-4.3.1")
