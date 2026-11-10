@@ -10,6 +10,7 @@
 
 ## 2026
 
+- [2026-11-06] (src): `IFS-5900` UI-Bundle aus zentraler Antora Default UI in IsyFact Online-Dokumentation einbinden
 - [2026-10-06] (ci): `IFS-5822` Vorlage Systemspezifikation als PDF und ZIP bereitstellen
 - [2026-08-14] (ci): `IFS-5740` Umsetzung: Bedarfsgerechter Build & Veröffentlichung der Vorlagen
 - [2026-07-14] (src): `IFS-5682` Änderung des Branching-Modells nachziehen

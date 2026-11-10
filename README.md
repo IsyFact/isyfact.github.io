@@ -190,3 +190,61 @@ Following is a sample usage of action `generate-templates`:
 ```
 
 All parameters except `version_build_dir` are optional. For further details please consult the [README.md](.github/actions/generate-templates/README.md).
+
+## Using the IsyFact Antora Default UI
+
+The Antora documentation suggests using its Antora Default UI-Bundle via a URL pointing to their latest pipeline artifact.
+
+**Listing: Antora playbook using the Antora Default UI-Bundle**
+```yaml
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+```
+
+For better stability and security we use the **IsyFact Default UI-Bundle** which is maintained in the central repository [isy-antora-default-ui](https://github.com/IsyFact/isy-antora-default-ui).
+
+**Listing: Antora playbook using the IsyFact Default UI-Bundle**
+```yaml
+ui:
+   bundle:
+      url: ./antora-ui/default-ui/build/ui-bundle.zip
+```
+
+The Process for integrating and updating the UI-Bundle follows the [README](https://github.com/IsyFact/isy-antora-default-ui/blob/main/README.md) of the IsyFact Antora Default UI Repository.
+
+### Add the IsyFact UI-Bundle (Project Setup)
+
+1. Check the tag list https://github.com/IsyFact/isy-antora-default-ui/tags and replace `v1` by the latest version.
+   ```shell
+   git subtree add --prefix antora-ui/default-ui https://github.com/IsyFact/isy-antora-default-ui.git v1 --squash
+   ```
+2. Add the `ui-bundle.zip` and cleanup the Git commit history:
+   ```shell
+   git reset --soft <hash-of-your-last-clean-commit>
+   git restore --staged antora-ui/default-ui
+   git add antora-ui/default-ui/build/ui-bundle.zip
+   git commit -m "chore: use IsyFact ui-bundle (version v1) from central repo"
+   ``` 
+
+3. Cleanup:
+   ```shell
+   git clean -fd antora-ui/default-ui
+   ```
+
+4. Use IsyFact UI-Bundle in `antora-playbook.yml` and `antora-playbook-local.yml`:
+   ```yml
+   ui:
+     bundle:
+       url: ./antora-ui/default-ui/build/ui-bundle.zip
+   ```
+
+### Update the IsyFact UI-Bundle
+
+1. Delete directory `antora-ui/default-ui`:
+   ```
+   git rm -rf antora-ui/default-ui
+   git commit -m "chore: delete ui-bundle.zip for update"
+   ```
+2. Re-add the UI-Bundle according to [Add the IsyFact UI-Bundle (Project Setup)](#add-the-isyfact-ui-bundle-project-setup) using the new release version.
